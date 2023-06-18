@@ -708,3 +708,100 @@ aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupd
 2023-06-18 22:29:48 - INFO - Sent daily joke to user 6134724411
 2023-06-18 22:29:55 - INFO - Stop polling...
 2023-06-18 22:29:55 - WARNING - Goodbye!
+2023-06-18 22:53:11 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.50.64:8080
+2023-06-18 22:53:11 - INFO - [33mPress CTRL+C to quit[0m
+2023-06-18 22:53:11 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-06-18 22:53:11 - WARNING - Updates were skipped successfully.
+2023-06-18 22:53:11 - INFO - Start polling.
+2023-06-18 22:53:11 - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2023-06-18 22:53:19 - INFO - User action: Marked joke as seen (User ID: 6013011895, Joke ID: 11725)
+2023-06-18 22:53:21 - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2023-06-18 22:53:22 - ERROR - Update: {"update_id": 247829340, "callback_query": {"id": "7378945369496865066", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 55248, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": -1001970076955, "title": "евіл ганг \U0001f608", "type": "supergroup"}, "date": 1687128545, "edit_date": 1687128552, "text": "Сидить сім’я за вечерею. Син питає тата.\n- Тату! А чому грім гримить?\n- Не знаю.\n- А Скільки кілометрів від нашого села до Франківська?\n- Не знаю.\n- А чому зимою холодно?\n- Не знаю.\nВтручається мама.\n- Досить до тата чіплятися з дурними питаннями!\nТато відповідає.\n- Та нє. Най питає. Звідки дитина буде знати, як в тата не питатиме?", "reply_markup": {"inline_keyboard": [[{"text": "\U0001f4caРейтинг анекдота", "callback_data": "rate_11725"}], [{"text": "\U0001f440Переглянув", "callback_data": "seen_11725"}]]}}, "chat_instance": "1818772548102188180", "data": "rate_11725"}}
+Exception: Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2023-06-18 22:53:22 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-10' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=MessageNotModified('Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message')>
+Traceback (most recent call last):
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\handlers\user.py", line 515, in rate_joke_group
+    await bot.edit_message_reply_markup(call.message.chat.id,
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\bot\bot.py", line 3252, in edit_message_reply_markup
+    result = await self.request(api.Methods.EDIT_MESSAGE_REPLY_MARKUP, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.MessageNotModified: Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2023-06-18 22:53:32 - INFO - User action: Marked joke as seen (User ID: 6013011895, Joke ID: 11725)
+2023-06-18 22:55:18 - INFO - Stop polling...
+2023-06-18 22:55:18 - WARNING - Goodbye!
+2023-06-18 22:55:22 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.50.64:8080
+2023-06-18 22:55:22 - INFO - [33mPress CTRL+C to quit[0m
+2023-06-18 22:55:22 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-06-18 22:55:22 - WARNING - Updates were skipped successfully.
+2023-06-18 22:55:22 - INFO - Start polling.
+2023-06-18 22:55:32 - INFO - User action: Marked joke as seen (User ID: 6013011895, Joke ID: 11725)
+2023-06-18 22:56:13 - INFO - Stop polling...
+2023-06-18 22:56:13 - WARNING - Goodbye!

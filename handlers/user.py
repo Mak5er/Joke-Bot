@@ -353,35 +353,10 @@ async def send_joke_group(call):
     else:
         joke = result[0]
         joke_id = joke[0]
-        joke_rate = await db.joke_rate(joke_id)
-
-        rate_button = types.InlineKeyboardButton(text=f'📊Рейтинг: {joke_rate}',
-                                                 callback_data='rating')
-        seen_button = types.InlineKeyboardButton(text=f'👀Переглянув',
-                                                 callback_data=f'seen_{joke_id}')
-
-        rating_keyboard = types.InlineKeyboardMarkup()
-        rating_keyboard.row(rate_button)
-        rating_keyboard.row(seen_button)
-
-        hidden_rate_button = types.InlineKeyboardButton(
-            text=f"📊Рейтинг анекдота", callback_data=f"rate_{joke_id}")
-
-        hidden_rate_keyboard = types.InlineKeyboardMarkup()
-        hidden_rate_keyboard.row(hidden_rate_button)
-
-        hidden_seen_rate_button = types.InlineKeyboardButton(
-            text=f"📊Рейтинг анекдота", callback_data=f"rate_{joke_id}")
-        seen_button = types.InlineKeyboardButton(text=f'👀Переглянув',
-                                                 callback_data=f'seen_{joke_id}')
-
-        seen_rate_keyboard = types.InlineKeyboardMarkup()
-        seen_rate_keyboard.row(hidden_seen_rate_button)
-        seen_rate_keyboard.row(seen_button)
 
         await call.answer("Ви проголосували за анекдот!")
 
-        await bot.send_message(chat_id, joke[1], reply_markup=seen_rate_keyboard)
+        await bot.send_message(chat_id, joke[1], reply_markup=inline_keyboards.return_seen_rate_keyboard(joke_id))
 
         logging.info(
             f"User action: Sent joke (User ID: {user_id}, Joke ID: {joke[0]})")
@@ -395,7 +370,6 @@ async def send_joke_group(call):
 
 @dp.callback_query_handler(lambda call: call.data == 'daily_joke')
 async def send_daily_joke(call: types.CallbackQuery):
-
     users = await db.get_private_users()
     await bot.send_message(chat_id=call.message.chat.id,
                            text="Починаю розсилку...")
@@ -528,13 +502,11 @@ async def rate_joke_group(call: types.CallbackQuery):
 
     joke_rate = await db.joke_rate(joke_id)
 
-    joke_seens = db.joke_seens(joke_id)
-
     await bot.answer_callback_query(call.id, f"📊Рейтинг анекдота: {joke_rate}")
 
     await bot.edit_message_reply_markup(call.message.chat.id,
                                         call.message.message_id,
-                                        reply_markup=inline_keyboards.return_rating_and_seen_keyboard(joke_seens,
+                                        reply_markup=inline_keyboards.return_rating_and_seen_keyboard(joke_rate,
                                                                                                       joke_id))
     await asyncio.sleep(5)
     await bot.edit_message_reply_markup(call.message.chat.id,

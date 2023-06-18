@@ -1,10 +1,7 @@
 from flask import Flask, render_template
-import telebot
-import config
 from threading import Thread
 
 app = Flask('')
-bot = telebot.TeleBot(config.TOKEN)
 
 
 @app.route('/')
