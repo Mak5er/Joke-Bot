@@ -32,7 +32,7 @@ After successfully launching the program and connecting the bot to Telegram, you
 
 ### keep_alive.py
     This file is designed to maintain free online hosting using the UptimeRobot service 
-    which sends a request every 5 minutes.
+    which sends a request on server every 5 minutes.
 
 ## Database
 
