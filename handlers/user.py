@@ -18,7 +18,7 @@ from services import DataBase
 
 storage = MemoryStorage()
 
-db = DataBase('jokes.db')
+db = DataBase('services/jokes.db')
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -37,11 +37,6 @@ last_info_command = {}
 last_help_command = {}
 
 last_admin_command = {}
-
-
-@dp.errors_handler()
-async def handle_errors(update, exception):
-    logging.error(f"Update: {update}\nException: {exception}")
 
 
 @dp.message_handler(content_types=types.ContentTypes.NEW_CHAT_MEMBERS)
@@ -103,8 +98,9 @@ async def admin(message: types.Message):
             joke_count = await db.joke_count()
             sent_count = await db.sent_count()
 
-            await message.answer(bot_messages.admin_panel(user_count, joke_count, sent_count),
-                                 reply_markup=inline_keyboards.admin_keyboard)
+            await message.answer(bot_messages.admin_panel(
+                user_count, joke_count, sent_count),
+                reply_markup=inline_keyboards.admin_keyboard)
         else:
             await message.answer("У вас немає прав адміністратора!")
     else:
@@ -123,7 +119,8 @@ async def info(message: types.Message):
 
         if elapsed_time < 3:
             await message.reply(
-                "Ви використали команду /info занадто часто. Будь ласка, зачекайте.")
+                "Ви використали команду /info занадто часто. Будь ласка, зачекайте."
+            )
             return
 
     last_info_command[user_id] = current_time
@@ -137,10 +134,14 @@ async def info(message: types.Message):
     username = message.from_user.first_name
 
     if message.chat.type == 'private' and user_id == Config.admin_id:
-        await message.reply(bot_messages.admin_info(username, joke_sent, joke_count, sent_count))
+        await message.reply(
+            bot_messages.admin_info(username, joke_sent, joke_count,
+                                    sent_count))
 
     else:
-        await message.reply(bot_messages.user_info(username, joke_sent, joke_count, sent_count))
+        await message.reply(
+            bot_messages.user_info(username, joke_sent, joke_count,
+                                   sent_count))
 
 
 @dp.message_handler(commands=['help'])
@@ -155,7 +156,8 @@ async def send_help(message: types.Message):
 
         if elapsed_time < 3:
             await message.reply(
-                "Ви використали команду /help занадто часто. Будь ласка, зачекайте.")
+                "Ви використали команду /help занадто часто. Будь ласка, зачекайте."
+            )
             return
 
     last_joke_command[user_id] = current_time
@@ -239,9 +241,11 @@ async def send_to_all_message(message: types.Message, state: FSMContext):
                 await bot.send_message(user[0], message.text)
                 logging.info(f"Sent message to user {user[0]}: {message.text}")
             except Exception as e:
-                logging.error(f"Error sending message to user {user[0]}: {str(e)}")
+                logging.error(
+                    f"Error sending message to user {user[0]}: {str(e)}")
                 continue
-        await bot.send_message(chat_id=message.chat.id, text="Розсилку завершено!")
+        await bot.send_message(chat_id=message.chat.id,
+                               text="Розсилку завершено!")
         await state.finish()
 
 
@@ -300,8 +304,8 @@ async def send_joke_private(call):
     await dp.bot.send_chat_action(call.message.chat.id, "typing")
 
     if not result:
-        await bot.send_message(chat_id,
-                               'На жаль, всі анекдоти вже були надіслані вам.')
+        await bot.send_message(
+            chat_id, 'На жаль, всі анекдоти вже були надіслані вам.')
     else:
         joke = result[0]
 
@@ -309,7 +313,10 @@ async def send_joke_private(call):
 
         joke_text = joke[1]
 
-        await bot.send_message(chat_id, joke_text, reply_markup=inline_keyboards.return_rate_keyboard(joke_id))
+        await bot.send_message(
+            chat_id,
+            joke_text,
+            reply_markup=inline_keyboards.return_rate_keyboard(joke_id))
 
         await db.seen_joke(joke_id, user_id)
 
@@ -348,15 +355,18 @@ async def send_joke_group(call):
     await dp.bot.send_chat_action(call.message.chat.id, "typing")
 
     if not result:
-        await bot.send_message(chat_id,
-                               'На жаль, всі анекдоти вже були надіслані вам.')
+        await bot.send_message(
+            chat_id, 'На жаль, всі анекдоти вже були надіслані вам.')
     else:
         joke = result[0]
         joke_id = joke[0]
 
         await call.answer("Ви проголосували за анекдот!")
 
-        await bot.send_message(chat_id, joke[1], reply_markup=inline_keyboards.return_seen_rate_keyboard(joke_id))
+        await bot.send_message(
+            chat_id,
+            joke[1],
+            reply_markup=inline_keyboards.return_seen_rate_keyboard(joke_id))
 
         logging.info(
             f"User action: Sent joke (User ID: {user_id}, Joke ID: {joke[0]})")
@@ -371,7 +381,7 @@ async def send_joke_group(call):
 @dp.callback_query_handler(lambda call: call.data == 'daily_joke')
 async def send_daily_joke(call: types.CallbackQuery):
     users = await db.get_private_users()
-    await bot.send_message(chat_id=call.message.chat.id,
+    await bot.send_message(chat_id=Config.admin_id,
                            text="Починаю розсилку...")
     for user in users:
         chat_id = user[0]
@@ -384,10 +394,11 @@ async def send_daily_joke(call: types.CallbackQuery):
 
             joke = result[0]
 
-            await bot.send_message(chat_id=user[0],
-                                   text=f"*Анекдот дня:*\n\n{joke[1]}",
-                                   parse_mode="Markdown",
-                                   reply_markup=inline_keyboards.return_rate_keyboard(joke[0]))
+            await bot.send_message(
+                chat_id=user[0],
+                text=f"*Анекдот дня:*\n\n{joke[1]}",
+                parse_mode="Markdown",
+                reply_markup=inline_keyboards.return_rate_keyboard(joke[0]))
 
             await db.seen_joke(joke[0], chat_id)
 
@@ -397,6 +408,38 @@ async def send_daily_joke(call: types.CallbackQuery):
             continue
 
     await bot.send_message(chat_id=call.message.chat.id,
+                           text="Розсилку завершено!")
+
+
+async def daily_joke():
+    users = await db.get_private_users()
+    await bot.send_message(chat_id=Config.admin_id,
+                           text="Починаю розсилку...")
+    for user in users:
+        chat_id = user[0]
+        try:
+
+            result = await db.get_joke(chat_id)
+
+            if not result:
+                continue
+
+            joke = result[0]
+
+            await bot.send_message(
+                chat_id=user[0],
+                text=f"*Анекдот дня:*\n\n{joke[1]}",
+                parse_mode="Markdown",
+                reply_markup=inline_keyboards.return_rate_keyboard(joke[0]))
+
+            await db.seen_joke(joke[0], chat_id)
+
+            logging.info(f"Sent daily joke to user {chat_id}")
+        except Exception as e:
+            logging.error(f"Error sending message to user {chat_id}: {str(e)}")
+            continue
+
+    await bot.send_message(chat_id=Config.admin_id,
                            text="Розсилку завершено!")
 
 
@@ -421,14 +464,16 @@ async def seen_handling(call: types.CallbackQuery):
         f"User action: Marked joke as seen (User ID: {user_id}, Joke ID: {joke_id})"
     )
 
-    await bot.edit_message_reply_markup(call.message.chat.id,
-                                        call.message.message_id,
-                                        reply_markup=inline_keyboards.return_seen_count_rate_keyboard(joke_seens,
-                                                                                                      joke_id))
+    await bot.edit_message_reply_markup(
+        call.message.chat.id,
+        call.message.message_id,
+        reply_markup=inline_keyboards.return_seen_count_rate_keyboard(
+            joke_seens, joke_id))
     await asyncio.sleep(3)
-    await bot.edit_message_reply_markup(call.message.chat.id,
-                                        call.message.message_id,
-                                        reply_markup=inline_keyboards.return_seen_rate_keyboard(joke_id))
+    await bot.edit_message_reply_markup(
+        call.message.chat.id,
+        call.message.message_id,
+        reply_markup=inline_keyboards.return_seen_rate_keyboard(joke_id))
 
 
 @dp.callback_query_handler(lambda call: call.data.startswith('seeen_'))
@@ -449,9 +494,11 @@ async def like_joke(call: types.CallbackQuery):
 
     await call.answer("Ви проголосували за анекдот!")
 
-    await call.message.edit_reply_markup(reply_markup=inline_keyboards.return_rating_keyboard(joke_rate))
+    await call.message.edit_reply_markup(
+        reply_markup=inline_keyboards.return_rating_keyboard(joke_rate))
     await asyncio.sleep(5)
-    await call.message.edit_reply_markup(reply_markup=inline_keyboards.return_hidden_rating_keyboard(joke_id))
+    await call.message.edit_reply_markup(
+        reply_markup=inline_keyboards.return_hidden_rating_keyboard(joke_id))
 
     logging.info(
         f"User action: Liked joke (User ID: {user_id}, Joke ID: {joke_id})")
@@ -467,9 +514,11 @@ async def dislike_joke(call: types.CallbackQuery):
     joke_rate = await db.joke_rate(joke_id)
 
     await call.answer("Ви проголосували проти анекдота!")
-    await call.message.edit_reply_markup(reply_markup=inline_keyboards.return_rating_keyboard(joke_rate))
+    await call.message.edit_reply_markup(
+        reply_markup=inline_keyboards.return_rating_keyboard(joke_rate))
     await asyncio.sleep(5)
-    await call.message.edit_reply_markup(reply_markup=inline_keyboards.return_hidden_rating_keyboard(joke_id))
+    await call.message.edit_reply_markup(
+        reply_markup=inline_keyboards.return_hidden_rating_keyboard(joke_id))
 
     logging.info(
         f"User action: Disliked joke (User ID: {user_id}, Joke ID: {joke_id})")
@@ -484,13 +533,15 @@ async def rate_joke_private(call: types.CallbackQuery):
 
     await bot.answer_callback_query(call.id, f"📊Рейтинг анекдота: {joke_rate}")
 
-    await bot.edit_message_reply_markup(call.message.chat.id,
-                                        call.message.message_id,
-                                        reply_markup=inline_keyboards.return_rating_keyboard(joke_rate))
+    await bot.edit_message_reply_markup(
+        call.message.chat.id,
+        call.message.message_id,
+        reply_markup=inline_keyboards.return_rating_keyboard(joke_rate))
     await asyncio.sleep(5)
-    await bot.edit_message_reply_markup(call.message.chat.id,
-                                        call.message.message_id,
-                                        reply_markup=inline_keyboards.return_hidden_rating_keyboard(joke_id))
+    await bot.edit_message_reply_markup(
+        call.message.chat.id,
+        call.message.message_id,
+        reply_markup=inline_keyboards.return_hidden_rating_keyboard(joke_id))
 
 
 @dp.callback_query_handler(
@@ -504,14 +555,16 @@ async def rate_joke_group(call: types.CallbackQuery):
 
     await bot.answer_callback_query(call.id, f"📊Рейтинг анекдота: {joke_rate}")
 
-    await bot.edit_message_reply_markup(call.message.chat.id,
-                                        call.message.message_id,
-                                        reply_markup=inline_keyboards.return_rating_and_seen_keyboard(joke_rate,
-                                                                                                      joke_id))
+    await bot.edit_message_reply_markup(
+        call.message.chat.id,
+        call.message.message_id,
+        reply_markup=inline_keyboards.return_rating_and_seen_keyboard(
+            joke_rate, joke_id))
     await asyncio.sleep(5)
-    await bot.edit_message_reply_markup(call.message.chat.id,
-                                        call.message.message_id,
-                                        reply_markup=inline_keyboards.return_seen_rate_keyboard(joke_id))
+    await bot.edit_message_reply_markup(
+        call.message.chat.id,
+        call.message.message_id,
+        reply_markup=inline_keyboards.return_seen_rate_keyboard(joke_id))
 
 
 @dp.callback_query_handler(lambda call: call.data.startswith('rating_'))
@@ -533,5 +586,5 @@ async def handle_message(message: types.Message):
 
     elif message.chat.type == 'private':
         await message.reply(
-            f'*{name}*, вас не розумію! Введіть команду /help отримати список команд!',
+            f'*{name}*, вас не розумію! Введіть команду /help щоб отримати список команд!',
             parse_mode="Markdown")

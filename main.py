@@ -1,9 +1,9 @@
 import logging
-import keep_alive
 
 from aiogram import Bot, Dispatcher, executor
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
+import keep_alive
 from config import Config
 from log.logger import custom_formatter
 

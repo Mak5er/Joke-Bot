@@ -1,5 +1,5 @@
 config_dev.py
 
-jokes.db
+services/jokes.db
 
 bot_log.txt

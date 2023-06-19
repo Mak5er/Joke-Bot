@@ -805,3 +805,97 @@ aiogram.utils.exceptions.MessageNotModified: Message is not modified: specified 
 2023-06-18 22:55:32 - INFO - User action: Marked joke as seen (User ID: 6013011895, Joke ID: 11725)
 2023-06-18 22:56:13 - INFO - Stop polling...
 2023-06-18 22:56:13 - WARNING - Goodbye!
+2023-06-18 22:57:14 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.50.64:8080
+2023-06-18 22:57:14 - INFO - [33mPress CTRL+C to quit[0m
+2023-06-18 22:57:15 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-06-18 22:57:15 - WARNING - Updates were skipped successfully.
+2023-06-18 22:57:15 - INFO - Start polling.
+2023-06-18 22:57:15 - INFO - Stop polling...
+2023-06-18 22:57:15 - WARNING - Goodbye!
+2023-06-19 10:51:55 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.50.64:8080
+2023-06-19 10:51:55 - INFO - [33mPress CTRL+C to quit[0m
+2023-06-19 10:51:55 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-06-19 10:51:55 - WARNING - Updates were skipped successfully.
+2023-06-19 10:51:55 - INFO - Start polling.
+2023-06-19 10:51:57 - INFO - Stop polling...
+2023-06-19 10:51:57 - WARNING - Goodbye!
+2023-06-19 10:53:08 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.50.64:8080
+2023-06-19 10:53:08 - INFO - [33mPress CTRL+C to quit[0m
+2023-06-19 11:08:38 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.50.64:8080
+2023-06-19 11:08:38 - INFO - [33mPress CTRL+C to quit[0m
+2023-06-19 11:08:39 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-06-19 11:08:39 - WARNING - Updates were skipped successfully.
+2023-06-19 11:08:39 - INFO - Start polling.
+2023-06-19 11:08:47 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-9' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('no such table: users')>
+Traceback (most recent call last):
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\handlers\user.py", line 68, in send_welcome
+    await db.add_users(user_id, chat_type)
+  File "C:\Python\Joke Bot 2.0\services\db.py", line 12, in add_users
+    return self.cursor.execute("""INSERT OR IGNORE INTO users (user_id, chat_type) VALUES (?, ?)""",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: users
+2023-06-19 11:08:51 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-12' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=OperationalError('no such table: users')>
+Traceback (most recent call last):
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\handlers\user.py", line 68, in send_welcome
+    await db.add_users(user_id, chat_type)
+  File "C:\Python\Joke Bot 2.0\services\db.py", line 12, in add_users
+    return self.cursor.execute("""INSERT OR IGNORE INTO users (user_id, chat_type) VALUES (?, ?)""",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: users
+2023-06-19 11:09:41 - INFO - Stop polling...
+2023-06-19 11:09:41 - WARNING - Goodbye!
+2023-06-19 11:09:52 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.50.64:8080
+2023-06-19 11:09:52 - INFO - [33mPress CTRL+C to quit[0m
+2023-06-19 11:09:53 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-06-19 11:09:53 - WARNING - Updates were skipped successfully.
+2023-06-19 11:09:53 - INFO - Start polling.
+2023-06-19 11:09:56 - INFO - User action: /start (User ID: 6013011895)
+2023-06-19 11:10:27 - INFO - Stop polling...
+2023-06-19 11:10:27 - WARNING - Goodbye!
