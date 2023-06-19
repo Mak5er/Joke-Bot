@@ -411,38 +411,6 @@ async def send_daily_joke(call: types.CallbackQuery):
                            text="Розсилку завершено!")
 
 
-async def daily_joke():
-    users = await db.get_private_users()
-    await bot.send_message(chat_id=Config.admin_id,
-                           text="Починаю розсилку...")
-    for user in users:
-        chat_id = user[0]
-        try:
-
-            result = await db.get_joke(chat_id)
-
-            if not result:
-                continue
-
-            joke = result[0]
-
-            await bot.send_message(
-                chat_id=user[0],
-                text=f"*Анекдот дня:*\n\n{joke[1]}",
-                parse_mode="Markdown",
-                reply_markup=inline_keyboards.return_rate_keyboard(joke[0]))
-
-            await db.seen_joke(joke[0], chat_id)
-
-            logging.info(f"Sent daily joke to user {chat_id}")
-        except Exception as e:
-            logging.error(f"Error sending message to user {chat_id}: {str(e)}")
-            continue
-
-    await bot.send_message(chat_id=Config.admin_id,
-                           text="Розсилку завершено!")
-
-
 @dp.callback_query_handler(lambda call: call.data.startswith('seen_'))
 async def seen_handling(call: types.CallbackQuery):
     joke_id = int(call.data.split('_')[1])
