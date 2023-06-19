@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e374a2bf-7af0-40c1-9105-4871803b0018" name="Changes" comment="small update" />
+    <list default="true" id="e374a2bf-7af0-40c1-9105-4871803b0018" name="Changes" comment="small update">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/bot_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/bot_log.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,9 +54,9 @@
       <recent name="C:\Python\Joke Bot 2.0" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Python\Joke Bot 2.0\services" />
       <recent name="C:\Python\Joke Bot 2.0" />
       <recent name="C:\Python\Joke Bot 2.0\log" />
-      <recent name="C:\Python\Joke Bot 2.0\services" />
     </key>
   </component>
   <component name="RunManager">
@@ -127,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687162362744</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="small update">
+      <created>1687162430331</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1687162430331</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="UnknownFeatures">

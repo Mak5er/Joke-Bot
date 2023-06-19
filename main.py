@@ -21,7 +21,10 @@ handler.setFormatter(custom_formatter)
 logger.addHandler(handler)
 
 if __name__ == "__main__":
-    from handlers import dp
+    from handlers import *
+
+    scheduler.start()
 
     keep_alive.keep_alive()
     executor.start_polling(dp, skip_updates=True)
+    asyncio.get_event_loop().run_forever()

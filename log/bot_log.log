@@ -899,3 +899,74 @@ sqlite3.OperationalError: no such table: users
 2023-06-19 11:09:56 - INFO - User action: /start (User ID: 6013011895)
 2023-06-19 11:10:27 - INFO - Stop polling...
 2023-06-19 11:10:27 - WARNING - Goodbye!
+2023-06-19 11:14:44 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-06-19 11:14:44 - INFO - Added job "job" to job store "default"
+2023-06-19 11:14:44 - INFO - Scheduler started
+2023-06-19 11:14:47 - INFO - Running job "job (trigger: interval[0:00:03], next run at: 2023-06-19 11:14:50 EEST)" (scheduled at 2023-06-19 11:14:47.908335+03:00)
+2023-06-19 11:14:47 - INFO - Job "job (trigger: interval[0:00:03], next run at: 2023-06-19 11:14:50 EEST)" executed successfully
+2023-06-19 11:14:50 - INFO - Running job "job (trigger: interval[0:00:03], next run at: 2023-06-19 11:14:53 EEST)" (scheduled at 2023-06-19 11:14:50.908335+03:00)
+2023-06-19 11:14:50 - INFO - Job "job (trigger: interval[0:00:03], next run at: 2023-06-19 11:14:53 EEST)" executed successfully
+2023-06-19 11:14:53 - INFO - Running job "job (trigger: interval[0:00:03], next run at: 2023-06-19 11:14:56 EEST)" (scheduled at 2023-06-19 11:14:53.908335+03:00)
+2023-06-19 11:14:53 - INFO - Job "job (trigger: interval[0:00:03], next run at: 2023-06-19 11:14:56 EEST)" executed successfully
+2023-06-19 11:14:56 - INFO - Running job "job (trigger: interval[0:00:03], next run at: 2023-06-19 11:14:59 EEST)" (scheduled at 2023-06-19 11:14:56.908335+03:00)
+2023-06-19 11:14:56 - INFO - Job "job (trigger: interval[0:00:03], next run at: 2023-06-19 11:14:59 EEST)" executed successfully
+2023-06-19 11:16:08 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-06-19 11:16:08 - INFO - Added job "job" to job store "default"
+2023-06-19 11:16:08 - INFO - Scheduler started
+2023-06-19 11:16:11 - INFO - Running job "job (trigger: interval[0:00:03], next run at: 2023-06-19 11:16:14 EEST)" (scheduled at 2023-06-19 11:16:11.709223+03:00)
+2023-06-19 11:16:12 - INFO - Sent daily joke to user 6013011895
+2023-06-19 11:16:12 - INFO - Job "job (trigger: interval[0:00:03], next run at: 2023-06-19 11:16:14 EEST)" executed successfully
+2023-06-19 11:16:14 - INFO - Running job "job (trigger: interval[0:00:03], next run at: 2023-06-19 11:16:17 EEST)" (scheduled at 2023-06-19 11:16:14.709223+03:00)
+2023-06-19 11:16:14 - INFO - Sent daily joke to user 6013011895
+2023-06-19 11:16:15 - INFO - Job "job (trigger: interval[0:00:03], next run at: 2023-06-19 11:16:17 EEST)" executed successfully
+2023-06-19 11:16:17 - INFO - Running job "job (trigger: interval[0:00:03], next run at: 2023-06-19 11:16:20 EEST)" (scheduled at 2023-06-19 11:16:17.709223+03:00)
+2023-06-19 11:16:17 - INFO - Sent daily joke to user 6013011895
+2023-06-19 11:16:18 - INFO - Job "job (trigger: interval[0:00:03], next run at: 2023-06-19 11:16:20 EEST)" executed successfully
+2023-06-19 11:16:20 - INFO - Running job "job (trigger: interval[0:00:03], next run at: 2023-06-19 11:16:23 EEST)" (scheduled at 2023-06-19 11:16:20.709223+03:00)
+2023-06-19 11:16:21 - INFO - Sent daily joke to user 6013011895
+2023-06-19 11:16:21 - INFO - Job "job (trigger: interval[0:00:03], next run at: 2023-06-19 11:16:23 EEST)" executed successfully
+2023-06-19 11:16:23 - INFO - Running job "job (trigger: interval[0:00:03], next run at: 2023-06-19 11:16:26 EEST)" (scheduled at 2023-06-19 11:16:23.709223+03:00)
+2023-06-19 11:16:23 - INFO - Sent daily joke to user 6013011895
+2023-06-19 11:16:24 - INFO - Job "job (trigger: interval[0:00:03], next run at: 2023-06-19 11:16:26 EEST)" executed successfully
+2023-06-19 11:18:12 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-06-19 11:18:12 - INFO - Added job "job" to job store "default"
+2023-06-19 11:18:12 - INFO - Scheduler started
+2023-06-19 11:18:15 - INFO - Running job "job (trigger: interval[0:00:03], next run at: 2023-06-19 11:18:18 EEST)" (scheduled at 2023-06-19 11:18:15.325737+03:00)
+2023-06-19 11:18:15 - INFO - Job "job (trigger: interval[0:00:03], next run at: 2023-06-19 11:18:18 EEST)" executed successfully
+2023-06-19 11:18:18 - INFO - Running job "job (trigger: interval[0:00:03], next run at: 2023-06-19 11:18:21 EEST)" (scheduled at 2023-06-19 11:18:18.325737+03:00)
+2023-06-19 11:18:18 - INFO - Job "job (trigger: interval[0:00:03], next run at: 2023-06-19 11:18:21 EEST)" executed successfully
+2023-06-19 11:28:07 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-06-19 11:28:07 - INFO - Added job "job" to job store "default"
+2023-06-19 11:28:07 - INFO - Scheduler started
+2023-06-19 11:28:45 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-06-19 11:28:45 - INFO - Added job "job" to job store "default"
+2023-06-19 11:28:45 - INFO - Scheduler started
+2023-06-19 11:28:45 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.50.64:8080
+2023-06-19 11:28:45 - INFO - [33mPress CTRL+C to quit[0m
+2023-06-19 11:28:45 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-06-19 11:28:45 - WARNING - Updates were skipped successfully.
+2023-06-19 11:28:45 - INFO - Start polling.
+2023-06-19 11:28:54 - INFO - User action: Liked joke (User ID: 6013011895, Joke ID: 5686)
+2023-06-19 11:30:00 - INFO - Running job "job (trigger: cron[hour='11', minute='30'], next run at: 2023-06-20 11:30:00 EEST)" (scheduled at 2023-06-19 11:30:00+03:00)
+2023-06-19 11:30:00 - INFO - Job "job (trigger: cron[hour='11', minute='30'], next run at: 2023-06-20 11:30:00 EEST)" executed successfully
+2023-06-19 11:31:06 - INFO - Stop polling...
+2023-06-19 11:31:06 - WARNING - Goodbye!
+2023-06-19 11:31:11 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-06-19 11:31:11 - INFO - Added job "job" to job store "default"
+2023-06-19 11:31:11 - INFO - Scheduler started
+2023-06-19 11:31:11 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.50.64:8080
+2023-06-19 11:31:11 - INFO - [33mPress CTRL+C to quit[0m
+2023-06-19 11:31:11 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-06-19 11:31:11 - WARNING - Updates were skipped successfully.
+2023-06-19 11:31:11 - INFO - Start polling.
+2023-06-19 11:32:00 - INFO - Running job "job (trigger: cron[hour='11', minute='32'], next run at: 2023-06-20 11:32:00 EEST)" (scheduled at 2023-06-19 11:32:00+03:00)
+2023-06-19 11:32:00 - INFO - Sent daily joke to user 6013011895
+2023-06-19 11:32:00 - INFO - Job "job (trigger: cron[hour='11', minute='32'], next run at: 2023-06-20 11:32:00 EEST)" executed successfully
+2023-06-19 11:32:05 - INFO - Stop polling...
+2023-06-19 11:32:05 - WARNING - Goodbye!
