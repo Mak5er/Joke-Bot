@@ -1,9 +1,10 @@
 import logging
+import keep_alive
+import asyncio
 
 from aiogram import Bot, Dispatcher, executor
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
-import keep_alive
 from config import Config
 from log.logger import custom_formatter
 
@@ -20,8 +21,14 @@ handler.setFormatter(custom_formatter)
 
 logger.addHandler(handler)
 
+
+@dp.errors_handler()
+async def handle_errors(update, exception):
+    logging.error(f"Update: {update}\nException: {exception}")
+
+
 if __name__ == "__main__":
-    from handlers import *
+    from handlers import dp, scheduler
 
     scheduler.start()
 

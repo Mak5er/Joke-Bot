@@ -7,10 +7,11 @@ class DataBase:
         self.connect = sqlite3.connect(db_file)
         self.cursor = self.connect.cursor()
 
-    async def add_users(self, user_id, chat_type):
+    async def add_users(self, user_id, user_name, user_username, chat_type):
         with self.connect:
-            return self.cursor.execute("""INSERT OR IGNORE INTO users (user_id, chat_type) VALUES (?, ?)""",
-                                       (user_id, chat_type))
+            return self.cursor.execute(
+                """INSERT OR IGNORE INTO users (user_id, user_name, user_username, chat_type) VALUES (?, ?, ?, ?)""",
+                (user_id, user_name, user_username, chat_type))
 
     async def user_count(self):
         with self.connect:

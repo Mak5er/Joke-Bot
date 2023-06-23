@@ -4,6 +4,7 @@ import logging
 import os
 import time
 
+import openai as openai
 from aiogram import types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher import FSMContext
@@ -18,6 +19,8 @@ from log.logger import custom_formatter
 from main import dp, bot
 from messages import bot_messages
 from services import DataBase
+
+OPENAI_TOKEN = Config.token_openai
 
 storage = MemoryStorage()
 
@@ -41,6 +44,8 @@ last_help_command = {}
 
 last_admin_command = {}
 
+openai.api_key = OPENAI_TOKEN
+
 
 @dp.message_handler(content_types=types.ContentTypes.NEW_CHAT_MEMBERS)
 async def bot_added_to_chat(event: ChatMemberUpdated):
@@ -48,8 +53,10 @@ async def bot_added_to_chat(event: ChatMemberUpdated):
         chat_info = await bot.get_chat(event.chat.id)
         chat_type = "public"
         user_id = event.chat.id
+        user_name = None
+        user_username = None
 
-        await db.add_users(user_id, chat_type)
+        await db.add_users(user_id, user_name, user_username, chat_type)
 
         if chat_info.permissions.can_send_messages:
             await bot.send_message(
@@ -65,14 +72,14 @@ async def bot_added_to_chat(event: ChatMemberUpdated):
 @dp.message_handler(commands=['start'])
 async def send_welcome(message: types.Message):
     user_id = message.from_user.id
-    name = message.from_user.full_name
-    chat_type = "private"
+    user_name = message.from_user.full_name
+    user_username = message.from_user.username
 
-    await db.add_users(user_id, chat_type)
+    await db.add_users(user_id, user_name, user_username, "private")
 
     logging.info(f"User action: /start (User ID: {user_id})")
 
-    await message.reply(bot_messages.welcome_message(name))
+    await message.reply(bot_messages.welcome_message(user_name))
 
 
 @dp.message_handler(commands=['admin'])
@@ -193,6 +200,29 @@ async def handle_joke(message: types.Message):
                         reply_markup=inline_keyboards.random_keyboard)
 
 
+@dp.message_handler(commands=['ai_joke'])
+async def handle_joke(message: types.Message):
+    user_id = message.from_user.id
+    current_time = time.time()
+
+    if user_id in last_joke_command:
+        last_command_time = last_joke_command[user_id]
+        elapsed_time = current_time - last_command_time
+
+        if elapsed_time < 3:
+            await message.reply(
+                "Ви використовуєте команду /ai_joke занадто часто. Будь ласка, зачекайте."
+            )
+            return
+
+    last_joke_command[user_id] = current_time
+
+    logging.info(f"User action: /ai_joke (User ID: {user_id})")
+
+    await message.reply("Натисни на кнопку, щоб згенерувати анекдот.",
+                        reply_markup=inline_keyboards.ai_keyboard)
+
+
 @dp.message_handler(commands=['dellog'])
 async def del_log(message: types.Message):
     user_id = message.from_user.id
@@ -200,6 +230,20 @@ async def del_log(message: types.Message):
         logging.shutdown()
         open('log/bot_log.log', 'w').close()
         await message.reply("Лог видалено, починаю записувати новий.")
+
+
+@dp.message_handler(commands=['downloaddb'])
+async def download_db(message: types.Message):
+    user_id = message.from_user.id
+    if user_id == Config.admin_id:
+        db_file = 'services/jokes.db'
+        if os.path.exists(db_file):
+            with open(db_file, 'rb') as file:
+                await bot.send_document(message.chat.id, file)
+                logging.info(
+                    f"User action: Downloaded db (User ID: {user_id})")
+        else:
+            await bot.send_message(message.chat.id, 'Db file not found.')
 
 
 @dp.callback_query_handler(lambda call: call.data == 'download_log')
@@ -229,11 +273,13 @@ async def send_to_all_callback(call: types.CallbackQuery):
 
 @dp.message_handler(state="send_to_all_message")
 async def send_to_all_message(message: types.Message, state: FSMContext):
+    sender_id = message.from_user.id
     if message.text == "↩️Скасувати":
         await bot.send_message(message.chat.id,
                                'Відправлення скасовано!',
                                reply_markup=types.ReplyKeyboardRemove())
         await state.finish()
+        return
     else:
         await dp.bot.send_chat_action(message.chat.id, "typing")
 
@@ -241,15 +287,19 @@ async def send_to_all_message(message: types.Message, state: FSMContext):
 
         for user in users:
             try:
-                await bot.send_message(user[0], message.text)
+                await bot.copy_message(chat_id=user[0],
+                                       from_chat_id=sender_id,
+                                       message_id=message.message_id,
+                                       parse_mode="Markdown")
                 logging.info(f"Sent message to user {user[0]}: {message.text}")
             except Exception as e:
                 logging.error(
                     f"Error sending message to user {user[0]}: {str(e)}")
                 continue
         await bot.send_message(chat_id=message.chat.id,
-                               text="Розсилку завершено!")
+                               text="Розсилку завершено!", reply_markup=types.ReplyKeyboardRemove())
         await state.finish()
+        return
 
 
 @dp.callback_query_handler(lambda call: call.data == 'add_joke')
@@ -271,7 +321,8 @@ async def save_joke(message: types.Message, state: FSMContext):
         await bot.send_message(chat_id=message.chat.id,
                                text='Додавання скасовано!',
                                reply_markup=types.ReplyKeyboardRemove())
-        pass
+        await state.finish()
+        return
     else:
         await db.add_joke(joke_text)
 
@@ -282,6 +333,40 @@ async def save_joke(message: types.Message, state: FSMContext):
         logging.info(
             f"User action: Add joke (User ID: {user_id}), (Joke text: {message.text})"
         )
+
+
+@dp.callback_query_handler(lambda call: call.data == 'ai_joke')
+async def ai_joke_handler(call: types.CallbackQuery):
+    await bot.send_message(chat_id=call.message.chat.id, text="На яку тему або про що має бути анекдот?")
+    await dp.current_state().set_state("ai_joke")
+
+
+@dp.message_handler(state="ai_joke")
+async def ai_joke(message: types.Message, state: FSMContext):
+    clock = await bot.send_message(chat_id=message.chat.id, text="⏳")
+
+    theme = message.text
+    response = openai.Completion.create(
+        model="text-davinci-003",
+        prompt=f"привіт, згенеруй для мене анекдот на тему {theme}, відповідь лише українською мовою, відповідь має бути такою Анекдот для вас: і згенерований анекдот",
+        max_tokens=512,
+        temperature=0.7,
+        n=1,
+        stop=None,
+    )
+    generated_joke = response.choices[0].text.strip()
+
+    await bot.edit_message_text(text=f"{generated_joke}", chat_id=message.chat.id, message_id=clock.message_id)
+
+    await state.finish()
+    user_id = message.from_user.id
+    logging.info(f"User action: Ai joke (User ID: {user_id})")
+
+    await bot.delete_message(chat_id=message.chat.id,
+                             message_id=message.message_id)
+    await bot.send_message(chat_id=message.chat.id,
+                           text="Натисни на кнопку, щоб згенерувати анекдот.",
+                           reply_markup=inline_keyboards.ai_keyboard)
 
 
 @dp.callback_query_handler(ChatTypeFilter(types.ChatType.PRIVATE),
@@ -384,8 +469,7 @@ async def send_joke_group(call):
 @dp.callback_query_handler(lambda call: call.data == 'daily_joke')
 async def send_daily_joke(call: types.CallbackQuery):
     users = await db.get_private_users()
-    await bot.send_message(chat_id=Config.admin_id,
-                           text="Починаю розсилку...")
+    await bot.send_message(chat_id=Config.admin_id, text="Починаю розсилку...")
     for user in users:
         chat_id = user[0]
         try:
@@ -417,12 +501,11 @@ async def send_daily_joke(call: types.CallbackQuery):
 scheduler = AsyncIOScheduler()
 
 
-@scheduler.scheduled_job(CronTrigger(hour=15))
+@scheduler.scheduled_job(CronTrigger(hour=9))
 async def job():
     print(">>>>", datetime.datetime.now())
     users = await db.get_private_users()
-    await bot.send_message(chat_id=Config.admin_id,
-                           text="Починаю розсилку...")
+    await bot.send_message(chat_id=Config.admin_id, text="Починаю розсилку...")
     for user in users:
         chat_id = user[0]
         try:
@@ -447,8 +530,7 @@ async def job():
             logging.error(f"Error sending message to user {chat_id}: {str(e)}")
             continue
 
-    await bot.send_message(chat_id=Config.admin_id,
-                           text="Розсилку завершено!")
+    await bot.send_message(chat_id=Config.admin_id, text="Розсилку завершено!")
 
 
 @dp.callback_query_handler(lambda call: call.data.startswith('seen_'))
@@ -493,8 +575,6 @@ async def seen_button_handling(call: types.CallbackQuery):
 async def like_joke(call: types.CallbackQuery):
     joke_id = int(call.data.split('_')[1])
     user_id = call.from_user.id
-
-    await dp.bot.send_chat_action(call.message.chat.id, "typing")
 
     await db.like_joke(joke_id)
 

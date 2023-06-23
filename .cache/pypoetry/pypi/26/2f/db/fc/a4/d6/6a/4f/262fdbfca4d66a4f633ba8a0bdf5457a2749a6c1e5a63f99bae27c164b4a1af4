@@ -1,0 +1,1 @@
+9999999999{"name": "magic-filter", "version": "1.0.9", "summary": "This package provides magic filter based on dynamic attribute getter", "platform": null, "requires_dist": null, "requires_python": ">=3.7,<4.0", "files": [], "_cache_version": "1.0.0"}
