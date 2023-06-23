@@ -4,7 +4,6 @@ import logging
 import os
 import time
 
-import openai as openai
 from aiogram import types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher import FSMContext
@@ -19,8 +18,6 @@ from log.logger import custom_formatter
 from main import dp, bot
 from messages import bot_messages
 from services import DataBase
-
-OPENAI_TOKEN = Config.token_openai
 
 storage = MemoryStorage()
 
@@ -43,8 +40,6 @@ last_info_command = {}
 last_help_command = {}
 
 last_admin_command = {}
-
-openai.api_key = OPENAI_TOKEN
 
 
 @dp.message_handler(content_types=types.ContentTypes.NEW_CHAT_MEMBERS)
@@ -200,30 +195,7 @@ async def handle_joke(message: types.Message):
                         reply_markup=inline_keyboards.random_keyboard)
 
 
-@dp.message_handler(commands=['ai_joke'])
-async def handle_joke(message: types.Message):
-    user_id = message.from_user.id
-    current_time = time.time()
-
-    if user_id in last_joke_command:
-        last_command_time = last_joke_command[user_id]
-        elapsed_time = current_time - last_command_time
-
-        if elapsed_time < 3:
-            await message.reply(
-                "Ви використовуєте команду /ai_joke занадто часто. Будь ласка, зачекайте."
-            )
-            return
-
-    last_joke_command[user_id] = current_time
-
-    logging.info(f"User action: /ai_joke (User ID: {user_id})")
-
-    await message.reply("Натисни на кнопку, щоб згенерувати анекдот.",
-                        reply_markup=inline_keyboards.ai_keyboard)
-
-
-@dp.message_handler(commands=['dellog'])
+@dp.message_handler(commands=['del_log'])
 async def del_log(message: types.Message):
     user_id = message.from_user.id
     if user_id == Config.admin_id:
@@ -232,7 +204,7 @@ async def del_log(message: types.Message):
         await message.reply("Лог видалено, починаю записувати новий.")
 
 
-@dp.message_handler(commands=['downloaddb'])
+@dp.message_handler(commands=['download_db'])
 async def download_db(message: types.Message):
     user_id = message.from_user.id
     if user_id == Config.admin_id:
@@ -297,7 +269,7 @@ async def send_to_all_message(message: types.Message, state: FSMContext):
                     f"Error sending message to user {user[0]}: {str(e)}")
                 continue
         await bot.send_message(chat_id=message.chat.id,
-                               text="Розсилку завершено!", reply_markup=types.ReplyKeyboardRemove())
+                               text=bot_messages.finish_mailing(), reply_markup=types.ReplyKeyboardRemove())
         await state.finish()
         return
 
@@ -333,40 +305,6 @@ async def save_joke(message: types.Message, state: FSMContext):
         logging.info(
             f"User action: Add joke (User ID: {user_id}), (Joke text: {message.text})"
         )
-
-
-@dp.callback_query_handler(lambda call: call.data == 'ai_joke')
-async def ai_joke_handler(call: types.CallbackQuery):
-    await bot.send_message(chat_id=call.message.chat.id, text="На яку тему або про що має бути анекдот?")
-    await dp.current_state().set_state("ai_joke")
-
-
-@dp.message_handler(state="ai_joke")
-async def ai_joke(message: types.Message, state: FSMContext):
-    clock = await bot.send_message(chat_id=message.chat.id, text="⏳")
-
-    theme = message.text
-    response = openai.Completion.create(
-        model="text-davinci-003",
-        prompt=f"привіт, згенеруй для мене анекдот на тему {theme}, відповідь лише українською мовою, відповідь має бути такою Анекдот для вас: і згенерований анекдот",
-        max_tokens=512,
-        temperature=0.7,
-        n=1,
-        stop=None,
-    )
-    generated_joke = response.choices[0].text.strip()
-
-    await bot.edit_message_text(text=f"{generated_joke}", chat_id=message.chat.id, message_id=clock.message_id)
-
-    await state.finish()
-    user_id = message.from_user.id
-    logging.info(f"User action: Ai joke (User ID: {user_id})")
-
-    await bot.delete_message(chat_id=message.chat.id,
-                             message_id=message.message_id)
-    await bot.send_message(chat_id=message.chat.id,
-                           text="Натисни на кнопку, щоб згенерувати анекдот.",
-                           reply_markup=inline_keyboards.ai_keyboard)
 
 
 @dp.callback_query_handler(ChatTypeFilter(types.ChatType.PRIVATE),
@@ -449,8 +387,6 @@ async def send_joke_group(call):
         joke = result[0]
         joke_id = joke[0]
 
-        await call.answer("Ви проголосували за анекдот!")
-
         await bot.send_message(
             chat_id,
             joke[1],
@@ -469,7 +405,7 @@ async def send_joke_group(call):
 @dp.callback_query_handler(lambda call: call.data == 'daily_joke')
 async def send_daily_joke(call: types.CallbackQuery):
     users = await db.get_private_users()
-    await bot.send_message(chat_id=Config.admin_id, text="Починаю розсилку...")
+    await bot.send_message(chat_id=Config.admin_id, text=bot_messages.start_mailing())
     for user in users:
         chat_id = user[0]
         try:
@@ -495,7 +431,7 @@ async def send_daily_joke(call: types.CallbackQuery):
             continue
 
     await bot.send_message(chat_id=call.message.chat.id,
-                           text="Розсилку завершено!")
+                           text=bot_messages.finish_mailing())
 
 
 scheduler = AsyncIOScheduler()
@@ -505,7 +441,7 @@ scheduler = AsyncIOScheduler()
 async def job():
     print(">>>>", datetime.datetime.now())
     users = await db.get_private_users()
-    await bot.send_message(chat_id=Config.admin_id, text="Починаю розсилку...")
+    await bot.send_message(chat_id=Config.admin_id, text=bot_messages.start_mailing())
     for user in users:
         chat_id = user[0]
         try:
@@ -530,7 +466,7 @@ async def job():
             logging.error(f"Error sending message to user {chat_id}: {str(e)}")
             continue
 
-    await bot.send_message(chat_id=Config.admin_id, text="Розсилку завершено!")
+    await bot.send_message(chat_id=Config.admin_id, text=bot_messages.finish_mailing())
 
 
 @dp.callback_query_handler(lambda call: call.data.startswith('seen_'))
@@ -541,14 +477,12 @@ async def seen_handling(call: types.CallbackQuery):
     existing_row = await db.check_seen_joke(joke_id, user_id)
 
     if existing_row:
-        await call.answer("Ви вже відмічали цей анекдот як прочитаний!")
+        await call.answer(bot_messages.already_seen_joke())
     else:
         await db.seen_joke(joke_id, user_id)
-        await call.answer("Ви відмітили цей анекдот як прочитаний!")
+        await call.answer(bot_messages.seen_joke())
 
     joke_seens = await db.joke_seens(joke_id)
-
-    await call.answer("Ви прочитали анекдот!")
 
     logging.info(
         f"User action: Marked joke as seen (User ID: {user_id}, Joke ID: {joke_id})"
@@ -580,7 +514,7 @@ async def like_joke(call: types.CallbackQuery):
 
     joke_rate = await db.joke_rate(joke_id)
 
-    await call.answer("Ви проголосували за анекдот!")
+    await call.answer(bot_messages.liked_joke())
 
     await call.message.edit_reply_markup(
         reply_markup=inline_keyboards.return_rating_keyboard(joke_rate))
@@ -601,7 +535,7 @@ async def dislike_joke(call: types.CallbackQuery):
 
     joke_rate = await db.joke_rate(joke_id)
 
-    await call.answer("Ви проголосували проти анекдота!")
+    await call.answer(bot_messages.disliked_joke())
     await call.message.edit_reply_markup(
         reply_markup=inline_keyboards.return_rating_keyboard(joke_rate))
     await asyncio.sleep(5)
@@ -641,7 +575,7 @@ async def rate_joke_group(call: types.CallbackQuery):
 
     joke_rate = await db.joke_rate(joke_id)
 
-    await bot.answer_callback_query(call.id, f"📊Рейтинг анекдота: {joke_rate}")
+    await bot.answer_callback_query(call.id, bot_messages.joke_rating(joke_rate))
 
     await bot.edit_message_reply_markup(
         call.message.chat.id,
@@ -661,7 +595,7 @@ async def joke_rating(call: types.CallbackQuery):
 
     joke_rate = await db.joke_rate(joke_id)
 
-    await bot.answer_callback_query(call.id, f"📊Рейтинг анекдота: {joke_rate}")
+    await bot.answer_callback_query(call.id, bot_messages.joke_rating(joke_rate))
 
 
 @dp.message_handler()
