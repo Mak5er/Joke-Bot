@@ -2,7 +2,6 @@ import asyncio
 import datetime
 import logging
 import os
-import time
 
 from aiogram import types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
@@ -15,7 +14,7 @@ from apscheduler.triggers.cron import CronTrigger
 from config import Config
 from keyboards import inline_keyboards
 from log.logger import custom_formatter
-from main import dp, bot
+from main import dp, bot, rate_limit
 from messages import bot_messages
 from services import DataBase
 
@@ -30,16 +29,6 @@ handler = logging.FileHandler("log/bot_log.log")
 handler.setFormatter(custom_formatter)
 
 logger.addHandler(handler)
-
-last_joke_button = {}
-
-last_joke_command = {}
-
-last_info_command = {}
-
-last_help_command = {}
-
-last_admin_command = {}
 
 
 @dp.message_handler(content_types=types.ContentTypes.NEW_CHAT_MEMBERS)
@@ -65,7 +54,10 @@ async def bot_added_to_chat(event: ChatMemberUpdated):
 
 
 @dp.message_handler(commands=['start'])
+@rate_limit(3)
 async def send_welcome(message: types.Message):
+    await dp.bot.send_chat_action(message.chat.id, "typing")
+
     user_id = message.from_user.id
     user_name = message.from_user.full_name
     user_username = message.from_user.username
@@ -78,22 +70,12 @@ async def send_welcome(message: types.Message):
 
 
 @dp.message_handler(commands=['admin'])
+@rate_limit(5)
 async def admin(message: types.Message):
+    await dp.bot.send_chat_action(message.chat.id, "typing")
+
     if message.chat.type == 'private':
         user_id = message.from_user.id
-        current_time = time.time()
-
-        if user_id in last_admin_command:
-            last_command_time = last_admin_command[user_id]
-            elapsed_time = current_time - last_command_time
-
-            if elapsed_time < 3:
-                await message.answer(
-                    "Ви використали команду /admin занадто часто. Будь ласка, зачекайте."
-                )
-                return
-
-        last_admin_command[user_id] = current_time
 
         logging.info(f"User action: /admin (User ID: {user_id})")
 
@@ -113,22 +95,11 @@ async def admin(message: types.Message):
 
 
 @dp.message_handler(commands=['info'])
+@rate_limit(3)
 async def info(message: types.Message):
+    await dp.bot.send_chat_action(message.chat.id, "typing")
+
     user_id = message.from_user.id
-
-    current_time = time.time()
-
-    if user_id in last_info_command:
-        last_command_time = last_info_command[user_id]
-        elapsed_time = current_time - last_command_time
-
-        if elapsed_time < 3:
-            await message.reply(
-                "Ви використали команду /info занадто часто. Будь ласка, зачекайте."
-            )
-            return
-
-    last_info_command[user_id] = current_time
 
     logging.info(f"User action: /info (User ID: {user_id})")
 
@@ -150,22 +121,11 @@ async def info(message: types.Message):
 
 
 @dp.message_handler(commands=['help'])
+@rate_limit(3)
 async def send_help(message: types.Message):
+    await dp.bot.send_chat_action(message.chat.id, "typing")
+
     user_id = message.from_user.id
-
-    current_time = time.time()
-
-    if user_id in last_help_command:
-        last_command_time = last_help_command[user_id]
-        elapsed_time = current_time - last_command_time
-
-        if elapsed_time < 3:
-            await message.reply(
-                "Ви використали команду /help занадто часто. Будь ласка, зачекайте."
-            )
-            return
-
-    last_joke_command[user_id] = current_time
 
     logging.info(f"User action: /help (User ID: {user_id})")
 
@@ -173,21 +133,11 @@ async def send_help(message: types.Message):
 
 
 @dp.message_handler(commands=['joke'])
+@rate_limit(3)
 async def handle_joke(message: types.Message):
+    await dp.bot.send_chat_action(message.chat.id, "typing")
+
     user_id = message.from_user.id
-    current_time = time.time()
-
-    if user_id in last_joke_command:
-        last_command_time = last_joke_command[user_id]
-        elapsed_time = current_time - last_command_time
-
-        if elapsed_time < 3:
-            await message.reply(
-                "Ви використовуєте команду /joke занадто часто. Будь ласка, зачекайте."
-            )
-            return
-
-    last_joke_command[user_id] = current_time
 
     logging.info(f"User action: /joke (User ID: {user_id})")
 
@@ -196,7 +146,10 @@ async def handle_joke(message: types.Message):
 
 
 @dp.message_handler(commands=['del_log'])
+@rate_limit(10)
 async def del_log(message: types.Message):
+    await dp.bot.send_chat_action(message.chat.id, "typing")
+
     user_id = message.from_user.id
     if user_id == Config.admin_id:
         logging.shutdown()
@@ -205,7 +158,10 @@ async def del_log(message: types.Message):
 
 
 @dp.message_handler(commands=['download_db'])
+@rate_limit(10)
 async def download_db(message: types.Message):
+    await dp.bot.send_chat_action(message.chat.id, "typing")
+
     user_id = message.from_user.id
     if user_id == Config.admin_id:
         db_file = 'services/jokes.db'
@@ -220,6 +176,8 @@ async def download_db(message: types.Message):
 
 @dp.callback_query_handler(lambda call: call.data == 'download_log')
 async def download_log_handler(call: types.CallbackQuery):
+    await dp.bot.send_chat_action(call.message.chat.id, "typing")
+
     log_file = 'log/bot_log.log'
     user_id = call.from_user.id
 
@@ -312,18 +270,6 @@ async def save_joke(message: types.Message, state: FSMContext):
 async def send_joke_private(call):
     chat_id = call.message.chat.id
     user_id = call.from_user.id
-    current_time = time.time()
-
-    if user_id in last_joke_button:
-        last_button_time = last_joke_button[user_id]
-        elapsed_time = current_time - last_button_time
-
-        if elapsed_time < 3:
-            await bot.answer_callback_query(
-                call.id, "Ви натискаєте занадто часто. Зачекайте.")
-            return
-
-    last_joke_button[user_id] = current_time
 
     result = await db.get_joke(user_id)
 
@@ -331,7 +277,7 @@ async def send_joke_private(call):
 
     if not result:
         await bot.send_message(
-            chat_id, 'На жаль, всі анекдоти вже були надіслані вам.')
+            chat_id, bot_messages.all_send())
     else:
         joke = result[0]
 
@@ -352,7 +298,7 @@ async def send_joke_private(call):
     await bot.delete_message(chat_id=call.message.chat.id,
                              message_id=call.message.message_id)
     await bot.send_message(chat_id,
-                           text="Натисни на кнопку, щоб отримати анекдот.",
+                           text=bot_messages.prees_button(),
                            reply_markup=inline_keyboards.random_keyboard)
 
 
@@ -363,18 +309,6 @@ async def send_joke_private(call):
 async def send_joke_group(call):
     chat_id = call.message.chat.id
     user_id = call.from_user.id
-    current_time = time.time()
-
-    if user_id in last_joke_button:
-        last_button_time = last_joke_button[user_id]
-        elapsed_time = current_time - last_button_time
-
-        if elapsed_time < 3:
-            await bot.answer_callback_query(
-                call.id, "Ви натискаєте занадто часто. Зачекайте.")
-            return
-
-    last_joke_button[user_id] = current_time
 
     result = await db.get_joke(user_id)
 
@@ -382,7 +316,7 @@ async def send_joke_group(call):
 
     if not result:
         await bot.send_message(
-            chat_id, 'На жаль, всі анекдоти вже були надіслані вам.')
+            chat_id, bot_messages.all_send())
     else:
         joke = result[0]
         joke_id = joke[0]
@@ -398,7 +332,7 @@ async def send_joke_group(call):
     await bot.delete_message(chat_id=call.message.chat.id,
                              message_id=call.message.message_id)
     await bot.send_message(chat_id,
-                           text="Натисни на кнопку, щоб отримати анекдот.",
+                           text=bot_messages.prees_button(),
                            reply_markup=inline_keyboards.random_keyboard)
 
 
@@ -469,6 +403,7 @@ async def job():
     await bot.send_message(chat_id=Config.admin_id, text=bot_messages.finish_mailing())
 
 
+# noinspection PyArgumentList
 @dp.callback_query_handler(lambda call: call.data.startswith('seen_'))
 async def seen_handling(call: types.CallbackQuery):
     joke_id = int(call.data.split('_')[1])
@@ -502,11 +437,12 @@ async def seen_handling(call: types.CallbackQuery):
 
 @dp.callback_query_handler(lambda call: call.data.startswith('seeen_'))
 async def seen_button_handling(call: types.CallbackQuery):
-    await call.answer("Ви прочитали анекдот!")
+    await call.answer(bot_messages.already_seen_joke())
 
 
 @dp.callback_query_handler(lambda call: call.data.startswith('like_'))
 async def like_joke(call: types.CallbackQuery):
+    # noinspection PyArgumentList
     joke_id = int(call.data.split('_')[1])
     user_id = call.from_user.id
 
@@ -526,6 +462,7 @@ async def like_joke(call: types.CallbackQuery):
         f"User action: Liked joke (User ID: {user_id}, Joke ID: {joke_id})")
 
 
+# noinspection PyArgumentList
 @dp.callback_query_handler(lambda call: call.data.startswith('dislike_'))
 async def dislike_joke(call: types.CallbackQuery):
     joke_id = int(call.data.split('_')[1])
@@ -546,6 +483,7 @@ async def dislike_joke(call: types.CallbackQuery):
         f"User action: Disliked joke (User ID: {user_id}, Joke ID: {joke_id})")
 
 
+# noinspection PyArgumentList
 @dp.callback_query_handler(ChatTypeFilter(types.ChatType.PRIVATE),
                            lambda call: call.data.startswith('rate_'))
 async def rate_joke_private(call: types.CallbackQuery):

@@ -84,3 +84,9 @@ def finish_mailing():
 
 def start_mailing():
     return "Починаю розсилку..."
+
+def prees_button():
+    return "Натисни на кнопку, щоб отримати анекдот."
+
+def all_send():
+    return 'На жаль, всі анекдоти вже були надіслані вам.'
