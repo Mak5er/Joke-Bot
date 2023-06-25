@@ -1,9 +1,11 @@
 import os
-from dataclasses import dataclass
+from pathlib import Path
 
 
-@dataclass
-class Config:
+token = str(os.environ['token'])
+admin_id = int(os.environ['admin_ids'])
 
-    token: str = os.environ['token']
-    admin_id: int = int(os.environ['admin_ids'])
+I18N_DOMAIN = 'jokebot'
+BASE_DIR = Path(__file__).parent
+LOCALES_DIR = BASE_DIR / 'locales'
+
