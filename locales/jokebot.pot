@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-06-25 14:26+0300\n"
+"POT-Creation-Date: 2023-06-25 16:27+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "I'm launched!"
 msgstr ""
 
-#: handlers/admin.py:95 handlers/admin.py:132 keyboards/inline_keyboards.py:26
+#: handlers/admin.py:95 handlers/admin.py:132 keyboards/inline_keyboards.py:25
 msgid "↩️Cancel"
 msgstr ""
 
@@ -53,21 +53,21 @@ msgstr ""
 msgid "🔀Random joke"
 msgstr ""
 
-#: keyboards/inline_keyboards.py:45 keyboards/inline_keyboards.py:81
+#: keyboards/inline_keyboards.py:44 keyboards/inline_keyboards.py:80
 #: messages/bot_messages.py:67
 msgid "📊Rating: {joke_rate}"
 msgstr ""
 
-#: keyboards/inline_keyboards.py:47 keyboards/inline_keyboards.py:71
+#: keyboards/inline_keyboards.py:46 keyboards/inline_keyboards.py:70
 msgid "👀Viewed"
 msgstr ""
 
-#: keyboards/inline_keyboards.py:58 keyboards/inline_keyboards.py:70
-#: keyboards/inline_keyboards.py:91
+#: keyboards/inline_keyboards.py:57 keyboards/inline_keyboards.py:69
+#: keyboards/inline_keyboards.py:90
 msgid "📊Joke rate"
 msgstr ""
 
-#: keyboards/inline_keyboards.py:60
+#: keyboards/inline_keyboards.py:59
 msgid "👀Viewed by: {joke_seens}"
 msgstr ""
 
@@ -214,7 +214,7 @@ msgstr ""
 #: messages/bot_messages.py:135
 msgid ""
 "Hi! Thank you for adding me to *'{chat_title}'* \n"
-"    For correct operation, please grant me administrator rights!"
+"For correct operation, please grant me administrator rights!"
 msgstr ""
 
 #: messages/bot_messages.py:140

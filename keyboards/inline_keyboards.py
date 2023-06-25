@@ -2,29 +2,38 @@ from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeybo
 
 from main import _
 
-admin_keyboard = InlineKeyboardMarkup()
-add_joke_button = InlineKeyboardButton(text=_('📝Add a joke'),
-                                       callback_data='add_joke')
-send_to_all_button = InlineKeyboardButton(
-    text=_('💬Mailing'), callback_data='send_to_all')
-daily_joke_button = InlineKeyboardButton(text=_("🎭Joke of the day"),
-                                         callback_data='daily_joke')
-download_log_button = InlineKeyboardButton(text=_("📄View log"),
-                                           callback_data='download_log')
 
-admin_keyboard.row(add_joke_button)
-admin_keyboard.row(send_to_all_button)
-admin_keyboard.row(daily_joke_button)
-admin_keyboard.row(download_log_button)
+def admin_keyboard():
+    admin_keyboard = InlineKeyboardMarkup()
+    add_joke_button = InlineKeyboardButton(text=_('📝Add a joke'),
+                                           callback_data='add_joke')
+    send_to_all_button = InlineKeyboardButton(
+        text=_('💬Mailing'), callback_data='send_to_all')
+    daily_joke_button = InlineKeyboardButton(text=_("🎭Joke of the day"),
+                                             callback_data='daily_joke')
+    download_log_button = InlineKeyboardButton(text=_("📄View log"),
+                                               callback_data='download_log')
 
-random_button = InlineKeyboardButton(_('🔀Random joke'),
-                                     callback_data="random_joke")
-random_keyboard = InlineKeyboardMarkup(row_width=2)
-random_keyboard.add(random_button)
+    admin_keyboard.row(add_joke_button)
+    admin_keyboard.row(send_to_all_button)
+    admin_keyboard.row(daily_joke_button)
+    admin_keyboard.row(download_log_button)
+    return admin_keyboard
 
-cancel_keyboard = ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-cancel = KeyboardButton(_("↩️Cancel"))
-cancel_keyboard.add(cancel)
+
+def random_keyboard():
+    random_button = InlineKeyboardButton(_('🔀Random joke'), callback_data="random_joke")
+    random_keyboard = InlineKeyboardMarkup(row_width=2)
+    random_keyboard.add(random_button)
+    return random_keyboard
+
+
+def cancel_keyboard():
+    cancel_keyboard = ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
+    cancel = KeyboardButton(_("↩️Cancel"))
+    cancel_keyboard.add(cancel)
+    return cancel_keyboard
+
 
 lang_keyboard = InlineKeyboardMarkup()
 lang_keyboard.add(InlineKeyboardButton(text="Українська🇺🇦", callback_data="lang_uk"),

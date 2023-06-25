@@ -43,7 +43,7 @@ async def admin(message: types.Message):
 
         await message.answer(bot_messages.admin_panel(
             user_count, joke_count, sent_count),
-            reply_markup=inline_keyboards.admin_keyboard)
+            reply_markup=inline_keyboards.admin_keyboard())
     else:
         await message.answer(bot_messages.not_groups())
 
@@ -85,7 +85,7 @@ async def download_log_handler(call: types.CallbackQuery):
 async def send_to_all_callback(call: types.CallbackQuery):
     await bot.send_message(chat_id=call.message.chat.id,
                            text=bot_messages.mailing_message(),
-                           reply_markup=inline_keyboards.cancel_keyboard)
+                           reply_markup=inline_keyboards.cancel_keyboard())
     await dp.current_state().set_state("send_to_all_message")
 
 
@@ -122,7 +122,7 @@ async def send_to_all_message(message: types.Message, state: FSMContext):
 async def add_joke_handler(call: types.CallbackQuery):
     await bot.send_message(chat_id=call.message.chat.id,
                            text=bot_messages.new_joke(),
-                           reply_markup=inline_keyboards.cancel_keyboard)
+                           reply_markup=inline_keyboards.cancel_keyboard())
     await dp.current_state().set_state("joke")
 
 

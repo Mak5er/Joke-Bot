@@ -133,7 +133,7 @@ async def handle_joke(message: types.Message):
     logging.info(f"User action: /joke (User ID: {user_id})")
 
     await message.reply(bot_messages.pres_button(),
-                        reply_markup=inline_keyboards.random_keyboard)
+                        reply_markup=inline_keyboards.random_keyboard())
 
 
 @dp.callback_query_handler(ChatTypeFilter(types.ChatType.PRIVATE),
@@ -173,7 +173,7 @@ async def send_joke_private(call):
                              message_id=call.message.message_id)
     await bot.send_message(chat_id,
                            text=bot_messages.pres_button(),
-                           reply_markup=inline_keyboards.random_keyboard)
+                           reply_markup=inline_keyboards.random_keyboard())
 
 
 @dp.callback_query_handler(
@@ -210,7 +210,7 @@ async def send_joke_group(call):
                              message_id=call.message.message_id)
     await bot.send_message(chat_id,
                            text=bot_messages.pres_button(),
-                           reply_markup=inline_keyboards.random_keyboard)
+                           reply_markup=inline_keyboards.random_keyboard())
 
 
 scheduler = AsyncIOScheduler()
