@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="868e1bc7-d2cf-4321-8444-628b09c4cc27" name="Changes" comment="ADD i18n and english, ukraine languages">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyboards/inline_keyboards.py" beforeDir="false" afterPath="$PROJECT_DIR$/keyboards/inline_keyboards.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.mo" beforeDir="false" afterPath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.po" beforeDir="false" afterPath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/jokebot.pot" beforeDir="false" afterPath="$PROJECT_DIR$/locales/jokebot.pot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.mo" beforeDir="false" afterPath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.po" beforeDir="false" afterPath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/bot_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/bot_log.log" afterDir="false" />
-    </list>
+    <list default="true" id="868e1bc7-d2cf-4321-8444-628b09c4cc27" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,20 +22,24 @@
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2RcTtVY5tu3XFsL95MCh8LUsjl2" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Python/joke_gen&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.file-colors&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Python/joke_gen",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.file-colors"
   }
-}</component>
+}]]></component>
   <component name="Push.Settings">
     <force-push-targets>
       <force-push-target remote-path="origin" branch="main" />
@@ -130,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687695736719</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="ADD i18n and english, ukraine languages">
+      <created>1688392132379</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1688392132379</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -150,6 +150,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="UPDATE main.py" />
     <MESSAGE value="ADD i18n and english, ukraine languages" />
     <option name="LAST_COMMIT_MESSAGE" value="ADD i18n and english, ukraine languages" />
