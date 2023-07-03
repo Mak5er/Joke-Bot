@@ -24,7 +24,7 @@ Statistics:
 📚Jokes read by you: *{joke_sent}*
 📬Total number of jokes read by everyone: *{sent_count}*
 
-To invite a friend, follow or send them this link - https://cutt.ly/qwr2PFSE
+To invite a friend, follow or send them this link - https://bit.ly/jokes-bot
 
 The bot is under development, so bugs and malfunctions are possible!
 For complaints and suggestions write - @mak5er""").format(username=username, joke_sent=joke_sent, joke_count=joke_count,
@@ -39,7 +39,7 @@ Statistics:
 📚Jokes read by you: *{joke_sent}*
 📬Total number of jokes read by everyone: *{sent_count}*
 
-To invite a friend, follow or send them this link - https://cutt.ly/qwr2PFSE
+To invite a friend, follow or send them this link - https://bit.ly/jokes-bot
 
 *Currently, the bot does not have the ability to rate jokes in a group, so if you want to rate jokes after reading them 
 read them in a personal chat with the bot.

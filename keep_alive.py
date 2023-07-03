@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask
 from threading import Thread
 
 app = Flask('')
@@ -6,7 +6,7 @@ app = Flask('')
 
 @app.route('/')
 def main():
-    return render_template('index.html')
+    return "Я ЖИВИИИИИИИИИИИИИЙ"
 
 
 def run():

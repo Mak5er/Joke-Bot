@@ -7,9 +7,12 @@ db = DataBase('services/jokes.db')
 
 
 async def get_lang(user_id):
-    language = await db.get_language(user_id)
-    if language:
-        return language
+    try:
+        language = await db.get_language(user_id)
+        if language:
+            return language
+    except:
+        pass
 
 
 class ACLMiddleware(I18nMiddleware):

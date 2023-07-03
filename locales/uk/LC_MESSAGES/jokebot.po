@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  sease\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-06-25 16:27+0300\n"
+"POT-Creation-Date: 2023-06-26 12:43+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -26,45 +26,45 @@ msgstr "Я зупинився!"
 msgid "I'm launched!"
 msgstr "Я запущений!"
 
-#: handlers/admin.py:95 handlers/admin.py:132 keyboards/inline_keyboards.py:25
+#: handlers/admin.py:95 handlers/admin.py:132 keyboards/inline_keyboards.py:33
 msgid "↩️Cancel"
 msgstr "↩️Скасувати"
 
-#: keyboards/inline_keyboards.py:6
+#: keyboards/inline_keyboards.py:8
 msgid "📝Add a joke"
 msgstr "📝Додати анекдот"
 
-#: keyboards/inline_keyboards.py:9
+#: keyboards/inline_keyboards.py:11
 msgid "💬Mailing"
 msgstr "💬Розсилка"
 
-#: keyboards/inline_keyboards.py:10
+#: keyboards/inline_keyboards.py:12
 msgid "🎭Joke of the day"
 msgstr "🎭Анекдот дня"
 
-#: keyboards/inline_keyboards.py:12
+#: keyboards/inline_keyboards.py:14
 msgid "📄View log"
 msgstr "📄Переглянути лог"
 
-#: keyboards/inline_keyboards.py:20
+#: keyboards/inline_keyboards.py:25
 msgid "🔀Random joke"
 msgstr "🔀Випадковий анекдот"
 
-#: keyboards/inline_keyboards.py:44 keyboards/inline_keyboards.py:80
+#: keyboards/inline_keyboards.py:54 keyboards/inline_keyboards.py:90
 #: messages/bot_messages.py:67
 msgid "📊Rating: {joke_rate}"
 msgstr "📊Оцінка: {joke_rate}"
 
-#: keyboards/inline_keyboards.py:46 keyboards/inline_keyboards.py:70
+#: keyboards/inline_keyboards.py:56 keyboards/inline_keyboards.py:80
 msgid "👀Viewed"
 msgstr "👀Переглянуло"
 
-#: keyboards/inline_keyboards.py:57 keyboards/inline_keyboards.py:69
-#: keyboards/inline_keyboards.py:90
+#: keyboards/inline_keyboards.py:67 keyboards/inline_keyboards.py:79
+#: keyboards/inline_keyboards.py:100
 msgid "📊Joke rate"
 msgstr "📊Оцінка анекдота"
 
-#: keyboards/inline_keyboards.py:59
+#: keyboards/inline_keyboards.py:69
 msgid "👀Viewed by: {joke_seens}"
 msgstr "👀Переглянуло: {joke_seens}"
 
@@ -102,7 +102,7 @@ msgid ""
 "📬Total number of jokes read by everyone: *{sent_count}*\n"
 "\n"
 "To invite a friend, follow or send them this link - "
-"https://cutt.ly/qwr2PFSE\n"
+"https://bit.ly/jokes-bot\n"
 "\n"
 "The bot is under development, so bugs and malfunctions are possible!\n"
 "For complaints and suggestions write - @mak5er"
@@ -117,7 +117,7 @@ msgstr ""
 "📬Анекдотів прочитано усіма: *{sent_count}*.\n"
 "\n"
 "Щоб запросити друга, перейдіть або надішліть йому це посилання - "
-"https://cutt.ly/qwr2PFSE\n"
+"https://bit.ly/jokes-bot\n"
 "\n"
 "Бот знаходиться на стадії розробки, тому можливі баги та несправності!\n"
 "Для скарг та пропозицій пишіть - @mak5er"
@@ -132,7 +132,7 @@ msgid ""
 "📬Total number of jokes read by everyone: *{sent_count}*\n"
 "\n"
 "To invite a friend, follow or send them this link - "
-"https://cutt.ly/qwr2PFSE\n"
+"https://bit.ly/jokes-bot\n"
 "\n"
 "*Currently, the bot does not have the ability to rate jokes in a group, "
 "so if you want to rate jokes after reading them \n"
@@ -149,7 +149,7 @@ msgstr ""
 "📬Анекдотів, прочитані усіма: *{sent_count}*\n"
 "\n"
 "Щоб запросити друга, перейдіть або надішліть йому це посилання - "
-"https://cutt.ly/qwr2PFSE\n"
+"https://bit.ly/jokes-bot\n"
 "\n"
 "*Наразі бот не має можливості оцінювати жарти в групі, тому якщо ви "
 "хочете оцінити жарти після їх прочитання \n"
@@ -227,14 +227,8 @@ msgid "Unfortunately, all the jokes have already been sent to you."
 msgstr "На жаль, всі анекдоти вже надіслані вам."
 
 #: messages/bot_messages.py:103
-msgid ""
-"*Joke of the day:*\n"
-"\n"
-"{joke_text}"
-msgstr ""
-"*Анекдот дня:*\n"
-"\n"
-"{joke_text}"
+msgid "*Joke of the day:*"
+msgstr "*Анекдот дня:*"
 
 #: messages/bot_messages.py:107
 msgid "*{name}*, I don't understand you! Type /help to get a list of commands!"

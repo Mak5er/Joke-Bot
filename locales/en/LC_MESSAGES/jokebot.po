@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-06-25 16:27+0300\n"
+"POT-Creation-Date: 2023-06-26 12:43+0300\n"
 "PO-Revision-Date: 2023-06-25 14:26+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -30,45 +30,45 @@ msgstr ""
 msgid "I'm launched!"
 msgstr ""
 
-#: handlers/admin.py:95 handlers/admin.py:132 keyboards/inline_keyboards.py:25
+#: handlers/admin.py:95 handlers/admin.py:132 keyboards/inline_keyboards.py:33
 msgid "↩️Cancel"
 msgstr ""
 
-#: keyboards/inline_keyboards.py:6
+#: keyboards/inline_keyboards.py:8
 msgid "📝Add a joke"
 msgstr ""
 
-#: keyboards/inline_keyboards.py:9
+#: keyboards/inline_keyboards.py:11
 msgid "💬Mailing"
 msgstr ""
 
-#: keyboards/inline_keyboards.py:10
+#: keyboards/inline_keyboards.py:12
 msgid "🎭Joke of the day"
 msgstr ""
 
-#: keyboards/inline_keyboards.py:12
+#: keyboards/inline_keyboards.py:14
 msgid "📄View log"
 msgstr ""
 
-#: keyboards/inline_keyboards.py:20
+#: keyboards/inline_keyboards.py:25
 msgid "🔀Random joke"
 msgstr ""
 
-#: keyboards/inline_keyboards.py:44 keyboards/inline_keyboards.py:80
+#: keyboards/inline_keyboards.py:54 keyboards/inline_keyboards.py:90
 #: messages/bot_messages.py:67
 msgid "📊Rating: {joke_rate}"
 msgstr ""
 
-#: keyboards/inline_keyboards.py:46 keyboards/inline_keyboards.py:70
+#: keyboards/inline_keyboards.py:56 keyboards/inline_keyboards.py:80
 msgid "👀Viewed"
 msgstr ""
 
-#: keyboards/inline_keyboards.py:57 keyboards/inline_keyboards.py:69
-#: keyboards/inline_keyboards.py:90
+#: keyboards/inline_keyboards.py:67 keyboards/inline_keyboards.py:79
+#: keyboards/inline_keyboards.py:100
 msgid "📊Joke rate"
 msgstr ""
 
-#: keyboards/inline_keyboards.py:59
+#: keyboards/inline_keyboards.py:69
 msgid "👀Viewed by: {joke_seens}"
 msgstr ""
 
@@ -99,7 +99,7 @@ msgid ""
 "📬Total number of jokes read by everyone: *{sent_count}*\n"
 "\n"
 "To invite a friend, follow or send them this link - "
-"https://cutt.ly/qwr2PFSE\n"
+"https://bit.ly/jokes-bot\n"
 "\n"
 "The bot is under development, so bugs and malfunctions are possible!\n"
 "For complaints and suggestions write - @mak5er"
@@ -115,7 +115,7 @@ msgid ""
 "📬Total number of jokes read by everyone: *{sent_count}*\n"
 "\n"
 "To invite a friend, follow or send them this link - "
-"https://cutt.ly/qwr2PFSE\n"
+"https://bit.ly/jokes-bot\n"
 "\n"
 "*Currently, the bot does not have the ability to rate jokes in a group, "
 "so if you want to rate jokes after reading them \n"
@@ -178,10 +178,7 @@ msgid "Unfortunately, all the jokes have already been sent to you."
 msgstr ""
 
 #: messages/bot_messages.py:103
-msgid ""
-"*Joke of the day:*\n"
-"\n"
-"{joke_text}"
+msgid "*Joke of the day:*"
 msgstr ""
 
 #: messages/bot_messages.py:107
