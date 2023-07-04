@@ -1,5 +1,7 @@
 ## Working Project link
-    https://bit.ly/joke-bot
+    [GitHub Pages](https://mak5er.github.io/Joke-Bot/)
+    [Telegram](https://t.me/makser_humor_bot)
+    
 
 ## Project description
 
