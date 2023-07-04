@@ -1,5 +1,5 @@
 ## Working Project link
-<a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://quibtech.com/p/host-your-website-on-github/featuredImage_hu03ad3acbd1f4d769a3b53df03af47292_58966_1600x0_resize_box_3.png" alt="GitHub Pages" width="123" height="37"/></a>
+<a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://quibtech.com/p/host-your-website-on-github/featuredImage_hu03ad3acbd1f4d769a3b53df03af47292_58966_1600x0_resize_box_3.png" alt="GitHub Pages" width="246" height="74"/></a>
     
     [GitHub Pages](https://mak5er.github.io/Joke-Bot/)
     [Telegram](https://t.me/makser_humor_bot)
