@@ -1,9 +1,6 @@
-## Working Project link
+## Project links
 <a href="https://t.me/makser_humor_bot" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/telegram/telegram-tile.svg" alt="Telegram" width="60" height="60"/></a> 
 <a href="https://mak5er.github.io/Joke-Bot/" target="_blank" rel="noreferrer"> <img src="https://theaveragenz.com/wp-content/uploads/2021/07/3uy5od7tw2jf4fh7ldlv-800x400.jpeg" alt="GitHub Pages" width="120" height="60"/></a> 
-
-    [GitHub Pages](https://mak5er.github.io/Joke-Bot/)
-    [Telegram](https://t.me/makser_humor_bot)
     
 
 ## Project description
