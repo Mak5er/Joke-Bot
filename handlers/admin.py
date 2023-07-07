@@ -155,7 +155,11 @@ async def send_daily_joke(call: types.CallbackQuery):
         chat_id = user[0]
         try:
 
-            result = await db.get_joke(chat_id)
+            language = await db.get_language(chat_id)
+
+            table_name = f"jokes_{language}"
+
+            result = await db.get_joke(chat_id, table_name)
 
             if not result:
                 continue
@@ -176,8 +180,7 @@ async def send_daily_joke(call: types.CallbackQuery):
             logging.error(f"Error sending message to user {chat_id}: {str(e)}")
             continue
 
-    await bot.send_message(chat_id=call.message.chat.id,
-                           text=bot_messages.finish_mailing())
+    await bot.send_message(chat_id=admin_id, text=bot_messages.finish_mailing())
 
 
 @dp.message_handler(user_id=admin_id, commands=['info'])

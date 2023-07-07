@@ -100,7 +100,7 @@ def all_send():
 
 
 def daily_joke(joke_text):
-    return _("*Joke of the day:*\n\n{joke_text}").format(joke_text=joke_text)
+    return "\n\n".join([_("*Joke of the day:*"), joke_text])
 
 
 def dont_understood(name):

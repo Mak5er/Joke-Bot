@@ -1,8 +1,8 @@
 import asyncio
 import logging
 
-from aiogram import types
 from aiogram import Bot, Dispatcher, executor
+from aiogram import types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher import DEFAULT_RATE_LIMIT
 from aiogram.dispatcher.handler import CancelHandler, current_handler

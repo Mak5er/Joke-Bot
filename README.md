@@ -33,7 +33,7 @@ After successfully launching the program and connecting the bot to Telegram, you
     Sending daily joke everyday by schedule
 
 ### keep_alive.py
-    This file is designed to maintain free online hosting using the UptimeRobot service, which sends a request every 5 minutes.
+    This file is used to track bot's activity.
 
 ## Database
 
