@@ -5,95 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="868e1bc7-d2cf-4321-8444-628b09c4cc27" name="Changes" comment="UPDATE main.py">
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/04/f1/68/0f/be/8b/64/4b/04f1680fbe8b644b4e596306b946b01f62ae911001315edb806c4e9efb60060f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/06/e3/9e/58/ae/16/cc/fd/06e39e58ae16ccfd8f5a82f703390a6401e69583a8d988610f09ce8bae029636" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/07/00/43/f9/4f/e7/8e/81/070043f94fe78e811158d55fc541a9a888bd4234bb6fc7c5906ad82780bbfc1f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/09/c5/93/51/9a/29/37/cd/09c593519a2937cd40c83e3ce4e872775e30ab4b5e675f3b82a1e3c0e0821235" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/21/ef/a1/b7/6e/89/c1/60/21efa1b76e89c160b9f9a78c18702abf250f043a2d9e461340ef81b0b448d3fe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/26/2f/db/fc/a4/d6/6a/4f/262fdbfca4d66a4f633ba8a0bdf5457a2749a6c1e5a63f99bae27c164b4a1af4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/26/b4/5b/ba/ba/a2/3a/59/26b45bbabaa23a594cbb0cffd06d0cadc06cd66efaff2a1343ec5cf2753418cf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/30/75/18/a7/a1/90/cd/15/307518a7a190cd1568fed6f6bfeef78fa051e29027f8c7b32148d252015cb394" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/30/86/b7/23/64/d5/3d/07/3086b72364d53d0742ce680a6fb8217d17ecd8dda77d51899ebf174f3fff68b9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/33/20/51/3b/f1/db/59/a3/3320513bf1db59a37551ea098621e624d12c2880a1c279c3de0ed452410863e5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/38/91/b5/96/2f/85/7c/62/3891b5962f857c62527e55c455b7c0e7c33835671173cb3b7575eb555220a53c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/41/c6/fa/bf/de/ee/d3/cc/41c6fabfdeeed3cc27771c2ba4ffad95b574121e722092ebabd9a580310c5e3e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/4b/96/02/5d/78/3a/bf/1c/4b96025d783abf1c7b34f6d31db9f45e900c2603971d6eddfb4bf0125a48feb7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/55/d8/58/1b/1d/b5/09/31/55d8581b1db50931d0cdce5c04d7d56a9a13b9f0351b20b9e26608dbb6a0c7a9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/6c/f8/47/b3/91/5a/83/a0/6cf847b3915a83a01d999a5d1047bf16ee3c78af06df57e15fda8730744faa11" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/73/bc/04/54/9e/8f/93/7a/73bc04549e8f937a26a6565571d5df748228ad34c52e1b1c62628ceb70dd545a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/7d/3a/d9/fd/df/fd/84/00/7d3ad9fddffd8400ec4923fcc02476a3aedb5db1a85f8a5b9bae496aa202093e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/80/4e/2a/43/5b/23/73/15/804e2a435b237315cd4157f496d27377c710d91134aedfa06cb50d18637ea8a5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/90/95/75/fc/07/78/41/20/909575fc07784120e17385a5ce4daac5530575db2cca5c007c95768ad3fd4a2f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/0/3/f/6/2/03f627a365d0a3091cc479710885b819df3a0c8a6aa2a96c438fa463" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/0/f/2/a/b/0f2aba7cc06994c67eee7f393fa68094d324ce2976c8bfc144f281b2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/1/a/8/4/c/1a84c7ae0bb2d2769201a9b0fd31566bb1a2eae3ccc6fe61ceb246aa" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/1/b/8/f/b/1b8fb9ab8716d1d528c02ebb97082ca552ee6a62e438a8e45b3b6c69" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/1/e/e/3/c/1ee3c1f7572571c02df52585e99d97056316046daea150791bddf323" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/2/5/2/9/9/252998d0cf63a14cbfd74f4358f85cbcadafeeb22ee94ef96ca8c455" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/2/5/8/c/2/258c221c08a3287876841b44d7ece9ad52d6b1085602777875b2a2d4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/2/a/1/9/f/2a19ff48400b08a0296dd476f9fd73e7135a348b5154d0e70fdc712c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/2/b/3/6/6/2b36623501b34a52928c404f42a48dd2258c3be5af8de796a90869dc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/2/f/b/b/f/2fbbf81cf830d82b66670eb44bf1e68834658b3d3090a79ec0df376c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/3/6/1/5/1/361510221cf4a2db1d6c9eb5b8c42a1736cec184e068504e016c9c2d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/3/7/1/4/f/3714f30e73096a644e391e0e450b37feb25efbd3d8f92311b4349dcf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/3/a/0/0/5/3a005394e19c28fffb22663314a37008a2084306524e503c0472c494" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/3/e/0/d/9/3e0d9fff1649f4e80f1a9eba9c6e66897de1d6deb64833a6153c3d6c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/5/3/a/e/3/53ae389133323fa75537ffe0396cabc9237c19132ecf260150583a78" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/6/0/3/6/a/6036ae4e11d894e3aafa355e7d8aed6be47500af1d11a09104ac5252" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/6/1/2/7/3/612734d4ef76471a1a43f783f68636eb555bca557aba918f664207fa" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/6/b/a/3/4/6ba34e94006ac70237c6920e1b182f3a520296cebabe5e6bd3d24de5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/7/5/4/c/5/754c58a836784ffac5a74e7cddfda1a49e975bc87d823dfecc95c402" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/7/6/3/b/c/763bc3b244b14d44df69e14a5b217766b2ebc49d968b11a852a45a2d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/7/9/9/4/8/799481f2548501ce21e2c729fce5d02130d793decefb66b1d585ed51" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/7/b/0/c/6/7b0c60bf2c7b317400ccbaf720cf0e3fdfd75cdec879e8e91a6a991d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/7/f/0/8/c/7f08cda64f10d593b8bce22ed049d88bad2797dedc3812571fe15227" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/8/a/5/7/6/8a576e57581d74871739dbbe95466bf1e1106ad3209435703416a0d8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/8/a/7/0/e/8a70e555eede7ce1d601681bb88562917c780d365522f022785126f6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/8/d/c/3/5/8dc35839b3f1fb6debc9bf3a200b327534d46f95c3694009c8b79891" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/9/3/1/3/9/9313990aaf2a1510d9c26eb9637c961607146cfc79e2300f15694e00" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/9/4/e/a/4/94ea4f6330f203f2d768abce6ece0d1f8b014f578b423bb2f068c528" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/9/7/4/3/8/97438061f04c42a083addb32af2663b4ff0158d279fbccbb90e70d30" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/9/c/7/1/0/9c710db15417b684a3a724873d123101a4c15c3bce0f99caa3a1a81f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/9/d/5/6/e/9d56eb157014b65891dc78c6f306955d1ff3edd58919426c3e7d4bc3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/9/f/1/c/6/9f1c639a24b7351163fb6fd8ba67f6503cee85998f9dc3892f180425" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/a/b/1/0/d/ab10deda75842f8f1e9ec72fa77294b203bbb004b48b3383db42eec3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/a/d/d/8/7/add878aa059095b1e986f65aebd8b516503ac42a64c0035774687392" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/b/3/e/8/6/b3e86e7c2d7427a3cd7b7079a8af58ef4e48403cb0fe68a48de599a2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/b/8/5/3/f/b853fbf0f6b66d03d9b3d2e663a33b4e077943e0b08e1a467b4ef707" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/b/9/3/9/6/b9396595e6d1aa73d39a5190ac7b2c21137e53e52e7f86b15c610fe4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/c/1/1/5/a/c115af6e1dcb6f8536a6040907a266f2edede58de741819d6eccc5ee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/c/d/a/3/9/cda39dec2147ac0ce3d95d633bffc59d481930eef073951f9dd4e1d5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/c/d/d/f/3/cddf37df9ccb9effe10df2dcf75905a89cd968eee98d2d0f50b6540d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/c/d/e/1/9/cde19e8c917343874e6e06754eba9c96803d435ec6edd8080f010ee7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/d/5/6/9/6/d5696d321049dcbc935d461f2b4c811a847de11bae7c3098e3048d66" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/d/7/7/5/8/d7758caa3e62d4fd5dbbf5a5b75088df2c406168c0ec83cc4b1c5366" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/d/e/d/f/0/dedf01351c1f6a26cf83fbb0b1cbe516b93e4e0412ead4524fdb96f5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/e/1/3/f/a/e13fa9b0f8346e0f061ccb4309b60f319a230b2995f2ef4ca6bd28e5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/f/1/f/a/1/f1fa10111568cf3977cbca1285a636edbe346634bc9150a243be83a6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/f/5/2/8/e/f528e32aa7a03611718feb45b56e7ad0bce3082f53cf2a3a3d8b9a79" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/f/c/3/b/4/fc3b44992c44eb97fbdbbd221d6b8f14ef3dfabba19dcb11f7682bba" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/f/c/4/2/b/fc42bb0e016a3d14341082e4bfb2d5df5bc02a92eb01e5782b9d16fd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/f/c/6/f/7/fc6f7603c5d91102d0bc30531b46980c9f95e22c5143e19b5fdd52ce" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/f/e/0/6/f/fe06feace797a3ab5bada8888c5b7a47cae2b942eb4d2426bd1b6fb8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/_http/f/e/7/d/c/fe7dc171a9c237ffe8c3cf0b8265f38c5e8e2cde2b860e40318f7707" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/a4/f1/40/59/b7/00/eb/ff/a4f14059b700ebff01c7b3b8441e623ec02ba897f8412e6fd8a673a5712dceca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/be/8b/b5/f1/e0/56/88/79/be8bb5f1e0568879892086b03145245e1beb032d7827accb53a750cd234852cd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/d4/92/3d/d9/b0/75/c9/e8/d4923dd9b075c9e85294678c769044dfe7527978d1f85afe461b954cc94132a2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/e3/44/94/19/45/4a/4a/95/e3449419454a4a957f7441748b42d7e8f299a80b957b91180b31d33f00e565ff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/e6/e6/bf/9b/b8/b1/79/0d/e6e6bf9bb8b1790db4a19d6bb41109538b3f5a02551df3596ecf3e7937a853e2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/fc/b2/8a/1b/78/35/48/37/fcb28a1b783548376273f329ff953e2d3f4ef444e27a0a17882b9a8c699868aa" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/pypoetry/pypi/fc/be/c9/63/66/ee/56/f9/fcbec96366ee56f96c6085438023374b84300fe071cf2f487868ba7d6d8db5d2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/replit/__replit_disk_meta.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/replit/nix/env.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_07_2023_11_33__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_07_2023_11_33__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.mo" beforeDir="false" afterPath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.po" beforeDir="false" afterPath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/jokebot.pot" beforeDir="false" afterPath="$PROJECT_DIR$/locales/jokebot.pot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.mo" beforeDir="false" afterPath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.po" beforeDir="false" afterPath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/bot_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/bot_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messages/bot_messages.py" beforeDir="false" afterPath="$PROJECT_DIR$/messages/bot_messages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +15,11 @@
   </component>
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
@@ -129,7 +47,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Python/joke_gen&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.file-colors&quot;
   }
@@ -253,7 +171,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
