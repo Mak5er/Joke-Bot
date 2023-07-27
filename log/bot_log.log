@@ -2907,3 +2907,5 @@ aiogram.utils.exceptions.CantParseEntities: Can't parse entities: can't find end
 2023-07-27 19:01:29 - INFO - Bot: Анекдотики [@makser_humor_bot]
 2023-07-27 19:01:29 - WARNING - Updates were skipped successfully.
 2023-07-27 19:01:29 - INFO - Start polling.
+2023-07-27 19:05:03 - INFO - Stop polling...
+2023-07-27 19:05:03 - WARNING - Goodbye!

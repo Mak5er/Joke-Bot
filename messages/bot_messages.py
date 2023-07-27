@@ -14,11 +14,11 @@ def admin_panel(user_count, joke_count, sent_count):
 📬Total number of jokes read: *{sent_count}*
 
 Admin commands:
-/download\_db - use this command to download 
-/del\_log - use this command to delete the log
-/get\_users - use this command to download txt file with all users info""").format(user_count=user_count,
-                                                                                  joke_count=joke_count,
-                                                                                  sent_count=sent_count)
+/download\_db - download database
+/del\_log - delete the log
+/get\_users - download table with all users info""").format(user_count=user_count,
+                                                            joke_count=joke_count,
+                                                            sent_count=sent_count)
 
 
 def admin_info(username, joke_sent, joke_count, sent_count):
