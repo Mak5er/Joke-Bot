@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="868e1bc7-d2cf-4321-8444-628b09c4cc27" name="Changes" comment="UPDATE main.py" />
+    <list default="true" id="868e1bc7-d2cf-4321-8444-628b09c4cc27" name="Changes" comment="UPDATE main.py">
+      <change afterPath="$PROJECT_DIR$/log/bot_log.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/middlewares/ban_middleware.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/middlewares/throttling_middleware.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/срусл.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_07_2023_11_33_[Changes]/shelved.patch" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_07_2023_11_33_[Changes]/shelved.patch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyboards/inline_keyboards.py" beforeDir="false" afterPath="$PROJECT_DIR$/keyboards/inline_keyboards.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.mo" beforeDir="false" afterPath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.po" beforeDir="false" afterPath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.po" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.mo" beforeDir="false" afterPath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.po" beforeDir="false" afterPath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.po" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages/bot_messages.py" beforeDir="false" afterPath="$PROJECT_DIR$/messages/bot_messages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/language_middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/language_middleware.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/db.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,25 +35,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="HighlightingMarkupGrave">
-    <markupCoffin contentHash="3558657" url="file://$PROJECT_DIR$/messages/bot_messages.py">
-      <highlighter start="2363" end="2394" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="2516" end="2540" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-      <highlighter start="2662" end="2706" layer="3750" target="0">
-        <option name="myExternalName" value="INFO_ATTRIBUTES" />
-      </highlighter>
-    </markupCoffin>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 4
+}]]></component>
   <component name="ProjectId" id="2RcTtVY5tu3XFsL95MCh8LUsjl2" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -70,9 +81,9 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
+        <env name="admin_id" value="6013011895" />
         <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="token" value="6293095869:AAEzH_jfk1nV6yrahvDKxeXPWRp6lTAlmSw" />
-        <env name="admin_ids" value="6013011895" />
+        <env name="token" value="6293095869:AAEddGqYxVF-VWbVZzRcr4Mr1rqDmshUNF0" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />

@@ -11,8 +11,9 @@ from apscheduler.triggers.cron import CronTrigger
 from config import *
 from keyboards import inline_keyboards
 from log.logger import custom_formatter
-from main import dp, bot, rate_limit
-from messages import bot_messages
+from main import dp, bot
+from messages import bot_messages as bm
+from middlewares.throttling_middleware import rate_limit
 from services import DataBase
 
 storage = MemoryStorage()
@@ -46,12 +47,12 @@ async def send_welcome(message: types.Message):
         if chat_member.id == bot_id:
             await bot.send_message(
                 chat_id=message.chat.id,
-                text=bot_messages.join_group(chat_title),
+                text=bm.join_group(chat_title),
                 parse_mode="Markdown")
 
 
+@rate_limit(1)
 @dp.message_handler(commands=['start'])
-@rate_limit(3)
 async def send_welcome(message: types.Message):
     await dp.bot.send_chat_action(message.chat.id, "typing")
 
@@ -63,9 +64,10 @@ async def send_welcome(message: types.Message):
 
     logging.info(f"User action: /start (User ID: {user_id})")
 
-    await message.reply(bot_messages.welcome_message(user_name))
+    await message.reply(bm.welcome_message(user_name))
 
 
+@rate_limit(1)
 @dp.message_handler(commands=['language'])
 async def change_lang(message: types.Message):
     user_id = message.from_user.id
@@ -73,7 +75,7 @@ async def change_lang(message: types.Message):
     await bot.send_chat_action(user_id, 'typing')
     await asyncio.sleep(0.5)
 
-    await message.reply(bot_messages.please_choose(),
+    await message.reply(bm.please_choose(),
                         reply_markup=inline_keyboards.lang_keyboard, parse_mode="Markdown")
 
 
@@ -83,13 +85,12 @@ async def language_callback(call: types.CallbackQuery):
     language = call.data.split('_')[1]
     await bot.send_chat_action(user_id, 'typing')
     await asyncio.sleep(0.5)
-    await call.message.edit_text(text=bot_messages.choose_lan(language))
+    await call.message.edit_text(text=bm.choose_lan(language))
 
     await db.set_language(user_id, language)
 
 
 @dp.message_handler(commands=['info'])
-@rate_limit(3)
 async def info(message: types.Message):
     await dp.bot.send_chat_action(message.chat.id, "typing")
     user_id = message.from_user.id
@@ -106,13 +107,11 @@ async def info(message: types.Message):
 
     username = message.from_user.first_name
 
-    await message.reply(
-        bot_messages.user_info(username, joke_sent, joke_count,
-                               sent_count))
+    await message.reply(bm.user_info(username, joke_sent, joke_count, sent_count))
 
 
+@rate_limit(1)
 @dp.message_handler(commands=['help'])
-@rate_limit(3)
 async def send_help(message: types.Message):
     await dp.bot.send_chat_action(message.chat.id, "typing")
 
@@ -120,11 +119,11 @@ async def send_help(message: types.Message):
 
     logging.info(f"User action: /help (User ID: {user_id})")
 
-    await message.reply(bot_messages.help_message())
+    await message.reply(bm.help_message())
 
 
 @dp.message_handler(commands=['joke'])
-@rate_limit(3)
+@rate_limit(1)
 async def handle_joke(message: types.Message):
     await dp.bot.send_chat_action(message.chat.id, "typing")
 
@@ -132,7 +131,7 @@ async def handle_joke(message: types.Message):
 
     logging.info(f"User action: /joke (User ID: {user_id})")
 
-    await message.reply(bot_messages.pres_button(),
+    await message.reply(bm.pres_button(),
                         reply_markup=inline_keyboards.random_keyboard())
 
 
@@ -151,7 +150,7 @@ async def send_joke_private(call):
 
     if not result:
         await bot.send_message(
-            chat_id, bot_messages.all_send())
+            chat_id, bm.all_send())
     else:
         joke = result[0]
 
@@ -172,7 +171,7 @@ async def send_joke_private(call):
     await bot.delete_message(chat_id=call.message.chat.id,
                              message_id=call.message.message_id)
     await bot.send_message(chat_id,
-                           text=bot_messages.pres_button(),
+                           text=bm.pres_button(),
                            reply_markup=inline_keyboards.random_keyboard())
 
 
@@ -193,7 +192,7 @@ async def send_joke_group(call):
 
     if not result:
         await bot.send_message(
-            chat_id, bot_messages.all_send())
+            chat_id, bm.all_send())
     else:
         joke = result[0]
         joke_id = joke[0]
@@ -209,18 +208,18 @@ async def send_joke_group(call):
     await bot.delete_message(chat_id=call.message.chat.id,
                              message_id=call.message.message_id)
     await bot.send_message(chat_id,
-                           text=bot_messages.pres_button(),
+                           text=bm.pres_button(),
                            reply_markup=inline_keyboards.random_keyboard())
 
 
 scheduler = AsyncIOScheduler()
 
 
-@scheduler.scheduled_job(CronTrigger(hour=9))
+@scheduler.scheduled_job(CronTrigger(hour=12))
 async def job():
     print(">>>>", datetime.datetime.now())
     users = await db.get_private_users()
-    await bot.send_message(chat_id=admin_id, text=bot_messages.start_mailing())
+    await bot.send_message(chat_id=admin_id, text=bm.start_mailing())
     for user in users:
         chat_id = user[0]
         try:
@@ -239,7 +238,7 @@ async def job():
 
             await bot.send_message(
                 chat_id=user[0],
-                text=bot_messages.daily_joke(joke_text),
+                text=bm.daily_joke(joke_text),
                 parse_mode="Markdown",
                 reply_markup=inline_keyboards.return_rate_keyboard(joke[0]))
 
@@ -250,7 +249,7 @@ async def job():
             logging.error(f"Error sending message to user {chat_id}: {str(e)}")
             continue
 
-    await bot.send_message(chat_id=admin_id, text=bot_messages.finish_mailing())
+    await bot.send_message(chat_id=admin_id, text=bm.finish_mailing())
 
 
 @dp.callback_query_handler(lambda call: call.data.startswith('seen_'))
@@ -261,10 +260,10 @@ async def seen_handling(call: types.CallbackQuery):
     existing_row = await db.check_seen_joke(joke_id, user_id)
 
     if existing_row:
-        await call.answer(bot_messages.already_seen_joke())
+        await call.answer(bm.already_seen_joke())
     else:
         await db.seen_joke(joke_id, user_id)
-        await call.answer(bot_messages.seen_joke())
+        await call.answer(bm.seen_joke())
 
     joke_seens = await db.joke_seens(joke_id)
 
@@ -286,7 +285,7 @@ async def seen_handling(call: types.CallbackQuery):
 
 @dp.callback_query_handler(lambda call: call.data.startswith('seeen_'))
 async def seen_button_handling(call: types.CallbackQuery):
-    await call.answer(bot_messages.already_seen_joke())
+    await call.answer(bm.already_seen_joke())
 
 
 @dp.callback_query_handler(lambda call: call.data.startswith('like_'))
@@ -301,7 +300,7 @@ async def like_joke(call: types.CallbackQuery):
 
     joke_rate = await db.joke_rate(joke_id, table_name)
 
-    await call.answer(bot_messages.liked_joke())
+    await call.answer(bm.liked_joke())
 
     await call.message.edit_reply_markup(
         reply_markup=inline_keyboards.return_rating_keyboard(joke_rate))
@@ -326,7 +325,7 @@ async def dislike_joke(call: types.CallbackQuery):
 
     joke_rate = await db.joke_rate(joke_id, table_name)
 
-    await call.answer(bot_messages.disliked_joke())
+    await call.answer(bm.disliked_joke())
     await call.message.edit_reply_markup(
         reply_markup=inline_keyboards.return_rating_keyboard(joke_rate))
     await asyncio.sleep(5)
@@ -349,7 +348,7 @@ async def rate_joke_private(call: types.CallbackQuery):
 
     joke_rate = await db.joke_rate(joke_id, table_name)
 
-    await bot.answer_callback_query(call.id, bot_messages.joke_rating(joke_rate))
+    await bot.answer_callback_query(call.id, bm.joke_rating(joke_rate))
 
     await bot.edit_message_reply_markup(
         call.message.chat.id,
@@ -375,7 +374,7 @@ async def rate_joke_group(call: types.CallbackQuery):
 
     joke_rate = await db.joke_rate(joke_id, table_name)
 
-    await bot.answer_callback_query(call.id, bot_messages.joke_rating(joke_rate))
+    await bot.answer_callback_query(call.id, bm.joke_rating(joke_rate))
 
     await bot.edit_message_reply_markup(
         call.message.chat.id,
@@ -399,7 +398,7 @@ async def joke_rating(call: types.CallbackQuery):
 
     joke_rate = await db.joke_rate(joke_id, table_name)
 
-    await bot.answer_callback_query(call.id, bot_messages.joke_rating(joke_rate))
+    await bot.answer_callback_query(call.id, bm.joke_rating(joke_rate))
 
 
 @dp.message_handler()
@@ -408,7 +407,7 @@ async def handle_message(message: types.Message):
     name = message.from_user.full_name
 
     if "допомога" in text or "хелп" in text or "help" in text:
-        await message.reply(bot_messages.help_message())
+        await message.reply(bm.help_message())
 
     elif message.chat.type == 'private':
-        await message.reply(bot_messages.dont_understood(name), parse_mode="Markdown")
+        await message.reply(bm.dont_understood(name), parse_mode="Markdown")

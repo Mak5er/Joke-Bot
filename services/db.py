@@ -35,7 +35,8 @@ class DataBase:
 
     async def get_private_users(self):
         with self.connect:
-            return self.cursor.execute("SELECT DISTINCT user_id FROM users WHERE chat_type = 'private'").fetchall()
+            return self.cursor.execute(
+                "SELECT DISTINCT user_id FROM users WHERE chat_type = 'private' AND status != 'ban'").fetchall()
 
     async def add_joke(self, joke_text, table_name):
         with self.connect:
@@ -80,3 +81,37 @@ class DataBase:
     async def set_language(self, user_id, language):
         with self.connect:
             return self.cursor.execute("UPDATE users SET language=(?) WHERE user_id=(?)", (language, user_id))
+
+    async def status(self, user_id):
+        with self.connect:
+            return self.cursor.execute("SELECT DISTINCT status FROM users WHERE user_id = (?)", (user_id,)).fetchone()[
+                0]
+
+    async def get_admins(self):
+        with self.connect:
+            return self.cursor.execute("SELECT DISTINCT user_id FROM users WHERE status = admin", ).fetchall()
+
+    async def get_user_info(self, user_id):
+        with self.connect:
+            return self.cursor.execute(
+                "SELECT user_name, user_username, status FROM users WHERE user_id = (?)",
+                (user_id,))
+
+    async def get_user_info_username(self, user_username):
+        with self.connect:
+            return self.cursor.execute(
+                "SELECT user_name, user_id, status FROM users WHERE user_username = (?)",
+                (user_username,))
+
+    async def ban_user(self, user_id):
+        with self.connect:
+            return self.cursor.execute("UPDATE users SET status=(?) WHERE user_id=(?)", ("ban", user_id))
+
+    async def get_all_users_info(self):
+        with self.connect:
+            return self.cursor.execute(
+                "SELECT user_id, chat_type, user_name, user_username, language, status FROM users").fetchall()
+
+    async def unban_user(self, user_id):
+        with self.connect:
+            return self.cursor.execute("UPDATE users SET status=(?) WHERE user_id=(?)", ("user", user_id))

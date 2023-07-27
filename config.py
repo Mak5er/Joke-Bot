@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 
 token = str(os.environ['token'])
-admin_id = int(os.environ['admin_ids'])
+admin_id = int(os.environ['admin_id'])
 
 I18N_DOMAIN = 'jokebot'
 BASE_DIR = Path(__file__).parent

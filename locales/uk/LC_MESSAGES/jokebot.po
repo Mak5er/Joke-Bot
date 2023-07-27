@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  sease\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-06-26 12:43+0300\n"
+"POT-Creation-Date: 2023-07-27 14:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -14,21 +14,58 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
 
-#: main.py:76
-msgid "You send too many requests!"
-msgstr "Ви надсилаєте занадто багато запитів!"
-
-#: main.py:87
+#: main.py:36
 msgid "I'm stopped!"
-msgstr "Я зупинився!"
+msgstr ""
 
-#: main.py:91
+#: main.py:40
 msgid "I'm launched!"
-msgstr "Я запущений!"
+msgstr ""
 
-#: handlers/admin.py:95 handlers/admin.py:132 keyboards/inline_keyboards.py:33
+#: handlers/admin.py:101 handlers/admin.py:138 handlers/admin.py:216
+#: keyboards/inline_keyboards.py:36
 msgid "↩️Cancel"
 msgstr "↩️Скасувати"
+
+#: handlers/admin.py:195
+msgid "Search user by:"
+msgstr "Шукати користувача по:"
+
+#: handlers/admin.py:202
+msgid "Type user {search}:"
+msgstr "Введіть {search} користувача:"
+
+#: handlers/admin.py:240
+msgid "User not found!"
+msgstr "Користувача не знайдено!"
+
+#: handlers/admin.py:258
+msgid "Enter in Conversation"
+msgstr "Перейти до розмови"
+
+#: handlers/admin.py:259
+msgid "❌Ban"
+msgstr "❌Забанити"
+
+#: handlers/admin.py:260
+msgid "✅Unban"
+msgstr "✅Розбанити"
+
+#: handlers/admin.py:294
+msgid "You cannot block yourself or another admin!"
+msgstr "Ви не можете забанити себе або іншого адміна!"
+
+#: handlers/admin.py:302
+msgid "User {banned_user_id} successfully banned!"
+msgstr "Користувач {banned_user_id} успішно забанений!"
+
+#: handlers/admin.py:311
+msgid "You cannot unban yourself!"
+msgstr "Ви не можете розбанити себе!"
+
+#: handlers/admin.py:319
+msgid "User {unbanned_user_id} successfully unbanned!"
+msgstr "Користувач {unbanned_user_id} успішно розбанений!"
 
 #: keyboards/inline_keyboards.py:8
 msgid "📝Add a joke"
@@ -46,27 +83,35 @@ msgstr "🎭Анекдот дня"
 msgid "📄View log"
 msgstr "📄Переглянути лог"
 
-#: keyboards/inline_keyboards.py:25
+#: keyboards/inline_keyboards.py:16
+msgid "👤Control User"
+msgstr "👤Керувати користувачами"
+
+#: keyboards/inline_keyboards.py:28
 msgid "🔀Random joke"
 msgstr "🔀Випадковий анекдот"
 
-#: keyboards/inline_keyboards.py:54 keyboards/inline_keyboards.py:90
-#: messages/bot_messages.py:67
+#: keyboards/inline_keyboards.py:57 keyboards/inline_keyboards.py:93
+#: messages/bot_messages.py:69
 msgid "📊Rating: {joke_rate}"
 msgstr "📊Оцінка: {joke_rate}"
 
-#: keyboards/inline_keyboards.py:56 keyboards/inline_keyboards.py:80
+#: keyboards/inline_keyboards.py:59 keyboards/inline_keyboards.py:83
 msgid "👀Viewed"
 msgstr "👀Переглянуло"
 
-#: keyboards/inline_keyboards.py:67 keyboards/inline_keyboards.py:79
-#: keyboards/inline_keyboards.py:100
+#: keyboards/inline_keyboards.py:70 keyboards/inline_keyboards.py:82
+#: keyboards/inline_keyboards.py:103
 msgid "📊Joke rate"
 msgstr "📊Оцінка анекдота"
 
-#: keyboards/inline_keyboards.py:69
+#: keyboards/inline_keyboards.py:72
 msgid "👀Viewed by: {joke_seens}"
 msgstr "👀Переглянуло: {joke_seens}"
+
+#: keyboards/inline_keyboards.py:112
+msgid "🔙Back"
+msgstr "🔙Назад"
 
 #: messages/bot_messages.py:5
 msgid ""
@@ -101,8 +146,8 @@ msgid ""
 "📚Jokes read by you: *{joke_sent}*\n"
 "📬Total number of jokes read by everyone: *{sent_count}*\n"
 "\n"
-"To invite a friend, follow or send them this link - "
-"https://bit.ly/jokes-bot\n"
+"To invite a friend, follow or send them this link - https://bit.ly/jokes-"
+"bot\n"
 "\n"
 "The bot is under development, so bugs and malfunctions are possible!\n"
 "For complaints and suggestions write - @mak5er"
@@ -124,6 +169,7 @@ msgstr ""
 
 #: messages/bot_messages.py:35
 msgid ""
+"\n"
 "Hello *{username}*! I am a bot where you can read jokes.\n"
 "\n"
 "Statistics:\n"
@@ -131,14 +177,14 @@ msgid ""
 "📚Jokes read by you: *{joke_sent}*\n"
 "📬Total number of jokes read by everyone: *{sent_count}*\n"
 "\n"
-"To invite a friend, follow or send them this link - "
-"https://bit.ly/jokes-bot\n"
+"To invite a friend, follow or send them this link - https://bit.ly/jokes-"
+"bot\n"
 "\n"
 "*Currently, the bot does not have the ability to rate jokes in a group, "
 "so if you want to rate jokes after reading them \n"
 "read them in a personal chat with the bot.\n"
 "\n"
-"*The bot is under development, so bugs and malfunctions are possible!\n"
+"The bot is under development, so bugs and malfunctions are possible!\n"
 "For complaints and suggestions, write to @mak5er*"
 msgstr ""
 "Привіт, *{username}*! Я бот, в якому ви можете читати анекдоти.\n"
@@ -158,7 +204,7 @@ msgstr ""
 "*Бот знаходиться на стадії розробки, тому можливі баги та збої в роботі!\n"
 "Зі скаргами та пропозиціями пишіть на @mak5er*."
 
-#: messages/bot_messages.py:53
+#: messages/bot_messages.py:55
 msgid ""
 "🤖 This is a bot with jokes. Here is a list of available commands:\n"
 "\n"
@@ -194,71 +240,71 @@ msgstr ""
 "переглянути статистику бота, інформацію про розробника та посилання для "
 "запрошення друга."
 
-#: messages/bot_messages.py:71
+#: messages/bot_messages.py:73
 msgid "You voted for the joke!"
 msgstr "Ви проголосували за анекдот!"
 
-#: messages/bot_messages.py:75
+#: messages/bot_messages.py:77
 msgid "You voted against the joke!"
 msgstr "Ви проголосували проти анекдоту!"
 
-#: messages/bot_messages.py:79
+#: messages/bot_messages.py:81
 msgid "You have marked this joke as read!"
 msgstr "Ви позначили цей анекдот як прочитаний!"
 
-#: messages/bot_messages.py:83
+#: messages/bot_messages.py:85
 msgid "You have already marked this joke as read!"
 msgstr "Ви вже позначали цей анекдот як прочитаний!"
 
-#: messages/bot_messages.py:87
+#: messages/bot_messages.py:89
 msgid "Mailing is complete!"
 msgstr "Розсилка завершена!"
 
-#: messages/bot_messages.py:91
+#: messages/bot_messages.py:93
 msgid "Starting mailing..."
 msgstr "Починаю розсилку..."
 
-#: messages/bot_messages.py:95
+#: messages/bot_messages.py:97
 msgid "Click the button to get the joke."
 msgstr "Натисніть кнопку, щоб отримати анекдот."
 
-#: messages/bot_messages.py:99
+#: messages/bot_messages.py:101
 msgid "Unfortunately, all the jokes have already been sent to you."
 msgstr "На жаль, всі анекдоти вже надіслані вам."
 
-#: messages/bot_messages.py:103
+#: messages/bot_messages.py:105
 msgid "*Joke of the day:*"
 msgstr "*Анекдот дня:*"
 
-#: messages/bot_messages.py:107
+#: messages/bot_messages.py:109
 msgid "*{name}*, I don't understand you! Type /help to get a list of commands!"
 msgstr "*{name}*, я вас не розумію! Введіть /help, щоб отримати список команд!"
 
-#: messages/bot_messages.py:111
+#: messages/bot_messages.py:113
 msgid "This command cannot be used in a group!"
 msgstr "Цю команду не можна використовувати в групі!"
 
-#: messages/bot_messages.py:115
+#: messages/bot_messages.py:117
 msgid "Log deleted, starting to write a new one."
 msgstr "Лог видалено, починаю писати новий."
 
-#: messages/bot_messages.py:119
+#: messages/bot_messages.py:121
 msgid "Enter the message to send:"
 msgstr "Введіть повідомлення для відправки:"
 
-#: messages/bot_messages.py:123
+#: messages/bot_messages.py:125
 msgid "Action canceled"
 msgstr "Дію скасовано"
 
-#: messages/bot_messages.py:127
+#: messages/bot_messages.py:129
 msgid "Enter a new joke:"
 msgstr "Введіть новий анекдот:"
 
-#: messages/bot_messages.py:131
+#: messages/bot_messages.py:133
 msgid "The anecdote is given to the database."
 msgstr "Анекдот додано до бази даних."
 
-#: messages/bot_messages.py:135
+#: messages/bot_messages.py:137
 msgid ""
 "Hi! Thank you for adding me to *'{chat_title}'* \n"
 "For correct operation, please grant me administrator rights!"
@@ -266,9 +312,23 @@ msgstr ""
 "Привіт! Дякую, що додали мене в *'{chat_title}'*.\n"
 "Для коректної роботи, будь ласка, надайте мені права адміністратора!"
 
-#: messages/bot_messages.py:140
+#: messages/bot_messages.py:142
 msgid "Please choose your language!"
 msgstr "Будь ласка, оберіть свою мову!"
+
+#: messages/bot_messages.py:157
+msgid ""
+"*USER INFO*\n"
+"_Name_: *{user_name}*\n"
+"_ID_: *{user_id}*\n"
+"_Username_: *{user_username}*\n"
+"_Status_: *{status}*"
+msgstr ""
+"*ІНФОРМАЦІЯ ПРО КОРИСТУВАЧА*\n"
+"_Ім'я_: *{user_name}*\n"
+"_ID_: *{user_id}*\n"
+"_Юзернейм_: *{user_username}*\n"
+"_Статус_: *{status}*"
 
 #: venv/Lib/site-packages/click/_termui_impl.py:496
 msgid "{editor}: Editing failed"
@@ -529,4 +589,7 @@ msgid "{len_type} values are required, but {len_value} was given."
 msgid_plural "{len_type} values are required, but {len_value} were given."
 msgstr[0] ""
 msgstr[1] ""
+
+#~ msgid "You send too many requests!"
+#~ msgstr "Ви надсилаєте занадто багато запитів!"
 
