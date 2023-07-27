@@ -13,11 +13,14 @@ def admin_keyboard():
                                              callback_data='daily_joke')
     download_log_button = InlineKeyboardButton(text=_("📄View log"),
                                                callback_data='download_log')
+    control_user_button = InlineKeyboardButton(text=_("👤Control User"),
+                                               callback_data='control_user')
 
     admin_keyboard.row(add_joke_button)
     admin_keyboard.row(send_to_all_button)
     admin_keyboard.row(daily_joke_button)
     admin_keyboard.row(download_log_button)
+    admin_keyboard.row(control_user_button)
     return admin_keyboard
 
 
@@ -102,3 +105,18 @@ def return_hidden_rating_keyboard(joke_id):
     hidden_rate_keyboard = InlineKeyboardMarkup()
     hidden_rate_keyboard.row(hidden_rate_button)
     return hidden_rate_keyboard
+
+
+def return_back_keyboard():
+    keyboard = InlineKeyboardMarkup()
+    back_button = InlineKeyboardButton(text=_("🔙Back"), callback_data="back_to_list")
+    keyboard.row(back_button)
+    return keyboard
+
+
+def return_search_keyboard():
+    search_keyboard = InlineKeyboardMarkup()
+    id_button = InlineKeyboardButton(text="ID", callback_data="search_id")
+    username_button = InlineKeyboardButton(text="Username", callback_data="search_username")
+    search_keyboard.row(username_button, id_button)
+    return search_keyboard

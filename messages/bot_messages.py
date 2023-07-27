@@ -8,11 +8,17 @@ def welcome_message(name):
 
 
 def admin_panel(user_count, joke_count, sent_count):
-    return _('''Hello, this is the admin panel.
+    return _("""Hello, this is the admin panel.
 🪪Number of bot users: *{user_count}*
 🃏Number of jokes in the database: *{joke_count}*
 📬Total number of jokes read: *{sent_count}*
-''').format(user_count=user_count, joke_count=joke_count, sent_count=sent_count)
+
+Admin commands:
+/download\_db - use this command to download 
+/del\_log - use this command to delete the log
+/get\_users - use this command to download txt file with all users info""").format(user_count=user_count,
+                                                                                  joke_count=joke_count,
+                                                                                  sent_count=sent_count)
 
 
 def admin_info(username, joke_sent, joke_count, sent_count):
@@ -32,7 +38,8 @@ For complaints and suggestions write - @mak5er""").format(username=username, jok
 
 
 def user_info(username, joke_sent, joke_count, sent_count):
-    return _("""Hello *{username}*! I am a bot where you can read jokes.
+    return _('''
+Hello *{username}*! I am a bot where you can read jokes.
 
 Statistics:
 📁Number of jokes in the database: *{joke_count}*.
@@ -44,9 +51,10 @@ To invite a friend, follow or send them this link - https://bit.ly/jokes-bot
 *Currently, the bot does not have the ability to rate jokes in a group, so if you want to rate jokes after reading them 
 read them in a personal chat with the bot.
 
-*The bot is under development, so bugs and malfunctions are possible!
-For complaints and suggestions, write to @mak5er*""").format(username=username, joke_sent=joke_sent,
-                                                             joke_count=joke_count, sent_count=sent_count)
+The bot is under development, so bugs and malfunctions are possible!
+For complaints and suggestions, write to @mak5er*''').format(username=username, joke_sent=joke_sent,
+                                                             joke_count=joke_count,
+                                                             sent_count=sent_count)
 
 
 def help_message():
@@ -100,7 +108,7 @@ def all_send():
 
 
 def daily_joke(joke_text):
-    return _("*Joke of the day:*\n\n{joke_text}").format(joke_text=joke_text)
+    return "\n\n".join([_("*Joke of the day:*"), joke_text])
 
 
 def dont_understood(name):
@@ -149,3 +157,11 @@ def choose_lan(language):
         return """You have selected English🇬🇧!
 You can always change the language by writing /language
 """
+
+
+def return_user_info(user_name, user_id, user_username, status):
+    return _("""*USER INFO*
+_Name_: *{user_name}*
+_ID_: *{user_id}*
+_Username_: *{user_username}*
+_Status_: *{status}*""").format(user_name=user_name, user_id=user_id, user_username=user_username, status=status)
