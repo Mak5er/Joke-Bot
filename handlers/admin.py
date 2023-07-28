@@ -430,8 +430,7 @@ async def answer_feedback(message: types.Message, state: FSMContext):
     answer = message.text
 
     if answer == _("↩️Cancel"):
-        await bot.send_message(message.chat.id, _('Action canceled!'),
-                               reply_markup=ReplyKeyboardRemove())
+        await bot.send_message(message.chat.id, _('Action canceled!'))
         await state.finish()
         return
     data = await state.get_data()
