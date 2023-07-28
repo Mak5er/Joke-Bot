@@ -49,8 +49,7 @@ Statistics:
 
 To invite a friend, follow or send them this link - https://bit.ly/jokes-bot
 
-*Currently, the bot does not have the ability to rate jokes in a group, so if you want to rate jokes after reading them 
-read them in a personal chat with the bot.*
+*If you want to offer an anecdote or ask a question, click the Feedback💬 button!*
 
 *The bot is under development, so bugs and malfunctions are possible!
 For complaints and suggestions, write - @mak5er*''').format(username=username, joke_sent=joke_sent,

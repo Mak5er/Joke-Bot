@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-07-28 16:35+0300\n"
+"POT-Creation-Date: 2023-07-28 17:09+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,17 +72,17 @@ msgstr ""
 msgid "Please type your answer:"
 msgstr ""
 
-#: handlers/admin.py:444
+#: handlers/admin.py:443
 msgid ""
 "Your message *{message_id}* was seen!\n"
 "*Answer:* `{answer}`"
 msgstr ""
 
-#: handlers/admin.py:446
+#: handlers/admin.py:445
 msgid "Your answer sent!"
 msgstr ""
 
-#: handlers/admin.py:449
+#: handlers/admin.py:448
 msgid "Something went wrong, see log for more information!"
 msgstr ""
 
@@ -119,7 +119,7 @@ msgid "🔀Random joke"
 msgstr ""
 
 #: keyboards/inline_keyboards.py:57 keyboards/inline_keyboards.py:93
-#: messages/bot_messages.py:76
+#: messages/bot_messages.py:75
 msgid "📊Rating: {joke_rate}"
 msgstr ""
 
@@ -195,15 +195,14 @@ msgid ""
 "To invite a friend, follow or send them this link - https://bit.ly/jokes-"
 "bot\n"
 "\n"
-"*Currently, the bot does not have the ability to rate jokes in a group, "
-"so if you want to rate jokes after reading them \n"
-"read them in a personal chat with the bot.*\n"
+"*If you want to offer an anecdote or ask a question, click the Feedback💬 "
+"button!*\n"
 "\n"
 "*The bot is under development, so bugs and malfunctions are possible!\n"
 "For complaints and suggestions, write - @mak5er*"
 msgstr ""
 
-#: messages/bot_messages.py:62
+#: messages/bot_messages.py:61
 msgid ""
 "🤖 This is a bot with jokes. Here is a list of available commands:\n"
 "\n"
@@ -223,81 +222,81 @@ msgid ""
 "invite a friend."
 msgstr ""
 
-#: messages/bot_messages.py:80
+#: messages/bot_messages.py:79
 msgid "You voted for the joke!"
 msgstr ""
 
-#: messages/bot_messages.py:84
+#: messages/bot_messages.py:83
 msgid "You voted against the joke!"
 msgstr ""
 
-#: messages/bot_messages.py:88
+#: messages/bot_messages.py:87
 msgid "You have marked this joke as read!"
 msgstr ""
 
-#: messages/bot_messages.py:92
+#: messages/bot_messages.py:91
 msgid "You have already marked this joke as read!"
 msgstr ""
 
-#: messages/bot_messages.py:96
+#: messages/bot_messages.py:95
 msgid "Mailing is complete!"
 msgstr ""
 
-#: messages/bot_messages.py:100
+#: messages/bot_messages.py:99
 msgid "Starting mailing..."
 msgstr ""
 
-#: messages/bot_messages.py:104
+#: messages/bot_messages.py:103
 msgid "Click the button to get the joke."
 msgstr ""
 
-#: messages/bot_messages.py:108
+#: messages/bot_messages.py:107
 msgid "Unfortunately, all the jokes have already been sent to you."
 msgstr ""
 
-#: messages/bot_messages.py:112
+#: messages/bot_messages.py:111
 msgid "*Joke of the day:*"
 msgstr ""
 
-#: messages/bot_messages.py:116
+#: messages/bot_messages.py:115
 msgid "*{name}*, I don't understand you! Type /help to get a list of commands!"
 msgstr ""
 
-#: messages/bot_messages.py:120
+#: messages/bot_messages.py:119
 msgid "This command cannot be used in a group!"
 msgstr ""
 
-#: messages/bot_messages.py:124
+#: messages/bot_messages.py:123
 msgid "Log deleted, starting to write a new one."
 msgstr ""
 
-#: messages/bot_messages.py:128
+#: messages/bot_messages.py:127
 msgid "Enter the message to send:"
 msgstr ""
 
-#: messages/bot_messages.py:132
+#: messages/bot_messages.py:131
 msgid "Action canceled"
 msgstr ""
 
-#: messages/bot_messages.py:136
+#: messages/bot_messages.py:135
 msgid "Enter a new joke:"
 msgstr ""
 
-#: messages/bot_messages.py:140
+#: messages/bot_messages.py:139
 msgid "The anecdote is given to the database."
 msgstr ""
 
-#: messages/bot_messages.py:144
+#: messages/bot_messages.py:143
 msgid ""
 "Hi! Thank you for adding me to *'{chat_title}'* \n"
 "For correct operation, please grant me administrator rights!"
 msgstr ""
 
-#: messages/bot_messages.py:149
+#: messages/bot_messages.py:148
 msgid "Please choose your language!"
 msgstr ""
 
-#: messages/bot_messages.py:164
+#: messages/bot_messages.py:163
 msgid ""
 "*USER INFO*\n"
 "_Name_: *{user_name}*\n"
@@ -306,25 +305,25 @@ msgid ""
 "_Status_: *{status}*"
 msgstr ""
 
-#: messages/bot_messages.py:172
+#: messages/bot_messages.py:171
 msgid ""
 "🚫You have been banned, contact @mak5er for more information!\n"
 "Reason: {reason}"
 msgstr ""
 
-#: messages/bot_messages.py:176
+#: messages/bot_messages.py:175
 msgid "🎉You have been unbanned!"
 msgstr ""
 
-#: messages/bot_messages.py:180
+#: messages/bot_messages.py:179
 msgid "User {banned_user_id} successfully banned!"
 msgstr ""
 
-#: messages/bot_messages.py:184
+#: messages/bot_messages.py:183
 msgid "User {unbanned_user_id} successfully unbanned!"
 msgstr ""
 
-#: messages/bot_messages.py:188
+#: messages/bot_messages.py:187
 msgid ""
 "*New message* from user: *{user}*\n"
 "*Message:* `{feedback_message}`"
