@@ -334,7 +334,7 @@ async def message_handler(call: types.CallbackQuery):
             _("User {unbanned_user_id} successfully unbanned!").format(unbanned_user_id=unbanned_user_id),
             reply_markup=kb.return_back_to_admin_keyboard())
 
-        logging.info(f"Unanned user (user_id: {unbanned_user_id})")
+        logging.info(f"Unbanned user (user_id: {unbanned_user_id})")
 
 
 @dp.message_handler(user_id=admin_id, commands=['info'])
