@@ -4,7 +4,6 @@ import logging
 from aiogram import Bot, Dispatcher, executor
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
-import keep_alive
 from config import *
 from log.logger import custom_formatter
 from middlewares import setup_lang_middleware, setup_ban_middlewares, setup_throttling_middlewares
@@ -26,6 +25,7 @@ handler.setFormatter(custom_formatter)
 
 logger.addHandler(handler)
 
+logging.getLogger("werkzeug").disabled = True
 
 @dp.errors_handler()
 async def handle_errors(update, exception):
@@ -45,7 +45,11 @@ if __name__ == "__main__":
 
     from handlers.user import dp, scheduler
 
+    import keep_alive
+
     keep_alive.keep_alive()
+    keep_alive.start_crawling()
+
     scheduler.start()
     setup_throttling_middlewares(dp)
     setup_ban_middlewares(dp)

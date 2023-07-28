@@ -323,8 +323,11 @@ async def control_user(message: types.Message, state: FSMContext):
 
     await db.ban_user(banned_user_id)
 
+    await state.finish()
+
     await bot.send_message(chat_id=banned_user_id,
-                           text=f"🚫You have been banned, contact @mak5er for more information!\nReason: {reason}")
+                           text=f"🚫You have been banned, contact @mak5er for more information!\nReason: {reason}",
+                           reply_markup=ReplyKeyboardRemove())
 
     await message.answer(_("User {banned_user_id} successfully banned!").format(banned_user_id=banned_user_id),
                          reply_markup=kb.return_back_to_admin_keyboard())
