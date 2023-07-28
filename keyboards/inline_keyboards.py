@@ -127,3 +127,18 @@ def return_back_to_admin_keyboard():
     back_button = InlineKeyboardButton(text=_("🔙Back"), callback_data="back_to_admin")
     keyboard.row(back_button)
     return keyboard
+
+
+def return_feedback_button():
+    keyboard = InlineKeyboardMarkup(row_width=2)
+    feedback_button = InlineKeyboardButton(text=_("Feedback💬"), callback_data='feedback')
+    keyboard.row(feedback_button)
+    return keyboard
+
+
+def feedback_answer(feedback_message_id, feedback_message_chat_id):
+    keyboard = InlineKeyboardMarkup(row_width=2)
+    answer_button = InlineKeyboardButton(text=_("Answer💬"),
+                                         callback_data=f'answer_{feedback_message_id}_{feedback_message_chat_id}')
+    keyboard.row(answer_button)
+    return keyboard

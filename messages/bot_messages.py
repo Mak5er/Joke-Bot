@@ -33,8 +33,9 @@ Statistics:
 To invite a friend, follow or send them this link - https://bit.ly/jokes-bot
 
 *The bot is under development, so bugs and malfunctions are possible!
-For complaints and suggestions, write - @mak5er*""").format(username=username, joke_sent=joke_sent, joke_count=joke_count,
-                                                          sent_count=sent_count)
+For complaints and suggestions, write - @mak5er*""").format(username=username, joke_sent=joke_sent,
+                                                            joke_count=joke_count,
+                                                            sent_count=sent_count)
 
 
 def user_info(username, joke_sent, joke_count, sent_count):
@@ -53,8 +54,8 @@ read them in a personal chat with the bot.*
 
 *The bot is under development, so bugs and malfunctions are possible!
 For complaints and suggestions, write - @mak5er*''').format(username=username, joke_sent=joke_sent,
-                                                             joke_count=joke_count,
-                                                             sent_count=sent_count)
+                                                            joke_count=joke_count,
+                                                            sent_count=sent_count)
 
 
 def help_message():
@@ -165,3 +166,24 @@ _Name_: *{user_name}*
 _ID_: *{user_id}*
 _Username_: *{user_username}*
 _Status_: *{status}*""").format(user_name=user_name, user_id=user_id, user_username=user_username, status=status)
+
+
+def ban_message(reason):
+    return _("🚫You have been banned, contact @mak5er for more information!\nReason: {reason}").format(reason=reason)
+
+
+def unban_message():
+    return _("🎉You have been unbanned!")
+
+
+def successful_ban(banned_user_id):
+    return _("User {banned_user_id} successfully banned!").format(banned_user_id=banned_user_id)
+
+
+def successful_unban(unbanned_user_id):
+    return _("User {unbanned_user_id} successfully unbanned!").format(unbanned_user_id=unbanned_user_id)
+
+
+def feedback_message_send(user, feedback_message):
+    return _("*New message* from user: *{user}*\n*Message:* `{feedback_message}`").format(user=user,
+                                                                                         feedback_message=feedback_message)

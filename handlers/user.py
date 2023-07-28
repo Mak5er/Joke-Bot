@@ -4,14 +4,15 @@ import logging
 
 from aiogram import types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
+from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters import ChatTypeFilter
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.cron import CronTrigger
 
 from config import *
-from keyboards import inline_keyboards
+from keyboards import inline_keyboards as kb
 from log.logger import custom_formatter
-from main import dp, bot
+from main import dp, bot, _
 from messages import bot_messages as bm
 from middlewares.throttling_middleware import rate_limit
 from services import DataBase
@@ -76,7 +77,7 @@ async def change_lang(message: types.Message):
     await asyncio.sleep(0.5)
 
     await message.reply(bm.please_choose(),
-                        reply_markup=inline_keyboards.lang_keyboard, parse_mode="Markdown")
+                        reply_markup=kb.lang_keyboard, parse_mode="Markdown")
 
 
 @dp.callback_query_handler(lambda call: call.data.startswith('lang_'))
@@ -107,7 +108,8 @@ async def info(message: types.Message):
 
     username = message.from_user.first_name
 
-    await message.reply(bm.user_info(username, joke_sent, joke_count, sent_count))
+    await message.reply(bm.user_info(username, joke_sent, joke_count, sent_count),
+                        reply_markup=kb.return_feedback_button())
 
 
 @rate_limit(1)
@@ -132,7 +134,46 @@ async def handle_joke(message: types.Message):
     logging.info(f"User action: /joke (User ID: {user_id})")
 
     await message.reply(bm.pres_button(),
-                        reply_markup=inline_keyboards.random_keyboard())
+                        reply_markup=kb.random_keyboard())
+
+
+@dp.callback_query_handler(lambda call: call.data == 'feedback')
+@rate_limit(1)
+async def feedback_handler(call: types.CallbackQuery):
+    await call.message.delete()
+    await call.message.answer(_('Please enter your message:'), reply_markup=kb.cancel_keyboard())
+    await dp.current_state().set_state("send_feedback")
+
+
+@dp.message_handler(state="send_feedback")
+async def feedback(message: types.Message, state: FSMContext):
+    feedback_message = message.text
+    feedback_message_id = message.message_id
+    feedback_message_chat_id = message.chat.id
+    user_id = message.from_user.id
+    user_username = message.from_user.username
+
+    if feedback_message == _("↩️Cancel"):
+        await bot.send_message(message.chat.id,
+                               _('Action canceled!'),
+                               reply_markup=types.ReplyKeyboardRemove())
+        await state.finish()
+        await info(message)
+        return
+
+    if user_username is not None:
+        user = "@" + user_username
+    else:
+        user = user_id
+
+    await state.finish()
+
+    await bot.send_message(chat_id=admin_id, text=bm.feedback_message_send(user, feedback_message),
+                           reply_markup=kb.feedback_answer(feedback_message_id, feedback_message_chat_id),
+                           parse_mode="Markdown")
+
+    await message.answer(_("Your message *{feedback_message_id}* sent!").format(feedback_message_id=feedback_message_id),
+                         reply_markup=types.ReplyKeyboardRemove())
 
 
 @dp.callback_query_handler(ChatTypeFilter(types.ChatType.PRIVATE),
@@ -161,7 +202,7 @@ async def send_joke_private(call):
         await bot.send_message(
             chat_id,
             joke_text,
-            reply_markup=inline_keyboards.return_rate_keyboard(joke_id))
+            reply_markup=kb.return_rate_keyboard(joke_id))
 
         await db.seen_joke(joke_id, user_id)
 
@@ -172,7 +213,7 @@ async def send_joke_private(call):
                              message_id=call.message.message_id)
     await bot.send_message(chat_id,
                            text=bm.pres_button(),
-                           reply_markup=inline_keyboards.random_keyboard())
+                           reply_markup=kb.random_keyboard())
 
 
 @dp.callback_query_handler(
@@ -200,7 +241,7 @@ async def send_joke_group(call):
         await bot.send_message(
             chat_id,
             joke[1],
-            reply_markup=inline_keyboards.return_seen_rate_keyboard(joke_id))
+            reply_markup=kb.return_seen_rate_keyboard(joke_id))
 
         logging.info(
             f"User action: Sent joke (User ID: {user_id}, Joke ID: {joke[0]})")
@@ -209,7 +250,7 @@ async def send_joke_group(call):
                              message_id=call.message.message_id)
     await bot.send_message(chat_id,
                            text=bm.pres_button(),
-                           reply_markup=inline_keyboards.random_keyboard())
+                           reply_markup=kb.random_keyboard())
 
 
 scheduler = AsyncIOScheduler()
@@ -240,7 +281,7 @@ async def job():
                 chat_id=user[0],
                 text=bm.daily_joke(joke_text),
                 parse_mode="Markdown",
-                reply_markup=inline_keyboards.return_rate_keyboard(joke[0]))
+                reply_markup=kb.return_rate_keyboard(joke[0]))
 
             await db.seen_joke(joke[0], chat_id)
 
@@ -274,13 +315,13 @@ async def seen_handling(call: types.CallbackQuery):
     await bot.edit_message_reply_markup(
         call.message.chat.id,
         call.message.message_id,
-        reply_markup=inline_keyboards.return_seen_count_rate_keyboard(
+        reply_markup=kb.return_seen_count_rate_keyboard(
             joke_seens, joke_id))
     await asyncio.sleep(3)
     await bot.edit_message_reply_markup(
         call.message.chat.id,
         call.message.message_id,
-        reply_markup=inline_keyboards.return_seen_rate_keyboard(joke_id))
+        reply_markup=kb.return_seen_rate_keyboard(joke_id))
 
 
 @dp.callback_query_handler(lambda call: call.data.startswith('seeen_'))
@@ -303,10 +344,10 @@ async def like_joke(call: types.CallbackQuery):
     await call.answer(bm.liked_joke())
 
     await call.message.edit_reply_markup(
-        reply_markup=inline_keyboards.return_rating_keyboard(joke_rate))
+        reply_markup=kb.return_rating_keyboard(joke_rate))
     await asyncio.sleep(5)
     await call.message.edit_reply_markup(
-        reply_markup=inline_keyboards.return_hidden_rating_keyboard(joke_id))
+        reply_markup=kb.return_hidden_rating_keyboard(joke_id))
 
     logging.info(
         f"User action: Liked joke (User ID: {user_id}, Joke ID: {joke_id})")
@@ -327,10 +368,10 @@ async def dislike_joke(call: types.CallbackQuery):
 
     await call.answer(bm.disliked_joke())
     await call.message.edit_reply_markup(
-        reply_markup=inline_keyboards.return_rating_keyboard(joke_rate))
+        reply_markup=kb.return_rating_keyboard(joke_rate))
     await asyncio.sleep(5)
     await call.message.edit_reply_markup(
-        reply_markup=inline_keyboards.return_hidden_rating_keyboard(joke_id))
+        reply_markup=kb.return_hidden_rating_keyboard(joke_id))
 
     logging.info(
         f"User action: Disliked joke (User ID: {user_id}, Joke ID: {joke_id})")
@@ -353,12 +394,12 @@ async def rate_joke_private(call: types.CallbackQuery):
     await bot.edit_message_reply_markup(
         call.message.chat.id,
         call.message.message_id,
-        reply_markup=inline_keyboards.return_rating_keyboard(joke_rate))
+        reply_markup=kb.return_rating_keyboard(joke_rate))
     await asyncio.sleep(5)
     await bot.edit_message_reply_markup(
         call.message.chat.id,
         call.message.message_id,
-        reply_markup=inline_keyboards.return_hidden_rating_keyboard(joke_id))
+        reply_markup=kb.return_hidden_rating_keyboard(joke_id))
 
 
 @dp.callback_query_handler(
@@ -379,13 +420,13 @@ async def rate_joke_group(call: types.CallbackQuery):
     await bot.edit_message_reply_markup(
         call.message.chat.id,
         call.message.message_id,
-        reply_markup=inline_keyboards.return_rating_and_seen_keyboard(
+        reply_markup=kb.return_rating_and_seen_keyboard(
             joke_rate, joke_id))
     await asyncio.sleep(5)
     await bot.edit_message_reply_markup(
         call.message.chat.id,
         call.message.message_id,
-        reply_markup=inline_keyboards.return_seen_rate_keyboard(joke_id))
+        reply_markup=kb.return_seen_rate_keyboard(joke_id))
 
 
 @dp.callback_query_handler(lambda call: call.data.startswith('rating_'))

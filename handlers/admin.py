@@ -222,6 +222,7 @@ async def control_user(message: types.Message, state: FSMContext):
                                reply_markup=ReplyKeyboardRemove())
         await state.finish()
         await admin(message)
+        return
 
     else:
         await dp.bot.send_chat_action(message.chat.id, "typing")
@@ -295,17 +296,11 @@ async def control_user(message: types.Message, state: FSMContext):
 @dp.callback_query_handler(lambda call: call.data.startswith("ban_"))
 async def message_handler(call: types.CallbackQuery):
     banned_user_id = call.data.split("_")[1]
-    user_status = await db.status(banned_user_id)
 
-    if user_status == "admin":
-        await call.message.edit_text(_("You cannot block yourself or another admin!"))
-        pass
-
-    else:
-        await call.message.delete()
-        await call.message.answer(_('Enter ban reason:'), reply_markup=kb.cancel_keyboard())
-        await dp.current_state().set_state("ban_reason")
-        await dp.current_state().update_data(banned_user_id=banned_user_id)
+    await call.message.delete()
+    await call.message.answer(_('Enter ban reason:'), reply_markup=kb.cancel_keyboard())
+    await dp.current_state().set_state("ban_reason")
+    await dp.current_state().update_data(banned_user_id=banned_user_id)
 
 
 @dp.message_handler(state="ban_reason")
@@ -315,21 +310,21 @@ async def control_user(message: types.Message, state: FSMContext):
     banned_user_id = data.get("banned_user_id")
 
     if message.text == _("↩️Cancel"):
-        await bot.send_message(message.chat.id,
-                               'Action canceled!',
+        await bot.send_message(message.chat.id, _('Action canceled!'),
                                reply_markup=ReplyKeyboardRemove())
         await state.finish()
         await admin(message)
+        return
 
     await db.ban_user(banned_user_id)
 
     await state.finish()
 
     await bot.send_message(chat_id=banned_user_id,
-                           text=f"🚫You have been banned, contact @mak5er for more information!\nReason: {reason}",
+                           text=bm.ban_message(reason),
                            reply_markup=ReplyKeyboardRemove())
 
-    await message.answer(_("User {banned_user_id} successfully banned!").format(banned_user_id=banned_user_id),
+    await message.answer(bm.successful_ban(banned_user_id),
                          reply_markup=kb.return_back_to_admin_keyboard())
     logging.info(f"Banned user (user_id: {banned_user_id})")
 
@@ -337,24 +332,17 @@ async def control_user(message: types.Message, state: FSMContext):
 @dp.callback_query_handler(lambda call: call.data.startswith("unban_"))
 async def message_handler(call: types.CallbackQuery):
     unbanned_user_id = call.data.split("_")[1]
-    user_status = await db.status(unbanned_user_id)
 
-    if user_status == "admin":
-        await call.message.edit_caption(_("You cannot unban yourself!"))
-        pass
+    await db.unban_user(unbanned_user_id)
 
-    else:
-        await db.unban_user(unbanned_user_id)
+    await bot.send_message(chat_id=unbanned_user_id,
+                           text=bm.unban_message())
 
-        await bot.send_message(chat_id=unbanned_user_id,
-                               text="🎉You have been unbanned!")
+    await call.message.delete()
+    await call.message.answer(bm.successful_unban(unbanned_user_id),
+                              reply_markup=kb.return_back_to_admin_keyboard())
 
-        await call.message.delete()
-        await call.message.answer(
-            _("User {unbanned_user_id} successfully unbanned!").format(unbanned_user_id=unbanned_user_id),
-            reply_markup=kb.return_back_to_admin_keyboard())
-
-        logging.info(f"Unbanned user (user_id: {unbanned_user_id})")
+    logging.info(f"Unbanned user (user_id: {unbanned_user_id})")
 
 
 @dp.message_handler(user_id=admin_id, commands=['info'])
@@ -375,7 +363,8 @@ async def info(message: types.Message):
     username = message.from_user.first_name
 
     await message.reply(
-        bot_messages.admin_info(username, joke_sent, joke_count, sent_count), parse_mode='Markdown')
+        bot_messages.admin_info(username, joke_sent, joke_count, sent_count), reply_markup=kb.return_feedback_button(),
+        parse_mode='Markdown')
 
 
 @dp.message_handler(user_id=admin_id, commands=['get_users'])
@@ -424,3 +413,37 @@ async def back_to_admin(call: types.CallbackQuery):
                                                        sent_count),
                               reply_markup=kb.admin_keyboard(),
                               parse_mode='Markdown')
+
+
+@dp.callback_query_handler(lambda call: call.data.startswith("answer_"))
+async def answer_feedback_handler(call: types.CallbackQuery):
+    message_id = call.data.split("_")[1]
+    chat_id = call.data.split("_")[2]
+    await call.message.delete_reply_markup()
+    await call.message.answer(_('Please type your answer:'), reply_markup=kb.cancel_keyboard())
+    await dp.current_state().set_state('feedback_answer')
+    await dp.current_state().update_data(message_id=message_id, chat_id=chat_id)
+
+
+@dp.message_handler(state='feedback_answer')
+async def answer_feedback(message: types.Message, state: FSMContext):
+    answer = message.text
+
+    if answer == _("↩️Cancel"):
+        await bot.send_message(message.chat.id, _('Action canceled!'),
+                               reply_markup=ReplyKeyboardRemove())
+        await state.finish()
+        return
+    data = await state.get_data()
+    message_id = data.get('message_id')
+    chat_id = data.get('chat_id')
+    await state.finish()
+
+    try:
+        await bot.send_message(chat_id=chat_id,
+                               text=_('Your message *{message_id}* was seen!\n*Answer:* `{answer}`').format(
+                                   message_id=message_id, answer=answer))
+        await message.reply(_('Your answer sent!'))
+
+    except:
+        await message.reply(_("Something went wrong, see log for more information!"))

@@ -3430,3 +3430,620 @@ aiogram.utils.exceptions.BadRequest: There is no text in the message to edit
 2023-07-28 14:39:11 - INFO - Start polling.
 2023-07-28 14:40:02 - INFO - Banned user (user_id: 1328242523)
 2023-07-28 14:40:05 - INFO - User action: /admin (User ID: 6013011895)
+2023-07-28 14:50:17 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 14:50:17 - INFO - Added job "job" to job store "default"
+2023-07-28 14:50:17 - INFO - Scheduler started
+2023-07-28 14:50:17 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 14:50:17 - WARNING - Updates were skipped successfully.
+2023-07-28 14:50:17 - INFO - Start polling.
+2023-07-28 14:50:23 - INFO - User action: /admin (User ID: 6013011895)
+2023-07-28 14:50:29 - INFO - User action: /info (User ID: 6013011895)
+2023-07-28 14:51:10 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 14:51:10 - INFO - Added job "job" to job store "default"
+2023-07-28 14:51:10 - INFO - Scheduler started
+2023-07-28 14:51:11 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 14:51:11 - WARNING - Updates were skipped successfully.
+2023-07-28 14:51:32 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 14:51:32 - INFO - Added job "job" to job store "default"
+2023-07-28 14:51:32 - INFO - Scheduler started
+2023-07-28 14:51:32 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 14:51:32 - WARNING - Updates were skipped successfully.
+2023-07-28 14:51:32 - INFO - Start polling.
+2023-07-28 14:51:42 - INFO - User action: /info (User ID: 5617952282)
+2023-07-28 14:54:05 - INFO - Stop polling...
+2023-07-28 14:54:05 - WARNING - Goodbye!
+2023-07-28 14:54:06 - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiohttp\client.py", line 560, in _request
+    await resp.start(conn)
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiohttp\client_reqrep.py", line 899, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiohttp\streams.py", line 616, in read
+    await self._waiter
+aiohttp.client_exceptions.ClientOSError: [Errno 1] [SSL: APPLICATION_DATA_AFTER_CLOSE_NOTIFY] application data after close notify (_ssl.c:2702)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ClientOSError: [Errno 1] [SSL: APPLICATION_DATA_AFTER_CLOSE_NOTIFY] application data after close notify (_ssl.c:2702)
+2023-07-28 14:54:07 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 14:54:07 - INFO - Added job "job" to job store "default"
+2023-07-28 14:54:07 - INFO - Scheduler started
+2023-07-28 14:54:07 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 14:54:08 - WARNING - Updates were skipped successfully.
+2023-07-28 14:54:08 - INFO - Start polling.
+2023-07-28 14:55:09 - INFO - User action: /start (User ID: 6109478142)
+2023-07-28 14:55:33 - INFO - User action: /info (User ID: 6109478142)
+2023-07-28 14:55:38 - INFO - User action: /help (User ID: 6109478142)
+2023-07-28 15:10:31 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 15:10:31 - INFO - Added job "job" to job store "default"
+2023-07-28 15:10:31 - INFO - Scheduler started
+2023-07-28 15:10:31 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 15:10:31 - WARNING - Updates were skipped successfully.
+2023-07-28 15:10:31 - INFO - Start polling.
+2023-07-28 15:12:01 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 15:12:01 - INFO - Added job "job" to job store "default"
+2023-07-28 15:12:01 - INFO - Scheduler started
+2023-07-28 15:12:01 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 15:12:01 - WARNING - Updates were skipped successfully.
+2023-07-28 15:12:01 - INFO - Start polling.
+2023-07-28 15:12:09 - INFO - Stop polling...
+2023-07-28 15:12:09 - WARNING - Goodbye!
+2023-07-28 15:13:09 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 15:13:10 - INFO - Added job "job" to job store "default"
+2023-07-28 15:13:10 - INFO - Scheduler started
+2023-07-28 15:13:10 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 15:13:10 - WARNING - Updates were skipped successfully.
+2023-07-28 15:13:10 - INFO - Start polling.
+2023-07-28 15:13:10 - INFO - User action: /info (User ID: 6109478142)
+2023-07-28 15:13:10 - INFO - User action: /info (User ID: 6109478142)
+2023-07-28 15:13:10 - INFO - User action: /info (User ID: 6109478142)
+2023-07-28 15:13:13 - INFO - User action: /info (User ID: 6109478142)
+2023-07-28 15:13:14 - INFO - User action: /info (User ID: 6109478142)
+2023-07-28 15:13:15 - INFO - Stop polling...
+2023-07-28 15:13:15 - WARNING - Goodbye!
+2023-07-28 15:13:15 - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiohttp\client.py", line 560, in _request
+    await resp.start(conn)
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiohttp\client_reqrep.py", line 899, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiohttp\streams.py", line 616, in read
+    await self._waiter
+aiohttp.client_exceptions.ClientOSError: [Errno 1] [SSL: APPLICATION_DATA_AFTER_CLOSE_NOTIFY] application data after close notify (_ssl.c:2702)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ClientOSError: [Errno 1] [SSL: APPLICATION_DATA_AFTER_CLOSE_NOTIFY] application data after close notify (_ssl.c:2702)
+2023-07-28 15:15:23 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 15:15:24 - INFO - Added job "job" to job store "default"
+2023-07-28 15:15:24 - INFO - Scheduler started
+2023-07-28 15:15:24 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 15:15:24 - WARNING - Updates were skipped successfully.
+2023-07-28 15:15:24 - INFO - Start polling.
+2023-07-28 15:16:34 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 15:16:34 - INFO - Added job "job" to job store "default"
+2023-07-28 15:16:34 - INFO - Scheduler started
+2023-07-28 15:16:34 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 15:16:35 - WARNING - Updates were skipped successfully.
+2023-07-28 15:16:35 - INFO - Start polling.
+2023-07-28 15:17:02 - INFO - Stop polling...
+2023-07-28 15:17:02 - WARNING - Goodbye!
+2023-07-28 15:19:06 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 15:19:06 - INFO - Added job "job" to job store "default"
+2023-07-28 15:19:06 - INFO - Scheduler started
+2023-07-28 15:19:07 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 15:19:07 - WARNING - Updates were skipped successfully.
+2023-07-28 15:19:07 - INFO - Start polling.
+2023-07-28 15:19:22 - INFO - Stop polling...
+2023-07-28 15:19:22 - WARNING - Goodbye!
+2023-07-28 15:19:23 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 15:19:23 - INFO - Added job "job" to job store "default"
+2023-07-28 15:19:23 - INFO - Scheduler started
+2023-07-28 15:19:23 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 15:19:23 - WARNING - Updates were skipped successfully.
+2023-07-28 15:19:23 - INFO - Start polling.
+2023-07-28 15:19:44 - ERROR - Update: {"update_id": 247865184, "message": {"message_id": 17163, "from": {"id": 5617952282, "is_bot": false, "first_name": "Nobody", "username": "mak2r", "language_code": "uk"}, "chat": {"id": 5617952282, "first_name": "Nobody", "username": "mak2r", "type": "private"}, "date": 1690557584, "text": "Лалала"}}
+Exception: 'str' object has no attribute 'message_id'
+2023-07-28 15:19:44 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-18' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=AttributeError("'str' object has no attribute 'message_id'")>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\handlers\user.py", line 159, in feedback
+    await bot.forward_message(chat_id=admin_id, from_chat_id=message.chat.id, message_id=feedback_message.message_id,
+                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'message_id'
+2023-07-28 15:20:03 - ERROR - Update: {"update_id": 247865186, "message": {"message_id": 17165, "from": {"id": 6109478142, "is_bot": false, "first_name": "Reva Matviy", "username": "marektop", "language_code": "uk"}, "chat": {"id": 6109478142, "first_name": "Reva Matviy", "username": "marektop", "type": "private"}, "date": 1690557604, "text": "Ти бот"}}
+Exception: 'str' object has no attribute 'message_id'
+2023-07-28 15:20:03 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-25' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=AttributeError("'str' object has no attribute 'message_id'")>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\handlers\user.py", line 159, in feedback
+    await bot.forward_message(chat_id=admin_id, from_chat_id=message.chat.id, message_id=feedback_message.message_id,
+                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'message_id'
+2023-07-28 15:20:06 - INFO - Stop polling...
+2023-07-28 15:20:06 - WARNING - Goodbye!
+2023-07-28 15:20:07 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 15:20:07 - INFO - Added job "job" to job store "default"
+2023-07-28 15:20:07 - INFO - Scheduler started
+2023-07-28 15:20:07 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 15:20:07 - WARNING - Updates were skipped successfully.
+2023-07-28 15:20:07 - INFO - Start polling.
+2023-07-28 15:20:15 - ERROR - Update: {"update_id": 247865188, "message": {"message_id": 17169, "from": {"id": 5617952282, "is_bot": false, "first_name": "Nobody", "username": "mak2r", "language_code": "uk"}, "chat": {"id": 5617952282, "first_name": "Nobody", "username": "mak2r", "type": "private"}, "date": 1690557616, "text": "Привіт"}}
+Exception: Bot.forward_message() got an unexpected keyword argument 'parse_mode'
+2023-07-28 15:20:15 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-15' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("Bot.forward_message() got an unexpected keyword argument 'parse_mode'")>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\handlers\user.py", line 159, in feedback
+    await bot.forward_message(chat_id=admin_id, from_chat_id=message.chat.id, parse_mode="Markdown")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Bot.forward_message() got an unexpected keyword argument 'parse_mode'
+2023-07-28 15:20:31 - INFO - Stop polling...
+2023-07-28 15:20:31 - WARNING - Goodbye!
+2023-07-28 15:20:32 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 15:20:32 - INFO - Added job "job" to job store "default"
+2023-07-28 15:20:32 - INFO - Scheduler started
+2023-07-28 15:20:32 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 15:20:32 - WARNING - Updates were skipped successfully.
+2023-07-28 15:20:32 - INFO - Start polling.
+2023-07-28 15:20:47 - INFO - Stop polling...
+2023-07-28 15:20:47 - WARNING - Goodbye!
+2023-07-28 15:20:48 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 15:20:48 - INFO - Added job "job" to job store "default"
+2023-07-28 15:20:48 - INFO - Scheduler started
+2023-07-28 15:20:48 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 15:20:48 - WARNING - Updates were skipped successfully.
+2023-07-28 15:20:48 - INFO - Start polling.
+2023-07-28 15:20:55 - ERROR - Update: {"update_id": 247865192, "message": {"message_id": 17177, "from": {"id": 5617952282, "is_bot": false, "first_name": "Nobody", "username": "mak2r", "language_code": "uk"}, "chat": {"id": 5617952282, "first_name": "Nobody", "username": "mak2r", "type": "private"}, "date": 1690557656, "text": "Привіт"}}
+Exception: Bot.forward_message() missing 1 required positional argument: 'message_id'
+2023-07-28 15:20:55 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-15' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("Bot.forward_message() missing 1 required positional argument: 'message_id'")>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\handlers\user.py", line 159, in feedback
+    await bot.forward_message(chat_id=admin_id, from_chat_id=message.chat.id)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Bot.forward_message() missing 1 required positional argument: 'message_id'
+2023-07-28 15:21:00 - INFO - Stop polling...
+2023-07-28 15:21:00 - WARNING - Goodbye!
+2023-07-28 15:21:01 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 15:21:01 - INFO - Added job "job" to job store "default"
+2023-07-28 15:21:01 - INFO - Scheduler started
+2023-07-28 15:21:01 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 15:21:01 - WARNING - Updates were skipped successfully.
+2023-07-28 15:21:01 - INFO - Start polling.
+2023-07-28 15:21:25 - INFO - Stop polling...
+2023-07-28 15:21:25 - WARNING - Goodbye!
+2023-07-28 15:21:26 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 15:21:26 - INFO - Added job "job" to job store "default"
+2023-07-28 15:21:26 - INFO - Scheduler started
+2023-07-28 15:21:26 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 15:21:26 - WARNING - Updates were skipped successfully.
+2023-07-28 15:21:27 - INFO - Start polling.
+2023-07-28 15:21:32 - INFO - User action: /info (User ID: 5617952282)
+2023-07-28 15:21:39 - ERROR - Update: {"update_id": 247865195, "message": {"message_id": 17185, "from": {"id": 5617952282, "is_bot": false, "first_name": "Nobody", "username": "mak2r", "language_code": "uk"}, "chat": {"id": 5617952282, "first_name": "Nobody", "username": "mak2r", "type": "private"}, "date": 1690557700, "text": "О"}}
+Exception: 'str' object has no attribute 'message_id'
+2023-07-28 15:21:39 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-21' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=AttributeError("'str' object has no attribute 'message_id'")>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\handlers\user.py", line 159, in feedback
+    await bot.forward_message(chat_id=admin_id, from_chat_id=message.chat.id, message_id=feedback_message.message_id)
+                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'message_id'
+2023-07-28 15:23:58 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 15:23:58 - INFO - Added job "job" to job store "default"
+2023-07-28 15:23:58 - INFO - Scheduler started
+2023-07-28 15:23:58 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 15:23:58 - WARNING - Updates were skipped successfully.
+2023-07-28 15:23:58 - INFO - Start polling.
+2023-07-28 15:27:19 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 15:27:19 - INFO - Added job "job" to job store "default"
+2023-07-28 15:27:19 - INFO - Scheduler started
+2023-07-28 15:27:19 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 15:27:20 - WARNING - Updates were skipped successfully.
+2023-07-28 15:27:20 - INFO - Start polling.
+2023-07-28 15:32:18 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 15:32:18 - INFO - Added job "job" to job store "default"
+2023-07-28 15:32:18 - INFO - Scheduler started
+2023-07-28 15:32:18 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 15:32:18 - WARNING - Updates were skipped successfully.
+2023-07-28 15:32:18 - INFO - Start polling.
+2023-07-28 15:33:04 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 15:33:05 - INFO - Added job "job" to job store "default"
+2023-07-28 15:33:05 - INFO - Scheduler started
+2023-07-28 15:33:05 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 15:33:05 - WARNING - Updates were skipped successfully.
+2023-07-28 15:33:05 - INFO - Start polling.
+2023-07-28 15:33:20 - INFO - User action: /info (User ID: 5617952282)
+2023-07-28 15:34:06 - INFO - Stop polling...
+2023-07-28 15:34:06 - WARNING - Goodbye!
+2023-07-28 15:34:07 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 15:34:07 - INFO - Added job "job" to job store "default"
+2023-07-28 15:34:07 - INFO - Scheduler started
+2023-07-28 15:34:07 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 15:34:07 - WARNING - Updates were skipped successfully.
+2023-07-28 15:34:07 - INFO - Start polling.
+2023-07-28 15:36:27 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 15:36:27 - INFO - Added job "job" to job store "default"
+2023-07-28 15:36:27 - INFO - Scheduler started
+2023-07-28 15:36:27 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 15:36:27 - WARNING - Updates were skipped successfully.
+2023-07-28 15:36:27 - INFO - Start polling.
+2023-07-28 15:36:30 - INFO - User action: /info (User ID: 5617952282)
+2023-07-28 15:36:31 - ERROR - Update: {"update_id": 247865224, "callback_query": {"id": "5682177249656426958", "from": {"id": 5617952282, "is_bot": false, "first_name": "Nobody", "username": "mak2r", "language_code": "uk"}, "message": {"message_id": 17224, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": 5617952282, "first_name": "Nobody", "username": "mak2r", "type": "private"}, "date": 1690558591, "reply_to_message": {"message_id": 17223, "from": {"id": 5617952282, "is_bot": false, "first_name": "Nobody", "username": "mak2r", "language_code": "uk"}, "chat": {"id": 5617952282, "first_name": "Nobody", "username": "mak2r", "type": "private"}, "date": 1690558590, "text": "/info", "entities": [{"type": "bot_command", "offset": 0, "length": 5}]}, "text": "Привіт, Nobody! Я бот, в якому ви можете читати анекдоти.\n\nСтатистика:\n\U0001f4c1Кількість анекдотів в базі: 12018.\n\U0001f4daАнекдоти, прочитані вами: 119.\n\U0001f4ecАнекдотів, прочитані усіма: 4491\n\nЩоб запросити друга, перейдіть або надішліть йому це посилання - https://bit.ly/jokes-bot\n\nНаразі бот не має можливості оцінювати жарти в групі, тому якщо ви хочете оцінити жарти після їх прочитання, \nчитайте їх в особистому чаті з ботом.\n\nБот знаходиться на стадії розробки, тому можливі баги та збої в роботі!\nЗі скаргами та пропозиціями пишіть на @mak5er.", "entities": [{"type": "bold", "offset": 8, "length": 6}, {"type": "bold", "offset": 101, "length": 5}, {"type": "bold", "offset": 136, "length": 3}, {"type": "bold", "offset": 171, "length": 4}, {"type": "url", "offset": 242, "length": 24}, {"type": "bold", "offset": 268, "length": 147}, {"type": "bold", "offset": 417, "length": 110}, {"type": "mention", "offset": 527, "length": 7}, {"type": "bold", "offset": 527, "length": 7}], "reply_markup": {"inline_keyboard": [[{"text": "Feedback\U0001f4ac", "callback_data": "feedback"}]]}}, "chat_instance": "348328501407311940", "data": "feedback"}}
+Exception: Inline keyboard expected
+2023-07-28 15:36:31 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-17' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=InlineKeyboardExpected('Inline keyboard expected')>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\handlers\user.py", line 143, in feedback_handler
+    await call.message.edit_text(_('Please enter your message:'), reply_markup=kb.cancel_keyboard())
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\types\message.py", line 2919, in edit_text
+    return await self.bot.edit_message_text(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\bot.py", line 3122, in edit_message_text
+    result = await self.request(api.Methods.EDIT_MESSAGE_TEXT, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.InlineKeyboardExpected: Inline keyboard expected
+2023-07-28 15:37:08 - INFO - Stop polling...
+2023-07-28 15:37:08 - WARNING - Goodbye!
+2023-07-28 15:37:08 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 15:37:09 - INFO - Added job "job" to job store "default"
+2023-07-28 15:37:09 - INFO - Scheduler started
+2023-07-28 15:37:09 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 15:37:09 - WARNING - Updates were skipped successfully.
+2023-07-28 15:37:09 - INFO - Start polling.
+2023-07-28 15:37:14 - INFO - User action: /info (User ID: 5617952282)
+2023-07-28 15:37:41 - INFO - User action: /info (User ID: 5617952282)
+2023-07-28 15:37:58 - INFO - Stop polling...
+2023-07-28 15:37:58 - WARNING - Goodbye!
+2023-07-28 15:37:59 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 15:37:59 - INFO - Added job "job" to job store "default"
+2023-07-28 15:37:59 - INFO - Scheduler started
+2023-07-28 15:37:59 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 15:37:59 - WARNING - Updates were skipped successfully.
+2023-07-28 15:38:00 - INFO - Start polling.
+2023-07-28 15:38:04 - INFO - User action: /info (User ID: 5617952282)
+2023-07-28 15:42:09 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 15:42:09 - INFO - Added job "job" to job store "default"
+2023-07-28 15:42:09 - INFO - Scheduler started
+2023-07-28 15:42:09 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 15:42:09 - WARNING - Updates were skipped successfully.
+2023-07-28 15:42:10 - INFO - Start polling.
+2023-07-28 15:42:11 - INFO - Stop polling...
+2023-07-28 15:42:11 - WARNING - Goodbye!
+2023-07-28 15:42:44 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 15:42:45 - INFO - Added job "job" to job store "default"
+2023-07-28 15:42:45 - INFO - Scheduler started
+2023-07-28 15:42:45 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 15:42:45 - WARNING - Updates were skipped successfully.
+2023-07-28 15:42:45 - INFO - Start polling.
+2023-07-28 15:42:47 - INFO - Stop polling...
+2023-07-28 15:42:47 - WARNING - Goodbye!
+2023-07-28 15:43:05 - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiohttp\client.py", line 560, in _request
+    await resp.start(conn)
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiohttp\client_reqrep.py", line 899, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiohttp\streams.py", line 616, in read
+    await self._waiter
+aiohttp.client_exceptions.ClientOSError: [Errno 1] [SSL: APPLICATION_DATA_AFTER_CLOSE_NOTIFY] application data after close notify (_ssl.c:2702)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ClientOSError: [Errno 1] [SSL: APPLICATION_DATA_AFTER_CLOSE_NOTIFY] application data after close notify (_ssl.c:2702)
+2023-07-28 15:43:10 - WARNING - Polling is stopped.
+2023-07-28 15:45:13 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 15:45:13 - INFO - Added job "job" to job store "default"
+2023-07-28 15:45:13 - INFO - Scheduler started
+2023-07-28 15:45:13 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 15:45:13 - WARNING - Updates were skipped successfully.
+2023-07-28 15:45:13 - INFO - Start polling.
+2023-07-28 15:47:32 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 15:47:32 - INFO - Added job "job" to job store "default"
+2023-07-28 15:47:32 - INFO - Scheduler started
+2023-07-28 15:47:32 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 15:47:32 - WARNING - Updates were skipped successfully.
+2023-07-28 15:47:33 - INFO - Start polling.
+2023-07-28 15:47:35 - ERROR - Update: {"update_id": 247865243, "callback_query": {"id": "7378945367849433841", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 17250, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1690559134, "text": "New message from user: @mak2r\nПривіт", "entities": [{"type": "bold", "offset": 0, "length": 11}, {"type": "mention", "offset": 23, "length": 6}, {"type": "bold", "offset": 23, "length": 6}, {"type": "code", "offset": 30, "length": 6}], "reply_markup": {"inline_keyboard": [[{"text": "Answer\U0001f4ac", "callback_data": "answer_17249"}]]}}, "chat_instance": "-4729631583617012541", "data": "answer_17249"}}
+Exception: list index out of range
+2023-07-28 15:47:35 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-11' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=IndexError('list index out of range')>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\handlers\admin.py", line 433, in answer_feedback
+    chat_id = call.data.split("_")[2]
+              ~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2023-07-28 15:47:46 - INFO - Stop polling...
+2023-07-28 15:47:46 - WARNING - Goodbye!
+2023-07-28 15:48:02 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 15:48:02 - INFO - Added job "job" to job store "default"
+2023-07-28 15:48:02 - INFO - Scheduler started
+2023-07-28 15:48:02 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 15:48:03 - WARNING - Updates were skipped successfully.
+2023-07-28 15:48:03 - INFO - Start polling.
+2023-07-28 15:48:06 - INFO - User action: /info (User ID: 5617952282)
+2023-07-28 15:54:27 - INFO - Stop polling...
+2023-07-28 15:54:27 - WARNING - Goodbye!
+2023-07-28 15:54:32 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 15:54:32 - INFO - Added job "job" to job store "default"
+2023-07-28 15:54:32 - INFO - Scheduler started
+2023-07-28 15:54:32 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 15:54:32 - WARNING - Updates were skipped successfully.
+2023-07-28 15:54:33 - INFO - Start polling.
+2023-07-28 15:56:04 - INFO - Stop polling...
+2023-07-28 15:56:04 - WARNING - Goodbye!
+2023-07-28 15:56:06 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 15:56:07 - INFO - Added job "job" to job store "default"
+2023-07-28 15:56:07 - INFO - Scheduler started
+2023-07-28 15:56:07 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 15:56:07 - WARNING - Updates were skipped successfully.
+2023-07-28 15:56:07 - INFO - Start polling.
+2023-07-28 15:56:11 - INFO - User action: /help (User ID: 5617952282)
+2023-07-28 15:56:13 - INFO - User action: /info (User ID: 5617952282)
+2023-07-28 15:59:06 - INFO - User action: /joke (User ID: 5617952282)
+2023-07-28 15:59:09 - INFO - User action: /info (User ID: 5617952282)
+2023-07-28 16:05:59 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 16:05:59 - INFO - Added job "job" to job store "default"
+2023-07-28 16:05:59 - INFO - Scheduler started
+2023-07-28 16:05:59 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 16:05:59 - WARNING - Updates were skipped successfully.
+2023-07-28 16:05:59 - INFO - Start polling.
+2023-07-28 16:07:12 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 16:07:12 - INFO - Added job "job" to job store "default"
+2023-07-28 16:07:12 - INFO - Scheduler started
+2023-07-28 16:07:12 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 16:07:12 - WARNING - Updates were skipped successfully.
+2023-07-28 16:07:12 - INFO - Start polling.
+2023-07-28 16:08:50 - INFO - User action: /info (User ID: 5617952282)
+2023-07-28 16:10:26 - INFO - User action: /start (User ID: 5617952282)
+2023-07-28 16:11:12 - INFO - User action: /start (User ID: 5617952282)
+2023-07-28 16:12:10 - INFO - User action: /info (User ID: 5617952282)
+2023-07-28 16:12:14 - INFO - Stop polling...
+2023-07-28 16:12:14 - WARNING - Goodbye!
+2023-07-28 16:12:14 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 16:12:15 - INFO - Added job "job" to job store "default"
+2023-07-28 16:12:15 - INFO - Scheduler started
+2023-07-28 16:12:15 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 16:12:15 - WARNING - Updates were skipped successfully.
+2023-07-28 16:12:15 - INFO - Start polling.
+2023-07-28 16:12:49 - INFO - User action: /help (User ID: 6109478142)
+2023-07-28 16:12:51 - INFO - User action: /start (User ID: 6109478142)
+2023-07-28 16:12:55 - INFO - User action: /info (User ID: 6109478142)
+2023-07-28 16:14:49 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 16:14:50 - INFO - Added job "job" to job store "default"
+2023-07-28 16:14:50 - INFO - Scheduler started
+2023-07-28 16:14:50 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 16:14:50 - WARNING - Updates were skipped successfully.
+2023-07-28 16:14:50 - INFO - Start polling.
+2023-07-28 16:14:58 - INFO - User action: /info (User ID: 6013011895)
+2023-07-28 16:14:59 - INFO - User action: /admin (User ID: 6013011895)
+2023-07-28 16:15:18 - INFO - Banned user (user_id: 6109478142)
+2023-07-28 16:18:59 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 16:18:59 - INFO - Added job "job" to job store "default"
+2023-07-28 16:18:59 - INFO - Scheduler started
+2023-07-28 16:18:59 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 16:18:59 - WARNING - Updates were skipped successfully.
+2023-07-28 16:18:59 - INFO - Start polling.
+2023-07-28 16:20:43 - INFO - User action: /admin (User ID: 6013011895)
+2023-07-28 16:24:53 - INFO - Unbanned user (user_id: 6109478142)
+2023-07-28 16:24:54 - INFO - User action: /admin (User ID: 6013011895)
+2023-07-28 16:30:01 - INFO - User action: /start (User ID: 6109478142)
+2023-07-28 16:30:09 - INFO - User action: /start (User ID: 6109478142)
+2023-07-28 16:30:40 - INFO - Stop polling...
+2023-07-28 16:30:40 - WARNING - Goodbye!
+2023-07-28 16:30:41 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 16:30:41 - INFO - Added job "job" to job store "default"
+2023-07-28 16:30:41 - INFO - Scheduler started
+2023-07-28 16:30:41 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 16:30:41 - WARNING - Updates were skipped successfully.
+2023-07-28 16:30:41 - INFO - Start polling.
+2023-07-28 16:30:46 - INFO - User action: /info (User ID: 6013011895)
+2023-07-28 16:31:35 - INFO - User action: /joke (User ID: 6109478142)
+2023-07-28 16:31:35 - INFO - User action: /info (User ID: 5617952282)
+2023-07-28 16:31:37 - INFO - User action: Sent joke (User ID: 6109478142, Joke ID: 7665)
+2023-07-28 16:31:47 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 16:31:47 - INFO - Added job "job" to job store "default"
+2023-07-28 16:31:47 - INFO - Scheduler started
+2023-07-28 16:31:47 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 16:31:47 - WARNING - Updates were skipped successfully.
+2023-07-28 16:31:47 - INFO - Start polling.
+2023-07-28 16:31:50 - INFO - User action: Marked joke as seen (User ID: 6109478142, Joke ID: 7665)
+2023-07-28 16:31:55 - INFO - User action: Marked joke as seen (User ID: 6109478142, Joke ID: 7665)
+2023-07-28 16:31:58 - INFO - User action: Sent joke (User ID: 6109478142, Joke ID: 2271)
+2023-07-28 16:31:59 - INFO - Stop polling...
+2023-07-28 16:31:59 - WARNING - Goodbye!
+2023-07-28 16:32:00 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 16:32:00 - INFO - Added job "job" to job store "default"
+2023-07-28 16:32:00 - INFO - Scheduler started
+2023-07-28 16:32:00 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 16:32:00 - WARNING - Updates were skipped successfully.
+2023-07-28 16:32:00 - INFO - Start polling.
+2023-07-28 16:32:20 - INFO - User action: /joke (User ID: 6109478142)
+2023-07-28 16:32:22 - INFO - User action: Sent joke (User ID: 6109478142, Joke ID: 7490)
+2023-07-28 16:32:50 - INFO - User action: /start (User ID: 1391217023)
+2023-07-28 16:32:54 - INFO - User action: Sent joke (User ID: 1391217023, Joke ID: 5606)
+2023-07-28 16:32:59 - INFO - User action: Marked joke as seen (User ID: 1391217023, Joke ID: 5606)
+2023-07-28 16:33:45 - INFO - User action: Sent joke (User ID: 1391217023, Joke ID: 9263)
+2023-07-28 16:41:04 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 16:41:04 - INFO - Added job "job" to job store "default"
+2023-07-28 16:41:04 - INFO - Scheduler started
+2023-07-28 16:41:04 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 16:41:04 - WARNING - Updates were skipped successfully.
+2023-07-28 16:41:04 - INFO - Start polling.
+2023-07-28 16:41:13 - INFO - User action: /info (User ID: 6013011895)
+2023-07-28 16:42:57 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 16:42:57 - INFO - Added job "job" to job store "default"
+2023-07-28 16:42:57 - INFO - Scheduler started
+2023-07-28 16:42:57 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 16:42:57 - WARNING - Updates were skipped successfully.
+2023-07-28 16:42:58 - INFO - Start polling.
+2023-07-28 16:43:04 - INFO - User action: /info (User ID: 6013011895)
+2023-07-28 16:43:09 - INFO - User action: /info (User ID: 6013011895)
