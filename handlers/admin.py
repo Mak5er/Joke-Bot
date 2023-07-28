@@ -443,7 +443,7 @@ async def answer_feedback(message: types.Message, state: FSMContext):
         await bot.send_message(chat_id=chat_id,
                                text=_('Your message *{message_id}* was seen!\n*Answer:* `{answer}`').format(
                                    message_id=message_id, answer=answer))
-        await message.reply(_('Your answer sent!'))
+        await message.reply(_('Your answer sent!'), reply_markup=ReplyKeyboardRemove())
 
     except:
         await message.reply(_("Something went wrong, see log for more information!"))

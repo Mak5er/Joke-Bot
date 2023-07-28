@@ -4047,3 +4047,24 @@ IndexError: list index out of range
 2023-07-28 16:42:58 - INFO - Start polling.
 2023-07-28 16:43:04 - INFO - User action: /info (User ID: 6013011895)
 2023-07-28 16:43:09 - INFO - User action: /info (User ID: 6013011895)
+2023-07-28 16:45:42 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 16:45:42 - INFO - Added job "job" to job store "default"
+2023-07-28 16:45:42 - INFO - Scheduler started
+2023-07-28 16:45:42 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 16:45:42 - WARNING - Updates were skipped successfully.
+2023-07-28 16:45:42 - INFO - Start polling.
+2023-07-28 16:46:28 - INFO - User action: /info (User ID: 6013011895)
+2023-07-28 16:48:19 - INFO - User action: /joke (User ID: 6013011895)
+2023-07-28 16:48:20 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: 94)
+2023-07-28 16:52:33 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 16:52:34 - INFO - Added job "job" to job store "default"
+2023-07-28 16:52:34 - INFO - Scheduler started
+2023-07-28 16:52:34 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 16:52:34 - WARNING - Updates were skipped successfully.
+2023-07-28 16:52:34 - INFO - Start polling.
+2023-07-28 16:52:42 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 16:52:42 - INFO - Added job "job" to job store "default"
+2023-07-28 16:52:42 - INFO - Scheduler started
+2023-07-28 16:52:42 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 16:52:43 - WARNING - Updates were skipped successfully.
+2023-07-28 16:52:43 - INFO - Start polling.
