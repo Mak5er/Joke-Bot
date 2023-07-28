@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="868e1bc7-d2cf-4321-8444-628b09c4cc27" name="Changes" comment="UPDATE locales">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_07_2023_11_33__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_07_2023_11_33__Changes_.xml" afterDir="false" />
+    <list default="true" id="868e1bc7-d2cf-4321-8444-628b09c4cc27" name="Changes" comment="UPDATE languages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.mo" beforeDir="false" afterPath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.po" beforeDir="false" afterPath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/jokebot.pot" beforeDir="false" afterPath="$PROJECT_DIR$/locales/jokebot.pot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.mo" beforeDir="false" afterPath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.po" beforeDir="false" afterPath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/bot_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/bot_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messages/bot_messages.py" beforeDir="false" afterPath="$PROJECT_DIR$/messages/bot_messages.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,8 +68,8 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
-        <env name="admin_id" value="6013011895" />
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="admin_id" value="6013011895" />
         <env name="token" value="6293095869:AAGxVF6RqdI1mZYO6WLiY1y8ul0JYddG1o0" />
       </envs>
       <option name="SDK_HOME" value="" />
@@ -173,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690478273383</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="UPDATE languages">
+      <option name="closed" value="true" />
+      <created>1690537270737</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1690537270737</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -210,6 +210,7 @@
     <MESSAGE value="ADD i18n and english, ukraine languages" />
     <MESSAGE value="UPDATE main.py" />
     <MESSAGE value="UPDATE locales" />
-    <option name="LAST_COMMIT_MESSAGE" value="UPDATE locales" />
+    <MESSAGE value="UPDATE languages" />
+    <option name="LAST_COMMIT_MESSAGE" value="UPDATE languages" />
   </component>
 </project>

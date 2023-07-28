@@ -16,6 +16,7 @@ After successfully launching the program and connecting the bot to Telegram, you
     /joke - get a random joke.
     /admin - access to the admin panel (only administrators are allowed).
     /info - get information about the user and statistics of bot usage.
+    /help - get list of all commands.
 
 ## Functionality
 
@@ -28,6 +29,7 @@ After successfully launching the program and connecting the bot to Telegram, you
 
     Adding new jokes to the database.
     Sending messages on behalf of the bot to all users.
+    Ban/unban users from admin pannel.
 
 ### Bot
     Sending daily joke everyday by schedule
