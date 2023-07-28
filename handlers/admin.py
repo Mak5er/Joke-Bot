@@ -33,7 +33,7 @@ logger.addHandler(handler)
 admin_id = config.admin_id
 
 
-@dp.message_handler(commands=['admin'])
+@dp.message_handler(user_id=admin_id, commands=['admin'])
 @rate_limit(2)
 async def admin(message: types.Message):
     await dp.bot.send_chat_action(message.chat.id, "typing")
@@ -78,7 +78,7 @@ async def download_db(message: types.Message):
             f"User action: Downloaded db (User ID: {user_id})")
 
 
-@dp.callback_query_handler(lambda call: call.data == 'download_log')
+@dp.callback_query_handler(lambda call: call.data == 'download_log', user_id=admin_id)
 async def download_log_handler(call: types.CallbackQuery):
     await dp.bot.send_chat_action(call.message.chat.id, "typing")
 
@@ -98,7 +98,7 @@ async def send_to_all_callback(call: types.CallbackQuery):
     await dp.current_state().set_state("send_to_all_message")
 
 
-@dp.message_handler(user_id=admin_id, state="send_to_all_message")
+@dp.message_handler(state="send_to_all_message")
 async def send_to_all_message(message: types.Message, state: FSMContext):
     sender_id = message.from_user.id
     if message.text == _("↩️Cancel"):
@@ -135,7 +135,7 @@ async def add_joke_handler(call: types.CallbackQuery):
     await dp.current_state().set_state("joke")
 
 
-@dp.message_handler(user_id=admin_id, state="joke")
+@dp.message_handler(state="joke")
 async def save_joke(message: types.Message, state: FSMContext):
     joke_text = message.text
     if joke_text == _("↩️Cancel"):
@@ -145,7 +145,11 @@ async def save_joke(message: types.Message, state: FSMContext):
         await state.finish()
         return
     else:
-        await db.add_joke(joke_text)
+        user_id = message.from_user.id
+        language = await db.get_language(user_id)
+
+        table_name = f"jokes_{language}"
+        await db.add_joke(joke_text, table_name)
 
         await message.reply(bot_messages.joke_added(),
                             reply_markup=types.ReplyKeyboardRemove())
@@ -430,7 +434,7 @@ async def answer_feedback(message: types.Message, state: FSMContext):
     answer = message.text
 
     if answer == _("↩️Cancel"):
-        await bot.send_message(message.chat.id, _('Action canceled!'))
+        await bot.send_message(message.chat.id, _('Action canceled!'), reply_markup=ReplyKeyboardRemove())
         await state.finish()
         return
     data = await state.get_data()

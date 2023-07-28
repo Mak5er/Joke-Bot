@@ -61,7 +61,7 @@ async def send_welcome(message: types.Message):
     user_name = message.from_user.full_name
     user_username = message.from_user.username
 
-    await db.add_users(user_id, user_name, user_username, "private")
+    await db.add_users(user_id, user_name, user_username, "private", "uk", 'user')
 
     logging.info(f"User action: /start (User ID: {user_id})")
 
@@ -172,8 +172,9 @@ async def feedback(message: types.Message, state: FSMContext):
                            reply_markup=kb.feedback_answer(feedback_message_id, feedback_message_chat_id),
                            parse_mode="Markdown")
 
-    await message.answer(_("Your message *{feedback_message_id}* sent!").format(feedback_message_id=feedback_message_id),
-                         reply_markup=types.ReplyKeyboardRemove())
+    await message.answer(
+        _("Your message *{feedback_message_id}* sent!").format(feedback_message_id=feedback_message_id),
+        reply_markup=types.ReplyKeyboardRemove())
 
 
 @dp.callback_query_handler(ChatTypeFilter(types.ChatType.PRIVATE),

@@ -4086,3 +4086,649 @@ IndexError: list index out of range
 2023-07-28 17:11:23 - INFO - User action: /info (User ID: 5617952282)
 2023-07-28 17:11:27 - INFO - Stop polling...
 2023-07-28 17:11:27 - WARNING - Goodbye!
+2023-07-28 18:10:19 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 18:10:21 - INFO - Added job "job" to job store "default"
+2023-07-28 18:10:21 - INFO - Scheduler started
+2023-07-28 18:10:21 - INFO - Bot: –ê–Ω–µ–∫–¥–æ—Ç–∏–∫–∏ [@makser_humor_bot]
+2023-07-28 18:10:21 - WARNING - Updates were skipped successfully.
+2023-07-28 18:10:22 - INFO - Start polling.
+2023-07-28 18:11:21 - INFO - User action: /start (User ID: 6013011895)
+2023-07-28 18:15:14 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 18:15:20 - INFO - Added job "job" to job store "default"
+2023-07-28 18:15:20 - INFO - Scheduler started
+2023-07-28 18:15:20 - INFO - Bot: –ê–Ω–µ–∫–¥–æ—Ç–∏–∫–∏ [@makser_humor_bot]
+2023-07-28 18:15:20 - WARNING - Updates were skipped successfully.
+2023-07-28 18:15:21 - INFO - Start polling.
+2023-07-28 18:15:40 - INFO - User action: /start (User ID: 6013011895)
+2023-07-28 18:16:53 - INFO - User action: /info (User ID: 6013011895)
+2023-07-28 18:44:27 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 18:44:30 - INFO - Added job "job" to job store "default"
+2023-07-28 18:44:30 - INFO - Scheduler started
+2023-07-28 18:44:31 - INFO - Bot: –ê–Ω–µ–∫–¥–æ—Ç–∏–∫–∏ [@makser_humor_bot]
+2023-07-28 18:44:31 - WARNING - Updates were skipped successfully.
+2023-07-28 18:44:31 - INFO - Start polling.
+2023-07-28 18:48:37 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 18:48:39 - INFO - Added job "job" to job store "default"
+2023-07-28 18:48:39 - INFO - Scheduler started
+2023-07-28 18:48:39 - INFO - Bot: –ê–Ω–µ–∫–¥–æ—Ç–∏–∫–∏ [@makser_humor_bot]
+2023-07-28 18:48:40 - WARNING - Updates were skipped successfully.
+2023-07-28 18:48:40 - INFO - Start polling.
+2023-07-28 18:50:16 - INFO - User action: Downloaded log (User ID: 6013011895)
+2023-07-28 18:50:57 - INFO - User action: /info (User ID: 5617952282)
+2023-07-28 19:04:41 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 19:04:43 - INFO - Added job "job" to job store "default"
+2023-07-28 19:04:43 - INFO - Scheduler started
+2023-07-28 19:04:44 - INFO - Bot: –ê–Ω–µ–∫–¥–æ—Ç–∏–∫–∏ [@makser_humor_bot]
+2023-07-28 19:04:44 - WARNING - Updates were skipped successfully.
+2023-07-28 19:04:44 - INFO - Start polling.
+2023-07-28 19:04:53 - INFO - User action: /joke (User ID: 6013011895)
+2023-07-28 19:04:54 - INFO - User action: /info (User ID: 6013011895)
+2023-07-28 19:06:45 - ERROR - Update: {"update_id": 247865481, "callback_query": {"id": "7378945369218140701", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 17601, "from": {"id": 6293095869, "is_bot": true, "first_name": "–ê–Ω–µ–∫–¥–æ—Ç–∏–∫–∏", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1690560301, "text": "New message from user: @mak5er\nMessage: Hello o", "entities": [{"type": "bold", "offset": 0, "length": 11}, {"type": "mention", "offset": 23, "length": 7}, {"type": "bold", "offset": 23, "length": 7}, {"type": "bold", "offset": 31, "length": 8}, {"type": "code", "offset": 40, "length": 7}], "reply_markup": {"inline_keyboard": [[{"text": "–í—ñ–¥–ø–æ–≤—ñ—Å—Ç–∏üí¨", "callback_data": "answer_17600_6013011895"}]]}}, "chat_instance": "-4729631583617012541", "data": "answer_17600_6013011895"}}
+Exception: name 'message' is not defined
+2023-07-28 19:06:45 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-37' coro=<Dispatcher._process_polling_updates() done, defined at /home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=NameError("name 'message' is not defined")>
+Traceback (most recent call last):
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/handlers/admin.py", line 422, in answer_feedback_handler
+    await message.delete_reply_markup()
+          ^^^^^^^
+NameError: name 'message' is not defined
+2023-07-28 19:06:49 - ERROR - Update: {"update_id": 247865482, "callback_query": {"id": "7378945367682235539", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 17601, "from": {"id": 6293095869, "is_bot": true, "first_name": "–ê–Ω–µ–∫–¥–æ—Ç–∏–∫–∏", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1690560301, "text": "New message from user: @mak5er\nMessage: Hello o", "entities": [{"type": "bold", "offset": 0, "length": 11}, {"type": "mention", "offset": 23, "length": 7}, {"type": "bold", "offset": 23, "length": 7}, {"type": "bold", "offset": 31, "length": 8}, {"type": "code", "offset": 40, "length": 7}], "reply_markup": {"inline_keyboard": [[{"text": "–í—ñ–¥–ø–æ–≤—ñ—Å—Ç–∏üí¨", "callback_data": "answer_17600_6013011895"}]]}}, "chat_instance": "-4729631583617012541", "data": "answer_17600_6013011895"}}
+Exception: name 'message' is not defined
+2023-07-28 19:06:49 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-40' coro=<Dispatcher._process_polling_updates() done, defined at /home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=NameError("name 'message' is not defined")>
+Traceback (most recent call last):
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/handlers/admin.py", line 422, in answer_feedback_handler
+    await message.delete_reply_markup()
+          ^^^^^^^
+NameError: name 'message' is not defined
+2023-07-28 19:06:50 - ERROR - Update: {"update_id": 247865483, "callback_query": {"id": "7378945366634156122", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 17601, "from": {"id": 6293095869, "is_bot": true, "first_name": "–ê–Ω–µ–∫–¥–æ—Ç–∏–∫–∏", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1690560301, "text": "New message from user: @mak5er\nMessage: Hello o", "entities": [{"type": "bold", "offset": 0, "length": 11}, {"type": "mention", "offset": 23, "length": 7}, {"type": "bold", "offset": 23, "length": 7}, {"type": "bold", "offset": 31, "length": 8}, {"type": "code", "offset": 40, "length": 7}], "reply_markup": {"inline_keyboard": [[{"text": "–í—ñ–¥–ø–æ–≤—ñ—Å—Ç–∏üí¨", "callback_data": "answer_17600_6013011895"}]]}}, "chat_instance": "-4729631583617012541", "data": "answer_17600_6013011895"}}
+Exception: name 'message' is not defined
+2023-07-28 19:06:50 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-43' coro=<Dispatcher._process_polling_updates() done, defined at /home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=NameError("name 'message' is not defined")>
+Traceback (most recent call last):
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/handlers/admin.py", line 422, in answer_feedback_handler
+    await message.delete_reply_markup()
+          ^^^^^^^
+NameError: name 'message' is not defined
+2023-07-28 19:06:53 - ERROR - Update: {"update_id": 247865484, "callback_query": {"id": "7378945369812451427", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 17601, "from": {"id": 6293095869, "is_bot": true, "first_name": "–ê–Ω–µ–∫–¥–æ—Ç–∏–∫–∏", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1690560301, "text": "New message from user: @mak5er\nMessage: Hello o", "entities": [{"type": "bold", "offset": 0, "length": 11}, {"type": "mention", "offset": 23, "length": 7}, {"type": "bold", "offset": 23, "length": 7}, {"type": "bold", "offset": 31, "length": 8}, {"type": "code", "offset": 40, "length": 7}], "reply_markup": {"inline_keyboard": [[{"text": "–í—ñ–¥–ø–æ–≤—ñ—Å—Ç–∏üí¨", "callback_data": "answer_17600_6013011895"}]]}}, "chat_instance": "-4729631583617012541", "data": "answer_17600_6013011895"}}
+Exception: name 'message' is not defined
+2023-07-28 19:06:53 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-46' coro=<Dispatcher._process_polling_updates() done, defined at /home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=NameError("name 'message' is not defined")>
+Traceback (most recent call last):
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/handlers/admin.py", line 422, in answer_feedback_handler
+    await message.delete_reply_markup()
+          ^^^^^^^
+NameError: name 'message' is not defined
+2023-07-28 19:07:02 - INFO - User action: /info (User ID: 6013011895)
+2023-07-28 19:07:09 - ERROR - Update: {"update_id": 247865488, "callback_query": {"id": "7378945368885733901", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 17607, "from": {"id": 6293095869, "is_bot": true, "first_name": "–ê–Ω–µ–∫–¥–æ—Ç–∏–∫–∏", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1690560428, "text": "New message from user: @mak5er\nMessage: Chang", "entities": [{"type": "bold", "offset": 0, "length": 11}, {"type": "mention", "offset": 23, "length": 7}, {"type": "bold", "offset": 23, "length": 7}, {"type": "bold", "offset": 31, "length": 8}, {"type": "code", "offset": 40, "length": 5}], "reply_markup": {"inline_keyboard": [[{"text": "–í—ñ–¥–ø–æ–≤—ñ—Å—Ç–∏üí¨", "callback_data": "answer_17606_6013011895"}]]}}, "chat_instance": "-4729631583617012541", "data": "answer_17606_6013011895"}}
+Exception: name 'message' is not defined
+2023-07-28 19:07:09 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-65' coro=<Dispatcher._process_polling_updates() done, defined at /home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=NameError("name 'message' is not defined")>
+Traceback (most recent call last):
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/handlers/admin.py", line 422, in answer_feedback_handler
+    await message.delete_reply_markup()
+          ^^^^^^^
+NameError: name 'message' is not defined
+2023-07-28 19:07:17 - INFO - User action: /help (User ID: 6013011895)
+2023-07-28 19:07:18 - INFO - User action: /info (User ID: 6013011895)
+2023-07-28 19:07:20 - INFO - User action: /admin (User ID: 6013011895)
+2023-07-28 19:07:22 - INFO - User action: Downloaded log (User ID: 6013011895)
+2023-07-28 19:10:50 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 19:10:53 - INFO - Added job "job" to job store "default"
+2023-07-28 19:10:53 - INFO - Scheduler started
+2023-07-28 19:10:53 - INFO - Bot: –ê–Ω–µ–∫–¥–æ—Ç–∏–∫–∏ [@makser_humor_bot]
+2023-07-28 19:10:53 - WARNING - Updates were skipped successfully.
+2023-07-28 19:10:54 - INFO - Start polling.
+2023-07-28 19:23:50 - INFO - User action: Downloaded log (User ID: 6013011895)
+2023-07-28 19:28:45 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 19:28:48 - INFO - Added job "job" to job store "default"
+2023-07-28 19:28:48 - INFO - Scheduler started
+2023-07-28 19:28:49 - INFO - Bot: –ê–Ω–µ–∫–¥–æ—Ç–∏–∫–∏ [@makser_humor_bot]
+2023-07-28 19:28:49 - WARNING - Updates were skipped successfully.
+2023-07-28 19:28:49 - INFO - Start polling.
+2023-07-28 19:28:59 - INFO - User action: /info (User ID: 6013011895)
+2023-07-28 19:29:01 - INFO - User action: /info (User ID: 6013011895)
+2023-07-28 19:29:33 - INFO - User action: /info (User ID: 5617952282)
+2023-07-28 21:35:20 - INFO - User action: /info (User ID: 6013011895)
+2023-07-28 21:35:23 - INFO - User action: /admin (User ID: 6013011895)
+2023-07-28 21:35:37 - INFO - Unbanned user (user_id: 1328242523)
+2023-07-28 21:35:45 - INFO - User action: /info (User ID: 1328242523)
+2023-07-28 21:35:57 - INFO - User action: /admin (User ID: 1328242523)
+2023-07-28 21:43:44 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 21:43:44 - INFO - Added job "job" to job store "default"
+2023-07-28 21:43:44 - INFO - Scheduler started
+2023-07-28 21:43:44 - INFO - Bot: ¿ÌÂÍ‰ÓÚËÍË [@makser_humor_bot]
+2023-07-28 21:43:45 - WARNING - Updates were skipped successfully.
+2023-07-28 21:43:45 - INFO - Start polling.
+2023-07-28 21:47:07 - INFO - Stop polling...
+2023-07-28 21:47:07 - WARNING - Goodbye!
+2023-07-28 21:47:16 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 21:47:16 - INFO - Added job "job" to job store "default"
+2023-07-28 21:47:16 - INFO - Scheduler started
+2023-07-28 21:47:16 - INFO - Bot: ¿ÌÂÍ‰ÓÚËÍË [@makser_humor_bot]
+2023-07-28 21:47:16 - WARNING - Updates were skipped successfully.
+2023-07-28 21:47:16 - INFO - Start polling.
+2023-07-28 21:47:20 - INFO - User action: /admin (User ID: 6013011895)
+2023-07-28 21:47:49 - INFO - User action: /info (User ID: 5617952282)
+2023-07-28 21:48:08 - INFO - Stop polling...
+2023-07-28 21:48:08 - WARNING - Goodbye!
+2023-07-28 21:49:11 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 21:49:12 - INFO - Added job "job" to job store "default"
+2023-07-28 21:49:12 - INFO - Scheduler started
+2023-07-28 21:49:12 - INFO - Bot: ¿ÌÂÍ‰ÓÚËÍË [@makser_humor_bot]
+2023-07-28 21:49:12 - WARNING - Updates were skipped successfully.
+2023-07-28 21:49:12 - INFO - Start polling.
+2023-07-28 21:49:13 - INFO - User action: /admin (User ID: 6013011895)
+2023-07-28 21:49:17 - ERROR - Update: {"update_id": 247865566, "message": {"message_id": 17717, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1690580958, "text": "yuk"}}
+Exception: DataBase.add_joke() missing 1 required positional argument: 'table_name'
+2023-07-28 21:49:17 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-21' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("DataBase.add_joke() missing 1 required positional argument: 'table_name'")>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\handlers\admin.py", line 148, in save_joke
+    await db.add_joke(joke_text)
+          ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DataBase.add_joke() missing 1 required positional argument: 'table_name'
+2023-07-28 21:49:52 - ERROR - Update: {"update_id": 247865567, "message": {"message_id": 68538, "from": {"id": 1317874863, "is_bot": false, "first_name": "\U0001f9ffAsya\U0001f9ff"}, "chat": {"id": -1001970076955, "title": "Â‚≥Î „‡Ì„ \U0001f608", "type": "supergroup"}, "date": 1690580992, "message_thread_id": 68529, "reply_to_message": {"message_id": 68529, "from": {"id": 1435590376, "is_bot": false, "first_name": "ﬁÎ≥‡Ì‰", "username": "yuliandeh", "language_code": "uk"}, "chat": {"id": -1001970076955, "title": "Â‚≥Î „‡Ì„ \U0001f608", "type": "supergroup"}, "date": 1690579759, "photo": [{"file_id": "AgACAgIAAx0CdWz9GwABAQuxZMQI_xGHB8m4tO97ZZehHVbQ-mMAAoDLMRtIOiFKxx32mcl4OnIBAAMCAANzAAMvBA", "file_unique_id": "AQADgMsxG0g6IUp4", "file_size": 979, "width": 51, "height": 90}, {"file_id": "AgACAgIAAx0CdWz9GwABAQuxZMQI_xGHB8m4tO97ZZehHVbQ-mMAAoDLMRtIOiFKxx32mcl4OnIBAAMCAANtAAMvBA", "file_unique_id": "AQADgMsxG0g6IUpy", "file_size": 12837, "width": 180, "height": 320}, {"file_id": "AgACAgIAAx0CdWz9GwABAQuxZMQI_xGHB8m4tO97ZZehHVbQ-mMAAoDLMRtIOiFKxx32mcl4OnIBAAMCAAN4AAMvBA", "file_unique_id": "AQADgMsxG0g6IUp9", "file_size": 49156, "width": 450, "height": 800}, {"file_id": "AgACAgIAAx0CdWz9GwABAQuxZMQI_xGHB8m4tO97ZZehHVbQ-mMAAoDLMRtIOiFKxx32mcl4OnIBAAMCAAN5AAMvBA", "file_unique_id": "AQADgMsxG0g6IUp-", "file_size": 84355, "width": 720, "height": 1280}], "caption": "ﬂ ÚÂÔÂ ÂÒÚÂÚ≥ı „¸ÓÎ"}, "text": "÷Ì „ÂÎ¸?"}}
+Exception: 'NoneType' object is not subscriptable
+2023-07-28 21:49:52 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-25' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("'NoneType' object is not subscriptable")>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 115, in notify
+    await self.dispatcher.middleware.trigger(f"process_{self.middleware_key}", args + (data,))
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares.py", line 53, in trigger
+    await app.trigger(action, args)
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares.py", line 106, in trigger
+    await handler(*args)
+  File "C:\Python\Joke Bot 2.0\middlewares\ban_middleware.py", line 13, in on_process_message
+    user = await db.status(message.from_user.id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\services\db.py", line 87, in status
+    return self.cursor.execute("SELECT DISTINCT status FROM users WHERE user_id = (?)", (user_id,)).fetchone()[
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-07-28 21:50:30 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 21:50:30 - INFO - Added job "job" to job store "default"
+2023-07-28 21:50:30 - INFO - Scheduler started
+2023-07-28 21:50:30 - INFO - Bot: ¿ÌÂÍ‰ÓÚËÍË [@makser_humor_bot]
+2023-07-28 21:50:30 - WARNING - Updates were skipped successfully.
+2023-07-28 21:50:31 - INFO - Start polling.
+2023-07-28 21:50:34 - ERROR - Update: {"update_id": 247865570, "message": {"message_id": 17721, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1690581034, "text": "oj"}}
+Exception: DataBase.add_joke() missing 1 required positional argument: 'table_name'
+2023-07-28 21:50:34 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-18' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("DataBase.add_joke() missing 1 required positional argument: 'table_name'")>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\handlers\admin.py", line 148, in save_joke
+    await db.add_joke(joke_text)
+          ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DataBase.add_joke() missing 1 required positional argument: 'table_name'
+2023-07-28 21:51:43 - INFO - Stop polling...
+2023-07-28 21:51:43 - WARNING - Goodbye!
+2023-07-28 21:51:44 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 21:51:44 - INFO - Added job "job" to job store "default"
+2023-07-28 21:51:44 - INFO - Scheduler started
+2023-07-28 21:51:44 - INFO - Bot: ¿ÌÂÍ‰ÓÚËÍË [@makser_humor_bot]
+2023-07-28 21:51:44 - WARNING - Updates were skipped successfully.
+2023-07-28 21:51:45 - INFO - Start polling.
+2023-07-28 21:51:50 - INFO - User action: Add joke (User ID: 6013011895), (Joke text: rthj)
+2023-07-28 21:52:29 - INFO - Stop polling...
+2023-07-28 21:52:29 - WARNING - Goodbye!
+2023-07-28 21:52:45 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 21:52:45 - INFO - Added job "job" to job store "default"
+2023-07-28 21:52:45 - INFO - Scheduler started
+2023-07-28 21:52:45 - INFO - Bot: ¿ÌÂÍ‰ÓÚËÍË [@makser_humor_bot]
+2023-07-28 21:52:45 - WARNING - Updates were skipped successfully.
+2023-07-28 21:52:46 - INFO - Start polling.
+2023-07-28 21:53:01 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 21:53:01 - INFO - Added job "job" to job store "default"
+2023-07-28 21:53:01 - INFO - Scheduler started
+2023-07-28 21:53:01 - INFO - Bot: ¿ÌÂÍ‰ÓÚËÍË [@makser_humor_bot]
+2023-07-28 21:53:01 - WARNING - Updates were skipped successfully.
+2023-07-28 21:53:01 - INFO - Start polling.
+2023-07-28 21:53:07 - ERROR - Update: {"update_id": 247865573, "message": {"message_id": 17731, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1690581188, "text": "/start", "entities": [{"type": "bot_command", "offset": 0, "length": 6}]}}
+Exception: 'NoneType' object is not subscriptable
+2023-07-28 21:53:07 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-11' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("'NoneType' object is not subscriptable")>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 115, in notify
+    await self.dispatcher.middleware.trigger(f"process_{self.middleware_key}", args + (data,))
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares.py", line 53, in trigger
+    await app.trigger(action, args)
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares.py", line 106, in trigger
+    await handler(*args)
+  File "C:\Python\Joke Bot 2.0\middlewares\ban_middleware.py", line 13, in on_process_message
+    user = await db.status(message.from_user.id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\services\db.py", line 87, in status
+    return self.cursor.execute("SELECT DISTINCT status FROM users WHERE user_id = (?)", (user_id,)).fetchone()[
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-07-28 21:53:14 - ERROR - Update: {"update_id": 247865574, "message": {"message_id": 17732, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1690581194, "text": "/start", "entities": [{"type": "bot_command", "offset": 0, "length": 6}]}}
+Exception: 'NoneType' object is not subscriptable
+2023-07-28 21:53:14 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-14' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("'NoneType' object is not subscriptable")>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 115, in notify
+    await self.dispatcher.middleware.trigger(f"process_{self.middleware_key}", args + (data,))
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares.py", line 53, in trigger
+    await app.trigger(action, args)
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares.py", line 106, in trigger
+    await handler(*args)
+  File "C:\Python\Joke Bot 2.0\middlewares\ban_middleware.py", line 13, in on_process_message
+    user = await db.status(message.from_user.id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\services\db.py", line 87, in status
+    return self.cursor.execute("SELECT DISTINCT status FROM users WHERE user_id = (?)", (user_id,)).fetchone()[
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-07-28 21:54:25 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 21:54:25 - INFO - Added job "job" to job store "default"
+2023-07-28 21:54:25 - INFO - Scheduler started
+2023-07-28 21:54:25 - INFO - Bot: ¿ÌÂÍ‰ÓÚËÍË [@makser_humor_bot]
+2023-07-28 21:54:26 - WARNING - Updates were skipped successfully.
+2023-07-28 21:54:26 - INFO - Start polling.
+2023-07-28 21:54:27 - ERROR - Update: {"update_id": 247865575, "message": {"message_id": 17735, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1690581268, "text": "/start", "entities": [{"type": "bot_command", "offset": 0, "length": 6}]}}
+Exception: 'NoneType' object is not subscriptable
+2023-07-28 21:54:27 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-11' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("'NoneType' object is not subscriptable")>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 115, in notify
+    await self.dispatcher.middleware.trigger(f"process_{self.middleware_key}", args + (data,))
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares.py", line 53, in trigger
+    await app.trigger(action, args)
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares.py", line 106, in trigger
+    await handler(*args)
+  File "C:\Python\Joke Bot 2.0\middlewares\ban_middleware.py", line 13, in on_process_message
+    user = await db.status(message.from_user.id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\services\db.py", line 87, in status
+    return self.cursor.execute("SELECT DISTINCT status FROM users WHERE user_id = (?)", (user_id,)).fetchone()[
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-07-28 21:54:29 - ERROR - Update: {"update_id": 247865576, "message": {"message_id": 17736, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1690581269, "text": "/start", "entities": [{"type": "bot_command", "offset": 0, "length": 6}]}}
+Exception: 'NoneType' object is not subscriptable
+2023-07-28 21:54:29 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-14' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("'NoneType' object is not subscriptable")>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 115, in notify
+    await self.dispatcher.middleware.trigger(f"process_{self.middleware_key}", args + (data,))
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares.py", line 53, in trigger
+    await app.trigger(action, args)
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares.py", line 106, in trigger
+    await handler(*args)
+  File "C:\Python\Joke Bot 2.0\middlewares\ban_middleware.py", line 13, in on_process_message
+    user = await db.status(message.from_user.id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\services\db.py", line 87, in status
+    return self.cursor.execute("SELECT DISTINCT status FROM users WHERE user_id = (?)", (user_id,)).fetchone()[
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-07-28 21:54:45 - INFO - Stop polling...
+2023-07-28 21:54:45 - WARNING - Goodbye!
+2023-07-28 21:56:36 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 21:56:36 - INFO - Added job "job" to job store "default"
+2023-07-28 21:56:36 - INFO - Scheduler started
+2023-07-28 21:56:36 - INFO - Bot: ¿ÌÂÍ‰ÓÚËÍË [@makser_humor_bot]
+2023-07-28 21:56:36 - WARNING - Updates were skipped successfully.
+2023-07-28 21:56:36 - INFO - Start polling.
+2023-07-28 21:56:41 - ERROR - Update: {"update_id": 247865577, "message": {"message_id": 17739, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1690581401, "text": "/start", "entities": [{"type": "bot_command", "offset": 0, "length": 6}]}}
+Exception: 'NoneType' object is not subscriptable
+2023-07-28 21:56:41 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-11' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("'NoneType' object is not subscriptable")>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 115, in notify
+    await self.dispatcher.middleware.trigger(f"process_{self.middleware_key}", args + (data,))
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares.py", line 53, in trigger
+    await app.trigger(action, args)
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares.py", line 106, in trigger
+    await handler(*args)
+  File "C:\Python\Joke Bot 2.0\middlewares\ban_middleware.py", line 13, in on_process_message
+    user = await db.status(message.from_user.id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\services\db.py", line 87, in status
+    return self.cursor.execute("SELECT DISTINCT status FROM users WHERE user_id = (?)", (user_id,)).fetchone()[
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-07-28 21:56:57 - INFO - Stop polling...
+2023-07-28 21:56:57 - WARNING - Goodbye!
+2023-07-28 21:57:02 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 21:57:02 - INFO - Added job "job" to job store "default"
+2023-07-28 21:57:02 - INFO - Scheduler started
+2023-07-28 21:57:02 - INFO - Bot: ¿ÌÂÍ‰ÓÚËÍË [@makser_humor_bot]
+2023-07-28 21:57:02 - WARNING - Updates were skipped successfully.
+2023-07-28 21:57:02 - INFO - Start polling.
+2023-07-28 21:57:04 - ERROR - Update: {"update_id": 247865578, "message": {"message_id": 17742, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1690581425, "text": "/start", "entities": [{"type": "bot_command", "offset": 0, "length": 6}]}}
+Exception: 'NoneType' object is not subscriptable
+2023-07-28 21:57:04 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-11' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("'NoneType' object is not subscriptable")>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 115, in notify
+    await self.dispatcher.middleware.trigger(f"process_{self.middleware_key}", args + (data,))
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares.py", line 53, in trigger
+    await app.trigger(action, args)
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares.py", line 106, in trigger
+    await handler(*args)
+  File "C:\Python\Joke Bot 2.0\middlewares\ban_middleware.py", line 13, in on_process_message
+    user = await db.status(message.from_user.id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\services\db.py", line 87, in status
+    return self.cursor.execute("SELECT DISTINCT status FROM users WHERE user_id = (?)", (user_id,)).fetchone()[
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-07-28 21:58:20 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 21:58:21 - INFO - Added job "job" to job store "default"
+2023-07-28 21:58:21 - INFO - Scheduler started
+2023-07-28 21:58:21 - INFO - Bot: ¿ÌÂÍ‰ÓÚËÍË [@makser_humor_bot]
+2023-07-28 21:58:21 - WARNING - Updates were skipped successfully.
+2023-07-28 21:58:21 - INFO - Start polling.
+2023-07-28 21:58:24 - ERROR - Update: {"update_id": 247865579, "message": {"message_id": 17745, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1690581504, "text": "/start", "entities": [{"type": "bot_command", "offset": 0, "length": 6}]}}
+Exception: 'NoneType' object is not subscriptable
+2023-07-28 21:58:24 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-11' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("'NoneType' object is not subscriptable")>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 115, in notify
+    await self.dispatcher.middleware.trigger(f"process_{self.middleware_key}", args + (data,))
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares.py", line 53, in trigger
+    await app.trigger(action, args)
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares.py", line 106, in trigger
+    await handler(*args)
+  File "C:\Python\Joke Bot 2.0\middlewares\ban_middleware.py", line 13, in on_process_message
+    user = await db.status(message.from_user.id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\services\db.py", line 87, in status
+    return self.cursor.execute("SELECT DISTINCT status FROM users WHERE user_id = (?)", (user_id,)).fetchone()[
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-07-28 21:58:26 - ERROR - Update: {"update_id": 247865580, "message": {"message_id": 17746, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1690581507, "text": "/start", "entities": [{"type": "bot_command", "offset": 0, "length": 6}]}}
+Exception: 'NoneType' object is not subscriptable
+2023-07-28 21:58:26 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-14' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("'NoneType' object is not subscriptable")>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 115, in notify
+    await self.dispatcher.middleware.trigger(f"process_{self.middleware_key}", args + (data,))
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares.py", line 53, in trigger
+    await app.trigger(action, args)
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares.py", line 106, in trigger
+    await handler(*args)
+  File "C:\Python\Joke Bot 2.0\middlewares\ban_middleware.py", line 13, in on_process_message
+    user = await db.status(message.from_user.id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\services\db.py", line 87, in status
+    return self.cursor.execute("SELECT DISTINCT status FROM users WHERE user_id = (?)", (user_id,)).fetchone()[
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-07-28 21:59:42 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 21:59:43 - INFO - Added job "job" to job store "default"
+2023-07-28 21:59:43 - INFO - Scheduler started
+2023-07-28 21:59:43 - INFO - Bot: ¿ÌÂÍ‰ÓÚËÍË [@makser_humor_bot]
+2023-07-28 21:59:43 - WARNING - Updates were skipped successfully.
+2023-07-28 21:59:43 - INFO - Start polling.
+2023-07-28 21:59:48 - ERROR - Update: {"update_id": 247865582, "message": {"message_id": 17751, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1690581588, "text": "/start", "entities": [{"type": "bot_command", "offset": 0, "length": 6}]}}
+Exception: 'NoneType' object is not subscriptable
+2023-07-28 21:59:48 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-11' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("'NoneType' object is not subscriptable")>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 115, in notify
+    await self.dispatcher.middleware.trigger(f"process_{self.middleware_key}", args + (data,))
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares.py", line 53, in trigger
+    await app.trigger(action, args)
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\middlewares.py", line 106, in trigger
+    await handler(*args)
+  File "C:\Python\Joke Bot 2.0\middlewares\ban_middleware.py", line 13, in on_process_message
+    user = await db.status(message.from_user.id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\services\db.py", line 87, in status
+    return self.cursor.execute("SELECT DISTINCT status FROM users WHERE user_id = (?)", (user_id,)).fetchone()[
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2023-07-28 21:59:56 - INFO - Stop polling...
+2023-07-28 21:59:56 - WARNING - Goodbye!
+2023-07-28 22:01:34 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 22:01:34 - INFO - Added job "job" to job store "default"
+2023-07-28 22:01:34 - INFO - Scheduler started
+2023-07-28 22:01:35 - INFO - Bot: ¿ÌÂÍ‰ÓÚËÍË [@makser_humor_bot]
+2023-07-28 22:01:35 - WARNING - Updates were skipped successfully.
+2023-07-28 22:01:35 - INFO - Start polling.
+2023-07-28 22:01:38 - INFO - User action: /start (User ID: 6013011895)
+2023-07-28 22:01:48 - INFO - User action: /start (User ID: 6013011895)
+2023-07-28 22:01:51 - INFO - Stop polling...
+2023-07-28 22:01:51 - WARNING - Goodbye!
+2023-07-28 22:05:34 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 22:05:34 - INFO - Added job "job" to job store "default"
+2023-07-28 22:05:34 - INFO - Scheduler started
+2023-07-28 22:05:34 - INFO - Bot: ¿ÌÂÍ‰ÓÚËÍË [@makser_humor_bot]
+2023-07-28 22:05:34 - WARNING - Updates were skipped successfully.
+2023-07-28 22:05:34 - INFO - Start polling.
+2023-07-28 22:05:37 - INFO - User action: /start (User ID: 6013011895)
+2023-07-28 22:05:39 - INFO - User action: /info (User ID: 6013011895)
+2023-07-28 22:05:41 - INFO - User action: /admin (User ID: 6013011895)
+2023-07-28 22:05:49 - INFO - User action: Add joke (User ID: 6013011895), (Joke text: Bdbd)
+2023-07-28 22:05:53 - INFO - Sent message to user 6013011895: Bddb
+2023-07-28 22:05:56 - INFO - Sent daily joke to user 6013011895
+2023-07-28 22:06:11 - INFO - User action: /admin (User ID: 6013011895)
+2023-07-28 22:06:16 - INFO - Stop polling...
+2023-07-28 22:06:16 - WARNING - Goodbye!

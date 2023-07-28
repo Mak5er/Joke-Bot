@@ -10,7 +10,10 @@ db = DataBase('services/jokes.db')
 
 class UserBannedMiddleware(BaseMiddleware):
     async def on_process_message(self, message: Message, data: dict):
-        user = await db.status(message.from_user.id)
+        try:
+            user = await db.status(message.from_user.id)
+        except:
+            user = 'user'
         if user == 'ban':
             await message.answer(
                 '*You are banned please contact to @mak5er for more information!*', parse_mode="Markdown"

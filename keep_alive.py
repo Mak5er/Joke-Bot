@@ -43,7 +43,7 @@ def run_crawler(url, interval):
 
 
 def start_crawling():
-    urls = ["https://joke-bot.mak5er.repl.co/", "https://multi-bot.mak5er.repl.co/"]
+    urls = ["https://multi-bot.mak5er.repl.co/"]
     for url_to_crawl in urls:
         print(url_to_crawl)
         crawl_thread = Thread(target=run_crawler, args=(url_to_crawl, 30))
