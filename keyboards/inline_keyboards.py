@@ -120,3 +120,10 @@ def return_search_keyboard():
     username_button = InlineKeyboardButton(text="Username", callback_data="search_username")
     search_keyboard.row(username_button, id_button)
     return search_keyboard
+
+
+def return_back_to_admin_keyboard():
+    keyboard = InlineKeyboardMarkup()
+    back_button = InlineKeyboardButton(text=_("🔙Back"), callback_data="back_to_admin")
+    keyboard.row(back_button)
+    return keyboard

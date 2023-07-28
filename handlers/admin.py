@@ -221,6 +221,7 @@ async def control_user(message: types.Message, state: FSMContext):
                                'Action canceled!',
                                reply_markup=ReplyKeyboardRemove())
         await state.finish()
+        await admin(message)
 
     else:
         await dp.bot.send_chat_action(message.chat.id, "typing")
@@ -261,6 +262,7 @@ async def control_user(message: types.Message, state: FSMContext):
             go_to_chat = InlineKeyboardButton(text=_("Enter in Conversation"), url=f"tg://user?id={user_id}")
             ban_button = InlineKeyboardButton(text=_("❌Ban"), callback_data=f"ban_{user_id}")
             unban_button = InlineKeyboardButton(text=_("✅Unban"), callback_data=f"unban_{user_id}")
+            back_button = InlineKeyboardButton(text=_("🔙Back"), callback_data="back_to_admin")
             control_keyboard = InlineKeyboardMarkup()
             control_keyboard.row(go_to_chat)
 
@@ -276,6 +278,8 @@ async def control_user(message: types.Message, state: FSMContext):
 
             elif status == 'ban':
                 control_keyboard.row(unban_button)
+
+            control_keyboard.row(back_button)
 
             if user_photo.total_count > 0:
                 await message.reply_photo(user_photo.photos[0][-1].file_id,
@@ -300,9 +304,14 @@ async def message_handler(call: types.CallbackQuery):
     else:
         await db.ban_user(banned_user_id)
 
+        await bot.send_message(chat_id=banned_user_id,
+                               text="🚫You have been banned, contact @mak5er for more information!")
+
         await call.message.delete()
 
-        await call.message.answer(_("User {banned_user_id} successfully banned!").format(banned_user_id=banned_user_id))
+        await call.message.answer(_("User {banned_user_id} successfully banned!").format(banned_user_id=banned_user_id),
+                                  reply_markup=kb.return_back_to_admin_keyboard())
+        logging.info(f"Banned user (user_id: {banned_user_id})")
 
 
 @dp.callback_query_handler(lambda call: call.data.startswith("unban_"))
@@ -317,9 +326,15 @@ async def message_handler(call: types.CallbackQuery):
     else:
         await db.unban_user(unbanned_user_id)
 
+        await bot.send_message(chat_id=unbanned_user_id,
+                               text="🎉You have been unbanned!")
+
         await call.message.delete()
         await call.message.answer(
-            _("User {unbanned_user_id} successfully unbanned!").format(unbanned_user_id=unbanned_user_id))
+            _("User {unbanned_user_id} successfully unbanned!").format(unbanned_user_id=unbanned_user_id),
+            reply_markup=kb.return_back_to_admin_keyboard())
+
+        logging.info(f"Unanned user (user_id: {unbanned_user_id})")
 
 
 @dp.message_handler(user_id=admin_id, commands=['info'])
@@ -367,3 +382,25 @@ async def export_users_data(message: types.Message):
 
     # Видаляємо файл з комп'ютера
     os.remove(file_path)
+
+
+@dp.callback_query_handler(lambda call: call.data == 'back_to_admin')
+async def back_to_admin(call: types.CallbackQuery):
+    await bot.delete_message(call.message.chat.id, call.message.message_id)
+    await dp.bot.send_chat_action(call.message.chat.id, "typing")
+
+    user_id = call.from_user.id
+    language = await db.get_language(user_id)
+
+    table_name = f"jokes_{language}"
+
+    logging.info(f"User action: /admin (User ID: {user_id})")
+
+    user_count = await db.user_count()
+    joke_count = await db.joke_count(table_name)
+    sent_count = await db.sent_count()
+
+    await call.message.answer(bot_messages.admin_panel(user_count, joke_count,
+                                                       sent_count),
+                              reply_markup=kb.admin_keyboard(),
+                              parse_mode='Markdown')
