@@ -3143,3 +3143,257 @@ aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupd
 2023-07-28 13:23:59 - INFO - User action: /admin (User ID: 6013011895)
 2023-07-28 13:24:12 - INFO - User action: /admin (User ID: 6013011895)
 2023-07-28 13:24:27 - INFO - User action: /admin (User ID: 6013011895)
+2023-07-28 13:41:29 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 13:41:29 - INFO - Added job "job" to job store "default"
+2023-07-28 13:41:29 - INFO - Scheduler started
+2023-07-28 13:41:29 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.50.64:8080
+2023-07-28 13:41:29 - INFO - [33mPress CTRL+C to quit[0m
+2023-07-28 13:41:29 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 13:41:29 - WARNING - Updates were skipped successfully.
+2023-07-28 13:41:30 - INFO - Start polling.
+2023-07-28 13:41:35 - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2023-07-28 13:41:45 - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2023-07-28 13:42:01 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 13:42:01 - INFO - Added job "job" to job store "default"
+2023-07-28 13:42:01 - INFO - Scheduler started
+2023-07-28 13:42:01 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.50.64:8080
+2023-07-28 13:42:01 - INFO - [33mPress CTRL+C to quit[0m
+2023-07-28 13:42:01 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 13:42:01 - WARNING - Updates were skipped successfully.
+2023-07-28 13:42:01 - INFO - Start polling.
+2023-07-28 13:42:03 - INFO - User action: /info (User ID: 6013011895)
+2023-07-28 13:42:05 - INFO - User action: /admin (User ID: 6013011895)
+2023-07-28 13:42:37 - INFO - Stop polling...
+2023-07-28 13:42:37 - WARNING - Goodbye!
+2023-07-28 13:42:38 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 13:42:38 - INFO - Added job "job" to job store "default"
+2023-07-28 13:42:38 - INFO - Scheduler started
+2023-07-28 13:42:38 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.50.64:8080
+2023-07-28 13:42:38 - INFO - [33mPress CTRL+C to quit[0m
+2023-07-28 13:42:38 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 13:42:38 - WARNING - Updates were skipped successfully.
+2023-07-28 13:42:39 - INFO - Start polling.
+2023-07-28 13:42:41 - INFO - User action: /admin (User ID: 6013011895)
+2023-07-28 13:42:45 - INFO - User action: /admin (User ID: 6013011895)
+2023-07-28 13:42:56 - ERROR - Update: {"update_id": 247864995, "callback_query": {"id": "7378945368670202508", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 16932, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1690551775, "reply_to_message": {"message_id": 16930, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1690551773, "text": "marektop"}, "photo": [{"file_id": "AgACAgIAAxkDAAJCJGTDm68_Un_tVY5xi2tSKhdfR3KzAAJUyzEbWWPRS0hb7boKyjp-AQADAgADYQADLwQ", "file_unique_id": "AQADVMsxG1lj0UsAAQ", "file_size": 10067, "width": 160, "height": 160}, {"file_id": "AgACAgIAAxkDAAJCJGTDm68_Un_tVY5xi2tSKhdfR3KzAAJUyzEbWWPRS0hb7boKyjp-AQADAgADYgADLwQ", "file_unique_id": "AQADVMsxG1lj0Utn", "file_size": 31378, "width": 320, "height": 320}, {"file_id": "AgACAgIAAxkDAAJCJGTDm68_Un_tVY5xi2tSKhdfR3KzAAJUyzEbWWPRS0hb7boKyjp-AQADAgADYwADLwQ", "file_unique_id": "AQADVMsxG1lj0UsB", "file_size": 97772, "width": 640, "height": 640}], "caption": "ІНФОРМАЦІЯ ПРО КОРИСТУВАЧА\nІм'я: Reva Matviy\nID: 6109478142\nЮзернейм: @marektop\nСтатус: user", "caption_entities": [{"type": "bold", "offset": 0, "length": 26}, {"type": "italic", "offset": 27, "length": 4}, {"type": "bold", "offset": 33, "length": 11}, {"type": "italic", "offset": 45, "length": 2}, {"type": "bold", "offset": 49, "length": 10}, {"type": "italic", "offset": 60, "length": 8}, {"type": "mention", "offset": 70, "length": 9}, {"type": "bold", "offset": 70, "length": 9}, {"type": "italic", "offset": 80, "length": 6}, {"type": "bold", "offset": 88, "length": 4}], "reply_markup": {"inline_keyboard": [[{"text": "Перейти до розмови", "url": "tg://user?id=6109478142"}], [{"text": "\u274cЗабанити", "callback_data": "ban_6109478142"}], [{"text": "\U0001f519Назад", "callback_data": "back_to_admin"}]]}}, "chat_instance": "-4729631583617012541", "data": "ban_6109478142"}}
+Exception: There is no text in the message to edit
+2023-07-28 13:42:56 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-51' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=BadRequest('There is no text in the message to edit')>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\handlers\admin.py", line 305, in message_handler
+    await call.message.edit_text(_('Enter ban reason:'), reply_markup=kb.cancel_keyboard())
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\types\message.py", line 2919, in edit_text
+    return await self.bot.edit_message_text(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\bot.py", line 3122, in edit_message_text
+    result = await self.request(api.Methods.EDIT_MESSAGE_TEXT, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+aiogram.utils.exceptions.BadRequest: There is no text in the message to edit
+2023-07-28 13:42:59 - ERROR - Update: {"update_id": 247864996, "callback_query": {"id": "7378945366800107659", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 16932, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1690551775, "reply_to_message": {"message_id": 16930, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1690551773, "text": "marektop"}, "photo": [{"file_id": "AgACAgIAAxkDAAJCJGTDm68_Un_tVY5xi2tSKhdfR3KzAAJUyzEbWWPRS0hb7boKyjp-AQADAgADYQADLwQ", "file_unique_id": "AQADVMsxG1lj0UsAAQ", "file_size": 10067, "width": 160, "height": 160}, {"file_id": "AgACAgIAAxkDAAJCJGTDm68_Un_tVY5xi2tSKhdfR3KzAAJUyzEbWWPRS0hb7boKyjp-AQADAgADYgADLwQ", "file_unique_id": "AQADVMsxG1lj0Utn", "file_size": 31378, "width": 320, "height": 320}, {"file_id": "AgACAgIAAxkDAAJCJGTDm68_Un_tVY5xi2tSKhdfR3KzAAJUyzEbWWPRS0hb7boKyjp-AQADAgADYwADLwQ", "file_unique_id": "AQADVMsxG1lj0UsB", "file_size": 97772, "width": 640, "height": 640}], "caption": "ІНФОРМАЦІЯ ПРО КОРИСТУВАЧА\nІм'я: Reva Matviy\nID: 6109478142\nЮзернейм: @marektop\nСтатус: user", "caption_entities": [{"type": "bold", "offset": 0, "length": 26}, {"type": "italic", "offset": 27, "length": 4}, {"type": "bold", "offset": 33, "length": 11}, {"type": "italic", "offset": 45, "length": 2}, {"type": "bold", "offset": 49, "length": 10}, {"type": "italic", "offset": 60, "length": 8}, {"type": "mention", "offset": 70, "length": 9}, {"type": "bold", "offset": 70, "length": 9}, {"type": "italic", "offset": 80, "length": 6}, {"type": "bold", "offset": 88, "length": 4}], "reply_markup": {"inline_keyboard": [[{"text": "Перейти до розмови", "url": "tg://user?id=6109478142"}], [{"text": "\u274cЗабанити", "callback_data": "ban_6109478142"}], [{"text": "\U0001f519Назад", "callback_data": "back_to_admin"}]]}}, "chat_instance": "-4729631583617012541", "data": "ban_6109478142"}}
+Exception: There is no text in the message to edit
+2023-07-28 13:42:59 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-55' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=BadRequest('There is no text in the message to edit')>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\handlers\admin.py", line 305, in message_handler
+    await call.message.edit_text(_('Enter ban reason:'), reply_markup=kb.cancel_keyboard())
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\types\message.py", line 2919, in edit_text
+    return await self.bot.edit_message_text(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\bot.py", line 3122, in edit_message_text
+    result = await self.request(api.Methods.EDIT_MESSAGE_TEXT, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+aiogram.utils.exceptions.BadRequest: There is no text in the message to edit
+2023-07-28 13:43:24 - ERROR - Update: {"update_id": 247864997, "callback_query": {"id": "7378945367552300765", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 16932, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1690551775, "reply_to_message": {"message_id": 16930, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1690551773, "text": "marektop"}, "photo": [{"file_id": "AgACAgIAAxkDAAJCJGTDm68_Un_tVY5xi2tSKhdfR3KzAAJUyzEbWWPRS0hb7boKyjp-AQADAgADYQADLwQ", "file_unique_id": "AQADVMsxG1lj0UsAAQ", "file_size": 10067, "width": 160, "height": 160}, {"file_id": "AgACAgIAAxkDAAJCJGTDm68_Un_tVY5xi2tSKhdfR3KzAAJUyzEbWWPRS0hb7boKyjp-AQADAgADYgADLwQ", "file_unique_id": "AQADVMsxG1lj0Utn", "file_size": 31378, "width": 320, "height": 320}, {"file_id": "AgACAgIAAxkDAAJCJGTDm68_Un_tVY5xi2tSKhdfR3KzAAJUyzEbWWPRS0hb7boKyjp-AQADAgADYwADLwQ", "file_unique_id": "AQADVMsxG1lj0UsB", "file_size": 97772, "width": 640, "height": 640}], "caption": "ІНФОРМАЦІЯ ПРО КОРИСТУВАЧА\nІм'я: Reva Matviy\nID: 6109478142\nЮзернейм: @marektop\nСтатус: user", "caption_entities": [{"type": "bold", "offset": 0, "length": 26}, {"type": "italic", "offset": 27, "length": 4}, {"type": "bold", "offset": 33, "length": 11}, {"type": "italic", "offset": 45, "length": 2}, {"type": "bold", "offset": 49, "length": 10}, {"type": "italic", "offset": 60, "length": 8}, {"type": "mention", "offset": 70, "length": 9}, {"type": "bold", "offset": 70, "length": 9}, {"type": "italic", "offset": 80, "length": 6}, {"type": "bold", "offset": 88, "length": 4}], "reply_markup": {"inline_keyboard": [[{"text": "Перейти до розмови", "url": "tg://user?id=6109478142"}], [{"text": "\u274cЗабанити", "callback_data": "ban_6109478142"}], [{"text": "\U0001f519Назад", "callback_data": "back_to_admin"}]]}}, "chat_instance": "-4729631583617012541", "data": "ban_6109478142"}}
+Exception: There is no text in the message to edit
+2023-07-28 13:43:24 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-60' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=BadRequest('There is no text in the message to edit')>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\handlers\admin.py", line 305, in message_handler
+    await call.message.edit_text(_('Enter ban reason:'), reply_markup=kb.cancel_keyboard())
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\types\message.py", line 2919, in edit_text
+    return await self.bot.edit_message_text(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\bot.py", line 3122, in edit_message_text
+    result = await self.request(api.Methods.EDIT_MESSAGE_TEXT, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+aiogram.utils.exceptions.BadRequest: There is no text in the message to edit
+2023-07-28 13:43:59 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 13:43:59 - INFO - Added job "job" to job store "default"
+2023-07-28 13:43:59 - INFO - Scheduler started
+2023-07-28 13:43:59 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.50.64:8080
+2023-07-28 13:43:59 - INFO - [33mPress CTRL+C to quit[0m
+2023-07-28 13:43:59 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 13:43:59 - WARNING - Updates were skipped successfully.
+2023-07-28 13:44:00 - INFO - Start polling.
+2023-07-28 13:44:15 - INFO - Banned user (user_id: 6109478142)
+2023-07-28 13:45:30 - INFO - Stop polling...
+2023-07-28 13:45:30 - WARNING - Goodbye!
+2023-07-28 13:45:34 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 13:45:34 - INFO - Added job "job" to job store "default"
+2023-07-28 13:45:34 - INFO - Scheduler started
+2023-07-28 13:45:34 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.50.64:8080
+2023-07-28 13:45:34 - INFO - [33mPress CTRL+C to quit[0m
+2023-07-28 13:45:34 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 13:45:34 - WARNING - Updates were skipped successfully.
+2023-07-28 13:45:34 - INFO - Start polling.
+2023-07-28 13:45:40 - INFO - User action: /admin (User ID: 6013011895)
+2023-07-28 13:45:56 - INFO - Unbanned user (user_id: 6109478142)
+2023-07-28 13:46:01 - INFO - User action: /admin (User ID: 6013011895)
+2023-07-28 13:51:45 - INFO - Stop polling...
+2023-07-28 13:51:45 - WARNING - Goodbye!
+2023-07-28 13:53:43 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 13:53:43 - INFO - Added job "job" to job store "default"
+2023-07-28 13:53:43 - INFO - Scheduler started
+2023-07-28 13:53:43 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.50.64:8080
+2023-07-28 13:53:43 - INFO - [33mPress CTRL+C to quit[0m
+2023-07-28 13:53:43 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 13:53:43 - WARNING - Updates were skipped successfully.
+2023-07-28 13:53:43 - INFO - Start polling.
+2023-07-28 13:54:13 - INFO - Banned user (user_id: 6109478142)
+2023-07-28 13:55:01 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-07-28 13:55:01 - INFO - Added job "job" to job store "default"
+2023-07-28 13:55:01 - INFO - Scheduler started
+2023-07-28 13:55:01 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.50.64:8080
+2023-07-28 13:55:01 - INFO - [33mPress CTRL+C to quit[0m
+2023-07-28 13:55:01 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-07-28 13:55:01 - WARNING - Updates were skipped successfully.
+2023-07-28 13:55:01 - INFO - Start polling.
+2023-07-28 13:55:07 - INFO - User action: /admin (User ID: 6013011895)
+2023-07-28 13:55:18 - INFO - Unbanned user (user_id: 6109478142)
+2023-07-28 13:55:19 - INFO - User action: /admin (User ID: 6013011895)
+2023-07-28 13:55:21 - INFO - User action: /admin (User ID: 6013011895)
+2023-07-28 13:55:41 - INFO - User action: /help (User ID: 6109478142)
+2023-07-28 13:56:47 - INFO - Stop polling...
+2023-07-28 13:56:47 - WARNING - Goodbye!

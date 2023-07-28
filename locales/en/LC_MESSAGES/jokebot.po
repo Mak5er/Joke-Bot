@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-07-28 12:37+0300\n"
+"POT-Creation-Date: 2023-07-28 13:52+0300\n"
 "PO-Revision-Date: 2023-06-25 14:26+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -27,7 +27,7 @@ msgid "I'm launched!"
 msgstr ""
 
 #: handlers/admin.py:104 handlers/admin.py:141 handlers/admin.py:219
-#: keyboards/inline_keyboards.py:36
+#: handlers/admin.py:317 keyboards/inline_keyboards.py:36
 msgid "↩️Cancel"
 msgstr ""
 
@@ -39,35 +39,44 @@ msgstr ""
 msgid "Type user {search}:"
 msgstr ""
 
-#: handlers/admin.py:243
+#: handlers/admin.py:244
 msgid "User not found!"
 msgstr ""
 
-#: handlers/admin.py:261
+#: handlers/admin.py:262
 msgid "Enter in Conversation"
 msgstr ""
 
-#: handlers/admin.py:262
+#: handlers/admin.py:263
 msgid "❌Ban"
 msgstr ""
 
-#: handlers/admin.py:263
+#: handlers/admin.py:264
 msgid "✅Unban"
 msgstr ""
 
-#: handlers/admin.py:297
+#: handlers/admin.py:265 keyboards/inline_keyboards.py:112
+#: keyboards/inline_keyboards.py:127
+msgid "🔙Back"
+msgstr ""
+
+#: handlers/admin.py:301
 msgid "You cannot block yourself or another admin!"
 msgstr ""
 
-#: handlers/admin.py:305
+#: handlers/admin.py:306
+msgid "Enter ban reason:"
+msgstr ""
+
+#: handlers/admin.py:329
 msgid "User {banned_user_id} successfully banned!"
 msgstr ""
 
-#: handlers/admin.py:314
+#: handlers/admin.py:340
 msgid "You cannot unban yourself!"
 msgstr ""
 
-#: handlers/admin.py:322
+#: handlers/admin.py:351
 msgid "User {unbanned_user_id} successfully unbanned!"
 msgstr ""
 
@@ -111,10 +120,6 @@ msgstr ""
 
 #: keyboards/inline_keyboards.py:72
 msgid "👀Viewed by: {joke_seens}"
-msgstr ""
-
-#: keyboards/inline_keyboards.py:112
-msgid "🔙Back"
 msgstr ""
 
 #: messages/bot_messages.py:5
