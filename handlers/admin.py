@@ -88,6 +88,8 @@ async def download_log_handler(call: types.CallbackQuery):
     with open(log_file, 'rb') as file:
         await bot.send_document(call.message.chat.id, file)
         logging.info(f"User action: Downloaded log (User ID: {user_id})")
+        return
+    return
 
 
 @dp.callback_query_handler(lambda call: call.data == 'send_to_all')
@@ -245,8 +247,6 @@ async def control_user(message: types.Message, state: FSMContext):
         elif search == "username":
             user = await db.get_user_info_username(answer)
 
-        if user is None:
-            await bot.send_message(message.chat.id, _("User not found!"))
 
         result = user.fetchone()
 
@@ -293,6 +293,9 @@ async def control_user(message: types.Message, state: FSMContext):
             else:
                 await bot.send_message(message.chat.id, bm.return_user_info(user_name, user_id, user_username, status),
                                        reply_markup=control_keyboard, parse_mode="Markdown")
+                
+        else:
+            await bot.send_message(message.chat.id, _("User not found!"))
 
         await state.finish()
 
@@ -327,11 +330,16 @@ async def control_user(message: types.Message, state: FSMContext):
     await bot.send_message(chat_id=banned_user_id,
                            text=bm.ban_message(reason),
                            reply_markup=ReplyKeyboardRemove())
-
-    await message.answer(bm.successful_ban(banned_user_id),
-                         reply_markup=kb.return_back_to_admin_keyboard())
+    
+    ban_message = await message.answer(bm.successful_ban(banned_user_id),
+                         reply_markup=ReplyKeyboardRemove())
+    
+    await bot.delete_message(message.chat.id, ban_message.message_id)
+    
+    await message.answer(bm.successful_ban(banned_user_id), reply_markup=kb.return_back_to_admin_keyboard())
+    
     logging.info(f"Banned user (user_id: {banned_user_id})")
-
+    
 
 @dp.callback_query_handler(lambda call: call.data.startswith("unban_"))
 async def message_handler(call: types.CallbackQuery):
@@ -373,6 +381,18 @@ async def info(message: types.Message):
 
 @dp.message_handler(user_id=admin_id, commands=['get_users'])
 async def export_users_data(message: types.Message):
+    clock = await bot.send_message(message.chat.id, '⏳', reply_markup=ReplyKeyboardRemove())
+    users = await db.all_users()
+
+    for user in users:
+        chat_id = user[0]
+        user = await bot.get_chat(chat_id)
+        username = user.username if user.username else ""
+        full_name = user.full_name if user.full_name else ""
+        await db.user_update_name(chat_id, full_name, username)
+               
+    await asyncio.sleep(2)
+        
     # Виконуємо запит для отримання всіх даних з таблиці users
 
     users_data = await db.get_all_users_info()
@@ -388,6 +408,8 @@ async def export_users_data(message: types.Message):
     file_path = 'users_data.xlsx'
     with open(file_path, 'wb') as file:
         file.write(excel_file.getvalue())
+    
+    await bot.delete_message(message.chat.id, clock.message_id) 
 
     # Відправляємо Excel-файл у вашому Telegram-боті
     with open(file_path, 'rb') as file:
@@ -401,7 +423,7 @@ async def export_users_data(message: types.Message):
 async def back_to_admin(call: types.CallbackQuery):
     await bot.delete_message(call.message.chat.id, call.message.message_id)
     await dp.bot.send_chat_action(call.message.chat.id, "typing")
-
+    
     user_id = call.from_user.id
     language = await db.get_language(user_id)
 

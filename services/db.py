@@ -16,6 +16,7 @@ class DataBase:
     async def user_count(self):
         with self.connect:
             return self.cursor.execute("SELECT COUNT(*) FROM users").fetchone()[0]
+        
 
     async def joke_count(self, table_name):
         with self.connect:
@@ -31,8 +32,17 @@ class DataBase:
 
     async def all_users(self):
         with self.connect:
-            return self.cursor.execute("SELECT DISTINCT user_id FROM users").fetchall()
+            return self.cursor.execute("SELECT user_id FROM users").fetchall()
+        
+    async def user_exist(self, user_id):
+        with self.connect:
+            return self.cursor.execute("""SELECT * FROM users
+WHERE user_id = (?)""", (user_id, )).fetchall()
 
+    async def user_update_name(self, user_id, user_name, user_username):
+        with self.connect:
+            return self.cursor.execute("UPDATE users SET user_username=(?), user_name=(?) WHERE user_id=(?)", (user_username, user_name, user_id, ))
+        
     async def get_private_users(self):
         with self.connect:
             return self.cursor.execute(

@@ -29,6 +29,16 @@ handler.setFormatter(custom_formatter)
 
 logger.addHandler(handler)
 
+async def update_info(message: types.Message):
+    user_id = message.from_user.id
+    user_name = message.from_user.full_name
+    user_username = message.from_user.username
+    result = await db.user_exist(user_id)
+    if result:
+        await db.user_update_name(user_id, user_name, user_username)
+    else:
+        await db.add_users(user_id, user_name, user_username, "private", "uk", 'user')
+    
 
 @dp.message_handler(content_types=['new_chat_members'])
 async def send_welcome(message: types.Message):
@@ -55,17 +65,17 @@ async def send_welcome(message: types.Message):
 @rate_limit(1)
 @dp.message_handler(commands=['start'])
 async def send_welcome(message: types.Message):
-    await dp.bot.send_chat_action(message.chat.id, "typing")
-
     user_id = message.from_user.id
     user_name = message.from_user.full_name
-    user_username = message.from_user.username
-
-    await db.add_users(user_id, user_name, user_username, "private", "uk", 'user')
-
+    
+    await dp.bot.send_chat_action(message.chat.id, "typing")
     logging.info(f"User action: /start (User ID: {user_id})")
 
     await message.reply(bm.welcome_message(user_name))
+    await message.answer(bm.pres_button(),
+                        reply_markup=kb.random_keyboard())
+    
+    await update_info(message)
 
 
 @rate_limit(1)
@@ -89,6 +99,7 @@ async def language_callback(call: types.CallbackQuery):
     await call.message.edit_text(text=bm.choose_lan(language))
 
     await db.set_language(user_id, language)
+    await update_info(call.message)
 
 
 @dp.message_handler(commands=['info'])
@@ -110,6 +121,7 @@ async def info(message: types.Message):
 
     await message.reply(bm.user_info(username, joke_sent, joke_count, sent_count),
                         reply_markup=kb.return_feedback_button())
+    await update_info(message)
 
 
 @rate_limit(1)
@@ -121,7 +133,8 @@ async def send_help(message: types.Message):
 
     logging.info(f"User action: /help (User ID: {user_id})")
 
-    await message.reply(bm.help_message())
+    await message.reply(bm.help_message()) 
+    await update_info(message)
 
 
 @dp.message_handler(commands=['joke'])
@@ -135,6 +148,7 @@ async def handle_joke(message: types.Message):
 
     await message.reply(bm.pres_button(),
                         reply_markup=kb.random_keyboard())
+    await update_info(message)
 
 
 @dp.callback_query_handler(lambda call: call.data == 'feedback')
@@ -143,6 +157,7 @@ async def feedback_handler(call: types.CallbackQuery):
     await call.message.delete()
     await call.message.answer(_('Please enter your message:'), reply_markup=kb.cancel_keyboard())
     await dp.current_state().set_state("send_feedback")
+    await update_info(call.message)
 
 
 @dp.message_handler(state="send_feedback")
@@ -175,6 +190,9 @@ async def feedback(message: types.Message, state: FSMContext):
     await message.answer(
         _("Your message *{feedback_message_id}* sent!").format(feedback_message_id=feedback_message_id),
         reply_markup=types.ReplyKeyboardRemove())
+    await update_info(message)
+    
+    
 
 
 @dp.callback_query_handler(ChatTypeFilter(types.ChatType.PRIVATE),
@@ -215,6 +233,7 @@ async def send_joke_private(call):
     await bot.send_message(chat_id,
                            text=bm.pres_button(),
                            reply_markup=kb.random_keyboard())
+    await update_info(call.message)
 
 
 @dp.callback_query_handler(
@@ -252,6 +271,7 @@ async def send_joke_group(call):
     await bot.send_message(chat_id,
                            text=bm.pres_button(),
                            reply_markup=kb.random_keyboard())
+    await update_info(call.message)
 
 
 scheduler = AsyncIOScheduler()
@@ -323,11 +343,14 @@ async def seen_handling(call: types.CallbackQuery):
         call.message.chat.id,
         call.message.message_id,
         reply_markup=kb.return_seen_rate_keyboard(joke_id))
+    await update_info(call.message)
 
 
 @dp.callback_query_handler(lambda call: call.data.startswith('seeen_'))
 async def seen_button_handling(call: types.CallbackQuery):
     await call.answer(bm.already_seen_joke())
+    await update_info(call.message)
+                      
 
 
 @dp.callback_query_handler(lambda call: call.data.startswith('like_'))
@@ -349,6 +372,7 @@ async def like_joke(call: types.CallbackQuery):
     await asyncio.sleep(5)
     await call.message.edit_reply_markup(
         reply_markup=kb.return_hidden_rating_keyboard(joke_id))
+    await update_info(call.message)
 
     logging.info(
         f"User action: Liked joke (User ID: {user_id}, Joke ID: {joke_id})")
@@ -373,6 +397,9 @@ async def dislike_joke(call: types.CallbackQuery):
     await asyncio.sleep(5)
     await call.message.edit_reply_markup(
         reply_markup=kb.return_hidden_rating_keyboard(joke_id))
+    await update_info(call.message)
+    
+    
 
     logging.info(
         f"User action: Disliked joke (User ID: {user_id}, Joke ID: {joke_id})")
@@ -401,6 +428,7 @@ async def rate_joke_private(call: types.CallbackQuery):
         call.message.chat.id,
         call.message.message_id,
         reply_markup=kb.return_hidden_rating_keyboard(joke_id))
+    
 
 
 @dp.callback_query_handler(
@@ -453,3 +481,7 @@ async def handle_message(message: types.Message):
 
     elif message.chat.type == 'private':
         await message.reply(bm.dont_understood(name), parse_mode="Markdown")
+        
+    elif message.chat.type == 'group' or message.chat.type == 'supergroup':
+        pass
+    await update_info(message)

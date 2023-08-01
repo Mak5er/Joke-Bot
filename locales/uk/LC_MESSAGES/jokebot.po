@@ -374,8 +374,8 @@ msgid ""
 "🚫You have been banned, contact @mak5er for more information!\n"
 "Reason: {reason}"
 msgstr ""
-"🚫Вас було заблоковано, зверніться до @mak5er за додатковою "
-"інформацією!\"\\Причина: {reason}"
+"🚫Вас було заблоковано, зверніться до @mak5er за додатковою інформацією!\n"
+"Причина: {reason}"
 
 #: messages/bot_messages.py:175
 msgid "🎉You have been unbanned!"

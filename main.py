@@ -45,11 +45,6 @@ if __name__ == "__main__":
 
     from handlers.user import dp, scheduler
 
-    import keep_alive
-
-    keep_alive.keep_alive()
-    keep_alive.start_crawling()
-
     scheduler.start()
     setup_throttling_middlewares(dp)
     setup_ban_middlewares(dp)
