@@ -480,7 +480,7 @@ async def handle_message(message: types.Message):
         await message.reply(bm.help_message())
 
     elif message.chat.type == 'private':
-        await message.reply(bm.dont_understood(name), parse_mode="Markdown")
+        await message.reply(bm.dont_understood(name),reply_markup=kb.return_feedback_button() ,parse_mode="Markdown")
         
     elif message.chat.type == 'group' or message.chat.type == 'supergroup':
         pass

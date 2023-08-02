@@ -61,3 +61,42 @@
 2023-08-01 20:47:22 - INFO - Banned user (user_id: 5617952282)
 2023-08-01 20:47:49 - INFO - Stop polling...
 2023-08-01 20:47:49 - WARNING - Goodbye!
+2023-08-02 17:50:54 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-02 17:50:54 - INFO - Added job "job" to job store "default"
+2023-08-02 17:50:54 - INFO - Scheduler started
+2023-08-02 17:50:54 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-02 17:50:54 - WARNING - Updates were skipped successfully.
+2023-08-02 17:50:55 - INFO - Start polling.
+2023-08-02 17:50:57 - INFO - Stop polling...
+2023-08-02 17:50:57 - WARNING - Goodbye!
+2023-08-02 17:51:19 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-02 17:51:19 - INFO - Added job "job" to job store "default"
+2023-08-02 17:51:19 - INFO - Scheduler started
+2023-08-02 17:51:20 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-02 17:51:20 - WARNING - Updates were skipped successfully.
+2023-08-02 17:51:21 - INFO - Start polling.
+2023-08-02 17:52:21 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-02 17:52:21 - INFO - Added job "job" to job store "default"
+2023-08-02 17:52:21 - INFO - Scheduler started
+2023-08-02 17:52:21 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-02 17:52:21 - WARNING - Updates were skipped successfully.
+2023-08-02 17:52:21 - INFO - Start polling.
+2023-08-02 17:52:42 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-02 17:52:42 - INFO - Added job "job" to job store "default"
+2023-08-02 17:52:42 - INFO - Scheduler started
+2023-08-02 17:52:42 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-02 17:52:43 - WARNING - Updates were skipped successfully.
+2023-08-02 17:52:43 - INFO - Start polling.
+2023-08-02 18:11:06 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-02 18:11:06 - INFO - Added job "job" to job store "default"
+2023-08-02 18:11:06 - INFO - Scheduler started
+2023-08-02 18:11:07 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-02 18:11:07 - WARNING - Updates were skipped successfully.
+2023-08-02 18:11:07 - INFO - Start polling.
+2023-08-02 18:11:24 - INFO - User action: /info (User ID: 6013011895)
+2023-08-02 18:11:38 - INFO - User action: /admin (User ID: 6013011895)
+2023-08-02 18:11:58 - INFO - Unbanned user (user_id: 5617952282)
+2023-08-02 18:11:59 - INFO - User action: /admin (User ID: 6013011895)
+2023-08-02 18:12:17 - INFO - Banned user (user_id: 5617952282)
+2023-08-02 18:13:02 - INFO - Stop polling...
+2023-08-02 18:13:02 - WARNING - Goodbye!
