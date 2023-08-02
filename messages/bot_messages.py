@@ -112,8 +112,7 @@ def daily_joke(joke_text):
 
 
 def dont_understood(name):
-    return _("""*{name}*, I don't understand you! Type /help to get a list of commands!
-*If you want to offer an anecdote or ask a question, click the Feedback💬 button!*""").format(name=name)
+    return _("*{name}*, I don't understand you! Type /help to get a list of commands!").format(name=name)
 
 
 def not_groups():
@@ -186,4 +185,4 @@ def successful_unban(unbanned_user_id):
 
 def feedback_message_send(user, feedback_message):
     return _("*New message* from user: *{user}*\n*Message:* `{feedback_message}`").format(user=user,
-                                                                                          feedback_message=feedback_message)
+                                                                                         feedback_message=feedback_message)
