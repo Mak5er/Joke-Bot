@@ -1,6 +1,6 @@
 ## Project links
 <a href="https://t.me/makser_humor_bot" target="_blank"> <img src="https://www.vectorlogo.zone/logos/telegram/telegram-tile.svg" alt="Telegram" width="60" height="60"/></a> 
-<a href="https://mak5er.github.io/Joke-Bot/" target="_blank"> <img src="https://bischrob.github.io/images/githubpages/githubpages.jpeg" alt="GitHub Pages" width="65" height="60" style="border-radius: 10px;"></a> 
+<a href="https://mak5er.github.io/Joke-Bot/" target="_blank"> <img src="https://bischrob.github.io/images/githubpages/githubpages.jpeg" alt="GitHub Pages" width="65" height="60" style="border-radius: 6px;"></a> 
     
 
 ## Project description
