@@ -14,6 +14,7 @@ After successfully launching the program and connecting the bot to Telegram, you
 
     /start - start interacting with the bot and receive a welcome message.
     /joke - get a random joke.
+    /language - change language.
     /admin - access to the admin panel (only administrators are allowed).
     /info - get information about the user and statistics of bot usage.
     /help - get list of all commands.
