@@ -24,6 +24,7 @@ After successfully launching the program and connecting the bot to Telegram, you
 
     Getting a random joke from the database.
     View the bot usage statistics.
+    Can send feedback messages to bot.
 
 ### Administrator
 
