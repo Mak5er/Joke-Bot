@@ -4,27 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="868e1bc7-d2cf-4321-8444-628b09c4cc27" name="Changes" comment="small update">
+    <list default="true" id="868e1bc7-d2cf-4321-8444-628b09c4cc27" name="Changes" comment="ADD sending message to user as bot">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyboards/inline_keyboards.py" beforeDir="false" afterPath="$PROJECT_DIR$/keyboards/inline_keyboards.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.mo" beforeDir="false" afterPath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.po" beforeDir="false" afterPath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/jokebot.pot" beforeDir="false" afterPath="$PROJECT_DIR$/locales/jokebot.pot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.mo" beforeDir="false" afterPath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.po" beforeDir="false" afterPath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.po" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/bot_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/bot_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/log/logger.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messages/bot_messages.py" beforeDir="false" afterPath="$PROJECT_DIR$/messages/bot_messages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/language_middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/language_middleware.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/throttling_middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/throttling_middleware.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/jokes.db" beforeDir="false" afterPath="$PROJECT_DIR$/services/jokes.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -280,7 +263,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690912096041</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="ADD sending message to user as bot">
+      <option name="closed" value="true" />
+      <created>1691051811150</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1691051811150</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -326,6 +317,7 @@
     <MESSAGE value="small bug fix" />
     <MESSAGE value="bug fix" />
     <MESSAGE value="small update" />
-    <option name="LAST_COMMIT_MESSAGE" value="small update" />
+    <MESSAGE value="ADD sending message to user as bot" />
+    <option name="LAST_COMMIT_MESSAGE" value="ADD sending message to user as bot" />
   </component>
 </project>

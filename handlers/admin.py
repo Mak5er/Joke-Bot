@@ -292,6 +292,7 @@ async def control_user(message: types.Message, state: FSMContext):
             else:
                 await bot.send_message(message.chat.id, bm.return_user_info(user_name, user_id, user_username, status),
                                        reply_markup=control_keyboard, parse_mode="Markdown")
+            logging.info(f"Control user: {user_id}")
 
         else:
             await bot.send_message(message.chat.id, _("User not found!"))
@@ -337,7 +338,7 @@ async def control_user(message: types.Message, state: FSMContext):
 
     await message.answer(bm.successful_ban(banned_user_id), reply_markup=kb.return_back_to_admin_keyboard())
 
-    logging.info(f"Banned user (user_id: {banned_user_id})")
+    logging.info(f"Banned user: {banned_user_id} Reason: {reason}")
 
 
 @dp.callback_query_handler(lambda call: call.data.startswith("unban_"))
@@ -354,7 +355,7 @@ async def message_handler(call: types.CallbackQuery):
     await call.message.answer(bm.successful_unban(unbanned_user_id),
                               reply_markup=kb.return_back_to_admin_keyboard())
 
-    logging.info(f"Unbanned user (user_id: {unbanned_user_id})")
+    logging.info(f"Unbanned user: {unbanned_user_id}")
 
 
 @dp.message_handler(user_id=admin_id, commands=['info'])
@@ -415,6 +416,8 @@ async def export_users_data(message: types.Message):
     with open(file_path, 'rb') as file:
         await bot.send_document(chat_id=message.chat.id, document=file)
 
+    logging.info(f"Getting info about user")
+
     # Видаляємо файл з комп'ютера
     os.remove(file_path)
 
@@ -469,6 +472,7 @@ async def answer_feedback(message: types.Message, state: FSMContext):
                                text=_('Your message *{message_id}* was seen!\n*Answer:* `{answer}`').format(
                                    message_id=message_id, answer=answer))
         await message.reply(_('Your answer sent!'), reply_markup=ReplyKeyboardRemove())
+        logging.info(f"Sent answer for feedback to user {chat_id}: {answer}")
 
     except Exception as e:
         await message.reply(_("Something went wrong, see log for more information!"),
@@ -506,6 +510,8 @@ async def write_message(message: types.Message, state: FSMContext):
         await bot.delete_message(message.chat.id, message_sent.message_id)
 
         await message.answer(_('Your message sent!'), reply_markup=kb.return_back_to_admin_keyboard())
+
+        logging.info(f"Sent message as bot to user {chat_id}: {answer}")
 
     except Exception as e:
         await message.reply(_("Something went wrong, see log for more information!"),
