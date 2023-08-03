@@ -89,7 +89,6 @@ async def download_log_handler(call: types.CallbackQuery):
         await bot.send_document(call.message.chat.id, file)
         logging.info(f"User action: Downloaded log (User ID: {user_id})")
         return
-    return
 
 
 @dp.callback_query_handler(lambda call: call.data == 'send_to_all')
@@ -247,7 +246,6 @@ async def control_user(message: types.Message, state: FSMContext):
         elif search == "username":
             user = await db.get_user_info_username(answer)
 
-
         result = user.fetchone()
 
         if result is not None:
@@ -265,11 +263,12 @@ async def control_user(message: types.Message, state: FSMContext):
                 user_username = answer
 
             go_to_chat = InlineKeyboardButton(text=_("Enter in Conversation"), url=f"tg://user?id={user_id}")
+            write_user = InlineKeyboardButton(text=_('Write as a bot'), callback_data=f"write_{user_id}")
             ban_button = InlineKeyboardButton(text=_("❌Ban"), callback_data=f"ban_{user_id}")
             unban_button = InlineKeyboardButton(text=_("✅Unban"), callback_data=f"unban_{user_id}")
             back_button = InlineKeyboardButton(text=_("🔙Back"), callback_data="back_to_admin")
             control_keyboard = InlineKeyboardMarkup()
-            control_keyboard.row(go_to_chat)
+            control_keyboard.row(go_to_chat, write_user)
 
             if user_username == "":
                 user_username = "None"
@@ -293,7 +292,7 @@ async def control_user(message: types.Message, state: FSMContext):
             else:
                 await bot.send_message(message.chat.id, bm.return_user_info(user_name, user_id, user_username, status),
                                        reply_markup=control_keyboard, parse_mode="Markdown")
-                
+
         else:
             await bot.send_message(message.chat.id, _("User not found!"))
 
@@ -330,16 +329,16 @@ async def control_user(message: types.Message, state: FSMContext):
     await bot.send_message(chat_id=banned_user_id,
                            text=bm.ban_message(reason),
                            reply_markup=ReplyKeyboardRemove())
-    
+
     ban_message = await message.answer(bm.successful_ban(banned_user_id),
-                         reply_markup=ReplyKeyboardRemove())
-    
+                                       reply_markup=ReplyKeyboardRemove())
+
     await bot.delete_message(message.chat.id, ban_message.message_id)
-    
+
     await message.answer(bm.successful_ban(banned_user_id), reply_markup=kb.return_back_to_admin_keyboard())
-    
+
     logging.info(f"Banned user (user_id: {banned_user_id})")
-    
+
 
 @dp.callback_query_handler(lambda call: call.data.startswith("unban_"))
 async def message_handler(call: types.CallbackQuery):
@@ -351,6 +350,7 @@ async def message_handler(call: types.CallbackQuery):
                            text=bm.unban_message())
 
     await call.message.delete()
+
     await call.message.answer(bm.successful_unban(unbanned_user_id),
                               reply_markup=kb.return_back_to_admin_keyboard())
 
@@ -390,9 +390,9 @@ async def export_users_data(message: types.Message):
         username = user.username if user.username else ""
         full_name = user.full_name if user.full_name else ""
         await db.user_update_name(chat_id, full_name, username)
-               
+
     await asyncio.sleep(2)
-        
+
     # Виконуємо запит для отримання всіх даних з таблиці users
 
     users_data = await db.get_all_users_info()
@@ -408,8 +408,8 @@ async def export_users_data(message: types.Message):
     file_path = 'users_data.xlsx'
     with open(file_path, 'wb') as file:
         file.write(excel_file.getvalue())
-    
-    await bot.delete_message(message.chat.id, clock.message_id) 
+
+    await bot.delete_message(message.chat.id, clock.message_id)
 
     # Відправляємо Excel-файл у вашому Telegram-боті
     with open(file_path, 'rb') as file:
@@ -423,7 +423,7 @@ async def export_users_data(message: types.Message):
 async def back_to_admin(call: types.CallbackQuery):
     await bot.delete_message(call.message.chat.id, call.message.message_id)
     await dp.bot.send_chat_action(call.message.chat.id, "typing")
-    
+
     user_id = call.from_user.id
     language = await db.get_language(user_id)
 
@@ -470,5 +470,44 @@ async def answer_feedback(message: types.Message, state: FSMContext):
                                    message_id=message_id, answer=answer))
         await message.reply(_('Your answer sent!'), reply_markup=ReplyKeyboardRemove())
 
-    except:
-        await message.reply(_("Something went wrong, see log for more information!"))
+    except Exception as e:
+        await message.reply(_("Something went wrong, see log for more information!"),
+                            reply_markup=kb.return_back_to_admin_keyboard())
+        logging.error(f"Error sending message to user {chat_id}: {str(e)}")
+
+
+@dp.callback_query_handler(lambda call: call.data.startswith("write_"))
+async def write_message_handler(call: types.CallbackQuery):
+    chat_id = call.data.split("_")[1]
+    await call.message.delete_reply_markup()
+    await call.message.delete()
+    await call.message.answer(_('Please type message:'), reply_markup=kb.cancel_keyboard())
+    await dp.current_state().set_state('write_message')
+    await dp.current_state().update_data(chat_id=chat_id)
+
+
+@dp.message_handler(state='write_message')
+async def write_message(message: types.Message, state: FSMContext):
+    answer = message.text
+
+    if answer == _("↩️Cancel"):
+        await bot.send_message(message.chat.id, _('Action canceled!'), reply_markup=ReplyKeyboardRemove())
+        await state.finish()
+        return
+    data = await state.get_data()
+    chat_id = data.get('chat_id')
+    await state.finish()
+
+    try:
+        await bot.send_message(chat_id=chat_id,
+                               text=answer)
+        message_sent = await message.reply(_('Your message sent!'), reply_markup=ReplyKeyboardRemove())
+
+        await bot.delete_message(message.chat.id, message_sent.message_id)
+
+        await message.answer(_('Your message sent!'), reply_markup=kb.return_back_to_admin_keyboard())
+
+    except Exception as e:
+        await message.reply(_("Something went wrong, see log for more information!"),
+                            reply_markup=kb.return_back_to_admin_keyboard())
+        logging.error(f"Error sending message to user {chat_id}: {str(e)}")

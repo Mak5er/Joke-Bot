@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-07-28 22:04+0300\n"
+"POT-Creation-Date: 2023-08-03 11:25+0300\n"
 "PO-Revision-Date: 2023-06-25 14:26+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -26,72 +26,85 @@ msgstr ""
 msgid "I'm launched!"
 msgstr ""
 
-#: handlers/admin.py:104 handlers/admin.py:141 handlers/admin.py:223
-#: handlers/admin.py:316 handlers/admin.py:436 handlers/user.py:156
-#: keyboards/inline_keyboards.py:36
+#: handlers/admin.py:105 handlers/admin.py:142 handlers/admin.py:224
+#: handlers/admin.py:318 handlers/admin.py:458 handlers/admin.py:491
+#: handlers/user.py:171 keyboards/inline_keyboards.py:36
 msgid "↩️Cancel"
 msgstr ""
 
-#: handlers/admin.py:202
+#: handlers/admin.py:203
 msgid "Search user by:"
 msgstr ""
 
-#: handlers/admin.py:209
+#: handlers/admin.py:210
 msgid "Type user {search}:"
 msgstr ""
 
-#: handlers/admin.py:249
-msgid "User not found!"
-msgstr ""
-
-#: handlers/admin.py:267
+#: handlers/admin.py:265
 msgid "Enter in Conversation"
 msgstr ""
 
-#: handlers/admin.py:268
+#: handlers/admin.py:266
+msgid "Write as a bot"
+msgstr ""
+
+#: handlers/admin.py:267
 msgid "❌Ban"
 msgstr ""
 
-#: handlers/admin.py:269
+#: handlers/admin.py:268
 msgid "✅Unban"
 msgstr ""
 
-#: handlers/admin.py:270 keyboards/inline_keyboards.py:112
+#: handlers/admin.py:269 keyboards/inline_keyboards.py:112
 #: keyboards/inline_keyboards.py:127
 msgid "🔙Back"
 msgstr ""
 
-#: handlers/admin.py:305
+#: handlers/admin.py:297
+msgid "User not found!"
+msgstr ""
+
+#: handlers/admin.py:307
 msgid "Enter ban reason:"
 msgstr ""
 
-#: handlers/admin.py:317 handlers/admin.py:437 handlers/user.py:158
+#: handlers/admin.py:319 handlers/admin.py:459 handlers/admin.py:492
+#: handlers/user.py:173
 msgid "Action canceled!"
 msgstr ""
 
-#: handlers/admin.py:427
+#: handlers/admin.py:449
 msgid "Please type your answer:"
 msgstr ""
 
-#: handlers/admin.py:447
+#: handlers/admin.py:469
 msgid ""
 "Your message *{message_id}* was seen!\n"
 "*Answer:* `{answer}`"
 msgstr ""
 
-#: handlers/admin.py:449
+#: handlers/admin.py:471
 msgid "Your answer sent!"
 msgstr ""
 
-#: handlers/admin.py:452
+#: handlers/admin.py:474 handlers/admin.py:510
 msgid "Something went wrong, see log for more information!"
 msgstr ""
 
-#: handlers/user.py:144
+#: handlers/admin.py:482
+msgid "Please type message:"
+msgstr ""
+
+#: handlers/admin.py:502 handlers/admin.py:506
+msgid "Your message sent!"
+msgstr ""
+
+#: handlers/user.py:158
 msgid "Please enter your message:"
 msgstr ""
 
-#: handlers/user.py:176
+#: handlers/user.py:191
 msgid "Your message *{feedback_message_id}* sent!"
 msgstr ""
 
@@ -256,48 +269,54 @@ msgid "Unfortunately, all the jokes have already been sent to you."
 msgstr ""
 
 #: messages/bot_messages.py:111
-msgid "*Joke of the day:*"
+msgid ""
+"*Joke of the day:*\n"
+"\n"
+"{joke_text}"
 msgstr ""
 
 #: messages/bot_messages.py:115
-msgid "*{name}*, I don't understand you! Type /help to get a list of commands!"
+msgid ""
+"*{name}*, I don't understand you! Type /help to get a list of commands!\n"
+"*If you want to offer an anecdote or ask a question, click the Feedback💬 "
+"button!*"
 msgstr ""
 
-#: messages/bot_messages.py:119
+#: messages/bot_messages.py:120
 msgid "This command cannot be used in a group!"
 msgstr ""
 
-#: messages/bot_messages.py:123
+#: messages/bot_messages.py:124
 msgid "Log deleted, starting to write a new one."
 msgstr ""
 
-#: messages/bot_messages.py:127
+#: messages/bot_messages.py:128
 msgid "Enter the message to send:"
 msgstr ""
 
-#: messages/bot_messages.py:131
+#: messages/bot_messages.py:132
 msgid "Action canceled"
 msgstr ""
 
-#: messages/bot_messages.py:135
+#: messages/bot_messages.py:136
 msgid "Enter a new joke:"
 msgstr ""
 
-#: messages/bot_messages.py:139
+#: messages/bot_messages.py:140
 msgid "The anecdote is given to the database."
 msgstr ""
 
-#: messages/bot_messages.py:143
+#: messages/bot_messages.py:144
 msgid ""
 "Hi! Thank you for adding me to *'{chat_title}'* \n"
 "For correct operation, please grant me administrator rights!"
 msgstr ""
 
-#: messages/bot_messages.py:148
+#: messages/bot_messages.py:149
 msgid "Please choose your language!"
 msgstr ""
 
-#: messages/bot_messages.py:163
+#: messages/bot_messages.py:164
 msgid ""
 "*USER INFO*\n"
 "_Name_: *{user_name}*\n"
@@ -306,25 +325,25 @@ msgid ""
 "_Status_: *{status}*"
 msgstr ""
 
-#: messages/bot_messages.py:171
+#: messages/bot_messages.py:172
 msgid ""
 "🚫You have been banned, contact @mak5er for more information!\n"
 "Reason: {reason}"
 msgstr ""
 
-#: messages/bot_messages.py:175
+#: messages/bot_messages.py:176
 msgid "🎉You have been unbanned!"
 msgstr ""
 
-#: messages/bot_messages.py:179
+#: messages/bot_messages.py:180
 msgid "User {banned_user_id} successfully banned!"
 msgstr ""
 
-#: messages/bot_messages.py:183
+#: messages/bot_messages.py:184
 msgid "User {unbanned_user_id} successfully unbanned!"
 msgstr ""
 
-#: messages/bot_messages.py:187
+#: messages/bot_messages.py:188
 msgid ""
 "*New message* from user: *{user}*\n"
 "*Message:* `{feedback_message}`"
@@ -765,5 +784,11 @@ msgstr[1] ""
 #~ "Hello *{name}*! I'm a bot with jokes.\n"
 #~ "Full information on the bot /info\n"
 #~ "List of commands /help"
+#~ msgstr ""
+
+#~ msgid "*{name}*, I don't understand you! Type /help to get a list of commands!"
+#~ msgstr ""
+
+#~ msgid "*Joke of the day:*"
 #~ msgstr ""
 

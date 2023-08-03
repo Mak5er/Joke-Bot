@@ -123,7 +123,7 @@ def return_search_keyboard():
 
 
 def return_back_to_admin_keyboard():
-    keyboard = InlineKeyboardMarkup()
+    keyboard = InlineKeyboardMarkup(row_width=2)
     back_button = InlineKeyboardButton(text=_("🔙Back"), callback_data="back_to_admin")
     keyboard.row(back_button)
     return keyboard
