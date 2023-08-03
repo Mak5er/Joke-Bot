@@ -5,8 +5,8 @@
 
 ## Project description
 
-This project is a Telegram bot that sends Ukrainian jokes to users. The bot is implemented using the Python programming language
-programming language and uses the Telebot framework to interact with the Telegram API.
+This project is a Telegram bot that sends Ukrainian jokes to users. The bot is implemented using the Python programming language 
+and uses the Aiogram framework to interact with the Telegram API.
 
 ## Usage
 
