@@ -57,6 +57,31 @@ async def admin(message: types.Message):
         await message.answer(bot_messages.not_groups())
 
 
+@dp.message_handler(user_id=admin_id, commands=['speedtest'])
+@rate_limit(5)
+async def speedtest(message: types.Message):
+    clock = await bot.send_message(message.chat.id, '⏳')
+
+    import speedtest
+    # Создаем объект Speedtest
+    st = speedtest.Speedtest()
+    st.get_servers()
+
+    best_server = st.get_best_server()
+
+    download_speed = st.download() / 1_000_000  # в Мбит/с
+    upload_speed = st.upload() / 1_000_000  # в Мбит/с
+    ping = st.results.ping  # B MC
+
+    await bot.delete_message(message.chat.id, clock.message_id)
+
+    await message.answer(f'''    
+Download speed: *{download_speed:.2f}* Mbit/s
+Upload speed: *{upload_speed:.2f}* Mbit/s 
+Ping: *{ping}* mc  
+''')
+
+
 @dp.message_handler(user_id=admin_id, commands=['del_log'])
 @rate_limit(10)
 async def del_log(message: types.Message):
