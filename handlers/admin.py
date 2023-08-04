@@ -1,9 +1,12 @@
 import asyncio
 import logging
 import os
+import platform
 from io import BytesIO
 
+import cpuinfo
 import pandas as pd
+import psutil
 from aiogram import types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher import FSMContext
@@ -57,29 +60,51 @@ async def admin(message: types.Message):
         await message.answer(bot_messages.not_groups())
 
 
-@dp.message_handler(user_id=admin_id, commands=['speedtest'])
+@dp.message_handler(user_id=admin_id, commands=['system_info'])
 @rate_limit(5)
 async def speedtest(message: types.Message):
     clock = await bot.send_message(message.chat.id, '⏳')
 
     import speedtest
-    # Создаем объект Speedtest
     st = speedtest.Speedtest()
     st.get_servers()
 
-    best_server = st.get_best_server()
+    download_speed = st.download() / 1_000_000
+    upload_speed = st.upload() / 1_000_000
+    ping = st.results.ping
 
-    download_speed = st.download() / 1_000_000  # в Мбит/с
-    upload_speed = st.upload() / 1_000_000  # в Мбит/с
-    ping = st.results.ping  # B MC
+    def get_system_info():
+        info = _("_Operating System_: *{}*\n").format(platform.system())
+        info += _("_OS Version_: *{}*\n").format(platform.version())
+        info += _("_Machine Name_: *{}*\n").format(platform.node())
+        info += _("_Processor Architecture_: *{}*\n").format(platform.machine())
+
+        cpu_info = cpuinfo.get_cpu_info()
+        processor_name = cpu_info['brand_raw']
+        info += _("_Processor Model_: *{}*\n").format(processor_name)
+
+        info += _("_Physical Cores_: *{}*\n").format(psutil.cpu_count(logical=False))
+        info += _("_Logical Cores_: *{}*\n").format(psutil.cpu_count(logical=True))
+
+        memory = psutil.virtual_memory()
+        info += _("_Total Memory_: *{:.2f}* MB\n").format(memory.total / (1024 * 1024))
+        info += _("_Available Memory_: *{:.2f}* MB\n").format(memory.available / (1024 * 1024))
+        info += _("_Memory Usage_: *{}*%\n").format(memory.percent)
+
+        return info
 
     await bot.delete_message(message.chat.id, clock.message_id)
 
-    await message.answer(f'''    
-Download speed: *{download_speed:.2f}* Mbit/s
-Upload speed: *{upload_speed:.2f}* Mbit/s 
-Ping: *{ping}* mc  
-''')
+    pc_info = get_system_info()
+    await message.reply(_("""
+*System information:*
+{pc_info}
+    
+*Network information:*    
+_Download speed_: *{download_speed:.2f}* Mbit/s
+_Upload speed_: *{upload_speed:.2f}* Mbit/s 
+_Ping_: *{ping}* mc 
+""").format(pc_info=pc_info, download_speed=download_speed, upload_speed=upload_speed, ping=ping))
 
 
 @dp.message_handler(user_id=admin_id, commands=['del_log'])
