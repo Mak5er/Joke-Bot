@@ -893,3 +893,582 @@ AttributeError: module 'speedtest' has no attribute 'Speedtest'
 2023-08-04 16:39:29 - INFO - Bot: Анекдотики [@makser_humor_bot]
 2023-08-04 16:39:29 - WARNING - Updates were skipped successfully.
 2023-08-04 16:39:29 - INFO - Start polling.
+2023-08-04 16:51:31 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-04 16:51:31 - INFO - Added job "job" to job store "default"
+2023-08-04 16:51:31 - INFO - Scheduler started
+2023-08-04 16:51:31 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-04 16:51:31 - WARNING - Updates were skipped successfully.
+2023-08-04 16:51:31 - INFO - Start polling.
+2023-08-04 16:51:36 - ERROR - Update: {"update_id": 247867700, "message": {"message_id": 19726, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1691167897, "text": "/system_info", "entities": [{"type": "bot_command", "offset": 0, "length": 12}]}}
+Exception: module 'psutil' has no attribute 'cpu_info'
+2023-08-04 16:51:36 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-11' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=AttributeError("module 'psutil' has no attribute 'cpu_info'")>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\handlers\admin.py", line 98, in speedtest
+    print("Назва:", psutil.cpu_info().current)
+                    ^^^^^^^^^^^^^^^
+AttributeError: module 'psutil' has no attribute 'cpu_info'
+2023-08-04 16:52:38 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-04 16:52:38 - INFO - Added job "job" to job store "default"
+2023-08-04 16:52:38 - INFO - Scheduler started
+2023-08-04 16:52:38 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-04 16:52:38 - WARNING - Updates were skipped successfully.
+2023-08-04 16:52:38 - INFO - Start polling.
+2023-08-04 16:52:41 - ERROR - Update: {"update_id": 247867701, "message": {"message_id": 19730, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1691167961, "text": "/system_info", "entities": [{"type": "bot_command", "offset": 0, "length": 12}]}}
+Exception: Message must be non-empty
+2023-08-04 16:52:41 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-11' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=BadRequest('Message must be non-empty')>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\handlers\admin.py", line 116, in speedtest
+    await message.answer(f'''
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\types\message.py", line 438, in answer
+    return await self.bot.send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\bot.py", line 346, in send_message
+    result = await self.request(api.Methods.SEND_MESSAGE, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+aiogram.utils.exceptions.BadRequest: Message must be non-empty
+2023-08-04 16:54:20 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-04 16:54:20 - INFO - Added job "job" to job store "default"
+2023-08-04 16:54:20 - INFO - Scheduler started
+2023-08-04 16:54:20 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-04 16:54:20 - WARNING - Updates were skipped successfully.
+2023-08-04 16:54:20 - INFO - Start polling.
+2023-08-04 16:54:22 - ERROR - Update: {"update_id": 247867702, "message": {"message_id": 19734, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1691168062, "text": "/system_info", "entities": [{"type": "bot_command", "offset": 0, "length": 12}]}}
+Exception: Message must be non-empty
+2023-08-04 16:54:22 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-11' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=BadRequest('Message must be non-empty')>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\handlers\admin.py", line 117, in speedtest
+    await message.answer(f'''
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\types\message.py", line 438, in answer
+    return await self.bot.send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\bot.py", line 346, in send_message
+    result = await self.request(api.Methods.SEND_MESSAGE, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+aiogram.utils.exceptions.BadRequest: Message must be non-empty
+2023-08-04 16:57:11 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-04 16:57:11 - INFO - Added job "job" to job store "default"
+2023-08-04 16:57:11 - INFO - Scheduler started
+2023-08-04 16:57:11 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-04 16:57:11 - WARNING - Updates were skipped successfully.
+2023-08-04 16:57:11 - INFO - Start polling.
+2023-08-04 16:57:19 - ERROR - Update: {"update_id": 247867703, "message": {"message_id": 19738, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1691168238, "text": "/system_info", "entities": [{"type": "bot_command", "offset": 0, "length": 12}]}}
+Exception: Message must be non-empty
+2023-08-04 16:57:19 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-11' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=BadRequest('Message must be non-empty')>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\handlers\admin.py", line 121, in speedtest
+    await message.answer(f'''
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\types\message.py", line 438, in answer
+    return await self.bot.send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\bot.py", line 346, in send_message
+    result = await self.request(api.Methods.SEND_MESSAGE, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+aiogram.utils.exceptions.BadRequest: Message must be non-empty
+2023-08-04 17:00:02 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-04 17:00:02 - INFO - Added job "job" to job store "default"
+2023-08-04 17:00:02 - INFO - Scheduler started
+2023-08-04 17:00:02 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-04 17:00:02 - WARNING - Updates were skipped successfully.
+2023-08-04 17:00:02 - INFO - Start polling.
+2023-08-04 17:00:10 - ERROR - Update: {"update_id": 247867704, "message": {"message_id": 19742, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1691168410, "text": "/system_info", "entities": [{"type": "bot_command", "offset": 0, "length": 12}]}}
+Exception: Message must be non-empty
+2023-08-04 17:00:10 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-11' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=BadRequest('Message must be non-empty')>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\handlers\admin.py", line 120, in speedtest
+    await message.answer(f'''
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\types\message.py", line 438, in answer
+    return await self.bot.send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\bot.py", line 346, in send_message
+    result = await self.request(api.Methods.SEND_MESSAGE, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+aiogram.utils.exceptions.BadRequest: Message must be non-empty
+2023-08-04 17:02:00 - INFO - Stop polling...
+2023-08-04 17:02:00 - WARNING - Goodbye!
+2023-08-04 17:02:01 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-04 17:02:01 - INFO - Added job "job" to job store "default"
+2023-08-04 17:02:01 - INFO - Scheduler started
+2023-08-04 17:02:01 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-04 17:02:01 - WARNING - Updates were skipped successfully.
+2023-08-04 17:02:01 - INFO - Start polling.
+2023-08-04 17:08:49 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-04 17:08:49 - INFO - Added job "job" to job store "default"
+2023-08-04 17:08:49 - INFO - Scheduler started
+2023-08-04 17:08:49 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-04 17:08:49 - WARNING - Updates were skipped successfully.
+2023-08-04 17:08:49 - INFO - Start polling.
+2023-08-04 17:10:56 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-04 17:10:56 - INFO - Added job "job" to job store "default"
+2023-08-04 17:10:56 - INFO - Scheduler started
+2023-08-04 17:10:56 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-04 17:10:56 - WARNING - Updates were skipped successfully.
+2023-08-04 17:10:56 - INFO - Start polling.
+2023-08-04 17:11:08 - INFO - Stop polling...
+2023-08-04 17:11:08 - WARNING - Goodbye!
+2023-08-04 17:11:09 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-04 17:11:09 - INFO - Added job "job" to job store "default"
+2023-08-04 17:11:09 - INFO - Scheduler started
+2023-08-04 17:11:09 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-04 17:11:09 - WARNING - Updates were skipped successfully.
+2023-08-04 17:11:09 - INFO - Start polling.
+2023-08-04 17:13:11 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-04 17:13:11 - INFO - Added job "job" to job store "default"
+2023-08-04 17:13:11 - INFO - Scheduler started
+2023-08-04 17:13:11 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-04 17:13:11 - WARNING - Updates were skipped successfully.
+2023-08-04 17:13:11 - INFO - Start polling.
+2023-08-04 17:23:44 - INFO - User action: Liked joke (User ID: 5152053486, Joke ID: 181)
+2023-08-04 17:29:37 - INFO - Stop polling...
+2023-08-04 17:29:37 - WARNING - Goodbye!
+2023-08-04 18:12:18 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-04 18:12:18 - INFO - Added job "job" to job store "default"
+2023-08-04 18:12:18 - INFO - Scheduler started
+2023-08-04 18:12:18 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-04 18:12:18 - WARNING - Updates were skipped successfully.
+2023-08-04 18:12:19 - INFO - Start polling.
+2023-08-04 18:12:34 - INFO - User action: /start (User ID: 6491955029)
+2023-08-04 18:12:54 - INFO - User action: /start (User ID: 6491955029)
+2023-08-04 18:13:24 - INFO - User action: /joke (User ID: 6491955029)
+2023-08-04 18:13:26 - INFO - User action: /start (User ID: 6491955029)
+2023-08-04 18:13:47 - INFO - User action: /start (User ID: 6491955029)
+2023-08-04 18:14:03 - INFO - User action: /start (User ID: 6491955029)
+2023-08-04 18:14:15 - INFO - User action: Sent joke (User ID: 6491955029, Joke ID: 4258)
+2023-08-04 18:15:00 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-04 18:15:00 - INFO - Added job "job" to job store "default"
+2023-08-04 18:15:00 - INFO - Scheduler started
+2023-08-04 18:15:00 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-04 18:15:00 - WARNING - Updates were skipped successfully.
+2023-08-04 18:15:00 - INFO - Start polling.
+2023-08-04 18:15:04 - INFO - User action: /start (User ID: 6491955029)
+2023-08-04 18:25:07 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-04 18:25:07 - INFO - Added job "job" to job store "default"
+2023-08-04 18:25:07 - INFO - Scheduler started
+2023-08-04 18:25:07 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-04 18:25:08 - WARNING - Updates were skipped successfully.
+2023-08-04 18:25:08 - INFO - Start polling.
+2023-08-04 18:25:40 - INFO - User action: /start (User ID: 6491955029)
+2023-08-07 12:02:25 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-07 12:02:25 - INFO - Added job "job" to job store "default"
+2023-08-07 12:02:25 - INFO - Scheduler started
+2023-08-07 12:02:26 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-07 12:02:26 - WARNING - Updates were skipped successfully.
+2023-08-07 12:02:26 - INFO - Start polling.
+2023-08-07 12:06:04 - INFO - User action: /start (User ID: 6491955029)
+2023-08-07 12:07:08 - INFO - User action: /start (User ID: 6013011895)
+2023-08-07 12:16:14 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-07 12:16:14 - INFO - Added job "job" to job store "default"
+2023-08-07 12:16:14 - INFO - Scheduler started
+2023-08-07 12:16:14 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-07 12:16:14 - WARNING - Updates were skipped successfully.
+2023-08-07 12:16:14 - INFO - Start polling.
+2023-08-07 12:16:24 - INFO - User action: /info (User ID: 6013011895)
+2023-08-07 12:16:33 - INFO - User action: /info (User ID: 6013011895)
+2023-08-07 12:16:34 - INFO - User action: /admin (User ID: 6013011895)
+2023-08-07 12:16:40 - INFO - Stop polling...
+2023-08-07 12:16:40 - WARNING - Goodbye!
+2023-08-07 12:17:40 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-07 12:17:40 - INFO - Added job "job" to job store "default"
+2023-08-07 12:17:40 - INFO - Scheduler started
+2023-08-07 12:17:40 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-07 12:17:40 - WARNING - Updates were skipped successfully.
+2023-08-07 12:17:40 - INFO - Start polling.
+2023-08-07 12:17:42 - INFO - User action: /admin (User ID: 6013011895)
+2023-08-07 12:18:02 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-07 12:18:02 - INFO - Added job "job" to job store "default"
+2023-08-07 12:18:02 - INFO - Scheduler started
+2023-08-07 12:18:02 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-07 12:18:02 - WARNING - Updates were skipped successfully.
+2023-08-07 12:18:02 - INFO - Start polling.
+2023-08-07 12:18:03 - INFO - User action: /admin (User ID: 6013011895)
+2023-08-07 12:18:29 - ERROR - Update: {"update_id": 247867815, "message": {"message_id": 20027, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1691410686, "text": "/system_info", "entities": [{"type": "bot_command", "offset": 0, "length": 12}]}}
+Exception: Can't parse entities: can't find end of the entity starting at byte offset 787
+2023-08-07 12:18:29 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-17' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=CantParseEntities("Can't parse entities: can't find end of the entity starting at byte offset 787")>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\handlers\admin.py", line 99, in speedtest
+    await message.reply(_("""
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\types\message.py", line 1687, in reply
+    return await self.bot.send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\bot.py", line 346, in send_message
+    result = await self.request(api.Methods.SEND_MESSAGE, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.CantParseEntities: Can't parse entities: can't find end of the entity starting at byte offset 787
+2023-08-07 12:18:29 - INFO - User action: Downloaded log (User ID: 6013011895)
+2023-08-07 12:21:29 - INFO - User action: /start (User ID: 6491955029)
+2023-08-07 12:24:56 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-07 12:24:56 - INFO - Added job "job" to job store "default"
+2023-08-07 12:24:56 - INFO - Scheduler started
+2023-08-07 12:24:56 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-07 12:24:57 - WARNING - Updates were skipped successfully.
+2023-08-07 12:24:57 - INFO - Start polling.
+2023-08-07 12:25:16 - ERROR - Update: {"update_id": 247867825, "message": {"message_id": 20047, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1691411115, "text": "/system_info", "entities": [{"type": "bot_command", "offset": 0, "length": 12}]}}
+Exception: Can't parse entities: can't find end of the entity starting at byte offset 581
+2023-08-07 12:25:16 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-28' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=CantParseEntities("Can't parse entities: can't find end of the entity starting at byte offset 581")>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\handlers\admin.py", line 91, in speedtest
+    await message.reply(_("*System information:*\n\n{pc_info}").format(pc_info=pc_info))
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\types\message.py", line 1687, in reply
+    return await self.bot.send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\bot.py", line 346, in send_message
+    result = await self.request(api.Methods.SEND_MESSAGE, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.CantParseEntities: Can't parse entities: can't find end of the entity starting at byte offset 581
+2023-08-07 12:26:03 - INFO - User action: /admin (User ID: 6013011895)
+2023-08-07 12:26:43 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-07 12:26:43 - INFO - Added job "job" to job store "default"
+2023-08-07 12:26:43 - INFO - Scheduler started
+2023-08-07 12:26:43 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-07 12:26:43 - WARNING - Updates were skipped successfully.
+2023-08-07 12:26:43 - INFO - Start polling.
+2023-08-07 12:26:46 - ERROR - Update: {"update_id": 247867827, "message": {"message_id": 20053, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1691411205, "text": "/system_info", "entities": [{"type": "bot_command", "offset": 0, "length": 12}]}}
+Exception: Can't parse entities: can't find end of the entity starting at byte offset 555
+2023-08-07 12:26:46 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-11' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=CantParseEntities("Can't parse entities: can't find end of the entity starting at byte offset 555")>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\handlers\admin.py", line 91, in speedtest
+    await message.reply(_("*System information:*\n\n{pc_info}").format(pc_info=pc_info))
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\types\message.py", line 1687, in reply
+    return await self.bot.send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\bot.py", line 346, in send_message
+    result = await self.request(api.Methods.SEND_MESSAGE, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.CantParseEntities: Can't parse entities: can't find end of the entity starting at byte offset 555
+2023-08-07 12:26:59 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-07 12:26:59 - INFO - Added job "job" to job store "default"
+2023-08-07 12:26:59 - INFO - Scheduler started
+2023-08-07 12:26:59 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-07 12:26:59 - WARNING - Updates were skipped successfully.
+2023-08-07 12:27:00 - INFO - Start polling.
+2023-08-07 12:27:02 - ERROR - Update: {"update_id": 247867828, "message": {"message_id": 20057, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1691411222, "text": "/system_info", "entities": [{"type": "bot_command", "offset": 0, "length": 12}]}}
+Exception: Can't parse entities: can't find end of the entity starting at byte offset 565
+2023-08-07 12:27:02 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-11' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=CantParseEntities("Can't parse entities: can't find end of the entity starting at byte offset 565")>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\handlers\admin.py", line 91, in speedtest
+    await message.reply(_("*System information:*\n\n{pc_info}").format(pc_info=pc_info))
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\types\message.py", line 1687, in reply
+    return await self.bot.send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\bot.py", line 346, in send_message
+    result = await self.request(api.Methods.SEND_MESSAGE, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.CantParseEntities: Can't parse entities: can't find end of the entity starting at byte offset 565
+2023-08-07 12:28:10 - INFO - Stop polling...
+2023-08-07 12:28:10 - WARNING - Goodbye!
+2023-08-07 12:28:11 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-07 12:28:11 - INFO - Added job "job" to job store "default"
+2023-08-07 12:28:11 - INFO - Scheduler started
+2023-08-07 12:28:11 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-07 12:28:11 - WARNING - Updates were skipped successfully.
+2023-08-07 12:28:11 - INFO - Start polling.
+2023-08-07 12:28:14 - ERROR - Update: {"update_id": 247867829, "message": {"message_id": 20061, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1691411293, "text": "/system_info", "entities": [{"type": "bot_command", "offset": 0, "length": 12}]}}
+Exception: Can't parse entities: can't find end of the entity starting at byte offset 565
+2023-08-07 12:28:14 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-11' coro=<Dispatcher._process_polling_updates() done, defined at C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=CantParseEntities("Can't parse entities: can't find end of the entity starting at byte offset 565")>
+Traceback (most recent call last):
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke Bot 2.0\handlers\admin.py", line 92, in speedtest
+    await message.reply(_("*System information:*\n\n{pc_info}").format(pc_info=pc_info))
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\types\message.py", line 1687, in reply
+    return await self.bot.send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\bot.py", line 346, in send_message
+    result = await self.request(api.Methods.SEND_MESSAGE, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.CantParseEntities: Can't parse entities: can't find end of the entity starting at byte offset 565
+2023-08-07 12:28:39 - INFO - Stop polling...
+2023-08-07 12:28:39 - WARNING - Goodbye!
+2023-08-07 12:28:40 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-07 12:28:40 - INFO - Added job "job" to job store "default"
+2023-08-07 12:28:40 - INFO - Scheduler started
+2023-08-07 12:28:40 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-07 12:28:40 - WARNING - Updates were skipped successfully.
+2023-08-07 12:28:40 - INFO - Start polling.
+2023-08-07 12:28:44 - INFO - Stop polling...
+2023-08-07 12:28:44 - WARNING - Goodbye!
+2023-08-07 12:28:45 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-07 12:28:45 - INFO - Added job "job" to job store "default"
+2023-08-07 12:28:45 - INFO - Scheduler started
+2023-08-07 12:28:46 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-07 12:28:46 - WARNING - Updates were skipped successfully.
+2023-08-07 12:28:46 - INFO - Start polling.
+2023-08-07 12:28:56 - INFO - Stop polling...
+2023-08-07 12:28:56 - WARNING - Goodbye!
+2023-08-07 12:29:01 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-07 12:29:01 - INFO - Added job "job" to job store "default"
+2023-08-07 12:29:01 - INFO - Scheduler started
+2023-08-07 12:29:02 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-07 12:29:02 - WARNING - Updates were skipped successfully.
+2023-08-07 12:29:02 - INFO - Start polling.
+2023-08-07 12:30:20 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-07 12:30:20 - INFO - Added job "job" to job store "default"
+2023-08-07 12:30:20 - INFO - Scheduler started
+2023-08-07 12:30:20 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-07 12:30:20 - WARNING - Updates were skipped successfully.
+2023-08-07 12:30:20 - INFO - Start polling.
+2023-08-07 12:30:28 - INFO - User action: /start (User ID: 5617952282)
+2023-08-07 12:30:34 - INFO - User action: /start (User ID: 5617952282)
+2023-08-07 12:31:08 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-07 12:31:08 - INFO - Added job "job" to job store "default"
+2023-08-07 12:31:08 - INFO - Scheduler started
+2023-08-07 12:31:08 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-07 12:31:08 - WARNING - Updates were skipped successfully.
+2023-08-07 12:31:08 - INFO - Start polling.
+2023-08-07 12:31:19 - INFO - User action: /start (User ID: 5617952282)
+2023-08-07 12:31:32 - INFO - Stop polling...
+2023-08-07 12:31:32 - WARNING - Goodbye!
+2023-08-07 12:31:33 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-07 12:31:33 - INFO - Added job "job" to job store "default"
+2023-08-07 12:31:33 - INFO - Scheduler started
+2023-08-07 12:31:33 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-07 12:31:33 - WARNING - Updates were skipped successfully.
+2023-08-07 12:31:33 - INFO - Start polling.
+2023-08-07 12:31:38 - INFO - User action: /start (User ID: 5617952282)

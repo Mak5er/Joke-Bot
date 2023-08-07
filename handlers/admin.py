@@ -1,9 +1,12 @@
 import asyncio
 import logging
 import os
+import platform
 from io import BytesIO
 
+import cpuinfo
 import pandas as pd
+import psutil
 from aiogram import types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher import FSMContext
@@ -57,29 +60,36 @@ async def admin(message: types.Message):
         await message.answer(bot_messages.not_groups())
 
 
-@dp.message_handler(user_id=admin_id, commands=['speedtest'])
+@dp.message_handler(user_id=admin_id, commands=['system_info'])
 @rate_limit(5)
 async def speedtest(message: types.Message):
     clock = await bot.send_message(message.chat.id, '⏳')
 
-    import speedtest
-    # Создаем объект Speedtest
-    st = speedtest.Speedtest()
-    st.get_servers()
+    def get_system_info():
+        info = _("_Operating System_: *{}*\n").format(platform.system())
+        info += _("_OS Version_: *{}*\n").format(platform.version())
+        info += _("_Machine Name_: *{}*\n").format(platform.node())
+        info += _("_Processor Architecture_: *{}*\n").format(platform.machine())
 
-    best_server = st.get_best_server()
+        cpu_info = cpuinfo.get_cpu_info()
+        processor_name = cpu_info['brand_raw']
+        info += _("_Processor Model_: *{}*\n").format(processor_name)
 
-    download_speed = st.download() / 1_000_000  # в Мбит/с
-    upload_speed = st.upload() / 1_000_000  # в Мбит/с
-    ping = st.results.ping  # B MC
+        info += _("_Physical Cores_: *{}*\n").format(psutil.cpu_count(logical=False))
+        info += _("_Logical Cores_: *{}*\n").format(psutil.cpu_count(logical=True))
 
+        memory = psutil.virtual_memory()
+        info += _("_Total Memory_: *{:.2f}* MB\n").format(memory.total / (1024 * 1024))
+        info += _("_Available Memory_: *{:.2f}* MB\n").format(memory.available / (1024 * 1024))
+        info += _("_Memory Usage_: *{}*%\n").format(memory.percent)
+
+        return info
+
+    pc_info = get_system_info()
+    print(pc_info)
     await bot.delete_message(message.chat.id, clock.message_id)
 
-    await message.answer(f'''    
-Download speed: *{download_speed:.2f}* Mbit/s
-Upload speed: *{upload_speed:.2f}* Mbit/s 
-Ping: *{ping}* mc  
-''')
+    await message.reply(_("*System information:*\n\n{pc_info}").format(pc_info=pc_info))
 
 
 @dp.message_handler(user_id=admin_id, commands=['del_log'])
