@@ -1472,3 +1472,10 @@ aiogram.utils.exceptions.CantParseEntities: Can't parse entities: can't find end
 2023-08-07 12:31:33 - WARNING - Updates were skipped successfully.
 2023-08-07 12:31:33 - INFO - Start polling.
 2023-08-07 12:31:38 - INFO - User action: /start (User ID: 5617952282)
+2023-08-07 16:06:53 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-07 16:06:53 - INFO - Added job "job" to job store "default"
+2023-08-07 16:06:53 - INFO - Scheduler started
+2023-08-07 16:06:53 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-07 16:06:53 - WARNING - Updates were skipped successfully.
+2023-08-07 16:06:54 - INFO - Start polling.
+2023-08-07 16:06:57 - INFO - User action: /info (User ID: 6013011895)
