@@ -65,14 +65,6 @@ async def admin(message: types.Message):
 async def speedtest(message: types.Message):
     clock = await bot.send_message(message.chat.id, '⏳')
 
-    import speedtest
-    st = speedtest.Speedtest()
-    st.get_servers()
-
-    download_speed = st.download() / 1_000_000
-    upload_speed = st.upload() / 1_000_000
-    ping = st.results.ping
-
     def get_system_info():
         info = _("_Operating System_: *{}*\n").format(platform.system())
         info += _("_OS Version_: *{}*\n").format(platform.version())
@@ -93,18 +85,11 @@ async def speedtest(message: types.Message):
 
         return info
 
+    pc_info = get_system_info()
+    print(pc_info)
     await bot.delete_message(message.chat.id, clock.message_id)
 
-    pc_info = get_system_info()
-    await message.reply(_("""
-*System information:*
-{pc_info}
-    
-*Network information:*    
-_Download speed_: *{download_speed:.2f}* Mbit/s
-_Upload speed_: *{upload_speed:.2f}* Mbit/s 
-_Ping_: *{ping}* mc 
-""").format(pc_info=pc_info, download_speed=download_speed, upload_speed=upload_speed, ping=ping))
+    await message.reply(_("*System information:*\n\n{pc_info}").format(pc_info=pc_info))
 
 
 @dp.message_handler(user_id=admin_id, commands=['del_log'])

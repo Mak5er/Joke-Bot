@@ -16,9 +16,10 @@ def admin_panel(user_count, joke_count, sent_count):
 Admin commands:
 /download\_db - download database
 /del\_log - delete the log
-/get\_users - download table with all users info""").format(user_count=user_count,
-                                                            joke_count=joke_count,
-                                                            sent_count=sent_count)
+/get\_users - download table with all users info
+/system\_info - get info about system""").format(user_count=user_count,
+                                                 joke_count=joke_count,
+                                                 sent_count=sent_count)
 
 
 def admin_info(username, joke_sent, joke_count, sent_count):
@@ -108,7 +109,7 @@ def all_send():
 
 
 def daily_joke(joke_text):
-    return _("*Joke of the day:*\n\n{joke_text}"). format(joke_text=joke_text)
+    return _("*Joke of the day:*\n\n{joke_text}").format(joke_text=joke_text)
 
 
 def dont_understood(name):
