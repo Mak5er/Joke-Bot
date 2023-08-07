@@ -31,7 +31,9 @@ Statistics:
 📚Jokes read by you: *{joke_sent}*
 📬Total number of jokes read by everyone: *{sent_count}*
 
-To invite a friend, follow or send them this link - https://bit.ly/jokes-bot
+Bot site - https://bit.ly/jokes-bot
+
+*If you want to offer an anecdote or ask a question, click the Feedback💬 button!*
 
 *The bot is under development, so bugs and malfunctions are possible!
 For complaints and suggestions, write - @mak5er*""").format(username=username, joke_sent=joke_sent,
@@ -48,7 +50,7 @@ Statistics:
 📚Jokes read by you: *{joke_sent}*
 📬Total number of jokes read by everyone: *{sent_count}*
 
-To invite a friend, follow or send them this link - https://bit.ly/jokes-bot
+Bot site - https://bit.ly/jokes-bot
 
 *If you want to offer an anecdote or ask a question, click the Feedback💬 button!*
 
