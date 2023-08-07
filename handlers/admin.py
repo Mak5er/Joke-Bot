@@ -86,7 +86,6 @@ async def speedtest(message: types.Message):
         return info
 
     pc_info = get_system_info()
-    print(pc_info)
     await bot.delete_message(message.chat.id, clock.message_id)
 
     await message.reply(_("*System information:*\n\n{pc_info}").format(pc_info=pc_info))

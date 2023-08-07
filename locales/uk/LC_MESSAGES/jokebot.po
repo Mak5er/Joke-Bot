@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  sease\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-08-07 16:05+0300\n"
+"POT-Creation-Date: 2023-08-07 19:25+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -62,7 +62,7 @@ msgstr "_Доступна пам'ять_: *{:.2f}* МБ\n"
 msgid "_Memory Usage_: *{}*%\n"
 msgstr "_Використання пам'яті_: *{}*%\n"
 
-#: handlers/admin.py:92
+#: handlers/admin.py:91
 msgid ""
 "*System information:*\n"
 "\n"
@@ -72,59 +72,59 @@ msgstr ""
 "\n"
 "{pc_info}"
 
-#: handlers/admin.py:140 handlers/admin.py:177 handlers/admin.py:259
-#: handlers/admin.py:354 handlers/admin.py:496 handlers/admin.py:532
-#: handlers/user.py:178 keyboards/inline_keyboards.py:36
+#: handlers/admin.py:139 handlers/admin.py:176 handlers/admin.py:258
+#: handlers/admin.py:353 handlers/admin.py:495 handlers/admin.py:531
+#: handlers/user.py:179 keyboards/inline_keyboards.py:36
 msgid "↩️Cancel"
 msgstr "↩️Скасувати"
 
-#: handlers/admin.py:238
+#: handlers/admin.py:237
 msgid "Search user by:"
 msgstr "Шукати користувача по:"
 
-#: handlers/admin.py:245
+#: handlers/admin.py:244
 msgid "Type user {search}:"
 msgstr "Введіть {search} користувача:"
 
-#: handlers/admin.py:300
+#: handlers/admin.py:299
 msgid "Enter in Conversation"
 msgstr "Перейти до розмови"
 
-#: handlers/admin.py:301
+#: handlers/admin.py:300
 msgid "Write as a bot"
 msgstr "Написати як бот"
 
-#: handlers/admin.py:302
+#: handlers/admin.py:301
 msgid "❌Ban"
 msgstr "❌Забанити"
 
-#: handlers/admin.py:303
+#: handlers/admin.py:302
 msgid "✅Unban"
 msgstr "✅Розбанити"
 
-#: handlers/admin.py:304 keyboards/inline_keyboards.py:112
+#: handlers/admin.py:303 keyboards/inline_keyboards.py:112
 #: keyboards/inline_keyboards.py:127
 msgid "🔙Back"
 msgstr "🔙Назад"
 
-#: handlers/admin.py:333
+#: handlers/admin.py:332
 msgid "User not found!"
 msgstr "Користувача не знайдено!"
 
-#: handlers/admin.py:343
+#: handlers/admin.py:342
 msgid "Enter ban reason:"
 msgstr "Введіть причину бану:"
 
-#: handlers/admin.py:355 handlers/admin.py:497 handlers/admin.py:533
-#: handlers/user.py:180
+#: handlers/admin.py:354 handlers/admin.py:496 handlers/admin.py:532
+#: handlers/user.py:181
 msgid "Action canceled!"
 msgstr "Дію скасовано"
 
-#: handlers/admin.py:487
+#: handlers/admin.py:486
 msgid "Please type your answer:"
 msgstr "Будь ласка, напишіть свою відповідь:"
 
-#: handlers/admin.py:507
+#: handlers/admin.py:506
 msgid ""
 "Your message *{message_id}* was seen!\n"
 "*Answer:* `{answer}`"
@@ -132,31 +132,34 @@ msgstr ""
 "Ваше повідомлення *{message_id}* було переглянуто!\n"
 "*Відповідь:* `{answer}`"
 
-#: handlers/admin.py:509
+#: handlers/admin.py:508
 msgid "Your answer sent!"
 msgstr "Вашу відповідь надіслано!"
 
-#: handlers/admin.py:513 handlers/admin.py:552
+#: handlers/admin.py:512 handlers/admin.py:551
 msgid "Something went wrong, see log for more information!"
 msgstr "Щось пішло не так, дивіться лог для отримання додаткової інформації!"
 
-#: handlers/admin.py:523
+#: handlers/admin.py:522
 msgid "Please type message:"
 msgstr "Будь ласка, введіть своє повідомлення:"
 
-#: handlers/admin.py:543 handlers/admin.py:547
+#: handlers/admin.py:542 handlers/admin.py:546
 msgid "Your message sent!"
 msgstr "Ваше повідомлення надіслано!"
 
-#: handlers/user.py:81
-msgid "If you find a bug, please click the button below and describe it."
-msgstr "Якщо ви знайшли баг, будь ласка, натисніть кнопку нижче та опишіть його."
+#: handlers/user.py:82
+msgid ""
+"If you want to offer an anecdote or if you find a bug, please click the "
+"button below and describe it."
+msgstr "Якщо ви знайшли помилку або хочете запропонувати анекдот, будь ласка, "
+"натисніть кнопку нижче та опишіть його."
 
-#: handlers/user.py:165
+#: handlers/user.py:166
 msgid "Please enter your message:"
 msgstr "Будь ласка, введіть своє повідомлення:"
 
-#: handlers/user.py:198
+#: handlers/user.py:199
 msgid "Your message *{feedback_message_id}* sent!"
 msgstr "Ваше повідомлення *{feedback_message_id}* надіслано!"
 

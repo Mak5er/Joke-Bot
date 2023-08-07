@@ -78,8 +78,9 @@ async def send_welcome(message: types.Message):
 
     if 'bug' in message.get_args().lower():
         # Відправка привітання і повідомлення з кнопкою
-        await message.answer(_('If you find a bug, please click the button below and describe it.'),
-                            reply_markup=kb.return_feedback_button())
+        await message.answer(
+            _('If you want to offer an anecdote or if you find a bug, please click the button below and describe it.'),
+            reply_markup=kb.return_feedback_button())
 
     await update_info(message)
 
