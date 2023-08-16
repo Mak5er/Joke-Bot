@@ -1705,3 +1705,40 @@ aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupd
 2023-08-07 22:13:11 - INFO - Start polling.
 2023-08-07 22:13:14 - INFO - User action: /start (User ID: 6013011895)
 2023-08-07 22:13:16 - INFO - User action: /info (User ID: 6013011895)
+2023-08-16 12:14:26 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-16 12:14:26 - INFO - Added job "job" to job store "default"
+2023-08-16 12:14:26 - INFO - Scheduler started
+2023-08-16 12:14:26 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-16 12:14:26 - WARNING - Updates were skipped successfully.
+2023-08-16 12:14:26 - INFO - Start polling.
+2023-08-16 12:14:32 - INFO - User action: /start (User ID: 6013011895)
+2023-08-16 12:14:43 - INFO - User action: /start (User ID: 6013011895)
+2023-08-16 12:14:50 - INFO - User action: /joke (User ID: 6013011895)
+2023-08-16 12:14:52 - INFO - User action: /info (User ID: 6013011895)
+2023-08-16 12:14:59 - INFO - User action: /help (User ID: 6013011895)
+2023-08-16 12:15:51 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-16 12:15:51 - INFO - Added job "job" to job store "default"
+2023-08-16 12:15:51 - INFO - Scheduler started
+2023-08-16 12:15:52 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-16 12:15:52 - WARNING - Updates were skipped successfully.
+2023-08-16 12:15:52 - INFO - Start polling.
+2023-08-16 12:15:56 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: 479)
+2023-08-16 12:16:10 - INFO - User action: Liked joke (User ID: 6013011895, Joke ID: 479)
+2023-08-16 12:17:43 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-16 12:17:43 - INFO - Added job "job" to job store "default"
+2023-08-16 12:17:43 - INFO - Scheduler started
+2023-08-16 12:17:43 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-16 12:17:43 - WARNING - Updates were skipped successfully.
+2023-08-16 12:17:43 - INFO - Start polling.
+2023-08-16 12:17:46 - INFO - User action: /info (User ID: 6013011895)
+2023-08-16 12:17:52 - INFO - User action: /admin (User ID: 6013011895)
+2023-08-16 12:20:21 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-16 12:20:21 - INFO - Added job "job" to job store "default"
+2023-08-16 12:20:21 - INFO - Scheduler started
+2023-08-16 12:20:21 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-16 12:20:21 - WARNING - Updates were skipped successfully.
+2023-08-16 12:20:21 - INFO - Start polling.
+2023-08-16 12:20:29 - INFO - Getting info about user
+2023-08-16 12:21:19 - INFO - User action: Downloaded db (User ID: 6013011895)
+2023-08-16 12:21:21 - INFO - Stop polling...
+2023-08-16 12:21:21 - WARNING - Goodbye!

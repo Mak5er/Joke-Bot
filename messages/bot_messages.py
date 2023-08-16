@@ -31,7 +31,7 @@ Statistics:
 📚Jokes read by you: *{joke_sent}*
 📬Total number of jokes read by everyone: *{sent_count}*
 
-Bot site - bit.ly/anekdotyky
+Bot site - anekdoty.pp.ua
 
 *If you want to offer an anecdote or ask a question, click the Feedback💬 button!*
 
@@ -50,7 +50,7 @@ Statistics:
 📚Jokes read by you: *{joke_sent}*
 📬Total number of jokes read by everyone: *{sent_count}*
 
-Bot site - bit.ly/anekdotyky
+Bot site - anekdoty.pp.ua
 
 *If you want to offer an anecdote or ask a question, click the Feedback💬 button!*
 
