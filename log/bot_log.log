@@ -1697,3 +1697,11 @@ Traceback (most recent call last):
   File "C:\Python\Joke-Bot\venv\Lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
     raise err(cls.text or description)
 aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+2023-08-07 22:13:10 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-07 22:13:10 - INFO - Added job "job" to job store "default"
+2023-08-07 22:13:10 - INFO - Scheduler started
+2023-08-07 22:13:10 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-07 22:13:10 - WARNING - Updates were skipped successfully.
+2023-08-07 22:13:11 - INFO - Start polling.
+2023-08-07 22:13:14 - INFO - User action: /start (User ID: 6013011895)
+2023-08-07 22:13:16 - INFO - User action: /info (User ID: 6013011895)

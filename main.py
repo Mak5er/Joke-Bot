@@ -27,6 +27,7 @@ logger.addHandler(handler)
 
 logging.getLogger("werkzeug").disabled = True
 
+
 @dp.errors_handler()
 async def handle_errors(update, exception):
     logging.error(f"Update: {update}\nException: {exception}")
