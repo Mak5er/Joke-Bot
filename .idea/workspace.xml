@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="868e1bc7-d2cf-4321-8444-628b09c4cc27" name="Changes" comment="update some translations">
+    <list default="true" id="868e1bc7-d2cf-4321-8444-628b09c4cc27" name="Changes" comment="update bot site link">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/48465509-4ce6-4f0f-865a-efc9fbef8b52.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/48465509-4ce6-4f0f-865a-efc9fbef8b52.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.mo" beforeDir="false" afterPath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.po" beforeDir="false" afterPath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/jokebot.pot" beforeDir="false" afterPath="$PROJECT_DIR$/locales/jokebot.pot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.mo" beforeDir="false" afterPath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.po" beforeDir="false" afterPath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/bot_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/bot_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messages/bot_messages.py" beforeDir="false" afterPath="$PROJECT_DIR$/messages/bot_messages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/jokes.db" beforeDir="false" afterPath="$PROJECT_DIR$/services/jokes.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,23 +44,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Python/Joke Bot 2.0/services/jokes.db",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Python/Joke Bot 2.0/services/jokes.db&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="Push.Settings">
     <force-push-targets>
       <force-push-target remote-path="origin" branch="main" />
@@ -110,7 +106,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1687548587521</updated>
-      <workItem from="1692177109785" duration="405000" />
+      <workItem from="1692177109785" duration="800000" />
+      <workItem from="1692607361791" duration="14000" />
+      <workItem from="1692607406678" duration="512000" />
     </task>
     <task id="LOCAL-00001" summary="UPDATE main.py">
       <created>1687548643088</created>
@@ -373,7 +371,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692177223806</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="update bot site link">
+      <option name="closed" value="true" />
+      <created>1692177706098</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1692177706098</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -428,9 +434,10 @@
     <MESSAGE value="start working at bug report system" />
     <MESSAGE value="Bug report system done" />
     <MESSAGE value="update some translations" />
-    <option name="LAST_COMMIT_MESSAGE" value="update some translations" />
+    <MESSAGE value="update bot site link" />
+    <option name="LAST_COMMIT_MESSAGE" value="update bot site link" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Joke_Bot_2_0$main.coverage" NAME="main Coverage Results" MODIFIED="1692177462278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Joke_Bot_2_0$main.coverage" NAME="main Coverage Results" MODIFIED="1692177620314" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

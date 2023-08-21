@@ -114,9 +114,7 @@ async def info(message: types.Message):
     await dp.bot.send_chat_action(message.chat.id, "typing")
     user_id = message.from_user.id
 
-    language = await db.get_language(user_id)
-
-    table_name = f"jokes_{language}"
+    table_name = f"jokes_uk"
 
     logging.info(f"User action: /info (User ID: {user_id})")
 
@@ -206,9 +204,8 @@ async def feedback(message: types.Message, state: FSMContext):
 async def send_joke_private(call):
     chat_id = call.message.chat.id
     user_id = call.from_user.id
-    language = await db.get_language(user_id)
 
-    table_name = f"jokes_{language}"
+    table_name = f"jokes_uk"
 
     result = await db.get_joke(user_id, table_name)
 
@@ -248,10 +245,8 @@ async def send_joke_private(call):
     lambda call: call.data == 'random_joke')
 async def send_joke_group(call):
     chat_id = call.message.chat.id
-    user_id = call.from_user.id
-    language = await db.get_language(user_id)
 
-    table_name = f"jokes_{language}"
+    table_name = f"jokes_uk"
 
     result = await db.get_joke(user_id, table_name)
 
@@ -294,7 +289,7 @@ async def job():
 
             language = await db.get_language(chat_id)
 
-            table_name = f"jokes_{language}"
+            table_name = f"jokes_uk"
 
             result = await db.get_joke(chat_id, table_name)
 
@@ -361,10 +356,8 @@ async def seen_button_handling(call: types.CallbackQuery):
 @dp.callback_query_handler(lambda call: call.data.startswith('like_'))
 async def like_joke(call: types.CallbackQuery):
     joke_id = int(call.data.split('_')[1])
-    user_id = call.from_user.id
-    language = await db.get_language(user_id)
 
-    table_name = f"jokes_{language}"
+    table_name = f"jokes_uk"
 
     await db.like_joke(joke_id, table_name)
 
@@ -387,10 +380,8 @@ async def like_joke(call: types.CallbackQuery):
 @dp.callback_query_handler(lambda call: call.data.startswith('dislike_'))
 async def dislike_joke(call: types.CallbackQuery):
     joke_id = int(call.data.split('_')[1])
-    user_id = call.from_user.id
-    language = await db.get_language(user_id)
 
-    table_name = f"jokes_{language}"
+    table_name = f"jokes_uk"
 
     await db.dislike_joke(joke_id, table_name)
 
@@ -413,10 +404,8 @@ async def dislike_joke(call: types.CallbackQuery):
                            lambda call: call.data.startswith('rate_'))
 async def rate_joke_private(call: types.CallbackQuery):
     joke_id = int(call.data.split('_')[1])
-    user_id = call.from_user.id
-    language = await db.get_language(user_id)
 
-    table_name = f"jokes_{language}"
+    table_name = f"jokes_uk"
 
     joke_rate = await db.joke_rate(joke_id, table_name)
 
@@ -439,10 +428,8 @@ async def rate_joke_private(call: types.CallbackQuery):
     lambda call: call.data.startswith('rate_'))
 async def rate_joke_group(call: types.CallbackQuery):
     joke_id = int(call.data.split('_')[1])
-    user_id = call.from_user.id
-    language = await db.get_language(user_id)
 
-    table_name = f"jokes_{language}"
+    table_name = f"jokes_uk"
 
     joke_rate = await db.joke_rate(joke_id, table_name)
 
@@ -463,10 +450,8 @@ async def rate_joke_group(call: types.CallbackQuery):
 @dp.callback_query_handler(lambda call: call.data.startswith('rating_'))
 async def joke_rating(call: types.CallbackQuery):
     joke_id = int(call.data.split('_')[1])
-    user_id = call.from_user.id
-    language = await db.get_language(user_id)
 
-    table_name = f"jokes_{language}"
+    table_name = "jokes_uk"
 
     joke_rate = await db.joke_rate(joke_id, table_name)
 

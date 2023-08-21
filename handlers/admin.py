@@ -43,9 +43,8 @@ async def admin(message: types.Message):
 
     if message.chat.type == 'private':
         user_id = message.from_user.id
-        language = await db.get_language(user_id)
 
-        table_name = f"jokes_{language}"
+        table_name = f"jokes_uk"
 
         logging.info(f"User action: /admin (User ID: {user_id})")
 
@@ -183,7 +182,7 @@ async def save_joke(message: types.Message, state: FSMContext):
         user_id = message.from_user.id
         language = await db.get_language(user_id)
 
-        table_name = f"jokes_{language}"
+        table_name = f"jokes_uk"
         await db.add_joke(joke_text, table_name)
 
         await message.reply(bot_messages.joke_added(),
@@ -205,7 +204,7 @@ async def send_daily_joke(call: types.CallbackQuery):
 
             language = await db.get_language(chat_id)
 
-            table_name = f"jokes_{language}"
+            table_name = f"jokes_uk"
 
             result = await db.get_joke(chat_id, table_name)
 
@@ -399,7 +398,7 @@ async def info(message: types.Message):
     user_id = message.from_user.id
     language = await db.get_language(user_id)
 
-    table_name = f"jokes_{language}"
+    table_name = f"jokes_uk"
 
     logging.info(f"User action: /info (User ID: {user_id})")
 
@@ -462,9 +461,8 @@ async def back_to_admin(call: types.CallbackQuery):
     await dp.bot.send_chat_action(call.message.chat.id, "typing")
 
     user_id = call.from_user.id
-    language = await db.get_language(user_id)
 
-    table_name = f"jokes_{language}"
+    table_name = f"jokes_uk"
 
     logging.info(f"User action: /admin (User ID: {user_id})")
 
