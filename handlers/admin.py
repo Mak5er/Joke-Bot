@@ -202,8 +202,6 @@ async def send_daily_joke(call: types.CallbackQuery):
         chat_id = user[0]
         try:
 
-            language = await db.get_language(chat_id)
-
             table_name = f"jokes_uk"
 
             result = await db.get_joke(chat_id, table_name)
@@ -212,11 +210,23 @@ async def send_daily_joke(call: types.CallbackQuery):
                 continue
 
             joke = result[0]
+
+            joke_id = joke[0]
+
             joke_text = joke[1]
+
+            tags = await db.get_tags(joke_id)
+
+            if tags is not None:
+                formatted_tags = tags.replace("_", "\_")
+                tagged_tags = f'#{formatted_tags}'
+                joke = f'{joke_text}\n\n{tagged_tags}'
+            else:
+                joke = joke_text
 
             await bot.send_message(
                 chat_id=user[0],
-                text=bot_messages.daily_joke(joke_text),
+                text=bm.daily_joke(joke),
                 parse_mode="Markdown",
                 reply_markup=kb.return_rate_keyboard(joke[0]))
 

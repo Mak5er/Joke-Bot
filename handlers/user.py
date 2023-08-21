@@ -221,9 +221,19 @@ async def send_joke_private(call):
 
         joke_text = joke[1]
 
+        tags = await db.get_tags(joke_id)
+
+        if tags is not None:
+            formatted_tags = tags.replace("_", "\_")
+            tagged_tags = f'#{formatted_tags}'
+            joke = f'{joke_text}\n\n{tagged_tags}'
+            print(joke)
+        else:
+            joke = joke_text
+
         await bot.send_message(
             chat_id,
-            joke_text,
+            joke,
             reply_markup=kb.return_rate_keyboard(joke_id))
 
         await db.seen_joke(joke_id, user_id)
@@ -245,6 +255,7 @@ async def send_joke_private(call):
     lambda call: call.data == 'random_joke')
 async def send_joke_group(call):
     chat_id = call.message.chat.id
+    user_id = call.from_user.id
 
     table_name = f"jokes_uk"
 
@@ -257,12 +268,25 @@ async def send_joke_group(call):
             chat_id, bm.all_send())
     else:
         joke = result[0]
+
         joke_id = joke[0]
+
+        joke_text = joke[1]
+
+        tags = await db.get_tags(joke_id)
+
+        if tags is not None:
+            formatted_tags = tags.replace("_", "\_")
+            tagged_tags = f'#{formatted_tags}'
+            joke = f'{joke_text}\n\n{tagged_tags}'
+            print(joke)
+        else:
+            joke = joke_text
 
         await bot.send_message(
             chat_id,
-            joke[1],
-            reply_markup=kb.return_seen_rate_keyboard(joke_id))
+            joke,
+            reply_markup=kb.return_rate_keyboard(joke_id))
 
         logging.info(
             f"User action: Sent joke (User ID: {user_id}, Joke ID: {joke[0]})")
@@ -287,8 +311,6 @@ async def job():
         chat_id = user[0]
         try:
 
-            language = await db.get_language(chat_id)
-
             table_name = f"jokes_uk"
 
             result = await db.get_joke(chat_id, table_name)
@@ -297,11 +319,23 @@ async def job():
                 continue
 
             joke = result[0]
+
+            joke_id = joke[0]
+
             joke_text = joke[1]
+
+            tags = await db.get_tags(joke_id)
+
+            if tags is not None:
+                formatted_tags = tags.replace("_", "\_")
+                tagged_tags = f'#{formatted_tags}'
+                joke = f'{joke_text}\n\n{tagged_tags}'
+            else:
+                joke = joke_text
 
             await bot.send_message(
                 chat_id=user[0],
-                text=bm.daily_joke(joke_text),
+                text=bm.daily_joke(joke),
                 parse_mode="Markdown",
                 reply_markup=kb.return_rate_keyboard(joke[0]))
 
@@ -356,6 +390,7 @@ async def seen_button_handling(call: types.CallbackQuery):
 @dp.callback_query_handler(lambda call: call.data.startswith('like_'))
 async def like_joke(call: types.CallbackQuery):
     joke_id = int(call.data.split('_')[1])
+    user_id = call.from_user.id
 
     table_name = f"jokes_uk"
 
@@ -380,6 +415,7 @@ async def like_joke(call: types.CallbackQuery):
 @dp.callback_query_handler(lambda call: call.data.startswith('dislike_'))
 async def dislike_joke(call: types.CallbackQuery):
     joke_id = int(call.data.split('_')[1])
+    user_id = call.from_user.id
 
     table_name = f"jokes_uk"
 

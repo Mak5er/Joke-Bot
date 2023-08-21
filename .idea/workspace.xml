@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="868e1bc7-d2cf-4321-8444-628b09c4cc27" name="Changes" comment="update bot site link">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/48465509-4ce6-4f0f-865a-efc9fbef8b52.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/48465509-4ce6-4f0f-865a-efc9fbef8b52.xml" afterDir="false" />
+    <list default="true" id="868e1bc7-d2cf-4321-8444-628b09c4cc27" name="Changes" comment="deleted en jokes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/bot_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/bot_log.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/db.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/jokes.db" beforeDir="false" afterPath="$PROJECT_DIR$/services/jokes.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,7 +109,12 @@
       <updated>1687548587521</updated>
       <workItem from="1692177109785" duration="800000" />
       <workItem from="1692607361791" duration="14000" />
-      <workItem from="1692607406678" duration="512000" />
+      <workItem from="1692607406678" duration="581000" />
+      <workItem from="1692622775049" duration="13000" />
+      <workItem from="1692623430701" duration="708000" />
+      <workItem from="1692624201244" duration="56000" />
+      <workItem from="1692624438386" duration="106000" />
+      <workItem from="1692624581481" duration="762000" />
     </task>
     <task id="LOCAL-00001" summary="UPDATE main.py">
       <created>1687548643088</created>
@@ -379,7 +385,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692177706098</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="deleted en jokes">
+      <option name="closed" value="true" />
+      <created>1692607971379</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1692607971379</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -435,9 +449,10 @@
     <MESSAGE value="Bug report system done" />
     <MESSAGE value="update some translations" />
     <MESSAGE value="update bot site link" />
-    <option name="LAST_COMMIT_MESSAGE" value="update bot site link" />
+    <MESSAGE value="deleted en jokes" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleted en jokes" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Joke_Bot_2_0$main.coverage" NAME="main Coverage Results" MODIFIED="1692177620314" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Joke_Bot_2_0$main.coverage" NAME="main Coverage Results" MODIFIED="1692625306595" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

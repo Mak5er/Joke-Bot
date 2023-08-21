@@ -87,6 +87,10 @@ class DataBase:
             return self.cursor.execute("SELECT DISTINCT language FROM users WHERE user_id=(?)",
                                        (user_id,)).fetchone()[0]
 
+    async def get_tags(self, joke_id):
+        with self.connect:
+            return self.cursor.execute("SELECT tags FROM jokes_uk WHERE id = ?", (joke_id,)).fetchone()[0]
+
     async def set_language(self, user_id, language):
         with self.connect:
             return self.cursor.execute("UPDATE users SET language=(?) WHERE user_id=(?)", (language, user_id))
