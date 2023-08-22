@@ -26,9 +26,30 @@ def admin_keyboard():
 
 def random_keyboard():
     random_button = InlineKeyboardButton(_('🔀Random joke'), callback_data="random_joke")
+    category_button = InlineKeyboardButton(_('🔖Select category'), callback_data="select_category")
     random_keyboard = InlineKeyboardMarkup(row_width=2)
     random_keyboard.add(random_button)
+    random_keyboard.add(category_button)
     return random_keyboard
+
+
+def category_keyboard():
+    гроші_button = InlineKeyboardButton(_('💵Money'), callback_data="joke:про_гроші")
+    родина_button = InlineKeyboardButton(_('👨‍👩‍👦‍👦Family'), callback_data="joke:про_родину")
+    білявки_button = InlineKeyboardButton(_('👱‍♀️Blondes'), callback_data="joke:про_білявок")
+    теща_button = InlineKeyboardButton(_('👵Mother-in-law'), callback_data="joke:про_тещу")
+    школа_button = InlineKeyboardButton(_('🏫School'), callback_data="joke:про_школу")
+    вовочка_button = InlineKeyboardButton(_('👦Vovochka'), callback_data="joke:про_вовочку")
+    медицина_button = InlineKeyboardButton(_('🏥Medicine'), callback_data="joke:про_медицину")
+    студенти_button = InlineKeyboardButton(_('🎓Students'), callback_data="joke:про_студентів")
+    робота_button = InlineKeyboardButton(_('🏢Work'), callback_data="joke:про_роботу")
+    back_button = InlineKeyboardButton(text=_("🔙Back"), callback_data="back_to_random")
+    category_keyboard = InlineKeyboardMarkup(row_width=2)
+    category_keyboard.add(гроші_button, родина_button, білявки_button)
+    category_keyboard.add(теща_button, школа_button, вовочка_button)
+    category_keyboard.add(медицина_button, студенти_button, робота_button)
+    category_keyboard.add(back_button)
+    return category_keyboard
 
 
 def cancel_keyboard():
