@@ -247,7 +247,7 @@ async def send_category_joke_pivate(call):
         else:
             joke = joke_text
 
-        keyboard_type = kb.return_rating_keyboard(joke_rate)
+        keyboard_type = kb.return_rating_and_seen_keyboard(joke_rate, joke_id)
 
         if call.message.chat.type == "private":
             keyboard_type = kb.return_rate_keyboard(joke_id)
@@ -299,7 +299,7 @@ async def send_joke_private(call):
         else:
             joke = joke_text
 
-        keyboard_type = kb.return_rating_keyboard(joke_rate)
+        keyboard_type = kb.return_rating_and_seen_keyboard(joke_rate, joke_id)
 
         if call.message.chat.type == "private":
             keyboard_type = kb.return_rate_keyboard(joke_id)
