@@ -1972,3 +1972,798 @@ aiogram.utils.exceptions.CantParseEntities: Can't parse entities: can't find end
 2023-08-21 16:41:49 - INFO - Sent daily joke to user 6013011895
 2023-08-21 16:41:54 - INFO - User action: Downloaded log (User ID: 6013011895)
 2023-08-21 16:42:05 - INFO - Sent daily joke to user 6013011895
+2023-08-22 11:16:09 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 11:16:09 - INFO - Added job "job" to job store "default"
+2023-08-22 11:16:09 - INFO - Scheduler started
+2023-08-22 11:16:10 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 11:16:10 - WARNING - Updates were skipped successfully.
+2023-08-22 11:16:10 - INFO - Start polling.
+2023-08-22 11:16:20 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: К)
+2023-08-22 11:16:23 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: Я)
+2023-08-22 11:16:24 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: -)
+2023-08-22 11:16:30 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: -)
+2023-08-22 11:17:33 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 11:17:33 - INFO - Added job "job" to job store "default"
+2023-08-22 11:17:33 - INFO - Scheduler started
+2023-08-22 11:17:33 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 11:17:33 - WARNING - Updates were skipped successfully.
+2023-08-22 11:17:33 - INFO - Start polling.
+2023-08-22 11:18:20 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 11:18:20 - INFO - Added job "job" to job store "default"
+2023-08-22 11:18:20 - INFO - Scheduler started
+2023-08-22 11:18:20 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 11:18:20 - WARNING - Updates were skipped successfully.
+2023-08-22 11:18:20 - INFO - Start polling.
+2023-08-22 11:34:32 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 11:34:32 - INFO - Added job "job" to job store "default"
+2023-08-22 11:34:32 - INFO - Scheduler started
+2023-08-22 11:34:32 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 11:34:32 - WARNING - Updates were skipped successfully.
+2023-08-22 11:34:33 - INFO - Start polling.
+2023-08-22 11:34:35 - INFO - Stop polling...
+2023-08-22 11:34:35 - WARNING - Goodbye!
+2023-08-22 11:35:45 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 11:35:45 - INFO - Added job "job" to job store "default"
+2023-08-22 11:35:45 - INFO - Scheduler started
+2023-08-22 11:35:46 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 11:35:46 - WARNING - Updates were skipped successfully.
+2023-08-22 11:35:46 - INFO - Start polling.
+2023-08-22 11:35:56 - INFO - User action: /joke (User ID: 6013011895)
+2023-08-22 11:35:58 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: -)
+2023-08-22 12:00:00 - INFO - Running job "job (trigger: cron[hour='12'], next run at: 2023-08-23 12:00:00 EEST)" (scheduled at 2023-08-22 12:00:00+03:00)
+2023-08-22 12:00:00 - INFO - Sent daily joke to user 389145433
+2023-08-22 12:00:00 - INFO - Sent daily joke to user 489126547
+2023-08-22 12:00:00 - ERROR - Error sending message to user 513426845: Forbidden: bot was blocked by the user
+2023-08-22 12:00:00 - ERROR - Error sending message to user 524375085: Forbidden: bot was blocked by the user
+2023-08-22 12:00:01 - ERROR - Error sending message to user 533468556: Forbidden: bot was blocked by the user
+2023-08-22 12:00:01 - INFO - Sent daily joke to user 547414682
+2023-08-22 12:00:01 - INFO - Sent daily joke to user 726867610
+2023-08-22 12:00:01 - INFO - Sent daily joke to user 731268467
+2023-08-22 12:00:02 - INFO - Sent daily joke to user 739069073
+2023-08-22 12:00:02 - ERROR - Error sending message to user 753055034: Forbidden: bot was blocked by the user
+2023-08-22 12:00:02 - ERROR - Error sending message to user 773256594: Forbidden: bot was blocked by the user
+2023-08-22 12:00:02 - INFO - Sent daily joke to user 787327483
+2023-08-22 12:00:02 - ERROR - Error sending message to user 798472636: Forbidden: bot was blocked by the user
+2023-08-22 12:00:03 - INFO - Sent daily joke to user 804094452
+2023-08-22 12:00:03 - ERROR - Error sending message to user 826453204: Forbidden: bot was blocked by the user
+2023-08-22 12:00:03 - INFO - Sent daily joke to user 877383091
+2023-08-22 12:00:03 - ERROR - Error sending message to user 881351677: Forbidden: bot was blocked by the user
+2023-08-22 12:00:03 - ERROR - Error sending message to user 904685941: Forbidden: bot was blocked by the user
+2023-08-22 12:00:03 - ERROR - Error sending message to user 919969181: Forbidden: bot was blocked by the user
+2023-08-22 12:00:03 - INFO - Sent daily joke to user 965769906
+2023-08-22 12:00:03 - INFO - Sent daily joke to user 1010874509
+2023-08-22 12:00:03 - ERROR - Error sending message to user 1032771703: Forbidden: bot was blocked by the user
+2023-08-22 12:00:04 - ERROR - Error sending message to user 1048675708: Forbidden: bot was blocked by the user
+2023-08-22 12:00:04 - INFO - Sent daily joke to user 1109358666
+2023-08-22 12:00:04 - ERROR - Error sending message to user 1139829171: Forbidden: bot was blocked by the user
+2023-08-22 12:00:04 - INFO - Sent daily joke to user 1142221208
+2023-08-22 12:00:04 - ERROR - Error sending message to user 1157064700: Forbidden: bot was blocked by the user
+2023-08-22 12:00:04 - INFO - Sent daily joke to user 1227458694
+2023-08-22 12:00:04 - INFO - Sent daily joke to user 1229927410
+2023-08-22 12:00:04 - ERROR - Error sending message to user 1236121963: Forbidden: bot was blocked by the user
+2023-08-22 12:00:05 - INFO - Sent daily joke to user 1240719760
+2023-08-22 12:00:05 - ERROR - Error sending message to user 1243700298: Forbidden: bot was blocked by the user
+2023-08-22 12:00:05 - INFO - Sent daily joke to user 1285400010
+2023-08-22 12:00:05 - ERROR - Error sending message to user 1305433255: Forbidden: bot was blocked by the user
+2023-08-22 12:00:06 - INFO - Sent daily joke to user 1315267649
+2023-08-22 12:00:06 - ERROR - Error sending message to user 1321641713: Forbidden: bot was blocked by the user
+2023-08-22 12:00:06 - INFO - Sent daily joke to user 1328242523
+2023-08-22 12:00:06 - ERROR - Error sending message to user 1341871772: Forbidden: bot was blocked by the user
+2023-08-22 12:00:06 - INFO - Sent daily joke to user 1346865332
+2023-08-22 12:00:06 - INFO - Sent daily joke to user 1354231073
+2023-08-22 12:00:06 - INFO - Sent daily joke to user 1372325056
+2023-08-22 12:00:07 - INFO - Sent daily joke to user 1391217023
+2023-08-22 12:00:07 - ERROR - Error sending message to user 1393045234: Forbidden: bot was blocked by the user
+2023-08-22 12:00:07 - INFO - Sent daily joke to user 1435590376
+2023-08-22 12:00:07 - INFO - Sent daily joke to user 1444638910
+2023-08-22 12:00:07 - ERROR - Error sending message to user 1456810112: Forbidden: bot was blocked by the user
+2023-08-22 12:00:07 - ERROR - Error sending message to user 1476363986: Forbidden: bot was blocked by the user
+2023-08-22 12:00:07 - ERROR - Error sending message to user 1477596424: Forbidden: bot was blocked by the user
+2023-08-22 12:00:07 - INFO - Sent daily joke to user 1579706282
+2023-08-22 12:00:07 - ERROR - Error sending message to user 1622859483: Forbidden: bot was blocked by the user
+2023-08-22 12:00:07 - ERROR - Error sending message to user 1845237827: Forbidden: bot was blocked by the user
+2023-08-22 12:00:07 - ERROR - Error sending message to user 1863935742: Forbidden: bot was blocked by the user
+2023-08-22 12:00:08 - INFO - Sent daily joke to user 1912019234
+2023-08-22 12:00:08 - ERROR - Error sending message to user 1925634447: Forbidden: bot was blocked by the user
+2023-08-22 12:00:08 - INFO - Sent daily joke to user 2033636506
+2023-08-22 12:00:08 - INFO - Sent daily joke to user 5029704182
+2023-08-22 12:00:08 - ERROR - Error sending message to user 5057473943: Forbidden: bot was blocked by the user
+2023-08-22 12:00:08 - INFO - Sent daily joke to user 5152053486
+2023-08-22 12:00:08 - INFO - Sent daily joke to user 5263183627
+2023-08-22 12:00:08 - INFO - Sent daily joke to user 5273397372
+2023-08-22 12:00:08 - INFO - Sent daily joke to user 5274586575
+2023-08-22 12:00:08 - ERROR - Error sending message to user 5307055848: Forbidden: bot was blocked by the user
+2023-08-22 12:00:09 - INFO - Sent daily joke to user 5390316696
+2023-08-22 12:00:09 - INFO - Sent daily joke to user 5463355018
+2023-08-22 12:00:09 - INFO - Sent daily joke to user 5617952282
+2023-08-22 12:00:09 - ERROR - Error sending message to user 5692086455: Forbidden: bot was blocked by the user
+2023-08-22 12:00:09 - ERROR - Error sending message to user 5893304194: Forbidden: bot was blocked by the user
+2023-08-22 12:00:09 - INFO - Sent daily joke to user 5975745744
+2023-08-22 12:00:10 - INFO - Sent daily joke to user 6013011895
+2023-08-22 12:00:10 - INFO - Sent daily joke to user 6038535831
+2023-08-22 12:00:10 - INFO - Sent daily joke to user 6109478142
+2023-08-22 12:00:10 - INFO - Sent daily joke to user 6134724411
+2023-08-22 12:00:10 - ERROR - Error sending message to user 6293095869: Forbidden: bot can't send messages to bots
+2023-08-22 12:00:10 - ERROR - Error sending message to user 6491955029: Forbidden: bot was blocked by the user
+2023-08-22 12:00:10 - INFO - Sent daily joke to user 6669700674
+2023-08-22 12:00:10 - INFO - Job "job (trigger: cron[hour='12'], next run at: 2023-08-23 12:00:00 EEST)" executed successfully
+2023-08-22 12:01:17 - ERROR - Update: {"update_id": 247868467, "callback_query": {"id": "5271894948174673760", "from": {"id": 1227458694, "is_bot": false, "first_name": "Anime Game", "username": "AnjmeGame", "language_code": "uk"}, "message": {"message_id": 21748, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": 1227458694, "first_name": "Anime Game", "username": "AnjmeGame", "type": "private"}, "date": 1692694804, "text": "Joke of the day:\n\nУ магазині:\n- Мені б коробочку хороших цукерок, але так, щоб не дуже дорого.\n- Вам для дівчини?\n- Мені для лікаря.\n- Віддячити чи помститись?\n\n#про_медицину", "entities": [{"type": "bold", "offset": 0, "length": 16}, {"type": "hashtag", "offset": 161, "length": 13}], "reply_markup": {"inline_keyboard": [[{"text": "👍", "callback_data": "like_У"}, {"text": "👎", "callback_data": "dislike_У"}]]}}, "chat_instance": "1066528851319918010", "data": "dislike_У"}}
+Exception: invalid literal for int() with base 10: 'У'
+2023-08-22 12:01:17 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-178' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=ValueError("invalid literal for int() with base 10: 'У'")>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 415, in dislike_joke
+    joke_id = int(call.data.split('_')[1])
+ValueError: invalid literal for int() with base 10: 'У'
+2023-08-22 12:02:03 - ERROR - Update: {"update_id": 247868468, "callback_query": {"id": "5520751007480453975", "from": {"id": 1285400010, "is_bot": false, "first_name": "Maksym", "last_name": "Reva", "language_code": "en"}, "message": {"message_id": 21751, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": 1285400010, "first_name": "Maksym", "last_name": "Reva", "type": "private"}, "date": 1692694805, "text": "Joke of the day:\n\nУ магазині:\n- Мені б коробочку хороших цукерок, але так, щоб не дуже дорого.\n- Вам для дівчини?\n- Мені для лікаря.\n- Віддячити чи помститись?\n\n#про_медицину", "entities": [{"type": "bold", "offset": 0, "length": 16}, {"type": "hashtag", "offset": 161, "length": 13}], "reply_markup": {"inline_keyboard": [[{"text": "👍", "callback_data": "like_У"}, {"text": "👎", "callback_data": "dislike_У"}]]}}, "chat_instance": "2194052287148975564", "data": "like_У"}}
+Exception: invalid literal for int() with base 10: 'У'
+2023-08-22 12:02:03 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-183' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=ValueError("invalid literal for int() with base 10: 'У'")>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 390, in like_joke
+    joke_id = int(call.data.split('_')[1])
+ValueError: invalid literal for int() with base 10: 'У'
+2023-08-22 12:12:49 - INFO - Stop polling...
+2023-08-22 12:12:49 - WARNING - Goodbye!
+2023-08-22 12:13:01 - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiohttp/client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiohttp/client.py", line 560, in _request
+    await resp.start(conn)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiohttp/client_reqrep.py", line 899, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiohttp/streams.py", line 616, in read
+    await self._waiter
+aiohttp.client_exceptions.ServerDisconnectedError: Server disconnected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ServerDisconnectedError: Server disconnected
+2023-08-22 12:13:07 - WARNING - Polling is stopped.
+2023-08-22 12:34:25 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 12:34:25 - INFO - Added job "job" to job store "default"
+2023-08-22 12:34:25 - INFO - Scheduler started
+2023-08-22 12:34:25 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 12:34:25 - WARNING - Updates were skipped successfully.
+2023-08-22 12:34:26 - INFO - Start polling.
+2023-08-22 12:34:43 - INFO - User action: /joke (User ID: 6013011895)
+2023-08-22 12:36:00 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 12:36:00 - INFO - Added job "job" to job store "default"
+2023-08-22 12:36:00 - INFO - Scheduler started
+2023-08-22 12:36:01 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 12:36:01 - WARNING - Updates were skipped successfully.
+2023-08-22 12:36:01 - INFO - Start polling.
+2023-08-22 12:42:48 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 12:42:48 - INFO - Added job "job" to job store "default"
+2023-08-22 12:42:48 - INFO - Scheduler started
+2023-08-22 12:42:49 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 12:42:49 - WARNING - Updates were skipped successfully.
+2023-08-22 12:42:49 - INFO - Start polling.
+2023-08-22 12:43:10 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 12:43:10 - INFO - Added job "job" to job store "default"
+2023-08-22 12:43:10 - INFO - Scheduler started
+2023-08-22 12:43:11 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 12:43:11 - WARNING - Updates were skipped successfully.
+2023-08-22 12:43:11 - INFO - Start polling.
+2023-08-22 12:43:12 - ERROR - Update: {"update_id": 247868501, "callback_query": {"id": "7378945366744052403", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 21781, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692696883, "edit_date": 1692697054, "reply_to_message": {"message_id": 21780, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692696883, "text": "/joke", "entities": [{"type": "bot_command", "offset": 0, "length": 5}]}, "text": "Select category:", "reply_markup": {"inline_keyboard": [[{"text": "💵Money", "callback_data": "joke_про_гроші"}, {"text": "👨‍👩‍👦‍👦Family", "callback_data": "joke_про_родину"}], [{"text": "👱‍♀️Blondes", "callback_data": "joke_про_білявок"}], [{"text": "👵Mother-in-law", "callback_data": "joke_про_тещу"}, {"text": "🏫School", "callback_data": "joke_про_школу"}], [{"text": "👦Vovochka", "callback_data": "joke_про_вовочку"}], [{"text": "🏥Medicine", "callback_data": "joke_про_медицину"}, {"text": "🎓Students", "callback_data": "joke_про_студентів"}], [{"text": "🏢Work", "callback_data": "joke_про_роботу"}], [{"text": "🔙Назад", "callback_data": "back_to_random"}]]}}, "chat_instance": "-4729631583617012541", "data": "joke_про_роботу"}}
+Exception: list indices must be integers or slices, not tuple
+2023-08-22 12:43:12 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-11' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=TypeError('list indices must be integers or slices, not tuple')>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 213, in send_category_joke_pivate
+    tag = call.data.split('_')[1, 2]
+TypeError: list indices must be integers or slices, not tuple
+2023-08-22 12:43:15 - ERROR - Update: {"update_id": 247868502, "callback_query": {"id": "7378945367215707640", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 21781, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692696883, "edit_date": 1692697054, "reply_to_message": {"message_id": 21780, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692696883, "text": "/joke", "entities": [{"type": "bot_command", "offset": 0, "length": 5}]}, "text": "Select category:", "reply_markup": {"inline_keyboard": [[{"text": "💵Money", "callback_data": "joke_про_гроші"}, {"text": "👨‍👩‍👦‍👦Family", "callback_data": "joke_про_родину"}], [{"text": "👱‍♀️Blondes", "callback_data": "joke_про_білявок"}], [{"text": "👵Mother-in-law", "callback_data": "joke_про_тещу"}, {"text": "🏫School", "callback_data": "joke_про_школу"}], [{"text": "👦Vovochka", "callback_data": "joke_про_вовочку"}], [{"text": "🏥Medicine", "callback_data": "joke_про_медицину"}, {"text": "🎓Students", "callback_data": "joke_про_студентів"}], [{"text": "🏢Work", "callback_data": "joke_про_роботу"}], [{"text": "🔙Назад", "callback_data": "back_to_random"}]]}}, "chat_instance": "-4729631583617012541", "data": "joke_про_студентів"}}
+Exception: list indices must be integers or slices, not tuple
+2023-08-22 12:43:15 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-14' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=TypeError('list indices must be integers or slices, not tuple')>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 213, in send_category_joke_pivate
+    tag = call.data.split('_')[1, 2]
+TypeError: list indices must be integers or slices, not tuple
+2023-08-22 12:43:30 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 12:43:30 - INFO - Added job "job" to job store "default"
+2023-08-22 12:43:30 - INFO - Scheduler started
+2023-08-22 12:43:30 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 12:43:30 - WARNING - Updates were skipped successfully.
+2023-08-22 12:43:30 - INFO - Start polling.
+2023-08-22 12:44:22 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 12:44:22 - INFO - Added job "job" to job store "default"
+2023-08-22 12:44:22 - INFO - Scheduler started
+2023-08-22 12:44:22 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 12:44:22 - WARNING - Updates were skipped successfully.
+2023-08-22 12:44:22 - INFO - Start polling.
+2023-08-22 12:44:27 - ERROR - Update: {"update_id": 247868508, "callback_query": {"id": "7378945370049618859", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 21781, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692696883, "edit_date": 1692697465, "reply_to_message": {"message_id": 21780, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692696883, "text": "/joke", "entities": [{"type": "bot_command", "offset": 0, "length": 5}]}, "text": "Select category:", "reply_markup": {"inline_keyboard": [[{"text": "💵Money", "callback_data": "joke:про_гроші"}, {"text": "👨‍👩‍👦‍👦Family", "callback_data": "joke:про_родину"}], [{"text": "👱‍♀️Blondes", "callback_data": "joke:про_білявок"}], [{"text": "👵Mother-in-law", "callback_data": "joke:про_тещу"}, {"text": "🏫School", "callback_data": "joke:про_школу"}], [{"text": "👦Vovochka", "callback_data": "joke:про_вовочку"}], [{"text": "🏥Medicine", "callback_data": "joke:про_медицину"}, {"text": "🎓Students", "callback_data": "joke:про_студентів"}], [{"text": "🏢Work", "callback_data": "joke:про_роботу"}], [{"text": "🔙Назад", "callback_data": "back:to_random"}]]}}, "chat_instance": "-4729631583617012541", "data": "joke:про_роботу"}}
+Exception: Can't parse entities: can't find end of the entity starting at byte offset 6
+2023-08-22 12:44:27 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-20' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=CantParseEntities("Can't parse entities: can't find end of the entity starting at byte offset 6")>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 215, in send_category_joke_pivate
+    await call.message.answer(tag)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/types/message.py", line 438, in answer
+    return await self.bot.send_message(
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/bot.py", line 346, in send_message
+    result = await self.request(api.Methods.SEND_MESSAGE, payload)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.CantParseEntities: Can't parse entities: can't find end of the entity starting at byte offset 6
+2023-08-22 12:44:29 - ERROR - Update: {"update_id": 247868509, "callback_query": {"id": "7378945366346039397", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 21781, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692696883, "edit_date": 1692697465, "reply_to_message": {"message_id": 21780, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692696883, "text": "/joke", "entities": [{"type": "bot_command", "offset": 0, "length": 5}]}, "text": "Select category:", "reply_markup": {"inline_keyboard": [[{"text": "💵Money", "callback_data": "joke:про_гроші"}, {"text": "👨‍👩‍👦‍👦Family", "callback_data": "joke:про_родину"}], [{"text": "👱‍♀️Blondes", "callback_data": "joke:про_білявок"}], [{"text": "👵Mother-in-law", "callback_data": "joke:про_тещу"}, {"text": "🏫School", "callback_data": "joke:про_школу"}], [{"text": "👦Vovochka", "callback_data": "joke:про_вовочку"}], [{"text": "🏥Medicine", "callback_data": "joke:про_медицину"}, {"text": "🎓Students", "callback_data": "joke:про_студентів"}], [{"text": "🏢Work", "callback_data": "joke:про_роботу"}], [{"text": "🔙Назад", "callback_data": "back:to_random"}]]}}, "chat_instance": "-4729631583617012541", "data": "joke:про_студентів"}}
+Exception: Can't parse entities: can't find end of the entity starting at byte offset 6
+2023-08-22 12:44:29 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-24' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=CantParseEntities("Can't parse entities: can't find end of the entity starting at byte offset 6")>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 215, in send_category_joke_pivate
+    await call.message.answer(tag)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/types/message.py", line 438, in answer
+    return await self.bot.send_message(
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/bot.py", line 346, in send_message
+    result = await self.request(api.Methods.SEND_MESSAGE, payload)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.CantParseEntities: Can't parse entities: can't find end of the entity starting at byte offset 6
+2023-08-22 12:44:30 - ERROR - Update: {"update_id": 247868510, "callback_query": {"id": "7378945369459689188", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 21781, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692696883, "edit_date": 1692697465, "reply_to_message": {"message_id": 21780, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692696883, "text": "/joke", "entities": [{"type": "bot_command", "offset": 0, "length": 5}]}, "text": "Select category:", "reply_markup": {"inline_keyboard": [[{"text": "💵Money", "callback_data": "joke:про_гроші"}, {"text": "👨‍👩‍👦‍👦Family", "callback_data": "joke:про_родину"}], [{"text": "👱‍♀️Blondes", "callback_data": "joke:про_білявок"}], [{"text": "👵Mother-in-law", "callback_data": "joke:про_тещу"}, {"text": "🏫School", "callback_data": "joke:про_школу"}], [{"text": "👦Vovochka", "callback_data": "joke:про_вовочку"}], [{"text": "🏥Medicine", "callback_data": "joke:про_медицину"}, {"text": "🎓Students", "callback_data": "joke:про_студентів"}], [{"text": "🏢Work", "callback_data": "joke:про_роботу"}], [{"text": "🔙Назад", "callback_data": "back:to_random"}]]}}, "chat_instance": "-4729631583617012541", "data": "joke:про_медицину"}}
+Exception: Can't parse entities: can't find end of the entity starting at byte offset 6
+2023-08-22 12:44:30 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-28' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=CantParseEntities("Can't parse entities: can't find end of the entity starting at byte offset 6")>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 215, in send_category_joke_pivate
+    await call.message.answer(tag)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/types/message.py", line 438, in answer
+    return await self.bot.send_message(
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/bot.py", line 346, in send_message
+    result = await self.request(api.Methods.SEND_MESSAGE, payload)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.CantParseEntities: Can't parse entities: can't find end of the entity starting at byte offset 6
+2023-08-22 12:44:38 - INFO - User action: /joke (User ID: 6013011895)
+2023-08-22 12:44:41 - ERROR - Update: {"update_id": 247868513, "callback_query": {"id": "7378945369873682389", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 21795, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692697479, "edit_date": 1692697480, "reply_to_message": {"message_id": 21794, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692697478, "text": "/joke", "entities": [{"type": "bot_command", "offset": 0, "length": 5}]}, "text": "Select category:", "reply_markup": {"inline_keyboard": [[{"text": "💵Money", "callback_data": "joke:про_гроші"}, {"text": "👨‍👩‍👦‍👦Family", "callback_data": "joke:про_родину"}], [{"text": "👱‍♀️Blondes", "callback_data": "joke:про_білявок"}], [{"text": "👵Mother-in-law", "callback_data": "joke:про_тещу"}, {"text": "🏫School", "callback_data": "joke:про_школу"}], [{"text": "👦Vovochka", "callback_data": "joke:про_вовочку"}], [{"text": "🏥Medicine", "callback_data": "joke:про_медицину"}, {"text": "🎓Students", "callback_data": "joke:про_студентів"}], [{"text": "🏢Work", "callback_data": "joke:про_роботу"}], [{"text": "🔙Назад", "callback_data": "back:to_random"}]]}}, "chat_instance": "-4729631583617012541", "data": "joke:про_роботу"}}
+Exception: Can't parse entities: can't find end of the entity starting at byte offset 6
+2023-08-22 12:44:41 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-41' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=CantParseEntities("Can't parse entities: can't find end of the entity starting at byte offset 6")>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 215, in send_category_joke_pivate
+    await call.message.answer(tag)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/types/message.py", line 438, in answer
+    return await self.bot.send_message(
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/bot.py", line 346, in send_message
+    result = await self.request(api.Methods.SEND_MESSAGE, payload)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.CantParseEntities: Can't parse entities: can't find end of the entity starting at byte offset 6
+2023-08-22 12:45:50 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 12:45:50 - INFO - Added job "job" to job store "default"
+2023-08-22 12:45:50 - INFO - Scheduler started
+2023-08-22 12:45:51 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 12:45:51 - WARNING - Updates were skipped successfully.
+2023-08-22 12:45:51 - INFO - Start polling.
+2023-08-22 12:45:58 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 12:45:58 - INFO - Added job "job" to job store "default"
+2023-08-22 12:45:58 - INFO - Scheduler started
+2023-08-22 12:45:59 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 12:45:59 - WARNING - Updates were skipped successfully.
+2023-08-22 12:46:00 - INFO - Start polling.
+2023-08-22 12:46:24 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 12:46:24 - INFO - Added job "job" to job store "default"
+2023-08-22 12:46:24 - INFO - Scheduler started
+2023-08-22 12:46:25 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 12:46:25 - WARNING - Updates were skipped successfully.
+2023-08-22 12:46:25 - INFO - Start polling.
+2023-08-22 12:47:06 - INFO - User action: /joke (User ID: 6013011895)
+2023-08-22 12:47:08 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: П)
+2023-08-22 12:53:47 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 12:53:47 - INFO - Added job "job" to job store "default"
+2023-08-22 12:53:47 - INFO - Scheduler started
+2023-08-22 12:53:47 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 12:53:47 - WARNING - Updates were skipped successfully.
+2023-08-22 12:53:48 - INFO - Start polling.
+2023-08-22 12:53:59 - INFO - User action: /joke (User ID: 6013011895)
+2023-08-22 12:54:15 - INFO - User action: /start (User ID: 6013011895)
+2023-08-22 12:54:17 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: Д)
+2023-08-22 12:54:38 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 12:54:38 - INFO - Added job "job" to job store "default"
+2023-08-22 12:54:38 - INFO - Scheduler started
+2023-08-22 12:54:38 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 12:54:38 - WARNING - Updates were skipped successfully.
+2023-08-22 12:54:38 - INFO - Start polling.
+2023-08-22 12:54:42 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: Б)
+2023-08-22 12:55:34 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 12:55:34 - INFO - Added job "job" to job store "default"
+2023-08-22 12:55:34 - INFO - Scheduler started
+2023-08-22 12:55:34 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 12:55:34 - WARNING - Updates were skipped successfully.
+2023-08-22 12:55:35 - INFO - Start polling.
+2023-08-22 12:58:56 - ERROR - Update: {"update_id": 247868528, "callback_query": {"id": "5660229438248183651", "from": {"id": 1317874863, "is_bot": false, "first_name": "🧿Asya🧿", "language_code": "uk"}, "message": {"message_id": 74515, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": -1001970076955, "title": "евіл ганг 😈", "type": "supergroup"}, "date": 1692697628, "text": "Погладив дружину по спині, вона сказала: - Чухай! Я не розгубився і чухнув з дому на три дні.", "reply_markup": {"inline_keyboard": [[{"text": "👍", "callback_data": "like_880"}, {"text": "👎", "callback_data": "dislike_880"}]]}}, "chat_instance": "1818772548102188180", "data": "like_880"}}
+Exception: 'NoneType' object is not subscriptable
+2023-08-22 12:58:56 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-20' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=TypeError("'NoneType' object is not subscriptable")>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 115, in notify
+    await self.dispatcher.middleware.trigger(f"process_{self.middleware_key}", args + (data,))
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/middlewares.py", line 53, in trigger
+    await app.trigger(action, args)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/middlewares.py", line 106, in trigger
+    await handler(*args)
+  File "/Users/makser/Desktop/Python/Joke-Bot/middlewares/ban_middleware.py", line 25, in on_process_callback_query
+    user = await db.status(call.from_user.id)
+  File "/Users/makser/Desktop/Python/Joke-Bot/services/db.py", line 100, in status
+    return self.cursor.execute("SELECT DISTINCT status FROM users WHERE user_id = (?)", (user_id,)).fetchone()[
+TypeError: 'NoneType' object is not subscriptable
+2023-08-22 12:59:31 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: -)
+2023-08-22 12:59:59 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: Н)
+2023-08-22 13:01:20 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: Д)
+2023-08-22 13:01:33 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: О)
+2023-08-22 13:01:46 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: -)
+2023-08-22 13:02:31 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: О)
+2023-08-22 13:02:51 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: -)
+2023-08-22 13:03:16 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: Б)
+2023-08-22 13:03:26 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: З)
+2023-08-22 13:03:42 - INFO - User action: Liked joke (User ID: 6013011895, Joke ID: 2313)
+2023-08-22 13:04:19 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: Х)
+2023-08-22 13:04:35 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: Н)
+2023-08-22 13:04:55 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: -)
+2023-08-22 13:05:07 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: -)
+2023-08-22 13:05:17 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: -)
+2023-08-22 13:05:37 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: М)
+2023-08-22 13:08:01 - INFO - User action: /start (User ID: 1317874863)
+2023-08-22 13:08:26 - INFO - User action: /start (User ID: 1317874863)
+2023-08-22 13:08:28 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: З)
+2023-08-22 13:08:41 - INFO - User action: Liked joke (User ID: 1317874863, Joke ID: 27)
+2023-08-22 15:13:29 - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiohttp/client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiohttp/client.py", line 560, in _request
+    await resp.start(conn)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiohttp/client_reqrep.py", line 914, in start
+    self._continue = None
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiohttp/helpers.py", line 721, in __exit__
+    raise asyncio.TimeoutError from None
+asyncio.exceptions.TimeoutError
+2023-08-22 15:16:01 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 15:16:01 - INFO - Added job "job" to job store "default"
+2023-08-22 15:16:01 - INFO - Scheduler started
+2023-08-22 15:16:01 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 15:16:01 - WARNING - Updates were skipped successfully.
+2023-08-22 15:16:01 - INFO - Start polling.
+2023-08-22 15:16:17 - INFO - User action: /joke (User ID: 6013011895)
+2023-08-22 15:16:42 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 15:16:42 - INFO - Added job "job" to job store "default"
+2023-08-22 15:16:42 - INFO - Scheduler started
+2023-08-22 15:16:42 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 15:16:42 - WARNING - Updates were skipped successfully.
+2023-08-22 15:16:42 - INFO - Start polling.
+2023-08-22 15:17:09 - INFO - User action: /joke (User ID: 6013011895)
+2023-08-22 15:17:12 - ERROR - Update: {"update_id": 247868607, "callback_query": {"id": "7378945367731649210", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 21839, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692706630, "edit_date": 1692706631, "reply_to_message": {"message_id": 21838, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692706629, "text": "/joke", "entities": [{"type": "bot_command", "offset": 0, "length": 5}]}, "text": "Select category:", "reply_markup": {"inline_keyboard": [[{"text": "💵Money", "callback_data": "joke:про_гроші"}, {"text": "👨‍👩‍👦‍👦Family", "callback_data": "joke:про_родину"}], [{"text": "👱‍♀️Blondes", "callback_data": "joke:про_білявок"}], [{"text": "👵Mother-in-law", "callback_data": "joke:про_тещу"}, {"text": "🏫School", "callback_data": "joke:про_школу"}], [{"text": "👦Vovochka", "callback_data": "joke:про_вовочку"}], [{"text": "🏥Medicine", "callback_data": "joke:про_медицину"}, {"text": "🎓Students", "callback_data": "joke:про_студентів"}], [{"text": "🏢Work", "callback_data": "joke:про_роботу"}], [{"text": "🔙Назад", "callback_data": "back:to_random"}]]}}, "chat_instance": "-4729631583617012541", "data": "joke:про_роботу"}}
+Exception: near "WHERE": syntax error
+2023-08-22 15:17:12 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-22' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=OperationalError('near "WHERE": syntax error')>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 222, in send_category_joke_pivate
+    result = await db.get_tagged_joke(user_id, table_name, tag)
+  File "/Users/makser/Desktop/Python/Joke-Bot/services/db.py", line 87, in get_tagged_joke
+    return self.cursor.execute(
+sqlite3.OperationalError: near "WHERE": syntax error
+2023-08-22 15:17:14 - ERROR - Update: {"update_id": 247868608, "callback_query": {"id": "7378945369418869059", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 21839, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692706630, "edit_date": 1692706631, "reply_to_message": {"message_id": 21838, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692706629, "text": "/joke", "entities": [{"type": "bot_command", "offset": 0, "length": 5}]}, "text": "Select category:", "reply_markup": {"inline_keyboard": [[{"text": "💵Money", "callback_data": "joke:про_гроші"}, {"text": "👨‍👩‍👦‍👦Family", "callback_data": "joke:про_родину"}], [{"text": "👱‍♀️Blondes", "callback_data": "joke:про_білявок"}], [{"text": "👵Mother-in-law", "callback_data": "joke:про_тещу"}, {"text": "🏫School", "callback_data": "joke:про_школу"}], [{"text": "👦Vovochka", "callback_data": "joke:про_вовочку"}], [{"text": "🏥Medicine", "callback_data": "joke:про_медицину"}, {"text": "🎓Students", "callback_data": "joke:про_студентів"}], [{"text": "🏢Work", "callback_data": "joke:про_роботу"}], [{"text": "🔙Назад", "callback_data": "back:to_random"}]]}}, "chat_instance": "-4729631583617012541", "data": "joke:про_студентів"}}
+Exception: near "WHERE": syntax error
+2023-08-22 15:17:14 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-25' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=OperationalError('near "WHERE": syntax error')>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 222, in send_category_joke_pivate
+    result = await db.get_tagged_joke(user_id, table_name, tag)
+  File "/Users/makser/Desktop/Python/Joke-Bot/services/db.py", line 87, in get_tagged_joke
+    return self.cursor.execute(
+sqlite3.OperationalError: near "WHERE": syntax error
+2023-08-22 15:18:07 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 15:18:07 - INFO - Added job "job" to job store "default"
+2023-08-22 15:18:07 - INFO - Scheduler started
+2023-08-22 15:18:07 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 15:18:07 - WARNING - Updates were skipped successfully.
+2023-08-22 15:18:07 - INFO - Start polling.
+2023-08-22 15:18:11 - INFO - User action: /start (User ID: 6013011895)
+2023-08-22 15:18:19 - ERROR - Update: {"update_id": 247868621, "callback_query": {"id": "7378945366957435507", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 21843, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692706691, "edit_date": 1692706694, "text": "Select category:", "reply_markup": {"inline_keyboard": [[{"text": "💵Money", "callback_data": "joke:про_гроші"}, {"text": "👨‍👩‍👦‍👦Family", "callback_data": "joke:про_родину"}], [{"text": "👱‍♀️Blondes", "callback_data": "joke:про_білявок"}], [{"text": "👵Mother-in-law", "callback_data": "joke:про_тещу"}, {"text": "🏫School", "callback_data": "joke:про_школу"}], [{"text": "👦Vovochka", "callback_data": "joke:про_вовочку"}], [{"text": "🏥Medicine", "callback_data": "joke:про_медицину"}, {"text": "🎓Students", "callback_data": "joke:про_студентів"}], [{"text": "🏢Work", "callback_data": "joke:про_роботу"}], [{"text": "🔙Назад", "callback_data": "back:to_random"}]]}}, "chat_instance": "-4729631583617012541", "data": "joke:про_студентів"}}
+Exception: near "WHERE": syntax error
+2023-08-22 15:18:19 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-49' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=OperationalError('near "WHERE": syntax error')>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 222, in send_category_joke_pivate
+    result = await db.get_tagged_joke(user_id, table_name, tag)
+  File "/Users/makser/Desktop/Python/Joke-Bot/services/db.py", line 87, in get_tagged_joke
+    return self.cursor.execute(
+sqlite3.OperationalError: near "WHERE": syntax error
+2023-08-22 15:18:19 - ERROR - Update: {"update_id": 247868622, "callback_query": {"id": "7378945369276467726", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 21843, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692706691, "edit_date": 1692706694, "text": "Select category:", "reply_markup": {"inline_keyboard": [[{"text": "💵Money", "callback_data": "joke:про_гроші"}, {"text": "👨‍👩‍👦‍👦Family", "callback_data": "joke:про_родину"}], [{"text": "👱‍♀️Blondes", "callback_data": "joke:про_білявок"}], [{"text": "👵Mother-in-law", "callback_data": "joke:про_тещу"}, {"text": "🏫School", "callback_data": "joke:про_школу"}], [{"text": "👦Vovochka", "callback_data": "joke:про_вовочку"}], [{"text": "🏥Medicine", "callback_data": "joke:про_медицину"}, {"text": "🎓Students", "callback_data": "joke:про_студентів"}], [{"text": "🏢Work", "callback_data": "joke:про_роботу"}], [{"text": "🔙Назад", "callback_data": "back:to_random"}]]}}, "chat_instance": "-4729631583617012541", "data": "joke:про_школу"}}
+Exception: near "WHERE": syntax error
+2023-08-22 15:18:19 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-52' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=OperationalError('near "WHERE": syntax error')>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 222, in send_category_joke_pivate
+    result = await db.get_tagged_joke(user_id, table_name, tag)
+  File "/Users/makser/Desktop/Python/Joke-Bot/services/db.py", line 87, in get_tagged_joke
+    return self.cursor.execute(
+sqlite3.OperationalError: near "WHERE": syntax error
+2023-08-22 15:18:19 - ERROR - Update: {"update_id": 247868623, "callback_query": {"id": "7378945368707599011", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 21843, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692706691, "edit_date": 1692706694, "text": "Select category:", "reply_markup": {"inline_keyboard": [[{"text": "💵Money", "callback_data": "joke:про_гроші"}, {"text": "👨‍👩‍👦‍👦Family", "callback_data": "joke:про_родину"}], [{"text": "👱‍♀️Blondes", "callback_data": "joke:про_білявок"}], [{"text": "👵Mother-in-law", "callback_data": "joke:про_тещу"}, {"text": "🏫School", "callback_data": "joke:про_школу"}], [{"text": "👦Vovochka", "callback_data": "joke:про_вовочку"}], [{"text": "🏥Medicine", "callback_data": "joke:про_медицину"}, {"text": "🎓Students", "callback_data": "joke:про_студентів"}], [{"text": "🏢Work", "callback_data": "joke:про_роботу"}], [{"text": "🔙Назад", "callback_data": "back:to_random"}]]}}, "chat_instance": "-4729631583617012541", "data": "joke:про_вовочку"}}
+Exception: near "WHERE": syntax error
+2023-08-22 15:18:19 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-55' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=OperationalError('near "WHERE": syntax error')>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 222, in send_category_joke_pivate
+    result = await db.get_tagged_joke(user_id, table_name, tag)
+  File "/Users/makser/Desktop/Python/Joke-Bot/services/db.py", line 87, in get_tagged_joke
+    return self.cursor.execute(
+sqlite3.OperationalError: near "WHERE": syntax error
+2023-08-22 15:18:20 - ERROR - Update: {"update_id": 247868624, "callback_query": {"id": "7378945366107058993", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 21843, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692706691, "edit_date": 1692706694, "text": "Select category:", "reply_markup": {"inline_keyboard": [[{"text": "💵Money", "callback_data": "joke:про_гроші"}, {"text": "👨‍👩‍👦‍👦Family", "callback_data": "joke:про_родину"}], [{"text": "👱‍♀️Blondes", "callback_data": "joke:про_білявок"}], [{"text": "👵Mother-in-law", "callback_data": "joke:про_тещу"}, {"text": "🏫School", "callback_data": "joke:про_школу"}], [{"text": "👦Vovochka", "callback_data": "joke:про_вовочку"}], [{"text": "🏥Medicine", "callback_data": "joke:про_медицину"}, {"text": "🎓Students", "callback_data": "joke:про_студентів"}], [{"text": "🏢Work", "callback_data": "joke:про_роботу"}], [{"text": "🔙Назад", "callback_data": "back:to_random"}]]}}, "chat_instance": "-4729631583617012541", "data": "joke:про_школу"}}
+Exception: near "WHERE": syntax error
+2023-08-22 15:18:20 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-58' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=OperationalError('near "WHERE": syntax error')>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 222, in send_category_joke_pivate
+    result = await db.get_tagged_joke(user_id, table_name, tag)
+  File "/Users/makser/Desktop/Python/Joke-Bot/services/db.py", line 87, in get_tagged_joke
+    return self.cursor.execute(
+sqlite3.OperationalError: near "WHERE": syntax error
+2023-08-22 15:20:09 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 15:20:09 - INFO - Added job "job" to job store "default"
+2023-08-22 15:20:09 - INFO - Scheduler started
+2023-08-22 15:20:09 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 15:20:09 - WARNING - Updates were skipped successfully.
+2023-08-22 15:20:09 - INFO - Start polling.
+2023-08-22 15:20:16 - INFO - User action: /help (User ID: 6013011895)
+2023-08-22 15:20:18 - INFO - User action: /joke (User ID: 6013011895)
+2023-08-22 15:20:19 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: Я)
+2023-08-22 15:20:25 - INFO - User action: /joke (User ID: 6013011895)
+2023-08-22 15:20:26 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: Ч)
+2023-08-22 15:20:29 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: Л)
+2023-08-22 15:20:33 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: В)
+2023-08-22 15:21:23 - ERROR - Update: {"update_id": 247868640, "callback_query": {"id": "7378945368023248131", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 21860, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692706833, "edit_date": 1692706882, "text": "Select category:", "reply_markup": {"inline_keyboard": [[{"text": "💵Money", "callback_data": "joke:про_гроші"}, {"text": "👨‍👩‍👦‍👦Family", "callback_data": "joke:про_родину"}], [{"text": "👱‍♀️Blondes", "callback_data": "joke:про_білявок"}], [{"text": "👵Mother-in-law", "callback_data": "joke:про_тещу"}, {"text": "🏫School", "callback_data": "joke:про_школу"}], [{"text": "👦Vovochka", "callback_data": "joke:про_вовочку"}], [{"text": "🏥Medicine", "callback_data": "joke:про_медицину"}, {"text": "🎓Students", "callback_data": "joke:про_студентів"}], [{"text": "🏢Work", "callback_data": "joke:про_роботу"}], [{"text": "🔙Назад", "callback_data": "back:to_random"}]]}}, "chat_instance": "-4729631583617012541", "data": "joke:про_студентів"}}
+Exception: near "WHERE": syntax error
+2023-08-22 15:21:23 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-79' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=OperationalError('near "WHERE": syntax error')>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 223, in send_category_joke_pivate
+    result = await db.get_tagged_joke(user_id, table_name, tag)
+  File "/Users/makser/Desktop/Python/Joke-Bot/services/db.py", line 87, in get_tagged_joke
+    return self.cursor.execute(
+sqlite3.OperationalError: near "WHERE": syntax error
+2023-08-22 15:21:35 - ERROR - Update: {"update_id": 247868641, "callback_query": {"id": "7378945369415860391", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 21860, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692706833, "edit_date": 1692706882, "text": "Select category:", "reply_markup": {"inline_keyboard": [[{"text": "💵Money", "callback_data": "joke:про_гроші"}, {"text": "👨‍👩‍👦‍👦Family", "callback_data": "joke:про_родину"}], [{"text": "👱‍♀️Blondes", "callback_data": "joke:про_білявок"}], [{"text": "👵Mother-in-law", "callback_data": "joke:про_тещу"}, {"text": "🏫School", "callback_data": "joke:про_школу"}], [{"text": "👦Vovochka", "callback_data": "joke:про_вовочку"}], [{"text": "🏥Medicine", "callback_data": "joke:про_медицину"}, {"text": "🎓Students", "callback_data": "joke:про_студентів"}], [{"text": "🏢Work", "callback_data": "joke:про_роботу"}], [{"text": "🔙Назад", "callback_data": "back:to_random"}]]}}, "chat_instance": "-4729631583617012541", "data": "joke:про_студентів"}}
+Exception: near "WHERE": syntax error
+2023-08-22 15:21:35 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-82' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=OperationalError('near "WHERE": syntax error')>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 223, in send_category_joke_pivate
+    result = await db.get_tagged_joke(user_id, table_name, tag)
+  File "/Users/makser/Desktop/Python/Joke-Bot/services/db.py", line 87, in get_tagged_joke
+    return self.cursor.execute(
+sqlite3.OperationalError: near "WHERE": syntax error
+2023-08-22 15:22:41 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 15:22:41 - INFO - Added job "job" to job store "default"
+2023-08-22 15:22:41 - INFO - Scheduler started
+2023-08-22 15:22:41 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 15:22:41 - WARNING - Updates were skipped successfully.
+2023-08-22 15:22:41 - INFO - Start polling.
+2023-08-22 15:22:42 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: Д)
+2023-08-22 15:23:22 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: П)
+2023-08-22 15:24:15 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 15:24:15 - INFO - Added job "job" to job store "default"
+2023-08-22 15:24:15 - INFO - Scheduler started
+2023-08-22 15:24:15 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 15:24:16 - WARNING - Updates were skipped successfully.
+2023-08-22 15:24:16 - INFO - Start polling.
+2023-08-22 15:24:19 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: -)
+2023-08-22 15:24:21 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: З)
+2023-08-22 15:25:22 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 15:25:22 - INFO - Added job "job" to job store "default"
+2023-08-22 15:25:22 - INFO - Scheduler started
+2023-08-22 15:25:22 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 15:25:22 - WARNING - Updates were skipped successfully.
+2023-08-22 15:25:22 - INFO - Start polling.
+2023-08-22 15:25:42 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 15:25:42 - INFO - Added job "job" to job store "default"
+2023-08-22 15:25:42 - INFO - Scheduler started
+2023-08-22 15:25:42 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 15:25:42 - WARNING - Updates were skipped successfully.
+2023-08-22 15:25:42 - INFO - Start polling.
+2023-08-22 15:25:49 - INFO - User action: /joke (User ID: 6013011895)
+2023-08-22 15:26:01 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: О)
+2023-08-22 15:27:43 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 15:27:43 - INFO - Added job "job" to job store "default"
+2023-08-22 15:27:43 - INFO - Scheduler started
+2023-08-22 15:27:44 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 15:27:44 - WARNING - Updates were skipped successfully.
+2023-08-22 15:27:44 - INFO - Start polling.
+2023-08-22 15:27:48 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: Н)
+2023-08-22 15:27:51 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: М)
+2023-08-22 15:27:56 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: С)
+2023-08-22 15:28:04 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: Н)
+2023-08-22 15:28:09 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: В)
+2023-08-22 15:28:15 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: -)
+2023-08-22 15:28:19 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: А)
+2023-08-22 15:28:21 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: -)
+2023-08-22 15:28:31 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: Н)
+2023-08-22 15:33:59 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 15:33:59 - INFO - Added job "job" to job store "default"
+2023-08-22 15:33:59 - INFO - Scheduler started
+2023-08-22 15:33:59 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 15:33:59 - WARNING - Updates were skipped successfully.
+2023-08-22 15:33:59 - INFO - Start polling.
+2023-08-22 15:34:05 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: З)
+2023-08-22 15:36:03 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 15:36:03 - INFO - Added job "job" to job store "default"
+2023-08-22 15:36:03 - INFO - Scheduler started
+2023-08-22 15:36:03 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 15:36:03 - WARNING - Updates were skipped successfully.
+2023-08-22 15:36:04 - INFO - Start polling.
+2023-08-22 15:36:06 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: П)
+2023-08-22 15:39:31 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 15:39:31 - INFO - Added job "job" to job store "default"
+2023-08-22 15:39:31 - INFO - Scheduler started
+2023-08-22 15:39:31 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 15:39:32 - WARNING - Updates were skipped successfully.
+2023-08-22 15:39:32 - INFO - Start polling.
+2023-08-22 15:40:50 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 15:40:50 - INFO - Added job "job" to job store "default"
+2023-08-22 15:40:50 - INFO - Scheduler started
+2023-08-22 15:40:50 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 15:40:50 - WARNING - Updates were skipped successfully.
+2023-08-22 15:40:51 - INFO - Start polling.
+2023-08-22 15:41:00 - INFO - User action: /info (User ID: 6013011895)
+2023-08-22 15:41:10 - INFO - User action: /joke (User ID: 6013011895)
+2023-08-22 15:41:13 - ERROR - Update: {"update_id": 247868691, "callback_query": {"id": "7378945368657551100", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 74591, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": -1001970076955, "title": "евіл ганг 😈", "type": "supergroup"}, "date": 1692708070, "edit_date": 1692708072, "message_thread_id": 74590, "reply_to_message": {"message_id": 74590, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": -1001970076955, "title": "евіл ганг 😈", "type": "supergroup"}, "date": 1692708070, "text": "/joke@makser_humor_bot", "entities": [{"type": "bot_command", "offset": 0, "length": 22}]}, "text": "Please select what you would like to joke about:", "reply_markup": {"inline_keyboard": [[{"text": "💵Money", "callback_data": "joke:про_гроші"}, {"text": "👨‍👩‍👦‍👦Family", "callback_data": "joke:про_родину"}], [{"text": "👱‍♀️Blondes", "callback_data": "joke:про_білявок"}], [{"text": "👵Mother-in-law", "callback_data": "joke:про_тещу"}, {"text": "🏫School", "callback_data": "joke:про_школу"}], [{"text": "👦Vovochka", "callback_data": "joke:про_вовочку"}], [{"text": "🏥Medicine", "callback_data": "joke:про_медицину"}, {"text": "🎓Students", "callback_data": "joke:про_студентів"}], [{"text": "🏢Work", "callback_data": "joke:про_роботу"}], [{"text": "🔙Назад", "callback_data": "back_to_random"}]]}}, "chat_instance": "1818772548102188180", "data": "joke:про_роботу"}}
+Exception: Can't parse entities: can't find end of the entity starting at byte offset 58
+2023-08-22 15:41:13 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-31' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=CantParseEntities("Can't parse entities: can't find end of the entity starting at byte offset 58")>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 255, in send_category_joke_pivate
+    await call.message.edit_text(joke, reply_markup=keyboard_type)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/types/message.py", line 2919, in edit_text
+    return await self.bot.edit_message_text(
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/bot.py", line 3122, in edit_message_text
+    result = await self.request(api.Methods.EDIT_MESSAGE_TEXT, payload)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.CantParseEntities: Can't parse entities: can't find end of the entity starting at byte offset 58
+2023-08-22 15:42:42 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: П)
+2023-08-22 15:43:01 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: О)
+2023-08-22 15:43:45 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 15:43:45 - INFO - Added job "job" to job store "default"
+2023-08-22 15:43:45 - INFO - Scheduler started
+2023-08-22 15:43:46 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 15:43:46 - WARNING - Updates were skipped successfully.
+2023-08-22 15:43:46 - INFO - Start polling.
+2023-08-22 16:34:00 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 16:34:00 - INFO - Added job "job" to job store "default"
+2023-08-22 16:34:00 - INFO - Scheduler started
+2023-08-22 16:34:00 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 16:34:00 - WARNING - Updates were skipped successfully.
+2023-08-22 16:34:00 - INFO - Start polling.
+2023-08-22 16:34:10 - INFO - User action: /start (User ID: 6013011895)
+2023-08-22 16:34:21 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: Ч)
+2023-08-22 16:34:39 - INFO - User action: /joke (User ID: 6013011895)
+2023-08-22 16:34:41 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: -)
+2023-08-22 16:34:45 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: У)

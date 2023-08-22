@@ -52,8 +52,10 @@ async def send_welcome(message: types.Message):
         user_id = message.chat.id
         user_name = None
         user_username = None
+        language = None
+        status = None
 
-        await db.add_users(user_id, user_name, user_username, chat_type)
+        await db.add_users(user_id, user_name, user_username, chat_type, language, status)
 
         chat_title = chat_info.title
         if chat_member.id == bot_id:
@@ -199,8 +201,71 @@ async def feedback(message: types.Message, state: FSMContext):
     await update_info(message)
 
 
-@dp.callback_query_handler(ChatTypeFilter(types.ChatType.PRIVATE),
-                           lambda call: call.data == 'random_joke')
+@dp.callback_query_handler(lambda call: call.data == "select_category")
+async def select_category(call):
+    await call.message.edit_text(text=_('Please select what you would like to joke about:'), reply_markup=kb.category_keyboard())
+
+
+@dp.callback_query_handler(lambda call: call.data == "back_to_random")
+async def back_to_random(call):
+    await call.message.edit_text(bm.pres_button(), reply_markup=kb.random_keyboard())
+
+
+@dp.callback_query_handler(lambda call: call.data.startswith('joke:'))
+async def send_category_joke_pivate(call):
+    tag = call.data.split(':')[1]
+    chat_id = call.message.chat.id
+    user_id = call.from_user.id
+
+    table_name = f"jokes_uk"
+
+    result = await db.get_tagged_joke(user_id, table_name, tag)
+
+    await dp.bot.send_chat_action(call.message.chat.id, "typing")
+
+    if not result:
+        await bot.send_message(
+            chat_id, bm.all_send())
+    else:
+        joke = result[0]
+
+        joke_id = joke[0]
+
+        joke_text = joke[1]
+
+        tags = await db.get_tags(joke_id)
+
+        table_name = 'jokes_uk'
+
+        joke_rate = await db.joke_rate(joke_id, table_name)
+
+        if tags is not None:
+            tags_list = tags.split(', ')
+            formatted_tags = [tag.replace("_", "\_") for tag in tags_list]
+            tagged_tags = ' '.join([f'#{tag}' for tag in formatted_tags])
+            joke = f'{joke_text}\n\n{tagged_tags}'
+        else:
+            joke = joke_text
+
+        keyboard_type = kb.return_rating_keyboard(joke_rate)
+
+        if call.message.chat.type == "private":
+            keyboard_type = kb.return_rate_keyboard(joke_id)
+
+        await call.message.edit_text(joke, reply_markup=keyboard_type)
+
+        await db.seen_joke(joke_id, user_id)
+
+        logging.info(
+            f"User action: Sent joke (User ID: {user_id}, Joke ID: {joke[0]})")
+
+    await bot.send_message(chat_id,
+                           text=bm.pres_button(),
+                           reply_markup=kb.random_keyboard())
+    await update_info(call.message)
+
+
+@dp.callback_query_handler(lambda call: call.data == 'random_joke')
 async def send_joke_private(call):
     chat_id = call.message.chat.id
     user_id = call.from_user.id
@@ -223,76 +288,29 @@ async def send_joke_private(call):
 
         tags = await db.get_tags(joke_id)
 
+        table_name = 'jokes_uk'
+
+        joke_rate = await db.joke_rate(joke_id, table_name)
+
         if tags is not None:
             formatted_tags = tags.replace("_", "\_")
             tagged_tags = f'#{formatted_tags}'
             joke = f'{joke_text}\n\n{tagged_tags}'
-            print(joke)
         else:
             joke = joke_text
 
-        await bot.send_message(
-            chat_id,
-            joke,
-            reply_markup=kb.return_rate_keyboard(joke_id))
+        keyboard_type = kb.return_rating_keyboard(joke_rate)
+
+        if call.message.chat.type == "private":
+            keyboard_type = kb.return_rate_keyboard(joke_id)
+
+        await call.message.edit_text(joke, reply_markup=keyboard_type)
 
         await db.seen_joke(joke_id, user_id)
 
         logging.info(
             f"User action: Sent joke (User ID: {user_id}, Joke ID: {joke[0]})")
 
-    await bot.delete_message(chat_id=call.message.chat.id,
-                             message_id=call.message.message_id)
-    await bot.send_message(chat_id,
-                           text=bm.pres_button(),
-                           reply_markup=kb.random_keyboard())
-    await update_info(call.message)
-
-
-@dp.callback_query_handler(
-    ChatTypeFilter(types.ChatType.GROUP)
-    | ChatTypeFilter(types.ChatType.SUPERGROUP),
-    lambda call: call.data == 'random_joke')
-async def send_joke_group(call):
-    chat_id = call.message.chat.id
-    user_id = call.from_user.id
-
-    table_name = f"jokes_uk"
-
-    result = await db.get_joke(user_id, table_name)
-
-    await dp.bot.send_chat_action(call.message.chat.id, "typing")
-
-    if not result:
-        await bot.send_message(
-            chat_id, bm.all_send())
-    else:
-        joke = result[0]
-
-        joke_id = joke[0]
-
-        joke_text = joke[1]
-
-        tags = await db.get_tags(joke_id)
-
-        if tags is not None:
-            formatted_tags = tags.replace("_", "\_")
-            tagged_tags = f'#{formatted_tags}'
-            joke = f'{joke_text}\n\n{tagged_tags}'
-            print(joke)
-        else:
-            joke = joke_text
-
-        await bot.send_message(
-            chat_id,
-            joke,
-            reply_markup=kb.return_rate_keyboard(joke_id))
-
-        logging.info(
-            f"User action: Sent joke (User ID: {user_id}, Joke ID: {joke[0]})")
-
-    await bot.delete_message(chat_id=call.message.chat.id,
-                             message_id=call.message.message_id)
     await bot.send_message(chat_id,
                            text=bm.pres_button(),
                            reply_markup=kb.random_keyboard())

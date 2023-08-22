@@ -82,6 +82,12 @@ class DataBase:
                 f'SELECT * FROM {table_name} WHERE id NOT IN (SELECT joke_id FROM sent_jokes WHERE user_id = ?) AND rate = (SELECT MAX(rate) FROM {table_name} WHERE id NOT IN (SELECT joke_id FROM sent_jokes WHERE user_id = ?))ORDER BY RANDOM()',
                 (user_id, user_id)).fetchall()
 
+    async def get_tagged_joke(self, user_id, table_name, tag):
+        with self.connect:
+            return self.cursor.execute(
+                f'SELECT * FROM {table_name} WHERE id NOT IN (SELECT joke_id FROM sent_jokes WHERE user_id = ?) AND rate = (SELECT MAX(rate) FROM {table_name} WHERE id NOT IN (SELECT joke_id FROM sent_jokes WHERE user_id = ?)) AND tags LIKE ? ORDER BY RANDOM()',
+                (user_id, user_id, f'%{tag}%')).fetchall()
+
     async def get_language(self, user_id):
         with self.connect:
             return self.cursor.execute("SELECT DISTINCT language FROM users WHERE user_id=(?)",

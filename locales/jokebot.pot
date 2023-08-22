@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-08-16 12:16+0300\n"
+"POT-Creation-Date: 2023-08-22 16:27+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,128 +25,128 @@ msgstr ""
 msgid "I'm launched!"
 msgstr ""
 
-#: handlers/admin.py:69
+#: handlers/admin.py:68
 msgid "_Operating System_: *{}*\n"
 msgstr ""
 
-#: handlers/admin.py:70
+#: handlers/admin.py:69
 msgid "_OS Version_: *{}*\n"
 msgstr ""
 
-#: handlers/admin.py:71
+#: handlers/admin.py:70
 msgid "_Machine Name_: *{}*\n"
 msgstr ""
 
-#: handlers/admin.py:72
+#: handlers/admin.py:71
 msgid "_Processor Architecture_: *{}*\n"
 msgstr ""
 
-#: handlers/admin.py:76
+#: handlers/admin.py:75
 msgid "_Processor Model_: *{}*\n"
 msgstr ""
 
-#: handlers/admin.py:78
+#: handlers/admin.py:77
 msgid "_Physical Cores_: *{}*\n"
 msgstr ""
 
-#: handlers/admin.py:79
+#: handlers/admin.py:78
 msgid "_Logical Cores_: *{}*\n"
 msgstr ""
 
-#: handlers/admin.py:82
+#: handlers/admin.py:81
 msgid "_Total Memory_: *{:.2f}* MB\n"
 msgstr ""
 
-#: handlers/admin.py:83
+#: handlers/admin.py:82
 msgid "_Available Memory_: *{:.2f}* MB\n"
 msgstr ""
 
-#: handlers/admin.py:84
+#: handlers/admin.py:83
 msgid "_Memory Usage_: *{}*%\n"
 msgstr ""
 
-#: handlers/admin.py:91
+#: handlers/admin.py:90
 msgid ""
 "*System information:*\n"
 "\n"
 "{pc_info}"
 msgstr ""
 
-#: handlers/admin.py:139 handlers/admin.py:176 handlers/admin.py:258
-#: handlers/admin.py:353 handlers/admin.py:495 handlers/admin.py:531
-#: handlers/user.py:179 keyboards/inline_keyboards.py:36
+#: handlers/admin.py:138 handlers/admin.py:175 handlers/admin.py:267
+#: handlers/admin.py:362 handlers/admin.py:503 handlers/admin.py:539
+#: handlers/user.py:179 keyboards/inline_keyboards.py:57
 msgid "↩️Cancel"
 msgstr ""
 
-#: handlers/admin.py:237
+#: handlers/admin.py:246
 msgid "Search user by:"
 msgstr ""
 
-#: handlers/admin.py:244
+#: handlers/admin.py:253
 msgid "Type user {search}:"
 msgstr ""
 
-#: handlers/admin.py:299
+#: handlers/admin.py:308
 msgid "Enter in Conversation"
 msgstr ""
 
-#: handlers/admin.py:300
+#: handlers/admin.py:309
 msgid "Write as a bot"
 msgstr ""
 
-#: handlers/admin.py:301
+#: handlers/admin.py:310
 msgid "❌Ban"
 msgstr ""
 
-#: handlers/admin.py:302
+#: handlers/admin.py:311
 msgid "✅Unban"
 msgstr ""
 
-#: handlers/admin.py:303 keyboards/inline_keyboards.py:112
-#: keyboards/inline_keyboards.py:127
+#: handlers/admin.py:312 keyboards/inline_keyboards.py:46
+#: keyboards/inline_keyboards.py:133 keyboards/inline_keyboards.py:148
 msgid "🔙Back"
 msgstr ""
 
-#: handlers/admin.py:332
+#: handlers/admin.py:341
 msgid "User not found!"
 msgstr ""
 
-#: handlers/admin.py:342
+#: handlers/admin.py:351
 msgid "Enter ban reason:"
 msgstr ""
 
-#: handlers/admin.py:354 handlers/admin.py:496 handlers/admin.py:532
+#: handlers/admin.py:363 handlers/admin.py:504 handlers/admin.py:540
 #: handlers/user.py:181
 msgid "Action canceled!"
 msgstr ""
 
-#: handlers/admin.py:486
+#: handlers/admin.py:494
 msgid "Please type your answer:"
 msgstr ""
 
-#: handlers/admin.py:506
+#: handlers/admin.py:514
 msgid ""
 "Your message *{message_id}* was seen!\n"
 "*Answer:* `{answer}`"
 msgstr ""
 
-#: handlers/admin.py:508
+#: handlers/admin.py:516
 msgid "Your answer sent!"
 msgstr ""
 
-#: handlers/admin.py:512 handlers/admin.py:551
+#: handlers/admin.py:520 handlers/admin.py:559
 msgid "Something went wrong, see log for more information!"
 msgstr ""
 
-#: handlers/admin.py:522
+#: handlers/admin.py:530
 msgid "Please type message:"
 msgstr ""
 
-#: handlers/admin.py:542 handlers/admin.py:546
+#: handlers/admin.py:550 handlers/admin.py:554
 msgid "Your message sent!"
 msgstr ""
 
-#: handlers/user.py:82
+#: handlers/user.py:84
 msgid ""
 "If you want to offer an anecdote or if you find a bug, please click the "
 "button below and describe it."
@@ -158,6 +158,10 @@ msgstr ""
 
 #: handlers/user.py:199
 msgid "Your message *{feedback_message_id}* sent!"
+msgstr ""
+
+#: handlers/user.py:206
+msgid "Please select what you would like to joke about:"
 msgstr ""
 
 #: keyboards/inline_keyboards.py:8
@@ -184,29 +188,69 @@ msgstr ""
 msgid "🔀Random joke"
 msgstr ""
 
-#: keyboards/inline_keyboards.py:57 keyboards/inline_keyboards.py:93
+#: keyboards/inline_keyboards.py:29
+msgid "🔖Select category"
+msgstr ""
+
+#: keyboards/inline_keyboards.py:37
+msgid "💵Money"
+msgstr ""
+
+#: keyboards/inline_keyboards.py:38
+msgid "👨‍👩‍👦‍👦Family"
+msgstr ""
+
+#: keyboards/inline_keyboards.py:39
+msgid "👱‍♀️Blondes"
+msgstr ""
+
+#: keyboards/inline_keyboards.py:40
+msgid "👵Mother-in-law"
+msgstr ""
+
+#: keyboards/inline_keyboards.py:41
+msgid "🏫School"
+msgstr ""
+
+#: keyboards/inline_keyboards.py:42
+msgid "👦Vovochka"
+msgstr ""
+
+#: keyboards/inline_keyboards.py:43
+msgid "🏥Medicine"
+msgstr ""
+
+#: keyboards/inline_keyboards.py:44
+msgid "🎓Students"
+msgstr ""
+
+#: keyboards/inline_keyboards.py:45
+msgid "🏢Work"
+msgstr ""
+
+#: keyboards/inline_keyboards.py:78 keyboards/inline_keyboards.py:114
 #: messages/bot_messages.py:78
 msgid "📊Rating: {joke_rate}"
 msgstr ""
 
-#: keyboards/inline_keyboards.py:59 keyboards/inline_keyboards.py:83
+#: keyboards/inline_keyboards.py:80 keyboards/inline_keyboards.py:104
 msgid "👀Viewed"
 msgstr ""
 
-#: keyboards/inline_keyboards.py:70 keyboards/inline_keyboards.py:82
-#: keyboards/inline_keyboards.py:103
+#: keyboards/inline_keyboards.py:91 keyboards/inline_keyboards.py:103
+#: keyboards/inline_keyboards.py:124
 msgid "📊Joke rate"
 msgstr ""
 
-#: keyboards/inline_keyboards.py:72
+#: keyboards/inline_keyboards.py:93
 msgid "👀Viewed by: {joke_seens}"
 msgstr ""
 
-#: keyboards/inline_keyboards.py:134
+#: keyboards/inline_keyboards.py:155
 msgid "Feedback💬"
 msgstr ""
 
-#: keyboards/inline_keyboards.py:141
+#: keyboards/inline_keyboards.py:162
 msgid "Answer💬"
 msgstr ""
 
@@ -403,261 +447,261 @@ msgid ""
 "*Message:* `{feedback_message}`"
 msgstr ""
 
-#: venv/Lib/site-packages/click/_termui_impl.py:496
+#: venv/lib/python3.9/site-packages/click/_termui_impl.py:518
 msgid "{editor}: Editing failed"
 msgstr ""
 
-#: venv/Lib/site-packages/click/_termui_impl.py:500
+#: venv/lib/python3.9/site-packages/click/_termui_impl.py:522
 msgid "{editor}: Editing failed: {e}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:1097
+#: venv/lib/python3.9/site-packages/click/core.py:1120
 msgid "Aborted!"
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:1282
-#: venv/Lib/site-packages/click/decorators.py:495
+#: venv/lib/python3.9/site-packages/click/core.py:1309
+#: venv/lib/python3.9/site-packages/click/decorators.py:559
 msgid "Show this message and exit."
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:1313
-#: venv/Lib/site-packages/click/core.py:1339
+#: venv/lib/python3.9/site-packages/click/core.py:1340
+#: venv/lib/python3.9/site-packages/click/core.py:1370
 msgid "(Deprecated) {text}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:1357
+#: venv/lib/python3.9/site-packages/click/core.py:1387
 msgid "Options"
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:1385
+#: venv/lib/python3.9/site-packages/click/core.py:1415
 msgid "Got unexpected extra argument ({args})"
 msgid_plural "Got unexpected extra arguments ({args})"
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/Lib/site-packages/click/core.py:1398
+#: venv/lib/python3.9/site-packages/click/core.py:1428
 msgid "DeprecationWarning: The command {name!r} is deprecated."
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:1605
+#: venv/lib/python3.9/site-packages/click/core.py:1636
 msgid "Commands"
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:1637
+#: venv/lib/python3.9/site-packages/click/core.py:1668
 msgid "Missing command."
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:1715
+#: venv/lib/python3.9/site-packages/click/core.py:1746
 msgid "No such command {name!r}."
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:2271
+#: venv/lib/python3.9/site-packages/click/core.py:2310
 msgid "Value must be an iterable."
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:2293
+#: venv/lib/python3.9/site-packages/click/core.py:2333
 msgid "Takes {nargs} values but 1 was given."
 msgid_plural "Takes {nargs} values but {len} were given."
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/Lib/site-packages/click/core.py:2734
+#: venv/lib/python3.9/site-packages/click/core.py:2778
 msgid "env var: {var}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:2764
+#: venv/lib/python3.9/site-packages/click/core.py:2808
 msgid "(dynamic)"
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:2777
+#: venv/lib/python3.9/site-packages/click/core.py:2821
 msgid "default: {default}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:2790
+#: venv/lib/python3.9/site-packages/click/core.py:2834
 msgid "required"
 msgstr ""
 
-#: venv/Lib/site-packages/click/decorators.py:400
+#: venv/lib/python3.9/site-packages/click/decorators.py:465
 #, python-format
 msgid "%(prog)s, version %(version)s"
 msgstr ""
 
-#: venv/Lib/site-packages/click/decorators.py:464
+#: venv/lib/python3.9/site-packages/click/decorators.py:528
 msgid "Show the version and exit."
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:43
-#: venv/Lib/site-packages/click/exceptions.py:79
+#: venv/lib/python3.9/site-packages/click/exceptions.py:44
+#: venv/lib/python3.9/site-packages/click/exceptions.py:80
 msgid "Error: {message}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:71
+#: venv/lib/python3.9/site-packages/click/exceptions.py:72
 msgid "Try '{command} {option}' for help."
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:120
+#: venv/lib/python3.9/site-packages/click/exceptions.py:121
 msgid "Invalid value: {message}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:122
+#: venv/lib/python3.9/site-packages/click/exceptions.py:123
 msgid "Invalid value for {param_hint}: {message}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:178
+#: venv/lib/python3.9/site-packages/click/exceptions.py:179
 msgid "Missing argument"
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:180
+#: venv/lib/python3.9/site-packages/click/exceptions.py:181
 msgid "Missing option"
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:182
+#: venv/lib/python3.9/site-packages/click/exceptions.py:183
 msgid "Missing parameter"
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:184
+#: venv/lib/python3.9/site-packages/click/exceptions.py:185
 msgid "Missing {param_type}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:191
+#: venv/lib/python3.9/site-packages/click/exceptions.py:192
 msgid "Missing parameter: {param_name}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:211
+#: venv/lib/python3.9/site-packages/click/exceptions.py:212
 msgid "No such option: {name}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:225
+#: venv/lib/python3.9/site-packages/click/exceptions.py:226
 msgid "Did you mean {possibility}?"
 msgid_plural "(Possible options: {possibilities})"
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/Lib/site-packages/click/exceptions.py:261
+#: venv/lib/python3.9/site-packages/click/exceptions.py:262
 msgid "unknown error"
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:268
+#: venv/lib/python3.9/site-packages/click/exceptions.py:269
 msgid "Could not open file {filename!r}: {message}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/parser.py:231
+#: venv/lib/python3.9/site-packages/click/parser.py:231
 msgid "Argument {name!r} takes {nargs} values."
 msgstr ""
 
-#: venv/Lib/site-packages/click/parser.py:413
+#: venv/lib/python3.9/site-packages/click/parser.py:413
 msgid "Option {name!r} does not take a value."
 msgstr ""
 
-#: venv/Lib/site-packages/click/parser.py:473
+#: venv/lib/python3.9/site-packages/click/parser.py:473
 msgid "Option {name!r} requires an argument."
 msgid_plural "Option {name!r} requires {nargs} arguments."
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/Lib/site-packages/click/shell_completion.py:315
+#: venv/lib/python3.9/site-packages/click/shell_completion.py:318
 msgid "Shell completion is not supported for Bash versions older than 4.4."
 msgstr ""
 
-#: venv/Lib/site-packages/click/shell_completion.py:322
+#: venv/lib/python3.9/site-packages/click/shell_completion.py:326
 msgid "Couldn't detect Bash version, shell completion is not supported."
 msgstr ""
 
-#: venv/Lib/site-packages/click/termui.py:160
+#: venv/lib/python3.9/site-packages/click/termui.py:158
 msgid "Repeat for confirmation"
 msgstr ""
 
-#: venv/Lib/site-packages/click/termui.py:176
+#: venv/lib/python3.9/site-packages/click/termui.py:174
 msgid "Error: The value you entered was invalid."
 msgstr ""
 
-#: venv/Lib/site-packages/click/termui.py:178
+#: venv/lib/python3.9/site-packages/click/termui.py:176
 msgid "Error: {e.message}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/termui.py:189
+#: venv/lib/python3.9/site-packages/click/termui.py:187
 msgid "Error: The two entered values do not match."
 msgstr ""
 
-#: venv/Lib/site-packages/click/termui.py:245
+#: venv/lib/python3.9/site-packages/click/termui.py:243
 msgid "Error: invalid input"
 msgstr ""
 
-#: venv/Lib/site-packages/click/termui.py:776
+#: venv/lib/python3.9/site-packages/click/termui.py:773
 msgid "Press any key to continue..."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:265
+#: venv/lib/python3.9/site-packages/click/types.py:266
 msgid ""
 "Choose from:\n"
 "\t{choices}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:299
+#: venv/lib/python3.9/site-packages/click/types.py:300
 msgid "{value!r} is not {choice}."
 msgid_plural "{value!r} is not one of {choices}."
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/Lib/site-packages/click/types.py:389
+#: venv/lib/python3.9/site-packages/click/types.py:394
 msgid "{value!r} does not match the format {format}."
 msgid_plural "{value!r} does not match the formats {formats}."
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/Lib/site-packages/click/types.py:409
+#: venv/lib/python3.9/site-packages/click/types.py:414
 msgid "{value!r} is not a valid {number_type}."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:465
+#: venv/lib/python3.9/site-packages/click/types.py:470
 msgid "{value} is not in the range {range}."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:606
+#: venv/lib/python3.9/site-packages/click/types.py:611
 msgid "{value!r} is not a valid boolean."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:630
+#: venv/lib/python3.9/site-packages/click/types.py:635
 msgid "{value!r} is not a valid UUID."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:811
+#: venv/lib/python3.9/site-packages/click/types.py:822
 msgid "file"
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:813
+#: venv/lib/python3.9/site-packages/click/types.py:824
 msgid "directory"
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:815
+#: venv/lib/python3.9/site-packages/click/types.py:826
 msgid "path"
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:861
+#: venv/lib/python3.9/site-packages/click/types.py:877
 msgid "{name} {filename!r} does not exist."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:870
+#: venv/lib/python3.9/site-packages/click/types.py:886
 msgid "{name} {filename!r} is a file."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:878
+#: venv/lib/python3.9/site-packages/click/types.py:894
 msgid "{name} '{filename}' is a directory."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:887
+#: venv/lib/python3.9/site-packages/click/types.py:903
 msgid "{name} {filename!r} is not readable."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:896
+#: venv/lib/python3.9/site-packages/click/types.py:912
 msgid "{name} {filename!r} is not writable."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:905
+#: venv/lib/python3.9/site-packages/click/types.py:921
 msgid "{name} {filename!r} is not executable."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:971
+#: venv/lib/python3.9/site-packages/click/types.py:987
 msgid "{len_type} values are required, but {len_value} was given."
 msgid_plural "{len_type} values are required, but {len_value} were given."
 msgstr[0] ""
