@@ -2,6 +2,7 @@ import asyncio
 import logging
 import os
 import platform
+import re
 from io import BytesIO
 
 import cpuinfo
@@ -201,7 +202,6 @@ async def send_daily_joke(call: types.CallbackQuery):
     for user in users:
         chat_id = user[0]
         try:
-
             table_name = f"jokes_uk"
 
             result = await db.get_joke(chat_id, table_name)
@@ -217,20 +217,25 @@ async def send_daily_joke(call: types.CallbackQuery):
 
             tags = await db.get_tags(joke_id)
 
+            likes_count = await db.count_votes(joke_id, "like")
+            dislikes_count = await db.count_votes(joke_id, "dislike")
+
             if tags is not None:
-                formatted_tags = tags.replace("_", "\_")
-                tagged_tags = f'#{formatted_tags}'
-                joke = f'{joke_text}\n\n{tagged_tags}'
+                tagged_tags = f'#{tags}'
+                tagget_text = tagged_tags.replace(', ', ' #')
+                joke = f'{joke_text}\n\n{tagget_text}'
             else:
                 joke = joke_text
 
+            joke_formated = re.sub(r"([*_`~]+)", r"\\\1", joke)
+
             await bot.send_message(
                 chat_id=user[0],
-                text=bm.daily_joke(joke),
+                text=bm.daily_joke(joke_formated),
                 parse_mode="Markdown",
-                reply_markup=kb.return_rate_keyboard(joke[0]))
+                reply_markup=kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id))
 
-            await db.seen_joke(joke[0], chat_id)
+            await db.seen_joke(joke_id, chat_id)
 
             logging.info(f"Sent daily joke to user {chat_id}")
         except Exception as e:
