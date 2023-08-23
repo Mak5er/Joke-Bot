@@ -2767,3 +2767,768 @@ aiogram.utils.exceptions.CantParseEntities: Can't parse entities: can't find end
 2023-08-22 16:34:39 - INFO - User action: /joke (User ID: 6013011895)
 2023-08-22 16:34:41 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: -)
 2023-08-22 16:34:45 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: РЈ)
+2023-08-22 16:58:40 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 16:58:40 - INFO - Added job "job" to job store "default"
+2023-08-22 16:58:40 - INFO - Scheduler started
+2023-08-22 16:58:40 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 16:58:41 - WARNING - Updates were skipped successfully.
+2023-08-22 16:58:41 - INFO - Start polling.
+2023-08-22 16:58:45 - INFO - User action: /joke (User ID: 6013011895)
+2023-08-22 16:58:46 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: О)
+2023-08-22 16:58:48 - INFO - User action: Marked joke as seen (User ID: 6013011895, Joke ID: 1857)
+2023-08-22 16:58:53 - INFO - User action: Marked joke as seen (User ID: 6013011895, Joke ID: 1857)
+2023-08-22 17:18:00 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 17:18:00 - INFO - Added job "job" to job store "default"
+2023-08-22 17:18:00 - INFO - Scheduler started
+2023-08-22 17:18:00 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 17:18:00 - WARNING - Updates were skipped successfully.
+2023-08-22 17:18:00 - INFO - Start polling.
+2023-08-22 17:18:06 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: Д)
+2023-08-22 17:18:07 - ERROR - Update: {"update_id": 247868715, "callback_query": {"id": "7378945368552582416", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 21905, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692712858, "edit_date": 1692713886, "text": "Дружина чоловікові:\n- Яка я дурна, що вийшла за тебе заміж!\n- Так, це я дурень, що на тобі одружився!\nСин:\n- Обидва дурні, а ще хочуть, щоб я добре вчився!..\n\n#про_родину", "entities": [{"type": "hashtag", "offset": 159, "length": 11}], "reply_markup": {"inline_keyboard": [[{"text": "👍", "callback_data": "like_9609"}, {"text": "👎", "callback_data": "dislike_9609"}]]}}, "chat_instance": "-4729631583617012541", "data": "like_9609"}}
+Exception: 'DataBase' object has no attribute 'get_user_vote'
+2023-08-22 17:18:07 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-18' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=AttributeError("'DataBase' object has no attribute 'get_user_vote'")>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 415, in like_joke
+    user_vote = await db.get_user_vote(joke_id, user_id)
+AttributeError: 'DataBase' object has no attribute 'get_user_vote'
+2023-08-22 17:18:10 - ERROR - Update: {"update_id": 247868716, "callback_query": {"id": "7378945367937393871", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 21905, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692712858, "edit_date": 1692713886, "text": "Дружина чоловікові:\n- Яка я дурна, що вийшла за тебе заміж!\n- Так, це я дурень, що на тобі одружився!\nСин:\n- Обидва дурні, а ще хочуть, щоб я добре вчився!..\n\n#про_родину", "entities": [{"type": "hashtag", "offset": 159, "length": 11}], "reply_markup": {"inline_keyboard": [[{"text": "👍", "callback_data": "like_9609"}, {"text": "👎", "callback_data": "dislike_9609"}]]}}, "chat_instance": "-4729631583617012541", "data": "dislike_9609"}}
+Exception: 'DataBase' object has no attribute 'get_user_vote'
+2023-08-22 17:18:10 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-21' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=AttributeError("'DataBase' object has no attribute 'get_user_vote'")>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 439, in dislike_joke
+    user_vote = await db.get_user_vote(joke_id, user_id)
+AttributeError: 'DataBase' object has no attribute 'get_user_vote'
+2023-08-22 17:18:50 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 17:18:50 - INFO - Added job "job" to job store "default"
+2023-08-22 17:18:50 - INFO - Scheduler started
+2023-08-22 17:18:50 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 17:18:50 - WARNING - Updates were skipped successfully.
+2023-08-22 17:18:50 - INFO - Start polling.
+2023-08-22 17:18:53 - ERROR - Update: {"update_id": 247868717, "callback_query": {"id": "7378945366566853664", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 21905, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692712858, "edit_date": 1692713886, "text": "Дружина чоловікові:\n- Яка я дурна, що вийшла за тебе заміж!\n- Так, це я дурень, що на тобі одружився!\nСин:\n- Обидва дурні, а ще хочуть, щоб я добре вчився!..\n\n#про_родину", "entities": [{"type": "hashtag", "offset": 159, "length": 11}], "reply_markup": {"inline_keyboard": [[{"text": "👍", "callback_data": "like_9609"}, {"text": "👎", "callback_data": "dislike_9609"}]]}}, "chat_instance": "-4729631583617012541", "data": "like_9609"}}
+Exception: no such table: votes
+2023-08-22 17:18:53 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-11' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=OperationalError('no such table: votes')>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 415, in like_joke
+    user_vote = await db.get_user_vote(joke_id, user_id)
+  File "/Users/makser/Desktop/Python/Joke-Bot/services/db.py", line 161, in get_user_vote
+    result = self.cursor.execute(
+sqlite3.OperationalError: no such table: votes
+2023-08-22 17:20:27 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 17:20:27 - INFO - Added job "job" to job store "default"
+2023-08-22 17:20:27 - INFO - Scheduler started
+2023-08-22 17:20:27 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 17:20:27 - WARNING - Updates were skipped successfully.
+2023-08-22 17:20:27 - INFO - Start polling.
+2023-08-22 17:20:34 - ERROR - Update: {"update_id": 247868718, "callback_query": {"id": "7378945366912183615", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 21905, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692712858, "edit_date": 1692713886, "text": "Дружина чоловікові:\n- Яка я дурна, що вийшла за тебе заміж!\n- Так, це я дурень, що на тобі одружився!\nСин:\n- Обидва дурні, а ще хочуть, щоб я добре вчився!..\n\n#про_родину", "entities": [{"type": "hashtag", "offset": 159, "length": 11}], "reply_markup": {"inline_keyboard": [[{"text": "👍", "callback_data": "like_9609"}, {"text": "👎", "callback_data": "dislike_9609"}]]}}, "chat_instance": "-4729631583617012541", "data": "like_9609"}}
+Exception: no such table: votes
+2023-08-22 17:20:34 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-11' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=OperationalError('no such table: votes')>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 415, in like_joke
+    user_vote = await db.get_user_vote(joke_id, user_id)
+  File "/Users/makser/Desktop/Python/Joke-Bot/services/db.py", line 161, in get_user_vote
+    result = self.cursor.execute(
+sqlite3.OperationalError: no such table: votes
+2023-08-22 17:28:43 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 17:28:43 - INFO - Added job "job" to job store "default"
+2023-08-22 17:28:43 - INFO - Scheduler started
+2023-08-22 17:28:43 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 17:28:43 - WARNING - Updates were skipped successfully.
+2023-08-22 17:28:43 - INFO - Start polling.
+2023-08-22 17:28:45 - ERROR - Update: {"update_id": 247868721, "callback_query": {"id": "7378945369964350280", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 21905, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692712858, "edit_date": 1692713886, "text": "Дружина чоловікові:\n- Яка я дурна, що вийшла за тебе заміж!\n- Так, це я дурень, що на тобі одружився!\nСин:\n- Обидва дурні, а ще хочуть, щоб я добре вчився!..\n\n#про_родину", "entities": [{"type": "hashtag", "offset": 159, "length": 11}], "reply_markup": {"inline_keyboard": [[{"text": "👍", "callback_data": "like_9609"}, {"text": "👎", "callback_data": "dislike_9609"}]]}}, "chat_instance": "-4729631583617012541", "data": "like_9609"}}
+Exception: no such column: likes_count
+2023-08-22 17:28:45 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-11' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=OperationalError('no such column: likes_count')>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 428, in like_joke
+    await db.update_like_count(joke_id, table_name, action="like")
+  File "/Users/makser/Desktop/Python/Joke-Bot/services/db.py", line 173, in update_like_count
+    return self.cursor.execute(
+sqlite3.OperationalError: no such column: likes_count
+2023-08-22 17:34:50 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 17:34:50 - INFO - Added job "job" to job store "default"
+2023-08-22 17:34:50 - INFO - Scheduler started
+2023-08-22 17:34:50 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 17:34:50 - WARNING - Updates were skipped successfully.
+2023-08-22 17:34:50 - INFO - Start polling.
+2023-08-22 17:35:03 - ERROR - Update: {"update_id": 247868724, "callback_query": {"id": "7378945367277067216", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 21907, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692713886, "text": "Натисніть кнопку, щоб отримати анекдот.", "reply_markup": {"inline_keyboard": [[{"text": "🔀Випадковий анекдот", "callback_data": "random_joke"}], [{"text": "🔖Обрати категорію", "callback_data": "select_category"}]]}}, "chat_instance": "-4729631583617012541", "data": "random_joke"}}
+Exception: Can't parse entities: can't find end of the entity starting at byte offset 51
+2023-08-22 17:35:03 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-18' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=CantParseEntities("Can't parse entities: can't find end of the entity starting at byte offset 51")>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 308, in send_joke_private
+    await call.message.edit_text(joke, reply_markup=keyboard_type)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/types/message.py", line 2919, in edit_text
+    return await self.bot.edit_message_text(
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/bot.py", line 3122, in edit_message_text
+    result = await self.request(api.Methods.EDIT_MESSAGE_TEXT, payload)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.CantParseEntities: Can't parse entities: can't find end of the entity starting at byte offset 51
+2023-08-22 17:35:22 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: Н)
+2023-08-22 17:45:43 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 17:45:43 - INFO - Added job "job" to job store "default"
+2023-08-22 17:45:43 - INFO - Scheduler started
+2023-08-22 17:45:43 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 17:45:43 - WARNING - Updates were skipped successfully.
+2023-08-22 17:45:43 - INFO - Start polling.
+2023-08-22 17:45:48 - ERROR - Update: {"update_id": 247868729, "callback_query": {"id": "7378945369520769747", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 21914, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692714922, "text": "Натисніть кнопку, щоб отримати анекдот.", "reply_markup": {"inline_keyboard": [[{"text": "🔀Випадковий анекдот", "callback_data": "random_joke"}], [{"text": "🔖Обрати категорію", "callback_data": "select_category"}]]}}, "chat_instance": "-4729631583617012541", "data": "random_joke"}}
+Exception: return_rating_and_seen_keyboard() missing 1 required positional argument: 'joke_id'
+2023-08-22 17:45:48 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-11' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=TypeError("return_rating_and_seen_keyboard() missing 1 required positional argument: 'joke_id'")>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 303, in send_joke_private
+    keyboard_type = kb.return_rating_and_seen_keyboard(joke_rate, joke_id)
+TypeError: return_rating_and_seen_keyboard() missing 1 required positional argument: 'joke_id'
+2023-08-22 17:45:58 - ERROR - Update: {"update_id": 247868732, "callback_query": {"id": "7378945366980679087", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 21914, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692714922, "edit_date": 1692715557, "text": "Натисніть кнопку, щоб отримати анекдот.", "reply_markup": {"inline_keyboard": [[{"text": "🔀Випадковий анекдот", "callback_data": "random_joke"}], [{"text": "🔖Обрати категорію", "callback_data": "select_category"}]]}}, "chat_instance": "-4729631583617012541", "data": "random_joke"}}
+Exception: return_rating_and_seen_keyboard() missing 1 required positional argument: 'joke_id'
+2023-08-22 17:45:58 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-24' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=TypeError("return_rating_and_seen_keyboard() missing 1 required positional argument: 'joke_id'")>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 303, in send_joke_private
+    keyboard_type = kb.return_rating_and_seen_keyboard(joke_rate, joke_id)
+TypeError: return_rating_and_seen_keyboard() missing 1 required positional argument: 'joke_id'
+2023-08-22 17:52:06 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 17:52:06 - INFO - Added job "job" to job store "default"
+2023-08-22 17:52:06 - INFO - Scheduler started
+2023-08-22 17:52:06 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 17:52:06 - WARNING - Updates were skipped successfully.
+2023-08-22 17:52:07 - INFO - Start polling.
+2023-08-22 17:52:15 - ERROR - Update: {"update_id": 247868733, "callback_query": {"id": "7378945368548657788", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 21914, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692714922, "edit_date": 1692715557, "text": "Натисніть кнопку, щоб отримати анекдот.", "reply_markup": {"inline_keyboard": [[{"text": "🔀Випадковий анекдот", "callback_data": "random_joke"}], [{"text": "🔖Обрати категорію", "callback_data": "select_category"}]]}}, "chat_instance": "-4729631583617012541", "data": "random_joke"}}
+Exception: Can't parse entities: can't find end of the entity starting at byte offset 132
+2023-08-22 17:52:15 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-11' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=CantParseEntities("Can't parse entities: can't find end of the entity starting at byte offset 132")>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 308, in send_joke_private
+    await call.message.edit_text(joke, reply_markup=keyboard_type)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/types/message.py", line 2919, in edit_text
+    return await self.bot.edit_message_text(
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/bot.py", line 3122, in edit_message_text
+    result = await self.request(api.Methods.EDIT_MESSAGE_TEXT, payload)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.CantParseEntities: Can't parse entities: can't find end of the entity starting at byte offset 132
+2023-08-22 17:52:24 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: С)
+2023-08-22 17:52:45 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: О)
+2023-08-22 17:55:28 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 17:55:28 - INFO - Added job "job" to job store "default"
+2023-08-22 17:55:28 - INFO - Scheduler started
+2023-08-22 17:55:29 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 17:55:29 - WARNING - Updates were skipped successfully.
+2023-08-22 17:55:29 - INFO - Start polling.
+2023-08-22 17:59:21 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 17:59:21 - INFO - Added job "job" to job store "default"
+2023-08-22 17:59:21 - INFO - Scheduler started
+2023-08-22 17:59:21 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 17:59:21 - WARNING - Updates were skipped successfully.
+2023-08-22 17:59:22 - INFO - Start polling.
+2023-08-22 17:59:34 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: М)
+2023-08-22 18:05:22 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 18:05:22 - INFO - Added job "job" to job store "default"
+2023-08-22 18:05:22 - INFO - Scheduler started
+2023-08-22 18:05:22 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 18:05:22 - WARNING - Updates were skipped successfully.
+2023-08-22 18:05:22 - INFO - Start polling.
+2023-08-22 18:05:30 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: Г)
+2023-08-22 18:06:31 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 18:06:31 - INFO - Added job "job" to job store "default"
+2023-08-22 18:06:31 - INFO - Scheduler started
+2023-08-22 18:06:31 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 18:06:31 - WARNING - Updates were skipped successfully.
+2023-08-22 18:06:31 - INFO - Start polling.
+2023-08-22 18:06:39 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: -)
+2023-08-22 18:06:56 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 18:06:56 - INFO - Added job "job" to job store "default"
+2023-08-22 18:06:56 - INFO - Scheduler started
+2023-08-22 18:06:56 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 18:06:56 - WARNING - Updates were skipped successfully.
+2023-08-22 18:06:56 - INFO - Start polling.
+2023-08-22 18:06:59 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: С)
+2023-08-22 18:07:21 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 18:07:21 - INFO - Added job "job" to job store "default"
+2023-08-22 18:07:21 - INFO - Scheduler started
+2023-08-22 18:07:21 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 18:07:21 - WARNING - Updates were skipped successfully.
+2023-08-22 18:07:21 - INFO - Start polling.
+2023-08-22 18:09:42 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 18:09:42 - INFO - Added job "job" to job store "default"
+2023-08-22 18:09:42 - INFO - Scheduler started
+2023-08-22 18:09:42 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 18:09:42 - WARNING - Updates were skipped successfully.
+2023-08-22 18:09:43 - INFO - Start polling.
+2023-08-22 18:09:54 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: Х)
+2023-08-22 18:09:59 - INFO - User action: Marked joke as seen (User ID: 6013011895, Joke ID: 1857)
+2023-08-22 18:09:59 - ERROR - Update: {"update_id": 247868785, "callback_query": {"id": "7378945368623024994", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 74620, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": -1001970076955, "title": "евіл ганг 😈", "type": "supergroup"}, "date": 1692712725, "edit_date": 1692712985, "message_thread_id": 74619, "reply_to_message": {"message_id": 74619, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": -1001970076955, "title": "евіл ганг 😈", "type": "supergroup"}, "date": 1692712724, "text": "/joke@makser_humor_bot", "entities": [{"type": "bot_command", "offset": 0, "length": 22}]}, "text": "Один карась розповiдає iншому:\n– Ти не повiриш! Той рибалка, у якого я вчора зiрвався з гачка, важив пiд 300 кiло!", "reply_markup": {"inline_keyboard": [[{"text": "📊Оцінка анекдота", "callback_data": "rate_1857"}], [{"text": "👀Переглянув", "callback_data": "seen_1857"}]]}}, "chat_instance": "1818772548102188180", "data": "seen_1857"}}
+Exception: Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2023-08-22 18:09:59 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-33' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=MessageNotModified('Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message')>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 396, in seen_handling
+    await update_buttons(call.message, joke_id)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 448, in update_buttons
+    await message.edit_reply_markup(reply_markup)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/types/message.py", line 3015, in edit_reply_markup
+    return await self.bot.edit_message_reply_markup(
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/bot.py", line 3252, in edit_message_reply_markup
+    result = await self.request(api.Methods.EDIT_MESSAGE_REPLY_MARKUP, payload)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.MessageNotModified: Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2023-08-22 18:10:01 - INFO - User action: Marked joke as seen (User ID: 6013011895, Joke ID: 1857)
+2023-08-22 18:10:01 - ERROR - Update: {"update_id": 247868786, "callback_query": {"id": "7378945368699961106", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 74620, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": -1001970076955, "title": "евіл ганг 😈", "type": "supergroup"}, "date": 1692712725, "edit_date": 1692716999, "message_thread_id": 74619, "reply_to_message": {"message_id": 74619, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": -1001970076955, "title": "евіл ганг 😈", "type": "supergroup"}, "date": 1692712724, "text": "/joke@makser_humor_bot", "entities": [{"type": "bot_command", "offset": 0, "length": 22}]}, "text": "Один карась розповiдає iншому:\n– Ти не повiриш! Той рибалка, у якого я вчора зiрвався з гачка, важив пiд 300 кiло!", "reply_markup": {"inline_keyboard": [[{"text": "👍 0", "callback_data": "like_1857"}, {"text": "👎 0", "callback_data": "dislike_1857"}], [{"text": "📊Rating", "callback_data": "rating_1857"}, {"text": "👀Переглянув", "callback_data": "seen_1857"}]]}}, "chat_instance": "1818772548102188180", "data": "seen_1857"}}
+Exception: Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2023-08-22 18:10:01 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-39' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=MessageNotModified('Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message')>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 390, in seen_handling
+    await bot.edit_message_reply_markup(
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/bot.py", line 3252, in edit_message_reply_markup
+    result = await self.request(api.Methods.EDIT_MESSAGE_REPLY_MARKUP, payload)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.MessageNotModified: Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2023-08-22 18:10:03 - INFO - User action: Marked joke as seen (User ID: 6013011895, Joke ID: 1857)
+2023-08-22 18:10:03 - ERROR - Update: {"update_id": 247868787, "callback_query": {"id": "7378945367935774726", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 74620, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": -1001970076955, "title": "евіл ганг 😈", "type": "supergroup"}, "date": 1692712725, "edit_date": 1692716999, "message_thread_id": 74619, "reply_to_message": {"message_id": 74619, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": -1001970076955, "title": "евіл ганг 😈", "type": "supergroup"}, "date": 1692712724, "text": "/joke@makser_humor_bot", "entities": [{"type": "bot_command", "offset": 0, "length": 22}]}, "text": "Один карась розповiдає iншому:\n– Ти не повiриш! Той рибалка, у якого я вчора зiрвався з гачка, важив пiд 300 кiло!", "reply_markup": {"inline_keyboard": [[{"text": "👍 0", "callback_data": "like_1857"}, {"text": "👎 0", "callback_data": "dislike_1857"}], [{"text": "📊Rating", "callback_data": "rating_1857"}, {"text": "👀Переглянув", "callback_data": "seen_1857"}]]}}, "chat_instance": "1818772548102188180", "data": "seen_1857"}}
+Exception: Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2023-08-22 18:10:03 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-44' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=MessageNotModified('Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message')>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 390, in seen_handling
+    await bot.edit_message_reply_markup(
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/bot.py", line 3252, in edit_message_reply_markup
+    result = await self.request(api.Methods.EDIT_MESSAGE_REPLY_MARKUP, payload)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.MessageNotModified: Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2023-08-22 18:14:29 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 18:14:29 - INFO - Added job "job" to job store "default"
+2023-08-22 18:14:29 - INFO - Scheduler started
+2023-08-22 18:14:29 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 18:14:29 - WARNING - Updates were skipped successfully.
+2023-08-22 18:14:29 - INFO - Start polling.
+2023-08-22 18:18:15 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: Д)
+2023-08-22 18:22:53 - INFO - User action: Marked joke as seen (User ID: 6013011895, Joke ID: 1631)
+2023-08-22 18:22:54 - ERROR - Update: {"update_id": 247868790, "callback_query": {"id": "7378945369534166781", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 74621, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": -1001970076955, "title": "евіл ганг 😈", "type": "supergroup"}, "date": 1692712726, "edit_date": 1692716994, "text": "Хочеш бути щасливим - запхай свою доброту і щирість далеко в ср@ку і стався до людей так, як вони ставляться до тебе!", "reply_markup": {"inline_keyboard": [[{"text": "👍 0", "callback_data": "like_1631"}, {"text": "👎 0", "callback_data": "dislike_1631"}], [{"text": "📊Rating", "callback_data": "rating_1631"}, {"text": "👀Переглянув", "callback_data": "seen_1631"}]]}}, "chat_instance": "1818772548102188180", "data": "seen_1631"}}
+Exception: Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2023-08-22 18:22:54 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-48' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=MessageNotModified('Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message')>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 396, in seen_handling
+    await update_buttons(call.message, joke_id)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 448, in update_buttons
+    await message.edit_reply_markup(reply_markup)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/types/message.py", line 3015, in edit_reply_markup
+    return await self.bot.edit_message_reply_markup(
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/bot.py", line 3252, in edit_message_reply_markup
+    result = await self.request(api.Methods.EDIT_MESSAGE_REPLY_MARKUP, payload)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.MessageNotModified: Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2023-08-22 18:22:56 - INFO - User action: Marked joke as seen (User ID: 6013011895, Joke ID: 1631)
+2023-08-22 18:22:56 - ERROR - Update: {"update_id": 247868791, "callback_query": {"id": "7378945368216462223", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 74621, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": -1001970076955, "title": "евіл ганг 😈", "type": "supergroup"}, "date": 1692712726, "edit_date": 1692717773, "text": "Хочеш бути щасливим - запхай свою доброту і щирість далеко в ср@ку і стався до людей так, як вони ставляться до тебе!", "reply_markup": {"inline_keyboard": [[{"text": "📊Rating", "callback_data": "rating_1631"}], [{"text": "👍 0", "callback_data": "like_1631"}, {"text": "👎 0", "callback_data": "dislike_1631"}], [{"text": "👀Переглянув", "callback_data": "seen_1631"}]]}}, "chat_instance": "1818772548102188180", "data": "seen_1631"}}
+Exception: Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2023-08-22 18:22:56 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-54' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=MessageNotModified('Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message')>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 390, in seen_handling
+    await bot.edit_message_reply_markup(
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/bot.py", line 3252, in edit_message_reply_markup
+    result = await self.request(api.Methods.EDIT_MESSAGE_REPLY_MARKUP, payload)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.MessageNotModified: Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2023-08-22 19:19:17 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: -)
+2023-08-22 19:19:24 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: Н)
+2023-08-22 19:19:35 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: -)
+2023-08-22 19:19:44 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: З)
+2023-08-22 19:22:02 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: У)
+2023-08-22 19:22:19 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: П)
+2023-08-22 19:23:14 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: В)
+2023-08-22 19:23:37 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: Б)
+2023-08-22 19:23:48 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: П)
+2023-08-22 19:25:24 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: Я)
+2023-08-22 19:25:32 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: С)
+2023-08-22 19:25:55 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: Х)
+2023-08-22 19:26:06 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: З)
+2023-08-22 19:26:47 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: -)
+2023-08-22 19:27:35 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: К)
+2023-08-22 20:06:47 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-22 20:06:47 - INFO - Added job "job" to job store "default"
+2023-08-22 20:06:47 - INFO - Scheduler started
+2023-08-22 20:06:48 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-22 20:06:48 - WARNING - Updates were skipped successfully.
+2023-08-22 20:06:48 - INFO - Start polling.
+2023-08-23 09:05:55 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: Д)
+2023-08-23 09:05:57 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: П)
+2023-08-23 09:05:57 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: Є)
+2023-08-23 09:06:03 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: М)
+2023-08-23 09:06:16 - INFO - User action: /joke (User ID: 6013011895)
+2023-08-23 09:06:18 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: Р)
+2023-08-23 09:06:23 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: Ч)
+2023-08-23 09:07:02 - INFO - User action: Sent joke (User ID: 1317874863, Joke ID: Х)
+2023-08-23 09:08:14 - INFO - User action: /info (User ID: 6013011895)
+2023-08-23 09:08:16 - INFO - User action: /admin (User ID: 6013011895)
+2023-08-23 09:08:24 - INFO - User action: Downloaded log (User ID: 6013011895)
+2023-08-23 09:08:52 - INFO - User action: /joke (User ID: 6013011895)
+2023-08-23 09:08:58 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: С)
+2023-08-23 09:11:35 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-23 09:11:36 - INFO - Added job "job" to job store "default"
+2023-08-23 09:11:36 - INFO - Scheduler started
+2023-08-23 09:11:36 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-23 09:11:36 - WARNING - Updates were skipped successfully.
+2023-08-23 09:11:36 - INFO - Start polling.
+2023-08-23 09:11:44 - INFO - User action: Marked joke as seen (User ID: 6013011895, Joke ID: 2783)
+2023-08-23 09:11:44 - ERROR - Update: {"update_id": 247868844, "callback_query": {"id": "7378945368269068673", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 74861, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": -1001970076955, "title": "евіл ганг 😈", "type": "supergroup"}, "date": 1692770778, "edit_date": 1692771104, "text": "Хочу, щоб було бабине літо, потім дідове, потім мамине, потім татове і так до весни...\n\n#про_родину", "entities": [{"type": "hashtag", "offset": 88, "length": 11}], "reply_markup": {"inline_keyboard": [[{"text": "📊Rating", "callback_data": "rating_2783"}], [{"text": "👍 1", "callback_data": "like_2783"}, {"text": "👎 0", "callback_data": "dislike_2783"}], [{"text": "👀Переглянув", "callback_data": "seen_2783"}]]}}, "chat_instance": "1818772548102188180", "data": "seen_2783"}}
+Exception: Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2023-08-23 09:11:44 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-25' coro=<Dispatcher._process_polling_updates() done, defined at /home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=MessageNotModified('Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message')>
+Traceback (most recent call last):
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/handlers/user.py", line 390, in seen_handling
+    await bot.edit_message_reply_markup(
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/bot/bot.py", line 3252, in edit_message_reply_markup
+    result = await self.request(api.Methods.EDIT_MESSAGE_REPLY_MARKUP, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.MessageNotModified: Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2023-08-23 09:11:46 - INFO - User action: Marked joke as seen (User ID: 6013011895, Joke ID: 2783)
+2023-08-23 09:11:46 - ERROR - Update: {"update_id": 247868845, "callback_query": {"id": "7378945367680348740", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 74861, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": -1001970076955, "title": "евіл ганг 😈", "type": "supergroup"}, "date": 1692770778, "edit_date": 1692771104, "text": "Хочу, щоб було бабине літо, потім дідове, потім мамине, потім татове і так до весни...\n\n#про_родину", "entities": [{"type": "hashtag", "offset": 88, "length": 11}], "reply_markup": {"inline_keyboard": [[{"text": "📊Rating", "callback_data": "rating_2783"}], [{"text": "👍 1", "callback_data": "like_2783"}, {"text": "👎 0", "callback_data": "dislike_2783"}], [{"text": "👀Переглянув", "callback_data": "seen_2783"}]]}}, "chat_instance": "1818772548102188180", "data": "seen_2783"}}
+Exception: Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2023-08-23 09:11:46 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-30' coro=<Dispatcher._process_polling_updates() done, defined at /home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=MessageNotModified('Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message')>
+Traceback (most recent call last):
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/handlers/user.py", line 390, in seen_handling
+    await bot.edit_message_reply_markup(
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/bot/bot.py", line 3252, in edit_message_reply_markup
+    result = await self.request(api.Methods.EDIT_MESSAGE_REPLY_MARKUP, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.MessageNotModified: Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2023-08-23 09:16:34 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-23 09:16:34 - INFO - Added job "job" to job store "default"
+2023-08-23 09:16:34 - INFO - Scheduler started
+2023-08-23 09:16:34 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-23 09:16:34 - WARNING - Updates were skipped successfully.
+2023-08-23 09:16:34 - INFO - Start polling.
+2023-08-23 09:16:42 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: Л)
+2023-08-23 09:19:42 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-23 09:19:42 - INFO - Added job "job" to job store "default"
+2023-08-23 09:19:42 - INFO - Scheduler started
+2023-08-23 09:19:42 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-23 09:19:42 - WARNING - Updates were skipped successfully.
+2023-08-23 09:19:42 - INFO - Start polling.
+2023-08-23 10:02:56 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-23 10:02:56 - INFO - Added job "job" to job store "default"
+2023-08-23 10:02:56 - INFO - Scheduler started
+2023-08-23 10:02:56 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-23 10:02:56 - WARNING - Updates were skipped successfully.
+2023-08-23 10:02:56 - INFO - Start polling.
+2023-08-23 10:04:10 - ERROR - Update: {"update_id": 247868857, "callback_query": {"id": "7378945368282433387", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 21945, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": 6013011895, "first_name": "Mak5er", "username": "mak5er", "type": "private"}, "date": 1692770938, "edit_date": 1692771908, "text": "Людина завжди вірить в чудо, а особливо тоді, коли натискає на банкоматі кнопку - Показати баланс.", "reply_markup": {"inline_keyboard": [[{"text": "📊Оцінка анекдота", "callback_data": "rating_7135"}], [{"text": "👍 1", "callback_data": "like_7135"}, {"text": "👎 0", "callback_data": "dislike_7135"}]]}}, "chat_instance": "-4729631583617012541", "data": "rating_7135"}}
+Exception: Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2023-08-23 10:04:10 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-14' coro=<Dispatcher._process_polling_updates() done, defined at /home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=MessageNotModified('Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message')>
+Traceback (most recent call last):
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/handlers/user.py", line 462, in joke_rating
+    await update_buttons(call.message, joke_id)
+  File "/home/container/handlers/user.py", line 448, in update_buttons
+    await message.edit_reply_markup(reply_markup)
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/types/message.py", line 3015, in edit_reply_markup
+    return await self.bot.edit_message_reply_markup(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/bot/bot.py", line 3252, in edit_message_reply_markup
+    result = await self.request(api.Methods.EDIT_MESSAGE_REPLY_MARKUP, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.MessageNotModified: Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2023-08-23 10:10:56 - INFO - User action: Marked joke as seen (User ID: 6013011895, Joke ID: 6100)
+2023-08-23 10:10:56 - ERROR - Update: {"update_id": 247868859, "callback_query": {"id": "7378945369629189479", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 74860, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": -1001970076955, "title": "евіл ганг 😈", "type": "supergroup"}, "date": 1692770776, "edit_date": 1692770778, "message_thread_id": 74859, "reply_to_message": {"message_id": 74859, "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "chat": {"id": -1001970076955, "title": "евіл ганг 😈", "type": "supergroup"}, "date": 1692770776, "text": "/joke@makser_humor_bot", "entities": [{"type": "bot_command", "offset": 0, "length": 22}]}, "text": "Рецепт вічної молодості: потрібно радіти кожній дрібниці і не нервувати через якусь скотину...", "reply_markup": {"inline_keyboard": [[{"text": "📊Rating", "callback_data": "rating_6100"}], [{"text": "👍 0", "callback_data": "like_6100"}, {"text": "👎 0", "callback_data": "dislike_6100"}], [{"text": "👀Переглянув", "callback_data": "seen_6100"}]]}}, "chat_instance": "1818772548102188180", "data": "seen_6100"}}
+Exception: Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2023-08-23 10:10:56 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-46' coro=<Dispatcher._process_polling_updates() done, defined at /home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=MessageNotModified('Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message')>
+Traceback (most recent call last):
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/handlers/user.py", line 390, in seen_handling
+    await bot.edit_message_reply_markup(
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/bot/bot.py", line 3252, in edit_message_reply_markup
+    result = await self.request(api.Methods.EDIT_MESSAGE_REPLY_MARKUP, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "/home/container/.local/lib/python3.11/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.MessageNotModified: Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2023-08-23 10:11:00 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: П)
+2023-08-23 10:46:51 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-23 10:46:51 - INFO - Added job "job" to job store "default"
+2023-08-23 10:46:51 - INFO - Scheduler started
+2023-08-23 10:46:51 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-23 10:46:51 - WARNING - Updates were skipped successfully.
+2023-08-23 10:46:51 - INFO - Start polling.
+2023-08-23 10:47:55 - INFO - User action: /info (User ID: 6013011895)
+2023-08-23 10:47:57 - INFO - User action: /admin (User ID: 6013011895)
+2023-08-23 10:51:51 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-23 10:51:51 - INFO - Added job "job" to job store "default"
+2023-08-23 10:51:51 - INFO - Scheduler started
+2023-08-23 10:51:51 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-23 10:51:51 - WARNING - Updates were skipped successfully.
+2023-08-23 10:51:52 - INFO - Start polling.
+2023-08-23 10:52:18 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-23 10:52:18 - INFO - Added job "job" to job store "default"
+2023-08-23 10:52:18 - INFO - Scheduler started
+2023-08-23 10:52:18 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-23 10:52:19 - WARNING - Updates were skipped successfully.
+2023-08-23 10:52:19 - INFO - Start polling.
+2023-08-23 10:54:59 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-23 10:54:59 - INFO - Added job "job" to job store "default"
+2023-08-23 10:54:59 - INFO - Scheduler started
+2023-08-23 10:54:59 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-23 10:54:59 - WARNING - Updates were skipped successfully.
+2023-08-23 10:55:00 - INFO - Start polling.
+2023-08-23 10:55:07 - INFO - User action: /start (User ID: 6013011895)
+2023-08-23 10:55:11 - INFO - User action: Sent joke (User ID: 6013011895, Joke ID: Д)
+2023-08-23 10:55:21 - INFO - User action: Marked joke as seen (User ID: 6013011895, Joke ID: 8327)
+2023-08-23 10:55:21 - ERROR - Update: {"update_id": 247868886, "callback_query": {"id": "7378945368682514498", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 21975, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": -919636358, "title": "Mak5er та Анекдотики", "type": "group", "all_members_are_administrators": true}, "date": 1692777307, "edit_date": 1692777319, "text": "Дружина - чоловіку:\n- Любий, ти знаєш, що в нашої невістки є коханець?\n- Це її проблеми.\n- Але вона одружена на нашому сині!\n- Це його проблеми.\n- Авжеж. Тоді знай: мені відомо, що коханцем є ти!\n- Це мої проблеми.\n- А як же я, любий?!\n- А це твої проблеми.\n\n#про_родину", "entities": [{"type": "hashtag", "offset": 259, "length": 11}], "reply_markup": {"inline_keyboard": [[{"text": "📊Оцінка анекдота", "callback_data": "rating_8327"}], [{"text": "👍 0", "callback_data": "like_8327"}, {"text": "👎 0", "callback_data": "dislike_8327"}], [{"text": "👀Переглянув", "callback_data": "seen_8327"}]]}}, "chat_instance": "-9022337501159308478", "data": "seen_8327"}}
+Exception: Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2023-08-23 10:55:21 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-38' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=MessageNotModified('Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message')>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 388, in seen_handling
+    await bot.edit_message_reply_markup(
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/bot.py", line 3252, in edit_message_reply_markup
+    result = await self.request(api.Methods.EDIT_MESSAGE_REPLY_MARKUP, payload)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.MessageNotModified: Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2023-08-23 11:03:36 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-23 11:03:36 - INFO - Added job "job" to job store "default"
+2023-08-23 11:03:36 - INFO - Scheduler started
+2023-08-23 11:03:36 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-23 11:03:36 - WARNING - Updates were skipped successfully.
+2023-08-23 11:03:37 - INFO - Start polling.
+2023-08-23 11:03:45 - INFO - User action: Marked joke as seen (User ID: 6013011895, Joke ID: 8327)
+2023-08-23 11:03:46 - ERROR - Update: {"update_id": 247868893, "callback_query": {"id": "7378945369840390248", "from": {"id": 6013011895, "is_bot": false, "first_name": "Mak5er", "username": "mak5er", "language_code": "uk"}, "message": {"message_id": 21975, "from": {"id": 6293095869, "is_bot": true, "first_name": "Анекдотики", "username": "makser_humor_bot"}, "chat": {"id": -919636358, "title": "Mak5er та Анекдотики", "type": "group", "all_members_are_administrators": true}, "date": 1692777307, "edit_date": 1692777824, "text": "Дружина - чоловіку:\n- Любий, ти знаєш, що в нашої невістки є коханець?\n- Це її проблеми.\n- Але вона одружена на нашому сині!\n- Це його проблеми.\n- Авжеж. Тоді знай: мені відомо, що коханцем є ти!\n- Це мої проблеми.\n- А як же я, любий?!\n- А це твої проблеми.\n\n#про_родину", "entities": [{"type": "hashtag", "offset": 259, "length": 11}], "reply_markup": {"inline_keyboard": [[{"text": "📊Оцінка анекдота", "callback_data": "rating_8327"}], [{"text": "👍 0", "callback_data": "like_8327"}, {"text": "👎 1", "callback_data": "dislike_8327"}], [{"text": "👀Переглянув", "callback_data": "seen_8327"}]]}}, "chat_instance": "-9022337501159308478", "data": "seen_8327"}}
+Exception: Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2023-08-23 11:03:46 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-22' coro=<Dispatcher._process_polling_updates() done, defined at /Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=MessageNotModified('Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message')>
+Traceback (most recent call last):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/Users/makser/Desktop/Python/Joke-Bot/handlers/user.py", line 388, in seen_handling
+    await bot.edit_message_reply_markup(
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/bot.py", line 3252, in edit_message_reply_markup
+    result = await self.request(api.Methods.EDIT_MESSAGE_REPLY_MARKUP, payload)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "/Users/makser/Desktop/Python/Joke-Bot/venv/lib/python3.9/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.MessageNotModified: Message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2023-08-23 11:06:31 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-08-23 11:06:31 - INFO - Added job "job" to job store "default"
+2023-08-23 11:06:31 - INFO - Scheduler started
+2023-08-23 11:06:31 - INFO - Bot: Анекдотики [@makser_humor_bot]
+2023-08-23 11:06:31 - WARNING - Updates were skipped successfully.
+2023-08-23 11:06:31 - INFO - Start polling.

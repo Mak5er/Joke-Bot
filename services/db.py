@@ -134,3 +134,46 @@ class DataBase:
     async def unban_user(self, user_id):
         with self.connect:
             return self.cursor.execute("UPDATE users SET status=(?) WHERE user_id=(?)", ("user", user_id))
+
+    async def add_vote(self, joke_id, user_id, vote_type):
+        with self.connect:
+            return self.cursor.execute(
+                "INSERT INTO votes (joke_id, user_id, vote_type) VALUES (?, ?, ?)",
+                (joke_id, user_id, vote_type)
+            )
+
+    async def remove_vote(self, joke_id, user_id):
+        with self.connect:
+            return self.cursor.execute(
+                "DELETE FROM votes WHERE joke_id = ? AND user_id = ?",
+                (joke_id, user_id)
+            )
+
+    async def update_vote(self, joke_id, user_id, new_vote_type):
+        with self.connect:
+            return self.cursor.execute(
+                "UPDATE votes SET vote_type = ? WHERE joke_id = ? AND user_id = ?",
+                (new_vote_type, joke_id, user_id)
+            )
+
+    async def get_user_vote(self, joke_id, user_id):
+        with self.connect:
+            result = self.cursor.execute(
+                "SELECT vote_type FROM votes WHERE joke_id = ? AND user_id = ?",
+                (joke_id, user_id)
+            ).fetchone()
+            if result:
+                return result[0]
+            else:
+                return None
+
+    async def count_votes(self, joke_id, vote_type):
+        with self.connect:
+            result = self.cursor.execute(
+                "SELECT COUNT(*) FROM votes WHERE joke_id = ? AND vote_type = ?",
+                (joke_id, vote_type)
+            ).fetchone()
+            if result:
+                return result[0]
+            else:
+                return 0

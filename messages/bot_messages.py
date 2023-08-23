@@ -79,11 +79,11 @@ def joke_rating(joke_rate):
 
 
 def liked_joke():
-    return _("You voted for the joke!")
+    return _("You 👍 this!")
 
 
 def disliked_joke():
-    return _("You voted against the joke!")
+    return _("You 👎 this!")
 
 
 def seen_joke():
@@ -145,7 +145,8 @@ def joke_added():
 
 def join_group(chat_title):
     return _("""Hi! Thank you for adding me to *'{chat_title}'* 
-For correct operation, please grant me administrator rights!""").format(chat_title=chat_title)
+For correct operation, please grant me administrator rights!
+Type /help to get a list of commands""").format(chat_title=chat_title)
 
 
 def please_choose():

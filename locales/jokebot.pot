@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-08-22 16:27+0300\n"
+"POT-Creation-Date: 2023-08-23 11:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,7 +74,7 @@ msgstr ""
 
 #: handlers/admin.py:138 handlers/admin.py:175 handlers/admin.py:267
 #: handlers/admin.py:362 handlers/admin.py:503 handlers/admin.py:539
-#: handlers/user.py:179 keyboards/inline_keyboards.py:57
+#: handlers/user.py:176 keyboards/inline_keyboards.py:57
 msgid "↩️Cancel"
 msgstr ""
 
@@ -103,7 +103,7 @@ msgid "✅Unban"
 msgstr ""
 
 #: handlers/admin.py:312 keyboards/inline_keyboards.py:46
-#: keyboards/inline_keyboards.py:133 keyboards/inline_keyboards.py:148
+#: keyboards/inline_keyboards.py:100 keyboards/inline_keyboards.py:115
 msgid "🔙Back"
 msgstr ""
 
@@ -116,7 +116,7 @@ msgid "Enter ban reason:"
 msgstr ""
 
 #: handlers/admin.py:363 handlers/admin.py:504 handlers/admin.py:540
-#: handlers/user.py:181
+#: handlers/user.py:178
 msgid "Action canceled!"
 msgstr ""
 
@@ -146,21 +146,21 @@ msgstr ""
 msgid "Your message sent!"
 msgstr ""
 
-#: handlers/user.py:84
+#: handlers/user.py:81
 msgid ""
 "If you want to offer an anecdote or if you find a bug, please click the "
 "button below and describe it."
 msgstr ""
 
-#: handlers/user.py:166
+#: handlers/user.py:163
 msgid "Please enter your message:"
 msgstr ""
 
-#: handlers/user.py:199
+#: handlers/user.py:196
 msgid "Your message *{feedback_message_id}* sent!"
 msgstr ""
 
-#: handlers/user.py:206
+#: handlers/user.py:203
 msgid "Please select what you would like to joke about:"
 msgstr ""
 
@@ -228,29 +228,19 @@ msgstr ""
 msgid "🏢Work"
 msgstr ""
 
-#: keyboards/inline_keyboards.py:78 keyboards/inline_keyboards.py:114
-#: messages/bot_messages.py:78
-msgid "📊Rating: {joke_rate}"
-msgstr ""
-
-#: keyboards/inline_keyboards.py:80 keyboards/inline_keyboards.py:104
-msgid "👀Viewed"
-msgstr ""
-
-#: keyboards/inline_keyboards.py:91 keyboards/inline_keyboards.py:103
-#: keyboards/inline_keyboards.py:124
+#: keyboards/inline_keyboards.py:74 keyboards/inline_keyboards.py:88
 msgid "📊Joke rate"
 msgstr ""
 
-#: keyboards/inline_keyboards.py:93
-msgid "👀Viewed by: {joke_seens}"
+#: keyboards/inline_keyboards.py:90
+msgid "👀Viewed"
 msgstr ""
 
-#: keyboards/inline_keyboards.py:155
+#: keyboards/inline_keyboards.py:122
 msgid "Feedback💬"
 msgstr ""
 
-#: keyboards/inline_keyboards.py:162
+#: keyboards/inline_keyboards.py:129
 msgid "Answer💬"
 msgstr ""
 
@@ -334,12 +324,16 @@ msgid ""
 "invite a friend."
 msgstr ""
 
+#: messages/bot_messages.py:78
+msgid "📊Rating: {joke_rate}"
+msgstr ""
+
 #: messages/bot_messages.py:82
-msgid "You voted for the joke!"
+msgid "You 👍 this!"
 msgstr ""
 
 #: messages/bot_messages.py:86
-msgid "You voted against the joke!"
+msgid "You 👎 this!"
 msgstr ""
 
 #: messages/bot_messages.py:90
@@ -407,14 +401,15 @@ msgstr ""
 #: messages/bot_messages.py:147
 msgid ""
 "Hi! Thank you for adding me to *'{chat_title}'* \n"
-"For correct operation, please grant me administrator rights!"
+"For correct operation, please grant me administrator rights!\n"
+"Type /help to get a list of commands"
 msgstr ""
 
-#: messages/bot_messages.py:152
+#: messages/bot_messages.py:153
 msgid "Please choose your language!"
 msgstr ""
 
-#: messages/bot_messages.py:167
+#: messages/bot_messages.py:168
 msgid ""
 "*USER INFO*\n"
 "_Name_: *{user_name}*\n"
@@ -423,25 +418,25 @@ msgid ""
 "_Status_: *{status}*"
 msgstr ""
 
-#: messages/bot_messages.py:175
+#: messages/bot_messages.py:176
 msgid ""
 "🚫You have been banned, contact @mak5er for more information!\n"
 "Reason: {reason}"
 msgstr ""
 
-#: messages/bot_messages.py:179
+#: messages/bot_messages.py:180
 msgid "🎉You have been unbanned!"
 msgstr ""
 
-#: messages/bot_messages.py:183
+#: messages/bot_messages.py:184
 msgid "User {banned_user_id} successfully banned!"
 msgstr ""
 
-#: messages/bot_messages.py:187
+#: messages/bot_messages.py:188
 msgid "User {unbanned_user_id} successfully unbanned!"
 msgstr ""
 
-#: messages/bot_messages.py:191
+#: messages/bot_messages.py:192
 msgid ""
 "*New message* from user: *{user}*\n"
 "*Message:* `{feedback_message}`"
