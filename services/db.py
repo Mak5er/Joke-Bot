@@ -79,8 +79,23 @@ class DataBase:
     async def get_joke(self, user_id, table_name):
         with self.connect:
             return self.cursor.execute(
-                f'SELECT * FROM {table_name} WHERE id NOT IN (SELECT joke_id FROM sent_jokes WHERE user_id = ?) AND rate = (SELECT MAX(rate) FROM {table_name} WHERE id NOT IN (SELECT joke_id FROM sent_jokes WHERE user_id = ?))ORDER BY RANDOM()',
-                (user_id, user_id)).fetchall()
+                f'SELECT * FROM {table_name} WHERE id NOT IN (SELECT joke_id FROM sent_jokes WHERE user_id = ?) '
+                f'ORDER BY (SELECT COUNT(*) FROM votes WHERE joke_id = {table_name}.id AND vote_type = "like") DESC, '
+                f'(SELECT COUNT(*) FROM votes WHERE joke_id = {table_name}.id AND vote_type = "dislike") ASC, '
+                f'RANDOM() '
+                f'LIMIT 1',
+                (user_id,)
+            ).fetchall()
+
+    async def get_tagged_joke(self, user_id, table_name, tag):
+        with self.connect:
+            return self.cursor.execute(
+                f'SELECT * FROM {table_name} WHERE id NOT IN (SELECT joke_id FROM sent_jokes WHERE user_id = ?) AND tags LIKE ? '
+                f'ORDER BY (SELECT COUNT(*) FROM votes WHERE joke_id = {table_name}.id AND vote_type = "like") DESC, '
+                f'(SELECT COUNT(*) FROM votes WHERE joke_id = {table_name}.id AND vote_type = "dislike") ASC, '
+                f'RANDOM() '
+                f'LIMIT 1',
+                (user_id, f'%{tag}%')).fetchall()
 
     async def get_language(self, user_id):
         with self.connect:
@@ -128,3 +143,46 @@ class DataBase:
     async def unban_user(self, user_id):
         with self.connect:
             return self.cursor.execute("UPDATE users SET status=(?) WHERE user_id=(?)", ("user", user_id))
+
+    async def add_vote(self, joke_id, user_id, vote_type):
+        with self.connect:
+            return self.cursor.execute(
+                "INSERT INTO votes (joke_id, user_id, vote_type) VALUES (?, ?, ?)",
+                (joke_id, user_id, vote_type)
+            )
+
+    async def remove_vote(self, joke_id, user_id):
+        with self.connect:
+            return self.cursor.execute(
+                "DELETE FROM votes WHERE joke_id = ? AND user_id = ?",
+                (joke_id, user_id)
+            )
+
+    async def update_vote(self, joke_id, user_id, new_vote_type):
+        with self.connect:
+            return self.cursor.execute(
+                "UPDATE votes SET vote_type = ? WHERE joke_id = ? AND user_id = ?",
+                (new_vote_type, joke_id, user_id)
+            )
+
+    async def get_user_vote(self, joke_id, user_id):
+        with self.connect:
+            result = self.cursor.execute(
+                "SELECT vote_type FROM votes WHERE joke_id = ? AND user_id = ?",
+                (joke_id, user_id)
+            ).fetchone()
+            if result:
+                return result[0]
+            else:
+                return None
+
+    async def count_votes(self, joke_id, vote_type):
+        with self.connect:
+            result = self.cursor.execute(
+                "SELECT COUNT(*) FROM votes WHERE joke_id = ? AND vote_type = ?",
+                (joke_id, vote_type)
+            ).fetchone()
+            if result:
+                return result[0]
+            else:
+                return 0

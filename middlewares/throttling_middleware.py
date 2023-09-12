@@ -68,7 +68,8 @@ class ThrottlingMiddleware(BaseMiddleware):
         delta = throttled.rate - throttled.delta
 
         if throttled.exceeded_count <= 5:
-            await message.reply('You send too many requests!')
+            if message.chat.type == "private":
+                await message.reply('You send too many requests!')
 
         await asyncio.sleep(delta)
 

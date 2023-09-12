@@ -1,11 +1,11 @@
 import asyncio
 import datetime
 import logging
+import re
 
 from aiogram import types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher import FSMContext
-from aiogram.dispatcher.filters import ChatTypeFilter
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.cron import CronTrigger
 
@@ -43,20 +43,20 @@ async def update_info(message: types.Message):
 
 @dp.message_handler(content_types=['new_chat_members'])
 async def send_welcome(message: types.Message):
-    bot_obj = await bot.get_me()
-    bot_id = bot_obj.id
+    for user in message.new_chat_members:
+        # Check if the new member is the bot itself
+        if user.is_bot and user.id == bot.id:
+            chat_info = await bot.get_chat(message.chat.id)
+            chat_type = "public"
+            user_id = message.chat.id
+            user_name = chat_info.title
+            user_username = None
+            language = 'uk'
+            status = 'user'
 
-    for chat_member in message.new_chat_members:
-        chat_info = await bot.get_chat(message.chat.id)
-        chat_type = "public"
-        user_id = message.chat.id
-        user_name = None
-        user_username = None
+            await db.add_users(user_id, user_name, user_username, chat_type, language, status)
 
-        await db.add_users(user_id, user_name, user_username, chat_type)
-
-        chat_title = chat_info.title
-        if chat_member.id == bot_id:
+            chat_title = chat_info.title
             await bot.send_message(
                 chat_id=message.chat.id,
                 text=bm.join_group(chat_title),
@@ -199,8 +199,72 @@ async def feedback(message: types.Message, state: FSMContext):
     await update_info(message)
 
 
-@dp.callback_query_handler(ChatTypeFilter(types.ChatType.PRIVATE),
-                           lambda call: call.data == 'random_joke')
+@dp.callback_query_handler(lambda call: call.data == "select_category")
+async def select_category(call):
+    await call.message.edit_text(text=_('Please select what you would like to joke about:'),
+                                 reply_markup=kb.category_keyboard())
+
+
+@dp.callback_query_handler(lambda call: call.data == "back_to_random")
+async def back_to_random(call):
+    await call.message.edit_text(bm.pres_button(), reply_markup=kb.random_keyboard())
+
+
+@dp.callback_query_handler(lambda call: call.data.startswith('joke:'))
+async def send_category_joke_pivate(call):
+    tag = call.data.split(':')[1]
+    chat_id = call.message.chat.id
+    user_id = call.from_user.id
+
+    table_name = f"jokes_uk"
+
+    result = await db.get_tagged_joke(user_id, table_name, tag)
+
+    await dp.bot.send_chat_action(call.message.chat.id, "typing")
+
+    if not result:
+        await bot.send_message(
+            chat_id, bm.all_send())
+    else:
+        joke = result[0]
+
+        joke_id = joke[0]
+
+        joke_text = joke[1]
+
+        tags = await db.get_tags(joke_id)
+
+        likes_count = await db.count_votes(joke_id, "like")
+        dislikes_count = await db.count_votes(joke_id, "dislike")
+
+        if tags is not None:
+            tagged_tags = f'#{tags}'
+            tagget_text = tagged_tags.replace(', ', ' #')
+            joke = f'{joke_text}\n\n{tagget_text}'
+        else:
+            joke = joke_text
+
+        joke_formated = re.sub(r"([*_`~]+)", r"\\\1", joke)
+
+        keyboard_type = kb.return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id)
+
+        if call.message.chat.type == 'private':
+            keyboard_type = kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id)
+
+        await call.message.edit_text(joke_formated, reply_markup=keyboard_type)
+
+        await db.seen_joke(joke_id, user_id)
+
+        logging.info(
+            f"User action: Sent joke (User ID: {user_id}, Joke ID: {joke_id})")
+
+    await bot.send_message(chat_id,
+                           text=bm.pres_button(),
+                           reply_markup=kb.random_keyboard())
+    await update_info(call.message)
+
+
+@dp.callback_query_handler(lambda call: call.data == 'random_joke')
 async def send_joke_private(call):
     chat_id = call.message.chat.id
     user_id = call.from_user.id
@@ -223,76 +287,30 @@ async def send_joke_private(call):
 
         tags = await db.get_tags(joke_id)
 
+        likes_count = await db.count_votes(joke_id, "like")
+        dislikes_count = await db.count_votes(joke_id, "dislike")
+
         if tags is not None:
-            formatted_tags = tags.replace("_", "\_")
-            tagged_tags = f'#{formatted_tags}'
-            joke = f'{joke_text}\n\n{tagged_tags}'
-            print(joke)
+            tagged_tags = f'#{tags}'
+            tagget_text = tagged_tags.replace(', ', ' #')
+            joke = f'{joke_text}\n\n{tagget_text}'
         else:
             joke = joke_text
 
-        await bot.send_message(
-            chat_id,
-            joke,
-            reply_markup=kb.return_rate_keyboard(joke_id))
+        joke_formated = re.sub(r"([*_`~]+)", r"\\\1", joke)
+
+        keyboard_type = kb.return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id)
+
+        if call.message.chat.type == 'private':
+            keyboard_type = kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id)
+
+        await call.message.edit_text(joke_formated, reply_markup=keyboard_type)
 
         await db.seen_joke(joke_id, user_id)
 
         logging.info(
-            f"User action: Sent joke (User ID: {user_id}, Joke ID: {joke[0]})")
+            f"User action: Sent joke (User ID: {user_id}, Joke ID: {joke_id})")
 
-    await bot.delete_message(chat_id=call.message.chat.id,
-                             message_id=call.message.message_id)
-    await bot.send_message(chat_id,
-                           text=bm.pres_button(),
-                           reply_markup=kb.random_keyboard())
-    await update_info(call.message)
-
-
-@dp.callback_query_handler(
-    ChatTypeFilter(types.ChatType.GROUP)
-    | ChatTypeFilter(types.ChatType.SUPERGROUP),
-    lambda call: call.data == 'random_joke')
-async def send_joke_group(call):
-    chat_id = call.message.chat.id
-    user_id = call.from_user.id
-
-    table_name = f"jokes_uk"
-
-    result = await db.get_joke(user_id, table_name)
-
-    await dp.bot.send_chat_action(call.message.chat.id, "typing")
-
-    if not result:
-        await bot.send_message(
-            chat_id, bm.all_send())
-    else:
-        joke = result[0]
-
-        joke_id = joke[0]
-
-        joke_text = joke[1]
-
-        tags = await db.get_tags(joke_id)
-
-        if tags is not None:
-            formatted_tags = tags.replace("_", "\_")
-            tagged_tags = f'#{formatted_tags}'
-            joke = f'{joke_text}\n\n{tagged_tags}'
-            print(joke)
-        else:
-            joke = joke_text
-
-        await bot.send_message(
-            chat_id,
-            joke,
-            reply_markup=kb.return_rate_keyboard(joke_id))
-
-        logging.info(
-            f"User action: Sent joke (User ID: {user_id}, Joke ID: {joke[0]})")
-
-    await bot.delete_message(chat_id=call.message.chat.id,
-                             message_id=call.message.message_id)
     await bot.send_message(chat_id,
                            text=bm.pres_button(),
                            reply_markup=kb.random_keyboard())
@@ -310,7 +328,6 @@ async def job():
     for user in users:
         chat_id = user[0]
         try:
-
             table_name = f"jokes_uk"
 
             result = await db.get_joke(chat_id, table_name)
@@ -326,20 +343,25 @@ async def job():
 
             tags = await db.get_tags(joke_id)
 
+            likes_count = await db.count_votes(joke_id, "like")
+            dislikes_count = await db.count_votes(joke_id, "dislike")
+
             if tags is not None:
-                formatted_tags = tags.replace("_", "\_")
-                tagged_tags = f'#{formatted_tags}'
-                joke = f'{joke_text}\n\n{tagged_tags}'
+                tagged_tags = f'#{tags}'
+                tagget_text = tagged_tags.replace(', ', ' #')
+                joke = f'{joke_text}\n\n{tagget_text}'
             else:
                 joke = joke_text
 
+            joke_formated = re.sub(r"([*_`~]+)", r"\\\1", joke)
+
             await bot.send_message(
                 chat_id=user[0],
-                text=bm.daily_joke(joke),
+                text=bm.daily_joke(joke_formated),
                 parse_mode="Markdown",
-                reply_markup=kb.return_rate_keyboard(joke[0]))
+                reply_markup=kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id))
 
-            await db.seen_joke(joke[0], chat_id)
+            await db.seen_joke(joke_id, chat_id)
 
             logging.info(f"Sent daily joke to user {chat_id}")
         except Exception as e:
@@ -357,12 +379,13 @@ async def seen_handling(call: types.CallbackQuery):
     existing_row = await db.check_seen_joke(joke_id, user_id)
 
     if existing_row:
-        await call.answer(bm.already_seen_joke())
+        await call.answer(bm.already_seen_joke(), show_alert=True)
     else:
         await db.seen_joke(joke_id, user_id)
-        await call.answer(bm.seen_joke())
+        await call.answer(bm.seen_joke(), show_alert=True)
 
-    joke_seens = await db.joke_seens(joke_id)
+    likes_count = await db.count_votes(joke_id, "like")
+    dislikes_count = await db.count_votes(joke_id, "dislike")
 
     logging.info(
         f"User action: Marked joke as seen (User ID: {user_id}, Joke ID: {joke_id})"
@@ -371,127 +394,81 @@ async def seen_handling(call: types.CallbackQuery):
     await bot.edit_message_reply_markup(
         call.message.chat.id,
         call.message.message_id,
-        reply_markup=kb.return_seen_count_rate_keyboard(
-            joke_seens, joke_id))
-    await asyncio.sleep(3)
-    await bot.edit_message_reply_markup(
-        call.message.chat.id,
-        call.message.message_id,
-        reply_markup=kb.return_seen_rate_keyboard(joke_id))
+        reply_markup=kb.return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id))
     await update_info(call.message)
 
-
-@dp.callback_query_handler(lambda call: call.data.startswith('seeen_'))
-async def seen_button_handling(call: types.CallbackQuery):
-    await call.answer(bm.already_seen_joke())
-    await update_info(call.message)
+    await update_buttons(call.message, joke_id)
 
 
+# Оновлені функції для лайків і дизлайків
 @dp.callback_query_handler(lambda call: call.data.startswith('like_'))
 async def like_joke(call: types.CallbackQuery):
     joke_id = int(call.data.split('_')[1])
     user_id = call.from_user.id
 
-    table_name = f"jokes_uk"
+    user_vote = await db.get_user_vote(joke_id, user_id)
 
-    await db.like_joke(joke_id, table_name)
+    if user_vote == "like":
+        await db.remove_vote(joke_id, user_id)
+    elif user_vote == "dislike":
+        await db.update_vote(joke_id, user_id, "like")
+        await call.answer(bm.liked_joke())
+    else:
+        await db.add_vote(joke_id, user_id, "like")
+        await call.answer(bm.liked_joke())
 
-    joke_rate = await db.joke_rate(joke_id, table_name)
-
-    await call.answer(bm.liked_joke())
-
-    await call.message.edit_reply_markup(
-        reply_markup=kb.return_rating_keyboard(joke_rate))
-    await asyncio.sleep(5)
-    await call.message.edit_reply_markup(
-        reply_markup=kb.return_hidden_rating_keyboard(joke_id))
-    await update_info(call.message)
-
-    logging.info(
-        f"User action: Liked joke (User ID: {user_id}, Joke ID: {joke_id})")
+    await update_buttons(call.message, joke_id)
 
 
-# noinspection PyArgumentList
 @dp.callback_query_handler(lambda call: call.data.startswith('dislike_'))
 async def dislike_joke(call: types.CallbackQuery):
     joke_id = int(call.data.split('_')[1])
     user_id = call.from_user.id
 
-    table_name = f"jokes_uk"
+    user_vote = await db.get_user_vote(joke_id, user_id)
 
-    await db.dislike_joke(joke_id, table_name)
+    if user_vote == "dislike":
+        await db.remove_vote(joke_id, user_id)
+    elif user_vote == "like":
+        await db.update_vote(joke_id, user_id, "dislike")
+        await call.answer(bm.disliked_joke())
 
-    joke_rate = await db.joke_rate(joke_id, table_name)
+    else:
+        await db.add_vote(joke_id, user_id, "dislike")
+        await call.answer(bm.disliked_joke())
 
-    await call.answer(bm.disliked_joke())
-    await call.message.edit_reply_markup(
-        reply_markup=kb.return_rating_keyboard(joke_rate))
-    await asyncio.sleep(5)
-    await call.message.edit_reply_markup(
-        reply_markup=kb.return_hidden_rating_keyboard(joke_id))
-    await update_info(call.message)
-
-    logging.info(
-        f"User action: Disliked joke (User ID: {user_id}, Joke ID: {joke_id})")
+    await update_buttons(call.message, joke_id)
 
 
-# noinspection PyArgumentList
-@dp.callback_query_handler(ChatTypeFilter(types.ChatType.PRIVATE),
-                           lambda call: call.data.startswith('rate_'))
-async def rate_joke_private(call: types.CallbackQuery):
-    joke_id = int(call.data.split('_')[1])
+# Оновлена функція для оновлення клавіатур
 
-    table_name = f"jokes_uk"
+async def update_buttons(message, joke_id):
+    likes_count = await db.count_votes(joke_id, "like")
+    dislikes_count = await db.count_votes(joke_id, "dislike")
 
-    joke_rate = await db.joke_rate(joke_id, table_name)
+    if message.chat.type == 'private':
+        reply_markup = kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id)
+    else:  # Для групових чатів
+        reply_markup = kb.return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id)
 
-    await bot.answer_callback_query(call.id, bm.joke_rating(joke_rate))
-
-    await bot.edit_message_reply_markup(
-        call.message.chat.id,
-        call.message.message_id,
-        reply_markup=kb.return_rating_keyboard(joke_rate))
-    await asyncio.sleep(5)
-    await bot.edit_message_reply_markup(
-        call.message.chat.id,
-        call.message.message_id,
-        reply_markup=kb.return_hidden_rating_keyboard(joke_id))
-
-
-@dp.callback_query_handler(
-    ChatTypeFilter(types.ChatType.GROUP)
-    | ChatTypeFilter(types.ChatType.SUPERGROUP),
-    lambda call: call.data.startswith('rate_'))
-async def rate_joke_group(call: types.CallbackQuery):
-    joke_id = int(call.data.split('_')[1])
-
-    table_name = f"jokes_uk"
-
-    joke_rate = await db.joke_rate(joke_id, table_name)
-
-    await bot.answer_callback_query(call.id, bm.joke_rating(joke_rate))
-
-    await bot.edit_message_reply_markup(
-        call.message.chat.id,
-        call.message.message_id,
-        reply_markup=kb.return_rating_and_seen_keyboard(
-            joke_rate, joke_id))
-    await asyncio.sleep(5)
-    await bot.edit_message_reply_markup(
-        call.message.chat.id,
-        call.message.message_id,
-        reply_markup=kb.return_seen_rate_keyboard(joke_id))
+    await message.edit_reply_markup(reply_markup)
 
 
 @dp.callback_query_handler(lambda call: call.data.startswith('rating_'))
 async def joke_rating(call: types.CallbackQuery):
     joke_id = int(call.data.split('_')[1])
 
-    table_name = "jokes_uk"
+    likes_count = await db.count_votes(joke_id, "like")
+    dislikes_count = await db.count_votes(joke_id, "dislike")
 
-    joke_rate = await db.joke_rate(joke_id, table_name)
+    joke_rate = likes_count - dislikes_count
 
-    await bot.answer_callback_query(call.id, bm.joke_rating(joke_rate))
+    await call.answer(bm.joke_rating(joke_rate), show_alert=True)
+
+    try:
+        await update_buttons(call.message, joke_id)
+    except:
+        pass
 
 
 @dp.message_handler()
