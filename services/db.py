@@ -8,11 +8,26 @@ from typing import Callable
 class DataBase:
 
     def __init__(self):
-        self.connect = psycopg2.connect(config.db_auth)
-        self.cursor = self.connect.cursor()
+        self.connect = None
+        self.cursor = None
+        self.connected = False
+        self.connect()
+
+    def connect(self):
+        try:
+            self.connect = psycopg2.connect(config.db_auth)
+            self.cursor = self.connect.cursor()
+            self.connected = True
+        except psycopg2.Error as e:
+            self.connected = False
+            raise e
+
+    def close(self):
+        if self.connect:
+            self.connect.close()
+            self.connected = False
 
     @retry(stop=stop_after_attempt(2), wait=wait_exponential())
-    
     async def add_users(self, user_id, user_name, user_username, chat_type, language, status):
         with self.connect:
             self.cursor.execute(
@@ -20,108 +35,92 @@ class DataBase:
                 (user_id, user_name, user_username, chat_type, language, status))
         
     @retry(stop=stop_after_attempt(2), wait=wait_exponential())
-    
     async def user_count(self):
         with self.connect:
             self.cursor.execute("SELECT COUNT(*) FROM users")
             return self.cursor.fetchone()[0]
         
     @retry(stop=stop_after_attempt(2), wait=wait_exponential())
-    
     async def joke_count(self, table_name):
         with self.connect:
             self.cursor.execute(f"SELECT COUNT(*) FROM {table_name}")
             return self.cursor.fetchone()[0]
     
-    @retry(stop=stop_after_attempt(2), wait=wait_exponential())
-    
+    @retry(stop=stop_after_attempt(2), wait=wait_exponential()) 
     async def sent_count(self):
         with self.connect:
             self.cursor.execute("SELECT COUNT(*) FROM sent_jokes")
             return self.cursor.fetchone()[0]
         
     @retry(stop=stop_after_attempt(2), wait=wait_exponential())
-    
     async def joke_sent(self, user_id):
         with self.connect:
             self.cursor.execute("SELECT COUNT(*) FROM sent_jokes WHERE user_id=%s", (user_id,))
             return self.cursor.fetchone()[0]
         
     @retry(stop=stop_after_attempt(2), wait=wait_exponential())
-    
     async def all_users(self):
         with self.connect:
             self.cursor.execute("SELECT user_id FROM users")
             return self.cursor.fetchall()
         
     @retry(stop=stop_after_attempt(2), wait=wait_exponential())
-    
     async def user_exist(self, user_id):
         with self.connect:
             self.cursor.execute("SELECT * FROM users WHERE user_id = %s", (user_id,))
             return self.cursor.fetchall()
         
     @retry(stop=stop_after_attempt(2), wait=wait_exponential())
-    
     async def user_update_name(self, user_id, user_name, user_username):
         with self.connect:
             self.cursor.execute("UPDATE users SET user_username=%s, user_name=%s WHERE user_id=%s",
                             (user_username, user_name, user_id))
             
     @retry(stop=stop_after_attempt(2), wait=wait_exponential())
-    
     async def get_private_users(self):
         with self.connect:
             self.cursor.execute("SELECT DISTINCT user_id FROM users WHERE chat_type = 'private' AND status != 'ban'")
             return self.cursor.fetchall()
         
     @retry(stop=stop_after_attempt(2), wait=wait_exponential())
-    
     async def add_joke(self, joke_text, table_name):
         with self.connect:
             self.cursor.execute(f"INSERT INTO {table_name} (text) VALUES (%s)", (joke_text,))
 
     @retry(stop=stop_after_attempt(2), wait=wait_exponential())
-    
     async def seen_joke(self, joke_id, user_id):
         with self.connect:
             self.cursor.execute("INSERT INTO sent_jokes (joke_id, user_id) VALUES (%s, %s)", (joke_id, user_id))
 
     @retry(stop=stop_after_attempt(2), wait=wait_exponential())
-    
     async def check_seen_joke(self, joke_id, user_id):
         with self.connect:
             self.cursor.execute("SELECT * FROM sent_jokes WHERE joke_id = %s AND user_id = %s", (joke_id, user_id))
             return self.cursor.fetchone()
         
     @retry(stop=stop_after_attempt(2), wait=wait_exponential())
-    
     async def joke_seens(self, joke_id):
         with self.connect:
             self.cursor.execute("SELECT COUNT(*) FROM sent_jokes WHERE joke_id = %s", (joke_id,))
             return self.cursor.fetchone()[0]
         
     @retry(stop=stop_after_attempt(2), wait=wait_exponential())
-    
     async def joke_rate(self, joke_id, table_name):
         with self.connect:
             self.cursor.execute(f"SELECT rate FROM {table_name} WHERE id = %s", (joke_id,))
             return self.cursor.fetchone()[0]
         
     @retry(stop=stop_after_attempt(2), wait=wait_exponential())
-    
     async def like_joke(self, joke_id, table_name):
         with self.connect:
             self.cursor.execute(f"UPDATE {table_name} SET rate = rate + 1 WHERE id = %s", (joke_id,))
 
     @retry(stop=stop_after_attempt(2), wait=wait_exponential())
-    
     async def dislike_joke(self, joke_id, table_name):
         with self.connect:
             self.cursor.execute(f"UPDATE {table_name} SET rate = rate - 1 WHERE id = %s", (joke_id,))
 
     @retry(stop=stop_after_attempt(2), wait=wait_exponential())
-    
     async def get_joke(self, user_id, table_name):
         with self.connect:
             self.cursor.execute(
@@ -141,7 +140,6 @@ class DataBase:
 
 
     @retry(stop=stop_after_attempt(2), wait=wait_exponential())
-    
     async def get_tagged_joke(self, user_id, tag):
         with self.connect:
             self.cursor.execute(
