@@ -261,11 +261,11 @@ def reconnect(f: Callable):
     def wrapper(storage: DataBase, *args, **kwargs):
         if not storage.connected():
             storage.connect()
-
-        try:
-            return f(storage, *args, **kwargs)
-        except psycopg2.Error:
-            storage.close()
-            raise
+            
+            try:
+                return f(storage, *args, **kwargs)
+            except psycopg2.Error:
+                storage.close()
+                raise
 
     return wrapper
