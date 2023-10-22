@@ -1,3 +1,6 @@
+.env
 .venv
 *.pyc
 .vscode
+log/bot_log.log
+.env

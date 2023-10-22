@@ -24,7 +24,7 @@ from services import DataBase
 
 storage = MemoryStorage()
 
-db = DataBase('services/jokes.db')
+db = DataBase()
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -294,7 +294,7 @@ async def control_user(message: types.Message, state: FSMContext):
         elif search == "username":
             user = await db.get_user_info_username(answer)
 
-        result = user.fetchone()
+        result = user
 
         if result is not None:
             user_name = None

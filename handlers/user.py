@@ -19,7 +19,7 @@ from services import DataBase
 
 storage = MemoryStorage()
 
-db = DataBase('services/jokes.db')
+db = DataBase()
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -44,7 +44,6 @@ async def update_info(message: types.Message):
 @dp.message_handler(content_types=['new_chat_members'])
 async def send_welcome(message: types.Message):
     for user in message.new_chat_members:
-        # Check if the new member is the bot itself
         if user.is_bot and user.id == bot.id:
             chat_info = await bot.get_chat(message.chat.id)
             chat_type = "public"
@@ -77,7 +76,6 @@ async def send_welcome(message: types.Message):
                          reply_markup=kb.random_keyboard())
 
     if 'bug' in message.get_args().lower():
-        # Відправка привітання і повідомлення з кнопкою
         await message.answer(
             _('If you want to offer an anecdote or if you find a bug, please click the button below and describe it.'),
             reply_markup=kb.return_feedback_button())
@@ -216,9 +214,7 @@ async def send_category_joke_pivate(call):
     chat_id = call.message.chat.id
     user_id = call.from_user.id
 
-    table_name = f"jokes_uk"
-
-    result = await db.get_tagged_joke(user_id, table_name, tag)
+    result = await db.get_tagged_joke(user_id, tag)
 
     await dp.bot.send_chat_action(call.message.chat.id, "typing")
 
@@ -400,7 +396,6 @@ async def seen_handling(call: types.CallbackQuery):
     await update_buttons(call.message, joke_id)
 
 
-# Оновлені функції для лайків і дизлайків
 @dp.callback_query_handler(lambda call: call.data.startswith('like_'))
 async def like_joke(call: types.CallbackQuery):
     joke_id = int(call.data.split('_')[1])
