@@ -3,4 +3,3 @@
 *.pyc
 .vscode
 log/bot_log.log
-.env
