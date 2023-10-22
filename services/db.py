@@ -36,7 +36,8 @@ class DataBase:
 
     async def all_users(self):
         with self.connect:
-            return self.cursor.execute("SELECT user_id FROM users").fetchall()
+            self.cursor.execute("SELECT user_id FROM users")
+            return self.cursor.fetchall()
 
     async def user_exist(self, user_id):
         with self.connect:

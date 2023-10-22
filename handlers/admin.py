@@ -128,11 +128,11 @@ async def send_to_all_message(message: types.Message, state: FSMContext):
         await bot.send_message(message.chat.id, bot_messages.canceled(), reply_markup=types.ReplyKeyboardRemove())
         await state.finish()
         return
+    
     else:
         await dp.bot.send_chat_action(message.chat.id, "typing")
 
         users = await db.all_users()
-
         for user in users:
             try:
                 await bot.copy_message(chat_id=user[0],
