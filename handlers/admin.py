@@ -91,25 +91,13 @@ async def speedtest(message: types.Message):
     await message.reply(_("*System information:*\n\n{pc_info}").format(pc_info=pc_info))
 
 
-@dp.message_handler(user_id=admin_id, commands=['del_log'])
 @rate_limit(10)
+@dp.message_handler(user_id=admin_id, commands=['del_log'])
 async def del_log(message: types.Message):
     await dp.bot.send_chat_action(message.chat.id, "typing")
     logging.shutdown()
     open('log/bot_log.log', 'w').close()
     await message.reply(bot_messages.log_deleted())
-
-
-@dp.message_handler(user_id=admin_id, commands=['download_db'])
-@rate_limit(10)
-async def download_db(message: types.Message):
-    await dp.bot.send_chat_action(message.chat.id, "typing")
-    user_id = message.from_user.id
-    db_file = 'services/jokes.db'
-    with open(db_file, 'rb') as file:
-        await bot.send_document(message.chat.id, file)
-        logging.info(
-            f"User action: Downloaded db (User ID: {user_id})")
 
 
 @dp.callback_query_handler(lambda call: call.data == 'download_log', user_id=admin_id)
