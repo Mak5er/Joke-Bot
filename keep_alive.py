@@ -1,6 +1,9 @@
 from flask import Flask
 from threading import Thread
 import time
+from services import DataBase
+
+db = DataBase()
 
 app = Flask('')
 
@@ -22,9 +25,15 @@ def sleep():
         time.sleep(60)
         return
 
+def db_ping():
+    while True:
+        db.keep_alive()
+        time.sleep(180)
 
 def keep_alive():
     server = Thread(target=run)
     server.start()
     sleepServer = Thread(target=sleep)
     sleepServer.start()
+    dbServer = Thread(target=db_ping)
+    dbServer.start()
