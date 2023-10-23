@@ -435,8 +435,6 @@ async def dislike_joke(call: types.CallbackQuery):
     await update_buttons(call.message, joke_id)
 
 
-# Оновлена функція для оновлення клавіатур
-
 async def update_buttons(message, joke_id):
     likes_count = await db.count_votes(joke_id, "like")
     dislikes_count = await db.count_votes(joke_id, "dislike")

@@ -12,7 +12,7 @@ async def get_lang(user_id):
         if language:
             return language
     except:
-        pass
+        return "uk"
 
 
 class ACLMiddleware(I18nMiddleware):
