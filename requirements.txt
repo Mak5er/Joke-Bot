@@ -8,5 +8,9 @@ openpyxl
 psutil
 py-cpuinfo
 art
+<<<<<<< HEAD
 psycopg2-binary
+=======
+psycopg2
+>>>>>>> aebd50ffcc557569cfc60a08f4336b56b7c68ddf
 pytz
