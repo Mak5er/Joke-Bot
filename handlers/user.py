@@ -2,6 +2,7 @@ import asyncio
 import datetime
 import logging
 import re
+import time
 
 from aiogram import types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
@@ -153,6 +154,17 @@ async def handle_joke(message: types.Message):
                         reply_markup=kb.random_keyboard())
     await update_info(message)
 
+@dp.message_handler(commands=['ping'])
+async def cmd_ping(message: types.Message):
+    start = time.time()
+    await bot.get_me()
+    end = time.time()
+
+    ping = end - start
+
+    response_time = time.time() - start
+
+    await message.answer(f"Ping: {ping:.2f} ms\nResponse time: {response_time:.2f} ms")
 
 @dp.callback_query_handler(lambda call: call.data == 'feedback')
 @rate_limit(1)

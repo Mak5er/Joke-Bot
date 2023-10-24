@@ -11,4 +11,3 @@ psutil~=5.9.5
 py-cpuinfo~=9.0.0
 art~=6.0
 psycopg2~=2.9.9
-tenacity~=8.2.3
