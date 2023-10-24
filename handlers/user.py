@@ -2,7 +2,7 @@ import asyncio
 import datetime
 import logging
 import re
-import time
+from ping3 import ping
 
 from aiogram import types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
@@ -156,15 +156,15 @@ async def handle_joke(message: types.Message):
 
 @dp.message_handler(commands=['ping'])
 async def cmd_ping(message: types.Message):
-    start = time.time()
-    await bot.get_me()
-    end = time.time()
+    try:
+        response_time = ping("api.telegram.org", unit='ms')
+        if response_time is not None:
+            await message.answer(f"Ping: {response_time} ms")
+        else:
+            print("Сервер недоступний")
+    except Exception as e:
+        return str(e)
 
-    ping = end - start
-
-    response_time = time.time() - start
-
-    await message.answer(f"Ping: {ping:.2f} ms\nResponse time: {response_time:.2f} ms")
 
 @dp.callback_query_handler(lambda call: call.data == 'feedback')
 @rate_limit(1)

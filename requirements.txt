@@ -10,3 +10,4 @@ py-cpuinfo
 art
 psycopg2-binary
 pytz
+ping3
