@@ -1,6 +1,5 @@
 import asyncio
 import logging
-import keep_alive
 from aiogram import Bot, Dispatcher, executor
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
@@ -45,8 +44,6 @@ if __name__ == "__main__":
     from handlers.admin import dp
 
     from handlers.user import dp, scheduler
-
-    keep_alive.keep_alive()
 
     scheduler.start()
     setup_throttling_middlewares(dp)

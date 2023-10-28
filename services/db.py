@@ -1,11 +1,18 @@
 import psycopg2
 import config
 
+keepalive_kwargs = {
+  "keepalives": 1,
+  "keepalives_idle": 60,
+  "keepalives_interval": 10,
+  "keepalives_count": 5
+}
+
 
 class DataBase:
 
     def __init__(self):
-        self.connect = psycopg2.connect(config.db_auth)
+        self.connect = psycopg2.connect(config.db_auth, **keepalive_kwargs)
         self.cursor = self.connect.cursor()
 
     def keep_alive(self):
