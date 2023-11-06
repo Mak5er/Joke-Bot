@@ -45,7 +45,6 @@ if __name__ == "__main__":
 
     from handlers.user import dp, scheduler
 
-
     scheduler.start()
     setup_throttling_middlewares(dp)
     setup_ban_middlewares(dp)

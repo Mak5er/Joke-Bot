@@ -268,10 +268,9 @@ class DataBase:
                     SELECT * FROM jokes_uk 
                     WHERE id NOT IN (SELECT joke_id FROM sent_jokes WHERE user_id = %s) 
                     ORDER BY (
-                        SELECT COUNT(*) FROM votes WHERE joke_id = jokes_uk.id AND vote_type = 'like'
-                    ) DESC, (
-                        SELECT COUNT(*) FROM votes WHERE joke_id = jokes_uk.id AND vote_type = 'dislike'
-                    ) ASC, RANDOM() 
+                        SELECT COUNT(*) FROM votes WHERE joke_id = jokes_uk.id
+                    ) DESC, 
+                    RANDOM() 
                     LIMIT 1
                     """,
                     (user_id,)
@@ -295,10 +294,9 @@ class DataBase:
                     SELECT * FROM jokes_uk 
                     WHERE id NOT IN (SELECT joke_id FROM sent_jokes WHERE user_id = %s) AND tags LIKE %s
                     ORDER BY (
-                        SELECT COUNT(*) FROM votes WHERE joke_id = jokes_uk.id AND vote_type = 'like'
-                    ) DESC, (
-                        SELECT COUNT(*) FROM votes WHERE joke_id = jokes_uk.id AND vote_type = 'dislike'
-                    ) ASC, RANDOM() 
+                        SELECT COUNT(*) FROM votes WHERE joke_id = jokes_uk.id
+                    ) DESC, 
+                    RANDOM() 
                     LIMIT 1
                     """,
                     (user_id, f'%{tag}%'))
