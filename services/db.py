@@ -1,11 +1,18 @@
 import psycopg2
 import config
 
+keepalive_kwargs = {
+  "keepalives": 1,
+  "keepalives_idle": 60,
+  "keepalives_interval": 10,
+  "keepalives_count": 5
+}
+
 
 class DataBase:
 
     def __init__(self):
-        self.connect = psycopg2.connect(config.db_auth)
+        self.connect = psycopg2.connect(config.db_auth, **keepalive_kwargs)
         self.cursor = self.connect.cursor()
 
     def keep_alive(self):
@@ -14,7 +21,7 @@ class DataBase:
             self.cursor = self.connect.cursor()
             self.cursor.execute("SELECT 1")
 
-    async def add_users(self, user_id, user_name, user_username, chat_type, language, status):
+    async def add_users(self, user_id, user_name, user_username, chat_type, language, status, referrer_id):
         try:
             if self.connect is None:
                 self.connect = psycopg2.connect(config.db_auth)
@@ -22,11 +29,25 @@ class DataBase:
 
             with self.connect:
                 self.cursor.execute(
-                    """INSERT INTO users (user_id, user_name, user_username, chat_type, language, status) VALUES (%s, %s, %s, %s, %s, %s) ON CONFLICT (user_id) DO NOTHING;""",
-                    (user_id, user_name, user_username, chat_type, language, status))
+                    """INSERT INTO users (user_id, user_name, user_username, chat_type, language, status, referrer_id) VALUES (%s, %s, %s, %s, %s, %s, %s) ON CONFLICT (user_id) DO NOTHING;""",
+                    (user_id, user_name, user_username, chat_type, language, status, referrer_id))
         except psycopg2.OperationalError as e:
             print(e)
             pass
+            
+    async def delete_user(self, user_id):        
+        try:
+            if self.connect is None:
+                self.connect = psycopg2.connect(config.db_auth)
+                self.cursor = self.connect.cursor()
+
+            with self.connect:
+                self.cursor.execute(
+                    """DELETE FROM users WHERE user_id = %s;""",
+                    (user_id,))
+        except psycopg2.OperationalError as e:
+            print(e)
+            pass        
 
     async def user_count(self):
         try:
@@ -131,6 +152,20 @@ class DataBase:
             with self.connect:
                 self.cursor.execute("SELECT DISTINCT user_id FROM users WHERE chat_type = 'private' AND status != 'ban'")
             return self.cursor.fetchall()
+        except psycopg2.OperationalError as e:
+            print(e)
+            pass
+        
+
+    async def refs_count(self, referrer_id):
+        try:
+            if self.connect is None:
+                self.connect = psycopg2.connect(config.db_auth)
+                self.cursor = self.connect.cursor()
+
+            with self.connect:
+                self.cursor.execute("SELECT COUNT(*) FROM users WHERE referrer_id=%s", (referrer_id,))
+            return self.cursor.fetchone()[0]
         except psycopg2.OperationalError as e:
             print(e)
             pass

@@ -35,11 +35,12 @@ async def update_info(message: types.Message):
     user_id = message.from_user.id
     user_name = message.from_user.full_name
     user_username = message.from_user.username
+    referrer_id = None
     result = await db.user_exist(user_id)
     if result:
         await db.user_update_name(user_id, user_name, user_username)
     else:
-        await db.add_users(user_id, user_name, user_username, "private", "uk", 'user')
+        await db.add_users(user_id, user_name, user_username, "private", "uk", 'user', referrer_id)
 
 
 @dp.message_handler(content_types=['new_chat_members'])
@@ -53,8 +54,10 @@ async def send_welcome(message: types.Message):
             user_username = None
             language = 'uk'
             status = 'user'
+            referrer_id = None
 
-            await db.add_users(user_id, user_name, user_username, chat_type, language, status)
+
+            await db.add_users(user_id, user_name, user_username, chat_type, language, status, referrer_id)
 
             chat_title = chat_info.title
             await bot.send_message(
@@ -68,6 +71,8 @@ async def send_welcome(message: types.Message):
 async def send_welcome(message: types.Message):
     user_id = message.from_user.id
     user_name = message.from_user.full_name
+    user_username = message.from_user.username
+    user_exist = await db.user_exist(user_id)
 
     await dp.bot.send_chat_action(message.chat.id, "typing")
     logging.info(f"User action: /start (User ID: {user_id})")
@@ -80,6 +85,18 @@ async def send_welcome(message: types.Message):
         await message.answer(
             _('If you want to offer an anecdote or if you find a bug, please click the button below and describe it.'),
             reply_markup=kb.return_feedback_button())
+
+    if 'ref' in message.get_args().lower():
+        referrer_id = message.get_args().split('ref')[1]
+        if referrer_id != '':
+            if not user_exist:
+                await db.add_users(user_id, user_name, user_username, "private", "uk", 'user', referrer_id)
+                refs_count = await db.refs_count(referrer_id)
+                print(refs_count)
+                try:
+                    await bot.send_message(chat_id=referrer_id, text=_("Referral *{user_id}* has registered at your invitation!\nTotal number of invitees: *{refs_count}*").format(user_id=user_id, refs_count=refs_count), parse_mode='Markdown')
+                except Exception as e:
+                    print(str(e))
 
     await update_info(message)
 
@@ -120,10 +137,12 @@ async def info(message: types.Message):
     joke_sent = await db.joke_sent(user_id)
     joke_count = await db.joke_count(table_name)
     sent_count = await db.sent_count()
+    refs_count = await db.refs_count(user_id)
+    ref_url = f'https://t.me/{(await bot.get_me()).username}?start=ref{user_id}'
 
     username = message.from_user.first_name
 
-    await message.reply(bm.user_info(username, joke_sent, joke_count, sent_count),
+    await message.reply(bm.user_info(username, joke_sent, joke_count, sent_count, refs_count, ref_url),
                         reply_markup=kb.return_feedback_button())
     await update_info(message)
 
