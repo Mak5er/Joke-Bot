@@ -21,7 +21,7 @@ Admin commands:
                                                  sent_count=sent_count)
 
 
-def admin_info(username, joke_sent, joke_count, sent_count):
+def admin_info(username, joke_sent, joke_count, sent_count, refs_count, ref_url):
     return _("""
 Hello *{username}*! You are an administrator, to see more information and controls, please type /admin.
 
@@ -30,17 +30,19 @@ Statistics:
 📚Jokes read by you: *{joke_sent}*
 📬Total number of jokes read by everyone: *{sent_count}*
 
+Total referrals: *{refs_count}*
+Your ref link: {ref_url}
+             
 Bot site - anekdoty.pp.ua
 
-*If you want to offer an anecdote or ask a question, click the Feedback💬 button!*
-
-*The bot is under development, so bugs and malfunctions are possible!
-For complaints and suggestions, write - @mak5er*""").format(username=username, joke_sent=joke_sent,
+*If you want to offer an anecdote or ask a question, click the Feedback💬 button!*""").format(username=username, joke_sent=joke_sent,
                                                             joke_count=joke_count,
-                                                            sent_count=sent_count)
+                                                            sent_count=sent_count,
+                                                            refs_count=refs_count, 
+                                                            ref_url=ref_url)
 
 
-def user_info(username, joke_sent, joke_count, sent_count):
+def user_info(username, joke_sent, joke_count, sent_count, refs_count, ref_url):
     return _('''
 Hello *{username}*! I am a bot where you can read jokes.
 
@@ -49,14 +51,17 @@ Statistics:
 📚Jokes read by you: *{joke_sent}*
 📬Total number of jokes read by everyone: *{sent_count}*
 
+Total referrals: *{refs_count}*
+Your ref link: {ref_url}
+
 Bot site - anekdoty.pp.ua
 
-*If you want to offer an anecdote or ask a question, click the Feedback💬 button!*
-
-*The bot is under development, so bugs and malfunctions are possible!
-For complaints and suggestions, write - @mak5er*''').format(username=username, joke_sent=joke_sent,
-                                                            joke_count=joke_count,
-                                                            sent_count=sent_count)
+*If you want to offer an anecdote or ask a question, click the Feedback💬 button!*''').format(username=username, 
+                                                                                            joke_sent=joke_sent,
+                                                                                            joke_count=joke_count,
+                                                                                            sent_count=sent_count, 
+                                                                                            refs_count=refs_count, 
+                                                                                            ref_url=ref_url)
 
 
 def help_message():
