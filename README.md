@@ -1,48 +1,93 @@
-## Project links
-<a href="https://t.me/makser_humor_bot" target="_blank"> <img src="https://www.vectorlogo.zone/logos/telegram/telegram-tile.svg" alt="Telegram" width="60" height="60"/></a> 
-<a href="https://mak5er.github.io/Joke-Bot/" target="_blank"> <img src="https://bischrob.github.io/images/githubpages/githubpages.jpeg" alt="GitHub Pages" width="65" height="60" style="border-radius: 10px;"></a> 
-    
+![Joke-Bot](https://socialify.git.ci/Mak5er/Joke-Bot/image?description=1&font=Inter&language=1&name=1&pattern=Plus&theme=Auto)
+# Python Joke-Bot
 
-## Project description
+This code is a Python script for a Telegram bot. It utilizes the aiogram library for interacting with the Telegram Bot
+API and includes various functionalities for handling user interactions, sending jokes, managing bans, and more.
 
-This project is a Telegram bot that sends Ukrainian jokes to users. The bot is implemented using the Python programming language 
-and uses the Aiogram framework to interact with the Telegram API.
+### Functionality
 
-## Usage
+- Handling various commands (e.g., /start, /language, /info, /help, /joke, /ping).
+- Welcoming new chat members and updating user information.
+- Allowing users to change their language preference.
+- Sending random jokes or category-specific jokes.
+- Handling user feedback and providing answers.
+- Managing user bans and unbans.
+- Admin functionality for viewing user information, exporting user data, and sending messages to all users.
+- Scheduling daily joke messages using the apscheduler library.
 
-After successfully launching the program and connecting the bot to Telegram, you can run the following commands:
+### Installation
 
-    /start - start interacting with the bot and receive a welcome message.
-    /joke - get a random joke.
-    /language - change language.
-    /admin - access to the admin panel (only administrators are allowed).
-    /info - get information about the user and statistics of bot usage.
-    /help - get list of all commands.
+Clone the repository by running the following command:
 
-## Functionality
+    git clone https://github.com/Mak5er/Joke-Bot.git
 
-### User
+Navigate to the cloned repository:
 
-    Getting a random joke from the database.
-    View the bot usage statistics.
-    Can send feedback messages to bot.
+       cd Joke-Bot
 
-### Administrator
+Install the required Python packages using pip:
 
-    Adding new jokes to the database.
-    Sending messages on behalf of the bot to all users.
-    Ban/unban users from admin pannel.
+    pip install -r requirements.txt
 
-### Bot
-    Sending daily joke everyday by schedule
+Set up the necessary configuration by creating a  `.env`  file and defining the required variables:
 
-### keep_alive.py
-    This file is used to track bot's activity.
+- `token` : Your Telegram bot token.
+- `admin_id` : The ID of the admin user.
+- `db_auth` : The authentication string for your PostgreSQL database.
+- `I18N_DOMAIN` : The domain for internationalization (i18n).
+- `BASE_DIR` : The base directory of the project.
+- `LOCALES_DIR` : The directory where the localization files are stored.
 
-## Database
+Example  `.env`  file:
 
-The bot uses a SQLite database with the following tables:
+       token=YOUR_TELEGRAM_BOT_TOKEN
+       admin_id=YOUR_ADMIN_USER_ID
+       db_auth=YOUR_POSTGRESQL_AUTH_STRING
+       I18N_DOMAIN=jokebot
+       BASE_DIR=/path/to/your/project
+       LOCALES_DIR=/path/to/your/project/locales
 
-    sent_jokes - stores the identifiers of jokes that have been sent to users.
-    jokes - contains a list of jokes.
-    users - stores the identifiers of users who use the bot.
+Set up a PostgreSQL database and update the  `db_auth`  variable in the  `.env`  file with the database authentication
+string.
+
+Run the script using Python:
+
+    python main.py
+
+### Database Tables
+
+The PostgreSQL database used by the bot includes the following tables:
+
+- `users` : Stores user information, including user ID, username, chat type, language, status, and referrer ID.
+- `sent_jokes` : Tracks jokes that have been sent to users, with references to the joke ID and user ID.
+- `votes` : Stores user votes for jokes, with references to the joke ID, user ID, and vote type.
+- `jokes_uk`  (and other language-specific joke tables): Contains jokes in different languages, with an ID, joke text,
+  and tags.
+
+### Usage
+
+Once the bot is running, it will start listening for incoming messages and commands from users. Users can interact with
+the bot by sending commands or engaging with the provided functionalities. The default language for conversation is
+English, unless a specific language name is mentioned in the command.
+
+Commands:
+
+- /start : Start the conversation with the bot.
+- /language : Change the language preference.
+- /info : Get information about the bot.
+- /help : Get help and usage instructions.
+- /joke : Get a random joke.
+- /ping : Check the bot's response time.
+
+Users can also send feedback and the bot will provide answers.
+
+### Contributions
+
+Contributions to this project are welcome. If you encounter any issues or have suggestions for improvements, please open
+an issue or submit a pull request.
+
+### License
+
+This code is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+
+Feel free to modify and use this code for your own Telegram bot projects.
