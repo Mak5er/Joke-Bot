@@ -23,7 +23,7 @@ Clone the repository by running the following command:
 
 Navigate to the cloned repository:
 
-       cd Joke-Bot
+    cd Joke-Bot
 
 Install the required Python packages using pip:
 
