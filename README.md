@@ -81,6 +81,10 @@ Commands:
 
 Users can also send feedback and the bot will provide answers.
 
+### Telegram Bot Link
+
+You can access the Telegram bot by clicking [here](https://t.me/AnekdotyRobot).
+
 ### Contributions
 
 Contributions to this project are welcome. If you encounter any issues or have suggestions for improvements, please open
