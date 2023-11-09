@@ -106,7 +106,9 @@ def return_search_keyboard():
     search_keyboard = InlineKeyboardMarkup()
     id_button = InlineKeyboardButton(text="ID", callback_data="search_id")
     username_button = InlineKeyboardButton(text="Username", callback_data="search_username")
+    back_button = InlineKeyboardButton(text=_("🔙Back"), callback_data="back_to_admin")
     search_keyboard.row(username_button, id_button)
+    search_keyboard.row(back_button)
     return search_keyboard
 
 
