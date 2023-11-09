@@ -26,7 +26,7 @@ def admin_info(username, joke_sent, joke_count, sent_count, refs_count, ref_url)
 Hello *{username}*! You are an administrator, to see more information and controls, please type /admin.
 
 Statistics:
-📁Number of jokes in the database: *{joke_count}*.
+📁Number of jokes in the database: *{joke_count}*
 📚Jokes read by you: *{joke_sent}*
 📬Total number of jokes read by everyone: *{sent_count}*
 
@@ -47,7 +47,7 @@ def user_info(username, joke_sent, joke_count, sent_count, refs_count, ref_url):
 Hello *{username}*! I am a bot where you can read jokes.
 
 Statistics:
-📁Number of jokes in the database: *{joke_count}*.
+📁Number of jokes in the database: *{joke_count}*
 📚Jokes read by you: *{joke_sent}*
 📬Total number of jokes read by everyone: *{sent_count}*
 

@@ -230,7 +230,7 @@ async def feedback(message: types.Message, state: FSMContext):
 
 @dp.callback_query_handler(lambda call: call.data == "select_category")
 async def select_category(call):
-    await call.message.edit_text(text=_('Please select what you would like to joke about:'),
+    await call.message.edit_text(text=_('Please select category:'),
                                  reply_markup=kb.category_keyboard())
 
 

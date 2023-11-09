@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  sease\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-11-06 20:45+0200\n"
+"POT-Creation-Date: 2023-11-09 17:21+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -171,8 +171,8 @@ msgid "Your message *{feedback_message_id}* sent!"
 msgstr "Ваше повідомлення *{feedback_message_id}* надіслано!"
 
 #: handlers/user.py:233
-msgid "Please select what you would like to joke about:"
-msgstr "Привіт, будь ласка, оберіть, про що ви хочете анекдот:"
+msgid "Please select category:"
+msgstr "Будьласка оберіть категорію:"
 
 #: keyboards/inline_keyboards.py:8
 msgid "📝Add a joke"
@@ -208,35 +208,35 @@ msgstr "💵Гроші"
 
 #: keyboards/inline_keyboards.py:38
 msgid "👨‍👩‍👦‍👦Family"
-msgstr "👨‍👩‍👦‍👦Родину"
+msgstr "👨‍👩‍👦‍👦Родина"
 
 #: keyboards/inline_keyboards.py:39
 msgid "👱‍♀️Blondes"
-msgstr "👱‍♀️Блондинок"
+msgstr "👱‍♀️Блондинки"
 
 #: keyboards/inline_keyboards.py:40
 msgid "👵Mother-in-law"
-msgstr "👵Тещу"
+msgstr "👵Теща"
 
 #: keyboards/inline_keyboards.py:41
 msgid "🏫School"
-msgstr "🏫Школу"
+msgstr "🏫Школа"
 
 #: keyboards/inline_keyboards.py:42
 msgid "👦Vovochka"
-msgstr "👦Вовочку"
+msgstr "👦Вовочка"
 
 #: keyboards/inline_keyboards.py:43
 msgid "🏥Medicine"
-msgstr "🏥Медицину"
+msgstr "🏥Медицина"
 
 #: keyboards/inline_keyboards.py:44
 msgid "🎓Students"
-msgstr "🎓Студентів"
+msgstr "🎓Студенти"
 
 #: keyboards/inline_keyboards.py:45
 msgid "🏢Work"
-msgstr "🏢Роботу"
+msgstr "🏢Робота"
 
 #: keyboards/inline_keyboards.py:74 keyboards/inline_keyboards.py:88
 msgid "📊Joke rate"
@@ -293,7 +293,7 @@ msgid ""
 " controls, please type /admin.\n"
 "\n"
 "Statistics:\n"
-"📁Number of jokes in the database: *{joke_count}*.\n"
+"📁Number of jokes in the database: *{joke_count}*\n"
 "📚Jokes read by you: *{joke_sent}*\n"
 "📬Total number of jokes read by everyone: *{sent_count}*\n"
 "\n"
@@ -310,9 +310,9 @@ msgstr ""
 " елементів керування, будь ласка, введіть /admin.\n"
 "\n"
 "Статистика:\n"
-"📁Кількість анекдотів у базі даних: *{joke_count}*.\n"
+"📁Кількість анекдотів у базі даних: *{joke_count}*\n"
 "📚Анекдотів прочитано вами: *{joke_sent}*\n"
-"📬Анекдотів прочитано усіма: *{sent_count}*.\n"
+"📬Анекдотів прочитано усіма: *{sent_count}*\n"
 "\n"
 "Всього рефералів: *{refs_count}*\n"
 "Ваше реф-посилання: {ref_url}\n"
@@ -328,7 +328,7 @@ msgid ""
 "Hello *{username}*! I am a bot where you can read jokes.\n"
 "\n"
 "Statistics:\n"
-"📁Number of jokes in the database: *{joke_count}*.\n"
+"📁Number of jokes in the database: *{joke_count}*\n"
 "📚Jokes read by you: *{joke_sent}*\n"
 "📬Total number of jokes read by everyone: *{sent_count}*\n"
 "\n"
@@ -344,9 +344,9 @@ msgstr ""
 "Привіт, *{username}*! Я бот, в якому ви можете читати анекдоти.\n"
 "\n"
 "Статистика:\n"
-"📁Кількість анекдотів у базі даних: *{joke_count}*.\n"
+"📁Кількість анекдотів у базі даних: *{joke_count}*\n"
 "📚Анекдотів прочитано вами: *{joke_sent}*\n"
-"📬Анекдотів прочитано усіма: *{sent_count}*.\n"
+"📬Анекдотів прочитано усіма: *{sent_count}*\n"
 "\n"
 "Всього рефералів: *{refs_count}*\n"
 "Ваше реф-посилання: {ref_url}\n"
@@ -753,4 +753,7 @@ msgstr ""
 #~ msgid_plural "{len_type} values are required, but {len_value} were given."
 #~ msgstr[0] ""
 #~ msgstr[1] ""
+
+#~ msgid "Please select what you would like to joke about:"
+#~ msgstr "Привіт, будь ласка, оберіть, про що ви хочете анекдот:"
 
