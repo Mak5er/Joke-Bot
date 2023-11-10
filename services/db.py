@@ -1,11 +1,12 @@
 import psycopg2
+
 import config
 
 keepalive_kwargs = {
-  "keepalives": 1,
-  "keepalives_idle": 60,
-  "keepalives_interval": 10,
-  "keepalives_count": 5
+    "keepalives": 1,
+    "keepalives_idle": 60,
+    "keepalives_interval": 10,
+    "keepalives_count": 5
 }
 
 
@@ -34,8 +35,8 @@ class DataBase:
         except psycopg2.OperationalError as e:
             print(e)
             pass
-            
-    async def delete_user(self, user_id):        
+
+    async def delete_user(self, user_id):
         try:
             if self.connect is None:
                 self.connect = psycopg2.connect(config.db_auth)
@@ -47,7 +48,7 @@ class DataBase:
                     (user_id,))
         except psycopg2.OperationalError as e:
             print(e)
-            pass        
+            pass
 
     async def user_count(self):
         try:
@@ -111,7 +112,7 @@ class DataBase:
             with self.connect:
                 self.cursor.execute("SELECT user_id FROM users")
                 return self.cursor.fetchall()
-        
+
         except psycopg2.OperationalError as e:
             print(e)
             pass
@@ -125,7 +126,7 @@ class DataBase:
             with self.connect:
                 self.cursor.execute("SELECT * FROM users WHERE user_id = %s", (user_id,))
                 return self.cursor.fetchall()
-            
+
         except psycopg2.OperationalError as e:
             print(e)
             pass
@@ -138,7 +139,7 @@ class DataBase:
 
             with self.connect:
                 self.cursor.execute("UPDATE users SET user_username=%s, user_name=%s WHERE user_id=%s",
-                            (user_username, user_name, user_id))
+                                    (user_username, user_name, user_id))
         except psycopg2.OperationalError as e:
             print(e)
             pass
@@ -150,12 +151,12 @@ class DataBase:
                 self.cursor = self.connect.cursor()
 
             with self.connect:
-                self.cursor.execute("SELECT DISTINCT user_id FROM users WHERE chat_type = 'private' AND status != 'ban'")
+                self.cursor.execute(
+                    "SELECT DISTINCT user_id FROM users WHERE chat_type = 'private' AND status != 'ban'")
             return self.cursor.fetchall()
         except psycopg2.OperationalError as e:
             print(e)
             pass
-        
 
     async def refs_count(self, referrer_id):
         try:
@@ -193,6 +194,7 @@ class DataBase:
         except psycopg2.OperationalError as e:
             print(e)
             pass
+
     async def check_seen_joke(self, joke_id, user_id):
         try:
             if self.connect is None:
@@ -243,7 +245,7 @@ class DataBase:
         except psycopg2.OperationalError as e:
             print(e)
             pass
-        
+
     async def dislike_joke(self, joke_id, table_name):
         try:
             if self.connect is None:
@@ -255,7 +257,7 @@ class DataBase:
         except psycopg2.OperationalError as e:
             print(e)
             pass
-        
+
     async def get_joke(self, user_id, table_name):
         try:
             if self.connect is None:
@@ -276,11 +278,10 @@ class DataBase:
                     (user_id,)
                 )
                 return self.cursor.fetchall()
-        
+
         except psycopg2.OperationalError as e:
             print(e)
             pass
-        
 
     async def get_tagged_joke(self, user_id, tag):
         try:
@@ -304,7 +305,6 @@ class DataBase:
         except psycopg2.OperationalError as e:
             print(e)
             pass
-        
 
     async def get_language(self, user_id):
         try:
@@ -318,7 +318,7 @@ class DataBase:
         except psycopg2.OperationalError as e:
             print(e)
             pass
-        
+
     async def get_tags(self, joke_id):
         try:
             if self.connect is None:
@@ -331,7 +331,7 @@ class DataBase:
         except psycopg2.OperationalError as e:
             print(e)
             pass
-        
+
     async def set_language(self, user_id, language):
         try:
             if self.connect is None:
@@ -343,7 +343,7 @@ class DataBase:
         except psycopg2.OperationalError as e:
             print(e)
             pass
-        
+
     async def status(self, user_id):
         try:
             if self.connect is None:
@@ -356,7 +356,7 @@ class DataBase:
         except psycopg2.OperationalError as e:
             print(e)
             pass
-        
+
     async def get_admins(self):
         try:
             if self.connect is None:
@@ -369,7 +369,7 @@ class DataBase:
         except psycopg2.OperationalError as e:
             print(e)
             pass
-        
+
     async def get_user_info(self, user_id):
         try:
             if self.connect is None:
@@ -384,7 +384,7 @@ class DataBase:
         except psycopg2.OperationalError as e:
             print(e)
             pass
-        
+
     async def get_user_info_username(self, user_username):
         try:
             if self.connect is None:
@@ -399,7 +399,7 @@ class DataBase:
         except psycopg2.OperationalError as e:
             print(e)
             pass
-        
+
     async def ban_user(self, user_id):
         try:
             if self.connect is None:
@@ -411,7 +411,7 @@ class DataBase:
         except psycopg2.OperationalError as e:
             print(e)
             pass
-        
+
     async def get_all_users_info(self):
         try:
             if self.connect is None:
@@ -424,7 +424,7 @@ class DataBase:
         except psycopg2.OperationalError as e:
             print(e)
             pass
-        
+
     async def unban_user(self, user_id):
         try:
             if self.connect is None:
@@ -436,7 +436,7 @@ class DataBase:
         except psycopg2.OperationalError as e:
             print(e)
             pass
-        
+
     async def add_vote(self, joke_id, user_id, vote_type):
         try:
             if self.connect is None:
@@ -444,11 +444,12 @@ class DataBase:
                 self.cursor = self.connect.cursor()
 
             with self.connect:
-                self.cursor.execute("INSERT INTO votes (joke_id, user_id, vote_type) VALUES (%s, %s, %s)",(joke_id, user_id, vote_type))
+                self.cursor.execute("INSERT INTO votes (joke_id, user_id, vote_type) VALUES (%s, %s, %s)",
+                                    (joke_id, user_id, vote_type))
         except psycopg2.OperationalError as e:
             print(e)
             pass
-        
+
     async def remove_vote(self, joke_id, user_id):
         try:
             if self.connect is None:
@@ -456,11 +457,11 @@ class DataBase:
                 self.cursor = self.connect.cursor()
 
             with self.connect:
-                self.cursor.execute("DELETE FROM votes WHERE joke_id = %s AND user_id = %s",(joke_id, user_id))
+                self.cursor.execute("DELETE FROM votes WHERE joke_id = %s AND user_id = %s", (joke_id, user_id))
         except psycopg2.OperationalError as e:
             print(e)
             pass
-        
+
     async def update_vote(self, joke_id, user_id, new_vote_type):
         try:
             if self.connect is None:
@@ -468,11 +469,12 @@ class DataBase:
                 self.cursor = self.connect.cursor()
 
             with self.connect:
-                self.cursor.execute("UPDATE votes SET vote_type = %s WHERE joke_id = %s AND user_id = %s",(new_vote_type, joke_id, user_id))
+                self.cursor.execute("UPDATE votes SET vote_type = %s WHERE joke_id = %s AND user_id = %s",
+                                    (new_vote_type, joke_id, user_id))
         except psycopg2.OperationalError as e:
             print(e)
             pass
-        
+
     async def get_user_vote(self, joke_id, user_id):
         try:
             if self.connect is None:
@@ -480,7 +482,8 @@ class DataBase:
                 self.cursor = self.connect.cursor()
 
             with self.connect:
-                self.cursor.execute("SELECT vote_type FROM votes WHERE joke_id = %s AND user_id = %s",(joke_id, user_id))
+                self.cursor.execute("SELECT vote_type FROM votes WHERE joke_id = %s AND user_id = %s",
+                                    (joke_id, user_id))
                 result = self.cursor.fetchone()
                 if result:
                     return result[0]
@@ -489,7 +492,7 @@ class DataBase:
         except psycopg2.OperationalError as e:
             print(e)
             pass
-        
+
     async def count_votes(self, joke_id, vote_type):
         try:
             if self.connect is None:
@@ -509,4 +512,3 @@ class DataBase:
         except psycopg2.OperationalError as e:
             print(e)
             pass
-        

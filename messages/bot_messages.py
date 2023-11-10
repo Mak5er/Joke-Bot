@@ -35,11 +35,12 @@ Your ref link: {ref_url}
              
 Bot site - anekdoty.pp.ua
 
-*If you want to offer an anecdote or ask a question, click the Feedback💬 button!*""").format(username=username, joke_sent=joke_sent,
-                                                            joke_count=joke_count,
-                                                            sent_count=sent_count,
-                                                            refs_count=refs_count, 
-                                                            ref_url=ref_url)
+*If you want to offer an anecdote or ask a question, click the Feedback💬 button!*""").format(username=username,
+                                                                                             joke_sent=joke_sent,
+                                                                                             joke_count=joke_count,
+                                                                                             sent_count=sent_count,
+                                                                                             refs_count=refs_count,
+                                                                                             ref_url=ref_url)
 
 
 def user_info(username, joke_sent, joke_count, sent_count, refs_count, ref_url):
@@ -56,12 +57,12 @@ Your ref link: {ref_url}
 
 Bot site - anekdoty.pp.ua
 
-*If you want to offer an anecdote or ask a question, click the Feedback💬 button!*''').format(username=username, 
-                                                                                            joke_sent=joke_sent,
-                                                                                            joke_count=joke_count,
-                                                                                            sent_count=sent_count, 
-                                                                                            refs_count=refs_count, 
-                                                                                            ref_url=ref_url)
+*If you want to offer an anecdote or ask a question, click the Feedback💬 button!*''').format(username=username,
+                                                                                             joke_sent=joke_sent,
+                                                                                             joke_count=joke_count,
+                                                                                             sent_count=sent_count,
+                                                                                             refs_count=refs_count,
+                                                                                             ref_url=ref_url)
 
 
 def help_message():

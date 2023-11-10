@@ -128,7 +128,7 @@ async def send_to_all_message(message: types.Message, state: FSMContext):
         await bot.send_message(message.chat.id, bot_messages.canceled(), reply_markup=types.ReplyKeyboardRemove())
         await state.finish()
         return
-    
+
     else:
         await dp.bot.send_chat_action(message.chat.id, "typing")
 
@@ -413,7 +413,8 @@ async def info(message: types.Message):
     username = message.from_user.first_name
 
     await message.reply(
-        bot_messages.admin_info(username, joke_sent, joke_count, sent_count, refs_count, ref_url), reply_markup=kb.return_feedback_button(),
+        bot_messages.admin_info(username, joke_sent, joke_count, sent_count, refs_count, ref_url),
+        reply_markup=kb.return_feedback_button(),
         parse_mode='Markdown')
 
 
@@ -429,13 +430,13 @@ async def export_users_data(message: types.Message):
             user = await bot.get_chat(chat_id)
         except Exception as e:
             if str(e) == 'Chat not found':
-            # Handle ChatNotFound exception
+                # Handle ChatNotFound exception
                 await db.delete_user(chat_id)
 
             # Handle other exceptions as needed
             print(f"An error occurred: {str(e)} Chat ID: {chat_id}")
             continue
-            
+
         username = user.username if user.username else ""
         full_name = user.full_name if user.full_name else ""
         await db.user_update_name(chat_id, full_name, username)

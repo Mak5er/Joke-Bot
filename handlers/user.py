@@ -2,13 +2,13 @@ import asyncio
 import datetime
 import logging
 import re
-from ping3 import ping
 
 from aiogram import types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher import FSMContext
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.cron import CronTrigger
+from ping3 import ping
 
 from config import *
 from keyboards import inline_keyboards as kb
@@ -56,7 +56,6 @@ async def send_welcome(message: types.Message):
             status = 'user'
             referrer_id = None
 
-
             await db.add_users(user_id, user_name, user_username, chat_type, language, status, referrer_id)
 
             chat_title = chat_info.title
@@ -94,7 +93,9 @@ async def send_welcome(message: types.Message):
                 refs_count = await db.refs_count(referrer_id)
                 print(refs_count)
                 try:
-                    await bot.send_message(chat_id=referrer_id, text=_("Referral *{user_id}* has registered at your invitation!\nTotal number of invitees: *{refs_count}*").format(user_id=user_id, refs_count=refs_count), parse_mode='Markdown')
+                    await bot.send_message(chat_id=referrer_id, text=_(
+                        "Referral *{user_id}* has registered at your invitation!\nTotal number of invitees: *{refs_count}*").format(
+                        user_id=user_id, refs_count=refs_count), parse_mode='Markdown')
                 except Exception as e:
                     print(str(e))
 
@@ -172,6 +173,7 @@ async def handle_joke(message: types.Message):
     await message.reply(bm.pres_button(),
                         reply_markup=kb.random_keyboard())
     await update_info(message)
+
 
 @dp.message_handler(commands=['ping'])
 async def cmd_ping(message: types.Message):
