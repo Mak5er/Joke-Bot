@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="jokes.db" uuid="48465509-4ce6-4f0f-865a-efc9fbef8b52">
-      <driver-ref>sqlite.xerial</driver-ref>
+    <data-source source="LOCAL" name="Jokes" uuid="d25cca01-ea54-4dc4-9993-57faaac47830">
+      <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/services/jokes.db</jdbc-url>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://db.csrijseqrhtmusvmwhmc.supabase.co:5432/postgres</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

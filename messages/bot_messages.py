@@ -14,7 +14,7 @@ def admin_panel(user_count, joke_count, sent_count):
 📬Total number of jokes read: *{sent_count}*
 
 Admin commands:
-/del\_log - delete the log
+/ideas - list ideas from users
 /get\_users - download table with all users info
 /system\_info - get info about system""").format(user_count=user_count,
                                                  joke_count=joke_count,
@@ -33,7 +33,7 @@ Statistics:
 Total referrals: *{refs_count}*
 Your ref link: {ref_url}
              
-Bot site - anekdoty.pp.ua
+Bot site - https://anekdoty.pp.ua
 
 *If you want to offer an anecdote or ask a question, click the Feedback💬 button!*""").format(username=username,
                                                                                              joke_sent=joke_sent,
@@ -55,7 +55,7 @@ Statistics:
 Total referrals: *{refs_count}*
 Your ref link: {ref_url}
 
-Bot site - anekdoty.pp.ua
+Bot site - https://anekdoty.pp.ua
 
 *If you want to offer an anecdote or ask a question, click the Feedback💬 button!*''').format(username=username,
                                                                                              joke_sent=joke_sent,

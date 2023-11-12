@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal" created-in="PY-232.10203.26">
-    <data-source name="jokes.db" uuid="48465509-4ce6-4f0f-865a-efc9fbef8b52">
-      <database-info product="SQLite" version="3.40.1" jdbc-version="4.2" driver-name="SQLite JDBC" driver-version="3.40.1.0" dbms="SQLITE" exact-version="3.40.1" exact-driver-version="3.40">
+    <data-source name="Jokes" uuid="d25cca01-ea54-4dc4-9993-57faaac47830">
+      <database-info product="PostgreSQL" version="15.1 (Ubuntu 15.1-1.pgdg20.04+1)" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.6.0" dbms="POSTGRES" exact-version="15.1" exact-driver-version="42.6">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
-      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
-      <auth-provider>no-auth</auth-provider>
+      <user-name>postgres</user-name>
       <schema-mapping>
         <introspection-scope>
-          <node kind="schema" negative="1" />
+          <node kind="database" qname="@">
+            <node kind="schema" qname="@" />
+          </node>
         </introspection-scope>
       </schema-mapping>
     </data-source>

@@ -44,7 +44,7 @@ class DataBase:
 
             with self.connect:
                 self.cursor.execute(
-                    """DELETE FROM users WHERE user_id = %s;""",
+                    "DELETE FROM users WHERE user_id = %s;",
                     (user_id,))
         except psycopg2.OperationalError as e:
             print(e)
@@ -419,7 +419,7 @@ class DataBase:
                 self.cursor = self.connect.cursor()
 
             with self.connect:
-                self.cursor.execute("SELECT user_id, chat_type, user_name, user_username, language, status FROM users")
+                self.cursor.execute("SELECT user_id, chat_type, user_name, user_username, language, status, referrer_id FROM users")
                 return self.cursor.fetchall()
         except psycopg2.OperationalError as e:
             print(e)
@@ -509,6 +509,59 @@ class DataBase:
                     return result[0]
                 else:
                     return 0
+        except psycopg2.OperationalError as e:
+            print(e)
+            pass
+
+    async def get_ideas(self):
+        try:
+            if self.connect is None:
+                self.connect = psycopg2.connect(config.db_auth)
+                self.cursor = self.connect.cursor()
+
+            with self.connect:
+                self.cursor.execute('SELECT id, text FROM ideas ')
+                return self.cursor.fetchall()
+
+        except psycopg2.OperationalError as e:
+            print(e)
+            pass
+
+    async def get_idea(self, idea_id):
+        try:
+            if self.connect is None:
+                self.connect = psycopg2.connect(config.db_auth)
+                self.cursor = self.connect.cursor()
+            with self.connect:
+                self.cursor.execute('SELECT text FROM ideas WHERE id = %s', (idea_id, ))
+                return self.cursor.fetchone()
+
+        except psycopg2.OperationalError as e:
+            print(e)
+            pass
+
+    async def delete_idea(self, note_id):
+        try:
+            if self.connect is None:
+                self.connect = psycopg2.connect(config.db_auth)
+                self.cursor = self.connect.cursor()
+
+            with self.connect:
+                return self.cursor.execute('DELETE FROM ideas WHERE id = %s', (note_id,))
+
+        except psycopg2.OperationalError as e:
+            print(e)
+            pass
+
+    async def add_idea(self, text):
+        try:
+            if self.connect is None:
+                self.connect = psycopg2.connect(config.db_auth)
+                self.cursor = self.connect.cursor()
+
+            with self.connect:
+                return self.cursor.execute("INSERT INTO ideas (text) VALUES (%s);", (text,))
+
         except psycopg2.OperationalError as e:
             print(e)
             pass

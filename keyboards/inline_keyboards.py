@@ -5,21 +5,15 @@ from main import _
 
 def admin_keyboard():
     admin_keyboard = InlineKeyboardMarkup()
-    add_joke_button = InlineKeyboardButton(text=_('📝Add a joke'),
-                                           callback_data='add_joke')
-    send_to_all_button = InlineKeyboardButton(
-        text=_('💬Mailing'), callback_data='send_to_all')
-    daily_joke_button = InlineKeyboardButton(text=_("🎭Joke of the day"),
-                                             callback_data='daily_joke')
-    download_log_button = InlineKeyboardButton(text=_("📄View log"),
-                                               callback_data='download_log')
-    control_user_button = InlineKeyboardButton(text=_("👤Control User"),
-                                               callback_data='control_user')
-
+    add_joke_button = InlineKeyboardButton(text=_('📝Add a joke'), callback_data='add_joke')
+    send_to_all_button = InlineKeyboardButton(text=_('💬Mailing'), callback_data='send_to_all')
+    daily_joke_button = InlineKeyboardButton(text=_("🎭Joke of the day"), callback_data='daily_joke')
+    download_log_button = InlineKeyboardButton(text=_("📄View log"), callback_data='download_log')
+    delete_log_button = InlineKeyboardButton(text=_("❌📄Delete log"), callback_data='delete_log')
+    control_user_button = InlineKeyboardButton(text=_("👤Control User"), callback_data='control_user')
     admin_keyboard.row(add_joke_button)
-    admin_keyboard.row(send_to_all_button)
-    admin_keyboard.row(daily_joke_button)
-    admin_keyboard.row(download_log_button)
+    admin_keyboard.row(send_to_all_button, daily_joke_button)
+    admin_keyboard.row(download_log_button, delete_log_button)
     admin_keyboard.row(control_user_button)
     return admin_keyboard
 

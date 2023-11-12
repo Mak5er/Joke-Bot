@@ -92,12 +92,12 @@ async def speedtest(message: types.Message):
 
 
 @rate_limit(10)
-@dp.message_handler(user_id=admin_id, commands=['del_log'])
-async def del_log(message: types.Message):
-    await dp.bot.send_chat_action(message.chat.id, "typing")
+@dp.callback_query_handler(lambda call: call.data == 'delete_log', user_id=admin_id)
+async def del_log(call: types.CallbackQuery):
+    await dp.bot.send_chat_action(call.message.chat.id, "typing")
     logging.shutdown()
     open('log/bot_log.log', 'w').close()
-    await message.reply(bot_messages.log_deleted())
+    await call.message.reply(bot_messages.log_deleted())
 
 
 @dp.callback_query_handler(lambda call: call.data == 'download_log', user_id=admin_id)
@@ -408,7 +408,7 @@ async def info(message: types.Message):
     joke_count = await db.joke_count(table_name)
     sent_count = await db.sent_count()
     refs_count = await db.refs_count(user_id)
-    ref_url = f'https://t.me/{(await bot.get_me()).username}?start=ref{user_id}'
+    ref_url = f't.me/{(await bot.get_me()).username}?start=ref{user_id}'
 
     username = message.from_user.first_name
 
@@ -448,13 +448,14 @@ async def export_users_data(message: types.Message):
     users_data = await db.get_all_users_info()
 
     # Створюємо DataFrame з даними користувачів
-    df = pd.DataFrame(users_data, columns=['user_id', 'chat_type', 'user_name', 'user_username', 'language', 'status'])
+    df = pd.DataFrame(users_data, columns=['user_id', 'chat_type', 'user_name', 'user_username', 'language', 'status',
+                                           'referrer_id'])
 
     # Створюємо Excel-файл з даними
     excel_file = BytesIO()
     df.to_excel(excel_file, index=False)
 
-    # Збереження файлу на комп'ютері
+    # Збереження файлу на комп'ютеріs
     file_path = 'users_data.xlsx'
     with open(file_path, 'wb') as file:
         file.write(excel_file.getvalue())
@@ -565,3 +566,76 @@ async def write_message(message: types.Message, state: FSMContext):
         await message.reply(_("Something went wrong, see log for more information!"),
                             reply_markup=kb.return_back_to_admin_keyboard())
         logging.error(f"Error sending message to user {chat_id}: {str(e)}")
+
+
+@rate_limit(1)
+@dp.message_handler(user_id=admin_id, commands=['ideas'])
+async def return_ideas(message: types.Message):
+    ideas = await db.get_ideas()
+
+    if ideas:
+        response = _("*Ideas for you:*\n\n")
+        ideas_keyboard = types.InlineKeyboardMarkup()
+        i = 1
+
+        for idea in ideas:
+            idea_text = idea[1][:30] + "..." if len(idea[1]) > 30 else idea[1]
+            response += f"#{i} - _{idea_text}_\n"
+            i += 1
+
+            idea_text_button = types.InlineKeyboardButton(text=f"{idea_text}", callback_data=f"manage_idea:{idea[0]}")
+            ideas_keyboard.add(idea_text_button)
+
+        add_button = types.InlineKeyboardButton(text=_("🔙Back"), callback_data="back_to_admin")
+        ideas_keyboard.add(add_button)
+        await bot.send_message(chat_id=message.chat.id, text=response, reply_markup=ideas_keyboard,
+                               parse_mode='Markdown')
+    else:
+        keyboard = types.InlineKeyboardMarkup()
+        button = types.InlineKeyboardButton(text=_("🔙Back"), callback_data="back_to_admin")
+        keyboard.add(button)
+
+        await bot.send_message(chat_id=message.chat.id, text=_("There are no ideas for you."), reply_markup=keyboard)
+
+
+@rate_limit(1)
+@dp.callback_query_handler(lambda call: call.data.startswith('manage_idea:'))
+async def manage_idea_callback(call: types.CallbackQuery):
+    idea_id = int(call.data.split(':')[1])
+
+    idea = await db.get_idea(idea_id)
+
+    if idea:
+        keyboard = types.InlineKeyboardMarkup()
+        delete_button = types.InlineKeyboardButton(text=_("❌Delete"), callback_data=f"delete_idea:{idea_id}")
+        back_button = types.InlineKeyboardButton(text=_("🔙Back"), callback_data="back_to_list")
+        keyboard.row(delete_button)
+        keyboard.row(back_button)
+
+        await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=idea[0],
+                                    reply_markup=keyboard)
+
+
+@rate_limit(1)
+@dp.callback_query_handler(lambda call: call.data.startswith('delete_idea:'))
+async def delete_idea_callback(call: types.CallbackQuery):
+    idea_id = int(call.data.split(':')[1])
+    message = call.message
+    user_id = call.from_user.id
+
+    await db.delete_idea(idea_id)
+
+    await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
+                                text=_("Idea deleted."))
+    await return_ideas(message)
+    await bot.answer_callback_query(call.id)
+
+
+@rate_limit(1)
+@dp.callback_query_handler(lambda call: call.data == 'back_to_list')
+async def back_to_list_callback(call: types.CallbackQuery):
+    message = call.message
+
+    await bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
+    await return_ideas(message)
+    await bot.answer_callback_query(call.id)

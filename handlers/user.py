@@ -91,7 +91,6 @@ async def send_welcome(message: types.Message):
             if not user_exist:
                 await db.add_users(user_id, user_name, user_username, "private", "uk", 'user', referrer_id)
                 refs_count = await db.refs_count(referrer_id)
-                print(refs_count)
                 try:
                     await bot.send_message(chat_id=referrer_id, text=_(
                         "Referral *{user_id}* has registered at your invitation!\nTotal number of invitees: *{refs_count}*").format(
@@ -139,7 +138,7 @@ async def info(message: types.Message):
     joke_count = await db.joke_count(table_name)
     sent_count = await db.sent_count()
     refs_count = await db.refs_count(user_id)
-    ref_url = f'https://t.me/{(await bot.get_me()).username}?start=ref{user_id}'
+    ref_url = f't.me/{(await bot.get_me()).username}?start=ref{user_id}'
 
     username = message.from_user.first_name
 
@@ -219,6 +218,8 @@ async def feedback(message: types.Message, state: FSMContext):
         user = user_id
 
     await state.finish()
+
+    await db.add_idea(feedback_message)
 
     await bot.send_message(chat_id=admin_id, text=bm.feedback_message_send(user, feedback_message),
                            reply_markup=kb.feedback_answer(feedback_message_id, feedback_message_chat_id),
