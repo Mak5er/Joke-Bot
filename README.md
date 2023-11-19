@@ -34,18 +34,14 @@ Set up the necessary configuration by creating a  `.env`  file and defining the 
 - `token` : Your Telegram bot token.
 - `admin_id` : The ID of the admin user.
 - `db_auth` : The authentication string for your PostgreSQL database.
-- `I18N_DOMAIN` : The domain for internationalization (i18n).
-- `BASE_DIR` : The base directory of the project.
-- `LOCALES_DIR` : The directory where the localization files are stored.
+
 
 Example  `.env`  file:
 
        token=YOUR_TELEGRAM_BOT_TOKEN
        admin_id=YOUR_ADMIN_USER_ID
        db_auth=YOUR_POSTGRESQL_AUTH_STRING
-       I18N_DOMAIN=jokebot
-       BASE_DIR=/path/to/your/project
-       LOCALES_DIR=/path/to/your/project/locales
+
 
 Set up a PostgreSQL database and update the  `db_auth`  variable in the  `.env`  file with the database authentication
 string.
