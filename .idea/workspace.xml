@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="868e1bc7-d2cf-4321-8444-628b09c4cc27" name="Changes" comment="changed README.md">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Joke-Bot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Joke-Bot.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d25cca01-ea54-4dc4-9993-57faaac47830.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d25cca01-ea54-4dc4-9993-57faaac47830.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="868e1bc7-d2cf-4321-8444-628b09c4cc27" name="Changes" comment="add Dockerfile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,6 +141,7 @@
     <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
       <deployment type="dockerfile">
         <settings>
+          <option name="imageTag" value="joke-bot-python" />
           <option name="containerName" value="joke-bot" />
           <option name="sourceFilePath" value="Dockerfile" />
         </settings>
@@ -193,7 +189,7 @@
       <workItem from="1700415687046" duration="182000" />
       <workItem from="1700418207175" duration="87000" />
       <workItem from="1700418325576" duration="2041000" />
-      <workItem from="1700489076073" duration="699000" />
+      <workItem from="1700489076073" duration="1905000" />
     </task>
     <task id="LOCAL-00001" summary="UPDATE main.py">
       <created>1687548643088</created>
@@ -520,7 +516,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700415750814</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="add Dockerfile">
+      <option name="closed" value="true" />
+      <created>1700489951452</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1700489951452</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -557,7 +561,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ADD i18n and english, ukraine languages" />
     <MESSAGE value="UPDATE main.py" />
     <MESSAGE value="UPDATE locales" />
     <MESSAGE value="UPDATE languages" />
@@ -582,7 +585,8 @@
     <MESSAGE value="update some translations and fix some bugs" />
     <MESSAGE value="prettified the code" />
     <MESSAGE value="changed README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed README.md" />
+    <MESSAGE value="add Dockerfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="add Dockerfile" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Joke_Bot$main.coverage" NAME="main Coverage Results" MODIFIED="1699789541972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
