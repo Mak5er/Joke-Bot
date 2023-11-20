@@ -478,7 +478,10 @@ async def update_buttons(message, joke_id):
     else:  # Для групових чатів
         reply_markup = kb.return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id)
 
-    await message.edit_reply_markup(reply_markup)
+    try:
+        await message.edit_reply_markup(reply_markup)
+    except:
+        pass
 
 
 @dp.callback_query_handler(lambda call: call.data.startswith('rating_'))
