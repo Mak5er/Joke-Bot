@@ -2,8 +2,8 @@ import asyncio
 import logging
 import os
 import platform
-import re
 from io import BytesIO
+from handlers import user
 
 import cpuinfo
 import pandas as pd
@@ -184,53 +184,8 @@ async def save_joke(message: types.Message, state: FSMContext):
 
 
 @dp.callback_query_handler(lambda call: call.data == 'daily_joke')
-async def send_daily_joke(call: types.CallbackQuery):
-    users = await db.get_private_users()
-    await bot.send_message(chat_id=admin_id, text=bot_messages.start_mailing())
-    for user in users:
-        chat_id = user[0]
-        try:
-            table_name = f"jokes_uk"
-
-            result = await db.get_joke(chat_id, table_name)
-
-            if not result:
-                continue
-
-            joke = result[0]
-
-            joke_id = joke[0]
-
-            joke_text = joke[1]
-
-            tags = await db.get_tags(joke_id)
-
-            likes_count = await db.count_votes(joke_id, "like")
-            dislikes_count = await db.count_votes(joke_id, "dislike")
-
-            if tags is not None:
-                tagged_tags = f'#{tags}'
-                tagget_text = tagged_tags.replace(', ', ' #')
-                joke = f'{joke_text}\n\n{tagget_text}'
-            else:
-                joke = joke_text
-
-            joke_formated = re.sub(r"([*_`~]+)", r"\\\1", joke)
-
-            await bot.send_message(
-                chat_id=user[0],
-                text=bm.daily_joke(joke_formated),
-                parse_mode="Markdown",
-                reply_markup=kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id))
-
-            await db.seen_joke(joke_id, chat_id)
-
-            logging.info(f"Sent daily joke to user {chat_id}")
-        except Exception as e:
-            logging.error(f"Error sending message to user {chat_id}: {str(e)}")
-            continue
-
-    await bot.send_message(chat_id=admin_id, text=bot_messages.finish_mailing())
+async def send_daily_joke():
+    await user.job()
 
 
 @dp.callback_query_handler(lambda call: call.data == 'control_user')

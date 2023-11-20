@@ -266,6 +266,7 @@ async def send_category_joke_pivate(call):
 
         likes_count = await db.count_votes(joke_id, "like")
         dislikes_count = await db.count_votes(joke_id, "dislike")
+        user_vote = await db.get_user_vote(joke_id, user_id)
 
         if tags is not None:
             tagged_tags = f'#{tags}'
@@ -276,10 +277,10 @@ async def send_category_joke_pivate(call):
 
         joke_formated = re.sub(r"([*_`~]+)", r"\\\1", joke)
 
-        keyboard_type = kb.return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id)
+        keyboard_type = kb.return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id, user_vote)
 
         if call.message.chat.type == 'private':
-            keyboard_type = kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id)
+            keyboard_type = kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id, user_vote)
 
         await call.message.edit_text(joke_formated, reply_markup=keyboard_type)
 
@@ -319,6 +320,7 @@ async def send_joke_private(call):
 
         likes_count = await db.count_votes(joke_id, "like")
         dislikes_count = await db.count_votes(joke_id, "dislike")
+        user_vote = await db.get_user_vote(joke_id, user_id)
 
         if tags is not None:
             tagged_tags = f'#{tags}'
@@ -329,10 +331,10 @@ async def send_joke_private(call):
 
         joke_formated = re.sub(r"([*_`~]+)", r"\\\1", joke)
 
-        keyboard_type = kb.return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id)
+        keyboard_type = kb.return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id, user_vote)
 
         if call.message.chat.type == 'private':
-            keyboard_type = kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id)
+            keyboard_type = kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id, user_vote)
 
         await call.message.edit_text(joke_formated, reply_markup=keyboard_type)
 
@@ -375,6 +377,7 @@ async def job():
 
             likes_count = await db.count_votes(joke_id, "like")
             dislikes_count = await db.count_votes(joke_id, "dislike")
+            user_vote = await db.get_user_vote(joke_id, chat_id)
 
             if tags is not None:
                 tagged_tags = f'#{tags}'
@@ -389,7 +392,7 @@ async def job():
                 chat_id=user[0],
                 text=bm.daily_joke(joke_formated),
                 parse_mode="Markdown",
-                reply_markup=kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id))
+                reply_markup=kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id, user_vote))
 
             await db.seen_joke(joke_id, chat_id)
 
@@ -416,6 +419,7 @@ async def seen_handling(call: types.CallbackQuery):
 
     likes_count = await db.count_votes(joke_id, "like")
     dislikes_count = await db.count_votes(joke_id, "dislike")
+    user_vote = await db.get_user_vote(joke_id, user_id)
 
     logging.info(
         f"User action: Marked joke as seen (User ID: {user_id}, Joke ID: {joke_id})"
@@ -424,10 +428,10 @@ async def seen_handling(call: types.CallbackQuery):
     await bot.edit_message_reply_markup(
         call.message.chat.id,
         call.message.message_id,
-        reply_markup=kb.return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id))
+        reply_markup=kb.return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id, user_vote))
     await update_info(call.message)
 
-    await update_buttons(call.message, joke_id)
+    await update_buttons(call.message, joke_id, user_id)
 
 
 @dp.callback_query_handler(lambda call: call.data.startswith('like_'))
@@ -446,7 +450,7 @@ async def like_joke(call: types.CallbackQuery):
         await db.add_vote(joke_id, user_id, "like")
         await call.answer(bm.liked_joke())
 
-    await update_buttons(call.message, joke_id)
+    await update_buttons(call.message, joke_id, user_id)
 
 
 @dp.callback_query_handler(lambda call: call.data.startswith('dislike_'))
@@ -466,17 +470,18 @@ async def dislike_joke(call: types.CallbackQuery):
         await db.add_vote(joke_id, user_id, "dislike")
         await call.answer(bm.disliked_joke())
 
-    await update_buttons(call.message, joke_id)
+    await update_buttons(call.message, joke_id, user_id)
 
 
-async def update_buttons(message, joke_id):
+async def update_buttons(message, joke_id, user_id):
     likes_count = await db.count_votes(joke_id, "like")
     dislikes_count = await db.count_votes(joke_id, "dislike")
+    user_vote = await db.get_user_vote(joke_id, user_id)
 
     if message.chat.type == 'private':
-        reply_markup = kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id)
+        reply_markup = kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id, user_vote)
     else:  # Для групових чатів
-        reply_markup = kb.return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id)
+        reply_markup = kb.return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id, user_vote)
 
     try:
         await message.edit_reply_markup(reply_markup)
@@ -487,6 +492,7 @@ async def update_buttons(message, joke_id):
 @dp.callback_query_handler(lambda call: call.data.startswith('rating_'))
 async def joke_rating(call: types.CallbackQuery):
     joke_id = int(call.data.split('_')[1])
+    user_id = call.from_user.id
 
     likes_count = await db.count_votes(joke_id, "like")
     dislikes_count = await db.count_votes(joke_id, "dislike")
@@ -496,7 +502,7 @@ async def joke_rating(call: types.CallbackQuery):
     await call.answer(bm.joke_rating(joke_rate), show_alert=True)
 
     try:
-        await update_buttons(call.message, joke_id)
+        await update_buttons(call.message, joke_id, user_id)
     except:
         pass
 

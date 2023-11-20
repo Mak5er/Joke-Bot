@@ -58,12 +58,14 @@ lang_keyboard.add(InlineKeyboardButton(text="Українська🇺🇦", call
                   InlineKeyboardButton(text="English🇬🇧", callback_data="lang_en"))
 
 
-# Клавіатура для лайку і дизлайку
-def return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id):
+def return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id, user_vote):
+    like_button_text = f'☑️ 👍 {likes_count}' if user_vote == 'like' else f'👍 {likes_count}'
+    dislike_button_text = f'☑️ 👎 {dislikes_count}' if user_vote == 'dislike' else f'👎 {dislikes_count}'
+
     like_button = InlineKeyboardButton(
-        text=f'👍 {likes_count}', callback_data=f'like_{joke_id}')
+        text=like_button_text, callback_data=f'like_{joke_id}')
     dislike_button = InlineKeyboardButton(
-        text=f'👎 {dislikes_count}', callback_data=f'dislike_{joke_id}')
+        text=dislike_button_text, callback_data=f'dislike_{joke_id}')
     rating_button = InlineKeyboardButton(
         text=_('📊Joke rate'), callback_data=f'rating_{joke_id}')
     rating_and_votes_keyboard = InlineKeyboardMarkup(row_width=2)
@@ -72,12 +74,16 @@ def return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id):
     return rating_and_votes_keyboard
 
 
+
 # Клавіатура для груп з додатковою кнопкою "Переглянути"
-def return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id):
+def return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id, user_vote):
+    like_button_text = f'☑️ 👍 {likes_count}' if user_vote == 'like' else f'👍 {likes_count}'
+    dislike_button_text = f'☑️ 👎 {dislikes_count}' if user_vote == 'dislike' else f'👎 {dislikes_count}'
+
     like_button = InlineKeyboardButton(
-        text=f'👍 {likes_count}', callback_data=f'like_{joke_id}')
+        text=like_button_text, callback_data=f'like_{joke_id}')
     dislike_button = InlineKeyboardButton(
-        text=f'👎 {dislikes_count}', callback_data=f'dislike_{joke_id}')
+        text=dislike_button_text, callback_data=f'dislike_{joke_id}')
     rating_button = InlineKeyboardButton(
         text=_('📊Joke rate'), callback_data=f'rating_{joke_id}')
     seen_button = InlineKeyboardButton(
