@@ -3,7 +3,7 @@ import logging
 import os
 import platform
 from io import BytesIO
-from handlers import user
+
 
 import cpuinfo
 import pandas as pd
@@ -185,7 +185,9 @@ async def save_joke(message: types.Message, state: FSMContext):
 
 @dp.callback_query_handler(lambda call: call.data == 'daily_joke')
 async def send_daily_joke():
-    await user.job()
+    from handlers.user import job
+
+    await job()
 
 
 @dp.callback_query_handler(lambda call: call.data == 'control_user')
