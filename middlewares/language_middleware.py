@@ -1,5 +1,6 @@
 from aiogram import types
 from aiogram.contrib.middlewares.i18n import I18nMiddleware
+import logging
 
 from config import I18N_DOMAIN, LOCALES_DIR
 from services import DataBase
@@ -12,7 +13,8 @@ async def get_lang(user_id):
         language = await db.get_language(user_id)
         if language:
             return language
-    except:
+    except Exception as e:
+        logging.error(f"Error retrieving language for user {user_id}: {e}")
         return "uk"
 
 

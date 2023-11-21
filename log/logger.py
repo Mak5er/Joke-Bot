@@ -1,13 +1,11 @@
 import datetime
 import logging
-
 import pytz
 
 my_timezone = pytz.timezone('Europe/Kyiv')
 
 
 class CustomFormatter(logging.Formatter):
-
     def __init__(self, fmt):
         super().__init__(fmt)
 
@@ -23,5 +21,4 @@ logging.basicConfig(filename='log/bot_log.log',
                     format=log_format)
 
 custom_formatter = CustomFormatter(log_format)
-
 logging.root.handlers[0].setFormatter(custom_formatter)

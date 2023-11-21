@@ -1,6 +1,6 @@
 from aiogram import Dispatcher
-from aiogram.dispatcher.handler import CancelHandler  # отменяет вызов хэндлера
-from aiogram.dispatcher.middlewares import BaseMiddleware  # класс Middleware от Aiogram
+from aiogram.dispatcher.handler import CancelHandler
+from aiogram.dispatcher.middlewares import BaseMiddleware
 from aiogram.types import Message, CallbackQuery, InlineQuery
 
 from services import DataBase
@@ -14,6 +14,7 @@ class UserBannedMiddleware(BaseMiddleware):
             user = await db.status(message.from_user.id)
         except:
             user = 'user'
+
         if user == 'ban':
             if message.chat.type == 'private':
                 await message.answer(

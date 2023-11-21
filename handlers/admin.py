@@ -4,7 +4,6 @@ import os
 import platform
 from io import BytesIO
 
-
 import cpuinfo
 import pandas as pd
 import psutil
@@ -15,7 +14,6 @@ from aiogram.types import ReplyKeyboardRemove, InlineKeyboardButton, InlineKeybo
 
 import config
 from keyboards import inline_keyboards as kb
-from log.logger import custom_formatter
 from main import dp, bot, _
 from messages import bot_messages
 from messages import bot_messages as bm
@@ -25,14 +23,6 @@ from services import DataBase
 storage = MemoryStorage()
 
 db = DataBase()
-
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
-
-handler = logging.FileHandler("log/bot_log.log")
-handler.setFormatter(custom_formatter)
-
-logger.addHandler(handler)
 
 admin_id = config.admin_id
 
@@ -66,28 +56,23 @@ async def speedtest(message: types.Message):
     clock = await bot.send_message(message.chat.id, '⏳')
 
     def get_system_info():
-        info = _("_Operating System_: *{}*\n").format(platform.system())
-        info += _("_OS Version_: *{}*\n").format(platform.version())
-        info += _("_Machine Name_: *{}*\n").format(platform.node())
-        info += _("_Processor Architecture_: *{}*\n").format(platform.machine())
-
+        system_info = _("_Operating System_: *{}*\n").format(platform.system())
+        system_info += _("_OS Version_: *{}*\n").format(platform.version())
+        system_info += _("_Machine Name_: *{}*\n").format(platform.node())
+        system_info += _("_Processor Architecture_: *{}*\n").format(platform.machine())
         cpu_info = cpuinfo.get_cpu_info()
         processor_name = cpu_info['brand_raw']
-        info += _("_Processor Model_: *{}*\n").format(processor_name)
-
-        info += _("_Physical Cores_: *{}*\n").format(psutil.cpu_count(logical=False))
-        info += _("_Logical Cores_: *{}*\n").format(psutil.cpu_count(logical=True))
-
+        system_info += _("_Processor Model_: *{}*\n").format(processor_name)
+        system_info += _("_Physical Cores_: *{}*\n").format(psutil.cpu_count(logical=False))
+        system_info += _("_Logical Cores_: *{}*\n").format(psutil.cpu_count(logical=True))
         memory = psutil.virtual_memory()
-        info += _("_Total Memory_: *{:.2f}* MB\n").format(memory.total / (1024 * 1024))
-        info += _("_Available Memory_: *{:.2f}* MB\n").format(memory.available / (1024 * 1024))
-        info += _("_Memory Usage_: *{}*%\n").format(memory.percent)
-
-        return info
+        system_info += _("_Total Memory_: *{:.2f}* MB\n").format(memory.total / (1024 * 1024))
+        system_info += _("_Available Memory_: *{:.2f}* MB\n").format(memory.available / (1024 * 1024))
+        system_info += _("_Memory Usage_: *{}*%\n").format(memory.percent)
+        return system_info
 
     pc_info = get_system_info()
     await bot.delete_message(message.chat.id, clock.message_id)
-
     await message.reply(_("*System information:*\n\n{pc_info}").format(pc_info=pc_info))
 
 
@@ -182,8 +167,8 @@ async def save_joke(message: types.Message, state: FSMContext):
 
 @dp.callback_query_handler(lambda call: call.data == 'daily_joke')
 async def send_daily_joke(call: types.CallbackQuery):
-    from handlers.user import job
-    await job()
+    from handlers.user import daily_joke
+    await daily_joke()
 
 
 @dp.callback_query_handler(lambda call: call.data == 'control_user')
@@ -574,7 +559,6 @@ async def manage_idea_callback(call: types.CallbackQuery):
 async def delete_idea_callback(call: types.CallbackQuery):
     idea_id = int(call.data.split(':')[1])
     message = call.message
-    user_id = call.from_user.id
 
     await db.delete_idea(idea_id)
 
