@@ -16,12 +16,6 @@ class DataBase:
         self.connect = psycopg2.connect(config.db_auth, **keepalive_kwargs)
         self.cursor = self.connect.cursor()
 
-    def keep_alive(self):
-        if self.connect is None:
-            self.connect = psycopg2.connect(config.db_auth)
-            self.cursor = self.connect.cursor()
-            self.cursor.execute("SELECT 1")
-
     async def add_users(self, user_id, user_name, user_username, chat_type, language, status, referrer_id):
         try:
             if self.connect is None:
@@ -258,7 +252,7 @@ class DataBase:
             print(e)
             pass
 
-    async def get_joke(self, user_id, table_name):
+    async def get_joke(self, user_id):
         try:
             if self.connect is None:
                 self.connect = psycopg2.connect(config.db_auth)
@@ -301,6 +295,28 @@ class DataBase:
                     LIMIT 1
                     """,
                     (user_id, f'%{tag}%'))
+                return self.cursor.fetchall()
+        except psycopg2.OperationalError as e:
+            print(e)
+            pass
+
+    async def get_daily_joke(self):
+        try:
+            if self.connect is None:
+                self.connect = psycopg2.connect(config.db_auth)
+                self.cursor = self.connect.cursor()
+
+            with self.connect:
+                self.cursor.execute(
+                    """
+                    SELECT * FROM jokes_uk 
+                    WHERE id NOT IN (SELECT joke_id FROM sent_jokes)
+                    ORDER BY (
+                        SELECT COUNT(*) FROM votes WHERE joke_id = jokes_uk.id
+                    ) DESC, 
+                    RANDOM() 
+                    LIMIT 1
+                    """)
                 return self.cursor.fetchall()
         except psycopg2.OperationalError as e:
             print(e)
@@ -357,19 +373,6 @@ class DataBase:
             print(e)
             pass
 
-    async def get_admins(self):
-        try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
-            with self.connect:
-                self.cursor.execute("SELECT DISTINCT user_id FROM users WHERE status = admin", )
-                return self.cursor.fetchall()
-        except psycopg2.OperationalError as e:
-            print(e)
-            pass
-
     async def get_user_info(self, user_id):
         try:
             if self.connect is None:
@@ -419,7 +422,8 @@ class DataBase:
                 self.cursor = self.connect.cursor()
 
             with self.connect:
-                self.cursor.execute("SELECT user_id, chat_type, user_name, user_username, language, status, referrer_id FROM users")
+                self.cursor.execute(
+                    "SELECT user_id, chat_type, user_name, user_username, language, status, referrer_id FROM users")
                 return self.cursor.fetchall()
         except psycopg2.OperationalError as e:
             print(e)
@@ -533,7 +537,7 @@ class DataBase:
                 self.connect = psycopg2.connect(config.db_auth)
                 self.cursor = self.connect.cursor()
             with self.connect:
-                self.cursor.execute('SELECT text FROM ideas WHERE id = %s', (idea_id, ))
+                self.cursor.execute('SELECT text FROM ideas WHERE id = %s', (idea_id,))
                 return self.cursor.fetchone()
 
         except psycopg2.OperationalError as e:

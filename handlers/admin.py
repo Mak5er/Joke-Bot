@@ -168,9 +168,6 @@ async def save_joke(message: types.Message, state: FSMContext):
         await state.finish()
         return
     else:
-        user_id = message.from_user.id
-        language = await db.get_language(user_id)
-
         table_name = f"jokes_uk"
         await db.add_joke(joke_text, table_name)
 
@@ -184,9 +181,8 @@ async def save_joke(message: types.Message, state: FSMContext):
 
 
 @dp.callback_query_handler(lambda call: call.data == 'daily_joke')
-async def send_daily_joke():
+async def send_daily_joke(call: types.CallbackQuery):
     from handlers.user import job
-
     await job()
 
 

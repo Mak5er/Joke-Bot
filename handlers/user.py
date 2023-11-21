@@ -300,9 +300,7 @@ async def send_joke_private(call):
     chat_id = call.message.chat.id
     user_id = call.from_user.id
 
-    table_name = f"jokes_uk"
-
-    result = await db.get_joke(user_id, table_name)
+    result = await db.get_joke(user_id)
 
     await dp.bot.send_chat_action(call.message.chat.id, "typing")
 
@@ -357,21 +355,17 @@ async def job():
     print(">>>>", datetime.datetime.now())
     users = await db.get_private_users()
     await bot.send_message(chat_id=admin_id, text=bm.start_mailing())
+    result = await db.get_daily_joke()
+    joke = result[0]
+    joke_id = joke[0]
+    joke_text = joke[1]
+
     for user in users:
         chat_id = user[0]
         try:
-            table_name = f"jokes_uk"
-
-            result = await db.get_joke(chat_id, table_name)
 
             if not result:
                 continue
-
-            joke = result[0]
-
-            joke_id = joke[0]
-
-            joke_text = joke[1]
 
             tags = await db.get_tags(joke_id)
 
