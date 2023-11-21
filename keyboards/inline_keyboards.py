@@ -4,27 +4,27 @@ from main import _
 
 
 def admin_keyboard():
-    admin_keyboard = InlineKeyboardMarkup()
+    keyboard = InlineKeyboardMarkup()
     add_joke_button = InlineKeyboardButton(text=_('📝Add a joke'), callback_data='add_joke')
     send_to_all_button = InlineKeyboardButton(text=_('💬Mailing'), callback_data='send_to_all')
     daily_joke_button = InlineKeyboardButton(text=_("🎭Joke of the day"), callback_data='daily_joke')
     download_log_button = InlineKeyboardButton(text=_("📄View log"), callback_data='download_log')
     delete_log_button = InlineKeyboardButton(text=_("❌📄Delete log"), callback_data='delete_log')
     control_user_button = InlineKeyboardButton(text=_("👤Control User"), callback_data='control_user')
-    admin_keyboard.row(add_joke_button)
-    admin_keyboard.row(send_to_all_button, daily_joke_button)
-    admin_keyboard.row(download_log_button, delete_log_button)
-    admin_keyboard.row(control_user_button)
-    return admin_keyboard
+    keyboard.row(add_joke_button)
+    keyboard.row(send_to_all_button, daily_joke_button)
+    keyboard.row(download_log_button, delete_log_button)
+    keyboard.row(control_user_button)
+    return keyboard
 
 
 def random_keyboard():
     random_button = InlineKeyboardButton(_('🔀Random joke'), callback_data="random_joke")
     category_button = InlineKeyboardButton(_('🔖Select category'), callback_data="select_category")
-    random_keyboard = InlineKeyboardMarkup(row_width=2)
-    random_keyboard.add(random_button)
-    random_keyboard.add(category_button)
-    return random_keyboard
+    keyboard = InlineKeyboardMarkup(row_width=2)
+    keyboard.add(random_button)
+    keyboard.add(category_button)
+    return keyboard
 
 
 def category_keyboard():
@@ -38,19 +38,19 @@ def category_keyboard():
     студенти_button = InlineKeyboardButton(_('🎓Students'), callback_data="joke:про_студентів")
     робота_button = InlineKeyboardButton(_('🏢Work'), callback_data="joke:про_роботу")
     back_button = InlineKeyboardButton(text=_("🔙Back"), callback_data="back_to_random")
-    category_keyboard = InlineKeyboardMarkup(row_width=2)
-    category_keyboard.add(гроші_button, родина_button, білявки_button)
-    category_keyboard.add(теща_button, школа_button, вовочка_button)
-    category_keyboard.add(медицина_button, студенти_button, робота_button)
-    category_keyboard.add(back_button)
-    return category_keyboard
+    keyboard = InlineKeyboardMarkup(row_width=2)
+    keyboard.add(гроші_button, родина_button, білявки_button)
+    keyboard.add(теща_button, школа_button, вовочка_button)
+    keyboard.add(медицина_button, студенти_button, робота_button)
+    keyboard.add(back_button)
+    return keyboard
 
 
 def cancel_keyboard():
-    cancel_keyboard = ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
+    keyboard = ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
     cancel = KeyboardButton(_("↩️Cancel"))
-    cancel_keyboard.add(cancel)
-    return cancel_keyboard
+    keyboard.add(cancel)
+    return keyboard
 
 
 lang_keyboard = InlineKeyboardMarkup()

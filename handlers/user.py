@@ -1,5 +1,4 @@
 import asyncio
-import datetime
 import logging
 import re
 
@@ -12,7 +11,6 @@ from ping3 import ping
 
 from config import *
 from keyboards import inline_keyboards as kb
-from log.logger import custom_formatter
 from main import dp, bot, _
 from messages import bot_messages as bm
 from middlewares.throttling_middleware import rate_limit
@@ -21,14 +19,6 @@ from services import DataBase
 storage = MemoryStorage()
 
 db = DataBase()
-
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
-
-handler = logging.FileHandler("log/bot_log.log")
-handler.setFormatter(custom_formatter)
-
-logger.addHandler(handler)
 
 
 async def update_info(message: types.Message):
@@ -242,28 +232,19 @@ async def back_to_random(call):
     await call.message.edit_text(bm.pres_button(), reply_markup=kb.random_keyboard())
 
 
-@dp.callback_query_handler(lambda call: call.data.startswith('joke:'))
-async def send_category_joke_pivate(call):
-    tag = call.data.split(':')[1]
+async def send_joke(call, result):
     chat_id = call.message.chat.id
     user_id = call.from_user.id
-
-    result = await db.get_tagged_joke(user_id, tag)
-
     await dp.bot.send_chat_action(call.message.chat.id, "typing")
 
     if not result:
-        await bot.send_message(
-            chat_id, bm.all_send())
+        await bot.send_message(chat_id, bm.all_send())
+
     else:
         joke = result[0]
-
         joke_id = joke[0]
-
         joke_text = joke[1]
-
         tags = await db.get_tags(joke_id)
-
         likes_count = await db.count_votes(joke_id, "like")
         dislikes_count = await db.count_votes(joke_id, "dislike")
         user_vote = await db.get_user_vote(joke_id, user_id)
@@ -276,83 +257,39 @@ async def send_category_joke_pivate(call):
             joke = joke_text
 
         joke_formated = re.sub(r"([*_`~]+)", r"\\\1", joke)
-
         keyboard_type = kb.return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id)
 
         if call.message.chat.type == 'private':
             keyboard_type = kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id, user_vote)
 
         await call.message.edit_text(joke_formated, reply_markup=keyboard_type)
-
         await db.seen_joke(joke_id, user_id)
+        logging.info(f"User action: Sent joke (User ID: {user_id}, Joke ID: {joke_id})")
 
-        logging.info(
-            f"User action: Sent joke (User ID: {user_id}, Joke ID: {joke_id})")
-
-    await bot.send_message(chat_id,
-                           text=bm.pres_button(),
-                           reply_markup=kb.random_keyboard())
+    await bot.send_message(chat_id, text=bm.pres_button(), reply_markup=kb.random_keyboard())
     await update_info(call.message)
+
+
+@dp.callback_query_handler(lambda call: call.data.startswith('joke:'))
+async def send_category_joke_pivate(call):
+    tag = call.data.split(':')[1]
+    user_id = call.from_user.id
+    result = await db.get_tagged_joke(user_id, tag)
+    await send_joke(call, result)
 
 
 @dp.callback_query_handler(lambda call: call.data == 'random_joke')
 async def send_joke_private(call):
-    chat_id = call.message.chat.id
     user_id = call.from_user.id
-
     result = await db.get_joke(user_id)
-
-    await dp.bot.send_chat_action(call.message.chat.id, "typing")
-
-    if not result:
-        await bot.send_message(
-            chat_id, bm.all_send())
-    else:
-        joke = result[0]
-
-        joke_id = joke[0]
-
-        joke_text = joke[1]
-
-        tags = await db.get_tags(joke_id)
-
-        likes_count = await db.count_votes(joke_id, "like")
-        dislikes_count = await db.count_votes(joke_id, "dislike")
-        user_vote = await db.get_user_vote(joke_id, user_id)
-
-        if tags is not None:
-            tagged_tags = f'#{tags}'
-            tagget_text = tagged_tags.replace(', ', ' #')
-            joke = f'{joke_text}\n\n{tagget_text}'
-        else:
-            joke = joke_text
-
-        joke_formated = re.sub(r"([*_`~]+)", r"\\\1", joke)
-
-        keyboard_type = kb.return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id)
-
-        if call.message.chat.type == 'private':
-            keyboard_type = kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id, user_vote)
-
-        await call.message.edit_text(joke_formated, reply_markup=keyboard_type)
-
-        await db.seen_joke(joke_id, user_id)
-
-        logging.info(
-            f"User action: Sent joke (User ID: {user_id}, Joke ID: {joke_id})")
-
-    await bot.send_message(chat_id,
-                           text=bm.pres_button(),
-                           reply_markup=kb.random_keyboard())
-    await update_info(call.message)
+    await send_joke(call, result)
 
 
 scheduler = AsyncIOScheduler()
 
 
 @scheduler.scheduled_job(CronTrigger(hour=12))
-async def job():
-    print(">>>>", datetime.datetime.now())
+async def daily_joke():
     users = await db.get_private_users()
     await bot.send_message(chat_id=admin_id, text=bm.start_mailing())
     result = await db.get_daily_joke()
@@ -391,6 +328,7 @@ async def job():
             await db.seen_joke(joke_id, chat_id)
 
             logging.info(f"Sent daily joke to user {chat_id}")
+
         except Exception as e:
             logging.error(f"Error sending message to user {chat_id}: {str(e)}")
             continue
@@ -478,8 +416,8 @@ async def update_buttons(message, joke_id, user_id):
 
     try:
         await message.edit_reply_markup(reply_markup)
-    except:
-        pass
+    except Exception as e:
+        print(f"Error updating buttons: {e}")
 
 
 @dp.callback_query_handler(lambda call: call.data.startswith('rating_'))
@@ -494,10 +432,7 @@ async def joke_rating(call: types.CallbackQuery):
 
     await call.answer(bm.joke_rating(joke_rate), show_alert=True)
 
-    try:
-        await update_buttons(call.message, joke_id, user_id)
-    except:
-        pass
+    await update_buttons(call.message, joke_id, user_id)
 
 
 @dp.message_handler()
