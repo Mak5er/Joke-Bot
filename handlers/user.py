@@ -270,6 +270,7 @@ async def send_joke(call, result):
     await update_info(call.message)
 
 
+@rate_limit(3)
 @dp.callback_query_handler(lambda call: call.data.startswith('joke:'))
 async def send_category_joke_pivate(call):
     tag = call.data.split(':')[1]
@@ -278,6 +279,7 @@ async def send_category_joke_pivate(call):
     await send_joke(call, result)
 
 
+@rate_limit(3)
 @dp.callback_query_handler(lambda call: call.data == 'random_joke')
 async def send_joke_private(call):
     user_id = call.from_user.id
@@ -417,7 +419,7 @@ async def update_buttons(message, joke_id, user_id):
     try:
         await message.edit_reply_markup(reply_markup)
     except Exception as e:
-        print(f"Error updating buttons: {e}")
+        logging.error(f"Error updating buttons: {e}")
 
 
 @dp.callback_query_handler(lambda call: call.data.startswith('rating_'))
