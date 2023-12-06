@@ -18,24 +18,17 @@ class DataBase:
 
     async def add_users(self, user_id, user_name, user_username, chat_type, language, status, referrer_id):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute(
                     """INSERT INTO users (user_id, user_name, user_username, chat_type, language, status, referrer_id) VALUES (%s, %s, %s, %s, %s, %s, %s) ON CONFLICT (user_id) DO NOTHING;""",
                     (user_id, user_name, user_username, chat_type, language, status, referrer_id))
+
         except psycopg2.OperationalError as e:
             print(e)
             pass
 
     async def delete_user(self, user_id):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute(
                     "DELETE FROM users WHERE user_id = %s;",
@@ -46,10 +39,6 @@ class DataBase:
 
     async def user_count(self):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute("SELECT COUNT(*) FROM users")
                 return self.cursor.fetchone()[0]
@@ -59,10 +48,6 @@ class DataBase:
 
     async def joke_count(self, table_name):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute(f"SELECT COUNT(*) FROM {table_name}")
                 return self.cursor.fetchone()[0]
@@ -73,10 +58,6 @@ class DataBase:
 
     async def sent_count(self):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute("SELECT COUNT(*) FROM sent_jokes")
                 return self.cursor.fetchone()[0]
@@ -86,10 +67,6 @@ class DataBase:
 
     async def joke_sent(self, user_id):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute("SELECT COUNT(*) FROM sent_jokes WHERE user_id=%s", (user_id,))
                 return self.cursor.fetchone()[0]
@@ -99,10 +76,6 @@ class DataBase:
 
     async def all_users(self):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute("SELECT user_id FROM users")
                 return self.cursor.fetchall()
@@ -113,10 +86,6 @@ class DataBase:
 
     async def user_exist(self, user_id):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute("SELECT * FROM users WHERE user_id = %s", (user_id,))
                 return self.cursor.fetchall()
@@ -127,10 +96,6 @@ class DataBase:
 
     async def user_update_name(self, user_id, user_name, user_username):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute("UPDATE users SET user_username=%s, user_name=%s WHERE user_id=%s",
                                     (user_username, user_name, user_id))
@@ -140,10 +105,6 @@ class DataBase:
 
     async def get_private_users(self):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute(
                     "SELECT DISTINCT user_id FROM users WHERE chat_type = 'private' AND status != 'ban'")
@@ -154,10 +115,6 @@ class DataBase:
 
     async def refs_count(self, referrer_id):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute("SELECT COUNT(*) FROM users WHERE referrer_id=%s", (referrer_id,))
             return self.cursor.fetchone()[0]
@@ -167,10 +124,6 @@ class DataBase:
 
     async def add_joke(self, joke_text, table_name):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute(f"INSERT INTO {table_name} (text) VALUES (%s)", (joke_text,))
         except psycopg2.OperationalError as e:
@@ -179,10 +132,6 @@ class DataBase:
 
     async def seen_joke(self, joke_id, user_id):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute("INSERT INTO sent_jokes (joke_id, user_id) VALUES (%s, %s)", (joke_id, user_id))
         except psycopg2.OperationalError as e:
@@ -191,10 +140,6 @@ class DataBase:
 
     async def check_seen_joke(self, joke_id, user_id):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute("SELECT * FROM sent_jokes WHERE joke_id = %s AND user_id = %s", (joke_id, user_id))
                 return self.cursor.fetchone()
@@ -204,10 +149,6 @@ class DataBase:
 
     async def joke_seens(self, joke_id):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute("SELECT COUNT(*) FROM sent_jokes WHERE joke_id = %s", (joke_id,))
                 return self.cursor.fetchone()[0]
@@ -217,10 +158,6 @@ class DataBase:
 
     async def joke_rate(self, joke_id, table_name):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute(f"SELECT rate FROM {table_name} WHERE id = %s", (joke_id,))
                 return self.cursor.fetchone()[0]
@@ -230,10 +167,6 @@ class DataBase:
 
     async def like_joke(self, joke_id, table_name):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute(f"UPDATE {table_name} SET rate = rate + 1 WHERE id = %s", (joke_id,))
         except psycopg2.OperationalError as e:
@@ -242,10 +175,6 @@ class DataBase:
 
     async def dislike_joke(self, joke_id, table_name):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute(f"UPDATE {table_name} SET rate = rate - 1 WHERE id = %s", (joke_id,))
         except psycopg2.OperationalError as e:
@@ -254,10 +183,6 @@ class DataBase:
 
     async def get_joke(self, user_id):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute(
                     """
@@ -279,10 +204,6 @@ class DataBase:
 
     async def get_tagged_joke(self, user_id, tag):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute(
                     """
@@ -302,10 +223,6 @@ class DataBase:
 
     async def get_daily_joke(self):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute(
                     """
@@ -324,10 +241,6 @@ class DataBase:
 
     async def get_language(self, user_id):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute("SELECT DISTINCT language FROM users WHERE user_id=%s", (user_id,))
                 return self.cursor.fetchone()[0]
@@ -337,10 +250,6 @@ class DataBase:
 
     async def get_tags(self, joke_id):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute("SELECT tags FROM jokes_uk WHERE id = %s", (joke_id,))
                 return self.cursor.fetchone()[0]
@@ -350,10 +259,6 @@ class DataBase:
 
     async def set_language(self, user_id, language):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute("UPDATE users SET language=%s WHERE user_id=%s", (language, user_id))
         except psycopg2.OperationalError as e:
@@ -362,10 +267,6 @@ class DataBase:
 
     async def status(self, user_id):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute("SELECT DISTINCT status FROM users WHERE user_id = %s", (user_id,))
                 return self.cursor.fetchone()[0]
@@ -375,10 +276,6 @@ class DataBase:
 
     async def get_user_info(self, user_id):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute(
                     "SELECT user_name, user_username, status FROM users WHERE user_id = %s",
@@ -390,10 +287,6 @@ class DataBase:
 
     async def get_user_info_username(self, user_username):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute(
                     "SELECT user_name, user_id, status FROM users WHERE user_username = %s",
@@ -405,10 +298,6 @@ class DataBase:
 
     async def ban_user(self, user_id):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute("UPDATE users SET status=%s WHERE user_id=%s", ("ban", user_id))
         except psycopg2.OperationalError as e:
@@ -417,10 +306,6 @@ class DataBase:
 
     async def get_all_users_info(self):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute(
                     "SELECT user_id, chat_type, user_name, user_username, language, status, referrer_id FROM users")
@@ -431,10 +316,6 @@ class DataBase:
 
     async def unban_user(self, user_id):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute("UPDATE users SET status=%s WHERE user_id=%s", ("user", user_id))
         except psycopg2.OperationalError as e:
@@ -443,10 +324,6 @@ class DataBase:
 
     async def add_vote(self, joke_id, user_id, vote_type):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute("INSERT INTO votes (joke_id, user_id, vote_type) VALUES (%s, %s, %s)",
                                     (joke_id, user_id, vote_type))
@@ -456,10 +333,6 @@ class DataBase:
 
     async def remove_vote(self, joke_id, user_id):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute("DELETE FROM votes WHERE joke_id = %s AND user_id = %s", (joke_id, user_id))
         except psycopg2.OperationalError as e:
@@ -468,10 +341,6 @@ class DataBase:
 
     async def update_vote(self, joke_id, user_id, new_vote_type):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute("UPDATE votes SET vote_type = %s WHERE joke_id = %s AND user_id = %s",
                                     (new_vote_type, joke_id, user_id))
@@ -481,10 +350,6 @@ class DataBase:
 
     async def get_user_vote(self, joke_id, user_id):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute("SELECT vote_type FROM votes WHERE joke_id = %s AND user_id = %s",
                                     (joke_id, user_id))
@@ -499,10 +364,6 @@ class DataBase:
 
     async def count_votes(self, joke_id, vote_type):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute(
                     "SELECT COUNT(*) FROM votes WHERE joke_id = %s AND vote_type = %s",
@@ -519,10 +380,6 @@ class DataBase:
 
     async def get_ideas(self):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 self.cursor.execute('SELECT id, text FROM ideas ')
                 return self.cursor.fetchall()
@@ -533,9 +390,6 @@ class DataBase:
 
     async def get_idea(self, idea_id):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
             with self.connect:
                 self.cursor.execute('SELECT text FROM ideas WHERE id = %s', (idea_id,))
                 return self.cursor.fetchone()
@@ -546,10 +400,6 @@ class DataBase:
 
     async def delete_idea(self, note_id):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 return self.cursor.execute('DELETE FROM ideas WHERE id = %s', (note_id,))
 
@@ -559,10 +409,6 @@ class DataBase:
 
     async def add_idea(self, text):
         try:
-            if self.connect is None:
-                self.connect = psycopg2.connect(config.db_auth)
-                self.cursor = self.connect.cursor()
-
             with self.connect:
                 return self.cursor.execute("INSERT INTO ideas (text) VALUES (%s);", (text,))
 
