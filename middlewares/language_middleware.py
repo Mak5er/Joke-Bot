@@ -15,7 +15,7 @@ async def get_lang(user_id):
 
     except Exception as e:
         logging.error(f"Error retrieving language for user {user_id}: {e}")
-        return "uk"
+        return "en"
 
 
 class ACLMiddleware(I18nMiddleware):
