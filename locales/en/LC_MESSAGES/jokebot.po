@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-11-12 13:40+0200\n"
+"POT-Creation-Date: 2023-12-18 17:58+0200\n"
 "PO-Revision-Date: 2023-06-25 14:26+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -16,7 +16,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.8.0\n"
 
 #: main.py:37
 msgid "I'm stopped!"
@@ -26,168 +26,168 @@ msgstr ""
 msgid "I'm launched!"
 msgstr ""
 
-#: handlers/admin.py:69
+#: handlers/admin.py:59
 msgid "_Operating System_: *{}*\n"
 msgstr ""
 
-#: handlers/admin.py:70
+#: handlers/admin.py:60
 msgid "_OS Version_: *{}*\n"
 msgstr ""
 
-#: handlers/admin.py:71
+#: handlers/admin.py:61
 msgid "_Machine Name_: *{}*\n"
 msgstr ""
 
-#: handlers/admin.py:72
+#: handlers/admin.py:62
 msgid "_Processor Architecture_: *{}*\n"
 msgstr ""
 
-#: handlers/admin.py:76
+#: handlers/admin.py:65
 msgid "_Processor Model_: *{}*\n"
 msgstr ""
 
-#: handlers/admin.py:78
+#: handlers/admin.py:66
 msgid "_Physical Cores_: *{}*\n"
 msgstr ""
 
-#: handlers/admin.py:79
+#: handlers/admin.py:67
 msgid "_Logical Cores_: *{}*\n"
 msgstr ""
 
-#: handlers/admin.py:82
+#: handlers/admin.py:69
 msgid "_Total Memory_: *{:.2f}* MB\n"
 msgstr ""
 
-#: handlers/admin.py:83
+#: handlers/admin.py:70
 msgid "_Available Memory_: *{:.2f}* MB\n"
 msgstr ""
 
-#: handlers/admin.py:84
+#: handlers/admin.py:71
 msgid "_Memory Usage_: *{}*%\n"
 msgstr ""
 
-#: handlers/admin.py:91
+#: handlers/admin.py:76
 msgid ""
 "*System information:*\n"
 "\n"
 "{pc_info}"
 msgstr ""
 
-#: handlers/admin.py:127 handlers/admin.py:164 handlers/admin.py:260
-#: handlers/admin.py:355 handlers/admin.py:510 handlers/admin.py:546
-#: handlers/user.py:208 keyboards/inline_keyboards.py:51
+#: handlers/admin.py:112 handlers/admin.py:149 handlers/admin.py:198
+#: handlers/admin.py:293 handlers/admin.py:448 handlers/admin.py:484
+#: handlers/user.py:197 keyboards/inline_keyboards.py:51
 msgid "↩️Cancel"
 msgstr ""
 
-#: handlers/admin.py:239
+#: handlers/admin.py:177
 msgid "Search user by:"
 msgstr ""
 
-#: handlers/admin.py:246
+#: handlers/admin.py:184
 msgid "Type user {search}:"
 msgstr ""
 
-#: handlers/admin.py:301
+#: handlers/admin.py:239
 msgid "Enter in Conversation"
 msgstr ""
 
-#: handlers/admin.py:302
+#: handlers/admin.py:240
 msgid "Write as a bot"
 msgstr ""
 
-#: handlers/admin.py:303
+#: handlers/admin.py:241
 msgid "❌Ban"
 msgstr ""
 
-#: handlers/admin.py:304
+#: handlers/admin.py:242
 msgid "✅Unban"
 msgstr ""
 
-#: handlers/admin.py:305 handlers/admin.py:589 handlers/admin.py:595
-#: handlers/admin.py:611 keyboards/inline_keyboards.py:40
-#: keyboards/inline_keyboards.py:94 keyboards/inline_keyboards.py:103
-#: keyboards/inline_keyboards.py:111
+#: handlers/admin.py:243 handlers/admin.py:527 handlers/admin.py:533
+#: handlers/admin.py:549 keyboards/inline_keyboards.py:40
+#: keyboards/inline_keyboards.py:96 keyboards/inline_keyboards.py:105
+#: keyboards/inline_keyboards.py:113
 msgid "🔙Back"
 msgstr ""
 
-#: handlers/admin.py:334
+#: handlers/admin.py:272
 msgid "User not found!"
 msgstr ""
 
-#: handlers/admin.py:344
+#: handlers/admin.py:282
 msgid "Enter ban reason:"
 msgstr ""
 
-#: handlers/admin.py:356 handlers/admin.py:511 handlers/admin.py:547
-#: handlers/user.py:210
+#: handlers/admin.py:294 handlers/admin.py:449 handlers/admin.py:485
+#: handlers/user.py:199
 msgid "Action canceled!"
 msgstr ""
 
-#: handlers/admin.py:501
+#: handlers/admin.py:439
 msgid "Please type your answer:"
 msgstr ""
 
-#: handlers/admin.py:521
+#: handlers/admin.py:459
 msgid ""
 "Your message *{message_id}* was seen!\n"
 "*Answer:* `{answer}`"
 msgstr ""
 
-#: handlers/admin.py:523
+#: handlers/admin.py:461
 msgid "Your answer sent!"
 msgstr ""
 
-#: handlers/admin.py:527 handlers/admin.py:566
+#: handlers/admin.py:465 handlers/admin.py:504
 msgid "Something went wrong, see log for more information!"
 msgstr ""
 
-#: handlers/admin.py:537
+#: handlers/admin.py:475
 msgid "Please type message:"
 msgstr ""
 
-#: handlers/admin.py:557 handlers/admin.py:561
+#: handlers/admin.py:495 handlers/admin.py:499
 msgid "Your message sent!"
 msgstr ""
 
-#: handlers/admin.py:577
+#: handlers/admin.py:515
 msgid ""
 "*Ideas for you:*\n"
 "\n"
 msgstr ""
 
-#: handlers/admin.py:598
+#: handlers/admin.py:536
 msgid "There are no ideas for you."
 msgstr ""
 
-#: handlers/admin.py:610
+#: handlers/admin.py:548
 msgid "❌Delete"
 msgstr ""
 
-#: handlers/admin.py:629
+#: handlers/admin.py:566
 msgid "Idea deleted."
 msgstr ""
 
-#: handlers/user.py:85
+#: handlers/user.py:75
 msgid ""
 "If you want to offer an anecdote or if you find a bug, please click the "
 "button below and describe it."
 msgstr ""
 
-#: handlers/user.py:96
+#: handlers/user.py:85
 msgid ""
 "Referral *{user_id}* has registered at your invitation!\n"
 "Total number of invitees: *{refs_count}*"
 msgstr ""
 
-#: handlers/user.py:195
+#: handlers/user.py:184
 msgid "Please enter your message:"
 msgstr ""
 
-#: handlers/user.py:228
+#: handlers/user.py:219
 msgid "Your message *{feedback_message_id}* sent!"
 msgstr ""
 
-#: handlers/user.py:235
+#: handlers/user.py:226
 msgid "Please select category:"
 msgstr ""
 
@@ -259,19 +259,19 @@ msgstr ""
 msgid "🏢Work"
 msgstr ""
 
-#: keyboards/inline_keyboards.py:68 keyboards/inline_keyboards.py:82
-msgid "📊Joke rate"
+#: keyboards/inline_keyboards.py:70 keyboards/inline_keyboards.py:84
+msgid "🔃Update rating"
 msgstr ""
 
-#: keyboards/inline_keyboards.py:84
+#: keyboards/inline_keyboards.py:86
 msgid "👀Viewed"
 msgstr ""
 
-#: keyboards/inline_keyboards.py:118
+#: keyboards/inline_keyboards.py:120
 msgid "Feedback💬"
 msgstr ""
 
-#: keyboards/inline_keyboards.py:125
+#: keyboards/inline_keyboards.py:127
 msgid "Answer💬"
 msgstr ""
 
@@ -1160,5 +1160,8 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "There is any ideas for you."
+#~ msgstr ""
+
+#~ msgid "📊Joke rate"
 #~ msgstr ""
 

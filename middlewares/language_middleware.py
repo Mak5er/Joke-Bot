@@ -11,8 +11,8 @@ db = DataBase()
 async def get_lang(user_id):
     try:
         language = await db.get_language(user_id)
-        if language:
-            return language
+        return language if language else 'uk'
+
     except Exception as e:
         logging.error(f"Error retrieving language for user {user_id}: {e}")
         return "uk"

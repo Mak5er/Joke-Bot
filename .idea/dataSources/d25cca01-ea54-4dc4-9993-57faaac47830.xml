@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="Jokes">
-  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.49">
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.51">
     <root id="1"/>
     <database id="2" parent="1" name="postgres">
       <Comment>default administrative connection database</Comment>
@@ -4084,8 +4084,7 @@ statement_timeout=8s</Config>
 29529||16479|U|G
 29529||16480|U|G</Grants>
       <IntrospectionStateNumber>2704</IntrospectionStateNumber>
-      <IntrospectionTimestamp>2023-11-11.18:20:32.262</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-11-11.16:20:36</LocalIntrospectionTimestamp>
+      <LastIntrospectionLocalTimestamp>2023-11-11.16:20:36</LastIntrospectionLocalTimestamp>
       <ObjectId>28538</ObjectId>
       <StateNumber>1316</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
@@ -4168,7 +4167,7 @@ SECURITY LABEL</Tags>
     <sequence id="302" parent="289" name="ideas_id_seq">
       <DasType>bigint|0s</DasType>
       <ObjectId>29529</ObjectId>
-      <SequenceIdentity>1(9)</SequenceIdentity>
+      <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>2672</StateNumber>
       <OwnerName>postgres</OwnerName>
@@ -4176,7 +4175,7 @@ SECURITY LABEL</Tags>
     <sequence id="303" parent="289" name="jokes_uk_id_seq">
       <DasType>bigint|0s</DasType>
       <ObjectId>29118</ObjectId>
-      <SequenceIdentity>1(12021)</SequenceIdentity>
+      <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>1418</StateNumber>
       <OwnerName>postgres</OwnerName>
@@ -4184,7 +4183,7 @@ SECURITY LABEL</Tags>
     <sequence id="304" parent="289" name="users_user_id_seq">
       <DasType>bigint|0s</DasType>
       <ObjectId>29129</ObjectId>
-      <SequenceIdentity>1(6669700675)</SequenceIdentity>
+      <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>1421</StateNumber>
       <OwnerName>postgres</OwnerName>
@@ -4192,7 +4191,7 @@ SECURITY LABEL</Tags>
     <sequence id="305" parent="289" name="votes_id_seq">
       <DasType>bigint|0s</DasType>
       <ObjectId>29135</ObjectId>
-      <SequenceIdentity>1(551)</SequenceIdentity>
+      <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>1423</StateNumber>
       <OwnerName>postgres</OwnerName>

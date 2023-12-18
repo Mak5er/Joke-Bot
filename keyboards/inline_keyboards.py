@@ -67,7 +67,7 @@ def return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id, user_
     dislike_button = InlineKeyboardButton(
         text=dislike_button_text, callback_data=f'dislike_{joke_id}')
     rating_button = InlineKeyboardButton(
-        text=_('📊Joke rate'), callback_data=f'rating_{joke_id}')
+        text=_('🔃Update rating'), callback_data=f'rating_{joke_id}')
     rating_and_votes_keyboard = InlineKeyboardMarkup(row_width=2)
     rating_and_votes_keyboard.add(rating_button)
     rating_and_votes_keyboard.add(like_button, dislike_button)
@@ -81,7 +81,7 @@ def return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id):
     dislike_button = InlineKeyboardButton(
         text=f'👎 {dislikes_count}', callback_data=f'dislike_{joke_id}')
     rating_button = InlineKeyboardButton(
-        text=_('📊Joke rate'), callback_data=f'rating_{joke_id}')
+        text=_('🔃Update rating'), callback_data=f'rating_{joke_id}')
     seen_button = InlineKeyboardButton(
         text=_('👀Viewed'), callback_data=f'seen_{joke_id}')
     rating_and_seen_keyboard = InlineKeyboardMarkup(row_width=2)

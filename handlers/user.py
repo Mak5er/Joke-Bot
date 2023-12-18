@@ -374,12 +374,21 @@ async def like_joke(call: types.CallbackQuery):
 
     if user_vote == "like":
         await db.remove_vote(joke_id, user_id)
+        logging.info(
+            f"User action: Removed like from joke (User ID: {user_id}, Joke ID: {joke_id})"
+        )
     elif user_vote == "dislike":
         await db.update_vote(joke_id, user_id, "like")
         await call.answer(bm.liked_joke())
+        logging.info(
+            f"User action: Liked joke (User ID: {user_id}, Joke ID: {joke_id})"
+        )
     else:
         await db.add_vote(joke_id, user_id, "like")
         await call.answer(bm.liked_joke())
+        logging.info(
+            f"User action: Liked joke (User ID: {user_id}, Joke ID: {joke_id})"
+        )
 
     await update_buttons(call.message, joke_id, user_id)
 
@@ -393,13 +402,21 @@ async def dislike_joke(call: types.CallbackQuery):
 
     if user_vote == "dislike":
         await db.remove_vote(joke_id, user_id)
+        logging.info(
+            f"User action: Removed dislike from joke (User ID: {user_id}, Joke ID: {joke_id})"
+        )
     elif user_vote == "like":
         await db.update_vote(joke_id, user_id, "dislike")
         await call.answer(bm.disliked_joke())
-
+        logging.info(
+            f"User action: Disliked joke (User ID: {user_id}, Joke ID: {joke_id})"
+        )
     else:
         await db.add_vote(joke_id, user_id, "dislike")
         await call.answer(bm.disliked_joke())
+        logging.info(
+            f"User action: Disliked joke (User ID: {user_id}, Joke ID: {joke_id})"
+        )
 
     await update_buttons(call.message, joke_id, user_id)
 
@@ -416,21 +433,16 @@ async def update_buttons(message, joke_id, user_id):
 
     try:
         await message.edit_reply_markup(reply_markup)
+
     except Exception as e:
         print(f"Error updating buttons: {e}")
+        pass
 
 
 @dp.callback_query_handler(lambda call: call.data.startswith('rating_'))
 async def joke_rating(call: types.CallbackQuery):
     joke_id = int(call.data.split('_')[1])
     user_id = call.from_user.id
-
-    likes_count = await db.count_votes(joke_id, "like")
-    dislikes_count = await db.count_votes(joke_id, "dislike")
-
-    joke_rate = likes_count - dislikes_count
-
-    await call.answer(bm.joke_rating(joke_rate), show_alert=True)
 
     await update_buttons(call.message, joke_id, user_id)
 
