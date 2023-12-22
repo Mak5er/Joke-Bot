@@ -91,6 +91,14 @@ def disliked_joke():
     return _("You 👎 this!")
 
 
+def revoked_vote():
+    return _("You revoked your vote!")
+
+
+def updated_rating():
+    return _("🔃The rating is updated!")
+
+
 def seen_joke():
     return _("You have marked this joke as read!")
 

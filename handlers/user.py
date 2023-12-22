@@ -374,6 +374,7 @@ async def like_joke(call: types.CallbackQuery):
 
     if user_vote == "like":
         await db.remove_vote(joke_id, user_id)
+        await call.answer(bm.revoked_vote())
         logging.info(
             f"User action: Removed like from joke (User ID: {user_id}, Joke ID: {joke_id})"
         )
@@ -402,6 +403,7 @@ async def dislike_joke(call: types.CallbackQuery):
 
     if user_vote == "dislike":
         await db.remove_vote(joke_id, user_id)
+        await call.answer(bm.revoked_vote())
         logging.info(
             f"User action: Removed dislike from joke (User ID: {user_id}, Joke ID: {joke_id})"
         )
@@ -445,6 +447,8 @@ async def joke_rating(call: types.CallbackQuery):
     user_id = call.from_user.id
 
     await update_buttons(call.message, joke_id, user_id)
+
+    await call.answer(bm.updated_rating())
 
 
 @dp.message_handler()
