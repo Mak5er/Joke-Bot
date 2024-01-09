@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  joke-bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    env_file: .env
+    container_name: joke-bot
+    restart: always
