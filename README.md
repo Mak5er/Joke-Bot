@@ -31,9 +31,9 @@ Install the required Python packages using pip:
 
 Set up the necessary configuration by creating a  `.env`  file and defining the required variables:
 
-`token` : Your Telegram bot token.
-`admin_id` : The ID of the admin user.
-`db_auth` : The authentication string for your PostgreSQL database.
+- `token` : Your Telegram bot token.
+- `admin_id` : The ID of the admin user.
+- `db_auth` : The authentication string for your PostgreSQL database.
 
 
 Example  `.env`  file:
