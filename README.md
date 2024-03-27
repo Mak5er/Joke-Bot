@@ -38,9 +38,9 @@ Set up the necessary configuration by creating a  `.env`  file and defining the 
 
 Example  `.env`  file:
 
-       token=YOUR_TELEGRAM_BOT_TOKEN
-       admin_id=YOUR_ADMIN_USER_ID
-       db_auth=YOUR_POSTGRESQL_AUTH_STRING
+    token=YOUR_TELEGRAM_BOT_TOKEN
+    admin_id=YOUR_ADMIN_USER_ID
+    db_auth=YOUR_POSTGRESQL_AUTH_STRING
 
 
 Set up a PostgreSQL database and update the  `db_auth`  variable in the  `.env`  file with the database authentication
