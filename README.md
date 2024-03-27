@@ -50,6 +50,10 @@ Run the script using Python:
 
     python main.py
 
+Or using Docker:
+    
+    docker compose up -d
+
 ### Database Tables
 
 The PostgreSQL database used by the bot includes the following tables:
