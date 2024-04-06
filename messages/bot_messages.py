@@ -208,3 +208,6 @@ def successful_unban(unbanned_user_id):
 def feedback_message_send(user, feedback_message):
     return _("*New message* from user: *{user}*\n*Message:* `{feedback_message}`").format(user=user,
                                                                                           feedback_message=feedback_message)
+
+def pick_a_joke():
+    return _("Pick a joke:")

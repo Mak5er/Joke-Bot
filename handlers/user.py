@@ -355,13 +355,10 @@ async def show_joke(call: types.CallbackQuery, state: FSMContext):
     if call.message.chat.type == 'private':
         keyboard_type = kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id, user_vote)
 
+    await call.message.answer(f"ID: {joke_id}")
     await call.message.answer(joke_formated, reply_markup=keyboard_type)
     await db.seen_joke(joke_id, user_id)
     logging.info(f"User action: Sent joke (User ID: {user_id}, Joke ID: {joke_id})")
-
-    await asyncio.sleep(600)
-    await call.message.delete()
-    await state.finish()
 
 
 @dp.callback_query_handler(lambda call: call.data.startswith('page_'))
@@ -369,6 +366,10 @@ async def jokes_pagination(call: types.CallbackQuery, state: FSMContext):
     page_number = int(call.data.split('_')[1])
 
     await show_joke_page(call.message, page_number, state)
+
+    await asyncio.sleep(600)
+    await call.message.delete()
+    await state.finish()
 
 
 async def show_joke_page(message: types.Message, page_number: int, state: FSMContext):
@@ -400,12 +401,12 @@ async def show_joke_page(message: types.Message, page_number: int, state: FSMCon
         await bot.edit_message_text(
             chat_id=message.chat.id,
             message_id=message.message_id,
-            text="Оберіть анекдот:",
+            text=bm.pick_a_joke(),
             reply_markup=keyboard,
         )
     except:
         await message.answer(
-            text="Оберіть анекдот:",
+            text=bm.pick_a_joke(),
             reply_markup=keyboard,
         )
 
