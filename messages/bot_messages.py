@@ -7,9 +7,11 @@ def welcome_message(name):
              "List of commands /help").format(name=name)
 
 
-def admin_panel(user_count, joke_count, sent_count):
+def admin_panel(user_count, active_user_count, inactive_user_count, joke_count, sent_count):
     return _("""Hello, this is the admin panel.
 🪪Number of bot users: *{user_count}*
+📱Number of active users: *{active_user_count}*
+📵Number of inactive users: *{inactive_user_count}*
 🃏Number of jokes in the database: *{joke_count}*
 📬Total number of jokes read: *{sent_count}*
 
@@ -17,6 +19,8 @@ Admin commands:
 /ideas - list ideas from users
 /get\_users - download table with all users info
 /system\_info - get info about system""").format(user_count=user_count,
+                                                 active_user_count=active_user_count,
+                                                 inactive_user_count=inactive_user_count,
                                                  joke_count=joke_count,
                                                  sent_count=sent_count)
 

@@ -329,8 +329,20 @@ async def daily_joke():
 
             logging.info(f"Sent daily joke to user {chat_id}")
 
+            user_status = await db.status(chat_id)
+
+            if user_status == "inactive":
+                await db.set_active(chat_id)
+
         except Exception as e:
             logging.error(f"Error sending message to user {chat_id}: {str(e)}")
+
+            if str(e) == "Forbidden: bots can't send messages to bots":
+                await db.delete_user(chat_id)
+
+            if "blocked" or "Chat not found" in str(e):
+                await db.set_inactive(chat_id)
+                
             continue
 
     await bot.send_message(chat_id=admin_id, text=bm.finish_mailing())

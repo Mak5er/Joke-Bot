@@ -40,11 +40,13 @@ async def admin(message: types.Message):
         logging.info(f"User action: /admin (User ID: {user_id})")
 
         user_count = await db.user_count()
+        active_user_count = await db.active_user_count()
+        inactive_user_count = await db.inactive_user_count()
         joke_count = await db.joke_count(table_name)
         sent_count = await db.sent_count()
 
         await message.answer(bot_messages.admin_panel(
-            user_count, joke_count, sent_count),
+            user_count, active_user_count, inactive_user_count, joke_count, sent_count),
             reply_markup=kb.admin_keyboard(), parse_mode='Markdown')
     else:
         await message.answer(bot_messages.not_groups())
@@ -164,7 +166,7 @@ async def save_joke(message: types.Message, state: FSMContext):
             f"User action: Add joke (User ID: {user_id}), (Joke text: {message.text})"
         )
 
-
+@rate_limit(10)
 @dp.callback_query_handler(lambda call: call.data == 'daily_joke')
 async def send_daily_joke(call: types.CallbackQuery):
     from handlers.user import daily_joke
@@ -319,7 +321,7 @@ async def control_user(message: types.Message, state: FSMContext):
 async def message_handler(call: types.CallbackQuery):
     unbanned_user_id = call.data.split("_")[1]
 
-    await db.unban_user(unbanned_user_id)
+    await db.set_active(unbanned_user_id)
 
     await bot.send_message(chat_id=unbanned_user_id,
                            text=bm.unban_message())
