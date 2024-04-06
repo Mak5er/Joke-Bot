@@ -253,7 +253,7 @@ async def control_user(message: types.Message, state: FSMContext):
 
             user_photo = await bot.get_user_profile_photos(user_id, limit=1)
 
-            if status == 'user':
+            if status == 'active':
                 control_keyboard.row(ban_button)
 
             elif status == 'ban':

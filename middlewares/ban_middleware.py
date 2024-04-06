@@ -13,7 +13,7 @@ class UserBannedMiddleware(BaseMiddleware):
         try:
             user = await db.status(message.from_user.id)
         except:
-            user = 'user'
+            user = 'active'
 
         if user == 'ban':
             if message.chat.type == 'private':

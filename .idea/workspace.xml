@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="868e1bc7-d2cf-4321-8444-628b09c4cc27" name="Changes" comment="changed parameter in lang middleware">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Joke-Bot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Joke-Bot.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d25cca01-ea54-4dc4-9993-57faaac47830.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d25cca01-ea54-4dc4-9993-57faaac47830.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.mo" beforeDir="false" afterPath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.po" beforeDir="false" afterPath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/jokebot.pot" beforeDir="false" afterPath="$PROJECT_DIR$/locales/jokebot.pot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.mo" beforeDir="false" afterPath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.po" beforeDir="false" afterPath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messages/bot_messages.py" beforeDir="false" afterPath="$PROJECT_DIR$/messages/bot_messages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/db.py" afterDir="false" />
-    </list>
+    <list default="true" id="868e1bc7-d2cf-4321-8444-628b09c4cc27" name="Changes" comment="fixed small bug" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -238,7 +222,7 @@
       <workItem from="1703267869730" duration="267000" />
       <workItem from="1703268343748" duration="304000" />
       <workItem from="1712394683571" duration="17000" />
-      <workItem from="1712394848148" duration="4030000" />
+      <workItem from="1712394848148" duration="4516000" />
     </task>
     <task id="LOCAL-00001" summary="UPDATE main.py">
       <created>1687548643088</created>
@@ -253,22 +237,6 @@
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1687551110578</updated>
-    </task>
-    <task id="LOCAL-00003" summary="UPDATE main.py">
-      <option name="closed" value="true" />
-      <created>1687605559605</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1687605559605</updated>
-    </task>
-    <task id="LOCAL-00004" summary="ADD i18n and english, ukraine languages">
-      <option name="closed" value="true" />
-      <created>1687695722220</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1687695722220</updated>
     </task>
     <task id="LOCAL-00005" summary="ADD i18n and english, ukraine languages">
       <option name="closed" value="true" />
@@ -629,7 +597,23 @@
       <option name="project" value="LOCAL" />
       <updated>1702917263575</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="add active adn inactive users counting">
+      <option name="closed" value="true" />
+      <created>1712400031508</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1712400031508</updated>
+    </task>
+    <task id="LOCAL-00051" summary="fixed small bug">
+      <option name="closed" value="true" />
+      <created>1712400317695</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1712400317695</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -666,8 +650,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="UPDATE ban system ADD ban reason" />
-    <MESSAGE value="ADD feedback system" />
     <MESSAGE value="small bug fix" />
     <MESSAGE value="bug fix" />
     <MESSAGE value="small update" />
@@ -691,7 +673,9 @@
     <MESSAGE value="update daily joke sending" />
     <MESSAGE value="updated rating show and add logging for like and dislike" />
     <MESSAGE value="changed parameter in lang middleware" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed parameter in lang middleware" />
+    <MESSAGE value="add active adn inactive users counting" />
+    <MESSAGE value="fixed small bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed small bug" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Joke_Bot$main.coverage" NAME="main Coverage Results" MODIFIED="1712399728788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

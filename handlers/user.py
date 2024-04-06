@@ -43,7 +43,7 @@ async def send_welcome(message: types.Message):
             user_name = chat_info.title
             user_username = None
             language = 'uk'
-            status = 'user'
+            status = 'active'
             referrer_id = None
 
             await db.add_users(user_id, user_name, user_username, chat_type, language, status, referrer_id)
@@ -342,7 +342,7 @@ async def daily_joke():
 
             if "blocked" or "Chat not found" in str(e):
                 await db.set_inactive(chat_id)
-                
+
             continue
 
     await bot.send_message(chat_id=admin_id, text=bm.finish_mailing())
