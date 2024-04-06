@@ -27,6 +27,7 @@ db = DataBase()
 admin_id = config.admin_id
 
 
+
 @dp.message_handler(user_id=admin_id, commands=['admin'])
 @rate_limit(2)
 async def admin(message: types.Message):

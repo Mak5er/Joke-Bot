@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  sease\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-04-06 14:22+0300\n"
+"POT-Creation-Date: 2024-04-06 20:56+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -22,47 +22,47 @@ msgstr ""
 msgid "I'm launched!"
 msgstr ""
 
-#: handlers/admin.py:61
+#: handlers/admin.py:62
 msgid "_Operating System_: *{}*\n"
 msgstr "_Операційна система_: *{}*\n"
 
-#: handlers/admin.py:62
+#: handlers/admin.py:63
 msgid "_OS Version_: *{}*\n"
 msgstr "_Версія операційної системи_: *{}*\n"
 
-#: handlers/admin.py:63
+#: handlers/admin.py:64
 msgid "_Machine Name_: *{}*\n"
 msgstr "_Ім'я машини_: *{}*\n"
 
-#: handlers/admin.py:64
+#: handlers/admin.py:65
 msgid "_Processor Architecture_: *{}*\n"
 msgstr "_Архітектура процесора_: *{}*\n"
 
-#: handlers/admin.py:67
+#: handlers/admin.py:68
 msgid "_Processor Model_: *{}*\n"
 msgstr "_Модель процесора_: *{}*\n"
 
-#: handlers/admin.py:68
+#: handlers/admin.py:69
 msgid "_Physical Cores_: *{}*\n"
 msgstr "_Кількість фізичних ядер_: *{}*\n"
 
-#: handlers/admin.py:69
+#: handlers/admin.py:70
 msgid "_Logical Cores_: *{}*\n"
 msgstr "_Кількість логічних ядер_: *{}*\n"
 
-#: handlers/admin.py:71
+#: handlers/admin.py:72
 msgid "_Total Memory_: *{:.2f}* MB\n"
 msgstr "_Загальний об'єм пам'яті_: *{:.2f}* МБ\n"
 
-#: handlers/admin.py:72
+#: handlers/admin.py:73
 msgid "_Available Memory_: *{:.2f}* MB\n"
 msgstr "_Доступна пам'ять_: *{:.2f}* МБ\n"
 
-#: handlers/admin.py:73
+#: handlers/admin.py:74
 msgid "_Memory Usage_: *{}*%\n"
 msgstr "_Використання пам'яті_: *{}*%\n"
 
-#: handlers/admin.py:78
+#: handlers/admin.py:79
 msgid ""
 "*System information:*\n"
 "\n"
@@ -72,61 +72,61 @@ msgstr ""
 "\n"
 "{pc_info}"
 
-#: handlers/admin.py:114 handlers/admin.py:151 handlers/admin.py:200
-#: handlers/admin.py:295 handlers/admin.py:450 handlers/admin.py:486
-#: handlers/user.py:197 keyboards/inline_keyboards.py:51
+#: handlers/admin.py:115 handlers/admin.py:152 handlers/admin.py:201
+#: handlers/admin.py:296 handlers/admin.py:451 handlers/admin.py:487
+#: handlers/user.py:211 keyboards/inline_keyboards.py:51
 msgid "↩️Cancel"
 msgstr "↩️Скасувати"
 
-#: handlers/admin.py:179
+#: handlers/admin.py:180
 msgid "Search user by:"
 msgstr "Шукати користувача по:"
 
-#: handlers/admin.py:186
+#: handlers/admin.py:187
 msgid "Type user {search}:"
 msgstr "Введіть {search} користувача:"
 
-#: handlers/admin.py:241
+#: handlers/admin.py:242
 msgid "Enter in Conversation"
 msgstr "Перейти до розмови"
 
-#: handlers/admin.py:242
+#: handlers/admin.py:243
 msgid "Write as a bot"
 msgstr "Написати як бот"
 
-#: handlers/admin.py:243
+#: handlers/admin.py:244
 msgid "❌Ban"
 msgstr "❌Забанити"
 
-#: handlers/admin.py:244
+#: handlers/admin.py:245
 msgid "✅Unban"
 msgstr "✅Розбанити"
 
-#: handlers/admin.py:245 handlers/admin.py:529 handlers/admin.py:535
-#: handlers/admin.py:551 keyboards/inline_keyboards.py:40
+#: handlers/admin.py:246 handlers/admin.py:530 handlers/admin.py:536
+#: handlers/admin.py:552 keyboards/inline_keyboards.py:40
 #: keyboards/inline_keyboards.py:96 keyboards/inline_keyboards.py:105
 #: keyboards/inline_keyboards.py:113
 msgid "🔙Back"
 msgstr "🔙Назад"
 
-#: handlers/admin.py:274
+#: handlers/admin.py:275
 msgid "User not found!"
 msgstr "Користувача не знайдено!"
 
-#: handlers/admin.py:284
+#: handlers/admin.py:285
 msgid "Enter ban reason:"
 msgstr "Введіть причину бану:"
 
-#: handlers/admin.py:296 handlers/admin.py:451 handlers/admin.py:487
-#: handlers/user.py:199
+#: handlers/admin.py:297 handlers/admin.py:452 handlers/admin.py:488
+#: handlers/user.py:213
 msgid "Action canceled!"
 msgstr "Дію скасовано"
 
-#: handlers/admin.py:441
+#: handlers/admin.py:442
 msgid "Please type your answer:"
 msgstr "Будь ласка, напишіть свою відповідь:"
 
-#: handlers/admin.py:461
+#: handlers/admin.py:462
 msgid ""
 "Your message *{message_id}* was seen!\n"
 "*Answer:* `{answer}`"
@@ -134,23 +134,23 @@ msgstr ""
 "Ваше повідомлення *{message_id}* було переглянуто!\n"
 "*Відповідь:* `{answer}`"
 
-#: handlers/admin.py:463
+#: handlers/admin.py:464
 msgid "Your answer sent!"
 msgstr "Вашу відповідь надіслано!"
 
-#: handlers/admin.py:467 handlers/admin.py:506
+#: handlers/admin.py:468 handlers/admin.py:507
 msgid "Something went wrong, see log for more information!"
 msgstr "Щось пішло не так, дивіться лог для отримання додаткової інформації!"
 
-#: handlers/admin.py:477
+#: handlers/admin.py:478
 msgid "Please type message:"
 msgstr "Будь ласка, введіть своє повідомлення:"
 
-#: handlers/admin.py:497 handlers/admin.py:501
+#: handlers/admin.py:498 handlers/admin.py:502
 msgid "Your message sent!"
 msgstr "Ваше повідомлення надіслано!"
 
-#: handlers/admin.py:517
+#: handlers/admin.py:518
 msgid ""
 "*Ideas for you:*\n"
 "\n"
@@ -158,19 +158,19 @@ msgstr ""
 "*Ідеї для вас:*\n"
 "\n"
 
-#: handlers/admin.py:538
+#: handlers/admin.py:539
 msgid "There are no ideas for you."
 msgstr "Немає жодних ідей для вас."
 
-#: handlers/admin.py:550
+#: handlers/admin.py:551
 msgid "❌Delete"
 msgstr "❌Видалити"
 
-#: handlers/admin.py:568
+#: handlers/admin.py:569
 msgid "Idea deleted."
 msgstr "Ідею видалено."
 
-#: handlers/user.py:75
+#: handlers/user.py:81
 msgid ""
 "If you want to offer an anecdote or if you find a bug, please click the "
 "button below and describe it."
@@ -178,7 +178,7 @@ msgstr ""
 "Якщо ви знайшли помилку або хочете запропонувати анекдот, будь ласка, "
 "натисніть кнопку нижче та опишіть його."
 
-#: handlers/user.py:85
+#: handlers/user.py:91
 msgid ""
 "Referral *{user_id}* has registered at your invitation!\n"
 "Total number of invitees: *{refs_count}*"
@@ -186,17 +186,29 @@ msgstr ""
 "Реферал *{user_id}* зареєструвався за вашим запрошенням!\n"
 "Загальна кількість запрошених: *{refs_count}*"
 
-#: handlers/user.py:184
+#: handlers/user.py:189
+msgid "Type joke text or ID:"
+msgstr ""
+
+#: handlers/user.py:198
 msgid "Please enter your message:"
 msgstr "Будь ласка, введіть своє повідомлення:"
 
-#: handlers/user.py:219
+#: handlers/user.py:233
 msgid "Your message *{feedback_message_id}* sent!"
 msgstr "Ваше повідомлення *{feedback_message_id}* надіслано!"
 
-#: handlers/user.py:226
+#: handlers/user.py:240
 msgid "Please select category:"
 msgstr "Будьласка оберіть категорію:"
+
+#: handlers/user.py:316
+msgid "Nothing was found."
+msgstr ""
+
+#: handlers/user.py:382
+msgid "Page "
+msgstr ""
 
 #: keyboards/inline_keyboards.py:8
 msgid "📝Add a joke"
@@ -308,8 +320,8 @@ msgid ""
 msgstr ""
 "Привіт, це панель адміністратора.\n"
 "🪪Кількість користувачів бота: *{user_count}*\n"
-"📱Кількість активних користувачів: *{user_count}*\n"
-"📵Кількість неактивних користувачів: *{user_count}*\n"
+"📱Кількість активних користувачів: *{active_user_count}*\n"
+"📵Кількість неактивних користувачів: *{inactive_user_count}*\n"
 "🃏Кількість анекдотів у базі: *{joke_count}*\n"
 "📬Кількість прочитаних жартів: *{sent_count}*\n"
 "\n"

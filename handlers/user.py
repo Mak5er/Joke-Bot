@@ -5,6 +5,8 @@ import re
 from aiogram import types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher import FSMContext
+from aiogram.dispatcher.filters.state import StatesGroup, State
+from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.cron import CronTrigger
 from ping3 import ping
@@ -19,6 +21,10 @@ from services import DataBase
 storage = MemoryStorage()
 
 db = DataBase()
+
+
+class FindJoke(StatesGroup):
+    find_joke = State()
 
 
 async def update_info(message: types.Message):
@@ -176,6 +182,14 @@ async def cmd_ping(message: types.Message):
         return str(e)
 
 
+@dp.message_handler(commands=['find'])
+@rate_limit(1)
+async def return_find_menu(message: types.Message):
+    await dp.bot.send_chat_action(message.chat.id, "typing")
+    await message.reply(_("Type joke text or ID:"))
+    await FindJoke.find_joke.set()
+
+
 @dp.callback_query_handler(lambda call: call.data == 'feedback')
 @rate_limit(1)
 async def feedback_handler(call: types.CallbackQuery):
@@ -232,10 +246,10 @@ async def back_to_random(call):
     await call.message.edit_text(bm.pres_button(), reply_markup=kb.random_keyboard())
 
 
-async def send_joke(call, result):
-    chat_id = call.message.chat.id
-    user_id = call.from_user.id
-    await dp.bot.send_chat_action(call.message.chat.id, "typing")
+async def send_joke(message, result):
+    chat_id = message.chat.id
+    user_id = message.from_user.id
+    await dp.bot.send_chat_action(message.chat.id, "typing")
 
     if not result:
         await bot.send_message(chat_id, bm.all_send())
@@ -259,15 +273,15 @@ async def send_joke(call, result):
         joke_formated = re.sub(r"([*_`~]+)", r"\\\1", joke)
         keyboard_type = kb.return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id)
 
-        if call.message.chat.type == 'private':
+        if message.chat.type == 'private':
             keyboard_type = kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id, user_vote)
 
-        await call.message.edit_text(joke_formated, reply_markup=keyboard_type)
+        await message.edit_text(joke_formated, reply_markup=keyboard_type)
         await db.seen_joke(joke_id, user_id)
         logging.info(f"User action: Sent joke (User ID: {user_id}, Joke ID: {joke_id})")
 
     await bot.send_message(chat_id, text=bm.pres_button(), reply_markup=kb.random_keyboard())
-    await update_info(call.message)
+    await update_info(message)
 
 
 @dp.callback_query_handler(lambda call: call.data.startswith('joke:'))
@@ -275,14 +289,125 @@ async def send_category_joke_pivate(call):
     tag = call.data.split(':')[1]
     user_id = call.from_user.id
     result = await db.get_tagged_joke(user_id, tag)
-    await send_joke(call, result)
+    await send_joke(call.message, result)
 
 
 @dp.callback_query_handler(lambda call: call.data == 'random_joke')
 async def send_joke_private(call):
     user_id = call.from_user.id
     result = await db.get_joke(user_id)
-    await send_joke(call, result)
+    await send_joke(call.message, result)
+
+
+@dp.message_handler(state=FindJoke.find_joke)
+async def find_jokes(message: types.Message, state: FSMContext):
+    await state.finish()
+    user_id = message.from_user.id
+
+    answer = message.text
+    result = None
+
+    if answer.isdigit():
+        result = await db.get_joke_by_id(int(answer))
+    elif answer:
+        result = await db.get_joke_by_text(answer)
+
+    if not result:
+        await bot.send_message(user_id, _("Nothing was found."))
+        return
+
+    await create_joke_list(message, result, state)
+
+
+async def create_joke_list(message: types.Message, result: list, state: FSMContext):
+    await state.update_data(jokes=result)
+    page_number = 0
+
+    await show_joke_page(message, page_number, state)
+
+
+@dp.callback_query_handler(lambda call: call.data.startswith('joke_'))
+async def show_joke(call: types.CallbackQuery, state: FSMContext):
+    user_id = call.from_user.id
+
+    tag = call.data.split('_')[1]
+
+    result = await db.get_joke_by_id(tag)
+
+    joke = result[0]
+    joke_id = joke[0]
+    joke_text = joke[1]
+    tags = await db.get_tags(joke_id)
+    likes_count = await db.count_votes(joke_id, "like")
+    dislikes_count = await db.count_votes(joke_id, "dislike")
+    user_vote = await db.get_user_vote(joke_id, user_id)
+
+    if tags is not None:
+        tagged_tags = f'#{tags}'
+        tagget_text = tagged_tags.replace(', ', ' #')
+        joke = f'{joke_text}\n\n{tagget_text}'
+    else:
+        joke = joke_text
+
+    joke_formated = re.sub(r"([*_`~]+)", r"\\\1", joke)
+    keyboard_type = kb.return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id)
+
+    if call.message.chat.type == 'private':
+        keyboard_type = kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id, user_vote)
+
+    await call.message.answer(joke_formated, reply_markup=keyboard_type)
+    await db.seen_joke(joke_id, user_id)
+    logging.info(f"User action: Sent joke (User ID: {user_id}, Joke ID: {joke_id})")
+
+    await asyncio.sleep(600)
+    await call.message.delete()
+    await state.finish()
+
+
+@dp.callback_query_handler(lambda call: call.data.startswith('page_'))
+async def jokes_pagination(call: types.CallbackQuery, state: FSMContext):
+    page_number = int(call.data.split('_')[1])
+
+    await show_joke_page(call.message, page_number, state)
+
+
+async def show_joke_page(message: types.Message, page_number: int, state: FSMContext):
+    async with state.proxy() as data:
+        jokes = data.get('jokes')
+
+    page_size = 10
+    current_page = jokes[page_number * page_size:(page_number + 1) * page_size]
+
+    # Додавання номера сторінки
+    page_title = _("Page ") + str(int(page_number + 1))
+    keyboard = InlineKeyboardMarkup(row_width=len(current_page) + 2)
+
+    # Додавання кнопок анекдотів
+    for joke in current_page:
+        joke_text_short = joke[1][:30] + "..." if len(joke[1]) > 30 else joke[1]
+        button = InlineKeyboardButton(text=joke_text_short, callback_data=f"joke_{joke[0]}")
+        keyboard.row(button)
+
+    # Додавання стрілок
+
+    if len(jokes) > (page_number + 1) * page_size:
+        keyboard.row(InlineKeyboardButton("➡️", callback_data=f"page_{page_number + 1}"))
+        keyboard.add(InlineKeyboardButton(text=page_title, callback_data="page_number"))
+    if page_number > 0:
+        keyboard.row(InlineKeyboardButton("⬅️", callback_data=f"page_{page_number - 1}"))
+
+    try:
+        await bot.edit_message_text(
+            chat_id=message.chat.id,
+            message_id=message.message_id,
+            text="Оберіть анекдот:",
+            reply_markup=keyboard,
+        )
+    except:
+        await message.answer(
+            text="Оберіть анекдот:",
+            reply_markup=keyboard,
+        )
 
 
 scheduler = AsyncIOScheduler()
