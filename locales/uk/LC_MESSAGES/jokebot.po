@@ -293,7 +293,6 @@ msgstr ""
 "Список команд /help"
 
 #: messages/bot_messages.py:11
-#, fuzzy
 msgid ""
 "Hello, this is the admin panel.\n"
 "🪪Number of bot users: *{user_count}*\n"
