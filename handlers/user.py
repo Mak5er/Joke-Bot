@@ -58,7 +58,7 @@ async def send_welcome(message: types.Message):
             await bot.send_message(
                 chat_id=message.chat.id,
                 text=bm.join_group(chat_title),
-                parse_mode="Markdown")
+                parse_mode="HTML")
 
 
 @rate_limit(1)
@@ -89,8 +89,8 @@ async def send_welcome(message: types.Message):
                 refs_count = await db.refs_count(referrer_id)
                 try:
                     await bot.send_message(chat_id=referrer_id, text=_(
-                        "Referral *{user_id}* has registered at your invitation!\nTotal number of invitees: *{refs_count}*").format(
-                        user_id=user_id, refs_count=refs_count), parse_mode='Markdown')
+                        "Referral <b>{user_id}</b> has registered at your invitation!\nTotal number of invitees: <b>{refs_count}</b>").format(
+                        user_id=user_id, refs_count=refs_count), parse_mode='HTML')
                 except Exception as e:
                     print(str(e))
 
@@ -106,7 +106,7 @@ async def change_lang(message: types.Message):
     await asyncio.sleep(0.5)
 
     await message.reply(bm.please_choose(),
-                        reply_markup=kb.lang_keyboard, parse_mode="Markdown")
+                        reply_markup=kb.lang_keyboard, parse_mode="HTML")
 
 
 @dp.callback_query_handler(lambda call: call.data.startswith('lang_'))
@@ -227,10 +227,10 @@ async def feedback(message: types.Message, state: FSMContext):
 
     await bot.send_message(chat_id=admin_id, text=bm.feedback_message_send(user, feedback_message),
                            reply_markup=kb.feedback_answer(feedback_message_id, feedback_message_chat_id),
-                           parse_mode="Markdown")
+                           parse_mode="HTML")
 
     await message.answer(
-        _("Your message *{feedback_message_id}* sent!").format(feedback_message_id=feedback_message_id),
+        _("Your message <b>{feedback_message_id}</b> sent!").format(feedback_message_id=feedback_message_id),
         reply_markup=types.ReplyKeyboardRemove())
     await update_info(message)
 
@@ -448,7 +448,7 @@ async def daily_joke():
             await bot.send_message(
                 chat_id=user[0],
                 text=bm.daily_joke(joke_formated),
-                parse_mode="Markdown",
+                parse_mode="HTML",
                 reply_markup=kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id, user_vote))
 
             await db.seen_joke(joke_id, chat_id)
@@ -598,7 +598,7 @@ async def handle_message(message: types.Message):
         await message.reply(bm.help_message())
 
     elif message.chat.type == 'private':
-        await message.reply(bm.dont_understood(name), reply_markup=kb.return_feedback_button(), parse_mode="Markdown")
+        await message.reply(bm.dont_understood(name), reply_markup=kb.return_feedback_button(), parse_mode="HTML")
 
     elif message.chat.type == 'group' or message.chat.type == 'supergroup':
         pass

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  sease\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-04-06 22:27+0300\n"
+"POT-Creation-Date: 2024-04-07 10:53+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -22,58 +22,58 @@ msgstr ""
 msgid "I'm launched!"
 msgstr ""
 
+#: handlers/admin.py:61
+msgid "<b>Operating System</b>: <i>{}</i>\n"
+msgstr "<b>Операційна система</b>: <i>{}</i>\n"
+
 #: handlers/admin.py:62
-msgid "_Operating System_: *{}*\n"
-msgstr "_Операційна система_: *{}*\n"
+msgid "<b>OS Version</b>: <i>{}</i>\n"
+msgstr "<b>Версія операційної системи</b>: <i>{}</i>\n"
 
 #: handlers/admin.py:63
-msgid "_OS Version_: *{}*\n"
-msgstr "_Версія операційної системи_: *{}*\n"
+msgid "<b>Machine Name</b>: <i>{}</i>\n"
+msgstr "<b>Ім'я машини</b>: <i>{}</i>\n"
 
 #: handlers/admin.py:64
-msgid "_Machine Name_: *{}*\n"
-msgstr "_Ім'я машини_: *{}*\n"
+msgid "<b>Processor Architecture</b>: <i>{}</i>\n"
+msgstr "<b>Архітектура процесора</b>: <i>{}</i>\n"
 
-#: handlers/admin.py:65
-msgid "_Processor Architecture_: *{}*\n"
-msgstr "_Архітектура процесора_: *{}*\n"
+#: handlers/admin.py:67
+msgid "<b>Processor Model</b>: <i>{}</i>\n"
+msgstr "<b>Модель процесора</b>: <i>{}</i>\n"
 
 #: handlers/admin.py:68
-msgid "_Processor Model_: *{}*\n"
-msgstr "_Модель процесора_: *{}*\n"
+msgid "<b>Physical Cores</b>: <i>{}</i>\n"
+msgstr "<b>Кількість фізичних ядер</b>: <i>{}</i>\n"
 
 #: handlers/admin.py:69
-msgid "_Physical Cores_: *{}*\n"
-msgstr "_Кількість фізичних ядер_: *{}*\n"
+msgid "<b>Logical Cores</b>: <i>{}</i>\n"
+msgstr "<b>Кількість логічних ядер</b>: <i>{}</i>\n"
 
-#: handlers/admin.py:70
-msgid "_Logical Cores_: *{}*\n"
-msgstr "_Кількість логічних ядер_: *{}*\n"
+#: handlers/admin.py:71
+msgid "<b>Total Memory</b>: <i>{:.2f}</i> MB\n"
+msgstr "<b>Загальний об'єм пам'яті</b>: <i>{:.2f}</i> МБ\n"
 
 #: handlers/admin.py:72
-msgid "_Total Memory_: *{:.2f}* MB\n"
-msgstr "_Загальний об'єм пам'яті_: *{:.2f}* МБ\n"
-
-#: handlers/admin.py:73
-msgid "_Available Memory_: *{:.2f}* MB\n"
+msgid "<b>Available Memory</b>: <i>{:.2f}</i> MB\n"
 msgstr "_Доступна пам'ять_: *{:.2f}* МБ\n"
 
-#: handlers/admin.py:74
-msgid "_Memory Usage_: *{}*%\n"
-msgstr "_Використання пам'яті_: *{}*%\n"
+#: handlers/admin.py:73
+msgid "<b>Memory Usage</b>: <i>{}</i>%\n"
+msgstr "<b>Використання пам'яті</b>: <i>{}</i>%\n"
 
-#: handlers/admin.py:79
+#: handlers/admin.py:78
 msgid ""
-"*System information:*\n"
+"<b>System information:</b>\n"
 "\n"
 "{pc_info}"
 msgstr ""
-"*Інформація про систему:*\n"
+"<b>Інформація про систему:</b>\n"
 "\n"
 "{pc_info}"
 
-#: handlers/admin.py:115 handlers/admin.py:152 handlers/admin.py:201
-#: handlers/admin.py:296 handlers/admin.py:451 handlers/admin.py:487
+#: handlers/admin.py:114 handlers/admin.py:151 handlers/admin.py:201
+#: handlers/admin.py:296 handlers/admin.py:453 handlers/admin.py:490
 #: handlers/user.py:211 keyboards/inline_keyboards.py:51
 msgid "↩️Cancel"
 msgstr "↩️Скасувати"
@@ -102,8 +102,8 @@ msgstr "❌Забанити"
 msgid "✅Unban"
 msgstr "✅Розбанити"
 
-#: handlers/admin.py:246 handlers/admin.py:530 handlers/admin.py:536
-#: handlers/admin.py:552 keyboards/inline_keyboards.py:40
+#: handlers/admin.py:246 handlers/admin.py:533 handlers/admin.py:539
+#: handlers/admin.py:555 keyboards/inline_keyboards.py:40
 #: keyboards/inline_keyboards.py:96 keyboards/inline_keyboards.py:105
 #: keyboards/inline_keyboards.py:113
 msgid "🔙Back"
@@ -117,56 +117,56 @@ msgstr "Користувача не знайдено!"
 msgid "Enter ban reason:"
 msgstr "Введіть причину бану:"
 
-#: handlers/admin.py:297 handlers/admin.py:452 handlers/admin.py:488
+#: handlers/admin.py:297 handlers/admin.py:454 handlers/admin.py:491
 #: handlers/user.py:213
 msgid "Action canceled!"
 msgstr "Дію скасовано"
 
-#: handlers/admin.py:442
+#: handlers/admin.py:444
 msgid "Please type your answer:"
 msgstr "Будь ласка, напишіть свою відповідь:"
 
-#: handlers/admin.py:462
-msgid ""
-"Your message *{message_id}* was seen!\n"
-"*Answer:* `{answer}`"
-msgstr ""
-"Ваше повідомлення *{message_id}* було переглянуто!\n"
-"*Відповідь:* `{answer}`"
-
 #: handlers/admin.py:464
+msgid ""
+"Your message <b>{message_id}</b> was seen!\n"
+"<b>Answer:</b> <code>{answer}</code>"
+msgstr ""
+"Ваше повідомлення <b>{message_id}</b> було переглянуто!\n"
+"<b>Відповідь:</b> <code>{answer}</code>"
+
+#: handlers/admin.py:467
 msgid "Your answer sent!"
 msgstr "Вашу відповідь надіслано!"
 
-#: handlers/admin.py:468 handlers/admin.py:507
+#: handlers/admin.py:471 handlers/admin.py:510
 msgid "Something went wrong, see log for more information!"
 msgstr "Щось пішло не так, дивіться лог для отримання додаткової інформації!"
 
-#: handlers/admin.py:478
+#: handlers/admin.py:481
 msgid "Please type message:"
 msgstr "Будь ласка, введіть своє повідомлення:"
 
-#: handlers/admin.py:498 handlers/admin.py:502
+#: handlers/admin.py:501 handlers/admin.py:505
 msgid "Your message sent!"
 msgstr "Ваше повідомлення надіслано!"
 
-#: handlers/admin.py:518
+#: handlers/admin.py:521
 msgid ""
-"*Ideas for you:*\n"
+"<b>Ideas for you:</b>\n"
 "\n"
 msgstr ""
-"*Ідеї для вас:*\n"
+"<b>Ідеї для вас:</b>\n"
 "\n"
 
-#: handlers/admin.py:539
+#: handlers/admin.py:542
 msgid "There are no ideas for you."
 msgstr "Немає жодних ідей для вас."
 
-#: handlers/admin.py:551
+#: handlers/admin.py:554
 msgid "❌Delete"
 msgstr "❌Видалити"
 
-#: handlers/admin.py:569
+#: handlers/admin.py:572
 msgid "Idea deleted."
 msgstr "Ідею видалено."
 
@@ -180,11 +180,11 @@ msgstr ""
 
 #: handlers/user.py:91
 msgid ""
-"Referral *{user_id}* has registered at your invitation!\n"
-"Total number of invitees: *{refs_count}*"
+"Referral <b>{user_id}</b> has registered at your invitation!\n"
+"Total number of invitees: <b>{refs_count}</b>"
 msgstr ""
-"Реферал *{user_id}* зареєструвався за вашим запрошенням!\n"
-"Загальна кількість запрошених: *{refs_count}*"
+"Реферал <b>{user_id}</b> зареєструвався за вашим запрошенням!\n"
+"Загальна кількість запрошених: <b>{refs_count}</b>"
 
 #: handlers/user.py:189
 msgid "Type joke text or ID:"
@@ -195,8 +195,8 @@ msgid "Please enter your message:"
 msgstr "Будь ласка, введіть своє повідомлення:"
 
 #: handlers/user.py:233
-msgid "Your message *{feedback_message_id}* sent!"
-msgstr "Ваше повідомлення *{feedback_message_id}* надіслано!"
+msgid "Your message <b>{feedback_message_id}</b> sent!"
+msgstr "Ваше повідомлення <b>{feedback_message_id}</b> надіслано!"
 
 #: handlers/user.py:240
 msgid "Please select category:"
@@ -296,111 +296,118 @@ msgstr "Відповісти💬"
 
 #: messages/bot_messages.py:5
 msgid ""
-"Hello *{name}*! I'm a bot with jokes.\n"
+"Hello <b>{name}</b>! I'm a bot with jokes.\n"
 "Full information on the bot /info\n"
 "List of commands /help"
 msgstr ""
-"Привіт, *{name}*! Я бот з анекдотами.\n"
+"Привіт, <b>{name}</b>! Я бот з анекдотами.\n"
 "Повна інформація про бота /info\n"
 "Список команд /help"
 
 #: messages/bot_messages.py:11
 msgid ""
 "Hello, this is the admin panel.\n"
-"🪪Number of bot users: *{user_count}*\n"
-"📱Number of active users: *{active_user_count}*\n"
-"📵Number of inactive users: *{inactive_user_count}*\n"
-"🃏Number of jokes in the database: *{joke_count}*\n"
-"📬Total number of jokes read: *{sent_count}*\n"
+"    \n"
+"🪪Number of bot users: <b>{user_count}</b>\n"
+"📱Number of active users: <b>{active_user_count}</b>\n"
+"📵Number of inactive users: <b>{inactive_user_count}</b>\n"
+"🃏Number of jokes in the database: <b>{joke_count}</b>\n"
+"📬Total number of jokes read: <b>{sent_count}</b>\n"
 "\n"
 "Admin commands:\n"
 "/ideas - list ideas from users\n"
-"/get\\_users - download table with all users info\n"
-"/system\\_info - get info about system"
+"/get_users - download table with all users info\n"
+"/system_info - get info about system"
 msgstr ""
 "Привіт, це панель адміністратора.\n"
-"🪪Кількість користувачів бота: *{user_count}*\n"
-"📱Кількість активних користувачів: *{active_user_count}*\n"
-"📵Кількість неактивних користувачів: *{inactive_user_count}*\n"
-"🃏Кількість анекдотів у базі: *{joke_count}*\n"
-"📬Кількість прочитаних жартів: *{sent_count}*\n"
+"   \n"
+"🪪Кількість користувачів бота: <b>{user_count}</b>\n"
+"📱Кількість активних користувачів: <b>{active_user_count}</b>\n"
+"📵Кількість неактивних користувачів: <b>{inactive_user_count}</b>\n"
+"🃏Кількість анекдотів у базі: <b>{joke_count}</b>\n"
+"📬Кількість прочитаних жартів: <b>{sent_count}</b>\n"
 "\n"
 "Команди адміна:\n"
 "/ideas - список ідей від користувачів\n"
-"/get\\_users - скачати таблицю зі всіма користувачами\n"
-"/system\\_info - отримати інфориацію про систему"
+"/get_users - скачати таблицю зі всіма користувачами\n"
+"/system_info - отримати інфориацію про систему"
 
-#: messages/bot_messages.py:29
+#: messages/bot_messages.py:30
 msgid ""
 "\n"
-"Hello *{username}*! You are an administrator, to see more information and"
-" controls, please type /admin.\n"
+"Hello <b>{username}</b>! You are an administrator, to see more "
+"information and controls, please type /admin.\n"
 "\n"
 "Statistics:\n"
-"📁Number of jokes in the database: *{joke_count}*\n"
-"📚Jokes read by you: *{joke_sent}*\n"
-"📬Total number of jokes read by everyone: *{sent_count}*\n"
+"📁Number of jokes in the database: <b>{joke_count}</b>\n"
+"📚Jokes read by you: <b>{joke_sent}</b>\n"
+"📬Total number of jokes read by everyone: <b>{sent_count}</b>\n"
 "\n"
-"Total referrals: *{refs_count}*\n"
-"Your ref link: {ref_url}\n"
-"             \n"
-"Bot site - https://anekdoty.pp.ua\n"
+"Total referrals: <b>{refs_count}</b>\n"
+"Your ref link: <a href=\"{ref_url}\">{ref_url}</a>\n"
 "\n"
-"*If you want to offer an anecdote or ask a question, click the Feedback💬 "
-"button!*"
+"Bot site - <a href=\"https://anekdoty.pp.ua\">https://anekdoty.pp.ua</a>\n"
+"\n"
+"<b>If you want to offer an anecdote or ask a question, click the "
+"Feedback💬 button!</b>"
 msgstr ""
 "\n"
-"Привіт, *{username}*! Ви адміністратор, щоб побачити більше інформації та"
-" елементів керування, будь ласка, введіть /admin.\n"
+"Привіт, <b>{username}</b>! Ви адміністратор, щоб"
+" побачити більше інформації та елементів"
+" керування, будь ласка, введіть /admin."
+"\n"
 "\n"
 "Статистика:\n"
-"📁Кількість анекдотів у базі даних: *{joke_count}*\n"
-"📚Анекдотів прочитано вами: *{joke_sent}*\n"
-"📬Анекдотів прочитано усіма: *{sent_count}*\n"
+"📁Кількість анекдотів у базі даних: <b>{joke_count}</b>\n"
+"📚Анекдотів прочитано вами: <b>{joke_sent}</b>\n"
+"📬Анекдотів прочитано усіма: <b>{sent_count}</b>\n"
 "\n"
-"Всього рефералів: *{refs_count}*\n"
+"Всього рефералів: <b>{refs_count}<?b>\n"
 "Ваше реф-посилання: {ref_url}\n"
 "\n"
 "Сайт бота - https://anekdoty.pp.ua\n"
 "\n"
-"*Хочете запропонувати анекдот або задати запитання? Натисніть нопку "
-"Зворотний зв'язок💬!*\n"
+"<b>Хочете запропонувати анекдот або задати "
+"запитання? Натисніть нопку Зворотний "
+"зв'язок💬!</b>\n"
 
-#: messages/bot_messages.py:51
+#: messages/bot_messages.py:52
 msgid ""
 "\n"
-"Hello *{username}*! I am a bot where you can read jokes.\n"
+"Hello <b>{username}</b>! I am a bot where you can read jokes.\n"
 "\n"
 "Statistics:\n"
-"📁Number of jokes in the database: *{joke_count}*\n"
-"📚Jokes read by you: *{joke_sent}*\n"
-"📬Total number of jokes read by everyone: *{sent_count}*\n"
+"📁Number of jokes in the database: <b>{joke_count}</b>\n"
+"📚Jokes read by you: <b>{joke_sent}</b>\n"
+"📬Total number of jokes read by everyone: <b>{sent_count}</b>\n"
 "\n"
-"Total referrals: *{refs_count}*\n"
-"Your ref link: {ref_url}\n"
+"Total referrals: <b>{refs_count}</b>\n"
+"Your ref link: <a href=\"{ref_url}\">{ref_url}</a>\n"
 "\n"
-"Bot site - https://anekdoty.pp.ua\n"
+"Bot site - <a href=\"https://anekdoty.pp.ua\">https://anekdoty.pp.ua</a>\n"
 "\n"
-"*If you want to offer an anecdote or ask a question, click the Feedback💬 "
-"button!*"
+"<b>If you want to offer an anecdote or ask a question, click the "
+"Feedback💬 button!</b>"
 msgstr ""
 "\n"
-"Привіт, *{username}*! Я бот, в якому ви можете читати анекдоти.\n"
+"Привіт, <b>{username}</b>! Я бот, в якому ви можете читати анекдоти.\n"
 "\n"
 "Статистика:\n"
-"📁Кількість анекдотів у базі даних: *{joke_count}*\n"
-"📚Анекдотів прочитано вами: *{joke_sent}*\n"
-"📬Анекдотів прочитано усіма: *{sent_count}*\n"
+"📁Кількість анекдотів у базі даних: <b>{joke_count}</b>\n"
+"📚Анекдотів прочитано вами: <b>{joke_sent}</b>\n"
+"📬Анекдотів прочитано усіма: <b>{sent_count}</b>\n"
 "\n"
-"Всього рефералів: *{refs_count}*\n"
+"Всього рефералів: <b>{refs_count}</b>\n"
 "Ваше реф-посилання: {ref_url}\n"
 "\n"
 "Сайт бота - https://anekdoty.pp.ua\n"
 "\n"
-"*Хочете запропонувати анекдот або задати запитання? Натисніть нопку "
-"Зворотний зв'язок💬!*\n"
+"<b>Хочете запропонувати анекдот або задати "
+"запитання? Натисніть нопку Зворотний "
+"зв'язок💬!</b>\n"
 
-#: messages/bot_messages.py:73
+
+#: messages/bot_messages.py:74
 msgid ""
 "🤖 This is a bot with jokes. Here is a list of available commands:\n"
 "\n"
@@ -436,123 +443,125 @@ msgstr ""
 "переглянути статистику бота, інформацію про розробника та посилання для "
 "запрошення друга."
 
-#: messages/bot_messages.py:87
-msgid "📊Rating: {joke_rate}"
-msgstr "📊Оцінка: {joke_rate}"
+#: messages/bot_messages.py:88
+msgid "📊Rating: <b>{joke_rate}</b>"
+msgstr "📊Оцінка: <b>{joke_rate}</b>"
 
-#: messages/bot_messages.py:91
+#: messages/bot_messages.py:92
 msgid "You 👍 this!"
 msgstr "Ви 👍 це!"
 
-#: messages/bot_messages.py:95
+#: messages/bot_messages.py:96
 msgid "You 👎 this!"
 msgstr "Ви 👎 це!"
 
-#: messages/bot_messages.py:99
+#: messages/bot_messages.py:100
 msgid "You revoked your vote!"
 msgstr "Ви відкликали свій голос!"
 
-#: messages/bot_messages.py:103
+#: messages/bot_messages.py:104
 msgid "🔃The rating is updated!"
 msgstr "🔃Рейтинг оновлено!"
 
-#: messages/bot_messages.py:107
+#: messages/bot_messages.py:108
 msgid "You have marked this joke as read!"
 msgstr "Ви позначили цей анекдот як прочитаний!"
 
-#: messages/bot_messages.py:111
+#: messages/bot_messages.py:112
 msgid "You have already marked this joke as read!"
 msgstr "Ви вже позначали цей анекдот як прочитаний!"
 
-#: messages/bot_messages.py:115
+#: messages/bot_messages.py:116
 msgid "Mailing is complete!"
 msgstr "Розсилка завершена!"
 
-#: messages/bot_messages.py:119
+#: messages/bot_messages.py:120
 msgid "Starting mailing..."
 msgstr "Починаю розсилку..."
 
-#: messages/bot_messages.py:123
+#: messages/bot_messages.py:124
 msgid "Click the button to get the joke."
 msgstr "Натисніть кнопку, щоб отримати анекдот."
 
-#: messages/bot_messages.py:127
+#: messages/bot_messages.py:128
 msgid "Unfortunately, all the jokes have already been sent to you."
 msgstr "На жаль, всі анекдоти вже надіслані вам."
 
-#: messages/bot_messages.py:131
+#: messages/bot_messages.py:132
 msgid ""
-"*Joke of the day:*\n"
+"<b>Joke of the day:</b>\n"
 "\n"
 "{joke_text}"
 msgstr ""
-"*Анекдот дня:*\n"
+"<b>Анекдот дня:</b>\n"
 "\n"
 "{joke_text}"
 
-#: messages/bot_messages.py:135
+#: messages/bot_messages.py:136
 msgid ""
-"*{name}*, I don't understand you! Type /help to get a list of commands!\n"
-"*If you want to offer an anecdote or ask a question, click the Feedback💬 "
-"button!*"
+"<b>{name}</b>, I don't understand you! Type /help to get a list of "
+"commands!\n"
+"    \n"
+"<b>If you want to offer an anecdote or ask a question, click the "
+"Feedback💬 button!</b>"
 msgstr ""
-"*{name}*, я вас не розумію! Введіть /help, щоб отримати список команд!\n"
+"<b>{name}</b>, я вас не розумію! Введіть /help, щоб отримати список команд!\n"
 "\n"
-"*Хочете запропонувати анекдот або задати запитання? Натисніть нопку "
-"Зворотний зв'язок💬!*\n"
+"<b>Хочете запропонувати анекдот або задати запитання? Натисніть нопку "
+"Зворотний зв'язок💬!</b>\n"
 "\n"
 
-#: messages/bot_messages.py:140
+#: messages/bot_messages.py:142
 msgid "This command cannot be used in a group!"
 msgstr "Цю команду не можна використовувати в групі!"
 
-#: messages/bot_messages.py:144
+#: messages/bot_messages.py:146
 msgid "Log deleted, starting to write a new one."
 msgstr "Лог видалено, починаю писати новий."
 
-#: messages/bot_messages.py:148
+#: messages/bot_messages.py:150
 msgid "Enter the message to send:"
 msgstr "Введіть повідомлення для відправки:"
 
-#: messages/bot_messages.py:152
+#: messages/bot_messages.py:154
 msgid "Action canceled"
 msgstr "Дію скасовано"
 
-#: messages/bot_messages.py:156
+#: messages/bot_messages.py:158
 msgid "Enter a new joke:"
 msgstr "Введіть новий анекдот:"
 
-#: messages/bot_messages.py:160
+#: messages/bot_messages.py:162
 msgid "The anecdote is given to the database."
 msgstr "Анекдот додано до бази даних."
 
-#: messages/bot_messages.py:164
+#: messages/bot_messages.py:166
 msgid ""
-"Hi! Thank you for adding me to *'{chat_title}'* \n"
+"Hi! Thank you for adding me to <b>'{chat_title}'</b>\n"
 "For correct operation, please grant me administrator rights!\n"
 "Type /help to get a list of commands"
 msgstr ""
-"Привіт! Дякую, що додали мене в *'{chat_title}'*.\n"
+"Привіт! Дякую, що додали мене в <b>'{chat_title}'</b>.\n"
 "Для коректної роботи, будь ласка, надайте мені права адміністратора!\n"
 "Введіть /help, щоб отримати список команд"
 
-#: messages/bot_messages.py:170
+#: messages/bot_messages.py:172
 msgid "Please choose your language!"
 msgstr "Будь ласка, оберіть свою мову!"
 
 #: messages/bot_messages.py:185
 msgid ""
-"*USER INFO*\n"
-"_Name_: *{user_name}*\n"
-"_ID_: *{user_id}*\n"
-"_Username_: *{user_username}*\n"
-"_Status_: *{status}*"
+"<b>USER INFO</b>\n"
+"<b>Name</b>: {user_name}\n"
+"<b>ID</b>: {user_id}\n"
+"<b>Username</b>: {user_username}\n"
+"<b>Status</b>: {status}"
 msgstr ""
-"*ІНФОРМАЦІЯ ПРО КОРИСТУВАЧА*\n"
-"_Ім'я_: *{user_name}*\n"
-"_ID_: *{user_id}*\n"
-"_Юзернейм_: *{user_username}*\n"
-"_Статус_: *{status}*"
+"<b>ІНФОРМАЦІЯ ПРО КОРИСТУВАЧА</b>\n"
+"<i>Ім'я</i>: <b>{user_name}</b>\n"
+"<i>ID</i>: <b>{user_id}</b>\n"
+"<i>Юзернейм</i>: <b>{user_username}</b>\n"
+"<i>Статус</i>: <b>{status}</b>"
 
 #: messages/bot_messages.py:193
 msgid ""
@@ -576,13 +585,13 @@ msgstr "Користувач {unbanned_user_id} успішно розбанен�
 
 #: messages/bot_messages.py:209
 msgid ""
-"*New message* from user: *{user}*\n"
-"*Message:* `{feedback_message}`"
+"<b>New message</b> from user: <b>{user}</b>\n"
+"<b>Message:</b> <code>{feedback_message}</code>"
 msgstr ""
-"*Нове повідомлення* від користувача: *{user}*\n"
-"*Повідомлення:* `{feedback_message}`"
+"<b>Нове повідомлення</b> від користувача: <b>{user}</b>\n"
+"<b>Повідомлення:</b> <code>{feedback_message}</code>"
 
-#: messages/bot_messages.py:213
+#: messages/bot_messages.py:214
 msgid "Pick a joke:"
 msgstr "Обери анекдот:"
 
@@ -1075,4 +1084,81 @@ msgstr[1] ""
 
 #~ msgid "There is any ideas for you."
 #~ msgstr ""
+
+#~ msgid ""
+#~ "\n"
+#~ "Hello *{username}*! You are an "
+#~ "administrator, to see more information "
+#~ "and controls, please type /admin.\n"
+#~ "\n"
+#~ "Statistics:\n"
+#~ "📁Number of jokes in the database: *{joke_count}*\n"
+#~ "📚Jokes read by you: *{joke_sent}*\n"
+#~ "📬Total number of jokes read by everyone: *{sent_count}*\n"
+#~ "\n"
+#~ "Total referrals: *{refs_count}*\n"
+#~ "Your ref link: {ref_url}\n"
+#~ "             \n"
+#~ "Bot site - https://anekdoty.pp.ua\n"
+#~ "\n"
+#~ "*If you want to offer an anecdote"
+#~ " or ask a question, click the "
+#~ "Feedback💬 button!*"
+#~ msgstr ""
+#~ "\n"
+#~ "Привіт, *{username}*! Ви адміністратор, щоб"
+#~ " побачити більше інформації та елементів"
+#~ " керування, будь ласка, введіть /admin."
+#~ "\n"
+#~ "\n"
+#~ "Статистика:\n"
+#~ "📁Кількість анекдотів у базі даних: *{joke_count}*\n"
+#~ "📚Анекдотів прочитано вами: *{joke_sent}*\n"
+#~ "📬Анекдотів прочитано усіма: *{sent_count}*\n"
+#~ "\n"
+#~ "Всього рефералів: *{refs_count}*\n"
+#~ "Ваше реф-посилання: {ref_url}\n"
+#~ "\n"
+#~ "Сайт бота - https://anekdoty.pp.ua\n"
+#~ "\n"
+#~ "*Хочете запропонувати анекдот або задати "
+#~ "запитання? Натисніть нопку Зворотний "
+#~ "зв'язок💬!*\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "Hello *{username}*! I am a bot where you can read jokes.\n"
+#~ "\n"
+#~ "Statistics:\n"
+#~ "📁Number of jokes in the database: *{joke_count}*\n"
+#~ "📚Jokes read by you: *{joke_sent}*\n"
+#~ "📬Total number of jokes read by everyone: *{sent_count}*\n"
+#~ "\n"
+#~ "Total referrals: *{refs_count}*\n"
+#~ "Your ref link: {ref_url}\n"
+#~ "\n"
+#~ "Bot site - https://anekdoty.pp.ua\n"
+#~ "\n"
+#~ "*If you want to offer an anecdote"
+#~ " or ask a question, click the "
+#~ "Feedback💬 button!*"
+#~ msgstr ""
+#~ "\n"
+#~ "Привіт, *{username}*! Я бот, в якому ви можете читати анекдоти.\n"
+#~ "\n"
+#~ "Статистика:\n"
+#~ "📁Кількість анекдотів у базі даних: *{joke_count}*\n"
+#~ "📚Анекдотів прочитано вами: *{joke_sent}*\n"
+#~ "📬Анекдотів прочитано усіма: *{sent_count}*\n"
+#~ "\n"
+#~ "Всього рефералів: *{refs_count}*\n"
+#~ "Ваше реф-посилання: {ref_url}\n"
+#~ "\n"
+#~ "Сайт бота - https://anekdoty.pp.ua\n"
+#~ "\n"
+#~ "*Хочете запропонувати анекдот або задати "
+#~ "запитання? Натисніть нопку Зворотний "
+#~ "зв'язок💬!*\n"
+
+
 

@@ -18,7 +18,7 @@ class UserBannedMiddleware(BaseMiddleware):
         if user == 'ban':
             if message.chat.type == 'private':
                 await message.answer(
-                    '*You are banned please contact to @mak5er for more information!*', parse_mode="Markdown"
+                    '<b>You are banned please contact to @mak5er for more information!</b>', parse_mode="HTML"
                 )
             raise CancelHandler
 

@@ -8,7 +8,7 @@ from config import *
 from log.logger import custom_formatter
 from middlewares import setup_lang_middleware, setup_ban_middlewares, setup_throttling_middlewares
 
-parse_mode = "Markdown"
+parse_mode = "HTML"
 bot = Bot(token=token, parse_mode=parse_mode)
 storage = MemoryStorage()
 dp = Dispatcher(bot, storage=storage)
