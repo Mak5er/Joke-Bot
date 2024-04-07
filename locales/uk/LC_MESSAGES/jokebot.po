@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  sease\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-04-07 19:19+0300\n"
+"POT-Creation-Date: 2024-04-07 20:28+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: handlers/admin.py:108 handlers/admin.py:145 handlers/admin.py:195
 #: handlers/admin.py:289 handlers/admin.py:446 handlers/admin.py:483
-#: handlers/user.py:205 keyboards/inline_keyboards.py:51
+#: handlers/user.py:197 handlers/user.py:303 keyboards/inline_keyboards.py:51
 msgid "↩️Cancel"
 msgstr "↩️Скасувати"
 
@@ -99,11 +99,7 @@ msgstr "Немає жодних ідей для вас."
 msgid "❌Delete"
 msgstr "❌Видалити"
 
-#: handlers/user.py:183
-msgid "Type joke text or ID:"
-msgstr "Ввдіть текст або ID анекдоту:"
-
-#: handlers/user.py:377
+#: handlers/user.py:384
 msgid "Page "
 msgstr "Сторінка "
 
@@ -524,7 +520,6 @@ msgstr ""
 "<b>Доступна пам'ять</b>: *{available_memory:.2f}* МБ\n"
 "<b>Використання пам'яті</b>: <i>{memory_usage}</i>%\n"
 
-
 #: messages/bot_messages.py:240
 msgid "Search user by:"
 msgstr "Шукати користувача по:"
@@ -568,6 +563,10 @@ msgstr "Будьласка оберіть категорію:"
 #: messages/bot_messages.py:286
 msgid "Nothing was found."
 msgstr "Нічого не знайдено."
+
+#: messages/bot_messages.py:289
+msgid "Type joke text or ID:"
+msgstr "Ввдіть текст або ID анекдоту:"
 
 #: venv/Lib/site-packages/click/_termui_impl.py:518
 msgid "{editor}: Editing failed"

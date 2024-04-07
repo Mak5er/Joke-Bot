@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-04-07 19:19+0300\n"
+"POT-Creation-Date: 2024-04-07 20:28+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,7 +27,7 @@ msgstr ""
 
 #: handlers/admin.py:108 handlers/admin.py:145 handlers/admin.py:195
 #: handlers/admin.py:289 handlers/admin.py:446 handlers/admin.py:483
-#: handlers/user.py:205 keyboards/inline_keyboards.py:51
+#: handlers/user.py:197 handlers/user.py:303 keyboards/inline_keyboards.py:51
 msgid "↩️Cancel"
 msgstr ""
 
@@ -98,11 +98,7 @@ msgstr ""
 msgid "❌Delete"
 msgstr ""
 
-#: handlers/user.py:183
-msgid "Type joke text or ID:"
-msgstr ""
-
-#: handlers/user.py:377
+#: handlers/user.py:384
 msgid "Page "
 msgstr ""
 
@@ -466,6 +462,10 @@ msgstr ""
 
 #: messages/bot_messages.py:286
 msgid "Nothing was found."
+msgstr ""
+
+#: messages/bot_messages.py:289
+msgid "Type joke text or ID:"
 msgstr ""
 
 #: venv/Lib/site-packages/click/_termui_impl.py:518
