@@ -17,16 +17,15 @@ class UserBannedMiddleware(BaseMiddleware):
 
         if user == 'ban':
             if message.chat.type == 'private':
-                await message.answer(
-                    '<b>You are banned please contact to @mak5er for more information!</b>', parse_mode="HTML"
-                )
+                await message.answer(text='<b>You are banned please contact to @mak5er for more information!</b>',
+                                     parse_mode="HTML")
             raise CancelHandler
 
     async def on_process_callback_query(self, call: CallbackQuery, data: dict):
         user = await db.status(call.from_user.id)
         if user == 'ban':
             await call.answer(
-                'You are banned please contact to @mak5er for more information!',
+                text='You are banned please contact to @mak5er for more information!',
                 show_alert=True
             )
             raise CancelHandler

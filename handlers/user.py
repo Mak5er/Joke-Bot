@@ -76,11 +76,6 @@ async def send_welcome(message: types.Message):
     await message.answer(bm.pres_button(),
                          reply_markup=kb.random_keyboard())
 
-    if 'bug' in message.get_args().lower():
-        await message.answer(
-            _('If you want to offer an anecdote or if you find a bug, please click the button below and describe it.'),
-            reply_markup=kb.return_feedback_button())
-
     if 'ref' in message.get_args().lower():
         referrer_id = message.get_args().split('ref')[1]
         if referrer_id != '':
@@ -88,9 +83,8 @@ async def send_welcome(message: types.Message):
                 await db.add_users(user_id, user_name, user_username, "private", "uk", 'user', referrer_id)
                 refs_count = await db.refs_count(referrer_id)
                 try:
-                    await bot.send_message(chat_id=referrer_id, text=_(
-                        "Referral <b>{user_id}</b> has registered at your invitation!\nTotal number of invitees: <b>{refs_count}</b>").format(
-                        user_id=user_id, refs_count=refs_count), parse_mode='HTML')
+                    await bot.send_message(chat_id=referrer_id, text=bm.refferal_joined(user_id, refs_count),
+                                           parse_mode='HTML')
                 except Exception as e:
                     print(str(e))
 
@@ -195,7 +189,7 @@ async def return_find_menu(message: types.Message):
 async def feedback_handler(call: types.CallbackQuery):
     await update_info(call.message)
     await call.message.delete()
-    await call.message.answer(_('Please enter your message:'), reply_markup=kb.cancel_keyboard())
+    await call.message.answer(bm.please_enter_message(), reply_markup=kb.cancel_keyboard())
     await dp.current_state().set_state("send_feedback")
     await update_info(call.message)
 
@@ -210,7 +204,7 @@ async def feedback(message: types.Message, state: FSMContext):
 
     if feedback_message == _("↩️Cancel"):
         await bot.send_message(message.chat.id,
-                               _('Action canceled!'),
+                               bm.action_canceled(),
                                reply_markup=types.ReplyKeyboardRemove())
         await state.finish()
         await info(message)
@@ -230,14 +224,14 @@ async def feedback(message: types.Message, state: FSMContext):
                            parse_mode="HTML")
 
     await message.answer(
-        _("Your message <b>{feedback_message_id}</b> sent!").format(feedback_message_id=feedback_message_id),
+        bm.your_message_sent_with_id(feedback_message_id),
         reply_markup=types.ReplyKeyboardRemove())
     await update_info(message)
 
 
 @dp.callback_query_handler(lambda call: call.data == "select_category")
 async def select_category(call):
-    await call.message.edit_text(text=_('Please select category:'),
+    await call.message.edit_text(text=bm.select_category(),
                                  reply_markup=kb.category_keyboard())
 
 
@@ -313,7 +307,7 @@ async def find_jokes(message: types.Message, state: FSMContext):
         result = await db.get_joke_by_text(answer)
 
     if not result:
-        await bot.send_message(user_id, _("Nothing was found."))
+        await bot.send_message(user_id, bm.nothing_found())
         return
 
     await create_joke_list(message, result, state)

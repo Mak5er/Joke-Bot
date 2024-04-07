@@ -41,11 +41,11 @@ Your ref link: <a href="{ref_url}">{ref_url}</a>
 Bot site - <a href="https://anekdoty.pp.ua">https://anekdoty.pp.ua</a>
 
 <b>If you want to offer an anecdote or ask a question, click the Feedback💬 button!</b>""").format(username=username,
-                                                                                             joke_sent=joke_sent,
-                                                                                             joke_count=joke_count,
-                                                                                             sent_count=sent_count,
-                                                                                             refs_count=refs_count,
-                                                                                             ref_url=ref_url)
+                                                                                                  joke_sent=joke_sent,
+                                                                                                  joke_count=joke_count,
+                                                                                                  sent_count=sent_count,
+                                                                                                  refs_count=refs_count,
+                                                                                                  ref_url=ref_url)
 
 
 def user_info(username, joke_sent, joke_count, sent_count, refs_count, ref_url):
@@ -63,11 +63,11 @@ Your ref link: <a href="{ref_url}">{ref_url}</a>
 Bot site - <a href="https://anekdoty.pp.ua">https://anekdoty.pp.ua</a>
 
 <b>If you want to offer an anecdote or ask a question, click the Feedback💬 button!</b>''').format(username=username,
-                                                                                             joke_sent=joke_sent,
-                                                                                             joke_count=joke_count,
-                                                                                             sent_count=sent_count,
-                                                                                             refs_count=refs_count,
-                                                                                             ref_url=ref_url)
+                                                                                                  joke_sent=joke_sent,
+                                                                                                  joke_count=joke_count,
+                                                                                                  sent_count=sent_count,
+                                                                                                  refs_count=refs_count,
+                                                                                                  ref_url=ref_url)
 
 
 def help_message():
@@ -206,9 +206,81 @@ def successful_unban(unbanned_user_id):
 
 
 def feedback_message_send(user, feedback_message):
-    return _("<b>New message</b> from user: <b>{user}</b>\n<b>Message:</b> <code>{feedback_message}</code>").format(user=user,
-                                                                                                            feedback_message=feedback_message)
+    return _("<b>New message</b> from user: <b>{user}</b>\n<b>Message:</b> <code>{feedback_message}</code>").format(
+        user=user,
+        feedback_message=feedback_message)
 
 
 def pick_a_joke():
     return _("Pick a joke:")
+
+
+def system_info(pc_info):
+    return _("<b>System information:</b>\n\n{pc_info}").format(pc_info=pc_info)
+
+
+def get_formatted_system_info(specs):
+    system_info_template = _("""
+<b>Operating System</b>: <i>{operating_system}</i>
+<b>OS Version</b>: <i>{os_version}</i>
+<b>Machine Name</b>: <i>{machine_name}</i>
+<b>Processor Architecture</b>: <i>{processor_architecture}</i>
+<b>Processor Model</b>: <i>{processor_model}</i>
+<b>Physical Cores</b>: <i>{physical_cores}</i>
+<b>Logical Cores</b>: <i>{logical_cores}</i>
+<b>Total Memory</b>: <i>{total_memory:.2f}</i> MB
+<b>Available Memory</b>: <i>{available_memory:.2f}</i> MB
+<b>Memory Usage</b>: <i>{memory_usage}</i>%
+""")
+    formatted_info = system_info_template.format(**specs)
+    return formatted_info
+
+
+def search_user_by():
+    return _('Search user by:')
+
+
+def type_user(search):
+    return _('Type user {search}:').format(search=search)
+
+
+def action_canceled():
+    return _('Action canceled!')
+
+
+def your_message_sent():
+    return _('Your message sent!')
+
+
+def something_went_wrong():
+    return _("Something went wrong, see log for more information!")
+
+
+def any_ideas():
+    return _("There are no ideas for you.")
+
+
+def idea_deleted():
+    return _("Idea deleted.")
+
+
+def refferal_joined(user_id, refs_count):
+    return _(
+        "Referral <b>{user_id}</b> has registered at your invitation!\nTotal number of invitees: <b>{refs_count}</b>").format(
+        user_id=user_id, refs_count=refs_count)
+
+
+def please_enter_message():
+    return _('Please enter your message:')
+
+
+def your_message_sent_with_id(feedback_message_id):
+    return _("Your message <b>{feedback_message_id}</b> sent!").format(feedback_message_id=feedback_message_id)
+
+
+def select_category():
+    return _('Please select category:')
+
+
+def nothing_found():
+    return _("Nothing was found.")
