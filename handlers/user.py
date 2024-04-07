@@ -176,14 +176,6 @@ async def cmd_ping(message: types.Message):
         return str(e)
 
 
-@dp.message_handler(commands=['find'])
-@rate_limit(1)
-async def return_find_menu(message: types.Message):
-    await dp.bot.send_chat_action(message.chat.id, "typing")
-    await message.reply(_("Type joke text or ID:"))
-    await FindJoke.find_joke.set()
-
-
 @dp.callback_query_handler(lambda call: call.data == 'feedback')
 @rate_limit(1)
 async def feedback_handler(call: types.CallbackQuery):
@@ -293,12 +285,27 @@ async def send_joke_private(call):
     await send_joke(call.message, result)
 
 
+@dp.message_handler(commands=['find'])
+@rate_limit(1)
+async def return_find_menu(message: types.Message):
+    await dp.bot.send_chat_action(message.chat.id, "typing")
+    await message.reply(bm.type_joke_text_or_id(), reply_markup=kb.cancel_keyboard())
+    await FindJoke.find_joke.set()
+
+
 @dp.message_handler(state=FindJoke.find_joke)
 async def find_jokes(message: types.Message, state: FSMContext):
     await state.finish()
     user_id = message.from_user.id
 
     answer = message.text
+
+    if answer == _("↩️Cancel"):
+        await bot.send_message(message.chat.id,
+                               bm.action_canceled(),
+                               reply_markup=types.ReplyKeyboardRemove())
+        return
+
     result = None
 
     if answer.isdigit():
