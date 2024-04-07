@@ -15,7 +15,6 @@ from aiogram.types import ReplyKeyboardRemove, InlineKeyboardButton, InlineKeybo
 import config
 from keyboards import inline_keyboards as kb
 from main import dp, bot, _
-from messages import bot_messages
 from messages import bot_messages as bm
 from middlewares.throttling_middleware import rate_limit
 from services import DataBase
@@ -45,37 +44,32 @@ async def admin(message: types.Message):
         joke_count = await db.joke_count(table_name)
         sent_count = await db.sent_count()
 
-        await message.answer(bot_messages.admin_panel(
+        await message.answer(bm.admin_panel(
             user_count, active_user_count, inactive_user_count, joke_count, sent_count),
-            reply_markup=kb.admin_keyboard(), parse_mode='Markdown')
+            reply_markup=kb.admin_keyboard(), parse_mode='HTML')
     else:
-        await message.answer(bot_messages.not_groups())
+        await message.answer(bm.not_groups())
 
 
 @dp.message_handler(user_id=admin_id, commands=['system_info'])
 @rate_limit(5)
-async def speedtest(message: types.Message):
-    clock = await bot.send_message(message.chat.id, '⏳')
-
-    def get_system_info():
-        system_info = _("_Operating System_: *{}*\n").format(platform.system())
-        system_info += _("_OS Version_: *{}*\n").format(platform.version())
-        system_info += _("_Machine Name_: *{}*\n").format(platform.node())
-        system_info += _("_Processor Architecture_: *{}*\n").format(platform.machine())
-        cpu_info = cpuinfo.get_cpu_info()
-        processor_name = cpu_info['brand_raw']
-        system_info += _("_Processor Model_: *{}*\n").format(processor_name)
-        system_info += _("_Physical Cores_: *{}*\n").format(psutil.cpu_count(logical=False))
-        system_info += _("_Logical Cores_: *{}*\n").format(psutil.cpu_count(logical=True))
-        memory = psutil.virtual_memory()
-        system_info += _("_Total Memory_: *{:.2f}* MB\n").format(memory.total / (1024 * 1024))
-        system_info += _("_Available Memory_: *{:.2f}* MB\n").format(memory.available / (1024 * 1024))
-        system_info += _("_Memory Usage_: *{}*%\n").format(memory.percent)
-        return system_info
-
-    pc_info = get_system_info()
-    await bot.delete_message(message.chat.id, clock.message_id)
-    await message.reply(_("*System information:*\n\n{pc_info}").format(pc_info=pc_info))
+async def system_info(message: types.Message):
+    clock_message = await message.reply('⏳')
+    system_specs = {
+        'operating_system': platform.system(),
+        'os_version': platform.version(),
+        'machine_name': platform.node(),
+        'processor_architecture': platform.machine(),
+        'processor_model': cpuinfo.get_cpu_info()['brand_raw'],
+        'physical_cores': psutil.cpu_count(logical=False),
+        'logical_cores': psutil.cpu_count(logical=True),
+        'total_memory': psutil.virtual_memory().total / (1024 * 1024),
+        'available_memory': psutil.virtual_memory().available / (1024 * 1024),
+        'memory_usage': psutil.virtual_memory().percent
+    }
+    system_info = bm.get_formatted_system_info(system_specs)
+    await bot.delete_message(message.chat.id, clock_message.message_id)
+    await message.reply(system_info)
 
 
 @rate_limit(10)
@@ -84,7 +78,7 @@ async def del_log(call: types.CallbackQuery):
     await dp.bot.send_chat_action(call.message.chat.id, "typing")
     logging.shutdown()
     open('log/bot_log.log', 'w').close()
-    await call.message.reply(bot_messages.log_deleted())
+    await call.message.reply(bm.log_deleted())
 
 
 @dp.callback_query_handler(lambda call: call.data == 'download_log', user_id=admin_id)
@@ -103,7 +97,7 @@ async def download_log_handler(call: types.CallbackQuery):
 @dp.callback_query_handler(lambda call: call.data == 'send_to_all')
 async def send_to_all_callback(call: types.CallbackQuery):
     await bot.send_message(chat_id=call.message.chat.id,
-                           text=bot_messages.mailing_message(),
+                           text=bm.mailing_message(),
                            reply_markup=kb.cancel_keyboard())
     await dp.current_state().set_state("send_to_all_message")
 
@@ -112,7 +106,7 @@ async def send_to_all_callback(call: types.CallbackQuery):
 async def send_to_all_message(message: types.Message, state: FSMContext):
     sender_id = message.from_user.id
     if message.text == _("↩️Cancel"):
-        await bot.send_message(message.chat.id, bot_messages.canceled(), reply_markup=types.ReplyKeyboardRemove())
+        await bot.send_message(message.chat.id, bm.canceled(), reply_markup=types.ReplyKeyboardRemove())
         await state.finish()
         return
 
@@ -125,14 +119,14 @@ async def send_to_all_message(message: types.Message, state: FSMContext):
                 await bot.copy_message(chat_id=user[0],
                                        from_chat_id=sender_id,
                                        message_id=message.message_id,
-                                       parse_mode="Markdown")
+                                       parse_mode="HTML")
                 logging.info(f"Sent message to user {user[0]}: {message.text}")
             except Exception as e:
                 logging.error(
                     f"Error sending message to user {user[0]}: {str(e)}")
                 continue
         await bot.send_message(chat_id=message.chat.id,
-                               text=bot_messages.finish_mailing(), reply_markup=types.ReplyKeyboardRemove())
+                               text=bm.finish_mailing(), reply_markup=types.ReplyKeyboardRemove())
         await state.finish()
         return
 
@@ -140,7 +134,7 @@ async def send_to_all_message(message: types.Message, state: FSMContext):
 @dp.callback_query_handler(lambda call: call.data == 'add_joke')
 async def add_joke_handler(call: types.CallbackQuery):
     await bot.send_message(chat_id=call.message.chat.id,
-                           text=bot_messages.new_joke(),
+                           text=bm.new_joke(),
                            reply_markup=kb.cancel_keyboard())
     await dp.current_state().set_state("joke")
 
@@ -150,7 +144,7 @@ async def save_joke(message: types.Message, state: FSMContext):
     joke_text = message.text
     if joke_text == _("↩️Cancel"):
         await bot.send_message(chat_id=message.chat.id,
-                               text=bot_messages.canceled(),
+                               text=bm.canceled(),
                                reply_markup=types.ReplyKeyboardRemove())
         await state.finish()
         return
@@ -158,13 +152,14 @@ async def save_joke(message: types.Message, state: FSMContext):
         table_name = f"jokes_uk"
         await db.add_joke(joke_text, table_name)
 
-        await message.reply(bot_messages.joke_added(),
+        await message.reply(bm.joke_added(),
                             reply_markup=types.ReplyKeyboardRemove())
         await state.finish()
         user_id = message.from_user.id
         logging.info(
             f"User action: Add joke (User ID: {user_id}), (Joke text: {message.text})"
         )
+
 
 @rate_limit(10)
 @dp.callback_query_handler(lambda call: call.data == 'daily_joke')
@@ -176,14 +171,14 @@ async def send_daily_joke(call: types.CallbackQuery):
 @dp.callback_query_handler(lambda call: call.data == 'control_user')
 async def control_user_callback(call: types.CallbackQuery):
     await bot.delete_message(call.message.chat.id, call.message.message_id)
-    await call.message.answer(text=_('Search user by:'), reply_markup=kb.return_search_keyboard())
+    await call.message.answer(text=bm.search_user_by(), reply_markup=kb.return_search_keyboard())
 
 
 @dp.callback_query_handler(lambda call: call.data.startswith("search_"))
 async def search_user_by(call: types.CallbackQuery):
     search = call.data.split('_')[1]
     await bot.delete_message(call.message.chat.id, call.message.message_id)
-    await call.message.answer(text=_('Type user {search}:').format(search=search), reply_markup=kb.cancel_keyboard())
+    await call.message.answer(text=bm.type_user(search), reply_markup=kb.cancel_keyboard())
 
     await dp.current_state().set_state("control_user")
     await dp.current_state().update_data(search=search)
@@ -198,8 +193,7 @@ async def control_user(message: types.Message, state: FSMContext):
     search = data.get("search")
 
     if message.text == _("↩️Cancel"):
-        await bot.send_message(message.chat.id,
-                               'Action canceled!',
+        await bot.send_message(message.chat.id, bm.action_canceled(),
                                reply_markup=ReplyKeyboardRemove())
         await state.finish()
         await admin(message)
@@ -264,10 +258,10 @@ async def control_user(message: types.Message, state: FSMContext):
             if user_photo.total_count > 0:
                 await message.reply_photo(user_photo.photos[0][-1].file_id,
                                           caption=bm.return_user_info(user_name, user_id, user_username, status),
-                                          reply_markup=control_keyboard, parse_mode="Markdown")
+                                          reply_markup=control_keyboard, parse_mode="HTML")
             else:
                 await bot.send_message(message.chat.id, bm.return_user_info(user_name, user_id, user_username, status),
-                                       reply_markup=control_keyboard, parse_mode="Markdown")
+                                       reply_markup=control_keyboard, parse_mode="HTML")
             logging.info(f"Control user: {user_id}")
 
         else:
@@ -293,7 +287,7 @@ async def control_user(message: types.Message, state: FSMContext):
     banned_user_id = data.get("banned_user_id")
 
     if message.text == _("↩️Cancel"):
-        await bot.send_message(message.chat.id, _('Action canceled!'),
+        await bot.send_message(message.chat.id, bm.action_canceled(),
                                reply_markup=ReplyKeyboardRemove())
         await state.finish()
         await admin(message)
@@ -353,9 +347,9 @@ async def info(message: types.Message):
     username = message.from_user.first_name
 
     await message.reply(
-        bot_messages.admin_info(username, joke_sent, joke_count, sent_count, refs_count, ref_url),
+        bm.admin_info(username, joke_sent, joke_count, sent_count, refs_count, ref_url),
         reply_markup=kb.return_feedback_button(),
-        parse_mode='Markdown')
+        parse_mode='HTML')
 
 
 @dp.message_handler(user_id=admin_id, commands=['get_users'])
@@ -424,13 +418,15 @@ async def back_to_admin(call: types.CallbackQuery):
     logging.info(f"User action: /admin (User ID: {user_id})")
 
     user_count = await db.user_count()
+    active_user_count = await db.active_user_count()
+    inactive_user_count = await db.inactive_user_count()
     joke_count = await db.joke_count(table_name)
     sent_count = await db.sent_count()
 
-    await call.message.answer(bot_messages.admin_panel(user_count, joke_count,
-                                                       sent_count),
+    await call.message.answer(bm.admin_panel(user_count, active_user_count, inactive_user_count, joke_count,
+                                             sent_count),
                               reply_markup=kb.admin_keyboard(),
-                              parse_mode='Markdown')
+                              parse_mode='HTML')
 
 
 @dp.callback_query_handler(lambda call: call.data.startswith("answer_"))
@@ -448,7 +444,7 @@ async def answer_feedback(message: types.Message, state: FSMContext):
     answer = message.text
 
     if answer == _("↩️Cancel"):
-        await bot.send_message(message.chat.id, _('Action canceled!'), reply_markup=ReplyKeyboardRemove())
+        await bot.send_message(message.chat.id, bm.action_canceled(), reply_markup=ReplyKeyboardRemove())
         await state.finish()
         return
     data = await state.get_data()
@@ -458,7 +454,8 @@ async def answer_feedback(message: types.Message, state: FSMContext):
 
     try:
         await bot.send_message(chat_id=chat_id,
-                               text=_('Your message *{message_id}* was seen!\n*Answer:* `{answer}`').format(
+                               text=_(
+                                   'Your message <b>{message_id}</b> was seen!\n<b>Answer:</b> <code>{answer}</code>').format(
                                    message_id=message_id, answer=answer))
         await message.reply(_('Your answer sent!'), reply_markup=ReplyKeyboardRemove())
         logging.info(f"Sent answer for feedback to user {chat_id}: {answer}")
@@ -484,7 +481,7 @@ async def write_message(message: types.Message, state: FSMContext):
     answer = message.text
 
     if answer == _("↩️Cancel"):
-        await bot.send_message(message.chat.id, _('Action canceled!'), reply_markup=ReplyKeyboardRemove())
+        await bot.send_message(message.chat.id, bm.action_canceled(), reply_markup=ReplyKeyboardRemove())
         await state.finish()
         return
     data = await state.get_data()
@@ -494,16 +491,16 @@ async def write_message(message: types.Message, state: FSMContext):
     try:
         await bot.send_message(chat_id=chat_id,
                                text=answer)
-        message_sent = await message.reply(_('Your message sent!'), reply_markup=ReplyKeyboardRemove())
+        message_sent = await message.reply(bm.your_message_sent(), reply_markup=ReplyKeyboardRemove())
 
         await bot.delete_message(message.chat.id, message_sent.message_id)
 
-        await message.answer(_('Your message sent!'), reply_markup=kb.return_back_to_admin_keyboard())
+        await message.answer(bm.your_message_sent(), reply_markup=kb.return_back_to_admin_keyboard())
 
         logging.info(f"Sent message as bot to user {chat_id}: {answer}")
 
     except Exception as e:
-        await message.reply(_("Something went wrong, see log for more information!"),
+        await message.reply(bm.something_went_wrong(),
                             reply_markup=kb.return_back_to_admin_keyboard())
         logging.error(f"Error sending message to user {chat_id}: {str(e)}")
 
@@ -514,13 +511,13 @@ async def return_ideas(message: types.Message):
     ideas = await db.get_ideas()
 
     if ideas:
-        response = _("*Ideas for you:*\n\n")
+        response = _("<b>Ideas for you:</b>\n\n")
         ideas_keyboard = types.InlineKeyboardMarkup()
         i = 1
 
         for idea in ideas:
             idea_text = idea[1][:30] + "..." if len(idea[1]) > 30 else idea[1]
-            response += f"#{i} - _{idea_text}_\n"
+            response += f"#{i} - <i>{idea_text}</i>\n"
             i += 1
 
             idea_text_button = types.InlineKeyboardButton(text=f"{idea_text}", callback_data=f"manage_idea:{idea[0]}")
@@ -529,13 +526,13 @@ async def return_ideas(message: types.Message):
         add_button = types.InlineKeyboardButton(text=_("🔙Back"), callback_data="back_to_admin")
         ideas_keyboard.add(add_button)
         await bot.send_message(chat_id=message.chat.id, text=response, reply_markup=ideas_keyboard,
-                               parse_mode='Markdown')
+                               parse_mode='HTML')
     else:
         keyboard = types.InlineKeyboardMarkup()
         button = types.InlineKeyboardButton(text=_("🔙Back"), callback_data="back_to_admin")
         keyboard.add(button)
 
-        await bot.send_message(chat_id=message.chat.id, text=_("There are no ideas for you."), reply_markup=keyboard)
+        await bot.send_message(chat_id=message.chat.id, text=bm._("There are no ideas for you."), reply_markup=keyboard)
 
 
 @rate_limit(1)
@@ -565,7 +562,7 @@ async def delete_idea_callback(call: types.CallbackQuery):
     await db.delete_idea(idea_id)
 
     await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
-                                text=_("Idea deleted."))
+                                text=bm.idea_deleted())
     await return_ideas(message)
     await bot.answer_callback_query(call.id)
 

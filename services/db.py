@@ -258,10 +258,34 @@ class DataBase:
             print(e)
             pass
 
+    async def get_joke_by_id(self, joke_id):
+        try:
+            with self.connect:
+                try:
+                    self.cursor.execute("SELECT * FROM jokes_uk WHERE id = %s", (joke_id ,))
+                    return self.cursor.fetchall()
+                except:
+                    return None
+        except psycopg2.OperationalError as e:
+            print(e)
+            pass
+
+    async def get_joke_by_text(self, text):
+        try:
+            with self.connect:
+                try:
+                    self.cursor.execute("SELECT * FROM jokes_uk WHERE text ILIKE %s", ('%' + text + '%',))
+                    return self.cursor.fetchall()
+                except:
+                    return None
+        except psycopg2.OperationalError as e:
+            print(e)
+            pass
+
     async def get_language(self, user_id):
         try:
             with self.connect:
-                self.cursor.execute("SELECT DISTINCT language FROM users WHERE user_id=%s", (user_id,))
+                self.cursor.execute("SELECT DISTINCT language FROM users WHERE user_id = %s", (user_id,))
                 return self.cursor.fetchone()[0]
         except psycopg2.OperationalError as e:
             print(e)

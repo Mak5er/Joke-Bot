@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  sease\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-04-06 14:22+0300\n"
+"POT-Creation-Date: 2024-04-07 19:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -22,181 +22,90 @@ msgstr ""
 msgid "I'm launched!"
 msgstr ""
 
-#: handlers/admin.py:61
-msgid "_Operating System_: *{}*\n"
-msgstr "_Операційна система_: *{}*\n"
-
-#: handlers/admin.py:62
-msgid "_OS Version_: *{}*\n"
-msgstr "_Версія операційної системи_: *{}*\n"
-
-#: handlers/admin.py:63
-msgid "_Machine Name_: *{}*\n"
-msgstr "_Ім'я машини_: *{}*\n"
-
-#: handlers/admin.py:64
-msgid "_Processor Architecture_: *{}*\n"
-msgstr "_Архітектура процесора_: *{}*\n"
-
-#: handlers/admin.py:67
-msgid "_Processor Model_: *{}*\n"
-msgstr "_Модель процесора_: *{}*\n"
-
-#: handlers/admin.py:68
-msgid "_Physical Cores_: *{}*\n"
-msgstr "_Кількість фізичних ядер_: *{}*\n"
-
-#: handlers/admin.py:69
-msgid "_Logical Cores_: *{}*\n"
-msgstr "_Кількість логічних ядер_: *{}*\n"
-
-#: handlers/admin.py:71
-msgid "_Total Memory_: *{:.2f}* MB\n"
-msgstr "_Загальний об'єм пам'яті_: *{:.2f}* МБ\n"
-
-#: handlers/admin.py:72
-msgid "_Available Memory_: *{:.2f}* MB\n"
-msgstr "_Доступна пам'ять_: *{:.2f}* МБ\n"
-
-#: handlers/admin.py:73
-msgid "_Memory Usage_: *{}*%\n"
-msgstr "_Використання пам'яті_: *{}*%\n"
-
-#: handlers/admin.py:78
-msgid ""
-"*System information:*\n"
-"\n"
-"{pc_info}"
-msgstr ""
-"*Інформація про систему:*\n"
-"\n"
-"{pc_info}"
-
-#: handlers/admin.py:114 handlers/admin.py:151 handlers/admin.py:200
-#: handlers/admin.py:295 handlers/admin.py:450 handlers/admin.py:486
-#: handlers/user.py:197 keyboards/inline_keyboards.py:51
+#: handlers/admin.py:108 handlers/admin.py:145 handlers/admin.py:195
+#: handlers/admin.py:289 handlers/admin.py:446 handlers/admin.py:483
+#: handlers/user.py:205 keyboards/inline_keyboards.py:51
 msgid "↩️Cancel"
 msgstr "↩️Скасувати"
 
-#: handlers/admin.py:179
-msgid "Search user by:"
-msgstr "Шукати користувача по:"
-
-#: handlers/admin.py:186
-msgid "Type user {search}:"
-msgstr "Введіть {search} користувача:"
-
-#: handlers/admin.py:241
+#: handlers/admin.py:235
 msgid "Enter in Conversation"
 msgstr "Перейти до розмови"
 
-#: handlers/admin.py:242
+#: handlers/admin.py:236
 msgid "Write as a bot"
 msgstr "Написати як бот"
 
-#: handlers/admin.py:243
+#: handlers/admin.py:237
 msgid "❌Ban"
 msgstr "❌Забанити"
 
-#: handlers/admin.py:244
+#: handlers/admin.py:238
 msgid "✅Unban"
 msgstr "✅Розбанити"
 
-#: handlers/admin.py:245 handlers/admin.py:529 handlers/admin.py:535
-#: handlers/admin.py:551 keyboards/inline_keyboards.py:40
+#: handlers/admin.py:239 handlers/admin.py:526 handlers/admin.py:532
+#: handlers/admin.py:548 keyboards/inline_keyboards.py:40
 #: keyboards/inline_keyboards.py:96 keyboards/inline_keyboards.py:105
 #: keyboards/inline_keyboards.py:113
 msgid "🔙Back"
 msgstr "🔙Назад"
 
-#: handlers/admin.py:274
+#: handlers/admin.py:268
 msgid "User not found!"
 msgstr "Користувача не знайдено!"
 
-#: handlers/admin.py:284
+#: handlers/admin.py:278
 msgid "Enter ban reason:"
 msgstr "Введіть причину бану:"
 
-#: handlers/admin.py:296 handlers/admin.py:451 handlers/admin.py:487
-#: handlers/user.py:199
-msgid "Action canceled!"
-msgstr "Дію скасовано"
-
-#: handlers/admin.py:441
+#: handlers/admin.py:437
 msgid "Please type your answer:"
 msgstr "Будь ласка, напишіть свою відповідь:"
 
-#: handlers/admin.py:461
+#: handlers/admin.py:457
 msgid ""
-"Your message *{message_id}* was seen!\n"
-"*Answer:* `{answer}`"
+"Your message <b>{message_id}</b> was seen!\n"
+"<b>Answer:</b> <code>{answer}</code>"
 msgstr ""
-"Ваше повідомлення *{message_id}* було переглянуто!\n"
-"*Відповідь:* `{answer}`"
+"Ваше повідомлення <b>{message_id}</b> було переглянуто!\n"
+"<b>Відповідь:</b> <code>{answer}</code>"
 
-#: handlers/admin.py:463
+#: handlers/admin.py:460
 msgid "Your answer sent!"
 msgstr "Вашу відповідь надіслано!"
 
-#: handlers/admin.py:467 handlers/admin.py:506
+#: handlers/admin.py:464 messages/bot_messages.py:256
 msgid "Something went wrong, see log for more information!"
 msgstr "Щось пішло не так, дивіться лог для отримання додаткової інформації!"
 
-#: handlers/admin.py:477
+#: handlers/admin.py:474
 msgid "Please type message:"
 msgstr "Будь ласка, введіть своє повідомлення:"
 
-#: handlers/admin.py:497 handlers/admin.py:501
-msgid "Your message sent!"
-msgstr "Ваше повідомлення надіслано!"
-
-#: handlers/admin.py:517
+#: handlers/admin.py:514
 msgid ""
-"*Ideas for you:*\n"
+"<b>Ideas for you:</b>\n"
 "\n"
 msgstr ""
-"*Ідеї для вас:*\n"
+"<b>Ідеї для вас:</b>\n"
 "\n"
 
-#: handlers/admin.py:538
+#: handlers/admin.py:535 messages/bot_messages.py:260
 msgid "There are no ideas for you."
 msgstr "Немає жодних ідей для вас."
 
-#: handlers/admin.py:550
+#: handlers/admin.py:547
 msgid "❌Delete"
 msgstr "❌Видалити"
 
-#: handlers/admin.py:568
-msgid "Idea deleted."
-msgstr "Ідею видалено."
+#: handlers/user.py:183
+msgid "Type joke text or ID:"
+msgstr "Ввдіть текст або ID анекдоту:"
 
-#: handlers/user.py:75
-msgid ""
-"If you want to offer an anecdote or if you find a bug, please click the "
-"button below and describe it."
-msgstr ""
-"Якщо ви знайшли помилку або хочете запропонувати анекдот, будь ласка, "
-"натисніть кнопку нижче та опишіть його."
-
-#: handlers/user.py:85
-msgid ""
-"Referral *{user_id}* has registered at your invitation!\n"
-"Total number of invitees: *{refs_count}*"
-msgstr ""
-"Реферал *{user_id}* зареєструвався за вашим запрошенням!\n"
-"Загальна кількість запрошених: *{refs_count}*"
-
-#: handlers/user.py:184
-msgid "Please enter your message:"
-msgstr "Будь ласка, введіть своє повідомлення:"
-
-#: handlers/user.py:219
-msgid "Your message *{feedback_message_id}* sent!"
-msgstr "Ваше повідомлення *{feedback_message_id}* надіслано!"
-
-#: handlers/user.py:226
-msgid "Please select category:"
-msgstr "Будьласка оберіть категорію:"
+#: handlers/user.py:377
+msgid "Page "
+msgstr "Сторінка "
 
 #: keyboards/inline_keyboards.py:8
 msgid "📝Add a joke"
@@ -284,111 +193,113 @@ msgstr "Відповісти💬"
 
 #: messages/bot_messages.py:5
 msgid ""
-"Hello *{name}*! I'm a bot with jokes.\n"
+"Hello <b>{name}</b>! I'm a bot with jokes.\n"
 "Full information on the bot /info\n"
 "List of commands /help"
 msgstr ""
-"Привіт, *{name}*! Я бот з анекдотами.\n"
+"Привіт, <b>{name}</b>! Я бот з анекдотами.\n"
 "Повна інформація про бота /info\n"
 "Список команд /help"
 
 #: messages/bot_messages.py:11
 msgid ""
 "Hello, this is the admin panel.\n"
-"🪪Number of bot users: *{user_count}*\n"
-"📱Number of active users: *{active_user_count}*\n"
-"📵Number of inactive users: *{inactive_user_count}*\n"
-"🃏Number of jokes in the database: *{joke_count}*\n"
-"📬Total number of jokes read: *{sent_count}*\n"
+"    \n"
+"🪪Number of bot users: <b>{user_count}</b>\n"
+"📱Number of active users: <b>{active_user_count}</b>\n"
+"📵Number of inactive users: <b>{inactive_user_count}</b>\n"
+"🃏Number of jokes in the database: <b>{joke_count}</b>\n"
+"📬Total number of jokes read: <b>{sent_count}</b>\n"
 "\n"
 "Admin commands:\n"
 "/ideas - list ideas from users\n"
-"/get\\_users - download table with all users info\n"
-"/system\\_info - get info about system"
+"/get_users - download table with all users info\n"
+"/system_info - get info about system"
 msgstr ""
 "Привіт, це панель адміністратора.\n"
-"🪪Кількість користувачів бота: *{user_count}*\n"
-"📱Кількість активних користувачів: *{user_count}*\n"
-"📵Кількість неактивних користувачів: *{user_count}*\n"
-"🃏Кількість анекдотів у базі: *{joke_count}*\n"
-"📬Кількість прочитаних жартів: *{sent_count}*\n"
+"   \n"
+"🪪Кількість користувачів бота: <b>{user_count}</b>\n"
+"📱Кількість активних користувачів: <b>{active_user_count}</b>\n"
+"📵Кількість неактивних користувачів: <b>{inactive_user_count}</b>\n"
+"🃏Кількість анекдотів у базі: <b>{joke_count}</b>\n"
+"📬Кількість прочитаних жартів: <b>{sent_count}</b>\n"
 "\n"
 "Команди адміна:\n"
 "/ideas - список ідей від користувачів\n"
-"/get\\_users - скачати таблицю зі всіма користувачами\n"
-"/system\\_info - отримати інфориацію про систему"
+"/get_users - скачати таблицю зі всіма користувачами\n"
+"/system_info - отримати інфориацію про систему"
 
-#: messages/bot_messages.py:29
+#: messages/bot_messages.py:30
 msgid ""
 "\n"
-"Hello *{username}*! You are an administrator, to see more information and"
-" controls, please type /admin.\n"
+"Hello <b>{username}</b>! You are an administrator, to see more "
+"information and controls, please type /admin.\n"
 "\n"
 "Statistics:\n"
-"📁Number of jokes in the database: *{joke_count}*\n"
-"📚Jokes read by you: *{joke_sent}*\n"
-"📬Total number of jokes read by everyone: *{sent_count}*\n"
+"📁Number of jokes in the database: <b>{joke_count}</b>\n"
+"📚Jokes read by you: <b>{joke_sent}</b>\n"
+"📬Total number of jokes read by everyone: <b>{sent_count}</b>\n"
 "\n"
-"Total referrals: *{refs_count}*\n"
-"Your ref link: {ref_url}\n"
-"             \n"
-"Bot site - https://anekdoty.pp.ua\n"
+"Total referrals: <b>{refs_count}</b>\n"
+"Your ref link: <a href=\"{ref_url}\">{ref_url}</a>\n"
 "\n"
-"*If you want to offer an anecdote or ask a question, click the Feedback💬 "
-"button!*"
+"Bot site - <a href=\"https://anekdoty.pp.ua\">https://anekdoty.pp.ua</a>\n"
+"\n"
+"<b>If you want to offer an anecdote or ask a question, click the "
+"Feedback💬 button!</b>"
 msgstr ""
 "\n"
-"Привіт, *{username}*! Ви адміністратор, щоб побачити більше інформації та"
-" елементів керування, будь ласка, введіть /admin.\n"
+"Привіт, <b>{username}</b>! Ви адміністратор, щоб побачити більше "
+"інформації та елементів керування, будь ласка, введіть /admin.\n"
 "\n"
 "Статистика:\n"
-"📁Кількість анекдотів у базі даних: *{joke_count}*\n"
-"📚Анекдотів прочитано вами: *{joke_sent}*\n"
-"📬Анекдотів прочитано усіма: *{sent_count}*\n"
+"📁Кількість анекдотів у базі даних: <b>{joke_count}</b>\n"
+"📚Анекдотів прочитано вами: <b>{joke_sent}</b>\n"
+"📬Анекдотів прочитано усіма: <b>{sent_count}</b>\n"
 "\n"
-"Всього рефералів: *{refs_count}*\n"
+"Всього рефералів: <b>{refs_count}</b>\n"
 "Ваше реф-посилання: {ref_url}\n"
 "\n"
 "Сайт бота - https://anekdoty.pp.ua\n"
 "\n"
-"*Хочете запропонувати анекдот або задати запитання? Натисніть нопку "
-"Зворотний зв'язок💬!*\n"
+"<b>Хочете запропонувати анекдот або задати запитання? Натисніть нопку "
+"Зворотний зв'язок💬!</b>\n"
 
-#: messages/bot_messages.py:51
+#: messages/bot_messages.py:52
 msgid ""
 "\n"
-"Hello *{username}*! I am a bot where you can read jokes.\n"
+"Hello <b>{username}</b>! I am a bot where you can read jokes.\n"
 "\n"
 "Statistics:\n"
-"📁Number of jokes in the database: *{joke_count}*\n"
-"📚Jokes read by you: *{joke_sent}*\n"
-"📬Total number of jokes read by everyone: *{sent_count}*\n"
+"📁Number of jokes in the database: <b>{joke_count}</b>\n"
+"📚Jokes read by you: <b>{joke_sent}</b>\n"
+"📬Total number of jokes read by everyone: <b>{sent_count}</b>\n"
 "\n"
-"Total referrals: *{refs_count}*\n"
-"Your ref link: {ref_url}\n"
+"Total referrals: <b>{refs_count}</b>\n"
+"Your ref link: <a href=\"{ref_url}\">{ref_url}</a>\n"
 "\n"
-"Bot site - https://anekdoty.pp.ua\n"
+"Bot site - <a href=\"https://anekdoty.pp.ua\">https://anekdoty.pp.ua</a>\n"
 "\n"
-"*If you want to offer an anecdote or ask a question, click the Feedback💬 "
-"button!*"
+"<b>If you want to offer an anecdote or ask a question, click the "
+"Feedback💬 button!</b>"
 msgstr ""
 "\n"
-"Привіт, *{username}*! Я бот, в якому ви можете читати анекдоти.\n"
+"Привіт, <b>{username}</b>! Я бот, в якому ви можете читати анекдоти.\n"
 "\n"
 "Статистика:\n"
-"📁Кількість анекдотів у базі даних: *{joke_count}*\n"
-"📚Анекдотів прочитано вами: *{joke_sent}*\n"
-"📬Анекдотів прочитано усіма: *{sent_count}*\n"
+"📁Кількість анекдотів у базі даних: <b>{joke_count}</b>\n"
+"📚Анекдотів прочитано вами: <b>{joke_sent}</b>\n"
+"📬Анекдотів прочитано усіма: <b>{sent_count}</b>\n"
 "\n"
-"Всього рефералів: *{refs_count}*\n"
+"Всього рефералів: <b>{refs_count}</b>\n"
 "Ваше реф-посилання: {ref_url}\n"
 "\n"
 "Сайт бота - https://anekdoty.pp.ua\n"
 "\n"
-"*Хочете запропонувати анекдот або задати запитання? Натисніть нопку "
-"Зворотний зв'язок💬!*\n"
+"<b>Хочете запропонувати анекдот або задати запитання? Натисніть нопку "
+"Зворотний зв'язок💬!</b>\n"
 
-#: messages/bot_messages.py:73
+#: messages/bot_messages.py:74
 msgid ""
 "🤖 This is a bot with jokes. Here is a list of available commands:\n"
 "\n"
@@ -424,123 +335,126 @@ msgstr ""
 "переглянути статистику бота, інформацію про розробника та посилання для "
 "запрошення друга."
 
-#: messages/bot_messages.py:87
-msgid "📊Rating: {joke_rate}"
-msgstr "📊Оцінка: {joke_rate}"
+#: messages/bot_messages.py:88
+msgid "📊Rating: <b>{joke_rate}</b>"
+msgstr "📊Оцінка: <b>{joke_rate}</b>"
 
-#: messages/bot_messages.py:91
+#: messages/bot_messages.py:92
 msgid "You 👍 this!"
 msgstr "Ви 👍 це!"
 
-#: messages/bot_messages.py:95
+#: messages/bot_messages.py:96
 msgid "You 👎 this!"
 msgstr "Ви 👎 це!"
 
-#: messages/bot_messages.py:99
+#: messages/bot_messages.py:100
 msgid "You revoked your vote!"
 msgstr "Ви відкликали свій голос!"
 
-#: messages/bot_messages.py:103
+#: messages/bot_messages.py:104
 msgid "🔃The rating is updated!"
 msgstr "🔃Рейтинг оновлено!"
 
-#: messages/bot_messages.py:107
+#: messages/bot_messages.py:108
 msgid "You have marked this joke as read!"
 msgstr "Ви позначили цей анекдот як прочитаний!"
 
-#: messages/bot_messages.py:111
+#: messages/bot_messages.py:112
 msgid "You have already marked this joke as read!"
 msgstr "Ви вже позначали цей анекдот як прочитаний!"
 
-#: messages/bot_messages.py:115
+#: messages/bot_messages.py:116
 msgid "Mailing is complete!"
 msgstr "Розсилка завершена!"
 
-#: messages/bot_messages.py:119
+#: messages/bot_messages.py:120
 msgid "Starting mailing..."
 msgstr "Починаю розсилку..."
 
-#: messages/bot_messages.py:123
+#: messages/bot_messages.py:124
 msgid "Click the button to get the joke."
 msgstr "Натисніть кнопку, щоб отримати анекдот."
 
-#: messages/bot_messages.py:127
+#: messages/bot_messages.py:128
 msgid "Unfortunately, all the jokes have already been sent to you."
 msgstr "На жаль, всі анекдоти вже надіслані вам."
 
-#: messages/bot_messages.py:131
+#: messages/bot_messages.py:132
 msgid ""
-"*Joke of the day:*\n"
+"<b>Joke of the day:</b>\n"
 "\n"
 "{joke_text}"
 msgstr ""
-"*Анекдот дня:*\n"
+"<b>Анекдот дня:</b>\n"
 "\n"
 "{joke_text}"
 
-#: messages/bot_messages.py:135
+#: messages/bot_messages.py:136
 msgid ""
-"*{name}*, I don't understand you! Type /help to get a list of commands!\n"
-"*If you want to offer an anecdote or ask a question, click the Feedback💬 "
-"button!*"
+"<b>{name}</b>, I don't understand you! Type /help to get a list of "
+"commands!\n"
+"    \n"
+"<b>If you want to offer an anecdote or ask a question, click the "
+"Feedback💬 button!</b>"
 msgstr ""
-"*{name}*, я вас не розумію! Введіть /help, щоб отримати список команд!\n"
+"<b>{name}</b>, я вас не розумію! Введіть /help, щоб отримати список "
+"команд!\n"
 "\n"
-"*Хочете запропонувати анекдот або задати запитання? Натисніть нопку "
-"Зворотний зв'язок💬!*\n"
+"<b>Хочете запропонувати анекдот або задати запитання? Натисніть нопку "
+"Зворотний зв'язок💬!</b>\n"
 "\n"
 
-#: messages/bot_messages.py:140
+#: messages/bot_messages.py:142
 msgid "This command cannot be used in a group!"
 msgstr "Цю команду не можна використовувати в групі!"
 
-#: messages/bot_messages.py:144
+#: messages/bot_messages.py:146
 msgid "Log deleted, starting to write a new one."
 msgstr "Лог видалено, починаю писати новий."
 
-#: messages/bot_messages.py:148
+#: messages/bot_messages.py:150
 msgid "Enter the message to send:"
 msgstr "Введіть повідомлення для відправки:"
 
-#: messages/bot_messages.py:152
+#: messages/bot_messages.py:154
 msgid "Action canceled"
 msgstr "Дію скасовано"
 
-#: messages/bot_messages.py:156
+#: messages/bot_messages.py:158
 msgid "Enter a new joke:"
 msgstr "Введіть новий анекдот:"
 
-#: messages/bot_messages.py:160
+#: messages/bot_messages.py:162
 msgid "The anecdote is given to the database."
 msgstr "Анекдот додано до бази даних."
 
-#: messages/bot_messages.py:164
+#: messages/bot_messages.py:166
 msgid ""
-"Hi! Thank you for adding me to *'{chat_title}'* \n"
+"Hi! Thank you for adding me to <b>'{chat_title}'</b>\n"
 "For correct operation, please grant me administrator rights!\n"
 "Type /help to get a list of commands"
 msgstr ""
-"Привіт! Дякую, що додали мене в *'{chat_title}'*.\n"
+"Привіт! Дякую, що додали мене в <b>'{chat_title}'</b>.\n"
 "Для коректної роботи, будь ласка, надайте мені права адміністратора!\n"
 "Введіть /help, щоб отримати список команд"
 
-#: messages/bot_messages.py:170
+#: messages/bot_messages.py:172
 msgid "Please choose your language!"
 msgstr "Будь ласка, оберіть свою мову!"
 
 #: messages/bot_messages.py:185
 msgid ""
-"*USER INFO*\n"
-"_Name_: *{user_name}*\n"
-"_ID_: *{user_id}*\n"
-"_Username_: *{user_username}*\n"
-"_Status_: *{status}*"
+"<b>USER INFO</b>\n"
+"<b>Name</b>: {user_name}\n"
+"<b>ID</b>: {user_id}\n"
+"<b>Username</b>: {user_username}\n"
+"<b>Status</b>: {status}"
 msgstr ""
-"*ІНФОРМАЦІЯ ПРО КОРИСТУВАЧА*\n"
-"_Ім'я_: *{user_name}*\n"
-"_ID_: *{user_id}*\n"
-"_Юзернейм_: *{user_username}*\n"
-"_Статус_: *{status}*"
+"<b>ІНФОРМАЦІЯ ПРО КОРИСТУВАЧА</b>\n"
+"<i>Ім'я</i>: <b>{user_name}</b>\n"
+"<i>ID</i>: <b>{user_id}</b>\n"
+"<i>Юзернейм</i>: <b>{user_username}</b>\n"
+"<i>Статус</i>: <b>{status}</b>"
 
 #: messages/bot_messages.py:193
 msgid ""
@@ -564,267 +478,352 @@ msgstr "Користувач {unbanned_user_id} успішно розбанен�
 
 #: messages/bot_messages.py:209
 msgid ""
-"*New message* from user: *{user}*\n"
-"*Message:* `{feedback_message}`"
+"<b>New message</b> from user: <b>{user}</b>\n"
+"<b>Message:</b> <code>{feedback_message}</code>"
 msgstr ""
-"*Нове повідомлення* від користувача: *{user}*\n"
-"*Повідомлення:* `{feedback_message}`"
+"<b>Нове повідомлення</b> від користувача: <b>{user}</b>\n"
+"<b>Повідомлення:</b> <code>{feedback_message}</code>"
 
-#: venv/lib/python3.9/site-packages/click/_termui_impl.py:518
+#: messages/bot_messages.py:215
+msgid "Pick a joke:"
+msgstr "Обери анекдот:"
+
+#: messages/bot_messages.py:219
+msgid ""
+"<b>System information:</b>\n"
+"\n"
+"{pc_info}"
+msgstr ""
+"<b>Інформація про систему:</b>\n"
+"\n"
+"{pc_info}"
+
+#: messages/bot_messages.py:223
+msgid ""
+"\n"
+"<b>Operating System</b>: <i>{operating_system}</i>\n"
+"<b>OS Version</b>: <i>{os_version}</i>\n"
+"<b>Machine Name</b>: <i>{machine_name}</i>\n"
+"<b>Processor Architecture</b>: <i>{processor_architecture}</i>\n"
+"<b>Processor Model</b>: <i>{processor_model}</i>\n"
+"<b>Physical Cores</b>: <i>{physical_cores}</i>\n"
+"<b>Logical Cores</b>: <i>{logical_cores}</i>\n"
+"<b>Total Memory</b>: <i>{total_memory:.2f}</i> MB\n"
+"<b>Available Memory</b>: <i>{available_memory:.2f}</i> MB\n"
+"<b>Memory Usage</b>: <i>{memory_usage}</i>%\n"
+msgstr ""
+"\n"
+"<b>Операційна система</b>: <i>{operating_system}</i>\n"
+"<b>Версія операційної системи</b>: <i>{os_version}</i>\n"
+"<b>Ім'я машини</b>: <i>{machine_name}</i>\n"
+"<b>Архітектура процесора</b>: <i>{processor_architecture}</i>\n"
+"<b>Модель процесора</b>: <i>{processor_model}</i>\n"
+"<b>Кількість фізичних ядер</b>: <i>{physical_cores}</i>\n"
+"<b>Кількість логічних ядер</b>: <i>{logical_cores}</i>\n"
+"<b>Загальний об'єм пам'яті</b>: <i>{total_memory:.2f}</i> МБ\n"
+"<b>Доступна пам'ять</b>: *{available_memory:.2f}* МБ\n"
+"<b>Використання пам'яті</b>: <i>{memory_usage}</i>%\n"
+
+
+#: messages/bot_messages.py:240
+msgid "Search user by:"
+msgstr "Шукати користувача по:"
+
+#: messages/bot_messages.py:244
+msgid "Type user {search}:"
+msgstr "Введіть {search} користувача:"
+
+#: messages/bot_messages.py:248
+msgid "Action canceled!"
+msgstr "Дію скасовано"
+
+#: messages/bot_messages.py:252
+msgid "Your message sent!"
+msgstr "Ваше повідомлення надіслано!"
+
+#: messages/bot_messages.py:264
+msgid "Idea deleted."
+msgstr "Ідею видалено."
+
+#: messages/bot_messages.py:268
+msgid ""
+"Referral <b>{user_id}</b> has registered at your invitation!\n"
+"Total number of invitees: <b>{refs_count}</b>"
+msgstr ""
+"Реферал <b>{user_id}</b> зареєструвався за вашим запрошенням!\n"
+"Загальна кількість запрошених: <b>{refs_count}</b>"
+
+#: messages/bot_messages.py:274
+msgid "Please enter your message:"
+msgstr "Будь ласка, введіть своє повідомлення:"
+
+#: messages/bot_messages.py:278
+msgid "Your message <b>{feedback_message_id}</b> sent!"
+msgstr "Ваше повідомлення <b>{feedback_message_id}</b> надіслано!"
+
+#: messages/bot_messages.py:282
+msgid "Please select category:"
+msgstr "Будьласка оберіть категорію:"
+
+#: messages/bot_messages.py:286
+msgid "Nothing was found."
+msgstr "Нічого не знайдено."
+
+#: venv/Lib/site-packages/click/_termui_impl.py:518
 msgid "{editor}: Editing failed"
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/_termui_impl.py:522
+#: venv/Lib/site-packages/click/_termui_impl.py:522
 msgid "{editor}: Editing failed: {e}"
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/core.py:1120
+#: venv/Lib/site-packages/click/core.py:1120
 msgid "Aborted!"
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/core.py:1309
-#: venv/lib/python3.9/site-packages/click/decorators.py:559
+#: venv/Lib/site-packages/click/core.py:1309
+#: venv/Lib/site-packages/click/decorators.py:559
 msgid "Show this message and exit."
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/core.py:1340
-#: venv/lib/python3.9/site-packages/click/core.py:1370
+#: venv/Lib/site-packages/click/core.py:1340
+#: venv/Lib/site-packages/click/core.py:1370
 msgid "(Deprecated) {text}"
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/core.py:1387
+#: venv/Lib/site-packages/click/core.py:1387
 msgid "Options"
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/core.py:1415
+#: venv/Lib/site-packages/click/core.py:1415
 msgid "Got unexpected extra argument ({args})"
 msgid_plural "Got unexpected extra arguments ({args})"
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/lib/python3.9/site-packages/click/core.py:1428
+#: venv/Lib/site-packages/click/core.py:1428
 msgid "DeprecationWarning: The command {name!r} is deprecated."
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/core.py:1636
+#: venv/Lib/site-packages/click/core.py:1636
 msgid "Commands"
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/core.py:1668
+#: venv/Lib/site-packages/click/core.py:1668
 msgid "Missing command."
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/core.py:1746
+#: venv/Lib/site-packages/click/core.py:1746
 msgid "No such command {name!r}."
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/core.py:2310
+#: venv/Lib/site-packages/click/core.py:2310
 msgid "Value must be an iterable."
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/core.py:2333
+#: venv/Lib/site-packages/click/core.py:2333
 msgid "Takes {nargs} values but 1 was given."
 msgid_plural "Takes {nargs} values but {len} were given."
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/lib/python3.9/site-packages/click/core.py:2778
+#: venv/Lib/site-packages/click/core.py:2778
 msgid "env var: {var}"
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/core.py:2808
+#: venv/Lib/site-packages/click/core.py:2808
 msgid "(dynamic)"
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/core.py:2821
+#: venv/Lib/site-packages/click/core.py:2821
 msgid "default: {default}"
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/core.py:2834
+#: venv/Lib/site-packages/click/core.py:2834
 msgid "required"
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/decorators.py:465
+#: venv/Lib/site-packages/click/decorators.py:465
 #, python-format
 msgid "%(prog)s, version %(version)s"
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/decorators.py:528
+#: venv/Lib/site-packages/click/decorators.py:528
 msgid "Show the version and exit."
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/exceptions.py:44
-#: venv/lib/python3.9/site-packages/click/exceptions.py:80
+#: venv/Lib/site-packages/click/exceptions.py:44
+#: venv/Lib/site-packages/click/exceptions.py:80
 msgid "Error: {message}"
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/exceptions.py:72
+#: venv/Lib/site-packages/click/exceptions.py:72
 msgid "Try '{command} {option}' for help."
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/exceptions.py:121
+#: venv/Lib/site-packages/click/exceptions.py:121
 msgid "Invalid value: {message}"
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/exceptions.py:123
+#: venv/Lib/site-packages/click/exceptions.py:123
 msgid "Invalid value for {param_hint}: {message}"
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/exceptions.py:179
+#: venv/Lib/site-packages/click/exceptions.py:179
 msgid "Missing argument"
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/exceptions.py:181
+#: venv/Lib/site-packages/click/exceptions.py:181
 msgid "Missing option"
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/exceptions.py:183
+#: venv/Lib/site-packages/click/exceptions.py:183
 msgid "Missing parameter"
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/exceptions.py:185
+#: venv/Lib/site-packages/click/exceptions.py:185
 msgid "Missing {param_type}"
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/exceptions.py:192
+#: venv/Lib/site-packages/click/exceptions.py:192
 msgid "Missing parameter: {param_name}"
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/exceptions.py:212
+#: venv/Lib/site-packages/click/exceptions.py:212
 msgid "No such option: {name}"
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/exceptions.py:226
+#: venv/Lib/site-packages/click/exceptions.py:226
 msgid "Did you mean {possibility}?"
 msgid_plural "(Possible options: {possibilities})"
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/lib/python3.9/site-packages/click/exceptions.py:262
+#: venv/Lib/site-packages/click/exceptions.py:262
 msgid "unknown error"
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/exceptions.py:269
+#: venv/Lib/site-packages/click/exceptions.py:269
 msgid "Could not open file {filename!r}: {message}"
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/parser.py:231
+#: venv/Lib/site-packages/click/parser.py:231
 msgid "Argument {name!r} takes {nargs} values."
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/parser.py:413
+#: venv/Lib/site-packages/click/parser.py:413
 msgid "Option {name!r} does not take a value."
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/parser.py:473
+#: venv/Lib/site-packages/click/parser.py:473
 msgid "Option {name!r} requires an argument."
 msgid_plural "Option {name!r} requires {nargs} arguments."
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/lib/python3.9/site-packages/click/shell_completion.py:318
+#: venv/Lib/site-packages/click/shell_completion.py:318
 msgid "Shell completion is not supported for Bash versions older than 4.4."
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/shell_completion.py:326
+#: venv/Lib/site-packages/click/shell_completion.py:326
 msgid "Couldn't detect Bash version, shell completion is not supported."
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/termui.py:158
+#: venv/Lib/site-packages/click/termui.py:158
 msgid "Repeat for confirmation"
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/termui.py:174
+#: venv/Lib/site-packages/click/termui.py:174
 msgid "Error: The value you entered was invalid."
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/termui.py:176
+#: venv/Lib/site-packages/click/termui.py:176
 msgid "Error: {e.message}"
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/termui.py:187
+#: venv/Lib/site-packages/click/termui.py:187
 msgid "Error: The two entered values do not match."
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/termui.py:243
+#: venv/Lib/site-packages/click/termui.py:243
 msgid "Error: invalid input"
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/termui.py:773
+#: venv/Lib/site-packages/click/termui.py:773
 msgid "Press any key to continue..."
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:266
+#: venv/Lib/site-packages/click/types.py:266
 msgid ""
 "Choose from:\n"
 "\t{choices}"
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:300
+#: venv/Lib/site-packages/click/types.py:300
 msgid "{value!r} is not {choice}."
 msgid_plural "{value!r} is not one of {choices}."
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:394
+#: venv/Lib/site-packages/click/types.py:394
 msgid "{value!r} does not match the format {format}."
 msgid_plural "{value!r} does not match the formats {formats}."
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:414
+#: venv/Lib/site-packages/click/types.py:414
 msgid "{value!r} is not a valid {number_type}."
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:470
+#: venv/Lib/site-packages/click/types.py:470
 msgid "{value} is not in the range {range}."
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:611
+#: venv/Lib/site-packages/click/types.py:611
 msgid "{value!r} is not a valid boolean."
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:635
+#: venv/Lib/site-packages/click/types.py:635
 msgid "{value!r} is not a valid UUID."
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:822
+#: venv/Lib/site-packages/click/types.py:822
 msgid "file"
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:824
+#: venv/Lib/site-packages/click/types.py:824
 msgid "directory"
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:826
+#: venv/Lib/site-packages/click/types.py:826
 msgid "path"
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:877
+#: venv/Lib/site-packages/click/types.py:877
 msgid "{name} {filename!r} does not exist."
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:886
+#: venv/Lib/site-packages/click/types.py:886
 msgid "{name} {filename!r} is a file."
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:894
+#: venv/Lib/site-packages/click/types.py:894
 msgid "{name} '{filename}' is a directory."
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:903
+#: venv/Lib/site-packages/click/types.py:903
 msgid "{name} {filename!r} is not readable."
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:912
+#: venv/Lib/site-packages/click/types.py:912
 msgid "{name} {filename!r} is not writable."
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:921
+#: venv/Lib/site-packages/click/types.py:921
 msgid "{name} {filename!r} is not executable."
 msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:987
+#: venv/Lib/site-packages/click/types.py:987
 msgid "{len_type} values are required, but {len_value} was given."
 msgid_plural "{len_type} values are required, but {len_value} were given."
 msgstr[0] ""
@@ -1059,4 +1058,143 @@ msgstr[1] ""
 
 #~ msgid "There is any ideas for you."
 #~ msgstr ""
+
+#~ msgid ""
+#~ "\n"
+#~ "Hello *{username}*! You are an "
+#~ "administrator, to see more information "
+#~ "and controls, please type /admin.\n"
+#~ "\n"
+#~ "Statistics:\n"
+#~ "📁Number of jokes in the database: *{joke_count}*\n"
+#~ "📚Jokes read by you: *{joke_sent}*\n"
+#~ "📬Total number of jokes read by everyone: *{sent_count}*\n"
+#~ "\n"
+#~ "Total referrals: *{refs_count}*\n"
+#~ "Your ref link: {ref_url}\n"
+#~ "             \n"
+#~ "Bot site - https://anekdoty.pp.ua\n"
+#~ "\n"
+#~ "*If you want to offer an anecdote"
+#~ " or ask a question, click the "
+#~ "Feedback💬 button!*"
+#~ msgstr ""
+#~ "\n"
+#~ "Привіт, *{username}*! Ви адміністратор, щоб"
+#~ " побачити більше інформації та елементів"
+#~ " керування, будь ласка, введіть /admin."
+#~ "\n"
+#~ "\n"
+#~ "Статистика:\n"
+#~ "📁Кількість анекдотів у базі даних: *{joke_count}*\n"
+#~ "📚Анекдотів прочитано вами: *{joke_sent}*\n"
+#~ "📬Анекдотів прочитано усіма: *{sent_count}*\n"
+#~ "\n"
+#~ "Всього рефералів: *{refs_count}*\n"
+#~ "Ваше реф-посилання: {ref_url}\n"
+#~ "\n"
+#~ "Сайт бота - https://anekdoty.pp.ua\n"
+#~ "\n"
+#~ "*Хочете запропонувати анекдот або задати "
+#~ "запитання? Натисніть нопку Зворотний "
+#~ "зв'язок💬!*\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "Hello *{username}*! I am a bot where you can read jokes.\n"
+#~ "\n"
+#~ "Statistics:\n"
+#~ "📁Number of jokes in the database: *{joke_count}*\n"
+#~ "📚Jokes read by you: *{joke_sent}*\n"
+#~ "📬Total number of jokes read by everyone: *{sent_count}*\n"
+#~ "\n"
+#~ "Total referrals: *{refs_count}*\n"
+#~ "Your ref link: {ref_url}\n"
+#~ "\n"
+#~ "Bot site - https://anekdoty.pp.ua\n"
+#~ "\n"
+#~ "*If you want to offer an anecdote"
+#~ " or ask a question, click the "
+#~ "Feedback💬 button!*"
+#~ msgstr ""
+#~ "\n"
+#~ "Привіт, *{username}*! Я бот, в якому ви можете читати анекдоти.\n"
+#~ "\n"
+#~ "Статистика:\n"
+#~ "📁Кількість анекдотів у базі даних: *{joke_count}*\n"
+#~ "📚Анекдотів прочитано вами: *{joke_sent}*\n"
+#~ "📬Анекдотів прочитано усіма: *{sent_count}*\n"
+#~ "\n"
+#~ "Всього рефералів: *{refs_count}*\n"
+#~ "Ваше реф-посилання: {ref_url}\n"
+#~ "\n"
+#~ "Сайт бота - https://anekdoty.pp.ua\n"
+#~ "\n"
+#~ "*Хочете запропонувати анекдот або задати "
+#~ "запитання? Натисніть нопку Зворотний "
+#~ "зв'язок💬!*\n"
+
+#~ msgid "<b>Operating System</b>: <i>{}</i>\n"
+#~ msgstr "<b>Операційна система</b>: <i>{}</i>\n"
+
+#~ msgid "<b>OS Version</b>: <i>{}</i>\n"
+#~ msgstr "<b>Версія операційної системи</b>: <i>{}</i>\n"
+
+#~ msgid "<b>Machine Name</b>: <i>{}</i>\n"
+#~ msgstr "<b>Ім'я машини</b>: <i>{}</i>\n"
+
+#~ msgid "<b>Processor Architecture</b>: <i>{}</i>\n"
+#~ msgstr "<b>Архітектура процесора</b>: <i>{}</i>\n"
+
+#~ msgid "<b>Processor Model</b>: <i>{}</i>\n"
+#~ msgstr "<b>Модель процесора</b>: <i>{}</i>\n"
+
+#~ msgid "<b>Physical Cores</b>: <i>{}</i>\n"
+#~ msgstr "<b>Кількість фізичних ядер</b>: <i>{}</i>\n"
+
+#~ msgid "<b>Logical Cores</b>: <i>{}</i>\n"
+#~ msgstr "<b>Кількість логічних ядер</b>: <i>{}</i>\n"
+
+#~ msgid "<b>Total Memory</b>: <i>{:.2f}</i> MB\n"
+#~ msgstr "<b>Загальний об'єм пам'яті</b>: <i>{:.2f}</i> МБ\n"
+
+#~ msgid "<b>Available Memory</b>: <i>{:.2f}</i> MB\n"
+#~ msgstr "_Доступна пам'ять_: *{:.2f}* МБ\n"
+
+#~ msgid "<b>Memory Usage</b>: <i>{}</i>%\n"
+#~ msgstr "<b>Використання пам'яті</b>: <i>{}</i>%\n"
+
+#~ msgid ""
+#~ "If you want to offer an anecdote"
+#~ " or if you find a bug, please"
+#~ " click the button below and describe"
+#~ " it."
+#~ msgstr ""
+#~ "Якщо ви знайшли помилку або хочете "
+#~ "запропонувати анекдот, будь ласка, натисніть"
+#~ " кнопку нижче та опишіть його."
+
+#~ msgid ""
+#~ "\n"
+#~ "<b>Operating System</b>: <i>{}</i>\n"
+#~ "<b>OS Version</b>: <i>{}</i>\n"
+#~ "<b>Machine Name</b>: <i>{}</i>\n"
+#~ "<b>Processor Architecture</b>: <i>{}</i>\n"
+#~ "<b>Processor Model</b>: <i>{}</i>\n"
+#~ "<b>Physical Cores</b>: <i>{}</i>\n"
+#~ "<b>Logical Cores</b>: <i>{}</i>\n"
+#~ "<b>Total Memory</b>: <i>{:.2f}</i> MB\n"
+#~ "<b>Available Memory</b>: <i>{:.2f}</i> MB\n"
+#~ "<b>Memory Usage</b>: <i>{}</i>%\n"
+#~ msgstr ""
+#~ "<b>Операційна система</b>: <i>{}</i>\n"
+#~ "<b>Версія операційної системи</b>: <i>{}</i>\n"
+#~ "<b>Ім'я машини</b>: <i>{}</i>\n"
+#~ "<b>Архітектура процесора</b>: <i>{}</i>\n"
+#~ "<b>Модель процесора</b>: <i>{}</i>\n"
+#~ "<b>Кількість фізичних ядер</b>: <i>{}</i>\n"
+#~ "<b>Кількість логічних ядер</b>: <i>{}</i>\n"
+#~ "\"<b>Загальний об'єм пам'яті</b>: <i>{:.2f}</i> МБ\n"
+#~ "_Доступна пам'ять_: *{:.2f}* МБ\n"
+#~ "<b>Використання пам'яті</b>: <i>{}</i>%\n"
 
