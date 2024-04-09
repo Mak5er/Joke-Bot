@@ -232,13 +232,11 @@ async def back_to_random(call):
     await call.message.edit_text(bm.pres_button(), reply_markup=kb.random_keyboard())
 
 
-async def send_joke(message, result):
-    chat_id = message.chat.id
-    user_id = message.from_user.id
+async def send_joke(user_id, message, result):
     await dp.bot.send_chat_action(message.chat.id, "typing")
 
     if not result:
-        await bot.send_message(chat_id, bm.all_send())
+        await bot.send_message(user_id, bm.all_send())
 
     else:
         joke = result[0]
@@ -265,7 +263,7 @@ async def send_joke(message, result):
         await db.seen_joke(joke_id, user_id)
         logging.info(f"User action: Sent joke (User ID: {user_id}, Joke ID: {joke_id})")
 
-    await bot.send_message(chat_id, text=bm.pres_button(), reply_markup=kb.random_keyboard())
+    await bot.send_message(user_id, text=bm.pres_button(), reply_markup=kb.random_keyboard())
     await update_info(message)
 
 
@@ -274,14 +272,14 @@ async def send_category_joke_pivate(call):
     tag = call.data.split(':')[1]
     user_id = call.from_user.id
     result = await db.get_tagged_joke(user_id, tag)
-    await send_joke(call.message, result)
+    await send_joke(user_id, call.message, result)
 
 
 @dp.callback_query_handler(lambda call: call.data == 'random_joke')
 async def send_joke_private(call):
     user_id = call.from_user.id
     result = await db.get_joke(user_id)
-    await send_joke(call.message, result)
+    await send_joke(user_id, call.message, result)
 
 
 @dp.message_handler(commands=['find'])
@@ -357,6 +355,7 @@ async def show_joke(call: types.CallbackQuery, state: FSMContext):
     await call.message.answer(f"ID: {joke_id}")
     await call.message.answer(joke, reply_markup=keyboard_type)
     await db.seen_joke(joke_id, user_id)
+    print(user_id)
     logging.info(f"User action: Sent joke (User ID: {user_id}, Joke ID: {joke_id})")
 
 
