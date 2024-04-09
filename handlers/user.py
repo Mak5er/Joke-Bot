@@ -256,13 +256,12 @@ async def send_joke(message, result):
         else:
             joke = joke_text
 
-        joke_formated = re.sub(r"([*_`~]+)", r"\\\1", joke)
         keyboard_type = kb.return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id)
 
         if message.chat.type == 'private':
             keyboard_type = kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id, user_vote)
 
-        await message.edit_text(joke_formated, reply_markup=keyboard_type)
+        await message.edit_text(joke, reply_markup=keyboard_type)
         await db.seen_joke(joke_id, user_id)
         logging.info(f"User action: Sent joke (User ID: {user_id}, Joke ID: {joke_id})")
 
@@ -350,14 +349,13 @@ async def show_joke(call: types.CallbackQuery, state: FSMContext):
     else:
         joke = joke_text
 
-    joke_formated = re.sub(r"([*_`~]+)", r"\\\1", joke)
     keyboard_type = kb.return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id)
 
     if call.message.chat.type == 'private':
         keyboard_type = kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id, user_vote)
 
     await call.message.answer(f"ID: {joke_id}")
-    await call.message.answer(joke_formated, reply_markup=keyboard_type)
+    await call.message.answer(joke, reply_markup=keyboard_type)
     await db.seen_joke(joke_id, user_id)
     logging.info(f"User action: Sent joke (User ID: {user_id}, Joke ID: {joke_id})")
 
@@ -444,11 +442,9 @@ async def daily_joke():
             else:
                 joke = joke_text
 
-            joke_formated = re.sub(r"([*_`~]+)", r"\\\1", joke)
-
             await bot.send_message(
                 chat_id=user[0],
-                text=bm.daily_joke(joke_formated),
+                text=bm.daily_joke(joke),
                 parse_mode="HTML",
                 reply_markup=kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id, user_vote))
 
