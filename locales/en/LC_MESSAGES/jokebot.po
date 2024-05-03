@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-04-07 20:28+0300\n"
+"POT-Creation-Date: 2024-05-03 14:34+0300\n"
 "PO-Revision-Date: 2023-06-25 14:26+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -28,7 +28,7 @@ msgstr ""
 
 #: handlers/admin.py:108 handlers/admin.py:145 handlers/admin.py:195
 #: handlers/admin.py:289 handlers/admin.py:446 handlers/admin.py:483
-#: handlers/user.py:197 handlers/user.py:303 keyboards/inline_keyboards.py:51
+#: handlers/user.py:197 handlers/user.py:300 keyboards/inline_keyboards.py:51
 msgid "↩️Cancel"
 msgstr ""
 
@@ -99,7 +99,7 @@ msgstr ""
 msgid "❌Delete"
 msgstr ""
 
-#: handlers/user.py:384
+#: handlers/user.py:381
 msgid "Page "
 msgstr ""
 
@@ -469,1355 +469,262 @@ msgstr ""
 msgid "Type joke text or ID:"
 msgstr ""
 
-#: venv/Lib/site-packages/click/_termui_impl.py:518
+#: venv/lib/python3.9/site-packages/click/_termui_impl.py:518
 msgid "{editor}: Editing failed"
 msgstr ""
 
-#: venv/Lib/site-packages/click/_termui_impl.py:522
+#: venv/lib/python3.9/site-packages/click/_termui_impl.py:522
 msgid "{editor}: Editing failed: {e}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:1120
+#: venv/lib/python3.9/site-packages/click/core.py:1120
 msgid "Aborted!"
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:1309
-#: venv/Lib/site-packages/click/decorators.py:559
+#: venv/lib/python3.9/site-packages/click/core.py:1309
+#: venv/lib/python3.9/site-packages/click/decorators.py:559
 msgid "Show this message and exit."
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:1340
-#: venv/Lib/site-packages/click/core.py:1370
+#: venv/lib/python3.9/site-packages/click/core.py:1340
+#: venv/lib/python3.9/site-packages/click/core.py:1370
 msgid "(Deprecated) {text}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:1387
+#: venv/lib/python3.9/site-packages/click/core.py:1387
 msgid "Options"
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:1415
+#: venv/lib/python3.9/site-packages/click/core.py:1415
 msgid "Got unexpected extra argument ({args})"
 msgid_plural "Got unexpected extra arguments ({args})"
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/Lib/site-packages/click/core.py:1428
+#: venv/lib/python3.9/site-packages/click/core.py:1428
 msgid "DeprecationWarning: The command {name!r} is deprecated."
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:1636
+#: venv/lib/python3.9/site-packages/click/core.py:1636
 msgid "Commands"
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:1668
+#: venv/lib/python3.9/site-packages/click/core.py:1668
 msgid "Missing command."
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:1746
+#: venv/lib/python3.9/site-packages/click/core.py:1746
 msgid "No such command {name!r}."
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:2310
+#: venv/lib/python3.9/site-packages/click/core.py:2310
 msgid "Value must be an iterable."
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:2333
+#: venv/lib/python3.9/site-packages/click/core.py:2333
 msgid "Takes {nargs} values but 1 was given."
 msgid_plural "Takes {nargs} values but {len} were given."
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/Lib/site-packages/click/core.py:2778
+#: venv/lib/python3.9/site-packages/click/core.py:2778
 msgid "env var: {var}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:2808
+#: venv/lib/python3.9/site-packages/click/core.py:2808
 msgid "(dynamic)"
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:2821
+#: venv/lib/python3.9/site-packages/click/core.py:2821
 msgid "default: {default}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:2834
+#: venv/lib/python3.9/site-packages/click/core.py:2834
 msgid "required"
 msgstr ""
 
-#: venv/Lib/site-packages/click/decorators.py:465
+#: venv/lib/python3.9/site-packages/click/decorators.py:465
 #, python-format
 msgid "%(prog)s, version %(version)s"
 msgstr ""
 
-#: venv/Lib/site-packages/click/decorators.py:528
+#: venv/lib/python3.9/site-packages/click/decorators.py:528
 msgid "Show the version and exit."
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:44
-#: venv/Lib/site-packages/click/exceptions.py:80
+#: venv/lib/python3.9/site-packages/click/exceptions.py:44
+#: venv/lib/python3.9/site-packages/click/exceptions.py:80
 msgid "Error: {message}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:72
+#: venv/lib/python3.9/site-packages/click/exceptions.py:72
 msgid "Try '{command} {option}' for help."
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:121
+#: venv/lib/python3.9/site-packages/click/exceptions.py:121
 msgid "Invalid value: {message}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:123
+#: venv/lib/python3.9/site-packages/click/exceptions.py:123
 msgid "Invalid value for {param_hint}: {message}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:179
+#: venv/lib/python3.9/site-packages/click/exceptions.py:179
 msgid "Missing argument"
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:181
+#: venv/lib/python3.9/site-packages/click/exceptions.py:181
 msgid "Missing option"
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:183
+#: venv/lib/python3.9/site-packages/click/exceptions.py:183
 msgid "Missing parameter"
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:185
+#: venv/lib/python3.9/site-packages/click/exceptions.py:185
 msgid "Missing {param_type}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:192
+#: venv/lib/python3.9/site-packages/click/exceptions.py:192
 msgid "Missing parameter: {param_name}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:212
+#: venv/lib/python3.9/site-packages/click/exceptions.py:212
 msgid "No such option: {name}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:226
+#: venv/lib/python3.9/site-packages/click/exceptions.py:226
 msgid "Did you mean {possibility}?"
 msgid_plural "(Possible options: {possibilities})"
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/Lib/site-packages/click/exceptions.py:262
+#: venv/lib/python3.9/site-packages/click/exceptions.py:262
 msgid "unknown error"
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:269
+#: venv/lib/python3.9/site-packages/click/exceptions.py:269
 msgid "Could not open file {filename!r}: {message}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/parser.py:231
+#: venv/lib/python3.9/site-packages/click/parser.py:231
 msgid "Argument {name!r} takes {nargs} values."
 msgstr ""
 
-#: venv/Lib/site-packages/click/parser.py:413
+#: venv/lib/python3.9/site-packages/click/parser.py:413
 msgid "Option {name!r} does not take a value."
 msgstr ""
 
-#: venv/Lib/site-packages/click/parser.py:473
+#: venv/lib/python3.9/site-packages/click/parser.py:473
 msgid "Option {name!r} requires an argument."
 msgid_plural "Option {name!r} requires {nargs} arguments."
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/Lib/site-packages/click/shell_completion.py:318
+#: venv/lib/python3.9/site-packages/click/shell_completion.py:318
 msgid "Shell completion is not supported for Bash versions older than 4.4."
 msgstr ""
 
-#: venv/Lib/site-packages/click/shell_completion.py:326
+#: venv/lib/python3.9/site-packages/click/shell_completion.py:326
 msgid "Couldn't detect Bash version, shell completion is not supported."
 msgstr ""
 
-#: venv/Lib/site-packages/click/termui.py:158
+#: venv/lib/python3.9/site-packages/click/termui.py:158
 msgid "Repeat for confirmation"
 msgstr ""
 
-#: venv/Lib/site-packages/click/termui.py:174
+#: venv/lib/python3.9/site-packages/click/termui.py:174
 msgid "Error: The value you entered was invalid."
 msgstr ""
 
-#: venv/Lib/site-packages/click/termui.py:176
+#: venv/lib/python3.9/site-packages/click/termui.py:176
 msgid "Error: {e.message}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/termui.py:187
+#: venv/lib/python3.9/site-packages/click/termui.py:187
 msgid "Error: The two entered values do not match."
 msgstr ""
 
-#: venv/Lib/site-packages/click/termui.py:243
+#: venv/lib/python3.9/site-packages/click/termui.py:243
 msgid "Error: invalid input"
 msgstr ""
 
-#: venv/Lib/site-packages/click/termui.py:773
+#: venv/lib/python3.9/site-packages/click/termui.py:773
 msgid "Press any key to continue..."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:266
+#: venv/lib/python3.9/site-packages/click/types.py:266
 msgid ""
 "Choose from:\n"
 "\t{choices}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:300
+#: venv/lib/python3.9/site-packages/click/types.py:300
 msgid "{value!r} is not {choice}."
 msgid_plural "{value!r} is not one of {choices}."
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/Lib/site-packages/click/types.py:394
+#: venv/lib/python3.9/site-packages/click/types.py:394
 msgid "{value!r} does not match the format {format}."
 msgid_plural "{value!r} does not match the formats {formats}."
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/Lib/site-packages/click/types.py:414
+#: venv/lib/python3.9/site-packages/click/types.py:414
 msgid "{value!r} is not a valid {number_type}."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:470
+#: venv/lib/python3.9/site-packages/click/types.py:470
 msgid "{value} is not in the range {range}."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:611
+#: venv/lib/python3.9/site-packages/click/types.py:611
 msgid "{value!r} is not a valid boolean."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:635
+#: venv/lib/python3.9/site-packages/click/types.py:635
 msgid "{value!r} is not a valid UUID."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:822
+#: venv/lib/python3.9/site-packages/click/types.py:822
 msgid "file"
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:824
+#: venv/lib/python3.9/site-packages/click/types.py:824
 msgid "directory"
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:826
+#: venv/lib/python3.9/site-packages/click/types.py:826
 msgid "path"
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:877
+#: venv/lib/python3.9/site-packages/click/types.py:877
 msgid "{name} {filename!r} does not exist."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:886
+#: venv/lib/python3.9/site-packages/click/types.py:886
 msgid "{name} {filename!r} is a file."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:894
+#: venv/lib/python3.9/site-packages/click/types.py:894
 msgid "{name} '{filename}' is a directory."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:903
+#: venv/lib/python3.9/site-packages/click/types.py:903
 msgid "{name} {filename!r} is not readable."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:912
+#: venv/lib/python3.9/site-packages/click/types.py:912
 msgid "{name} {filename!r} is not writable."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:921
+#: venv/lib/python3.9/site-packages/click/types.py:921
 msgid "{name} {filename!r} is not executable."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:987
+#: venv/lib/python3.9/site-packages/click/types.py:987
 msgid "{len_type} values are required, but {len_value} was given."
 msgid_plural "{len_type} values are required, but {len_value} were given."
 msgstr[0] ""
 msgstr[1] ""
-
-#~ msgid "You send too many requests!"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Hello *{username}*! I am a bot where you can read jokes.\n"
-#~ "\n"
-#~ "Statistics:\n"
-#~ "📁Number of jokes in the database: *{joke_count}*.\n"
-#~ "📚Jokes read by you: *{joke_sent}*\n"
-#~ "📬Total number of jokes read by everyone: *{sent_count}*\n"
-#~ "\n"
-#~ "To invite a friend, follow or send"
-#~ " them this link - https://bit.ly/jokes-"
-#~ "bot\n"
-#~ "\n"
-#~ "*Currently, the bot does not have "
-#~ "the ability to rate jokes in a "
-#~ "group, so if you want to rate "
-#~ "jokes after reading them \n"
-#~ "read them in a personal chat with the bot.\n"
-#~ "\n"
-#~ "*The bot is under development, so bugs and malfunctions are possible!\n"
-#~ "For complaints and suggestions, write to @mak5er*"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Hello, this is the admin panel.\n"
-#~ "🪪Number of bot users: *{user_count}*\n"
-#~ "🃏Number of jokes in the database: *{joke_count}*\n"
-#~ "📬Total number of jokes read: *{sent_count}*\n"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Hello, this is the admin panel.\n"
-#~ "🪪Number of bot users: *{user_count}*\n"
-#~ "🃏Number of jokes in the database: *{joke_count}*\n"
-#~ "📬Total number of jokes read: *{sent_count}*\n"
-#~ "\n"
-#~ "Admin commands:\n"
-#~ "/download\\_db - use this command to download \n"
-#~ "/del\\_log - use this command to delete the log\n"
-#~ "/get\\_users - use this command to "
-#~ "download txt file with all users "
-#~ "info"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Hello, this is the admin panel.\n"
-#~ "🪪Number of bot users: *{user_count}*\n"
-#~ "🃏Number of jokes in the database: *{joke_count}*\n"
-#~ "📬Total number of jokes read: *{sent_count}*\n"
-#~ "\n"
-#~ "Admin commands:\n"
-#~ "/download\\_db - download database\n"
-#~ "/del\\_log - delete the log\n"
-#~ "/get\\_users - downloaf table with all users info"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Hello *{username}*! You are an "
-#~ "administrator, to see more information "
-#~ "and controls, please type /admin.\n"
-#~ "\n"
-#~ "Statistics:\n"
-#~ "📁Number of jokes in the database: *{joke_count}*.\n"
-#~ "📚Jokes read by you: *{joke_sent}*\n"
-#~ "📬Total number of jokes read by everyone: *{sent_count}*\n"
-#~ "\n"
-#~ "To invite a friend, follow or send"
-#~ " them this link - https://bit.ly/jokes-"
-#~ "bot\n"
-#~ "\n"
-#~ "The bot is under development, so bugs and malfunctions are possible!\n"
-#~ "For complaints and suggestions write - @mak5er"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Hello *{username}*! I am a bot where you can read jokes.\n"
-#~ "\n"
-#~ "Statistics:\n"
-#~ "📁Number of jokes in the database: *{joke_count}*.\n"
-#~ "📚Jokes read by you: *{joke_sent}*\n"
-#~ "📬Total number of jokes read by everyone: *{sent_count}*\n"
-#~ "\n"
-#~ "To invite a friend, follow or send"
-#~ " them this link - https://bit.ly/jokes-"
-#~ "bot\n"
-#~ "\n"
-#~ "*Currently, the bot does not have "
-#~ "the ability to rate jokes in a "
-#~ "group, so if you want to rate "
-#~ "jokes after reading them \n"
-#~ "read them in a personal chat with the bot.\n"
-#~ "\n"
-#~ "The bot is under development, so bugs and malfunctions are possible!\n"
-#~ "For complaints and suggestions, write to @mak5er*"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Hello *{username}*! You are an "
-#~ "administrator, to see more information "
-#~ "and controls, please type /admin.\n"
-#~ "\n"
-#~ "Statistics:\n"
-#~ "📁Number of jokes in the database: *{joke\\_count}*.\n"
-#~ "📚Jokes read by you: *{joke\\_sent}*\n"
-#~ "📬Total number of jokes read by everyone: *{sent\\_count}*\n"
-#~ "\n"
-#~ "To invite a friend, follow or send"
-#~ " them this link - https://bit.ly/jokes-"
-#~ "bot\n"
-#~ "\n"
-#~ "The bot is under development, so bugs and malfunctions are possible!\n"
-#~ "For complaints and suggestions, write - @mak5er"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Hello *{username}*! I am a bot where you can read jokes.\n"
-#~ "\n"
-#~ "Statistics:\n"
-#~ "📁Number of jokes in the database: *{joke\\_count}*.\n"
-#~ "📚Jokes read by you: *{joke\\_sent}*\n"
-#~ "📬Total number of jokes read by everyone: *{sent\\_count}*\n"
-#~ "\n"
-#~ "To invite a friend, follow or send"
-#~ " them this link - https://bit.ly/jokes-"
-#~ "bot\n"
-#~ "\n"
-#~ "*Currently, the bot does not have "
-#~ "the ability to rate jokes in a "
-#~ "group, so if you want to rate "
-#~ "jokes after reading them \n"
-#~ "read them in a personal chat with the bot.*\n"
-#~ "\n"
-#~ "*The bot is under development, so bugs and malfunctions are possible!\n"
-#~ "For complaints and suggestions, write - @mak5er*"
-#~ msgstr ""
-
-#~ msgid "You cannot block yourself or another admin!"
-#~ msgstr ""
-
-#~ msgid "You cannot unban yourself!"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Hello *{username}*! I am a bot where you can read jokes.\n"
-#~ "\n"
-#~ "Statistics:\n"
-#~ "📁Number of jokes in the database: *{joke_count}*.\n"
-#~ "📚Jokes read by you: *{joke_sent}*\n"
-#~ "📬Total number of jokes read by everyone: *{sent_count}*\n"
-#~ "\n"
-#~ "To invite a friend, follow or send"
-#~ " them this link - https://bit.ly/jokes-"
-#~ "bot\n"
-#~ "\n"
-#~ "*Currently, the bot does not have "
-#~ "the ability to rate jokes in a "
-#~ "group, so if you want to rate "
-#~ "jokes after reading them \n"
-#~ "read them in a personal chat with the bot.*\n"
-#~ "\n"
-#~ "*The bot is under development, so bugs and malfunctions are possible!\n"
-#~ "For complaints and suggestions, write - @mak5er*"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Hello *{name}*! I'm a bot with jokes.\n"
-#~ "Full information on the bot /info\n"
-#~ "List of commands /help"
-#~ msgstr ""
-
-#~ msgid "*{name}*, I don't understand you! Type /help to get a list of commands!"
-#~ msgstr ""
-
-#~ msgid "*Joke of the day:*"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Hello, this is the admin panel.\n"
-#~ "🪪Number of bot users: *{user_count}*\n"
-#~ "🃏Number of jokes in the database: *{joke_count}*\n"
-#~ "📬Total number of jokes read: *{sent_count}*\n"
-#~ "\n"
-#~ "Admin commands:\n"
-#~ "/download\\_db - download database\n"
-#~ "/del\\_log - delete the log\n"
-#~ "/get\\_users - download table with all users info"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "*System information:*\n"
-#~ "{pc_info}\n"
-#~ "    \n"
-#~ "*Network information:*    \n"
-#~ "_Download speed_: *{download_speed:.2f}* Mbit/s\n"
-#~ "_Upload speed_: *{upload_speed:.2f}* Mbit/s \n"
-#~ "_Ping_: *{ping}* mc \n"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Hello *{username}*! You are an "
-#~ "administrator, to see more information "
-#~ "and controls, please type /admin.\n"
-#~ "\n"
-#~ "Statistics:\n"
-#~ "📁Number of jokes in the database: *{joke_count}*.\n"
-#~ "📚Jokes read by you: *{joke_sent}*\n"
-#~ "📬Total number of jokes read by everyone: *{sent_count}*\n"
-#~ "\n"
-#~ "To invite a friend, follow or send"
-#~ " them this link - https://bit.ly/jokes-"
-#~ "bot\n"
-#~ "\n"
-#~ "*The bot is under development, so bugs and malfunctions are possible!\n"
-#~ "For complaints and suggestions, write - @mak5er*"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Hello *{username}*! I am a bot where you can read jokes.\n"
-#~ "\n"
-#~ "Statistics:\n"
-#~ "📁Number of jokes in the database: *{joke_count}*.\n"
-#~ "📚Jokes read by you: *{joke_sent}*\n"
-#~ "📬Total number of jokes read by everyone: *{sent_count}*\n"
-#~ "\n"
-#~ "To invite a friend, follow or send"
-#~ " them this link - https://bit.ly/jokes-"
-#~ "bot\n"
-#~ "\n"
-#~ "*If you want to offer an anecdote"
-#~ " or ask a question, click the "
-#~ "Feedback💬 button!*\n"
-#~ "\n"
-#~ "*The bot is under development, so bugs and malfunctions are possible!\n"
-#~ "For complaints and suggestions, write - @mak5er*"
-#~ msgstr ""
-
-#~ msgid "If you find a bug, please click the button below and describe it."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Hello *{username}*! You are an "
-#~ "administrator, to see more information "
-#~ "and controls, please type /admin.\n"
-#~ "\n"
-#~ "Statistics:\n"
-#~ "📁Number of jokes in the database: *{joke_count}*.\n"
-#~ "📚Jokes read by you: *{joke_sent}*\n"
-#~ "📬Total number of jokes read by everyone: *{sent_count}*\n"
-#~ "\n"
-#~ "Bot site - https://bit.ly/jokes-bot\n"
-#~ "\n"
-#~ "*If you want to offer an anecdote"
-#~ " or ask a question, click the "
-#~ "Feedback💬 button!*\n"
-#~ "\n"
-#~ "*The bot is under development, so bugs and malfunctions are possible!\n"
-#~ "For complaints and suggestions, write - @mak5er*"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Hello *{username}*! I am a bot where you can read jokes.\n"
-#~ "\n"
-#~ "Statistics:\n"
-#~ "📁Number of jokes in the database: *{joke_count}*.\n"
-#~ "📚Jokes read by you: *{joke_sent}*\n"
-#~ "📬Total number of jokes read by everyone: *{sent_count}*\n"
-#~ "\n"
-#~ "Bot site - https://bit.ly/jokes-bot\n"
-#~ "\n"
-#~ "*If you want to offer an anecdote"
-#~ " or ask a question, click the "
-#~ "Feedback💬 button!*\n"
-#~ "\n"
-#~ "*The bot is under development, so bugs and malfunctions are possible!\n"
-#~ "For complaints and suggestions, write - @mak5er*"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Hello *{username}*! You are an "
-#~ "administrator, to see more information "
-#~ "and controls, please type /admin.\n"
-#~ "\n"
-#~ "Statistics:\n"
-#~ "📁Number of jokes in the database: *{joke_count}*.\n"
-#~ "📚Jokes read by you: *{joke_sent}*\n"
-#~ "📬Total number of jokes read by everyone: *{sent_count}*\n"
-#~ "\n"
-#~ "Bot site - bit.ly/anekdotyky\n"
-#~ "\n"
-#~ "*If you want to offer an anecdote"
-#~ " or ask a question, click the "
-#~ "Feedback💬 button!*\n"
-#~ "\n"
-#~ "*The bot is under development, so bugs and malfunctions are possible!\n"
-#~ "For complaints and suggestions, write - @mak5er*"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Hello *{username}*! I am a bot where you can read jokes.\n"
-#~ "\n"
-#~ "Statistics:\n"
-#~ "📁Number of jokes in the database: *{joke_count}*.\n"
-#~ "📚Jokes read by you: *{joke_sent}*\n"
-#~ "📬Total number of jokes read by everyone: *{sent_count}*\n"
-#~ "\n"
-#~ "Bot site - bit.ly/anekdotyky\n"
-#~ "\n"
-#~ "*If you want to offer an anecdote"
-#~ " or ask a question, click the "
-#~ "Feedback💬 button!*\n"
-#~ "\n"
-#~ "*The bot is under development, so bugs and malfunctions are possible!\n"
-#~ "For complaints and suggestions, write - @mak5er*"
-#~ msgstr ""
-
-#~ msgid "👀Viewed by: {joke_seens}"
-#~ msgstr ""
-
-#~ msgid "You voted for the joke!"
-#~ msgstr ""
-
-#~ msgid "You voted against the joke!"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Hi! Thank you for adding me to *'{chat_title}'* \n"
-#~ "For correct operation, please grant me administrator rights!"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Hello, this is the admin panel.\n"
-#~ "🪪Number of bot users: *{user_count}*\n"
-#~ "🃏Number of jokes in the database: *{joke_count}*\n"
-#~ "📬Total number of jokes read: *{sent_count}*\n"
-#~ "\n"
-#~ "Admin commands:\n"
-#~ "/download\\_db - download database\n"
-#~ "/del\\_log - delete the log\n"
-#~ "/get\\_users - download table with all users info\n"
-#~ "/system\\_info - get info about system"
-#~ msgstr ""
-
-#~ msgid "{editor}: Editing failed"
-#~ msgstr ""
-
-#~ msgid "{editor}: Editing failed: {e}"
-#~ msgstr ""
-
-#~ msgid "Aborted!"
-#~ msgstr ""
-
-#~ msgid "Show this message and exit."
-#~ msgstr ""
-
-#~ msgid "(Deprecated) {text}"
-#~ msgstr ""
-
-#~ msgid "Options"
-#~ msgstr ""
-
-#~ msgid "Got unexpected extra argument ({args})"
-#~ msgid_plural "Got unexpected extra arguments ({args})"
-#~ msgstr[0] ""
-#~ msgstr[1] ""
-
-#~ msgid "DeprecationWarning: The command {name!r} is deprecated."
-#~ msgstr ""
-
-#~ msgid "Commands"
-#~ msgstr ""
-
-#~ msgid "Missing command."
-#~ msgstr ""
-
-#~ msgid "No such command {name!r}."
-#~ msgstr ""
-
-#~ msgid "Value must be an iterable."
-#~ msgstr ""
-
-#~ msgid "Takes {nargs} values but 1 was given."
-#~ msgid_plural "Takes {nargs} values but {len} were given."
-#~ msgstr[0] ""
-#~ msgstr[1] ""
-
-#~ msgid "env var: {var}"
-#~ msgstr ""
-
-#~ msgid "(dynamic)"
-#~ msgstr ""
-
-#~ msgid "default: {default}"
-#~ msgstr ""
-
-#~ msgid "required"
-#~ msgstr ""
-
-#~ msgid "%(prog)s, version %(version)s"
-#~ msgstr ""
-
-#~ msgid "Show the version and exit."
-#~ msgstr ""
-
-#~ msgid "Error: {message}"
-#~ msgstr ""
-
-#~ msgid "Try '{command} {option}' for help."
-#~ msgstr ""
-
-#~ msgid "Invalid value: {message}"
-#~ msgstr ""
-
-#~ msgid "Invalid value for {param_hint}: {message}"
-#~ msgstr ""
-
-#~ msgid "Missing argument"
-#~ msgstr ""
-
-#~ msgid "Missing option"
-#~ msgstr ""
-
-#~ msgid "Missing parameter"
-#~ msgstr ""
-
-#~ msgid "Missing {param_type}"
-#~ msgstr ""
-
-#~ msgid "Missing parameter: {param_name}"
-#~ msgstr ""
-
-#~ msgid "No such option: {name}"
-#~ msgstr ""
-
-#~ msgid "Did you mean {possibility}?"
-#~ msgid_plural "(Possible options: {possibilities})"
-#~ msgstr[0] ""
-#~ msgstr[1] ""
-
-#~ msgid "unknown error"
-#~ msgstr ""
-
-#~ msgid "Could not open file {filename!r}: {message}"
-#~ msgstr ""
-
-#~ msgid "Argument {name!r} takes {nargs} values."
-#~ msgstr ""
-
-#~ msgid "Option {name!r} does not take a value."
-#~ msgstr ""
-
-#~ msgid "Option {name!r} requires an argument."
-#~ msgid_plural "Option {name!r} requires {nargs} arguments."
-#~ msgstr[0] ""
-#~ msgstr[1] ""
-
-#~ msgid "Shell completion is not supported for Bash versions older than 4.4."
-#~ msgstr ""
-
-#~ msgid "Couldn't detect Bash version, shell completion is not supported."
-#~ msgstr ""
-
-#~ msgid "Repeat for confirmation"
-#~ msgstr ""
-
-#~ msgid "Error: The value you entered was invalid."
-#~ msgstr ""
-
-#~ msgid "Error: {e.message}"
-#~ msgstr ""
-
-#~ msgid "Error: The two entered values do not match."
-#~ msgstr ""
-
-#~ msgid "Error: invalid input"
-#~ msgstr ""
-
-#~ msgid "Press any key to continue..."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Choose from:\n"
-#~ "\t{choices}"
-#~ msgstr ""
-
-#~ msgid "{value!r} is not {choice}."
-#~ msgid_plural "{value!r} is not one of {choices}."
-#~ msgstr[0] ""
-#~ msgstr[1] ""
-
-#~ msgid "{value!r} does not match the format {format}."
-#~ msgid_plural "{value!r} does not match the formats {formats}."
-#~ msgstr[0] ""
-#~ msgstr[1] ""
-
-#~ msgid "{value!r} is not a valid {number_type}."
-#~ msgstr ""
-
-#~ msgid "{value} is not in the range {range}."
-#~ msgstr ""
-
-#~ msgid "{value!r} is not a valid boolean."
-#~ msgstr ""
-
-#~ msgid "{value!r} is not a valid UUID."
-#~ msgstr ""
-
-#~ msgid "file"
-#~ msgstr ""
-
-#~ msgid "directory"
-#~ msgstr ""
-
-#~ msgid "path"
-#~ msgstr ""
-
-#~ msgid "{name} {filename!r} does not exist."
-#~ msgstr ""
-
-#~ msgid "{name} {filename!r} is a file."
-#~ msgstr ""
-
-#~ msgid "{name} '{filename}' is a directory."
-#~ msgstr ""
-
-#~ msgid "{name} {filename!r} is not readable."
-#~ msgstr ""
-
-#~ msgid "{name} {filename!r} is not writable."
-#~ msgstr ""
-
-#~ msgid "{name} {filename!r} is not executable."
-#~ msgstr ""
-
-#~ msgid "{len_type} values are required, but {len_value} was given."
-#~ msgid_plural "{len_type} values are required, but {len_value} were given."
-#~ msgstr[0] ""
-#~ msgstr[1] ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Hello *{username}*! You are an "
-#~ "administrator, to see more information "
-#~ "and controls, please type /admin.\n"
-#~ "\n"
-#~ "Statistics:\n"
-#~ "📁Number of jokes in the database: *{joke_count}*.\n"
-#~ "📚Jokes read by you: *{joke_sent}*\n"
-#~ "📬Total number of jokes read by everyone: *{sent_count}*\n"
-#~ "\n"
-#~ "Bot site - anekdoty.pp.ua\n"
-#~ "\n"
-#~ "*If you want to offer an anecdote"
-#~ " or ask a question, click the "
-#~ "Feedback💬 button!*\n"
-#~ "\n"
-#~ "*The bot is under development, so bugs and malfunctions are possible!\n"
-#~ "For complaints and suggestions, write - @mak5er*"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Hello *{username}*! I am a bot where you can read jokes.\n"
-#~ "\n"
-#~ "Statistics:\n"
-#~ "📁Number of jokes in the database: *{joke_count}*.\n"
-#~ "📚Jokes read by you: *{joke_sent}*\n"
-#~ "📬Total number of jokes read by everyone: *{sent_count}*\n"
-#~ "\n"
-#~ "Bot site - anekdoty.pp.ua\n"
-#~ "\n"
-#~ "*If you want to offer an anecdote"
-#~ " or ask a question, click the "
-#~ "Feedback💬 button!*\n"
-#~ "\n"
-#~ "*The bot is under development, so bugs and malfunctions are possible!\n"
-#~ "For complaints and suggestions, write - @mak5er*"
-#~ msgstr ""
-
-#~ msgid "Please select what you would like to joke about:"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Hello *{username}*! You are an "
-#~ "administrator, to see more information "
-#~ "and controls, please type /admin.\n"
-#~ "\n"
-#~ "Statistics:\n"
-#~ "📁Number of jokes in the database: *{joke_count}*.\n"
-#~ "📚Jokes read by you: *{joke_sent}*\n"
-#~ "📬Total number of jokes read by everyone: *{sent_count}*\n"
-#~ "\n"
-#~ "Total referrals: *{refs_count}*\n"
-#~ "Your ref link: {ref_url}\n"
-#~ "             \n"
-#~ "Bot site - anekdoty.pp.ua\n"
-#~ "\n"
-#~ "*If you want to offer an anecdote"
-#~ " or ask a question, click the "
-#~ "Feedback💬 button!*"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Hello *{username}*! I am a bot where you can read jokes.\n"
-#~ "\n"
-#~ "Statistics:\n"
-#~ "📁Number of jokes in the database: *{joke_count}*.\n"
-#~ "📚Jokes read by you: *{joke_sent}*\n"
-#~ "📬Total number of jokes read by everyone: *{sent_count}*\n"
-#~ "\n"
-#~ "Total referrals: *{refs_count}*\n"
-#~ "Your ref link: {ref_url}\n"
-#~ "\n"
-#~ "Bot site - anekdoty.pp.ua\n"
-#~ "\n"
-#~ "*If you want to offer an anecdote"
-#~ " or ask a question, click the "
-#~ "Feedback💬 button!*"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Hello, this is the admin panel.\n"
-#~ "🪪Number of bot users: *{user_count}*\n"
-#~ "🃏Number of jokes in the database: *{joke_count}*\n"
-#~ "📬Total number of jokes read: *{sent_count}*\n"
-#~ "\n"
-#~ "Admin commands:\n"
-#~ "/del\\_log - delete the log\n"
-#~ "/get\\_users - download table with all users info\n"
-#~ "/system\\_info - get info about system"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Hello *{username}*! You are an "
-#~ "administrator, to see more information "
-#~ "and controls, please type /admin.\n"
-#~ "\n"
-#~ "Statistics:\n"
-#~ "📁Number of jokes in the database: *{joke_count}*\n"
-#~ "📚Jokes read by you: *{joke_sent}*\n"
-#~ "📬Total number of jokes read by everyone: *{sent_count}*\n"
-#~ "\n"
-#~ "Total referrals: *{refs_count}*\n"
-#~ "Your ref link: {ref_url}\n"
-#~ "             \n"
-#~ "Bot site - anekdoty.pp.ua\n"
-#~ "\n"
-#~ "*If you want to offer an anecdote"
-#~ " or ask a question, click the "
-#~ "Feedback💬 button!*"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Hello *{username}*! I am a bot where you can read jokes.\n"
-#~ "\n"
-#~ "Statistics:\n"
-#~ "📁Number of jokes in the database: *{joke_count}*\n"
-#~ "📚Jokes read by you: *{joke_sent}*\n"
-#~ "📬Total number of jokes read by everyone: *{sent_count}*\n"
-#~ "\n"
-#~ "Total referrals: *{refs_count}*\n"
-#~ "Your ref link: {ref_url}\n"
-#~ "\n"
-#~ "Bot site - anekdoty.pp.ua\n"
-#~ "\n"
-#~ "*If you want to offer an anecdote"
-#~ " or ask a question, click the "
-#~ "Feedback💬 button!*"
-#~ msgstr ""
-
-#~ msgid "There is any ideas for you."
-#~ msgstr ""
-
-#~ msgid "📊Joke rate"
-#~ msgstr ""
-
-#~ msgid "You revoked your vote"
-#~ msgstr ""
-
-#~ msgid "The rating is updated!"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Hello, this is the admin panel.\n"
-#~ "🪪Number of bot users: *{user_count}*\n"
-#~ "🃏Number of jokes in the database: *{joke_count}*\n"
-#~ "📬Total number of jokes read: *{sent_count}*\n"
-#~ "\n"
-#~ "Admin commands:\n"
-#~ "/ideas - list ideas from users\n"
-#~ "/get\\_users - download table with all users info\n"
-#~ "/system\\_info - get info about system"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Hello, this is the admin panel.\n"
-#~ "🪪Number of bot users: *{user_count}*\n"
-#~ "📱Number of active users: *{active_user_count}*\n"
-#~ "📵Number of inactive users: *{inactive_user_count}*\n"
-#~ "🃏Number of jokes in the database: *{joke_count}*\n"
-#~ "📬Total number of jokes read: *{sent_count}*\n"
-#~ "\n"
-#~ "Admin commands:\n"
-#~ "/ideas - list ideas from users\n"
-#~ "/get\\_users - download table with all users info\n"
-#~ "/system\\_info - get info about system"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Hello *{username}*! You are an "
-#~ "administrator, to see more information "
-#~ "and controls, please type /admin.\n"
-#~ "\n"
-#~ "Statistics:\n"
-#~ "📁Number of jokes in the database: *{joke_count}*\n"
-#~ "📚Jokes read by you: *{joke_sent}*\n"
-#~ "📬Total number of jokes read by everyone: *{sent_count}*\n"
-#~ "\n"
-#~ "Total referrals: *{refs_count}*\n"
-#~ "Your ref link: {ref_url}\n"
-#~ "             \n"
-#~ "Bot site - https://anekdoty.pp.ua\n"
-#~ "\n"
-#~ "*If you want to offer an anecdote"
-#~ " or ask a question, click the "
-#~ "Feedback💬 button!*"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Hello *{username}*! I am a bot where you can read jokes.\n"
-#~ "\n"
-#~ "Statistics:\n"
-#~ "📁Number of jokes in the database: *{joke_count}*\n"
-#~ "📚Jokes read by you: *{joke_sent}*\n"
-#~ "📬Total number of jokes read by everyone: *{sent_count}*\n"
-#~ "\n"
-#~ "Total referrals: *{refs_count}*\n"
-#~ "Your ref link: {ref_url}\n"
-#~ "\n"
-#~ "Bot site - https://anekdoty.pp.ua\n"
-#~ "\n"
-#~ "*If you want to offer an anecdote"
-#~ " or ask a question, click the "
-#~ "Feedback💬 button!*"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "🤖 This is a bot with jokes. Here is a list of available commands:\n"
-#~ "\n"
-#~ "️/start - start interacting with the bot\n"
-#~ "/joke - get a random joke\n"
-#~ "/info - get information about the bot\n"
-#~ "\n"
-#~ "The /start command is used to "
-#~ "start interacting with the bot. After"
-#~ " sending this command, the bot will"
-#~ " be ready to accept other commands"
-#~ " from the user.\n"
-#~ "\n"
-#~ "The /joke command allows you to "
-#~ "get a random joke from the bot."
-#~ " When this command is called, the "
-#~ "bot will respond with a randomly "
-#~ "selected joke.\n"
-#~ "\n"
-#~ "The /info command allows you to "
-#~ "get information about the bot. Here "
-#~ "you can view bot statistics, information"
-#~ " about the developer, and a link "
-#~ "to invite a friend."
-#~ msgstr ""
-
-#~ msgid "📊Rating: {joke_rate}"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "*Joke of the day:*\n"
-#~ "\n"
-#~ "{joke_text}"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "*{name}*, I don't understand you! Type"
-#~ " /help to get a list of "
-#~ "commands!\n"
-#~ "*If you want to offer an anecdote"
-#~ " or ask a question, click the "
-#~ "Feedback💬 button!*"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Hi! Thank you for adding me to *'{chat_title}'* \n"
-#~ "For correct operation, please grant me administrator rights!\n"
-#~ "Type /help to get a list of commands"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "*USER INFO*\n"
-#~ "_Name_: *{user_name}*\n"
-#~ "_ID_: *{user_id}*\n"
-#~ "_Username_: *{user_username}*\n"
-#~ "_Status_: *{status}*"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "*New message* from user: *{user}*\n"
-#~ "*Message:* `{feedback_message}`"
-#~ msgstr ""
-
-#~ msgid "_Operating System_: *{}*\n"
-#~ msgstr ""
-
-#~ msgid "_OS Version_: *{}*\n"
-#~ msgstr ""
-
-#~ msgid "_Machine Name_: *{}*\n"
-#~ msgstr ""
-
-#~ msgid "_Processor Architecture_: *{}*\n"
-#~ msgstr ""
-
-#~ msgid "_Processor Model_: *{}*\n"
-#~ msgstr ""
-
-#~ msgid "_Physical Cores_: *{}*\n"
-#~ msgstr ""
-
-#~ msgid "_Logical Cores_: *{}*\n"
-#~ msgstr ""
-
-#~ msgid "_Total Memory_: *{:.2f}* MB\n"
-#~ msgstr ""
-
-#~ msgid "_Available Memory_: *{:.2f}* MB\n"
-#~ msgstr ""
-
-#~ msgid "_Memory Usage_: *{}*%\n"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "*System information:*\n"
-#~ "\n"
-#~ "{pc_info}"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Your message *{message_id}* was seen!\n"
-#~ "*Answer:* `{answer}`"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "*Ideas for you:*\n"
-#~ "\n"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Referral *{user_id}* has registered at your invitation!\n"
-#~ "Total number of invitees: *{refs_count}*"
-#~ msgstr ""
-
-#~ msgid "Your message *{feedback_message_id}* sent!"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Hello, this is the admin panel.\n"
-#~ "\n"
-#~ "🪪Number of bot users: <b>{user_count}</b>\n"
-#~ "\n"
-#~ "📱Number of active users: <b>{active_user_count}</b>\n"
-#~ "\n"
-#~ "📵Number of inactive users: <b>{inactive_user_count}</b>\n"
-#~ "\n"
-#~ "🃏Number of jokes in the database: <b>{joke_count}</b>\n"
-#~ "\n"
-#~ "📬Total number of jokes read: <b>{sent_count}</b>\n"
-#~ "\n"
-#~ "\n"
-#~ "Admin commands:\n"
-#~ "\n"
-#~ "/ideas - list ideas from users\n"
-#~ "\n"
-#~ "/get_users - download table with all users info\n"
-#~ "\n"
-#~ "/system_info - get info about system"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Hello <b>{username}</b>! You are an "
-#~ "administrator, to see more information "
-#~ "and controls, please type /admin.\n"
-#~ "\n"
-#~ "\n"
-#~ "Statistics:\n"
-#~ "\n"
-#~ "📁Number of jokes in the database: <b>{joke_count}</b>\n"
-#~ "\n"
-#~ "📚Jokes read by you: <b>{joke_sent}</b>\n"
-#~ "\n"
-#~ "📬Total number of jokes read by everyone: <b>{sent_count}</b>\n"
-#~ "\n"
-#~ "\n"
-#~ "Total referrals: <b>{refs_count}</b>\n"
-#~ "\n"
-#~ "Your ref link: <a href=\"{ref_url}\">{ref_url}</a>\n"
-#~ "\n"
-#~ "\n"
-#~ "Bot site - <a "
-#~ "href=\"https://anekdoty.pp.ua\">https://anekdoty.pp.ua</a>\n"
-#~ "\n"
-#~ "\n"
-#~ "*If you want to offer an anecdote"
-#~ " or ask a question, click the "
-#~ "Feedback💬 button!*"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Hello <b>{username}</b>! I am a bot where you can read jokes.\n"
-#~ "\n"
-#~ "\n"
-#~ "Statistics:\n"
-#~ "\n"
-#~ "📁Number of jokes in the database: <b>{joke_count}</b>\n"
-#~ "\n"
-#~ "📚Jokes read by you: <b>{joke_sent}</b>\n"
-#~ "\n"
-#~ "📬Total number of jokes read by everyone: <b>{sent_count}</b>\n"
-#~ "\n"
-#~ "\n"
-#~ "Total referrals: <b>{refs_count}</b>\n"
-#~ "\n"
-#~ "Your ref link: <a href=\"{ref_url}\">{ref_url}</a>\n"
-#~ "\n"
-#~ "\n"
-#~ "Bot site - <a "
-#~ "href=\"https://anekdoty.pp.ua\">https://anekdoty.pp.ua</a>\n"
-#~ "\n"
-#~ "\n"
-#~ "*If you want to offer an anecdote"
-#~ " or ask a question, click the "
-#~ "Feedback💬 button!*"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "🤖 This is a bot with jokes. Here is a list of available commands:\n"
-#~ "\n"
-#~ "\n"
-#~ "\n"
-#~ "️/start - start interacting with the bot\n"
-#~ "\n"
-#~ "/joke - get a random joke\n"
-#~ "\n"
-#~ "/info - get information about the bot\n"
-#~ "\n"
-#~ "\n"
-#~ "\n"
-#~ "The /start command is used to "
-#~ "start interacting with the bot. After"
-#~ " sending this command, the bot will"
-#~ " be ready to accept other commands"
-#~ " from the user.\n"
-#~ "\n"
-#~ "\n"
-#~ "\n"
-#~ "The /joke command allows you to "
-#~ "get a random joke from the bot."
-#~ " When this command is called, the "
-#~ "bot will respond with a randomly "
-#~ "selected joke.\n"
-#~ "\n"
-#~ "\n"
-#~ "\n"
-#~ "The /info command allows you to "
-#~ "get information about the bot. Here "
-#~ "you can view bot statistics, information"
-#~ " about the developer, and a link "
-#~ "to invite a friend."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "*Joke of the day:*</b>\n"
-#~ "\n"
-#~ "{joke_text}"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "<b>{name}</b>, I don't understand you! "
-#~ "Type /help to get a list of "
-#~ "commands!\n"
-#~ "\n"
-#~ "\n"
-#~ "*If you want to offer an anecdote"
-#~ " or ask a question, click the "
-#~ "Feedback💬 button!*"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Hi! Thank you for adding me to <b>'{chat_title}'</b>\n"
-#~ "\n"
-#~ "For correct operation, please grant me administrator rights!\n"
-#~ "\n"
-#~ "Type /help to get a list of commands"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "<b>USER INFO</b>\n"
-#~ "\n"
-#~ "<b>Name</b>: {user_name}\n"
-#~ "\n"
-#~ "<b>ID</b>: {user_id}\n"
-#~ "\n"
-#~ "<b>Username</b>: {user_username}\n"
-#~ "\n"
-#~ "<b>Status</b>: {status}"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "*New message* from user: <b>{user}</b>\n"
-#~ "*Message:* <code>{feedback_message}</code>"
-#~ msgstr ""
-
-#~ msgid "<b>Operating System</b>: <i>{}</i>\n"
-#~ msgstr ""
-
-#~ msgid "<b>OS Version</b>: <i>{}</i>\n"
-#~ msgstr ""
-
-#~ msgid "<b>Machine Name</b>: <i>{}</i>\n"
-#~ msgstr ""
-
-#~ msgid "<b>Processor Architecture</b>: <i>{}</i>\n"
-#~ msgstr ""
-
-#~ msgid "<b>Processor Model</b>: <i>{}</i>\n"
-#~ msgstr ""
-
-#~ msgid "<b>Physical Cores</b>: <i>{}</i>\n"
-#~ msgstr ""
-
-#~ msgid "<b>Logical Cores</b>: <i>{}</i>\n"
-#~ msgstr ""
-
-#~ msgid "<b>Total Memory</b>: <i>{:.2f}</i> MB\n"
-#~ msgstr ""
-
-#~ msgid "<b>Available Memory</b>: <i>{:.2f}</i> MB\n"
-#~ msgstr ""
-
-#~ msgid "<b>Memory Usage</b>: <i>{}</i>%\n"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "If you want to offer an anecdote"
-#~ " or if you find a bug, please"
-#~ " click the button below and describe"
-#~ " it."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "<b>Operating System</b>: <i>{}</i>\n"
-#~ "<b>OS Version</b>: <i>{}</i>\n"
-#~ "<b>Machine Name</b>: <i>{}</i>\n"
-#~ "<b>Processor Architecture</b>: <i>{}</i>\n"
-#~ "<b>Processor Model</b>: <i>{}</i>\n"
-#~ "<b>Physical Cores</b>: <i>{}</i>\n"
-#~ "<b>Logical Cores</b>: <i>{}</i>\n"
-#~ "<b>Total Memory</b>: <i>{:.2f}</i> MB\n"
-#~ "<b>Available Memory</b>: <i>{:.2f}</i> MB\n"
-#~ "<b>Memory Usage</b>: <i>{}</i>%\n"
-#~ msgstr ""
-

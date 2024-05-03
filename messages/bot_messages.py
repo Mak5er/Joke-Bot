@@ -285,5 +285,6 @@ def select_category():
 def nothing_found():
     return _("Nothing was found.")
 
+
 def type_joke_text_or_id():
     return _("Type joke text or ID:")

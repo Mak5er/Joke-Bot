@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  sease\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-04-07 20:28+0300\n"
+"POT-Creation-Date: 2024-05-03 14:34+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: handlers/admin.py:108 handlers/admin.py:145 handlers/admin.py:195
 #: handlers/admin.py:289 handlers/admin.py:446 handlers/admin.py:483
-#: handlers/user.py:197 handlers/user.py:303 keyboards/inline_keyboards.py:51
+#: handlers/user.py:197 handlers/user.py:300 keyboards/inline_keyboards.py:51
 msgid "↩️Cancel"
 msgstr "↩️Скасувати"
 
@@ -99,7 +99,7 @@ msgstr "Немає жодних ідей для вас."
 msgid "❌Delete"
 msgstr "❌Видалити"
 
-#: handlers/user.py:384
+#: handlers/user.py:381
 msgid "Page "
 msgstr "Сторінка "
 
@@ -517,7 +517,7 @@ msgstr ""
 "<b>Кількість фізичних ядер</b>: <i>{physical_cores}</i>\n"
 "<b>Кількість логічних ядер</b>: <i>{logical_cores}</i>\n"
 "<b>Загальний об'єм пам'яті</b>: <i>{total_memory:.2f}</i> МБ\n"
-"<b>Доступна пам'ять</b>: *{available_memory:.2f}* МБ\n"
+"<b>Доступна пам'ять</b>: <i>{available_memory:.2f}</i> МБ\n"
 "<b>Використання пам'яті</b>: <i>{memory_usage}</i>%\n"
 
 #: messages/bot_messages.py:240
@@ -568,632 +568,262 @@ msgstr "Нічого не знайдено."
 msgid "Type joke text or ID:"
 msgstr "Ввдіть текст або ID анекдоту:"
 
-#: venv/Lib/site-packages/click/_termui_impl.py:518
+#: venv/lib/python3.9/site-packages/click/_termui_impl.py:518
 msgid "{editor}: Editing failed"
 msgstr ""
 
-#: venv/Lib/site-packages/click/_termui_impl.py:522
+#: venv/lib/python3.9/site-packages/click/_termui_impl.py:522
 msgid "{editor}: Editing failed: {e}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:1120
+#: venv/lib/python3.9/site-packages/click/core.py:1120
 msgid "Aborted!"
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:1309
-#: venv/Lib/site-packages/click/decorators.py:559
+#: venv/lib/python3.9/site-packages/click/core.py:1309
+#: venv/lib/python3.9/site-packages/click/decorators.py:559
 msgid "Show this message and exit."
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:1340
-#: venv/Lib/site-packages/click/core.py:1370
+#: venv/lib/python3.9/site-packages/click/core.py:1340
+#: venv/lib/python3.9/site-packages/click/core.py:1370
 msgid "(Deprecated) {text}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:1387
+#: venv/lib/python3.9/site-packages/click/core.py:1387
 msgid "Options"
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:1415
+#: venv/lib/python3.9/site-packages/click/core.py:1415
 msgid "Got unexpected extra argument ({args})"
 msgid_plural "Got unexpected extra arguments ({args})"
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/Lib/site-packages/click/core.py:1428
+#: venv/lib/python3.9/site-packages/click/core.py:1428
 msgid "DeprecationWarning: The command {name!r} is deprecated."
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:1636
+#: venv/lib/python3.9/site-packages/click/core.py:1636
 msgid "Commands"
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:1668
+#: venv/lib/python3.9/site-packages/click/core.py:1668
 msgid "Missing command."
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:1746
+#: venv/lib/python3.9/site-packages/click/core.py:1746
 msgid "No such command {name!r}."
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:2310
+#: venv/lib/python3.9/site-packages/click/core.py:2310
 msgid "Value must be an iterable."
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:2333
+#: venv/lib/python3.9/site-packages/click/core.py:2333
 msgid "Takes {nargs} values but 1 was given."
 msgid_plural "Takes {nargs} values but {len} were given."
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/Lib/site-packages/click/core.py:2778
+#: venv/lib/python3.9/site-packages/click/core.py:2778
 msgid "env var: {var}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:2808
+#: venv/lib/python3.9/site-packages/click/core.py:2808
 msgid "(dynamic)"
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:2821
+#: venv/lib/python3.9/site-packages/click/core.py:2821
 msgid "default: {default}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/core.py:2834
+#: venv/lib/python3.9/site-packages/click/core.py:2834
 msgid "required"
 msgstr ""
 
-#: venv/Lib/site-packages/click/decorators.py:465
+#: venv/lib/python3.9/site-packages/click/decorators.py:465
 #, python-format
 msgid "%(prog)s, version %(version)s"
 msgstr ""
 
-#: venv/Lib/site-packages/click/decorators.py:528
+#: venv/lib/python3.9/site-packages/click/decorators.py:528
 msgid "Show the version and exit."
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:44
-#: venv/Lib/site-packages/click/exceptions.py:80
+#: venv/lib/python3.9/site-packages/click/exceptions.py:44
+#: venv/lib/python3.9/site-packages/click/exceptions.py:80
 msgid "Error: {message}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:72
+#: venv/lib/python3.9/site-packages/click/exceptions.py:72
 msgid "Try '{command} {option}' for help."
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:121
+#: venv/lib/python3.9/site-packages/click/exceptions.py:121
 msgid "Invalid value: {message}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:123
+#: venv/lib/python3.9/site-packages/click/exceptions.py:123
 msgid "Invalid value for {param_hint}: {message}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:179
+#: venv/lib/python3.9/site-packages/click/exceptions.py:179
 msgid "Missing argument"
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:181
+#: venv/lib/python3.9/site-packages/click/exceptions.py:181
 msgid "Missing option"
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:183
+#: venv/lib/python3.9/site-packages/click/exceptions.py:183
 msgid "Missing parameter"
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:185
+#: venv/lib/python3.9/site-packages/click/exceptions.py:185
 msgid "Missing {param_type}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:192
+#: venv/lib/python3.9/site-packages/click/exceptions.py:192
 msgid "Missing parameter: {param_name}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:212
+#: venv/lib/python3.9/site-packages/click/exceptions.py:212
 msgid "No such option: {name}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:226
+#: venv/lib/python3.9/site-packages/click/exceptions.py:226
 msgid "Did you mean {possibility}?"
 msgid_plural "(Possible options: {possibilities})"
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/Lib/site-packages/click/exceptions.py:262
+#: venv/lib/python3.9/site-packages/click/exceptions.py:262
 msgid "unknown error"
 msgstr ""
 
-#: venv/Lib/site-packages/click/exceptions.py:269
+#: venv/lib/python3.9/site-packages/click/exceptions.py:269
 msgid "Could not open file {filename!r}: {message}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/parser.py:231
+#: venv/lib/python3.9/site-packages/click/parser.py:231
 msgid "Argument {name!r} takes {nargs} values."
 msgstr ""
 
-#: venv/Lib/site-packages/click/parser.py:413
+#: venv/lib/python3.9/site-packages/click/parser.py:413
 msgid "Option {name!r} does not take a value."
 msgstr ""
 
-#: venv/Lib/site-packages/click/parser.py:473
+#: venv/lib/python3.9/site-packages/click/parser.py:473
 msgid "Option {name!r} requires an argument."
 msgid_plural "Option {name!r} requires {nargs} arguments."
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/Lib/site-packages/click/shell_completion.py:318
+#: venv/lib/python3.9/site-packages/click/shell_completion.py:318
 msgid "Shell completion is not supported for Bash versions older than 4.4."
 msgstr ""
 
-#: venv/Lib/site-packages/click/shell_completion.py:326
+#: venv/lib/python3.9/site-packages/click/shell_completion.py:326
 msgid "Couldn't detect Bash version, shell completion is not supported."
 msgstr ""
 
-#: venv/Lib/site-packages/click/termui.py:158
+#: venv/lib/python3.9/site-packages/click/termui.py:158
 msgid "Repeat for confirmation"
 msgstr ""
 
-#: venv/Lib/site-packages/click/termui.py:174
+#: venv/lib/python3.9/site-packages/click/termui.py:174
 msgid "Error: The value you entered was invalid."
 msgstr ""
 
-#: venv/Lib/site-packages/click/termui.py:176
+#: venv/lib/python3.9/site-packages/click/termui.py:176
 msgid "Error: {e.message}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/termui.py:187
+#: venv/lib/python3.9/site-packages/click/termui.py:187
 msgid "Error: The two entered values do not match."
 msgstr ""
 
-#: venv/Lib/site-packages/click/termui.py:243
+#: venv/lib/python3.9/site-packages/click/termui.py:243
 msgid "Error: invalid input"
 msgstr ""
 
-#: venv/Lib/site-packages/click/termui.py:773
+#: venv/lib/python3.9/site-packages/click/termui.py:773
 msgid "Press any key to continue..."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:266
+#: venv/lib/python3.9/site-packages/click/types.py:266
 msgid ""
 "Choose from:\n"
 "\t{choices}"
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:300
+#: venv/lib/python3.9/site-packages/click/types.py:300
 msgid "{value!r} is not {choice}."
 msgid_plural "{value!r} is not one of {choices}."
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/Lib/site-packages/click/types.py:394
+#: venv/lib/python3.9/site-packages/click/types.py:394
 msgid "{value!r} does not match the format {format}."
 msgid_plural "{value!r} does not match the formats {formats}."
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/Lib/site-packages/click/types.py:414
+#: venv/lib/python3.9/site-packages/click/types.py:414
 msgid "{value!r} is not a valid {number_type}."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:470
+#: venv/lib/python3.9/site-packages/click/types.py:470
 msgid "{value} is not in the range {range}."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:611
+#: venv/lib/python3.9/site-packages/click/types.py:611
 msgid "{value!r} is not a valid boolean."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:635
+#: venv/lib/python3.9/site-packages/click/types.py:635
 msgid "{value!r} is not a valid UUID."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:822
+#: venv/lib/python3.9/site-packages/click/types.py:822
 msgid "file"
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:824
+#: venv/lib/python3.9/site-packages/click/types.py:824
 msgid "directory"
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:826
+#: venv/lib/python3.9/site-packages/click/types.py:826
 msgid "path"
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:877
+#: venv/lib/python3.9/site-packages/click/types.py:877
 msgid "{name} {filename!r} does not exist."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:886
+#: venv/lib/python3.9/site-packages/click/types.py:886
 msgid "{name} {filename!r} is a file."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:894
+#: venv/lib/python3.9/site-packages/click/types.py:894
 msgid "{name} '{filename}' is a directory."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:903
+#: venv/lib/python3.9/site-packages/click/types.py:903
 msgid "{name} {filename!r} is not readable."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:912
+#: venv/lib/python3.9/site-packages/click/types.py:912
 msgid "{name} {filename!r} is not writable."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:921
+#: venv/lib/python3.9/site-packages/click/types.py:921
 msgid "{name} {filename!r} is not executable."
 msgstr ""
 
-#: venv/Lib/site-packages/click/types.py:987
+#: venv/lib/python3.9/site-packages/click/types.py:987
 msgid "{len_type} values are required, but {len_value} was given."
 msgid_plural "{len_type} values are required, but {len_value} were given."
 msgstr[0] ""
 msgstr[1] ""
-
-#~ msgid ""
-#~ "\n"
-#~ "*System information:*\n"
-#~ "{pc_info}\n"
-#~ "    \n"
-#~ "*Network information:*    \n"
-#~ "_Download speed_: *{download_speed:.2f}* Mbit/s\n"
-#~ "_Upload speed_: *{upload_speed:.2f}* Mbit/s \n"
-#~ "_Ping_: *{ping}* mc \n"
-#~ msgstr ""
-#~ "\n"
-#~ "*Інформація про систему:*\n"
-#~ "{pc_info}\n"
-#~ "    \n"
-#~ "*Інформація про мережу:* \n"
-#~ "_Швидкість завантаження_: *{download_speed:.2f}* Мбіт/с\n"
-#~ "_Швидкість завантаження_: *{upload_speed:.2f}* Мбіт/с \n"
-#~ "_Пінг_: *{ping}* mc \n"
-
-#~ msgid "👀Viewed by: {joke_seens}"
-#~ msgstr "👀Переглянуло: {joke_seens}"
-
-#~ msgid "You voted for the joke!"
-#~ msgstr "Ви проголосували за анекдот!"
-
-#~ msgid "You voted against the joke!"
-#~ msgstr "Ви проголосували проти анекдоту!"
-
-#~ msgid "{editor}: Editing failed"
-#~ msgstr ""
-
-#~ msgid "{editor}: Editing failed: {e}"
-#~ msgstr ""
-
-#~ msgid "Aborted!"
-#~ msgstr ""
-
-#~ msgid "Show this message and exit."
-#~ msgstr ""
-
-#~ msgid "(Deprecated) {text}"
-#~ msgstr ""
-
-#~ msgid "Options"
-#~ msgstr ""
-
-#~ msgid "Got unexpected extra argument ({args})"
-#~ msgid_plural "Got unexpected extra arguments ({args})"
-#~ msgstr[0] ""
-#~ msgstr[1] ""
-
-#~ msgid "DeprecationWarning: The command {name!r} is deprecated."
-#~ msgstr ""
-
-#~ msgid "Commands"
-#~ msgstr ""
-
-#~ msgid "Missing command."
-#~ msgstr ""
-
-#~ msgid "No such command {name!r}."
-#~ msgstr ""
-
-#~ msgid "Value must be an iterable."
-#~ msgstr ""
-
-#~ msgid "Takes {nargs} values but 1 was given."
-#~ msgid_plural "Takes {nargs} values but {len} were given."
-#~ msgstr[0] ""
-#~ msgstr[1] ""
-
-#~ msgid "env var: {var}"
-#~ msgstr ""
-
-#~ msgid "(dynamic)"
-#~ msgstr ""
-
-#~ msgid "default: {default}"
-#~ msgstr ""
-
-#~ msgid "required"
-#~ msgstr ""
-
-#~ msgid "%(prog)s, version %(version)s"
-#~ msgstr ""
-
-#~ msgid "Show the version and exit."
-#~ msgstr ""
-
-#~ msgid "Error: {message}"
-#~ msgstr ""
-
-#~ msgid "Try '{command} {option}' for help."
-#~ msgstr ""
-
-#~ msgid "Invalid value: {message}"
-#~ msgstr ""
-
-#~ msgid "Invalid value for {param_hint}: {message}"
-#~ msgstr ""
-
-#~ msgid "Missing argument"
-#~ msgstr ""
-
-#~ msgid "Missing option"
-#~ msgstr ""
-
-#~ msgid "Missing parameter"
-#~ msgstr ""
-
-#~ msgid "Missing {param_type}"
-#~ msgstr ""
-
-#~ msgid "Missing parameter: {param_name}"
-#~ msgstr ""
-
-#~ msgid "No such option: {name}"
-#~ msgstr ""
-
-#~ msgid "Did you mean {possibility}?"
-#~ msgid_plural "(Possible options: {possibilities})"
-#~ msgstr[0] ""
-#~ msgstr[1] ""
-
-#~ msgid "unknown error"
-#~ msgstr ""
-
-#~ msgid "Could not open file {filename!r}: {message}"
-#~ msgstr ""
-
-#~ msgid "Argument {name!r} takes {nargs} values."
-#~ msgstr ""
-
-#~ msgid "Option {name!r} does not take a value."
-#~ msgstr ""
-
-#~ msgid "Option {name!r} requires an argument."
-#~ msgid_plural "Option {name!r} requires {nargs} arguments."
-#~ msgstr[0] ""
-#~ msgstr[1] ""
-
-#~ msgid "Shell completion is not supported for Bash versions older than 4.4."
-#~ msgstr ""
-
-#~ msgid "Couldn't detect Bash version, shell completion is not supported."
-#~ msgstr ""
-
-#~ msgid "Repeat for confirmation"
-#~ msgstr ""
-
-#~ msgid "Error: The value you entered was invalid."
-#~ msgstr ""
-
-#~ msgid "Error: {e.message}"
-#~ msgstr ""
-
-#~ msgid "Error: The two entered values do not match."
-#~ msgstr ""
-
-#~ msgid "Error: invalid input"
-#~ msgstr ""
-
-#~ msgid "Press any key to continue..."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Choose from:\n"
-#~ "\t{choices}"
-#~ msgstr ""
-
-#~ msgid "{value!r} is not {choice}."
-#~ msgid_plural "{value!r} is not one of {choices}."
-#~ msgstr[0] ""
-#~ msgstr[1] ""
-
-#~ msgid "{value!r} does not match the format {format}."
-#~ msgid_plural "{value!r} does not match the formats {formats}."
-#~ msgstr[0] ""
-#~ msgstr[1] ""
-
-#~ msgid "{value!r} is not a valid {number_type}."
-#~ msgstr ""
-
-#~ msgid "{value} is not in the range {range}."
-#~ msgstr ""
-
-#~ msgid "{value!r} is not a valid boolean."
-#~ msgstr ""
-
-#~ msgid "{value!r} is not a valid UUID."
-#~ msgstr ""
-
-#~ msgid "file"
-#~ msgstr ""
-
-#~ msgid "directory"
-#~ msgstr ""
-
-#~ msgid "path"
-#~ msgstr ""
-
-#~ msgid "{name} {filename!r} does not exist."
-#~ msgstr ""
-
-#~ msgid "{name} {filename!r} is a file."
-#~ msgstr ""
-
-#~ msgid "{name} '{filename}' is a directory."
-#~ msgstr ""
-
-#~ msgid "{name} {filename!r} is not readable."
-#~ msgstr ""
-
-#~ msgid "{name} {filename!r} is not writable."
-#~ msgstr ""
-
-#~ msgid "{name} {filename!r} is not executable."
-#~ msgstr ""
-
-#~ msgid "{len_type} values are required, but {len_value} was given."
-#~ msgid_plural "{len_type} values are required, but {len_value} were given."
-#~ msgstr[0] ""
-#~ msgstr[1] ""
-
-#~ msgid "Please select what you would like to joke about:"
-#~ msgstr "Привіт, будь ласка, оберіть, про що ви хочете анекдот:"
-
-#~ msgid "There is any ideas for you."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "\n"
-#~ "Hello *{username}*! You are an "
-#~ "administrator, to see more information "
-#~ "and controls, please type /admin.\n"
-#~ "\n"
-#~ "Statistics:\n"
-#~ "📁Number of jokes in the database: *{joke_count}*\n"
-#~ "📚Jokes read by you: *{joke_sent}*\n"
-#~ "📬Total number of jokes read by everyone: *{sent_count}*\n"
-#~ "\n"
-#~ "Total referrals: *{refs_count}*\n"
-#~ "Your ref link: {ref_url}\n"
-#~ "             \n"
-#~ "Bot site - https://anekdoty.pp.ua\n"
-#~ "\n"
-#~ "*If you want to offer an anecdote"
-#~ " or ask a question, click the "
-#~ "Feedback💬 button!*"
-#~ msgstr ""
-#~ "\n"
-#~ "Привіт, *{username}*! Ви адміністратор, щоб"
-#~ " побачити більше інформації та елементів"
-#~ " керування, будь ласка, введіть /admin."
-#~ "\n"
-#~ "\n"
-#~ "Статистика:\n"
-#~ "📁Кількість анекдотів у базі даних: *{joke_count}*\n"
-#~ "📚Анекдотів прочитано вами: *{joke_sent}*\n"
-#~ "📬Анекдотів прочитано усіма: *{sent_count}*\n"
-#~ "\n"
-#~ "Всього рефералів: *{refs_count}*\n"
-#~ "Ваше реф-посилання: {ref_url}\n"
-#~ "\n"
-#~ "Сайт бота - https://anekdoty.pp.ua\n"
-#~ "\n"
-#~ "*Хочете запропонувати анекдот або задати "
-#~ "запитання? Натисніть нопку Зворотний "
-#~ "зв'язок💬!*\n"
-
-#~ msgid ""
-#~ "\n"
-#~ "Hello *{username}*! I am a bot where you can read jokes.\n"
-#~ "\n"
-#~ "Statistics:\n"
-#~ "📁Number of jokes in the database: *{joke_count}*\n"
-#~ "📚Jokes read by you: *{joke_sent}*\n"
-#~ "📬Total number of jokes read by everyone: *{sent_count}*\n"
-#~ "\n"
-#~ "Total referrals: *{refs_count}*\n"
-#~ "Your ref link: {ref_url}\n"
-#~ "\n"
-#~ "Bot site - https://anekdoty.pp.ua\n"
-#~ "\n"
-#~ "*If you want to offer an anecdote"
-#~ " or ask a question, click the "
-#~ "Feedback💬 button!*"
-#~ msgstr ""
-#~ "\n"
-#~ "Привіт, *{username}*! Я бот, в якому ви можете читати анекдоти.\n"
-#~ "\n"
-#~ "Статистика:\n"
-#~ "📁Кількість анекдотів у базі даних: *{joke_count}*\n"
-#~ "📚Анекдотів прочитано вами: *{joke_sent}*\n"
-#~ "📬Анекдотів прочитано усіма: *{sent_count}*\n"
-#~ "\n"
-#~ "Всього рефералів: *{refs_count}*\n"
-#~ "Ваше реф-посилання: {ref_url}\n"
-#~ "\n"
-#~ "Сайт бота - https://anekdoty.pp.ua\n"
-#~ "\n"
-#~ "*Хочете запропонувати анекдот або задати "
-#~ "запитання? Натисніть нопку Зворотний "
-#~ "зв'язок💬!*\n"
-
-#~ msgid "<b>Operating System</b>: <i>{}</i>\n"
-#~ msgstr "<b>Операційна система</b>: <i>{}</i>\n"
-
-#~ msgid "<b>OS Version</b>: <i>{}</i>\n"
-#~ msgstr "<b>Версія операційної системи</b>: <i>{}</i>\n"
-
-#~ msgid "<b>Machine Name</b>: <i>{}</i>\n"
-#~ msgstr "<b>Ім'я машини</b>: <i>{}</i>\n"
-
-#~ msgid "<b>Processor Architecture</b>: <i>{}</i>\n"
-#~ msgstr "<b>Архітектура процесора</b>: <i>{}</i>\n"
-
-#~ msgid "<b>Processor Model</b>: <i>{}</i>\n"
-#~ msgstr "<b>Модель процесора</b>: <i>{}</i>\n"
-
-#~ msgid "<b>Physical Cores</b>: <i>{}</i>\n"
-#~ msgstr "<b>Кількість фізичних ядер</b>: <i>{}</i>\n"
-
-#~ msgid "<b>Logical Cores</b>: <i>{}</i>\n"
-#~ msgstr "<b>Кількість логічних ядер</b>: <i>{}</i>\n"
-
-#~ msgid "<b>Total Memory</b>: <i>{:.2f}</i> MB\n"
-#~ msgstr "<b>Загальний об'єм пам'яті</b>: <i>{:.2f}</i> МБ\n"
-
-#~ msgid "<b>Available Memory</b>: <i>{:.2f}</i> MB\n"
-#~ msgstr "_Доступна пам'ять_: *{:.2f}* МБ\n"
-
-#~ msgid "<b>Memory Usage</b>: <i>{}</i>%\n"
-#~ msgstr "<b>Використання пам'яті</b>: <i>{}</i>%\n"
-
-#~ msgid ""
-#~ "If you want to offer an anecdote"
-#~ " or if you find a bug, please"
-#~ " click the button below and describe"
-#~ " it."
-#~ msgstr ""
-#~ "Якщо ви знайшли помилку або хочете "
-#~ "запропонувати анекдот, будь ласка, натисніть"
-#~ " кнопку нижче та опишіть його."
-
-#~ msgid ""
-#~ "\n"
-#~ "<b>Operating System</b>: <i>{}</i>\n"
-#~ "<b>OS Version</b>: <i>{}</i>\n"
-#~ "<b>Machine Name</b>: <i>{}</i>\n"
-#~ "<b>Processor Architecture</b>: <i>{}</i>\n"
-#~ "<b>Processor Model</b>: <i>{}</i>\n"
-#~ "<b>Physical Cores</b>: <i>{}</i>\n"
-#~ "<b>Logical Cores</b>: <i>{}</i>\n"
-#~ "<b>Total Memory</b>: <i>{:.2f}</i> MB\n"
-#~ "<b>Available Memory</b>: <i>{:.2f}</i> MB\n"
-#~ "<b>Memory Usage</b>: <i>{}</i>%\n"
-#~ msgstr ""
-#~ "<b>Операційна система</b>: <i>{}</i>\n"
-#~ "<b>Версія операційної системи</b>: <i>{}</i>\n"
-#~ "<b>Ім'я машини</b>: <i>{}</i>\n"
-#~ "<b>Архітектура процесора</b>: <i>{}</i>\n"
-#~ "<b>Модель процесора</b>: <i>{}</i>\n"
-#~ "<b>Кількість фізичних ядер</b>: <i>{}</i>\n"
-#~ "<b>Кількість логічних ядер</b>: <i>{}</i>\n"
-#~ "\"<b>Загальний об'єм пам'яті</b>: <i>{:.2f}</i> МБ\n"
-#~ "_Доступна пам'ять_: *{:.2f}* МБ\n"
-#~ "<b>Використання пам'яті</b>: <i>{}</i>%\n"
-

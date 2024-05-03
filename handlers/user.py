@@ -1,12 +1,11 @@
 import asyncio
 import logging
-import re
 
 from aiogram import types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters.state import StatesGroup, State
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardRemove
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.cron import CronTrigger
 from ping3 import ping
@@ -36,7 +35,7 @@ async def update_info(message: types.Message):
     if result:
         await db.user_update_name(user_id, user_name, user_username)
     else:
-        await db.add_users(user_id, user_name, user_username, "private", "uk", 'user', referrer_id)
+        await db.add_users(user_id, user_name, user_username, "private", "uk", 'active', referrer_id)
 
 
 @dp.message_handler(content_types=['new_chat_members'])
@@ -394,6 +393,12 @@ async def show_joke_page(message: types.Message, page_number: int, state: FSMCon
         keyboard.add(InlineKeyboardButton(text=page_title, callback_data="page_number"))
     if page_number > 0:
         keyboard.row(InlineKeyboardButton("⬅️", callback_data=f"page_{page_number - 1}"))
+
+    clock = await bot.send_message(message.chat.id, '⏳', reply_markup=ReplyKeyboardRemove())
+
+    await asyncio.sleep(2)
+
+    await bot.delete_message(message.chat.id, clock.message_id)
 
     try:
         await bot.edit_message_text(
