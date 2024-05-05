@@ -14,7 +14,7 @@ from aiogram.types import ReplyKeyboardRemove, InlineKeyboardButton, InlineKeybo
 
 import config
 from keyboards import inline_keyboards as kb
-from main import dp, bot, _
+from main import dp, bot, _, send_analytics
 from messages import bot_messages as bm
 from middlewares.throttling_middleware import rate_limit
 from services import DataBase
@@ -350,6 +350,9 @@ async def info(message: types.Message):
         bm.admin_info(username, joke_sent, joke_count, sent_count, refs_count, ref_url),
         reply_markup=kb.return_feedback_button(),
         parse_mode='HTML')
+
+    await send_analytics(user_id=message.from_user.id, user_lang_code=message.from_user.language_code,
+                         action_name='info')
 
 
 @dp.message_handler(user_id=admin_id, commands=['get_users'])
