@@ -12,7 +12,7 @@ from ping3 import ping
 
 from config import *
 from keyboards import inline_keyboards as kb
-from main import dp, bot, _
+from main import dp, bot, _, send_analytics
 from messages import bot_messages as bm
 from middlewares.throttling_middleware import rate_limit
 from services import DataBase
@@ -89,6 +89,10 @@ async def send_welcome(message: types.Message):
 
     await update_info(message)
 
+    await send_analytics(user_id=message.from_user.id,
+                         user_lang_code=message.from_user.language_code,
+                         action_name='start')
+
 
 @rate_limit(1)
 @dp.message_handler(commands=['language'])
@@ -100,6 +104,8 @@ async def change_lang(message: types.Message):
 
     await message.reply(bm.please_choose(),
                         reply_markup=kb.lang_keyboard, parse_mode="HTML")
+
+    await send_analytics(user_id=user_id, user_lang_code=message.from_user.language_code, action_name='change_language')
 
 
 @dp.callback_query_handler(lambda call: call.data.startswith('lang_'))
@@ -135,6 +141,8 @@ async def info(message: types.Message):
                         reply_markup=kb.return_feedback_button())
     await update_info(message)
 
+    await send_analytics(user_id=user_id, user_lang_code=message.from_user.language_code, action_name='info')
+
 
 @rate_limit(1)
 @dp.message_handler(commands=['help'])
@@ -147,6 +155,9 @@ async def send_help(message: types.Message):
 
     await message.reply(bm.help_message())
     await update_info(message)
+
+    await send_analytics(user_id=user_id, user_lang_code=message.from_user.language_code, action_name='help')
+
 
 
 @dp.message_handler(commands=['joke'])
@@ -161,6 +172,9 @@ async def handle_joke(message: types.Message):
     await message.reply(bm.pres_button(),
                         reply_markup=kb.random_keyboard())
     await update_info(message)
+    
+    await send_analytics(user_id=user_id, user_lang_code=message.from_user.language_code, action_name='joke_command')
+
 
 
 @dp.message_handler(commands=['ping'])
@@ -173,6 +187,9 @@ async def cmd_ping(message: types.Message):
             print("Сервер недоступний")
     except Exception as e:
         return str(e)
+    
+    await send_analytics(user_id=message.from_user.id, user_lang_code=message.from_user.language_code, action_name='check_ping')
+
 
 
 @dp.callback_query_handler(lambda call: call.data == 'feedback')
@@ -183,6 +200,8 @@ async def feedback_handler(call: types.CallbackQuery):
     await call.message.answer(bm.please_enter_message(), reply_markup=kb.cancel_keyboard())
     await dp.current_state().set_state("send_feedback")
     await update_info(call.message)
+    await send_analytics(user_id=call.from_user.id, user_lang_code=call.from_user.language_code, action_name='info')
+
 
 
 @dp.message_handler(state="send_feedback")
@@ -272,6 +291,8 @@ async def send_category_joke_pivate(call):
     user_id = call.from_user.id
     result = await db.get_tagged_joke(user_id, tag)
     await send_joke(user_id, call.message, result)
+    await send_analytics(user_id=user_id, user_lang_code=call.from_user.language_code, action_name=f'get_joke_by_category_{tag}')
+
 
 
 @dp.callback_query_handler(lambda call: call.data == 'random_joke')
@@ -279,6 +300,8 @@ async def send_joke_private(call):
     user_id = call.from_user.id
     result = await db.get_joke(user_id)
     await send_joke(user_id, call.message, result)
+    await send_analytics(user_id=user_id, user_lang_code=call.from_user.language_code, action_name='get_joke')
+
 
 
 @dp.message_handler(commands=['find'])
@@ -314,6 +337,9 @@ async def find_jokes(message: types.Message, state: FSMContext):
         return
 
     await create_joke_list(message, result, state)
+    
+    await send_analytics(user_id=user_id, user_lang_code=message.from_user.language_code, action_name='find_joke')
+
 
 
 async def create_joke_list(message: types.Message, result: list, state: FSMContext):
@@ -517,18 +543,24 @@ async def like_joke(call: types.CallbackQuery):
         logging.info(
             f"User action: Removed like from joke (User ID: {user_id}, Joke ID: {joke_id})"
         )
+        await send_analytics(user_id=user_id, user_lang_code=call.from_user.language_code, action_name='removed_like')
+
     elif user_vote == "dislike":
         await db.update_vote(joke_id, user_id, "like")
         await call.answer(bm.liked_joke())
         logging.info(
             f"User action: Liked joke (User ID: {user_id}, Joke ID: {joke_id})"
         )
+        await send_analytics(user_id=user_id, user_lang_code=call.from_user.language_code, action_name='liked')
+
     else:
         await db.add_vote(joke_id, user_id, "like")
         await call.answer(bm.liked_joke())
         logging.info(
             f"User action: Liked joke (User ID: {user_id}, Joke ID: {joke_id})"
         )
+        await send_analytics(user_id=user_id, user_lang_code=call.from_user.language_code, action_name='liked')
+
 
     await update_buttons(call.message, joke_id, user_id)
 
@@ -546,18 +578,23 @@ async def dislike_joke(call: types.CallbackQuery):
         logging.info(
             f"User action: Removed dislike from joke (User ID: {user_id}, Joke ID: {joke_id})"
         )
+        await send_analytics(user_id=user_id, user_lang_code=call.from_user.language_code, action_name='removed_dislike')
+
     elif user_vote == "like":
         await db.update_vote(joke_id, user_id, "dislike")
         await call.answer(bm.disliked_joke())
         logging.info(
             f"User action: Disliked joke (User ID: {user_id}, Joke ID: {joke_id})"
         )
+        await send_analytics(user_id=user_id, user_lang_code=call.from_user.language_code, action_name='disliked')
+
     else:
         await db.add_vote(joke_id, user_id, "dislike")
         await call.answer(bm.disliked_joke())
         logging.info(
             f"User action: Disliked joke (User ID: {user_id}, Joke ID: {joke_id})"
         )
+        await send_analytics(user_id=user_id, user_lang_code=call.from_user.language_code, action_name='disliked')
 
     await update_buttons(call.message, joke_id, user_id)
 
@@ -588,6 +625,8 @@ async def joke_rating(call: types.CallbackQuery):
     await update_buttons(call.message, joke_id, user_id)
 
     await call.answer(bm.updated_rating())
+
+    await send_analytics(user_id=user_id, user_lang_code=call.from_user.language_code, action_name='update_rating')
 
 
 @dp.message_handler()

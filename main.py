@@ -1,6 +1,7 @@
 import asyncio
 import logging
 
+import httpx
 from aiogram import Bot, Dispatcher, executor
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
@@ -26,6 +27,29 @@ handler.setFormatter(custom_formatter)
 logger.addHandler(handler)
 
 logging.getLogger("werkzeug").disabled = True
+
+
+async def send_analytics(user_id, user_lang_code, action_name):
+    """
+    Send record to Google Analytics
+    """
+    params = {
+        'client_id': str(user_id),
+        'user_id': str(user_id),
+        'events': [{
+            'name': action_name,
+            'params': {
+                'language': user_lang_code,
+                "session_id": str(user_id),
+                "engagement_time_msec": "100"
+
+            }
+        }],
+    }
+    async with httpx.AsyncClient() as client:
+        response = await client.post(
+            f'https://www.google-analytics.com/mp/collect?measurement_id={MEASUREMENT_ID}&api_secret={API_SECRET}',
+            json=params)
 
 
 @dp.errors_handler()
