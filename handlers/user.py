@@ -14,7 +14,6 @@ from config import *
 from keyboards import inline_keyboards as kb
 from main import dp, bot, _, send_analytics
 from messages import bot_messages as bm
-from middlewares.throttling_middleware import rate_limit
 from services import DataBase
 
 storage = MemoryStorage()

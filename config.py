@@ -23,3 +23,6 @@ BOT_COMMANDS = [
     {'command': 'language', 'description': '🇺🇦Змінити мову / change language 🇬🇧'},
     {'command': 'help', 'description': '❓Допомога з ботом / Help with the bot 🗂'},
 ]
+
+ADMINS_UID = [admin_id]
+

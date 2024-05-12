@@ -6,7 +6,7 @@ from aiogram.types import Message
 from cachetools import TTLCache
 
 
-class AntifloodMiddleware(BaseMiddleware):
+class ThrottlingMiddleware(BaseMiddleware):
     caches = {
         "another_flag": TTLCache(maxsize=10_000, ttl=2),
         "default": TTLCache(maxsize=10_000, ttl=1)

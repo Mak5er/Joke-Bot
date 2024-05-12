@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-05-03 14:34+0300\n"
+"POT-Creation-Date: 2024-05-12 16:01+0300\n"
 "PO-Revision-Date: 2023-06-25 14:26+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -18,17 +18,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
 
-#: main.py:37
-msgid "I'm stopped!"
-msgstr ""
-
-#: main.py:41
-msgid "I'm launched!"
-msgstr ""
-
 #: handlers/admin.py:108 handlers/admin.py:145 handlers/admin.py:195
-#: handlers/admin.py:289 handlers/admin.py:446 handlers/admin.py:483
-#: handlers/user.py:197 handlers/user.py:300 keyboards/inline_keyboards.py:51
+#: handlers/admin.py:289 handlers/admin.py:449 handlers/admin.py:486
+#: handlers/user.py:214 handlers/user.py:321 keyboards/inline_keyboards.py:51
 msgid "↩️Cancel"
 msgstr ""
 
@@ -48,8 +40,8 @@ msgstr ""
 msgid "✅Unban"
 msgstr ""
 
-#: handlers/admin.py:239 handlers/admin.py:526 handlers/admin.py:532
-#: handlers/admin.py:548 keyboards/inline_keyboards.py:40
+#: handlers/admin.py:239 handlers/admin.py:529 handlers/admin.py:535
+#: handlers/admin.py:551 keyboards/inline_keyboards.py:40
 #: keyboards/inline_keyboards.py:96 keyboards/inline_keyboards.py:105
 #: keyboards/inline_keyboards.py:113
 msgid "🔙Back"
@@ -63,43 +55,43 @@ msgstr ""
 msgid "Enter ban reason:"
 msgstr ""
 
-#: handlers/admin.py:437
+#: handlers/admin.py:440
 msgid "Please type your answer:"
 msgstr ""
 
-#: handlers/admin.py:457
+#: handlers/admin.py:460
 msgid ""
 "Your message <b>{message_id}</b> was seen!\n"
 "<b>Answer:</b> <code>{answer}</code>"
 msgstr ""
 
-#: handlers/admin.py:460
+#: handlers/admin.py:463
 msgid "Your answer sent!"
 msgstr ""
 
-#: handlers/admin.py:464 messages/bot_messages.py:256
+#: handlers/admin.py:467 messages/bot_messages.py:256
 msgid "Something went wrong, see log for more information!"
 msgstr ""
 
-#: handlers/admin.py:474
+#: handlers/admin.py:477
 msgid "Please type message:"
 msgstr ""
 
-#: handlers/admin.py:514
+#: handlers/admin.py:517
 msgid ""
 "<b>Ideas for you:</b>\n"
 "\n"
 msgstr ""
 
-#: handlers/admin.py:535 messages/bot_messages.py:260
+#: handlers/admin.py:538 messages/bot_messages.py:260
 msgid "There are no ideas for you."
 msgstr ""
 
-#: handlers/admin.py:547
+#: handlers/admin.py:550
 msgid "❌Delete"
 msgstr ""
 
-#: handlers/user.py:381
+#: handlers/user.py:405
 msgid "Page "
 msgstr ""
 
@@ -465,7 +457,7 @@ msgstr ""
 msgid "Nothing was found."
 msgstr ""
 
-#: messages/bot_messages.py:289
+#: messages/bot_messages.py:290
 msgid "Type joke text or ID:"
 msgstr ""
 
@@ -728,3 +720,16 @@ msgid "{len_type} values are required, but {len_value} was given."
 msgid_plural "{len_type} values are required, but {len_value} were given."
 msgstr[0] ""
 msgstr[1] ""
+
+#~ msgid "I'm stopped!"
+#~ msgstr ""
+
+#~ msgid "I'm launched!"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Hello <b>{name}</b>! I'm a bot with jokes.\n"
+#~ "Full information on the bot /info\n"
+#~ "List of commands /help"
+#~ msgstr ""
+

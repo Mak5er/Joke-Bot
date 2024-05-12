@@ -1,4 +1,4 @@
-from main import _
+from main import __, _
 
 
 def welcome_message(name):
@@ -8,7 +8,7 @@ def welcome_message(name):
 
 
 def admin_panel(user_count, active_user_count, inactive_user_count, joke_count, sent_count):
-    return _("""Hello, this is the admin panel.
+    return __("""Hello, this is the admin panel.
     
 🪪Number of bot users: <b>{user_count}</b>
 📱Number of active users: <b>{active_user_count}</b>
@@ -27,7 +27,7 @@ Admin commands:
 
 
 def admin_info(username, joke_sent, joke_count, sent_count, refs_count, ref_url):
-    return _("""
+    return __("""
 Hello <b>{username}</b>! You are an administrator, to see more information and controls, please type /admin.
 
 Statistics:
@@ -49,7 +49,7 @@ Bot site - <a href="https://anekdoty.pp.ua">https://anekdoty.pp.ua</a>
 
 
 def user_info(username, joke_sent, joke_count, sent_count, refs_count, ref_url):
-    return _('''
+    return __('''
 Hello <b>{username}</b>! I am a bot where you can read jokes.
 
 Statistics:
@@ -71,7 +71,7 @@ Bot site - <a href="https://anekdoty.pp.ua">https://anekdoty.pp.ua</a>
 
 
 def help_message():
-    return _("""🤖 This is a bot with jokes. Here is a list of available commands:
+    return __("""🤖 This is a bot with jokes. Here is a list of available commands:
 
 ️/start - start interacting with the bot
 /joke - get a random joke
@@ -85,91 +85,91 @@ The /info command allows you to get information about the bot. Here you can view
 
 
 def joke_rating(joke_rate):
-    return _("📊Rating: <b>{joke_rate}</b>").format(joke_rate=joke_rate)
+    return __("📊Rating: <b>{joke_rate}</b>").format(joke_rate=joke_rate)
 
 
 def liked_joke():
-    return _("You 👍 this!")
+    return __("You 👍 this!")
 
 
 def disliked_joke():
-    return _("You 👎 this!")
+    return __("You 👎 this!")
 
 
 def revoked_vote():
-    return _("You revoked your vote!")
+    return __("You revoked your vote!")
 
 
 def updated_rating():
-    return _("🔃The rating is updated!")
+    return __("🔃The rating is updated!")
 
 
 def seen_joke():
-    return _("You have marked this joke as read!")
+    return __("You have marked this joke as read!")
 
 
 def already_seen_joke():
-    return _("You have already marked this joke as read!")
+    return __("You have already marked this joke as read!")
 
 
 def finish_mailing():
-    return _("Mailing is complete!")
+    return __("Mailing is complete!")
 
 
 def start_mailing():
-    return _("Starting mailing...")
+    return __("Starting mailing...")
 
 
 def pres_button():
-    return _("Click the button to get the joke.")
+    return __("Click the button to get the joke.")
 
 
 def all_send():
-    return _('Unfortunately, all the jokes have already been sent to you.')
+    return __('Unfortunately, all the jokes have already been sent to you.')
 
 
 def daily_joke(joke_text):
-    return _("<b>Joke of the day:</b>\n\n{joke_text}").format(joke_text=joke_text)
+    return __("<b>Joke of the day:</b>\n\n{joke_text}").format(joke_text=joke_text)
 
 
 def dont_understood(name):
-    return _("""<b>{name}</b>, I don't understand you! Type /help to get a list of commands!
+    return __("""<b>{name}</b>, I don't understand you! Type /help to get a list of commands!
     
 <b>If you want to offer an anecdote or ask a question, click the Feedback💬 button!</b>""").format(name=name)
 
 
 def not_groups():
-    return _("This command cannot be used in a group!")
+    return __("This command cannot be used in a group!")
 
 
 def log_deleted():
-    return _("Log deleted, starting to write a new one.")
+    return __("Log deleted, starting to write a new one.")
 
 
 def mailing_message():
-    return _('Enter the message to send:')
+    return __('Enter the message to send:')
 
 
 def canceled():
-    return _("Action canceled")
+    return __("Action canceled")
 
 
 def new_joke():
-    return _("Enter a new joke:")
+    return __("Enter a new joke:")
 
 
 def joke_added():
-    return _("The anecdote is given to the database.")
+    return __("The anecdote is given to the database.")
 
 
 def join_group(chat_title):
-    return _("""Hi! Thank you for adding me to <b>'{chat_title}'</b>
+    return __("""Hi! Thank you for adding me to <b>'{chat_title}'</b>
 For correct operation, please grant me administrator rights!
 Type /help to get a list of commands""").format(chat_title=chat_title)
 
 
 def please_choose():
-    return _("Please choose your language!")
+    return __("Please choose your language!")
 
 
 def choose_lan(language):
@@ -182,7 +182,7 @@ You can always change the language by writing /language"""
 
 
 def return_user_info(user_name, user_id, user_username, status):
-    return _("""<b>USER INFO</b>
+    return __("""<b>USER INFO</b>
 <b>Name</b>: {user_name}
 <b>ID</b>: {user_id}
 <b>Username</b>: {user_username}
@@ -190,37 +190,37 @@ def return_user_info(user_name, user_id, user_username, status):
 
 
 def ban_message(reason):
-    return _("🚫You have been banned, contact @mak5er for more information!\nReason: {reason}").format(reason=reason)
+    return __("🚫You have been banned, contact @mak5er for more information!\nReason: {reason}").format(reason=reason)
 
 
 def unban_message():
-    return _("🎉You have been unbanned!")
+    return __("🎉You have been unbanned!")
 
 
 def successful_ban(banned_user_id):
-    return _("User {banned_user_id} successfully banned!").format(banned_user_id=banned_user_id)
+    return __("User {banned_user_id} successfully banned!").format(banned_user_id=banned_user_id)
 
 
 def successful_unban(unbanned_user_id):
-    return _("User {unbanned_user_id} successfully unbanned!").format(unbanned_user_id=unbanned_user_id)
+    return __("User {unbanned_user_id} successfully unbanned!").format(unbanned_user_id=unbanned_user_id)
 
 
 def feedback_message_send(user, feedback_message):
-    return _("<b>New message</b> from user: <b>{user}</b>\n<b>Message:</b> <code>{feedback_message}</code>").format(
+    return __("<b>New message</b> from user: <b>{user}</b>\n<b>Message:</b> <code>{feedback_message}</code>").format(
         user=user,
         feedback_message=feedback_message)
 
 
 def pick_a_joke():
-    return _("Pick a joke:")
+    return __("Pick a joke:")
 
 
 def system_info(pc_info):
-    return _("<b>System information:</b>\n\n{pc_info}").format(pc_info=pc_info)
+    return __("<b>System information:</b>\n\n{pc_info}").format(pc_info=pc_info)
 
 
 def get_formatted_system_info(specs):
-    system_info_template = _("""
+    system_info_template = __("""
 <b>Operating System</b>: <i>{operating_system}</i>
 <b>OS Version</b>: <i>{os_version}</i>
 <b>Machine Name</b>: <i>{machine_name}</i>
@@ -237,54 +237,54 @@ def get_formatted_system_info(specs):
 
 
 def search_user_by():
-    return _('Search user by:')
+    return __('Search user by:')
 
 
 def type_user(search):
-    return _('Type user {search}:').format(search=search)
+    return __('Type user {search}:').format(search=search)
 
 
 def action_canceled():
-    return _('Action canceled!')
+    return __('Action canceled!')
 
 
 def your_message_sent():
-    return _('Your message sent!')
+    return __('Your message sent!')
 
 
 def something_went_wrong():
-    return _("Something went wrong, see log for more information!")
+    return __("Something went wrong, see log for more information!")
 
 
 def any_ideas():
-    return _("There are no ideas for you.")
+    return __("There are no ideas for you.")
 
 
 def idea_deleted():
-    return _("Idea deleted.")
+    return __("Idea deleted.")
 
 
 def refferal_joined(user_id, refs_count):
-    return _(
+    return __(
         "Referral <b>{user_id}</b> has registered at your invitation!\nTotal number of invitees: <b>{refs_count}</b>").format(
         user_id=user_id, refs_count=refs_count)
 
 
 def please_enter_message():
-    return _('Please enter your message:')
+    return __('Please enter your message:')
 
 
 def your_message_sent_with_id(feedback_message_id):
-    return _("Your message <b>{feedback_message_id}</b> sent!").format(feedback_message_id=feedback_message_id)
+    return __("Your message <b>{feedback_message_id}</b> sent!").format(feedback_message_id=feedback_message_id)
 
 
 def select_category():
-    return _('Please select category:')
+    return __('Please select category:')
 
 
 def nothing_found():
-    return _("Nothing was found.")
+    return __("Nothing was found.")
 
 
 def type_joke_text_or_id():
-    return _("Type joke text or ID:")
+    return __("Type joke text or ID:")
