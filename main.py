@@ -65,7 +65,7 @@ async def send_analytics(user_id, user_lang_code, action_name):
 
 
 @router.message(Command('start'), ChatTypeF('private'))
-async def start_cmd(msg: types.Message, i18n: I18n):
+async def start_cmd(msg: types.Message):
     name = msg.from_user.full_name
     await msg.answer(
         text=bm.welcome_message(name))
@@ -87,8 +87,8 @@ async def main():
     await bot.set_my_commands(commands=BOT_COMMANDS)
     await bot.delete_webhook(drop_pending_updates=True)
     dp.include_router(router)
-    dp.message.middleware(ThrottlingMiddleware())
     dp.message.outer_middleware(ConstI18nMiddleware(locale="uk", i18n=i18n))
+    dp.message.middleware(ThrottlingMiddleware())
     dp.startup.register(on_startup)
     dp.shutdown.register(on_shutdown)
     await dp.start_polling(bot)

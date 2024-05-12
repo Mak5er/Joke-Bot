@@ -4,26 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="868e1bc7-d2cf-4321-8444-628b09c4cc27" name="Changes" comment="start migrating">
-      <change afterPath="$PROJECT_DIR$/filters/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filters/chat_type.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filters/is_bot_admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filters/starts_with.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.mo" beforeDir="false" afterPath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.po" beforeDir="false" afterPath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/jokebot.pot" beforeDir="false" afterPath="$PROJECT_DIR$/locales/jokebot.pot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.mo" beforeDir="false" afterPath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.po" beforeDir="false" afterPath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messages/bot_messages.py" beforeDir="false" afterPath="$PROJECT_DIR$/messages/bot_messages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/language_middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/language_middleware.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/throttling_middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/throttling_middleware.py" afterDir="false" />
-    </list>
+    <list default="true" id="868e1bc7-d2cf-4321-8444-628b09c4cc27" name="Changes" comment="update middlewares" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -249,7 +230,7 @@
       <workItem from="1714742507770" duration="637000" />
       <workItem from="1714765888945" duration="56000" />
       <workItem from="1714800959096" duration="3154000" />
-      <workItem from="1714902664337" duration="18686000" />
+      <workItem from="1714902664337" duration="18808000" />
     </task>
     <task id="LOCAL-00001" summary="UPDATE main.py">
       <created>1687548643088</created>
@@ -271,14 +252,6 @@
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
       <updated>1688392132379</updated>
-    </task>
-    <task id="LOCAL-00010" summary="UPDATE languages">
-      <option name="closed" value="true" />
-      <created>1690537270737</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1690537270737</updated>
     </task>
     <task id="LOCAL-00011" summary="UPDATE README.md">
       <option name="closed" value="true" />
@@ -640,7 +613,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715495675260</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="update middlewares">
+      <option name="closed" value="true" />
+      <created>1715520801564</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1715520801564</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -677,7 +658,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added .gitignore" />
     <MESSAGE value="Added speedtest" />
     <MESSAGE value="start working at bug report system" />
     <MESSAGE value="Bug report system done" />
@@ -702,7 +682,8 @@
     <MESSAGE value="changed error in locales" />
     <MESSAGE value="add google analytic" />
     <MESSAGE value="start migrating" />
-    <option name="LAST_COMMIT_MESSAGE" value="start migrating" />
+    <MESSAGE value="update middlewares" />
+    <option name="LAST_COMMIT_MESSAGE" value="update middlewares" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Joke_Bot$main.coverage" NAME="main Coverage Results" MODIFIED="1715520604770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
