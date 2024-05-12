@@ -1,7 +1,7 @@
 import logging
 
 from aiogram import types
-from aiogram.contrib.middlewares.i18n import I18nMiddleware
+from aiogram.utils.i18n import I18nMiddleware
 
 from config import I18N_DOMAIN, LOCALES_DIR
 from services import DataBase
@@ -18,14 +18,22 @@ async def get_lang(user_id):
         logging.error(f"Error retrieving language for user {user_id}: {e}")
         return "en"
 
+    async def get_locale(self, event: TelegramObject, data: Dict[str, Any]) -> str:
+        if Locale is None:  # pragma: no cover
+            raise RuntimeError(
+                f"{type(self).__name__} can be used only when Babel installed\n"
+                "Just install Babel (`pip install Babel`) "
+                "or aiogram with i18n support (`pip install aiogram[i18n]`)"
+            )
 
-class ACLMiddleware(I18nMiddleware):
-    async def get_user_locale(self, action, args):
-        user = types.User.get_current()
-        return await get_lang(user.id) or user.locale
+        event_from_user: Optional[User] = data.get("event_from_user", None)
+        if event_from_user is None or event_from_user.language_code is None:
+            return self.i18n.default_locale
+        try:
+            locale = Locale.parse(event_from_user.language_code, sep="-")
+        except UnknownLocaleError:
+            return self.i18n.default_locale
 
-
-def setup_lang_middleware(dp):
-    i18n = ACLMiddleware(I18N_DOMAIN, LOCALES_DIR)
-    dp.middleware.setup(i18n)
-    return i18n
+        if locale.language not in self.i18n.available_locales:
+            return self.i18n.default_locale
+        return locale.language

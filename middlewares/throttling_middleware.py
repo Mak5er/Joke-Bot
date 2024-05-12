@@ -1,78 +1,28 @@
-import asyncio
+from typing import Any, Awaitable, Callable, Dict
 
-from aiogram import Dispatcher
-from aiogram import types
-from aiogram.dispatcher import DEFAULT_RATE_LIMIT
-from aiogram.dispatcher.handler import CancelHandler, current_handler
-from aiogram.dispatcher.middlewares import BaseMiddleware
-from aiogram.utils.exceptions import Throttled
+from aiogram import BaseMiddleware
+from aiogram.dispatcher.flags import get_flag
+from aiogram.types import Message
+from cachetools import TTLCache
 
 
-def rate_limit(limit: int, key=None):
-    def decorator(func):
-        setattr(func, 'throttling_rate_limit', limit)
-        if key:
-            setattr(func, 'throttling_key', key)
-        return func
+class AntifloodMiddleware(BaseMiddleware):
+    caches = {
+        "another_flag": TTLCache(maxsize=10_000, ttl=2),
+        "default": TTLCache(maxsize=10_000, ttl=1)
+    }
 
-    return decorator
-
-
-class ThrottlingMiddleware(BaseMiddleware):
-
-    def __init__(self, limit=DEFAULT_RATE_LIMIT, key_prefix='antiflood_'):
-        self.rate_limit = limit
-        self.prefix = key_prefix
-        super(ThrottlingMiddleware, self).__init__()
-
-    async def on_process_message(self, message: types.Message, data: dict):
-        handler = current_handler.get()
-        dispatcher = Dispatcher.get_current()
-
-        if handler:
-            limit = getattr(handler, 'throttling_rate_limit', self.rate_limit)
-            key = getattr(handler, 'throttling_key', f"{self.prefix}_{handler.__name__}")
-
-        else:
-            limit = self.rate_limit
-            key = f"{self.prefix}_message"
-
-        try:
-            await dispatcher.throttle(key, rate=limit)
-
-        except Throttled as t:
-            await self.message_throttled(message, t)
-            raise CancelHandler()
-
-    async def on_process_callback_query(self, call: types.CallbackQuery, data: dict):
-        handler = current_handler.get()
-        dispatcher = Dispatcher.get_current()
-
-        if handler:
-            limit = getattr(handler, 'throttling_rate_limit', self.rate_limit)
-            key = getattr(handler, 'throttling_key', f"{self.prefix}_{handler.__name__}")
-
-        else:
-            limit = self.rate_limit
-            key = f"{self.prefix}_message"
-
-        try:
-            await dispatcher.throttle(key, rate=limit)
-
-        except Throttled as t:
-            await self.message_throttled(call.message, t)
-            raise CancelHandler()
-
-    async def message_throttled(self, message: types.Message, throttled: Throttled):
-
-        delta = throttled.rate - throttled.delta
-
-        await asyncio.sleep(delta)
-
-
-def setup_throttling_middleware(dp: Dispatcher):
-    dp.middleware.setup(ThrottlingMiddleware())
-
-
-def setup_throttling_middlewares(dp: Dispatcher):
-    setup_throttling_middleware(dp)
+    async def __call__(
+            self,
+            handler: Callable[[Message, Dict[str, Any]], Awaitable[Any]],
+            event: Message,
+            data: Dict[str, Any],
+    ) -> Any:
+        throttling_key = get_flag(handler=data, name="throttling_key", default="default")
+        if throttling_key is not None and throttling_key in self.caches:
+            chat_id = event.from_user.id
+            if chat_id in self.caches[throttling_key]:
+                return
+            else:
+                self.caches[throttling_key][chat_id] = None
+        return await handler(event, data)
