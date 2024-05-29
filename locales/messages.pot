@@ -1,0 +1,457 @@
+# Translations template for PROJECT.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2024-05-29 16:48+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: handlers/admin.py:108 handlers/admin.py:145 handlers/admin.py:195
+#: handlers/admin.py:289 handlers/admin.py:449 handlers/admin.py:486
+#: handlers/user.py:224 handlers/user.py:329 keyboards/inline_keyboards.py:61
+msgid "↩️Cancel"
+msgstr ""
+
+#: handlers/admin.py:235
+msgid "Enter in Conversation"
+msgstr ""
+
+#: handlers/admin.py:236
+msgid "Write as a bot"
+msgstr ""
+
+#: handlers/admin.py:237
+msgid "❌Ban"
+msgstr ""
+
+#: handlers/admin.py:238
+msgid "✅Unban"
+msgstr ""
+
+#: handlers/admin.py:239 handlers/admin.py:529 handlers/admin.py:535
+#: handlers/admin.py:551 keyboards/inline_keyboards.py:53
+#: keyboards/inline_keyboards.py:113 keyboards/inline_keyboards.py:125
+#: keyboards/inline_keyboards.py:133
+msgid "🔙Back"
+msgstr ""
+
+#: handlers/admin.py:268
+msgid "User not found!"
+msgstr ""
+
+#: handlers/admin.py:278
+msgid "Enter ban reason:"
+msgstr ""
+
+#: handlers/admin.py:440
+msgid "Please type your answer:"
+msgstr ""
+
+#: handlers/admin.py:460
+msgid ""
+"Your message <b>{message_id}</b> was seen!\n"
+"<b>Answer:</b> <code>{answer}</code>"
+msgstr ""
+
+#: handlers/admin.py:463
+msgid "Your answer sent!"
+msgstr ""
+
+#: handlers/admin.py:467 messages/bot_messages.py:253
+msgid "Something went wrong, see log for more information!"
+msgstr ""
+
+#: handlers/admin.py:477
+msgid "Please type message:"
+msgstr ""
+
+#: handlers/admin.py:517
+msgid ""
+"<b>Ideas for you:</b>\n"
+"\n"
+msgstr ""
+
+#: handlers/admin.py:538 messages/bot_messages.py:257
+msgid "There are no ideas for you."
+msgstr ""
+
+#: handlers/admin.py:550
+msgid "❌Delete"
+msgstr ""
+
+#: handlers/user.py:419 handlers/user.py:430
+msgid "Page "
+msgstr ""
+
+#: keyboards/inline_keyboards.py:10
+msgid "📝Add a joke"
+msgstr ""
+
+#: keyboards/inline_keyboards.py:12
+msgid "💬Mailing"
+msgstr ""
+
+#: keyboards/inline_keyboards.py:13
+msgid "🎭Joke of the day"
+msgstr ""
+
+#: keyboards/inline_keyboards.py:16
+msgid "📄View log"
+msgstr ""
+
+#: keyboards/inline_keyboards.py:17
+msgid "❌📄Delete log"
+msgstr ""
+
+#: keyboards/inline_keyboards.py:19
+msgid "👤Control User"
+msgstr ""
+
+#: keyboards/inline_keyboards.py:29
+msgid "🔀Random joke"
+msgstr ""
+
+#: keyboards/inline_keyboards.py:30
+msgid "🔖Select category"
+msgstr ""
+
+#: keyboards/inline_keyboards.py:39
+msgid "💵Money"
+msgstr ""
+
+#: keyboards/inline_keyboards.py:40
+msgid "👨‍👩‍👦‍👦Family"
+msgstr ""
+
+#: keyboards/inline_keyboards.py:42
+msgid "👱‍♀️Blondes"
+msgstr ""
+
+#: keyboards/inline_keyboards.py:44
+msgid "👵Mother-in-law"
+msgstr ""
+
+#: keyboards/inline_keyboards.py:45
+msgid "🏫School"
+msgstr ""
+
+#: keyboards/inline_keyboards.py:47
+msgid "👦Vovochka"
+msgstr ""
+
+#: keyboards/inline_keyboards.py:49
+msgid "🏥Medicine"
+msgstr ""
+
+#: keyboards/inline_keyboards.py:50
+msgid "🎓Students"
+msgstr ""
+
+#: keyboards/inline_keyboards.py:52
+msgid "🏢Work"
+msgstr ""
+
+#: keyboards/inline_keyboards.py:87 keyboards/inline_keyboards.py:102
+msgid "🔃Update rating"
+msgstr ""
+
+#: keyboards/inline_keyboards.py:103
+msgid "👀Viewed"
+msgstr ""
+
+#: keyboards/inline_keyboards.py:141
+msgid "Feedback💬"
+msgstr ""
+
+#: keyboards/inline_keyboards.py:149
+msgid "Answer💬"
+msgstr ""
+
+#: messages/bot_messages.py:5
+msgid ""
+"Hello <b>{name}</b>! I'm a bot with jokes.\n"
+"Full information on the bot /info\n"
+"List of commands /help"
+msgstr ""
+
+#: messages/bot_messages.py:11
+msgid ""
+"Hello, this is the admin panel.\n"
+"    \n"
+"🪪Number of bot users: <b>{user_count}</b>\n"
+"📱Number of active users: <b>{active_user_count}</b>\n"
+"📵Number of inactive users: <b>{inactive_user_count}</b>\n"
+"🃏Number of jokes in the database: <b>{joke_count}</b>\n"
+"📬Total number of jokes read: <b>{sent_count}</b>\n"
+"\n"
+"Admin commands:\n"
+"/ideas - list ideas from users\n"
+"/get_users - download table with all users info\n"
+"/system_info - get info about system"
+msgstr ""
+
+#: messages/bot_messages.py:30
+msgid ""
+"\n"
+"Hello <b>{username}</b>! You are an administrator, to see more "
+"information and controls, please type /admin.\n"
+"\n"
+"Statistics:\n"
+"📁Number of jokes in the database: <b>{joke_count}</b>\n"
+"📚Jokes read by you: <b>{joke_sent}</b>\n"
+"📬Total number of jokes read by everyone: <b>{sent_count}</b>\n"
+"\n"
+"Total referrals: <b>{refs_count}</b>\n"
+"Your ref link: <a href=\"{ref_url}\">{ref_url}</a>\n"
+"\n"
+"Bot site - <a href=\"https://anekdoty.pp.ua\">https://anekdoty.pp.ua</a>\n"
+"\n"
+"<b>If you want to offer an anecdote or ask a question, click the "
+"Feedback💬 button!</b>"
+msgstr ""
+
+#: messages/bot_messages.py:52
+msgid ""
+"\n"
+"Hello <b>{username}</b>! I am a bot where you can read jokes.\n"
+"\n"
+"Statistics:\n"
+"📁Number of jokes in the database: <b>{joke_count}</b>\n"
+"📚Jokes read by you: <b>{joke_sent}</b>\n"
+"📬Total number of jokes read by everyone: <b>{sent_count}</b>\n"
+"\n"
+"Total referrals: <b>{refs_count}</b>\n"
+"Your ref link: <a href=\"{ref_url}\">{ref_url}</a>\n"
+"\n"
+"Bot site - <a href=\"https://anekdoty.pp.ua\">https://anekdoty.pp.ua</a>\n"
+"\n"
+"<b>If you want to offer an anecdote or ask a question, click the "
+"Feedback💬 button!</b>"
+msgstr ""
+
+#: messages/bot_messages.py:74
+msgid ""
+"🤖 This is a bot with jokes. Here is a list of available commands:\n"
+"\n"
+"️/start - start interacting with the bot\n"
+"/joke - get a random joke\n"
+"/info - get information about the bot\n"
+"/find - find joke by id or text\n"
+"/language - change language\n"
+msgstr ""
+
+#: messages/bot_messages.py:85
+msgid "📊Rating: <b>{joke_rate}</b>"
+msgstr ""
+
+#: messages/bot_messages.py:89
+msgid "You 👍 this!"
+msgstr ""
+
+#: messages/bot_messages.py:93
+msgid "You 👎 this!"
+msgstr ""
+
+#: messages/bot_messages.py:97
+msgid "You revoked your vote!"
+msgstr ""
+
+#: messages/bot_messages.py:101
+msgid "🔃The rating is updated!"
+msgstr ""
+
+#: messages/bot_messages.py:105
+msgid "You have marked this joke as read!"
+msgstr ""
+
+#: messages/bot_messages.py:109
+msgid "You have already marked this joke as read!"
+msgstr ""
+
+#: messages/bot_messages.py:113
+msgid "Mailing is complete!"
+msgstr ""
+
+#: messages/bot_messages.py:117
+msgid "Starting mailing..."
+msgstr ""
+
+#: messages/bot_messages.py:121
+msgid "Click the button to get the joke."
+msgstr ""
+
+#: messages/bot_messages.py:125
+msgid "Unfortunately, all the jokes have already been sent to you."
+msgstr ""
+
+#: messages/bot_messages.py:129
+msgid ""
+"<b>Joke of the day:</b>\n"
+"\n"
+"{joke_text}"
+msgstr ""
+
+#: messages/bot_messages.py:133
+msgid ""
+"<b>{name}</b>, I don't understand you! Type /help to get a list of "
+"commands!\n"
+"    \n"
+"<b>If you want to offer an anecdote or ask a question, click the "
+"Feedback💬 button!</b>"
+msgstr ""
+
+#: messages/bot_messages.py:139
+msgid "This command cannot be used in a group!"
+msgstr ""
+
+#: messages/bot_messages.py:143
+msgid "Log deleted, starting to write a new one."
+msgstr ""
+
+#: messages/bot_messages.py:147
+msgid "Enter the message to send:"
+msgstr ""
+
+#: messages/bot_messages.py:151
+msgid "Action canceled"
+msgstr ""
+
+#: messages/bot_messages.py:155
+msgid "Enter a new joke:"
+msgstr ""
+
+#: messages/bot_messages.py:159
+msgid "The anecdote is given to the database."
+msgstr ""
+
+#: messages/bot_messages.py:163
+msgid ""
+"Hi! Thank you for adding me to <b>'{chat_title}'</b>\n"
+"For correct operation, please grant me administrator rights!\n"
+"Type /help to get a list of commands"
+msgstr ""
+
+#: messages/bot_messages.py:169
+msgid "Please choose your language!"
+msgstr ""
+
+#: messages/bot_messages.py:182
+msgid ""
+"<b>USER INFO</b>\n"
+"<b>Name</b>: {user_name}\n"
+"<b>ID</b>: {user_id}\n"
+"<b>Username</b>: {user_username}\n"
+"<b>Status</b>: {status}"
+msgstr ""
+
+#: messages/bot_messages.py:190
+msgid ""
+"🚫You have been banned, contact @mak5er for more information!\n"
+"Reason: {reason}"
+msgstr ""
+
+#: messages/bot_messages.py:194
+msgid "🎉You have been unbanned!"
+msgstr ""
+
+#: messages/bot_messages.py:198
+msgid "User {banned_user_id} successfully banned!"
+msgstr ""
+
+#: messages/bot_messages.py:202
+msgid "User {unbanned_user_id} successfully unbanned!"
+msgstr ""
+
+#: messages/bot_messages.py:206
+msgid ""
+"<b>New message</b> from user: <b>{user}</b>\n"
+"<b>Message:</b> <code>{feedback_message}</code>"
+msgstr ""
+
+#: messages/bot_messages.py:212
+msgid "Pick a joke:"
+msgstr ""
+
+#: messages/bot_messages.py:216
+msgid ""
+"<b>System information:</b>\n"
+"\n"
+"{pc_info}"
+msgstr ""
+
+#: messages/bot_messages.py:220
+msgid ""
+"\n"
+"<b>Operating System</b>: <i>{operating_system}</i>\n"
+"<b>OS Version</b>: <i>{os_version}</i>\n"
+"<b>Machine Name</b>: <i>{machine_name}</i>\n"
+"<b>Processor Architecture</b>: <i>{processor_architecture}</i>\n"
+"<b>Processor Model</b>: <i>{processor_model}</i>\n"
+"<b>Physical Cores</b>: <i>{physical_cores}</i>\n"
+"<b>Logical Cores</b>: <i>{logical_cores}</i>\n"
+"<b>Total Memory</b>: <i>{total_memory:.2f}</i> MB\n"
+"<b>Available Memory</b>: <i>{available_memory:.2f}</i> MB\n"
+"<b>Memory Usage</b>: <i>{memory_usage}</i>%\n"
+msgstr ""
+
+#: messages/bot_messages.py:237
+msgid "Search user by:"
+msgstr ""
+
+#: messages/bot_messages.py:241
+msgid "Type user {search}:"
+msgstr ""
+
+#: messages/bot_messages.py:245
+msgid "Action canceled!"
+msgstr ""
+
+#: messages/bot_messages.py:249
+msgid "Your message sent!"
+msgstr ""
+
+#: messages/bot_messages.py:261
+msgid "Idea deleted."
+msgstr ""
+
+#: messages/bot_messages.py:265
+msgid ""
+"Referral <b>{user_id}</b> has registered at your invitation!\n"
+"Total number of invitees: <b>{refs_count}</b>"
+msgstr ""
+
+#: messages/bot_messages.py:271
+msgid "Please enter your message:"
+msgstr ""
+
+#: messages/bot_messages.py:275
+msgid "Your message <b>{feedback_message_id}</b> sent!"
+msgstr ""
+
+#: messages/bot_messages.py:279
+msgid "Please select category:"
+msgstr ""
+
+#: messages/bot_messages.py:283
+msgid "Nothing was found."
+msgstr ""
+
+#: messages/bot_messages.py:287
+msgid "Type joke text or ID:"
+msgstr ""
+
+#: middlewares/ban_middleware.py:20 middlewares/ban_middleware.py:30
+msgid "You are banned please contact to @mak5er for more information!"
+msgstr ""
+

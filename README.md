@@ -1,4 +1,5 @@
 ![Joke-Bot](https://socialify.git.ci/Mak5er/Joke-Bot/image?description=1&font=Inter&language=1&name=1&pattern=Plus&theme=Auto)
+
 # Python Joke-Bot
 
 This code is a Python script for a Telegram bot. It utilizes the aiogram library for interacting with the Telegram Bot
@@ -35,13 +36,11 @@ Set up the necessary configuration by creating a  `.env`  file and defining the 
 - `admin_id` : The ID of the admin user.
 - `db_auth` : The authentication string for your PostgreSQL database.
 
-
 Example  `.env`  file:
 
     token=YOUR_TELEGRAM_BOT_TOKEN
     admin_id=YOUR_ADMIN_USER_ID
     db_auth=YOUR_POSTGRESQL_AUTH_STRING
-
 
 Set up a PostgreSQL database and update the  `db_auth`  variable in the  `.env`  file with the database authentication
 string.
@@ -51,7 +50,7 @@ Run the script using Python:
     python main.py
 
 Or using Docker:
-    
+
     docker compose up -d
 
 ### Database Tables

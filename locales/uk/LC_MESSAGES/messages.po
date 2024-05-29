@@ -1,30 +1,27 @@
-
+# Ukrainian translations for PROJECT.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version:  sease\n"
+"Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-05-03 14:34+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"POT-Creation-Date: 2024-05-29 16:48+0300\n"
+"PO-Revision-Date: 2024-05-12 17:00+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: en\n"
-"Language-Team: en <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Language: uk\n"
+"Language-Team: uk <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
-
-#: main.py:37
-msgid "I'm stopped!"
-msgstr ""
-
-#: main.py:41
-msgid "I'm launched!"
-msgstr ""
+"Generated-By: Babel 2.15.0\n"
 
 #: handlers/admin.py:108 handlers/admin.py:145 handlers/admin.py:195
-#: handlers/admin.py:289 handlers/admin.py:446 handlers/admin.py:483
-#: handlers/user.py:197 handlers/user.py:300 keyboards/inline_keyboards.py:51
+#: handlers/admin.py:289 handlers/admin.py:449 handlers/admin.py:486
+#: handlers/user.py:224 handlers/user.py:329 keyboards/inline_keyboards.py:61
 msgid "↩️Cancel"
 msgstr "↩️Скасувати"
 
@@ -44,10 +41,10 @@ msgstr "❌Забанити"
 msgid "✅Unban"
 msgstr "✅Розбанити"
 
-#: handlers/admin.py:239 handlers/admin.py:526 handlers/admin.py:532
-#: handlers/admin.py:548 keyboards/inline_keyboards.py:40
-#: keyboards/inline_keyboards.py:96 keyboards/inline_keyboards.py:105
-#: keyboards/inline_keyboards.py:113
+#: handlers/admin.py:239 handlers/admin.py:529 handlers/admin.py:535
+#: handlers/admin.py:551 keyboards/inline_keyboards.py:53
+#: keyboards/inline_keyboards.py:113 keyboards/inline_keyboards.py:125
+#: keyboards/inline_keyboards.py:133
 msgid "🔙Back"
 msgstr "🔙Назад"
 
@@ -59,11 +56,11 @@ msgstr "Користувача не знайдено!"
 msgid "Enter ban reason:"
 msgstr "Введіть причину бану:"
 
-#: handlers/admin.py:437
+#: handlers/admin.py:440
 msgid "Please type your answer:"
 msgstr "Будь ласка, напишіть свою відповідь:"
 
-#: handlers/admin.py:457
+#: handlers/admin.py:460
 msgid ""
 "Your message <b>{message_id}</b> was seen!\n"
 "<b>Answer:</b> <code>{answer}</code>"
@@ -71,19 +68,19 @@ msgstr ""
 "Ваше повідомлення <b>{message_id}</b> було переглянуто!\n"
 "<b>Відповідь:</b> <code>{answer}</code>"
 
-#: handlers/admin.py:460
+#: handlers/admin.py:463
 msgid "Your answer sent!"
 msgstr "Вашу відповідь надіслано!"
 
-#: handlers/admin.py:464 messages/bot_messages.py:256
+#: handlers/admin.py:467 messages/bot_messages.py:253
 msgid "Something went wrong, see log for more information!"
 msgstr "Щось пішло не так, дивіться лог для отримання додаткової інформації!"
 
-#: handlers/admin.py:474
+#: handlers/admin.py:477
 msgid "Please type message:"
 msgstr "Будь ласка, введіть своє повідомлення:"
 
-#: handlers/admin.py:514
+#: handlers/admin.py:517
 msgid ""
 "<b>Ideas for you:</b>\n"
 "\n"
@@ -91,99 +88,99 @@ msgstr ""
 "<b>Ідеї для вас:</b>\n"
 "\n"
 
-#: handlers/admin.py:535 messages/bot_messages.py:260
+#: handlers/admin.py:538 messages/bot_messages.py:257
 msgid "There are no ideas for you."
 msgstr "Немає жодних ідей для вас."
 
-#: handlers/admin.py:547
+#: handlers/admin.py:550
 msgid "❌Delete"
 msgstr "❌Видалити"
 
-#: handlers/user.py:381
+#: handlers/user.py:419 handlers/user.py:430
 msgid "Page "
 msgstr "Сторінка "
 
-#: keyboards/inline_keyboards.py:8
+#: keyboards/inline_keyboards.py:10
 msgid "📝Add a joke"
 msgstr "📝Додати анекдот"
 
-#: keyboards/inline_keyboards.py:9
+#: keyboards/inline_keyboards.py:12
 msgid "💬Mailing"
 msgstr "💬Розсилка"
 
-#: keyboards/inline_keyboards.py:10
+#: keyboards/inline_keyboards.py:13
 msgid "🎭Joke of the day"
 msgstr "🎭Анекдот дня"
 
-#: keyboards/inline_keyboards.py:11
+#: keyboards/inline_keyboards.py:16
 msgid "📄View log"
 msgstr "📄Переглянути лог"
 
-#: keyboards/inline_keyboards.py:12
+#: keyboards/inline_keyboards.py:17
 msgid "❌📄Delete log"
 msgstr "❌📄Видалити лог"
 
-#: keyboards/inline_keyboards.py:13
+#: keyboards/inline_keyboards.py:19
 msgid "👤Control User"
 msgstr "👤Керувати користувачами"
 
-#: keyboards/inline_keyboards.py:22
+#: keyboards/inline_keyboards.py:29
 msgid "🔀Random joke"
 msgstr "🔀Випадковий анекдот"
 
-#: keyboards/inline_keyboards.py:23
+#: keyboards/inline_keyboards.py:30
 msgid "🔖Select category"
 msgstr "🔖Обрати категорію"
 
-#: keyboards/inline_keyboards.py:31
+#: keyboards/inline_keyboards.py:39
 msgid "💵Money"
 msgstr "💵Гроші"
 
-#: keyboards/inline_keyboards.py:32
+#: keyboards/inline_keyboards.py:40
 msgid "👨‍👩‍👦‍👦Family"
 msgstr "👨‍👩‍👦‍👦Родина"
 
-#: keyboards/inline_keyboards.py:33
+#: keyboards/inline_keyboards.py:42
 msgid "👱‍♀️Blondes"
 msgstr "👱‍♀️Блондинки"
 
-#: keyboards/inline_keyboards.py:34
+#: keyboards/inline_keyboards.py:44
 msgid "👵Mother-in-law"
 msgstr "👵Теща"
 
-#: keyboards/inline_keyboards.py:35
+#: keyboards/inline_keyboards.py:45
 msgid "🏫School"
 msgstr "🏫Школа"
 
-#: keyboards/inline_keyboards.py:36
+#: keyboards/inline_keyboards.py:47
 msgid "👦Vovochka"
 msgstr "👦Вовочка"
 
-#: keyboards/inline_keyboards.py:37
+#: keyboards/inline_keyboards.py:49
 msgid "🏥Medicine"
 msgstr "🏥Медицина"
 
-#: keyboards/inline_keyboards.py:38
+#: keyboards/inline_keyboards.py:50
 msgid "🎓Students"
 msgstr "🎓Студенти"
 
-#: keyboards/inline_keyboards.py:39
+#: keyboards/inline_keyboards.py:52
 msgid "🏢Work"
 msgstr "🏢Робота"
 
-#: keyboards/inline_keyboards.py:70 keyboards/inline_keyboards.py:84
+#: keyboards/inline_keyboards.py:87 keyboards/inline_keyboards.py:102
 msgid "🔃Update rating"
 msgstr "🔃Оновити рейтинг"
 
-#: keyboards/inline_keyboards.py:86
+#: keyboards/inline_keyboards.py:103
 msgid "👀Viewed"
 msgstr "👀Переглянув"
 
-#: keyboards/inline_keyboards.py:120
+#: keyboards/inline_keyboards.py:141
 msgid "Feedback💬"
 msgstr "Зворотний зв'язок💬"
 
-#: keyboards/inline_keyboards.py:127
+#: keyboards/inline_keyboards.py:149
 msgid "Answer💬"
 msgstr "Відповісти💬"
 
@@ -302,80 +299,62 @@ msgid ""
 "️/start - start interacting with the bot\n"
 "/joke - get a random joke\n"
 "/info - get information about the bot\n"
-"\n"
-"The /start command is used to start interacting with the bot. After "
-"sending this command, the bot will be ready to accept other commands from"
-" the user.\n"
-"\n"
-"The /joke command allows you to get a random joke from the bot. When this"
-" command is called, the bot will respond with a randomly selected joke.\n"
-"\n"
-"The /info command allows you to get information about the bot. Here you "
-"can view bot statistics, information about the developer, and a link to "
-"invite a friend."
+"/find - find joke by id or text\n"
+"/language - change language\n"
 msgstr ""
 "🤖 Це бот з анекдотами. Ось список доступних команд:\n"
 "\n"
 "️/start - почати взаємодію з ботом\n"
 "/joke - отримати випадковий анекдот\n"
 "/info - отримати інформацію про бота\n"
-"\n"
-"Команда /start використовується для початку взаємодії з ботом. Після "
-"відправки цієї команди бот буде готовий приймати інші команди від "
-"користувача.\n"
-"\n"
-"Команда /joke дозволяє отримати від бота випадковий жарт. При виклику "
-"цієї команди бот відповість випадково вибраним жартом.\n"
-"\n"
-"Команда /info дозволяє отримати інформацію про бота. Тут ви можете "
-"переглянути статистику бота, інформацію про розробника та посилання для "
-"запрошення друга."
+"/find - знайти текст за Id або текстом\n"
+"/language - змінити мову\n"
 
-#: messages/bot_messages.py:88
+#: messages/bot_messages.py:85
 msgid "📊Rating: <b>{joke_rate}</b>"
 msgstr "📊Оцінка: <b>{joke_rate}</b>"
 
-#: messages/bot_messages.py:92
+#: messages/bot_messages.py:89
 msgid "You 👍 this!"
 msgstr "Ви 👍 це!"
 
-#: messages/bot_messages.py:96
+#: messages/bot_messages.py:93
 msgid "You 👎 this!"
 msgstr "Ви 👎 це!"
 
-#: messages/bot_messages.py:100
+#: messages/bot_messages.py:97
 msgid "You revoked your vote!"
 msgstr "Ви відкликали свій голос!"
 
-#: messages/bot_messages.py:104
+#: messages/bot_messages.py:101
 msgid "🔃The rating is updated!"
 msgstr "🔃Рейтинг оновлено!"
 
-#: messages/bot_messages.py:108
+#: messages/bot_messages.py:105
 msgid "You have marked this joke as read!"
 msgstr "Ви позначили цей анекдот як прочитаний!"
 
-#: messages/bot_messages.py:112
+#: messages/bot_messages.py:109
 msgid "You have already marked this joke as read!"
 msgstr "Ви вже позначали цей анекдот як прочитаний!"
 
-#: messages/bot_messages.py:116
+#: messages/bot_messages.py:113
 msgid "Mailing is complete!"
 msgstr "Розсилка завершена!"
 
-#: messages/bot_messages.py:120
+#: messages/bot_messages.py:117
 msgid "Starting mailing..."
 msgstr "Починаю розсилку..."
 
-#: messages/bot_messages.py:124
+#: messages/bot_messages.py:121
 msgid "Click the button to get the joke."
 msgstr "Натисніть кнопку, щоб отримати анекдот."
 
-#: messages/bot_messages.py:128
+#: messages/bot_messages.py:125
 msgid "Unfortunately, all the jokes have already been sent to you."
 msgstr "На жаль, всі анекдоти вже надіслані вам."
 
-#: messages/bot_messages.py:132
+#: messages/bot_messages.py:129
 msgid ""
 "<b>Joke of the day:</b>\n"
 "\n"
@@ -385,7 +364,7 @@ msgstr ""
 "\n"
 "{joke_text}"
 
-#: messages/bot_messages.py:136
+#: messages/bot_messages.py:133
 msgid ""
 "<b>{name}</b>, I don't understand you! Type /help to get a list of "
 "commands!\n"
@@ -400,31 +379,31 @@ msgstr ""
 "Зворотний зв'язок💬!</b>\n"
 "\n"
 
-#: messages/bot_messages.py:142
+#: messages/bot_messages.py:139
 msgid "This command cannot be used in a group!"
 msgstr "Цю команду не можна використовувати в групі!"
 
-#: messages/bot_messages.py:146
+#: messages/bot_messages.py:143
 msgid "Log deleted, starting to write a new one."
 msgstr "Лог видалено, починаю писати новий."
 
-#: messages/bot_messages.py:150
+#: messages/bot_messages.py:147
 msgid "Enter the message to send:"
 msgstr "Введіть повідомлення для відправки:"
 
-#: messages/bot_messages.py:154
+#: messages/bot_messages.py:151
 msgid "Action canceled"
 msgstr "Дію скасовано"
 
-#: messages/bot_messages.py:158
+#: messages/bot_messages.py:155
 msgid "Enter a new joke:"
 msgstr "Введіть новий анекдот:"
 
-#: messages/bot_messages.py:162
+#: messages/bot_messages.py:159
 msgid "The anecdote is given to the database."
 msgstr "Анекдот додано до бази даних."
 
-#: messages/bot_messages.py:166
+#: messages/bot_messages.py:163
 msgid ""
 "Hi! Thank you for adding me to <b>'{chat_title}'</b>\n"
 "For correct operation, please grant me administrator rights!\n"
@@ -434,11 +413,11 @@ msgstr ""
 "Для коректної роботи, будь ласка, надайте мені права адміністратора!\n"
 "Введіть /help, щоб отримати список команд"
 
-#: messages/bot_messages.py:172
+#: messages/bot_messages.py:169
 msgid "Please choose your language!"
 msgstr "Будь ласка, оберіть свою мову!"
 
-#: messages/bot_messages.py:185
+#: messages/bot_messages.py:182
 msgid ""
 "<b>USER INFO</b>\n"
 "<b>Name</b>: {user_name}\n"
@@ -452,7 +431,7 @@ msgstr ""
 "<i>Юзернейм</i>: <b>{user_username}</b>\n"
 "<i>Статус</i>: <b>{status}</b>"
 
-#: messages/bot_messages.py:193
+#: messages/bot_messages.py:190
 msgid ""
 "🚫You have been banned, contact @mak5er for more information!\n"
 "Reason: {reason}"
@@ -460,19 +439,19 @@ msgstr ""
 "🚫Вас було заблоковано, зверніться до @mak5er за додатковою інформацією!\n"
 "Причина: {reason}"
 
-#: messages/bot_messages.py:197
+#: messages/bot_messages.py:194
 msgid "🎉You have been unbanned!"
 msgstr "🎉Вас розблоковано!"
 
-#: messages/bot_messages.py:201
+#: messages/bot_messages.py:198
 msgid "User {banned_user_id} successfully banned!"
 msgstr "Користувач {banned_user_id} успішно забанений!"
 
-#: messages/bot_messages.py:205
+#: messages/bot_messages.py:202
 msgid "User {unbanned_user_id} successfully unbanned!"
 msgstr "Користувач {unbanned_user_id} успішно розбанений!"
 
-#: messages/bot_messages.py:209
+#: messages/bot_messages.py:206
 msgid ""
 "<b>New message</b> from user: <b>{user}</b>\n"
 "<b>Message:</b> <code>{feedback_message}</code>"
@@ -480,11 +459,11 @@ msgstr ""
 "<b>Нове повідомлення</b> від користувача: <b>{user}</b>\n"
 "<b>Повідомлення:</b> <code>{feedback_message}</code>"
 
-#: messages/bot_messages.py:215
+#: messages/bot_messages.py:212
 msgid "Pick a joke:"
 msgstr "Обери анекдот:"
 
-#: messages/bot_messages.py:219
+#: messages/bot_messages.py:216
 msgid ""
 "<b>System information:</b>\n"
 "\n"
@@ -494,7 +473,7 @@ msgstr ""
 "\n"
 "{pc_info}"
 
-#: messages/bot_messages.py:223
+#: messages/bot_messages.py:220
 msgid ""
 "\n"
 "<b>Operating System</b>: <i>{operating_system}</i>\n"
@@ -520,27 +499,27 @@ msgstr ""
 "<b>Доступна пам'ять</b>: <i>{available_memory:.2f}</i> МБ\n"
 "<b>Використання пам'яті</b>: <i>{memory_usage}</i>%\n"
 
-#: messages/bot_messages.py:240
+#: messages/bot_messages.py:237
 msgid "Search user by:"
 msgstr "Шукати користувача по:"
 
-#: messages/bot_messages.py:244
+#: messages/bot_messages.py:241
 msgid "Type user {search}:"
 msgstr "Введіть {search} користувача:"
 
-#: messages/bot_messages.py:248
+#: messages/bot_messages.py:245
 msgid "Action canceled!"
 msgstr "Дію скасовано"
 
-#: messages/bot_messages.py:252
+#: messages/bot_messages.py:249
 msgid "Your message sent!"
 msgstr "Ваше повідомлення надіслано!"
 
-#: messages/bot_messages.py:264
+#: messages/bot_messages.py:261
 msgid "Idea deleted."
 msgstr "Ідею видалено."
 
-#: messages/bot_messages.py:268
+#: messages/bot_messages.py:265
 msgid ""
 "Referral <b>{user_id}</b> has registered at your invitation!\n"
 "Total number of invitees: <b>{refs_count}</b>"
@@ -548,282 +527,291 @@ msgstr ""
 "Реферал <b>{user_id}</b> зареєструвався за вашим запрошенням!\n"
 "Загальна кількість запрошених: <b>{refs_count}</b>"
 
-#: messages/bot_messages.py:274
+#: messages/bot_messages.py:271
 msgid "Please enter your message:"
 msgstr "Будь ласка, введіть своє повідомлення:"
 
-#: messages/bot_messages.py:278
+#: messages/bot_messages.py:275
 msgid "Your message <b>{feedback_message_id}</b> sent!"
 msgstr "Ваше повідомлення <b>{feedback_message_id}</b> надіслано!"
 
-#: messages/bot_messages.py:282
+#: messages/bot_messages.py:279
 msgid "Please select category:"
 msgstr "Будьласка оберіть категорію:"
 
-#: messages/bot_messages.py:286
+#: messages/bot_messages.py:283
 msgid "Nothing was found."
 msgstr "Нічого не знайдено."
 
-#: messages/bot_messages.py:289
+#: messages/bot_messages.py:287
 msgid "Type joke text or ID:"
-msgstr "Ввдіть текст або ID анекдоту:"
+msgstr "Введіть текст або ID анекдоту:"
 
-#: venv/lib/python3.9/site-packages/click/_termui_impl.py:518
-msgid "{editor}: Editing failed"
-msgstr ""
+#: middlewares/ban_middleware.py:20 middlewares/ban_middleware.py:30
+msgid "You are banned please contact to @mak5er for more information!"
+msgstr "Ви заблоковані, зверніться до @mak5er за додатковою інформацією!\n"
 
-#: venv/lib/python3.9/site-packages/click/_termui_impl.py:522
-msgid "{editor}: Editing failed: {e}"
-msgstr ""
+#~ msgid ""
+#~ "Hello <b>{name}</b>! I'm a bot with jokes.\n"
+#~ "Full information on the bot /info\n"
+#~ "List of commands /help"
+#~ msgstr ""
+#~ "Привіт, <b>{name}</b>! Я бот з анекдотами.\n"
+#~ "Повна інформація про бота /info\n"
+#~ "Список команд /help"
 
-#: venv/lib/python3.9/site-packages/click/core.py:1120
-msgid "Aborted!"
-msgstr ""
+#~ msgid ""
+#~ "Привіт, <b>{name}</b>! Я бот з анекдотами.\n"
+#~ "Повна інформація про бота /info\n"
+#~ "Список команд /help"
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/core.py:1309
-#: venv/lib/python3.9/site-packages/click/decorators.py:559
-msgid "Show this message and exit."
-msgstr ""
+#~ msgid ""
+#~ "🤖 This is a bot with jokes. Here is a list of available commands:\n"
+#~ "\n"
+#~ "️/start - start interacting with the bot\n"
+#~ "/joke - get a random joke\n"
+#~ "/info - get information about the bot\n"
+#~ "\n"
+#~ "The /start command is used to "
+#~ "start interacting with the bot. After"
+#~ " sending this command, the bot will"
+#~ " be ready to accept other commands"
+#~ " from the user.\n"
+#~ "\n"
+#~ "The /joke command allows you to "
+#~ "get a random joke from the bot."
+#~ " When this command is called, the "
+#~ "bot will respond with a randomly "
+#~ "selected joke.\n"
+#~ "\n"
+#~ "The /info command allows you to "
+#~ "get information about the bot. Here "
+#~ "you can view bot statistics, information"
+#~ " about the developer, and a link "
+#~ "to invite a friend."
+#~ msgstr ""
+#~ "🤖 Це бот з анекдотами. Ось список доступних команд:\n"
+#~ "\n"
+#~ "️/start - почати взаємодію з ботом\n"
+#~ "/joke - отримати випадковий анекдот\n"
+#~ "/info - отримати інформацію про бота\n"
+#~ "\n"
+#~ "Команда /start використовується для початку"
+#~ " взаємодії з ботом. Після відправки "
+#~ "цієї команди бот буде готовий приймати"
+#~ " інші команди від користувача.\n"
+#~ "\n"
+#~ "Команда /joke дозволяє отримати від бота"
+#~ " випадковий жарт. При виклику цієї "
+#~ "команди бот відповість випадково вибраним "
+#~ "жартом.\n"
+#~ "\n"
+#~ "Команда /info дозволяє отримати інформацію "
+#~ "про бота. Тут ви можете переглянути "
+#~ "статистику бота, інформацію про розробника "
+#~ "та посилання для запрошення друга."
 
-#: venv/lib/python3.9/site-packages/click/core.py:1340
-#: venv/lib/python3.9/site-packages/click/core.py:1370
-msgid "(Deprecated) {text}"
-msgstr ""
+#~ msgid "{editor}: Editing failed"
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/core.py:1387
-msgid "Options"
-msgstr ""
+#~ msgid "{editor}: Editing failed: {e}"
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/core.py:1415
-msgid "Got unexpected extra argument ({args})"
-msgid_plural "Got unexpected extra arguments ({args})"
-msgstr[0] ""
-msgstr[1] ""
+#~ msgid "Aborted!"
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/core.py:1428
-msgid "DeprecationWarning: The command {name!r} is deprecated."
-msgstr ""
+#~ msgid "Show this message and exit."
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/core.py:1636
-msgid "Commands"
-msgstr ""
+#~ msgid "(Deprecated) {text}"
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/core.py:1668
-msgid "Missing command."
-msgstr ""
+#~ msgid "Options"
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/core.py:1746
-msgid "No such command {name!r}."
-msgstr ""
+#~ msgid "Got unexpected extra argument ({args})"
+#~ msgid_plural "Got unexpected extra arguments ({args})"
+#~ msgstr[0] ""
+#~ msgstr[1] ""
+#~ msgstr[2] ""
 
-#: venv/lib/python3.9/site-packages/click/core.py:2310
-msgid "Value must be an iterable."
-msgstr ""
+#~ msgid "DeprecationWarning: The command {name!r} is deprecated."
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/core.py:2333
-msgid "Takes {nargs} values but 1 was given."
-msgid_plural "Takes {nargs} values but {len} were given."
-msgstr[0] ""
-msgstr[1] ""
+#~ msgid "Commands"
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/core.py:2778
-msgid "env var: {var}"
-msgstr ""
+#~ msgid "Missing command."
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/core.py:2808
-msgid "(dynamic)"
-msgstr ""
+#~ msgid "No such command {name!r}."
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/core.py:2821
-msgid "default: {default}"
-msgstr ""
+#~ msgid "Value must be an iterable."
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/core.py:2834
-msgid "required"
-msgstr ""
+#~ msgid "Takes {nargs} values but 1 was given."
+#~ msgid_plural "Takes {nargs} values but {len} were given."
+#~ msgstr[0] ""
+#~ msgstr[1] ""
+#~ msgstr[2] ""
 
-#: venv/lib/python3.9/site-packages/click/decorators.py:465
-#, python-format
-msgid "%(prog)s, version %(version)s"
-msgstr ""
+#~ msgid "env var: {var}"
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/decorators.py:528
-msgid "Show the version and exit."
-msgstr ""
+#~ msgid "(dynamic)"
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/exceptions.py:44
-#: venv/lib/python3.9/site-packages/click/exceptions.py:80
-msgid "Error: {message}"
-msgstr ""
+#~ msgid "default: {default}"
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/exceptions.py:72
-msgid "Try '{command} {option}' for help."
-msgstr ""
+#~ msgid "required"
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/exceptions.py:121
-msgid "Invalid value: {message}"
-msgstr ""
+#~ msgid "%(prog)s, version %(version)s"
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/exceptions.py:123
-msgid "Invalid value for {param_hint}: {message}"
-msgstr ""
+#~ msgid "Show the version and exit."
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/exceptions.py:179
-msgid "Missing argument"
-msgstr ""
+#~ msgid "Error: {message}"
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/exceptions.py:181
-msgid "Missing option"
-msgstr ""
+#~ msgid "Try '{command} {option}' for help."
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/exceptions.py:183
-msgid "Missing parameter"
-msgstr ""
+#~ msgid "Invalid value: {message}"
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/exceptions.py:185
-msgid "Missing {param_type}"
-msgstr ""
+#~ msgid "Invalid value for {param_hint}: {message}"
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/exceptions.py:192
-msgid "Missing parameter: {param_name}"
-msgstr ""
+#~ msgid "Missing argument"
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/exceptions.py:212
-msgid "No such option: {name}"
-msgstr ""
+#~ msgid "Missing option"
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/exceptions.py:226
-msgid "Did you mean {possibility}?"
-msgid_plural "(Possible options: {possibilities})"
-msgstr[0] ""
-msgstr[1] ""
+#~ msgid "Missing parameter"
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/exceptions.py:262
-msgid "unknown error"
-msgstr ""
+#~ msgid "Missing {param_type}"
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/exceptions.py:269
-msgid "Could not open file {filename!r}: {message}"
-msgstr ""
+#~ msgid "Missing parameter: {param_name}"
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/parser.py:231
-msgid "Argument {name!r} takes {nargs} values."
-msgstr ""
+#~ msgid "No such option: {name}"
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/parser.py:413
-msgid "Option {name!r} does not take a value."
-msgstr ""
+#~ msgid "Did you mean {possibility}?"
+#~ msgid_plural "(Possible options: {possibilities})"
+#~ msgstr[0] ""
+#~ msgstr[1] ""
+#~ msgstr[2] ""
 
-#: venv/lib/python3.9/site-packages/click/parser.py:473
-msgid "Option {name!r} requires an argument."
-msgid_plural "Option {name!r} requires {nargs} arguments."
-msgstr[0] ""
-msgstr[1] ""
+#~ msgid "unknown error"
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/shell_completion.py:318
-msgid "Shell completion is not supported for Bash versions older than 4.4."
-msgstr ""
+#~ msgid "Could not open file {filename!r}: {message}"
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/shell_completion.py:326
-msgid "Couldn't detect Bash version, shell completion is not supported."
-msgstr ""
+#~ msgid "Argument {name!r} takes {nargs} values."
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/termui.py:158
-msgid "Repeat for confirmation"
-msgstr ""
+#~ msgid "Option {name!r} does not take a value."
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/termui.py:174
-msgid "Error: The value you entered was invalid."
-msgstr ""
+#~ msgid "Option {name!r} requires an argument."
+#~ msgid_plural "Option {name!r} requires {nargs} arguments."
+#~ msgstr[0] ""
+#~ msgstr[1] ""
+#~ msgstr[2] ""
 
-#: venv/lib/python3.9/site-packages/click/termui.py:176
-msgid "Error: {e.message}"
-msgstr ""
+#~ msgid "Shell completion is not supported for Bash versions older than 4.4."
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/termui.py:187
-msgid "Error: The two entered values do not match."
-msgstr ""
+#~ msgid "Couldn't detect Bash version, shell completion is not supported."
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/termui.py:243
-msgid "Error: invalid input"
-msgstr ""
+#~ msgid "Repeat for confirmation"
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/termui.py:773
-msgid "Press any key to continue..."
-msgstr ""
+#~ msgid "Error: The value you entered was invalid."
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:266
-msgid ""
-"Choose from:\n"
-"\t{choices}"
-msgstr ""
+#~ msgid "Error: {e.message}"
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:300
-msgid "{value!r} is not {choice}."
-msgid_plural "{value!r} is not one of {choices}."
-msgstr[0] ""
-msgstr[1] ""
+#~ msgid "Error: The two entered values do not match."
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:394
-msgid "{value!r} does not match the format {format}."
-msgid_plural "{value!r} does not match the formats {formats}."
-msgstr[0] ""
-msgstr[1] ""
+#~ msgid "Error: invalid input"
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:414
-msgid "{value!r} is not a valid {number_type}."
-msgstr ""
+#~ msgid "Press any key to continue..."
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:470
-msgid "{value} is not in the range {range}."
-msgstr ""
+#~ msgid ""
+#~ "Choose from:\n"
+#~ "\t{choices}"
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:611
-msgid "{value!r} is not a valid boolean."
-msgstr ""
+#~ msgid "{value!r} is not {choice}."
+#~ msgid_plural "{value!r} is not one of {choices}."
+#~ msgstr[0] ""
+#~ msgstr[1] ""
+#~ msgstr[2] ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:635
-msgid "{value!r} is not a valid UUID."
-msgstr ""
+#~ msgid "{value!r} does not match the format {format}."
+#~ msgid_plural "{value!r} does not match the formats {formats}."
+#~ msgstr[0] ""
+#~ msgstr[1] ""
+#~ msgstr[2] ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:822
-msgid "file"
-msgstr ""
+#~ msgid "{value!r} is not a valid {number_type}."
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:824
-msgid "directory"
-msgstr ""
+#~ msgid "{value} is not in the range {range}."
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:826
-msgid "path"
-msgstr ""
+#~ msgid "{value!r} is not a valid boolean."
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:877
-msgid "{name} {filename!r} does not exist."
-msgstr ""
+#~ msgid "{value!r} is not a valid UUID."
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:886
-msgid "{name} {filename!r} is a file."
-msgstr ""
+#~ msgid "file"
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:894
-msgid "{name} '{filename}' is a directory."
-msgstr ""
+#~ msgid "directory"
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:903
-msgid "{name} {filename!r} is not readable."
-msgstr ""
+#~ msgid "path"
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:912
-msgid "{name} {filename!r} is not writable."
-msgstr ""
+#~ msgid "{name} {filename!r} does not exist."
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:921
-msgid "{name} {filename!r} is not executable."
-msgstr ""
+#~ msgid "{name} {filename!r} is a file."
+#~ msgstr ""
 
-#: venv/lib/python3.9/site-packages/click/types.py:987
-msgid "{len_type} values are required, but {len_value} was given."
-msgid_plural "{len_type} values are required, but {len_value} were given."
-msgstr[0] ""
-msgstr[1] ""
+#~ msgid "{name} '{filename}' is a directory."
+#~ msgstr ""
+
+#~ msgid "{name} {filename!r} is not readable."
+#~ msgstr ""
+
+#~ msgid "{name} {filename!r} is not writable."
+#~ msgstr ""
+
+#~ msgid "{name} {filename!r} is not executable."
+#~ msgstr ""
+
+#~ msgid "{len_type} values are required, but {len_value} was given."
+#~ msgid_plural "{len_type} values are required, but {len_value} were given."
+#~ msgstr[0] ""
+#~ msgstr[1] ""
+#~ msgstr[2] ""
+

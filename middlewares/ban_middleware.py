@@ -1,7 +1,7 @@
-from aiogram import Dispatcher
-from aiogram.dispatcher.handler import CancelHandler
-from aiogram.dispatcher.middlewares import BaseMiddleware
+from aiogram import BaseMiddleware, Dispatcher
 from aiogram.types import Message, CallbackQuery, InlineQuery
+from main import _
+import asyncio
 
 from services import DataBase
 
@@ -9,36 +9,41 @@ db = DataBase()
 
 
 class UserBannedMiddleware(BaseMiddleware):
-    async def on_process_message(self, message: Message, data: dict):
+
+    async def on_pre_process_message(self, message: Message, data: dict):
         try:
-            user = await db.status(message.from_user.id)
+            user_status = await db.status(message.from_user.id)
         except:
-            user = 'active'
-
-        if user == 'ban':
+            user_status = 'active'
+        if user_status == 'ban':
             if message.chat.type == 'private':
-                await message.answer(text='<b>You are banned please contact to @mak5er for more information!</b>',
-                                     parse_mode="HTML")
-            raise CancelHandler
+                await message.answer(_('You are banned please contact to @mak5er for more information!'),
+                                     parse_mode='HTML')
+            raise asyncio.CancelledError
 
-    async def on_process_callback_query(self, call: CallbackQuery, data: dict):
-        user = await db.status(call.from_user.id)
-        if user == 'ban':
-            await call.answer(
-                text='You are banned please contact to @mak5er for more information!',
-                show_alert=True
-            )
-            raise CancelHandler
+    async def on_pre_process_callback_query(self, callback_query: CallbackQuery, data: dict):
+        try:
+            user_status = await db.status(callback_query.from_user.id)
+        except:
+            user_status = 'active'
+        if user_status == 'ban':
+            await callback_query.answer(_('You are banned please contact to @mak5er for more information!'),
+                                        show_alert=True)
+            raise asyncio.CancelledError
 
-    async def on_process_inline_query(self, query: InlineQuery, data: dict):
-        user = await db.status(query.from_user.id)
-        if user == 'ban':
-            raise CancelHandler
+    async def on_pre_process_inline_query(self, inline_query: InlineQuery, data: dict):
+        try:
+            user_status = await db.status(inline_query.from_user.id)
+        except:
+            user_status = 'active'
+        if user_status == 'ban':
+            raise asyncio.CancelledError
 
-
-def setup_ban_middleware(dp: Dispatcher):
-    dp.middleware.setup(UserBannedMiddleware())
-
-
-def setup_ban_middlewares(dp: Dispatcher):
-    setup_ban_middleware(dp)
+    async def __call__(self, handler, event, data):
+        if isinstance(event, Message):
+            await self.on_pre_process_message(event, data)
+        elif isinstance(event, CallbackQuery):
+            await self.on_pre_process_callback_query(event, data)
+        elif isinstance(event, InlineQuery):
+            await self.on_pre_process_inline_query(event, data)
+        return await handler(event, data)
