@@ -3,7 +3,6 @@ APScheduler~=3.10.4
 pandas~=2.2.1
 python-dotenv~=1.0.1
 requests
-Flask
 openpyxl
 psutil~=5.9.8
 py-cpuinfo~=9.0.0

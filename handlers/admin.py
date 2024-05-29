@@ -406,7 +406,7 @@ async def export_users_data(message: types.Message):
             print(e)
             if str(e) == 'Chat not found':
                 # Handle ChatNotFound exception
-                """await db.delete_user(chat_id)"""
+                await db.delete_user(chat_id)
 
             # Handle other exceptions as needed
             print(f"An error occurred: {str(e)} Chat ID: {chat_id}")

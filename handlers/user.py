@@ -200,7 +200,6 @@ async def cmd_ping(message: types.Message):
 @user_router.callback_query(F.data == "feedback")
 async def feedback_handler(call: types.CallbackQuery, state: FSMContext):
     await bot.send_chat_action(call.message.chat.id, "typing")
-    await call.message.delete()
     await call.message.answer(bm.please_enter_message(), reply_markup=kb.cancel_keyboard())
     await state.set_state(GiveFeedback.feedback)
     await call.answer()
@@ -351,8 +350,7 @@ async def find_jokes(message: types.Message, state: FSMContext):
 
 
 @user_router.callback_query(F.data.startswith('joke_'))
-async def show_joke(call: types.CallbackQuery, state: FSMContext):
-    await state.clear()
+async def show_joke(call: types.CallbackQuery):
     user_id = call.from_user.id
 
     tag = call.data.split('_')[1]
