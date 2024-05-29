@@ -1,2 +1,3 @@
-from .language_middleware import ConstI18nMiddleware
+from .language_middleware import My18nMiddleware
 from .throttling_middleware import ThrottlingMiddleware
+from .ban_middleware import UserBannedMiddleware

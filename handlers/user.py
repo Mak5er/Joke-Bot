@@ -1,28 +1,36 @@
 import asyncio
 import logging
+from aiogram import types, Router, F
+from aiogram.fsm.context import FSMContext
+from aiogram.filters import Command, CommandObject, CommandStart
+from aiogram.utils.keyboard import InlineKeyboardBuilder
 
-from aiogram import types
-from aiogram.contrib.fsm_storage.memory import MemoryStorage
-from aiogram.dispatcher import FSMContext
-from aiogram.dispatcher.filters.state import StatesGroup, State
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardRemove
+from filters import ChatTypeF
+from aiogram.fsm.state import StatesGroup, State
+from aiogram.types import InlineKeyboardButton, ReplyKeyboardRemove
+
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.cron import CronTrigger
 from ping3 import ping
 
 from config import *
 from keyboards import inline_keyboards as kb
-from main import dp, bot, _, send_analytics
+from main import send_analytics, bot, _
 from messages import bot_messages as bm
 from services import DataBase
 
-storage = MemoryStorage()
-
 db = DataBase()
+
+user_router = Router()
 
 
 class FindJoke(StatesGroup):
     find_joke = State()
+    jokes_list = State()
+
+
+class GiveFeedback(StatesGroup):
+    feedback = State()
 
 
 async def update_info(message: types.Message):
@@ -37,7 +45,7 @@ async def update_info(message: types.Message):
         await db.add_users(user_id, user_name, user_username, "private", "uk", 'active', referrer_id)
 
 
-@dp.message_handler(content_types=['new_chat_members'])
+@user_router.message(ChatTypeF('group'), F.new_chat_member)
 async def send_welcome(message: types.Message):
     for user in message.new_chat_members:
         if user.is_bot and user.id == bot.id:
@@ -59,32 +67,34 @@ async def send_welcome(message: types.Message):
                 parse_mode="HTML")
 
 
-@rate_limit(1)
-@dp.message_handler(commands=['start'])
-async def send_welcome(message: types.Message):
+@user_router.message(CommandStart())
+async def send_welcome(message: types.Message, command: CommandObject):
     user_id = message.from_user.id
     user_name = message.from_user.full_name
     user_username = message.from_user.username
     user_exist = await db.user_exist(user_id)
 
-    await dp.bot.send_chat_action(message.chat.id, "typing")
-    logging.info(f"User action: /start (User ID: {user_id})")
+    await bot.send_chat_action(message.chat.id, "typing")
 
     await message.reply(bm.welcome_message(user_name))
+
     await message.answer(bm.pres_button(),
                          reply_markup=kb.random_keyboard())
 
-    if 'ref' in message.get_args().lower():
-        referrer_id = message.get_args().split('ref')[1]
-        if referrer_id != '':
-            if not user_exist:
-                await db.add_users(user_id, user_name, user_username, "private", "uk", 'user', referrer_id)
-                refs_count = await db.refs_count(referrer_id)
-                try:
-                    await bot.send_message(chat_id=referrer_id, text=bm.refferal_joined(user_id, refs_count),
-                                           parse_mode='HTML')
-                except Exception as e:
-                    print(str(e))
+    args = command.args
+    if args is not None:
+
+        if 'ref' in args:
+            referrer_id = args.split('ref')[1]
+            if referrer_id != '':
+                if not user_exist:
+                    await db.add_users(user_id, user_name, user_username, "private", "uk", 'user', referrer_id)
+                    refs_count = await db.refs_count(referrer_id)
+                    try:
+                        await bot.send_message(chat_id=referrer_id, text=bm.refferal_joined(user_id, refs_count),
+                                               parse_mode='HTML')
+                    except Exception as e:
+                        print(str(e))
 
     await update_info(message)
 
@@ -92,36 +102,36 @@ async def send_welcome(message: types.Message):
                          user_lang_code=message.from_user.language_code,
                          action_name='start')
 
+    logging.info(f"User action: /start (User ID: {user_id})")
 
-@rate_limit(1)
-@dp.message_handler(commands=['language'])
+
+@user_router.message(Command('language'))
 async def change_lang(message: types.Message):
     user_id = message.from_user.id
-
     await bot.send_chat_action(user_id, 'typing')
-    await asyncio.sleep(0.5)
 
     await message.reply(bm.please_choose(),
-                        reply_markup=kb.lang_keyboard, parse_mode="HTML")
+                        reply_markup=kb.lang_keyboard(), parse_mode="HTML")
 
     await send_analytics(user_id=user_id, user_lang_code=message.from_user.language_code, action_name='change_language')
 
 
-@dp.callback_query_handler(lambda call: call.data.startswith('lang_'))
+@user_router.callback_query(F.data.startswith('lang_'))
 async def language_callback(call: types.CallbackQuery):
     user_id = call.from_user.id
     language = call.data.split('_')[1]
-    await bot.send_chat_action(user_id, 'typing')
-    await asyncio.sleep(0.5)
     await call.message.edit_text(text=bm.choose_lan(language))
 
     await db.set_language(user_id, language)
+    await call.answer()
+
     await update_info(call.message)
 
 
-@dp.message_handler(commands=['info'])
+@user_router.message(Command('info'))
 async def info(message: types.Message):
-    await dp.bot.send_chat_action(message.chat.id, "typing")
+    await bot.send_chat_action(message.chat.id, "typing")
+
     user_id = message.from_user.id
 
     table_name = f"jokes_uk"
@@ -143,10 +153,9 @@ async def info(message: types.Message):
     await send_analytics(user_id=user_id, user_lang_code=message.from_user.language_code, action_name='info')
 
 
-@rate_limit(1)
-@dp.message_handler(commands=['help'])
+@user_router.message(Command('help'))
 async def send_help(message: types.Message):
-    await dp.bot.send_chat_action(message.chat.id, "typing")
+    await bot.send_chat_action(message.chat.id, "typing")
 
     user_id = message.from_user.id
 
@@ -158,11 +167,9 @@ async def send_help(message: types.Message):
     await send_analytics(user_id=user_id, user_lang_code=message.from_user.language_code, action_name='help')
 
 
-
-@dp.message_handler(commands=['joke'])
-@rate_limit(1)
+@user_router.message(Command('joke'))
 async def handle_joke(message: types.Message):
-    await dp.bot.send_chat_action(message.chat.id, "typing")
+    await bot.send_chat_action(message.chat.id, "typing")
 
     user_id = message.from_user.id
 
@@ -171,12 +178,11 @@ async def handle_joke(message: types.Message):
     await message.reply(bm.pres_button(),
                         reply_markup=kb.random_keyboard())
     await update_info(message)
-    
+
     await send_analytics(user_id=user_id, user_lang_code=message.from_user.language_code, action_name='joke_command')
 
 
-
-@dp.message_handler(commands=['ping'])
+@user_router.message(Command('ping'))
 async def cmd_ping(message: types.Message):
     try:
         response_time = ping("api.telegram.org", unit='ms')
@@ -186,24 +192,23 @@ async def cmd_ping(message: types.Message):
             print("Сервер недоступний")
     except Exception as e:
         return str(e)
-    
-    await send_analytics(user_id=message.from_user.id, user_lang_code=message.from_user.language_code, action_name='check_ping')
+
+    await send_analytics(user_id=message.from_user.id, user_lang_code=message.from_user.language_code,
+                         action_name='check_ping')
 
 
-
-@dp.callback_query_handler(lambda call: call.data == 'feedback')
-@rate_limit(1)
-async def feedback_handler(call: types.CallbackQuery):
-    await update_info(call.message)
+@user_router.callback_query(F.data == "feedback")
+async def feedback_handler(call: types.CallbackQuery, state: FSMContext):
+    await bot.send_chat_action(call.message.chat.id, "typing")
     await call.message.delete()
     await call.message.answer(bm.please_enter_message(), reply_markup=kb.cancel_keyboard())
-    await dp.current_state().set_state("send_feedback")
+    await state.set_state(GiveFeedback.feedback)
+    await call.answer()
     await update_info(call.message)
     await send_analytics(user_id=call.from_user.id, user_lang_code=call.from_user.language_code, action_name='info')
 
 
-
-@dp.message_handler(state="send_feedback")
+@user_router.message(GiveFeedback.feedback)
 async def feedback(message: types.Message, state: FSMContext):
     feedback_message = message.text
     feedback_message_id = message.message_id
@@ -215,7 +220,7 @@ async def feedback(message: types.Message, state: FSMContext):
         await bot.send_message(message.chat.id,
                                bm.action_canceled(),
                                reply_markup=types.ReplyKeyboardRemove())
-        await state.finish()
+        await state.clear()
         await info(message)
         return
 
@@ -224,7 +229,7 @@ async def feedback(message: types.Message, state: FSMContext):
     else:
         user = user_id
 
-    await state.finish()
+    await state.clear()
 
     await db.add_idea(feedback_message)
 
@@ -238,19 +243,19 @@ async def feedback(message: types.Message, state: FSMContext):
     await update_info(message)
 
 
-@dp.callback_query_handler(lambda call: call.data == "select_category")
+@user_router.callback_query(F.data == "select_category")
 async def select_category(call):
     await call.message.edit_text(text=bm.select_category(),
                                  reply_markup=kb.category_keyboard())
 
 
-@dp.callback_query_handler(lambda call: call.data == "back_to_random")
+@user_router.callback_query(F.data == "back_to_random")
 async def back_to_random(call):
     await call.message.edit_text(bm.pres_button(), reply_markup=kb.random_keyboard())
 
 
 async def send_joke(user_id, message, result):
-    await dp.bot.send_chat_action(message.chat.id, "typing")
+    await bot.send_chat_action(message.chat.id, "typing")
 
     if not result:
         await bot.send_message(user_id, bm.all_send())
@@ -284,17 +289,17 @@ async def send_joke(user_id, message, result):
     await update_info(message)
 
 
-@dp.callback_query_handler(lambda call: call.data.startswith('joke:'))
+@user_router.callback_query(F.data.startswith('joke:'))
 async def send_category_joke_pivate(call):
     tag = call.data.split(':')[1]
     user_id = call.from_user.id
     result = await db.get_tagged_joke(user_id, tag)
     await send_joke(user_id, call.message, result)
-    await send_analytics(user_id=user_id, user_lang_code=call.from_user.language_code, action_name=f'get_joke_by_category_{tag}')
+    await send_analytics(user_id=user_id, user_lang_code=call.from_user.language_code,
+                         action_name=f'get_joke_by_category_{tag}')
 
 
-
-@dp.callback_query_handler(lambda call: call.data == 'random_joke')
+@user_router.callback_query(F.data == 'random_joke')
 async def send_joke_private(call):
     user_id = call.from_user.id
     result = await db.get_joke(user_id)
@@ -302,18 +307,16 @@ async def send_joke_private(call):
     await send_analytics(user_id=user_id, user_lang_code=call.from_user.language_code, action_name='get_joke')
 
 
-
-@dp.message_handler(commands=['find'])
-@rate_limit(1)
-async def return_find_menu(message: types.Message):
-    await dp.bot.send_chat_action(message.chat.id, "typing")
+@user_router.message(Command('find'))
+async def return_find_menu(message: types.Message, state: FSMContext):
+    await bot.send_chat_action(message.chat.id, "typing")
     await message.reply(bm.type_joke_text_or_id(), reply_markup=kb.cancel_keyboard())
-    await FindJoke.find_joke.set()
+    await state.set_state(FindJoke.find_joke)
 
 
-@dp.message_handler(state=FindJoke.find_joke)
+@user_router.message(FindJoke.find_joke)
 async def find_jokes(message: types.Message, state: FSMContext):
-    await state.finish()
+    await state.clear()
     user_id = message.from_user.id
 
     answer = message.text
@@ -335,21 +338,21 @@ async def find_jokes(message: types.Message, state: FSMContext):
         await bot.send_message(user_id, bm.nothing_found())
         return
 
-    await create_joke_list(message, result, state)
-    
+    await state.update_data(jokes=result)
+
+    clock = await bot.send_message(message.chat.id, '⏳', reply_markup=ReplyKeyboardRemove())
+
+    await bot.delete_message(message.chat.id, clock.message_id)
+
+    # Start the dialog for pagination
+    await show_joke_page(message, 0, state)
+
     await send_analytics(user_id=user_id, user_lang_code=message.from_user.language_code, action_name='find_joke')
 
 
-
-async def create_joke_list(message: types.Message, result: list, state: FSMContext):
-    await state.update_data(jokes=result)
-    page_number = 0
-
-    await show_joke_page(message, page_number, state)
-
-
-@dp.callback_query_handler(lambda call: call.data.startswith('joke_'))
+@user_router.callback_query(F.data.startswith('joke_'))
 async def show_joke(call: types.CallbackQuery, state: FSMContext):
+    await state.clear()
     user_id = call.from_user.id
 
     tag = call.data.split('_')[1]
@@ -379,63 +382,70 @@ async def show_joke(call: types.CallbackQuery, state: FSMContext):
     await call.message.answer(f"ID: {joke_id}")
     await call.message.answer(joke, reply_markup=keyboard_type)
     await db.seen_joke(joke_id, user_id)
-    print(user_id)
+    await call.answer()
     logging.info(f"User action: Sent joke (User ID: {user_id}, Joke ID: {joke_id})")
 
 
-@dp.callback_query_handler(lambda call: call.data.startswith('page_'))
+@user_router.callback_query(F.data.startswith('page_'))
 async def jokes_pagination(call: types.CallbackQuery, state: FSMContext):
     page_number = int(call.data.split('_')[1])
 
     await show_joke_page(call.message, page_number, state)
+    await call.answer()
 
     await asyncio.sleep(600)
-    await call.message.delete()
-    await state.finish()
+    await state.clear()
 
 
 async def show_joke_page(message: types.Message, page_number: int, state: FSMContext):
-    async with state.proxy() as data:
-        jokes = data.get('jokes')
+    data = await state.get_data()
 
+    jokes = data.get("jokes", [])  # Retrieve jokes data from state
     page_size = 10
     current_page = jokes[page_number * page_size:(page_number + 1) * page_size]
 
-    # Додавання номера сторінки
-    page_title = _("Page ") + str(int(page_number + 1))
-    keyboard = InlineKeyboardMarkup(row_width=len(current_page) + 2)
+    # Create the inline keyboard markup
+    builder = InlineKeyboardBuilder()
 
-    # Додавання кнопок анекдотів
+    previous_page_button = InlineKeyboardButton(text="⬅️", callback_data=f"page_{page_number - 1}")
+    page_number_button = InlineKeyboardButton(text=_("Page ") + str(int(page_number + 1)),
+                                              callback_data="page_number")
+    next_page_button = InlineKeyboardButton(text="➡️", callback_data=f"page_{page_number + 1}")
+
+    # Add joke buttons
     for joke in current_page:
         joke_text_short = joke[1][:30] + "..." if len(joke[1]) > 30 else joke[1]
         button = InlineKeyboardButton(text=joke_text_short, callback_data=f"joke_{joke[0]}")
-        keyboard.row(button)
+        builder.row(button)
 
-    # Додавання стрілок
-
-    if len(jokes) > (page_number + 1) * page_size:
-        keyboard.row(InlineKeyboardButton("➡️", callback_data=f"page_{page_number + 1}"))
-        keyboard.add(InlineKeyboardButton(text=page_title, callback_data="page_number"))
     if page_number > 0:
-        keyboard.row(InlineKeyboardButton("⬅️", callback_data=f"page_{page_number - 1}"))
+        builder.row(previous_page_button)
 
-    clock = await bot.send_message(message.chat.id, '⏳', reply_markup=ReplyKeyboardRemove())
+        # Add navigation buttons (if applicable)
+    if len(jokes) > (page_number + 1) * page_size:
+        page_number_button = InlineKeyboardButton(text=_("Page ") + str(int(page_number + 1)),
+                                                  callback_data="page_number")
+        if page_number == 0:
+            builder.row(page_number_button)
+        else:
+            builder.add(page_number_button)
 
-    await asyncio.sleep(2)
+        builder.add(next_page_button)
 
-    await bot.delete_message(message.chat.id, clock.message_id)
+    elif page_number > 0:
+        builder.add(page_number_button)
 
     try:
         await bot.edit_message_text(
             chat_id=message.chat.id,
             message_id=message.message_id,
             text=bm.pick_a_joke(),
-            reply_markup=keyboard,
+            reply_markup=builder.as_markup(),
         )
     except:
         await message.answer(
             text=bm.pick_a_joke(),
-            reply_markup=keyboard,
+            reply_markup=builder.as_markup(),
         )
 
 
@@ -486,6 +496,11 @@ async def daily_joke():
             if user_status == "inactive":
                 await db.set_active(chat_id)
 
+            await asyncio.sleep(
+                0.05
+            )
+
+
         except Exception as e:
             logging.error(f"Error sending message to user {chat_id}: {str(e)}")
 
@@ -500,7 +515,7 @@ async def daily_joke():
     await bot.send_message(chat_id=admin_id, text=bm.finish_mailing())
 
 
-@dp.callback_query_handler(lambda call: call.data.startswith('seen_'))
+@user_router.callback_query(F.data.startswith('seen_'))
 async def seen_handling(call: types.CallbackQuery):
     joke_id = int(call.data.split('_')[1])
     user_id = call.from_user.id
@@ -529,7 +544,7 @@ async def seen_handling(call: types.CallbackQuery):
     await update_buttons(call.message, joke_id, user_id)
 
 
-@dp.callback_query_handler(lambda call: call.data.startswith('like_'))
+@user_router.callback_query(F.data.startswith('like_'))
 async def like_joke(call: types.CallbackQuery):
     joke_id = int(call.data.split('_')[1])
     user_id = call.from_user.id
@@ -560,11 +575,10 @@ async def like_joke(call: types.CallbackQuery):
         )
         await send_analytics(user_id=user_id, user_lang_code=call.from_user.language_code, action_name='liked')
 
-
     await update_buttons(call.message, joke_id, user_id)
 
 
-@dp.callback_query_handler(lambda call: call.data.startswith('dislike_'))
+@user_router.callback_query(F.data.startswith('dislike_'))
 async def dislike_joke(call: types.CallbackQuery):
     joke_id = int(call.data.split('_')[1])
     user_id = call.from_user.id
@@ -577,7 +591,8 @@ async def dislike_joke(call: types.CallbackQuery):
         logging.info(
             f"User action: Removed dislike from joke (User ID: {user_id}, Joke ID: {joke_id})"
         )
-        await send_analytics(user_id=user_id, user_lang_code=call.from_user.language_code, action_name='removed_dislike')
+        await send_analytics(user_id=user_id, user_lang_code=call.from_user.language_code,
+                             action_name='removed_dislike')
 
     elif user_vote == "like":
         await db.update_vote(joke_id, user_id, "dislike")
@@ -609,14 +624,15 @@ async def update_buttons(message, joke_id, user_id):
         reply_markup = kb.return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id)
 
     try:
-        await message.edit_reply_markup(reply_markup)
+        await bot.edit_message_reply_markup(message_id=message.message_id, chat_id=message.chat.id,
+                                            reply_markup=reply_markup)
 
     except Exception as e:
         print(f"Error updating buttons: {e}")
         pass
 
 
-@dp.callback_query_handler(lambda call: call.data.startswith('rating_'))
+@user_router.callback_query(F.data.startswith('rating_'))
 async def joke_rating(call: types.CallbackQuery):
     joke_id = int(call.data.split('_')[1])
     user_id = call.from_user.id
@@ -628,7 +644,7 @@ async def joke_rating(call: types.CallbackQuery):
     await send_analytics(user_id=user_id, user_lang_code=call.from_user.language_code, action_name='update_rating')
 
 
-@dp.message_handler()
+@user_router.message()
 async def handle_message(message: types.Message):
     text = message.text.lower()
     name = message.from_user.full_name

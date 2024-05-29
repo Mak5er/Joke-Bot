@@ -4,7 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="868e1bc7-d2cf-4321-8444-628b09c4cc27" name="Changes" comment="update middlewares" />
+    <list default="true" id="868e1bc7-d2cf-4321-8444-628b09c4cc27" name="Changes" comment="changed joke formatting">
+      <change beforePath="$PROJECT_DIR$/.idea/Joke-Bot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Joke-Bot.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyboards/inline_keyboards.py" beforeDir="false" afterPath="$PROJECT_DIR$/keyboards/inline_keyboards.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locales/en/LC_MESSAGES/jokebot.po" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/locales/en/LC_MESSAGES/messages.mo" beforeDir="false" afterPath="$PROJECT_DIR$/locales/en/LC_MESSAGES/messages.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locales/en/LC_MESSAGES/messages.po" beforeDir="false" afterPath="$PROJECT_DIR$/locales/en/LC_MESSAGES/messages.po" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locales/messages.pot" beforeDir="false" afterPath="$PROJECT_DIR$/locales/messages.pot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/jokebot.po" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/messages.mo" beforeDir="false" afterPath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/messages.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/messages.po" beforeDir="false" afterPath="$PROJECT_DIR$/locales/uk/LC_MESSAGES/messages.po" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages/bot_messages.py" beforeDir="false" afterPath="$PROJECT_DIR$/messages/bot_messages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/ban_middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/ban_middleware.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/language_middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/language_middleware.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +36,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Dockerfile" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -33,11 +56,10 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="add-ga" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -79,36 +101,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Docker.Dockerfile.executor": "Run",
-    "Python.main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "migration-to-aiogram-3.x-version",
-    "last_opened_file_path": "/Users/makser/Desktop/Joke-Bot",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "configurable.group.appearance",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Docker.Dockerfile.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;migration-to-aiogram-3.x-version&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Python/Joke-Bot&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ],
-    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
-      "PostgreSQL"
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
+      &quot;PostgreSQL&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="Push.Settings">
     <force-push-targets>
       <force-push-target remote-path="origin" branch="main" />
@@ -121,9 +143,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
+      <recent name="D:\Python\Joke-Bot" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Python\Joke-Bot" />
       <recent name="C:\Python\Joke Bot 2.0\services" />
       <recent name="C:\Python\Joke Bot 2.0\locales\uk\LC_MESSAGES" />
     </key>
@@ -138,7 +161,6 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.9 (Joke-Bot)" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -177,8 +199,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-PY-241.14494.241" />
-        <option value="bundled-python-sdk-0509580d9d50-28c9f5db9ffe-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.14494.241" />
+        <option value="bundled-python-sdk-d68999036c7f-b11f5e8da5ad-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.14475.56" />
       </set>
     </attachedChunks>
   </component>
@@ -227,10 +248,22 @@
       <workItem from="1703268343748" duration="304000" />
       <workItem from="1712394683571" duration="17000" />
       <workItem from="1712394848148" duration="6058000" />
-      <workItem from="1714742507770" duration="637000" />
-      <workItem from="1714765888945" duration="56000" />
-      <workItem from="1714800959096" duration="3154000" />
-      <workItem from="1714902664337" duration="18808000" />
+      <workItem from="1712665862280" duration="768000" />
+      <workItem from="1712667782546" duration="6068000" />
+      <workItem from="1715532863311" duration="4797000" />
+      <workItem from="1715605953584" duration="8390000" />
+      <workItem from="1715956863349" duration="1020000" />
+      <workItem from="1716124005177" duration="3307000" />
+      <workItem from="1716127540873" duration="102000" />
+      <workItem from="1716127749501" duration="1577000" />
+      <workItem from="1716129340899" duration="6237000" />
+      <workItem from="1716213778714" duration="420000" />
+      <workItem from="1716215849343" duration="698000" />
+      <workItem from="1716301321441" duration="10955000" />
+      <workItem from="1716470628253" duration="2964000" />
+      <workItem from="1716574548410" duration="65000" />
+      <workItem from="1716706895629" duration="217000" />
+      <workItem from="1716987834344" duration="12138000" />
     </task>
     <task id="LOCAL-00001" summary="UPDATE main.py">
       <created>1687548643088</created>
@@ -252,6 +285,14 @@
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
       <updated>1688392132379</updated>
+    </task>
+    <task id="LOCAL-00010" summary="UPDATE languages">
+      <option name="closed" value="true" />
+      <created>1690537270737</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1690537270737</updated>
     </task>
     <task id="LOCAL-00011" summary="UPDATE README.md">
       <option name="closed" value="true" />
@@ -589,39 +630,31 @@
       <option name="project" value="LOCAL" />
       <updated>1712401846126</updated>
     </task>
-    <task id="LOCAL-00053" summary="changed error in locales">
+    <task id="LOCAL-00053" summary="some small improvements">
       <option name="closed" value="true" />
-      <created>1714737245483</created>
+      <created>1712510884055</created>
       <option name="number" value="00053" />
       <option name="presentableId" value="LOCAL-00053" />
       <option name="project" value="LOCAL" />
-      <updated>1714737245483</updated>
+      <updated>1712510884055</updated>
     </task>
-    <task id="LOCAL-00054" summary="add google analytic">
+    <task id="LOCAL-00054" summary="updated locales">
       <option name="closed" value="true" />
-      <created>1714914924294</created>
+      <created>1712510966313</created>
       <option name="number" value="00054" />
       <option name="presentableId" value="LOCAL-00054" />
       <option name="project" value="LOCAL" />
-      <updated>1714914924294</updated>
+      <updated>1712510966313</updated>
     </task>
-    <task id="LOCAL-00055" summary="start migrating">
+    <task id="LOCAL-00055" summary="changed joke formatting">
       <option name="closed" value="true" />
-      <created>1715495675260</created>
+      <created>1712666032600</created>
       <option name="number" value="00055" />
       <option name="presentableId" value="LOCAL-00055" />
       <option name="project" value="LOCAL" />
-      <updated>1715495675260</updated>
+      <updated>1712666032600</updated>
     </task>
-    <task id="LOCAL-00056" summary="update middlewares">
-      <option name="closed" value="true" />
-      <created>1715520801564</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1715520801564</updated>
-    </task>
-    <option name="localTasksCounter" value="57" />
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -658,6 +691,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Added .gitignore" />
     <MESSAGE value="Added speedtest" />
     <MESSAGE value="start working at bug report system" />
     <MESSAGE value="Bug report system done" />
@@ -679,13 +713,12 @@
     <MESSAGE value="add active adn inactive users counting" />
     <MESSAGE value="fixed small bug" />
     <MESSAGE value="some improvements" />
-    <MESSAGE value="changed error in locales" />
-    <MESSAGE value="add google analytic" />
-    <MESSAGE value="start migrating" />
-    <MESSAGE value="update middlewares" />
-    <option name="LAST_COMMIT_MESSAGE" value="update middlewares" />
+    <MESSAGE value="some small improvements" />
+    <MESSAGE value="updated locales" />
+    <MESSAGE value="changed joke formatting" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed joke formatting" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Joke_Bot$main.coverage" NAME="main Coverage Results" MODIFIED="1715520604770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Joke_Bot$main.coverage" NAME="main Coverage Results" MODIFIED="1717002988961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

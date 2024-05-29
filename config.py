@@ -11,9 +11,7 @@ db_auth = str(os.getenv("db_auth"))
 MEASUREMENT_ID = str(os.getenv("MEASUREMENT_ID"))
 API_SECRET = str(os.getenv("API_SECRET"))
 
-I18N_DOMAIN = 'jokebot'
 BASE_DIR = Path(__file__).parent
-LOCALES_DIR = BASE_DIR / 'locales'
 
 BOT_COMMANDS = [
     {'command': 'start', 'description': '🚀Початок роботи / Getting started 🔥'},

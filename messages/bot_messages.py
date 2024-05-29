@@ -76,12 +76,9 @@ def help_message():
 ️/start - start interacting with the bot
 /joke - get a random joke
 /info - get information about the bot
-
-The /start command is used to start interacting with the bot. After sending this command, the bot will be ready to accept other commands from the user.
-
-The /joke command allows you to get a random joke from the bot. When this command is called, the bot will respond with a randomly selected joke.
-
-The /info command allows you to get information about the bot. Here you can view bot statistics, information about the developer, and a link to invite a friend.""")
+/find - find joke by id or text
+/language - change language
+""")
 
 
 def joke_rating(joke_rate):
