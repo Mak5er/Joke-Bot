@@ -9,13 +9,11 @@ from filters import ChatTypeF
 from aiogram.fsm.state import StatesGroup, State
 from aiogram.types import InlineKeyboardButton, ReplyKeyboardRemove
 
-from apscheduler.schedulers.asyncio import AsyncIOScheduler
-from apscheduler.triggers.cron import CronTrigger
 from ping3 import ping
 
 from config import *
 from keyboards import inline_keyboards as kb
-from main import send_analytics, bot, _
+from main import send_analytics, bot, _, i18n
 from messages import bot_messages as bm
 from services import DataBase
 
@@ -278,7 +276,8 @@ async def send_joke(user_id, message, result):
         keyboard_type = kb.return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id)
 
         if message.chat.type == 'private':
-            keyboard_type = kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id, user_vote)
+            keyboard_type = kb.return_rating_and_votes_keyboard(likes_count,
+                                                                dislikes_count, joke_id, user_vote)
 
         await message.edit_text(joke, reply_markup=keyboard_type)
         await db.seen_joke(joke_id, user_id)
@@ -375,7 +374,8 @@ async def show_joke(call: types.CallbackQuery):
     keyboard_type = kb.return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id)
 
     if call.message.chat.type == 'private':
-        keyboard_type = kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id, user_vote)
+        keyboard_type = kb.return_rating_and_votes_keyboard(likes_count,
+                                                            dislikes_count, joke_id, user_vote)
 
     await call.message.answer(f"ID: {joke_id}")
     await call.message.answer(joke, reply_markup=keyboard_type)
@@ -447,13 +447,9 @@ async def show_joke_page(message: types.Message, page_number: int, state: FSMCon
         )
 
 
-scheduler = AsyncIOScheduler()
-
-
-@scheduler.scheduled_job(CronTrigger(hour=12))
 async def daily_joke():
     users = await db.get_private_users()
-    await bot.send_message(chat_id=admin_id, text=bm.start_mailing())
+    await bot.send_message(chat_id=admin_id, text=bm.start_mailing(i18n, await db.get_language(admin_id)))
     result = await db.get_daily_joke()
     joke = result[0]
     joke_id = joke[0]
@@ -481,9 +477,11 @@ async def daily_joke():
 
             await bot.send_message(
                 chat_id=user[0],
-                text=bm.daily_joke(joke),
+                text=bm.daily_joke(i18n, await db.get_language(user[0]), joke),
                 parse_mode="HTML",
-                reply_markup=kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id, user_vote))
+                reply_markup=kb.return_rating_and_votes_keyboard_mailing(i18n, await db.get_language(chat_id),
+                                                                         likes_count,
+                                                                         dislikes_count, joke_id, user_vote))
 
             await db.seen_joke(joke_id, chat_id)
 
@@ -498,7 +496,6 @@ async def daily_joke():
                 0.05
             )
 
-
         except Exception as e:
             logging.error(f"Error sending message to user {chat_id}: {str(e)}")
 
@@ -510,7 +507,7 @@ async def daily_joke():
 
             continue
 
-    await bot.send_message(chat_id=admin_id, text=bm.finish_mailing())
+    await bot.send_message(chat_id=admin_id, text=bm.finish_mailing(i18n, await db.get_language(admin_id)))
 
 
 @user_router.callback_query(F.data.startswith('seen_'))
@@ -617,7 +614,8 @@ async def update_buttons(message, joke_id, user_id):
     user_vote = await db.get_user_vote(joke_id, user_id)
 
     if message.chat.type == 'private':
-        reply_markup = kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id, user_vote)
+        reply_markup = kb.return_rating_and_votes_keyboard(likes_count,
+                                                           dislikes_count, joke_id, user_vote)
     else:  # Для групових чатів
         reply_markup = kb.return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id)
 

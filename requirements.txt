@@ -13,5 +13,6 @@ pytz~=2024.1
 ping3~=4.0.7
 httpx~=0.27.0
 betterlogging~=1.0.0
-cachetools
-babel
+cachetools~=5.3.3
+contextvars
+aiocron~=1.8

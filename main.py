@@ -13,13 +13,14 @@ from aiogram.filters import Command
 from filters import ChatTypeF
 from messages import bot_messages as bm
 from aiogram.types import ErrorEvent
+from aiocron import crontab
 
 from config import *
 from log.logger import custom_formatter
 from middlewares import ThrottlingMiddleware, My18nMiddleware, UserBannedMiddleware
 from services import DataBase
 
-default=DefaultBotProperties(parse_mode=ParseMode.HTML)
+default = DefaultBotProperties(parse_mode=ParseMode.HTML)
 bot = Bot(token=token, default=default)
 storage = MemoryStorage()
 dp = Dispatcher(storage=storage)
@@ -28,6 +29,7 @@ router = Router()
 db = DataBase()
 
 i18n = I18n(path=BASE_DIR / "locales", default_locale="uk", domain="messages")
+i18n_middleware = My18nMiddleware(i18n)
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -62,7 +64,6 @@ async def send_analytics(user_id, user_lang_code, action_name):
             f'https://www.google-analytics.com/mp/collect?measurement_id={MEASUREMENT_ID}&api_secret={API_SECRET}',
             json=params)
 
-
 @router.error()
 async def handle_errors(event: ErrorEvent):
     logging.error(f"Update: {event}\nException: {event.exception}")
@@ -77,20 +78,26 @@ async def on_startup():
 
 
 async def main():
-    from handlers import user_router, admin_router
+    from handlers import user_router, admin_router, daily_joke
 
     await bot.set_my_commands(commands=BOT_COMMANDS)
     await bot.delete_webhook(drop_pending_updates=True)
+
     dp.message.middleware(ThrottlingMiddleware())
     My18nMiddleware(i18n).setup(dp)
     dp.message.outer_middleware(UserBannedMiddleware())
     dp.callback_query.outer_middleware(UserBannedMiddleware())
     dp.inline_query.outer_middleware(UserBannedMiddleware())
+
     dp.include_router(router)
     dp.include_router(admin_router)
     dp.include_router(user_router)
+
     dp.startup.register(on_startup)
     dp.shutdown.register(on_shutdown)
+
+    crontab('* 15 * * *', func=daily_joke, start=True)
+
     await dp.start_polling(bot)
 
 

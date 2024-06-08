@@ -92,6 +92,25 @@ def return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id, user_
     return rating_and_votes_keyboard
 
 
+def return_rating_and_votes_keyboard_mailing(i18n, user_locale, likes_count, dislikes_count, joke_id, user_vote):
+    i18n.context = i18n
+    with i18n.use_locale(user_locale):
+        like_button_text = f'☑️ 👍 {likes_count}' if user_vote == 'like' else f'👍 {likes_count}'
+        dislike_button_text = f'☑️ 👎 {dislikes_count}' if user_vote == 'dislike' else f'👎 {dislikes_count}'
+
+        buttons = [
+            [
+                InlineKeyboardButton(text=like_button_text, callback_data=f'like_{joke_id}'),
+                InlineKeyboardButton(text=dislike_button_text, callback_data=f'dislike_{joke_id}')
+            ],
+            [InlineKeyboardButton(text=i18n.gettext('🔃Update rating'), callback_data=f'rating_{joke_id}')]
+
+        ]
+
+        rating_and_votes_keyboard_mailing = InlineKeyboardMarkup(inline_keyboard=buttons)
+        return rating_and_votes_keyboard_mailing
+
+
 # Клавіатура для груп з додатковою кнопкою "Переглянути"
 def return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id):
     buttons = [

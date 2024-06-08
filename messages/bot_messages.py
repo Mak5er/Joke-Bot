@@ -109,12 +109,16 @@ def already_seen_joke():
     return _("You have already marked this joke as read!")
 
 
-def finish_mailing():
-    return _("Mailing is complete!")
+def finish_mailing(i18n, user_locale):
+    i18n.context = i18n
+    with i18n.use_locale(user_locale):
+        return i18n.gettext("Mailing is complete!")
 
 
-def start_mailing():
-    return _("Starting mailing...")
+def start_mailing(i18n, user_locale):
+    i18n.context = i18n
+    with i18n.use_locale(user_locale):
+        return i18n.gettext("Starting mailing...")
 
 
 def pres_button():
@@ -125,8 +129,10 @@ def all_send():
     return _('Unfortunately, all the jokes have already been sent to you.')
 
 
-def daily_joke(joke_text):
-    return _("<b>Joke of the day:</b>\n\n{joke_text}").format(joke_text=joke_text)
+def daily_joke(i18n, user_locale, joke_text):
+    i18n.context = i18n
+    with i18n.use_locale(user_locale):
+        return i18n.gettext("<b>Joke of the day:</b>\n\n{joke_text}").format(joke_text=joke_text)
 
 
 def dont_understood(name):

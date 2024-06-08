@@ -11,15 +11,14 @@ from aiogram import types, F, Router
 from aiogram.filters import Command
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
-from filters import ChatTypeF, IsBotAdmin
-from aiogram.types import FSInputFile, URLInputFile, BufferedInputFile
+from filters import IsBotAdmin
+from aiogram.types import BufferedInputFile
 from aiogram.fsm.context import FSMContext
-from aiogram.types import ReplyKeyboardRemove, InlineKeyboardButton, InlineKeyboardMarkup
+from aiogram.types import ReplyKeyboardRemove, InlineKeyboardButton
 from aiogram.fsm.state import StatesGroup, State
 
-import config
 from keyboards import inline_keyboards as kb
-from main import dp, bot, _, send_analytics
+from main import bot, _, send_analytics, i18n
 from messages import bot_messages as bm
 from services import DataBase
 
@@ -79,9 +78,9 @@ async def system_info(message: types.Message):
         'available_memory': psutil.virtual_memory().available / (1024 * 1024),
         'memory_usage': psutil.virtual_memory().percent
     }
-    system_info = bm.get_formatted_system_info(system_specs)
+    formatted_system_info = bm.get_formatted_system_info(system_specs)
     await bot.delete_message(message.chat.id, clock_message.message_id)
-    await message.reply(system_info)
+    await message.reply(formatted_system_info)
 
 
 @admin_router.callback_query(F.data == 'delete_log')
@@ -126,7 +125,11 @@ async def send_to_all_message(message: types.Message, state: FSMContext):
         return
 
     else:
-        await bot.send_chat_action(message.chat.id, "typing")
+        await state.clear()
+
+        await bot.send_message(chat_id=message.chat.id,
+                               text=bm.start_mailing(i18n, await db.get_language(message.from_user.id)),
+                               reply_markup=types.ReplyKeyboardRemove())
 
         users = await db.all_users()
         for user in users:
@@ -156,8 +159,8 @@ async def send_to_all_message(message: types.Message, state: FSMContext):
                 continue
 
         await bot.send_message(chat_id=message.chat.id,
-                               text=bm.finish_mailing(), reply_markup=types.ReplyKeyboardRemove())
-        await state.clear()
+                               text=bm.finish_mailing(i18n, await db.get_language(message.from_user.id)),
+                               reply_markup=types.ReplyKeyboardRemove())
         return
 
 

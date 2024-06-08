@@ -3,6 +3,7 @@ from typing import Any, Dict, Optional
 from aiogram.types import TelegramObject
 from aiogram.utils.i18n import I18nMiddleware, I18n
 
+
 from services import DataBase
 
 db = DataBase()
