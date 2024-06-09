@@ -90,7 +90,7 @@ async def main():
     dp.startup.register(on_startup)
     dp.shutdown.register(on_shutdown)
 
-    crontab('00 15 * * *', func=daily_joke, start=True)
+    crontab('0 12 * * *', func=daily_joke, start=True)
 
     await dp.start_polling(bot)
 
