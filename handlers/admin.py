@@ -10,6 +10,8 @@ import psutil
 from aiogram import types, F, Router
 from aiogram.filters import Command
 from aiogram.utils.keyboard import InlineKeyboardBuilder
+from aiogram.utils.i18n import gettext as _
+
 
 from filters import IsBotAdmin
 from aiogram.types import BufferedInputFile
@@ -18,7 +20,7 @@ from aiogram.types import ReplyKeyboardRemove, InlineKeyboardButton
 from aiogram.fsm.state import StatesGroup, State
 
 from keyboards import inline_keyboards as kb
-from main import bot, _, send_analytics, i18n
+from main import bot, send_analytics, i18n
 from messages import bot_messages as bm
 from services import DataBase
 
@@ -419,10 +421,6 @@ async def export_users_data(message: types.Message):
         full_name = user.full_name if user.full_name else ""
         await db.user_update_name(chat_id, full_name, username)
 
-    await asyncio.sleep(2)
-
-    # Виконуємо запит для отримання всіх даних з таблиці users
-
     users_data = await db.get_all_users_info()
 
     # Створюємо DataFrame з даними користувачів
@@ -567,13 +565,13 @@ async def return_ideas(message: types.Message):
             builder.row(idea_text_button)
 
         add_button = types.InlineKeyboardButton(text=_("🔙Back"), callback_data="back_to_admin")
-        builder.add(add_button)
+        builder.row(add_button)
         await bot.send_message(chat_id=message.chat.id, text=response, reply_markup=builder.as_markup(),
                                parse_mode='HTML')
     else:
         builder = InlineKeyboardBuilder()
         button = types.InlineKeyboardButton(text=_("🔙Back"), callback_data="back_to_admin")
-        builder.add(button)
+        builder.row(button)
 
         await bot.send_message(chat_id=message.chat.id, text=bm.any_ideas(), reply_markup=builder.as_markup())
 

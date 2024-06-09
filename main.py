@@ -2,16 +2,11 @@ import asyncio
 
 import betterlogging as logging
 import httpx
-from aiogram import Bot, Dispatcher, Router, types
+from aiogram import Bot, Dispatcher, Router
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums.parse_mode import ParseMode
 from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.utils.i18n import I18n
-from aiogram.utils.i18n import gettext as _
-from aiogram.utils.i18n import lazy_gettext as __
-from aiogram.filters import Command
-from filters import ChatTypeF
-from messages import bot_messages as bm
 from aiogram.types import ErrorEvent
 from aiocron import crontab
 
@@ -64,6 +59,7 @@ async def send_analytics(user_id, user_lang_code, action_name):
             f'https://www.google-analytics.com/mp/collect?measurement_id={MEASUREMENT_ID}&api_secret={API_SECRET}',
             json=params)
 
+
 @router.error()
 async def handle_errors(event: ErrorEvent):
     logging.error(f"Update: {event}\nException: {event.exception}")
@@ -89,9 +85,7 @@ async def main():
     dp.callback_query.outer_middleware(UserBannedMiddleware())
     dp.inline_query.outer_middleware(UserBannedMiddleware())
 
-    dp.include_router(router)
-    dp.include_router(admin_router)
-    dp.include_router(user_router)
+    dp.include_routers(router, admin_router, user_router)
 
     dp.startup.register(on_startup)
     dp.shutdown.register(on_shutdown)

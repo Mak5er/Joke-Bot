@@ -1,6 +1,6 @@
 from aiogram import BaseMiddleware, Dispatcher
 from aiogram.types import Message, CallbackQuery, InlineQuery
-from main import _
+from aiogram.utils.i18n import gettext as _
 import asyncio
 
 from services import DataBase

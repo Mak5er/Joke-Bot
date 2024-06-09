@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="868e1bc7-d2cf-4321-8444-628b09c4cc27" name="Changes" comment="return daily joke mailing">
+    <list default="true" id="868e1bc7-d2cf-4321-8444-628b09c4cc27" name="Changes" comment="fix bug with cron job">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyboards/inline_keyboards.py" beforeDir="false" afterPath="$PROJECT_DIR$/keyboards/inline_keyboards.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages/bot_messages.py" beforeDir="false" afterPath="$PROJECT_DIR$/messages/bot_messages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/ban_middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/ban_middleware.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,7 +253,9 @@
       <workItem from="1717770398675" duration="3223000" />
       <workItem from="1717783993259" duration="5878000" />
       <workItem from="1717836731553" duration="5030000" />
-      <workItem from="1717842266966" duration="2040000" />
+      <workItem from="1717842266966" duration="2919000" />
+      <workItem from="1717913993698" duration="805000" />
+      <workItem from="1717922163416" duration="1955000" />
     </task>
     <task id="LOCAL-00001" summary="UPDATE main.py">
       <created>1687548643088</created>
@@ -271,14 +277,6 @@
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
       <updated>1688392132379</updated>
-    </task>
-    <task id="LOCAL-00011" summary="UPDATE README.md">
-      <option name="closed" value="true" />
-      <created>1690539144863</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1690539144863</updated>
     </task>
     <task id="LOCAL-00012" summary="UPDATE README.md">
       <option name="closed" value="true" />
@@ -640,7 +638,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717841653538</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="fix bug with cron job">
+      <option name="closed" value="true" />
+      <created>1717860554220</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1717860554220</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -687,7 +693,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added speedtest" />
     <MESSAGE value="start working at bug report system" />
     <MESSAGE value="Bug report system done" />
     <MESSAGE value="update some translations" />
@@ -712,9 +717,10 @@
     <MESSAGE value="updated locales" />
     <MESSAGE value="changed joke formatting" />
     <MESSAGE value="return daily joke mailing" />
-    <option name="LAST_COMMIT_MESSAGE" value="return daily joke mailing" />
+    <MESSAGE value="fix bug with cron job" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bug with cron job" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Joke_Bot$main.coverage" NAME="main Coverage Results" MODIFIED="1717860313019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Joke_Bot$main.coverage" NAME="main Coverage Results" MODIFIED="1717923311741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

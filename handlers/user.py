@@ -4,6 +4,7 @@ from aiogram import types, Router, F
 from aiogram.fsm.context import FSMContext
 from aiogram.filters import Command, CommandObject, CommandStart
 from aiogram.utils.keyboard import InlineKeyboardBuilder
+from aiogram.utils.i18n import gettext as _
 
 from filters import ChatTypeF
 from aiogram.fsm.state import StatesGroup, State
@@ -13,7 +14,7 @@ from ping3 import ping
 
 from config import *
 from keyboards import inline_keyboards as kb
-from main import send_analytics, bot, _, i18n
+from main import send_analytics, bot, i18n
 from messages import bot_messages as bm
 from services import DataBase
 

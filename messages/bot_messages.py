@@ -1,4 +1,4 @@
-from main import _
+from aiogram.utils.i18n import gettext as _
 
 
 def welcome_message(name):
