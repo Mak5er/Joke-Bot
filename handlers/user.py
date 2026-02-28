@@ -54,6 +54,10 @@ def resolve_user_locale(user: User) -> str:
     return DEFAULT_LOCALE
 
 
+async def get_user_locale(user: User) -> str:
+    return await db.get_language(user.id) or resolve_user_locale(user)
+
+
 async def sync_user(user: User, chat_type: str, referrer_id: int | None = None) -> None:
     normalized_chat_type = normalize_user_chat_type(chat_type)
     cached_chat_type = synced_users_cache.get(user.id)
@@ -76,14 +80,14 @@ async def sync_user(user: User, chat_type: str, referrer_id: int | None = None) 
     synced_users_cache[user.id] = normalized_chat_type
 
 
-async def build_joke_payload(joke_id: int, user_id: int, chat_type: str, joke_text: str):
+async def build_joke_payload(joke_id: int, user_id: int, chat_type: str, joke_text: str, user_locale: str):
     tags, likes_count, dislikes_count, user_vote = await db.get_joke_meta(joke_id, user_id)
 
     formatted_text = format_joke_text(joke_text, tags)
     if chat_type == DEFAULT_PRIVATE_CHAT_TYPE:
-        keyboard = kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id, user_vote)
+        keyboard = kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id, user_vote, user_locale)
     else:
-        keyboard = kb.return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id)
+        keyboard = kb.return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id, user_locale)
 
     return formatted_text, keyboard
 
@@ -123,16 +127,17 @@ def build_compact_rating_keyboard(
     joke_id: int,
     user_vote: str | None,
     chat_type: str,
+    user_locale: str,
 ) -> InlineKeyboardMarkup:
     if chat_type == DEFAULT_PRIVATE_CHAT_TYPE:
-        full_keyboard = kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id, user_vote)
+        full_keyboard = kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id, user_vote, user_locale)
     else:
-        full_keyboard = kb.return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id)
+        full_keyboard = kb.return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id, user_locale)
 
     return InlineKeyboardMarkup(inline_keyboard=full_keyboard.inline_keyboard[:2])
 
 
-async def collapse_previous_joke_controls(message: types.Message, user_id: int) -> None:
+async def collapse_previous_joke_controls(message: types.Message, user_id: int, user_locale: str) -> None:
     if not has_expanded_joke_controls(message):
         return
 
@@ -147,6 +152,7 @@ async def collapse_previous_joke_controls(message: types.Message, user_id: int) 
         joke_id,
         user_vote,
         message.chat.type,
+        user_locale,
     )
 
     try:
@@ -159,19 +165,31 @@ async def collapse_previous_joke_controls(message: types.Message, user_id: int) 
         logger.debug("Reply markup for archived joke %s did not change", joke_id)
 
 
-async def send_joke(message: types.Message, user_id: int, result):
+async def send_joke(message: types.Message, user_id: int, result, user_locale: str):
     await bot.send_chat_action(message.chat.id, "typing")
 
     if not result:
-        await bot.send_message(message.chat.id, bm.all_send(), reply_markup=kb.random_keyboard())
+        if message.chat.type == DEFAULT_PRIVATE_CHAT_TYPE:
+            await bot.send_message(message.chat.id, bm.all_send(), reply_markup=kb.random_keyboard(user_locale))
+        else:
+            try:
+                await message.edit_text(bm.all_send(), reply_markup=kb.random_keyboard(user_locale))
+            except TelegramBadRequest:
+                await bot.send_message(message.chat.id, bm.all_send(), reply_markup=kb.random_keyboard(user_locale))
         return
 
     joke = result[0]
     joke_id = joke[0]
     joke_text = joke[1]
-    formatted_text, keyboard = await build_joke_payload(joke_id, user_id, message.chat.type, joke_text)
-    await collapse_previous_joke_controls(message, user_id)
-    await message.answer(formatted_text, reply_markup=keyboard)
+    formatted_text, keyboard = await build_joke_payload(joke_id, user_id, message.chat.type, joke_text, user_locale)
+    if message.chat.type == DEFAULT_PRIVATE_CHAT_TYPE:
+        await collapse_previous_joke_controls(message, user_id, user_locale)
+        await message.answer(formatted_text, reply_markup=keyboard)
+    else:
+        try:
+            await message.edit_text(formatted_text, reply_markup=keyboard)
+        except TelegramBadRequest:
+            await message.answer(formatted_text, reply_markup=keyboard)
 
     await db.seen_joke(joke_id, user_id)
     logger.info("Sent joke %s to user %s", joke_id, user_id)
@@ -199,11 +217,12 @@ async def send_group_welcome(message: types.Message):
 @user_router.message(CommandStart())
 async def send_welcome(message: types.Message, command: CommandObject):
     user = message.from_user
+    user_locale = await get_user_locale(user)
     await bot.send_chat_action(message.chat.id, "typing")
 
     await message.answer(
         f"{bm.welcome_message(user.full_name)}\n\n{bm.pres_button()}",
-        reply_markup=kb.random_keyboard(),
+        reply_markup=kb.random_keyboard(user_locale),
     )
 
     referrer_id = None
@@ -246,7 +265,7 @@ async def language_callback(call: types.CallbackQuery):
     await db.set_language(call.from_user.id, language)
     synced_users_cache[call.from_user.id] = normalize_user_chat_type(call.message.chat.type)
     await sync_user(call.from_user, call.message.chat.type)
-    await call.message.edit_text(text=bm.choose_lan(language), reply_markup=kb.random_keyboard())
+    await call.message.edit_text(text=bm.choose_lan(language), reply_markup=kb.random_keyboard(language))
     await call.answer()
 
 
@@ -254,6 +273,7 @@ async def language_callback(call: types.CallbackQuery):
 async def info(message: types.Message):
     await sync_user(message.from_user, message.chat.type)
     await bot.send_chat_action(message.chat.id, "typing")
+    user_locale = await get_user_locale(message.from_user)
 
     user_id = message.from_user.id
     joke_sent, joke_count, sent_count, refs_count = await asyncio.gather(
@@ -266,7 +286,7 @@ async def info(message: types.Message):
 
     await message.reply(
         bm.user_info(message.from_user.first_name, joke_sent, joke_count, sent_count, refs_count, ref_url),
-        reply_markup=kb.return_feedback_button(),
+        reply_markup=kb.return_feedback_button(user_locale),
     )
     await send_analytics(user_id=user_id, user_lang_code=message.from_user.language_code, action_name="info")
 
@@ -283,7 +303,7 @@ async def send_help(message: types.Message):
 async def handle_joke(message: types.Message):
     await sync_user(message.from_user, message.chat.type)
     await bot.send_chat_action(message.chat.id, "typing")
-    await message.reply(bm.pres_button(), reply_markup=kb.random_keyboard())
+    await message.reply(bm.pres_button(), reply_markup=kb.random_keyboard(await get_user_locale(message.from_user)))
     await send_analytics(
         user_id=message.from_user.id,
         user_lang_code=message.from_user.language_code,
@@ -322,7 +342,11 @@ async def feedback(message: types.Message, state: FSMContext):
     if is_cancel_action(message.text):
         await bot.send_message(message.chat.id, bm.action_canceled(), reply_markup=types.ReplyKeyboardRemove())
         await state.clear()
-        await bot.send_message(message.chat.id, bm.pres_button(), reply_markup=kb.random_keyboard())
+        await bot.send_message(
+            message.chat.id,
+            bm.pres_button(),
+            reply_markup=kb.random_keyboard(await get_user_locale(message.from_user)),
+        )
         return
 
     await sync_user(message.from_user, message.chat.type)
@@ -339,19 +363,29 @@ async def feedback(message: types.Message, state: FSMContext):
         bm.your_message_sent_with_id(message.message_id),
         reply_markup=types.ReplyKeyboardRemove(),
     )
-    await bot.send_message(message.chat.id, bm.pres_button(), reply_markup=kb.random_keyboard())
+    await bot.send_message(
+        message.chat.id,
+        bm.pres_button(),
+        reply_markup=kb.random_keyboard(await get_user_locale(message.from_user)),
+    )
 
 
 @user_router.callback_query(F.data == "select_category")
 async def select_category(call: types.CallbackQuery):
-    await collapse_previous_joke_controls(call.message, call.from_user.id)
-    await call.message.answer(text=bm.select_category(), reply_markup=kb.category_keyboard())
+    await sync_user(call.from_user, call.message.chat.type)
+    user_locale = await get_user_locale(call.from_user)
+    if call.message.chat.type == DEFAULT_PRIVATE_CHAT_TYPE:
+        await collapse_previous_joke_controls(call.message, call.from_user.id, user_locale)
+        await call.message.answer(text=bm.select_category(), reply_markup=kb.category_keyboard(user_locale))
+    else:
+        await call.message.edit_text(text=bm.select_category(), reply_markup=kb.category_keyboard(user_locale))
     await call.answer()
 
 
 @user_router.callback_query(F.data == "back_to_random")
 async def back_to_random(call: types.CallbackQuery):
-    await call.message.edit_text(bm.pres_button(), reply_markup=kb.random_keyboard())
+    await sync_user(call.from_user, call.message.chat.type)
+    await call.message.edit_text(bm.pres_button(), reply_markup=kb.random_keyboard(await get_user_locale(call.from_user)))
     await call.answer()
 
 
@@ -360,7 +394,7 @@ async def send_category_joke_private(call: types.CallbackQuery):
     await sync_user(call.from_user, call.message.chat.type)
     tag = call.data.split(":", maxsplit=1)[1]
     result = await db.get_tagged_joke(call.from_user.id, tag)
-    await send_joke(call.message, call.from_user.id, result)
+    await send_joke(call.message, call.from_user.id, result, await get_user_locale(call.from_user))
     await call.answer()
     await send_analytics(
         user_id=call.from_user.id,
@@ -373,7 +407,7 @@ async def send_category_joke_private(call: types.CallbackQuery):
 async def send_joke_private(call: types.CallbackQuery):
     await sync_user(call.from_user, call.message.chat.type)
     result = await db.get_joke(call.from_user.id)
-    await send_joke(call.message, call.from_user.id, result)
+    await send_joke(call.message, call.from_user.id, result, await get_user_locale(call.from_user))
     await call.answer()
     await send_analytics(
         user_id=call.from_user.id,
@@ -395,7 +429,11 @@ async def find_jokes(message: types.Message, state: FSMContext):
     answer = (message.text or "").strip()
     if is_cancel_action(answer):
         await bot.send_message(message.chat.id, bm.action_canceled(), reply_markup=types.ReplyKeyboardRemove())
-        await bot.send_message(message.chat.id, bm.pres_button(), reply_markup=kb.random_keyboard())
+        await bot.send_message(
+            message.chat.id,
+            bm.pres_button(),
+            reply_markup=kb.random_keyboard(await get_user_locale(message.from_user)),
+        )
         await state.clear()
         return
 
@@ -407,7 +445,11 @@ async def find_jokes(message: types.Message, state: FSMContext):
 
     if not result:
         await bot.send_message(message.chat.id, bm.nothing_found(), reply_markup=ReplyKeyboardRemove())
-        await bot.send_message(message.chat.id, bm.pres_button(), reply_markup=kb.random_keyboard())
+        await bot.send_message(
+            message.chat.id,
+            bm.pres_button(),
+            reply_markup=kb.random_keyboard(await get_user_locale(message.from_user)),
+        )
         await state.clear()
         return
 
@@ -419,13 +461,20 @@ async def find_jokes(message: types.Message, state: FSMContext):
 
 @user_router.callback_query(F.data.startswith("joke_"))
 async def show_joke(call: types.CallbackQuery, state: FSMContext):
+    await sync_user(call.from_user, call.message.chat.type)
     joke_id = int(call.data.split("_", maxsplit=1)[1])
     result = await db.get_joke_by_id(joke_id)
     if not result:
         await call.answer(bm.nothing_found(), show_alert=True)
         return
 
-    formatted_text, keyboard = await build_joke_payload(joke_id, call.from_user.id, call.message.chat.type, result[0][1])
+    formatted_text, keyboard = await build_joke_payload(
+        joke_id,
+        call.from_user.id,
+        call.message.chat.type,
+        result[0][1],
+        await get_user_locale(call.from_user),
+    )
     await call.message.answer(f"ID: {joke_id}\n\n{formatted_text}", reply_markup=keyboard)
     await db.seen_joke(joke_id, call.from_user.id)
     await state.clear()
@@ -435,6 +484,7 @@ async def show_joke(call: types.CallbackQuery, state: FSMContext):
 
 @user_router.callback_query(F.data.startswith("page_"))
 async def jokes_pagination(call: types.CallbackQuery, state: FSMContext):
+    await sync_user(call.from_user, call.message.chat.type)
     page_number = int(call.data.split("_", maxsplit=1)[1])
     await show_joke_page(call.message, page_number, state)
     await call.answer()
@@ -442,6 +492,7 @@ async def jokes_pagination(call: types.CallbackQuery, state: FSMContext):
 
 @user_router.callback_query(F.data == "page_number")
 async def noop_page_callback(call: types.CallbackQuery):
+    await sync_user(call.from_user, call.message.chat.type)
     await call.answer()
 
 
@@ -535,6 +586,7 @@ async def daily_joke():
 
 @user_router.callback_query(F.data.startswith("seen_"))
 async def seen_handling(call: types.CallbackQuery):
+    await sync_user(call.from_user, call.message.chat.type)
     joke_id = int(call.data.split("_", maxsplit=1)[1])
     existing_row = await db.check_seen_joke(joke_id, call.from_user.id)
 
@@ -544,12 +596,13 @@ async def seen_handling(call: types.CallbackQuery):
         await db.seen_joke(joke_id, call.from_user.id)
         await call.answer(bm.seen_joke(), show_alert=True)
 
-    await update_buttons(call.message, joke_id, call.from_user.id)
+    await update_buttons(call.message, joke_id, call.from_user.id, await get_user_locale(call.from_user))
     logger.info("User %s marked joke %s as seen", call.from_user.id, joke_id)
 
 
 @user_router.callback_query(F.data.startswith("like_"))
 async def like_joke(call: types.CallbackQuery):
+    await sync_user(call.from_user, call.message.chat.type)
     joke_id = int(call.data.split("_", maxsplit=1)[1])
     user_vote = await db.get_user_vote(joke_id, call.from_user.id)
 
@@ -566,12 +619,13 @@ async def like_joke(call: types.CallbackQuery):
         await call.answer(bm.liked_joke())
         action_name = "liked"
 
-    await update_buttons(call.message, joke_id, call.from_user.id)
+    await update_buttons(call.message, joke_id, call.from_user.id, await get_user_locale(call.from_user))
     await send_analytics(user_id=call.from_user.id, user_lang_code=call.from_user.language_code, action_name=action_name)
 
 
 @user_router.callback_query(F.data.startswith("dislike_"))
 async def dislike_joke(call: types.CallbackQuery):
+    await sync_user(call.from_user, call.message.chat.type)
     joke_id = int(call.data.split("_", maxsplit=1)[1])
     user_vote = await db.get_user_vote(joke_id, call.from_user.id)
 
@@ -588,18 +642,18 @@ async def dislike_joke(call: types.CallbackQuery):
         await call.answer(bm.disliked_joke())
         action_name = "disliked"
 
-    await update_buttons(call.message, joke_id, call.from_user.id)
+    await update_buttons(call.message, joke_id, call.from_user.id, await get_user_locale(call.from_user))
     await send_analytics(user_id=call.from_user.id, user_lang_code=call.from_user.language_code, action_name=action_name)
 
 
-async def update_buttons(message: types.Message, joke_id: int, user_id: int):
+async def update_buttons(message: types.Message, joke_id: int, user_id: int, user_locale: str):
     _, likes_count, dislikes_count, user_vote = await db.get_joke_meta(joke_id, user_id)
 
     if has_expanded_joke_controls(message):
         if message.chat.type == DEFAULT_PRIVATE_CHAT_TYPE:
-            reply_markup = kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id, user_vote)
+            reply_markup = kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id, user_vote, user_locale)
         else:
-            reply_markup = kb.return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id)
+            reply_markup = kb.return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id, user_locale)
     else:
         reply_markup = build_compact_rating_keyboard(
             likes_count,
@@ -607,6 +661,7 @@ async def update_buttons(message: types.Message, joke_id: int, user_id: int):
             joke_id,
             user_vote,
             message.chat.type,
+            user_locale,
         )
 
     try:
@@ -617,8 +672,9 @@ async def update_buttons(message: types.Message, joke_id: int, user_id: int):
 
 @user_router.callback_query(F.data.startswith("rating_"))
 async def joke_rating(call: types.CallbackQuery):
+    await sync_user(call.from_user, call.message.chat.type)
     joke_id = int(call.data.split("_", maxsplit=1)[1])
-    await update_buttons(call.message, joke_id, call.from_user.id)
+    await update_buttons(call.message, joke_id, call.from_user.id, await get_user_locale(call.from_user))
     await call.answer(bm.updated_rating())
     await send_analytics(user_id=call.from_user.id, user_lang_code=call.from_user.language_code, action_name="update_rating")
 
@@ -638,5 +694,5 @@ async def handle_message(message: types.Message):
         await sync_user(message.from_user, message.chat.type)
         await message.reply(
             f"{bm.dont_understood(message.from_user.full_name)}",
-            reply_markup=kb.return_feedback_button(),
+            reply_markup=kb.return_feedback_button(await get_user_locale(message.from_user)),
         )
