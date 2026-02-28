@@ -1,80 +1,54 @@
 import asyncio
+import logging
+import selectors
+import sys
+from zoneinfo import ZoneInfo
 
-import betterlogging as logging
-import httpx
-from aiogram import Bot, Dispatcher, Router
-from aiogram.client.default import DefaultBotProperties
-from aiogram.enums.parse_mode import ParseMode
-from aiogram.fsm.storage.memory import MemoryStorage
-from aiogram.utils.i18n import I18n
-from aiogram.types import ErrorEvent
 from aiocron import crontab
+from aiogram.types import ErrorEvent
 
-from config import *
-from log.logger import custom_formatter
-from middlewares import ThrottlingMiddleware, My18nMiddleware, UserBannedMiddleware
-from services import DataBase
+from app import bot, dp, get_bot_username, i18n, router
+from config import BOT_COMMANDS, admin_id
+from middlewares import My18nMiddleware, ThrottlingMiddleware, UserBannedMiddleware
+from services import analytics, database
 
-default = DefaultBotProperties(parse_mode=ParseMode.HTML)
-bot = Bot(token=token, default=default)
-storage = MemoryStorage()
-dp = Dispatcher(storage=storage)
-router = Router()
-
-db = DataBase()
-
-i18n = I18n(path=BASE_DIR / "locales", default_locale="uk", domain="messages")
-i18n_middleware = My18nMiddleware(i18n)
-
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
-
-handler = logging.FileHandler("log/bot_log.log")
-handler.setFormatter(custom_formatter)
-
-logger.addHandler(handler)
-
-logging.getLogger("werkzeug").disabled = True
-
-
-async def send_analytics(user_id, user_lang_code, action_name):
-    """
-    Send record to Google Analytics
-    """
-    params = {
-        'client_id': str(user_id),
-        'user_id': str(user_id),
-        'events': [{
-            'name': action_name,
-            'params': {
-                'language': user_lang_code,
-                "session_id": str(user_id),
-                "engagement_time_msec": "100"
-
-            }
-        }],
-    }
-    async with httpx.AsyncClient() as client:
-        await client.post(
-            f'https://www.google-analytics.com/mp/collect?measurement_id={MEASUREMENT_ID}&api_secret={API_SECRET}',
-            json=params)
+daily_joke_job = None
 
 
 @router.error()
 async def handle_errors(event: ErrorEvent):
-    logging.error(f"Update: {event}\nException: {event.exception}")
+    logging.error(
+        "Update handling failed: %s",
+        event.exception,
+        exc_info=(type(event.exception), event.exception, event.exception.__traceback__),
+    )
 
 
 async def on_shutdown():
-    await bot.send_message(admin_id, "I'm stopped!")
+    try:
+        await bot.send_message(admin_id, "Bot stopped.")
+    except Exception:
+        logging.exception("Failed to notify admin on shutdown")
+
+    await analytics.close()
+    await database.close()
 
 
 async def on_startup():
-    await bot.send_message(admin_id, "I'm launched!")
+    await database.connect()
+    await analytics.initialize()
+    await get_bot_username()
+
+    try:
+        await bot.send_message(admin_id, "Bot started.")
+    except Exception:
+        logging.exception("Failed to notify admin on startup")
 
 
 async def main():
-    from handlers import user_router, admin_router, daily_joke
+    from handlers import admin_router, daily_joke, user_router
+
+    global daily_joke_job
 
     await bot.set_my_commands(commands=BOT_COMMANDS)
     await bot.delete_webhook(drop_pending_updates=True)
@@ -90,10 +64,18 @@ async def main():
     dp.startup.register(on_startup)
     dp.shutdown.register(on_shutdown)
 
-    crontab('0 12 * * *', func=daily_joke, start=True)
+    daily_joke_job = crontab("0 12 * * *", func=daily_joke, start=True, tz=ZoneInfo("Europe/Kyiv"))
 
     await dp.start_polling(bot)
 
 
+def create_event_loop():
+    if sys.platform == "win32":
+        return asyncio.SelectorEventLoop(selectors.SelectSelector())
+
+    return asyncio.new_event_loop()
+
+
 if __name__ == "__main__":
-    asyncio.run(main())
+    with asyncio.Runner(loop_factory=create_event_loop) as runner:
+        runner.run(main())

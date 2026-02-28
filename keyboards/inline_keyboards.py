@@ -1,8 +1,5 @@
-from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardMarkup, KeyboardButton
-
+from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, KeyboardButton, ReplyKeyboardMarkup
 from aiogram.utils.i18n import gettext as _
-
-from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 
 def admin_keyboard():
@@ -18,10 +15,7 @@ def admin_keyboard():
         ],
         [InlineKeyboardButton(text=_("👤Control User"), callback_data='control_user')]
     ]
-
-    keyboard = InlineKeyboardMarkup(inline_keyboard=buttons)
-
-    return keyboard
+    return InlineKeyboardMarkup(inline_keyboard=buttons)
 
 
 def random_keyboard():
@@ -29,8 +23,7 @@ def random_keyboard():
         [InlineKeyboardButton(text=_('🔀Random joke'), callback_data="random_joke")],
         [InlineKeyboardButton(text=_('🔖Select category'), callback_data="select_category")]
     ]
-    keyboard = InlineKeyboardMarkup(inline_keyboard=buttons)
-    return keyboard
+    return InlineKeyboardMarkup(inline_keyboard=buttons)
 
 
 def category_keyboard():
@@ -60,8 +53,7 @@ def cancel_keyboard():
     kb = [
         [KeyboardButton(text=_("↩️Cancel"))]
     ]
-    keyboard = ReplyKeyboardMarkup(keyboard=kb, resize_keyboard=True)
-    return keyboard
+    return ReplyKeyboardMarkup(keyboard=kb, resize_keyboard=True)
 
 
 def lang_keyboard():
@@ -71,8 +63,7 @@ def lang_keyboard():
             InlineKeyboardButton(text="English🇬🇧", callback_data="lang_en")
         ]
     ]
-    keyboard = InlineKeyboardMarkup(inline_keyboard=buttons)
-    return keyboard
+    return InlineKeyboardMarkup(inline_keyboard=buttons)
 
 
 def return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id, user_vote):
@@ -84,12 +75,13 @@ def return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id, user_
             InlineKeyboardButton(text=like_button_text, callback_data=f'like_{joke_id}'),
             InlineKeyboardButton(text=dislike_button_text, callback_data=f'dislike_{joke_id}')
         ],
-        [InlineKeyboardButton(text=_('🔃Update rating'), callback_data=f'rating_{joke_id}')]
-
+        [InlineKeyboardButton(text=_('🔃Update rating'), callback_data=f'rating_{joke_id}')],
+        [
+            InlineKeyboardButton(text=_('🔀Random joke'), callback_data="random_joke"),
+            InlineKeyboardButton(text=_('🔖Select category'), callback_data="select_category")
+        ]
     ]
-
-    rating_and_votes_keyboard = InlineKeyboardMarkup(inline_keyboard=buttons)
-    return rating_and_votes_keyboard
+    return InlineKeyboardMarkup(inline_keyboard=buttons)
 
 
 def return_rating_and_votes_keyboard_mailing(i18n, user_locale, likes_count, dislikes_count, joke_id, user_vote):
@@ -103,15 +95,15 @@ def return_rating_and_votes_keyboard_mailing(i18n, user_locale, likes_count, dis
                 InlineKeyboardButton(text=like_button_text, callback_data=f'like_{joke_id}'),
                 InlineKeyboardButton(text=dislike_button_text, callback_data=f'dislike_{joke_id}')
             ],
-            [InlineKeyboardButton(text=i18n.gettext('🔃Update rating'), callback_data=f'rating_{joke_id}')]
-
+            [InlineKeyboardButton(text=_('🔃Update rating'), callback_data=f'rating_{joke_id}')],
+            [
+                InlineKeyboardButton(text=i18n.gettext('🔀Random joke'), callback_data='random_joke'),
+                InlineKeyboardButton(text=i18n.gettext('🔖Select category'), callback_data='select_category')
+            ]
         ]
-
-        rating_and_votes_keyboard_mailing = InlineKeyboardMarkup(inline_keyboard=buttons)
-        return rating_and_votes_keyboard_mailing
+        return InlineKeyboardMarkup(inline_keyboard=buttons)
 
 
-# Клавіатура для груп з додатковою кнопкою "Переглянути"
 def return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id):
     buttons = [
         [
@@ -121,18 +113,14 @@ def return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id):
         [InlineKeyboardButton(text=_('🔃Update rating'), callback_data=f'rating_{joke_id}')],
         [InlineKeyboardButton(text=_('👀Viewed'), callback_data=f'seen_{joke_id}')]
     ]
-
-    rating_and_seen_keyboard = InlineKeyboardMarkup(inline_keyboard=buttons)
-
-    return rating_and_seen_keyboard
+    return InlineKeyboardMarkup(inline_keyboard=buttons)
 
 
 def return_back_keyboard():
     back_button = [
         [InlineKeyboardButton(text=_("🔙Back"), callback_data="back_to_list")]
     ]
-    keyboard = InlineKeyboardMarkup(inline_keyboard=back_button)
-    return keyboard
+    return InlineKeyboardMarkup(inline_keyboard=back_button)
 
 
 def return_search_keyboard():
@@ -143,24 +131,21 @@ def return_search_keyboard():
         ],
         [InlineKeyboardButton(text=_("🔙Back"), callback_data="back_to_admin")]
     ]
-    search_keyboard = InlineKeyboardMarkup(inline_keyboard=buttons)
-    return search_keyboard
+    return InlineKeyboardMarkup(inline_keyboard=buttons)
 
 
 def return_back_to_admin_keyboard():
     back_button = [
         [(InlineKeyboardButton(text=_("🔙Back"), callback_data="back_to_admin"))]
     ]
-    keyboard = InlineKeyboardMarkup(inline_keyboard=back_button)
-    return keyboard
+    return InlineKeyboardMarkup(inline_keyboard=back_button)
 
 
 def return_feedback_button():
     feedback_button = [
         [InlineKeyboardButton(text=_("Feedback💬"), callback_data='feedback')]
     ]
-    keyboard = InlineKeyboardMarkup(inline_keyboard=feedback_button)
-    return keyboard
+    return InlineKeyboardMarkup(inline_keyboard=feedback_button)
 
 
 def feedback_answer(feedback_message_id, feedback_message_chat_id):
@@ -168,5 +153,4 @@ def feedback_answer(feedback_message_id, feedback_message_chat_id):
         [InlineKeyboardButton(text=_("Answer💬"),
                               callback_data=f'answer_{feedback_message_id}_{feedback_message_chat_id}')]
     ]
-    keyboard = InlineKeyboardMarkup(inline_keyboard=answer_button)
-    return keyboard
+    return InlineKeyboardMarkup(inline_keyboard=answer_button)
