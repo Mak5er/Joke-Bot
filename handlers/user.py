@@ -182,14 +182,9 @@ async def send_joke(message: types.Message, user_id: int, result, user_locale: s
     joke_id = joke[0]
     joke_text = joke[1]
     formatted_text, keyboard = await build_joke_payload(joke_id, user_id, message.chat.type, joke_text, user_locale)
-    if message.chat.type == DEFAULT_PRIVATE_CHAT_TYPE:
-        await collapse_previous_joke_controls(message, user_id, user_locale)
-        await message.answer(formatted_text, reply_markup=keyboard)
-    else:
-        try:
-            await message.edit_text(formatted_text, reply_markup=keyboard)
-        except TelegramBadRequest:
-            await message.answer(formatted_text, reply_markup=keyboard)
+    await collapse_previous_joke_controls(message, user_id, user_locale)
+    await message.answer(formatted_text, reply_markup=keyboard)
+
 
     await db.seen_joke(joke_id, user_id)
     logger.info("Sent joke %s to user %s", joke_id, user_id)
