@@ -115,7 +115,7 @@ def has_expanded_joke_controls(message: types.Message) -> bool:
     for row in message.reply_markup.inline_keyboard:
         for button in row:
             callback_data = button.callback_data or ""
-            if callback_data in {"random_joke", "select_category"} or callback_data.startswith("seen_"):
+            if callback_data in {"random_joke", "select_category"}:
                 return True
 
     return False
@@ -131,10 +131,12 @@ def build_compact_rating_keyboard(
 ) -> InlineKeyboardMarkup:
     if chat_type == DEFAULT_PRIVATE_CHAT_TYPE:
         full_keyboard = kb.return_rating_and_votes_keyboard(likes_count, dislikes_count, joke_id, user_vote, user_locale)
+        compact_rows = full_keyboard.inline_keyboard[:2]
     else:
         full_keyboard = kb.return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id, user_locale)
+        compact_rows = full_keyboard.inline_keyboard[:3]
 
-    return InlineKeyboardMarkup(inline_keyboard=full_keyboard.inline_keyboard[:2])
+    return InlineKeyboardMarkup(inline_keyboard=compact_rows)
 
 
 async def collapse_previous_joke_controls(message: types.Message, user_id: int, user_locale: str) -> None:
@@ -165,6 +167,10 @@ async def collapse_previous_joke_controls(message: types.Message, user_id: int, 
         logger.debug("Reply markup for archived joke %s did not change", joke_id)
 
 
+async def collapse_previous_joke_controls_group(message: types.Message, user_id: int, user_locale: str) -> None:
+    await collapse_previous_joke_controls(message, user_id, user_locale)
+
+
 async def send_joke(message: types.Message, user_id: int, result, user_locale: str):
     await bot.send_chat_action(message.chat.id, "typing")
 
@@ -182,9 +188,15 @@ async def send_joke(message: types.Message, user_id: int, result, user_locale: s
     joke_id = joke[0]
     joke_text = joke[1]
     formatted_text, keyboard = await build_joke_payload(joke_id, user_id, message.chat.type, joke_text, user_locale)
-    await collapse_previous_joke_controls(message, user_id, user_locale)
-    await message.answer(formatted_text, reply_markup=keyboard)
-
+    if message.chat.type == DEFAULT_PRIVATE_CHAT_TYPE:
+        await collapse_previous_joke_controls(message, user_id, user_locale)
+        await message.answer(formatted_text, reply_markup=keyboard)
+    else:
+        try:
+            await collapse_previous_joke_controls_group(message, user_id, user_locale)
+            await message.answer(formatted_text, reply_markup=keyboard)
+        except TelegramBadRequest:
+            await message.answer(formatted_text, reply_markup=keyboard)
 
     await db.seen_joke(joke_id, user_id)
     logger.info("Sent joke %s to user %s", joke_id, user_id)
