@@ -52,16 +52,16 @@ def _ui(key: str, user_locale: str | None) -> str:
 
 def admin_keyboard():
     buttons = [
-        [InlineKeyboardButton(text=_("рџ“ќAdd a joke"), callback_data="add_joke")],
+        [InlineKeyboardButton(text=_('📝Add a joke'), callback_data='add_joke')],
         [
-            InlineKeyboardButton(text=_("рџ’¬Mailing"), callback_data="send_to_all"),
-            InlineKeyboardButton(text=_("рџЋ­Joke of the day"), callback_data="daily_joke"),
+            InlineKeyboardButton(text=_('💬Mailing'), callback_data='send_to_all'),
+            InlineKeyboardButton(text=_("🎭Joke of the day"), callback_data='daily_joke')
         ],
         [
-            InlineKeyboardButton(text=_("рџ“„View log"), callback_data="download_log"),
-            InlineKeyboardButton(text=_("вќЊрџ“„Delete log"), callback_data="delete_log"),
+            InlineKeyboardButton(text=_("📄View log"), callback_data='download_log'),
+            InlineKeyboardButton(text=_("❌📄Delete log"), callback_data='delete_log')
         ],
-        [InlineKeyboardButton(text=_("рџ‘¤Control User"), callback_data="control_user")],
+        [InlineKeyboardButton(text=_("👤Control User"), callback_data='control_user')]
     ]
     return InlineKeyboardMarkup(inline_keyboard=buttons)
 
@@ -77,27 +77,27 @@ def random_keyboard(user_locale: str | None = None):
 def category_keyboard(user_locale: str | None = None):
     buttons = [
         [
-            InlineKeyboardButton(text=_ui("money", user_locale), callback_data="joke:РїСЂРѕ_РіСЂРѕС€С–"),
-            InlineKeyboardButton(text=_ui("family", user_locale), callback_data="joke:РїСЂРѕ_СЂРѕРґРёРЅСѓ"),
+            InlineKeyboardButton(text=_ui("money", user_locale), callback_data="joke:про_гроші"),
+            InlineKeyboardButton(text=_ui("family", user_locale), callback_data="joke:про_родину"),
         ],
-        [InlineKeyboardButton(text=_ui("blondes", user_locale), callback_data="joke:РїСЂРѕ_Р±С–Р»СЏРІРѕРє")],
+        [InlineKeyboardButton(text=_ui("blondes", user_locale), callback_data="joke:про_білявок")],
         [
-            InlineKeyboardButton(text=_ui("mother_in_law", user_locale), callback_data="joke:РїСЂРѕ_С‚РµС‰Сѓ"),
-            InlineKeyboardButton(text=_ui("school", user_locale), callback_data="joke:РїСЂРѕ_С€РєРѕР»Сѓ"),
+            InlineKeyboardButton(text=_ui("mother_in_law", user_locale), callback_data="joke:про_тещу"),
+            InlineKeyboardButton(text=_ui("school", user_locale), callback_data="joke:про_школу"),
         ],
-        [InlineKeyboardButton(text=_ui("vovochka", user_locale), callback_data="joke:РїСЂРѕ_РІРѕРІРѕС‡РєСѓ")],
+        [InlineKeyboardButton(text=_ui("vovochka", user_locale), callback_data="joke:про_вовочку")],
         [
-            InlineKeyboardButton(text=_ui("medicine", user_locale), callback_data="joke:РїСЂРѕ_РјРµРґРёС†РёРЅСѓ"),
-            InlineKeyboardButton(text=_ui("students", user_locale), callback_data="joke:РїСЂРѕ_СЃС‚СѓРґРµРЅС‚С–РІ"),
+            InlineKeyboardButton(text=_ui("medicine", user_locale), callback_data="joke:про_медицину"),
+            InlineKeyboardButton(text=_ui("students", user_locale), callback_data="joke:про_студентів"),
         ],
-        [InlineKeyboardButton(text=_ui("work", user_locale), callback_data="joke:РїСЂРѕ_СЂРѕР±РѕС‚Сѓ")],
+        [InlineKeyboardButton(text=_ui("work", user_locale), callback_data="joke:про_роботу")],
         [InlineKeyboardButton(text=_ui("back", user_locale), callback_data="back_to_random")],
     ]
     return InlineKeyboardMarkup(inline_keyboard=buttons)
 
 
 def cancel_keyboard():
-    kb = [[KeyboardButton(text=_("в†©пёЏCancel"))]]
+    kb = [[KeyboardButton(text=_("↩️Cancel"))]]
     return ReplyKeyboardMarkup(keyboard=kb, resize_keyboard=True)
 
 
@@ -162,7 +162,7 @@ def return_rating_and_seen_keyboard(likes_count, dislikes_count, joke_id, user_l
 
 
 def return_back_keyboard():
-    back_button = [[InlineKeyboardButton(text=_("рџ”™Back"), callback_data="back_to_list")]]
+    back_button = [[InlineKeyboardButton(text=_("🔙Back"), callback_data="back_to_list")]]
     return InlineKeyboardMarkup(inline_keyboard=back_button)
 
 
@@ -172,13 +172,13 @@ def return_search_keyboard():
             InlineKeyboardButton(text="ID", callback_data="search_id"),
             InlineKeyboardButton(text="Username", callback_data="search_username"),
         ],
-        [InlineKeyboardButton(text=_("рџ”™Back"), callback_data="back_to_admin")],
+        [InlineKeyboardButton(text=_("🔙Back"), callback_data="back_to_admin")],
     ]
     return InlineKeyboardMarkup(inline_keyboard=buttons)
 
 
 def return_back_to_admin_keyboard():
-    back_button = [[InlineKeyboardButton(text=_("рџ”™Back"), callback_data="back_to_admin")]]
+    back_button = [[InlineKeyboardButton(text=_("🔙Back"), callback_data="back_to_admin")]]
     return InlineKeyboardMarkup(inline_keyboard=back_button)
 
 
